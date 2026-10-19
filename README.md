@@ -10,6 +10,9 @@ Why it exists: [`3kh0/slack-datamine`](https://github.com/3kh0/slack-datamine) i
 
 If this helped you in any way, I'd love for you to shoot me an email at SlackDataminePlus@izie.top, (if theres any improvements you want lmk!) a link back to this repo, or a star all tell me people actually use this, plus they make me smile :) This isn't something you're forced to do, the license is still AGPL-3.0, it's just a request.
 
+## ReDocumented
+If you're looking for a list of all the weird and badly/undocumented API methods in Slack check out https://vs.izie.top/redocumented.
+
 ## How it runs
 
 `.github/workflows/mine.yml` runs at :00 and :40 every hour (GitHub cron can't do true 40-minute steps). Commits are authored as Izie with a `Co-Authored-By: GitHub Actions <automated-tools@izie.top>` trailer. Each run fetches the authed client HTML, reads the build number, and stops in seconds if that build was already mined. New builds get a full crawl, and `build/`, `state/` and a tag are committed. When something changed for ReDocumented (new methods, newly removed, back in the bundle) the run also pushes branch `datamine/update` to `IzieStratt/personal-site` and opens a PR, or updates the one already open (`src/sync-redocumented.mjs`).
