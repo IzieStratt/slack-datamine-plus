@@ -36,7 +36,7 @@ for (const [name, e] of Object.entries(state)) {
   if (e.removed) {
     m.datamine.last_build = e.last_build; m.datamine.last_seen = e.last_seen;
     m.removed = true;
-    m.removed_note = `Last seen in client build ${e.last_build} (${e.last_seen}); absent from latest mined build ${meta.buildNumber} (${meta.capturedDate}). Removed from the webpack bundle, not proof the server stopped answering.`;
+    m.removed_note = `Last seen in client build ${e.last_build} (${e.last_seen}); not in the latest mined build. Removed from the webpack bundle, not proof the server stopped answering.`;
     if (!wasRemoved) newlyRemoved.push(name);
   } else {
     delete m.removed; delete m.removed_note;
@@ -46,7 +46,9 @@ for (const [name, e] of Object.entries(state)) {
 
 data.methods.sort((a, b) => a.name.localeCompare(b.name));
 const ms = data.methods;
-data.generated = meta.capturedDate;
+const before = JSON.stringify(JSON.parse(fs.readFileSync(file, 'utf8')).methods);
+const changed = before !== JSON.stringify(ms);
+if (changed) data.generated = meta.capturedDate;
 data.counts = {
   documented: ms.filter((m) => m.status === 'documented').length,
   undocumented: ms.filter((m) => m.status === 'undocumented').length,
@@ -54,8 +56,8 @@ data.counts = {
   removed: ms.filter((m) => m.removed).length,
   live_verified_undocumented: data.counts?.live_verified_undocumented ?? 0,
 };
-data.datamine_latest_build = { ...(data.datamine_latest_build || {}), build: meta.buildNumber, captured: meta.capturedDate };
-fs.writeFileSync(file, JSON.stringify(data, null, 1) + '\n');
+if (changed) data.datamine_latest_build = { ...(data.datamine_latest_build || {}), build: meta.buildNumber, captured: meta.capturedDate };
+if (changed) fs.writeFileSync(file, JSON.stringify(data, null, 1) + '\n');
 
 const out = { added, newlyRemoved, returned };
 fs.writeFileSync(arg('summary', 'sync-summary.json'), JSON.stringify(out, null, 1) + '\n');
