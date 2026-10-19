@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import zlib from 'node:zlib';
-import { decode, chunkFiles, extractMethods, isPhantom, manifestChunks, manifestUrl, mergeState } from '../src/lib.mjs';
+import { buildInfo, validBuild, decode, chunkFiles, extractMethods, isPhantom, manifestChunks, manifestUrl, mergeState } from '../src/lib.mjs';
 
 test('decode handles brotli, gzip and raw', () => {
   const s = 'var a="chat.postMessage";';
@@ -43,4 +43,12 @@ test('manifestChunks reads quoted and bare keys from the .u map', () => {
 
 test('manifestUrl finds the manifest script', () => {
   assert.equal(manifestUrl('<script src="https://a.slack-edge.com/bv1-13-br/webpack.manifest.e8371bcf3e3385dc.min.js">'), 'https://a.slack-edge.com/bv1-13-br/webpack.manifest.e8371bcf3e3385dc.min.js');
+});
+
+test('buildInfo only ever yields a plain numeric or 12-hex build id', () => {
+  assert.equal(buildInfo('<meta name="build-number" content="x"> build-number="134791" a.slack-edge.com/bv1-13-br/').buildNumber, '134791');
+  assert.equal(buildInfo('GA.boot_data.version_uid = "54e9692853f07193c7acfeaa7f7822aa3188c6fb";').buildNumber, '54e9692853f0');
+  assert.equal(buildInfo('build-number="1; rm -rf /"').buildNumber, null);
+  assert.equal(buildInfo('build-number="12\nchanged=true"').buildNumber, null);
+  assert.ok(validBuild('134791') && validBuild('54e9692853f0') && !validBuild('abc') && !validBuild('1 2'));
 });

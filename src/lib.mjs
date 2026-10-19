@@ -15,15 +15,19 @@ export function decode(buf) {
   return buf.toString('utf8');
 }
 
+export const validBuild = (b) => typeof b === 'string' && /^(?:[0-9]{5,8}|[0-9a-f]{12})$/.test(b);
+
 export function buildInfo(html) {
   const attr = (n) => html.match(new RegExp(`${n}["']?\\s*[:=]\\s*["']([^"']+)["']`))?.[1] ?? null;
   const cdn = html.match(/https:\/\/a\.slack-edge\.com\/bv[0-9-]+br\//)?.[0] ?? null;
-  return {
+  const info = {
     buildNumber: attr('build-number') || attr('build_number') || html.match(/boot_data\.version_uid\s*=\s*"([0-9a-f]{12})/)?.[1] || html.match(/"version_ts":(\d+)/)?.[1] || null,
     versionTs: html.match(/"version_ts":\s*"?(\d+)/)?.[1] ?? null,
     versionHash: html.match(/version_uid"?\s*[:=]\s*"([0-9a-f]{40})"/)?.[1] ?? null,
     cdn,
   };
+  if (!validBuild(info.buildNumber)) info.buildNumber = null; // never trust page text as a shell/commit argument
+  return info;
 }
 
 const FILE_RE = /([a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)*\.[0-9a-f]{16,}\.min\.js)/g;

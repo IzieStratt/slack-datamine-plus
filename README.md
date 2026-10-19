@@ -32,4 +32,6 @@ node src/mine.mjs --from-dir decoded/ --build N  # offline replay
 
 ## Status
 
-Written without access to a live authed session, so the HTML discovery step is **untested against Slack**; the extractor and state logic are tested (unit tests, and a replay over 400 decoded chunks of build 128106 recovering 397 names). If the first run exits 2 or 3, download the `debug` artifact and open an issue/PR with what it shows.
+Mined live from GitHub Actions since 2026-10-19 (build ids are the first 12 hex chars of Slack's `version_uid`; Slack's client shell no longer exposes a numeric build number). The current bundle yields ~600 method names, far fewer than the ~1,750 older builds listed; "removed" therefore means "no longer in the bundle the miner can read", not "gone from Slack's API". Guards: the run aborts (writes nothing) if fewer than 300 chunks are fetched, or if the method count falls below 60% of the previous build's.
+
+Security notes: the `d` cookie is only ever sent over HTTPS to `slack.com` hosts and the run aborts rather than follow a redirect elsewhere; failed runs upload only a redacted summary (no page body) and keep it 3 days; `REDOC_TOKEN` is not persisted in the checkout and is only present in the final push/PR step; actions are pinned to commit SHAs.

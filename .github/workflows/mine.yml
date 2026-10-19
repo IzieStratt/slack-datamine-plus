@@ -28,8 +28,8 @@ jobs:
       GIT_CONFIG_VALUE_0: main
       NODE_OPTIONS: --disable-warning=DEP0040
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: 22
       - run: npm test
@@ -41,7 +41,7 @@ jobs:
         run: node src/mine.mjs ${{ inputs.force && '--force' || '' }}
       - name: Upload debug files on failure
         if: failure()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
           name: debug
           path: debug/
@@ -49,6 +49,8 @@ jobs:
           if-no-files-found: ignore
       - name: Commit and tag
         if: steps.mine.outputs.changed == 'true'
+        env:
+          BUILD: ${{ steps.mine.outputs.build }}
         run: |
           git config user.name "Izie"
           git config user.email "238573415+IzieStratt@users.noreply.github.com"
@@ -56,31 +58,40 @@ jobs:
           if git diff --cached --quiet; then
             echo "build/state unchanged (forced re-mine); nothing to commit"
           else
-            git commit -m "build ${{ steps.mine.outputs.build }}" \
+            git commit -m "build $BUILD" \
               -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
-            git tag -f "${{ steps.mine.outputs.build }}"
-            git push origin HEAD --tags --force
+            git push origin HEAD
+            git tag -f "$BUILD"
+            git push --force origin "refs/tags/$BUILD"
           fi
 
       # Refresh ReDocumented. One long-lived branch + PR (datamine/update) so a new build updates the open PR
       # instead of opening a new one every 40 minutes. Needs secret REDOC_TOKEN (see README).
+      # The token is NOT persisted in the checkout and NOT in the env of the steps that run repo code
+      # (personal-site's build script, our sync script); only the final push/PR step gets it.
       - name: Check out ReDocumented
         if: steps.mine.outputs.changed == 'true'
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: IzieStratt/personal-site
           token: ${{ secrets.REDOC_TOKEN }}
+          persist-credentials: false
           path: personal-site
           fetch-depth: 0
+      - name: Sync ReDocumented files
+        if: steps.mine.outputs.changed == 'true'
+        run: |
+          node src/sync-redocumented.mjs personal-site --summary "$PWD/sync-summary.json"
+          cd personal-site
+          python3 scripts/build-redocumented-agent.py
+          git status --porcelain | head -5
       - name: Open or update the ReDocumented PR
         if: steps.mine.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.REDOC_TOKEN }}
           BUILD: ${{ steps.mine.outputs.build }}
         run: |
-          node src/sync-redocumented.mjs personal-site --summary "$PWD/sync-summary.json"
           cd personal-site
-          python3 scripts/build-redocumented-agent.py
           if [ -z "$(git status --porcelain)" ]; then echo "ReDocumented already up to date"; exit 0; fi
           git config user.name "Izie"
           git config user.email "238573415+IzieStratt@users.noreply.github.com"
@@ -89,7 +100,9 @@ jobs:
           git add -A
           git commit -q -m "redocumented: sync with slack-datamine-plus build $BUILD" \
             -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
-          git push -f origin datamine/update
+          AUTH="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          git -c "http.https://github.com/.extraheader=$AUTH" push -f origin datamine/update
           BODY=$(node -e '
             const s = JSON.parse(require("fs").readFileSync("../sync-summary.json", "utf8"));
             const list = (t, a) => a.length ? `**${t} (${a.length})**\n` + a.slice(0, 40).map((n) => `- \`${n}\``).join("\n") + (a.length > 40 ? `\n- ...and ${a.length - 40} more` : "") + "\n\n" : "";

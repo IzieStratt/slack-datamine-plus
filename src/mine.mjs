@@ -14,21 +14,36 @@ const MIN_CHUNKS = Number(process.env.MIN_CHUNKS || 300); // below this the mani
 const OUT = arg('out') || 'build';
 const STATE = arg('state') || 'state/methods.json';
 const log = (...a) => console.log(...a);
-// Debug files get uploaded as workflow artifacts (downloadable by any GitHub user on a public repo). Never let a token reach them.
-export const redact = (t) => t
-  .replace(/xox[a-z]-[A-Za-z0-9-]{6,}/g, 'xox?-REDACTED')
-  .replace(/("(?:api_token|token|crumb|d|d-s|enterprise_token)":\s*")[^"]{8,}"/g, '$1REDACTED"');
+// Debug files get uploaded as workflow artifacts (downloadable by any GitHub user on a public repo). Never let a token reach them,
+// and never upload the authed page itself (it also holds the account's name, email and ids): only counts and script URLs.
+export const redact = (t) => {
+  let out = t
+    .replace(/xox[a-z](?:\.xox[a-z])?-[A-Za-z0-9%._\/+=-]{4,}/gi, 'xox?-REDACTED')
+    .replace(/((?:api_token|token|crumb|d|d-s|enterprise_token|email)["']?\s*[:=]\s*["']?)[^"'&\s,}]{4,}/gi, '$1REDACTED');
+  for (const secret of [process.env.SLACK_D_COOKIE].filter(Boolean)) {
+    for (const v of new Set([secret, encodeURIComponent(secret), safeDecode(secret)])) if (v) out = out.split(v).join('REDACTED');
+  }
+  return out;
+};
+const safeDecode = (v) => { try { return decodeURIComponent(v); } catch { return v; } };
 const writeDebug = (name, text) => { fs.mkdirSync('debug', { recursive: true }); fs.writeFileSync(`debug/${name}`, redact(text)); };
+// What a failed run saves about the fetched page: no body, just enough to see why discovery failed.
+const pageSummary = (html, url) => JSON.stringify({
+  finalUrl: url, bytes: html.length, title: html.match(/<title>([^<]*)/)?.[1] ?? null,
+  scripts: [...html.matchAll(/<script[^>]*\ssrc="([^"?]+)/g)].map((m) => m[1]),
+  hasManifest: !!manifestUrl(html), versionUid: /boot_data\.version_uid\s*=\s*"[0-9a-f]{40}"/.test(html),
+}, null, 1);
 const sh = (k, v) => process.env.GITHUB_OUTPUT && fs.appendFileSync(process.env.GITHUB_OUTPUT, `${k}=${v}\n`);
 
 async function fetchHtml() {
   const cookie = process.env.SLACK_D_COOKIE;
   if (!cookie) { console.error('SLACK_D_COOKIE is not set'); process.exit(3); }
   let url = process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E';
+  const slackHost = (u) => { const x = new URL(u); return x.protocol === 'https:' && (x.hostname === 'slack.com' || x.hostname.endsWith('.slack.com')); };
+  if (!slackHost(url)) { console.error('SLACK_CLIENT_URL must be an https://*.slack.com URL'); process.exit(3); }
   for (let hop = 0; hop < 8; hop++) {
-    const host = new URL(url).hostname;
-    const headers = { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36' };
-    if (host.endsWith('slack.com')) headers.cookie = `d=${cookie}`; // never leaves slack.com
+    if (!slackHost(url)) { console.error('refusing to follow a redirect off slack.com (the d cookie would be sent there)'); process.exit(3); }
+    const headers = { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36', cookie: `d=${cookie}` };
     const res = await fetch(url, { headers, redirect: 'manual' });
     if (res.status >= 300 && res.status < 400) { url = new URL(res.headers.get('location'), url).href; continue; }
     if (!res.ok) { console.error(`client HTML: HTTP ${res.status} at ${url}`); process.exit(3); }
@@ -39,8 +54,8 @@ async function fetchHtml() {
       process.exit(3);
     }
     if (/sign[_ ]?in|ssb\/redirect/i.test(new URL(url).pathname) || !/version_ts|build-number|boot_data\.version_uid/.test(html)) {
-      writeDebug('client.html', html);
-      console.error(`did not land on an authed client page (ended at ${url}); cookie expired or invalidated? saved debug/client.html`);
+      writeDebug('page-summary.json', pageSummary(html, url));
+      console.error(`did not land on an authed client page (ended at ${url}); cookie expired or invalidated? saved debug/page-summary.json`);
       process.exit(3);
     }
     return html;
@@ -82,7 +97,7 @@ async function main() {
   } else {
     const html = arg('html') ? fs.readFileSync(arg('html'), 'utf8') : await fetchHtml();
     const info = buildInfo(html);
-    if (!info.buildNumber || !info.cdn) { writeDebug('client.html', html); console.error('no build number / CDN base in HTML; saved debug/client.html'); process.exit(2); }
+    if (!info.buildNumber || !info.cdn) { writeDebug('page-summary.json', pageSummary(html, 'n/a')); console.error('no valid build id / CDN base in HTML; saved debug/page-summary.json'); process.exit(2); }
     buildNumber = info.buildNumber;
     sh('build', buildNumber);
     if (!has('force') && prevMeta.buildNumber === buildNumber) { log(`build ${buildNumber} already mined`); sh('changed', 'false'); return; }
@@ -112,12 +127,17 @@ async function main() {
     log(JSON.stringify(stats));
     if (ok.length < MIN_CHUNKS) {
       console.error(`unhealthy manifest: only ${ok.length} real chunks (< ${MIN_CHUNKS}). Not writing anything.`);
-      writeDebug('client.html', html);
+      writeDebug('page-summary.json', pageSummary(html, 'n/a'));
       writeDebug('chunks.json', JSON.stringify({ stats, missing, phantom }, null, 1));
       sh('changed', 'false'); process.exit(2);
     }
   }
 
+  const prevLive = Number(prevMeta.apiMethods || 0);
+  if (prevLive && names.size < 0.6 * prevLive && !has('force')) {
+    console.error(`method count dropped from ${prevLive} to ${names.size} (<60%); looks like an extractor/bundle change, not a real removal. Not writing anything (use --force to override).`);
+    sh('changed', 'false'); process.exit(2);
+  }
   const state = mergeState(prev, names, buildNumber, date);
   fs.mkdirSync(OUT, { recursive: true }); fs.mkdirSync(path.dirname(STATE), { recursive: true });
   fs.writeFileSync(`${OUT}/api-methods.txt`, [...names].sort().join('\n') + '\n');
