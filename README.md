@@ -8,7 +8,7 @@ Why it exists: [`3kh0/slack-datamine`](https://github.com/3kh0/slack-datamine) i
 
 ## If this helped you
 
-Totally optional, no strings attached: if it saved you time, I'd love to hear about it. A note to ReDocumented@izie.top, a link back to this repo, or a star all make my day and tell me people actually use this. Nothing here is a condition of the license. The license is the plain AGPL-3.0 in [LICENSE](LICENSE); this section is just a polite ask.
+If this helped you in any way, I'd love for you to shoot me an email at ReDocumented@izie.top, (if theres any improvements you want lmk!) a link back to this repo, or a star all tell me people actually use this, plus they make me smile :) This isn't something you're forced to do, the license is still AGPL-3.0, it's just a request.
 
 ## How it runs
 
