@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: AGPL-3.0-only
 // Pure helpers: chunk discovery, decoding, extraction, state merge. No network here, so tests can cover them.
 import zlib from 'node:zlib';
 import fs from 'node:fs';

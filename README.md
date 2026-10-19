@@ -2,9 +2,13 @@
 
 Scheduled miner for Slack's web client bundle.
 
-> **License:** source-available, not open source. Free for individuals' personal, non-commercial use (credit or a quick email appreciated); businesses and other organizations need permission, email ReDocumented@izie.top. See [LICENSE](LICENSE). Tracks every API method name ever seen, with `first_seen`, `last_seen` and `removed`, and feeds the [ReDocumented](https://vs.izie.top/redocumented) catalog.
+> **License:** [AGPL-3.0](LICENSE). Free software for everyone: individuals, schools, non-profits and companies alike.
 
 Why it exists: [`3kh0/slack-datamine`](https://github.com/3kh0/slack-datamine) is great, but since 2026-07-24 its chunk discovery has found 14 chunks instead of ~1,500, so its recent builds list ~250 methods instead of ~1,750. This miner crawls from the client HTML, treats the known-bad `gantry-v2.<hash>.min.js` names (403 on the CDN even in old builds) as "phantom", and **refuses to write anything** if fewer than `MIN_CHUNKS` (300) real chunks were fetched, so a broken parse can't silently erase the history.
+
+## If this helped you
+
+Totally optional, no strings attached: if it saved you time, I'd love to hear about it. A note to ReDocumented@izie.top, a link back to this repo, or a star all make my day and tell me people actually use this. Nothing here is a condition of the license. The license is the plain AGPL-3.0 in [LICENSE](LICENSE); this section is just a polite ask.
 
 ## How it runs
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: AGPL-3.0-only
 // Mine Slack's web client bundle.
 //   node src/mine.mjs                      live: needs SLACK_D_COOKIE (the `d` cookie)
 //   node src/mine.mjs --html page.html     saved client HTML (still fetches chunks from the public CDN)

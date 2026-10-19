@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: AGPL-3.0-only
 // Apply state/methods.json to a ReDocumented checkout (IzieStratt/personal-site).
 //   node src/sync-redocumented.mjs <path-to-personal-site> [--state state/methods.json] [--meta build/meta.json]
 // Only touches undocumented entries. Live entries get a `datamine` block with first_*; removed entries also get last_*
