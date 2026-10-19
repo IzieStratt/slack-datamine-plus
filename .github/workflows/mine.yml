@@ -66,7 +66,7 @@ jobs:
           fi
 
       # Refresh ReDocumented. One long-lived branch + PR (datamine/update) so a new build updates the open PR
-      # instead of opening a new one every 40 minutes. Needs secret REDOC_TOKEN (see README).
+      # instead of opening a new one every 40 minutes. Needs secret REDOC_TOKEN.
       # The token is NOT persisted in the checkout and NOT in the env of the steps that run repo code
       # (personal-site's build script, our sync script); only the final push/PR step gets it.
       - name: Check out ReDocumented
