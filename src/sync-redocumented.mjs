@@ -21,7 +21,7 @@ const added = [], newlyRemoved = [], returned = [];
 
 for (const [name, e] of Object.entries(state)) {
   let m = by.get(name);
-  if (m?.status === 'documented' || (!m && exclude.has(name))) continue;
+  if (m?.status === 'documented' || exclude.has(name)) continue;
   if (!m) {
     m = {
       name, status: 'undocumented', tokens: 'unknown - not live-tested', verified: 'datamine-only (not oracle-tested)',

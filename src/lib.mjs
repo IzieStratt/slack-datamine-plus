@@ -68,12 +68,18 @@ const CAND_RE = /(?:api|apiCall|callApi|method)\W{0,12}["']([a-z][a-zA-Z]{1,24}(
 
 const JUNK = /\.(com|org|net|io|js|json|asar|css|svg|png|html)$|^(google\.protobuf|platform\.(native|web)\.)|^(presence\.ts|entity\.name|quip\.codes)$/i;
 
+// Unquoted mentions ("failed to call search.team", "Poll files.list until...", `calls.request` in an error string): the client
+// still uses these methods but not as a bare quoted literal. Only trusted for names we already track (see mine.mjs).
+const MENTION_RE = new RegExp(`(?<![\\w.$])(?:${[...KNOWN_NS].join('|')})(?:\\.[A-Za-z][A-Za-z0-9_]{0,40}){1,5}`, 'g');
+
 export function extractMethods(js) {
   const known = new Set();
   const candidates = new Set();
+  const mentioned = new Set();
   for (const m of js.matchAll(API_RE)) if (!JUNK.test(m[1])) known.add(m[1]);
   for (const m of js.matchAll(CAND_RE)) if (!KNOWN_NS.has(m[1].split('.')[0])) candidates.add(m[1]);
-  return { known, candidates };
+  for (const m of js.matchAll(MENTION_RE)) if (!JUNK.test(m[0])) mentioned.add(m[0]);
+  return { known, candidates, mentioned };
 }
 
 // Merge this run's names into state. A name is `removed` when not in the latest healthy build.

@@ -13,6 +13,7 @@ const has = (n) => process.argv.includes(`--${n}`);
 const MIN_CHUNKS = Number(process.env.MIN_CHUNKS || 300); // below this the manifest parse is broken (it was 14 in 2026-07..10)
 const OUT = arg('out') || 'build';
 const STATE = arg('state') || 'state/methods.json';
+const exclude = new Set(fs.readFileSync(new URL('./exclude.txt', import.meta.url), 'utf8').split('\n').filter(Boolean));
 const log = (...a) => console.log(...a);
 // Debug files get uploaded as workflow artifacts (downloadable by any GitHub user on a public repo). Never let a token reach them,
 // and never upload the authed page itself (it also holds the account's name, email and ids): only counts and script URLs.
@@ -76,22 +77,30 @@ async function get(url, tries = 3) {
   throw last;
 }
 
+// Workers keep running while any task is in flight, because a finished task may append more items to the shared array.
 async function pool(items, n, fn) {
-  let i = 0;
-  await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) await fn(items[i++]); }));
+  let i = 0, inflight = 0;
+  const worker = async () => {
+    for (;;) {
+      if (i < items.length) { inflight++; try { await fn(items[i++]); } finally { inflight--; } }
+      else if (inflight > 0) await new Promise((r) => setTimeout(r, 5));
+      else return;
+    }
+  };
+  await Promise.all(Array.from({ length: n }, worker));
 }
 
 async function main() {
   const date = new Date().toISOString().slice(0, 10);
   const prev = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, 'utf8')) : {};
   const prevMeta = fs.existsSync(`${OUT}/meta.json`) ? JSON.parse(fs.readFileSync(`${OUT}/meta.json`, 'utf8')) : {};
-  let buildNumber, names = new Set(), candidates = new Set(), stats = {};
+  let buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), stats = {};
 
   if (arg('from-dir')) {
     buildNumber = arg('build') || 'local';
-    for (const f of fs.readdirSync(arg('from-dir')).filter((f) => f.endsWith('.js'))) {
-      const r = extractMethods(fs.readFileSync(path.join(arg('from-dir'), f), 'utf8'));
-      r.known.forEach((n) => names.add(n)); r.candidates.forEach((n) => candidates.add(n));
+    for (const f of fs.readdirSync(arg('from-dir')).filter((f) => f.endsWith('.js') && !isGrammarChunk(f))) {
+      const r = extractMethods(decode(fs.readFileSync(path.join(arg('from-dir'), f))));
+      r.known.forEach((n) => names.add(n)); r.candidates.forEach((n) => candidates.add(n)); r.mentioned.forEach((n) => mentioned.add(n));
     }
     stats = { source: 'from-dir' };
   } else {
@@ -120,7 +129,7 @@ async function main() {
       ok.push(file);
       if (isGrammarChunk(file)) return;
       const ex = extractMethods(r.js);
-      ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n));
+      ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n)); ex.mentioned.forEach((n) => mentioned.add(n));
       for (const f of chunkFiles(r.js)) if (!seen.has(f)) { seen.add(f); queue.push(f); }
     });
     stats = { discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
@@ -133,6 +142,8 @@ async function main() {
     }
   }
 
+  // a method we already track that the bundle still mentions (log text, descriptions) is not removed
+  for (const n of mentioned) if (prev[n] && !exclude.has(n)) names.add(n);
   const prevLive = Number(prevMeta.apiMethods || 0);
   if (prevLive && names.size < 0.6 * prevLive && !has('force')) {
     console.error(`method count dropped from ${prevLive} to ${names.size} (<60%); looks like an extractor/bundle change, not a real removal. Not writing anything (use --force to override).`);
