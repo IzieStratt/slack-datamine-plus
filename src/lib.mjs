@@ -19,9 +19,9 @@ export function buildInfo(html) {
   const attr = (n) => html.match(new RegExp(`${n}["']?\\s*[:=]\\s*["']([^"']+)["']`))?.[1] ?? null;
   const cdn = html.match(/https:\/\/a\.slack-edge\.com\/bv[0-9-]+br\//)?.[0] ?? null;
   return {
-    buildNumber: attr('build-number') || attr('build_number') || html.match(/"version_ts":(\d+)/)?.[1] || null,
+    buildNumber: attr('build-number') || attr('build_number') || html.match(/boot_data\.version_uid\s*=\s*"([0-9a-f]{12})/)?.[1] || html.match(/"version_ts":(\d+)/)?.[1] || null,
     versionTs: html.match(/"version_ts":\s*"?(\d+)/)?.[1] ?? null,
-    versionHash: html.match(/"version_uid":\s*"([0-9a-f]+)"/)?.[1] ?? null,
+    versionHash: html.match(/version_uid"?\s*[:=]\s*"([0-9a-f]{40})"/)?.[1] ?? null,
     cdn,
   };
 }
@@ -37,6 +37,24 @@ export function chunkFiles(text) {
   return files;
 }
 
+// Since ~2026-07 the chunk list lives in the public webpack.manifest script as an rspack/webpack `.u` name->hash map:
+//   __webpack_require__.u=e=>""+e+"."+({"about-usergroup-view":"cf49...",plain_key:"8da0..."})[e]+".min.js"
+// Keys are quoted only when they are not valid identifiers, so JSON.parse can't be used.
+export function manifestUrl(html) {
+  return html.match(/https:\/\/a\.slack-edge\.com\/[^"'\s]*webpack\.manifest\.[0-9a-f]+\.min\.js/)?.[0] ?? null;
+}
+
+export function manifestChunks(js) {
+  const map = js.match(/\.u=e=>""\+e\+"\."\+\((\{.*?\})\)\[e\]\+"\.min\.js"/)?.[1];
+  if (!map) return new Set();
+  const files = new Set();
+  for (const m of map.matchAll(/(?:"([^"]+)"|([A-Za-z0-9_$]+)):"([0-9a-f]{8,})"/g)) files.add(`${m[1] ?? m[2]}.${m[3]}.min.js`);
+  return files;
+}
+
+// Syntax-highlighting grammars (TextMate scope names like entity.name.function.apl) look like API names. Skip those chunks.
+export const isGrammarChunk = (file) => /node_modules_(shikijs?|mermaid|codemirror|highlight|prismjs|monaco|vscode-textmate|lezer)|^codemirror|^(shiki|mermaid)/i.test(file);
+
 // Same-name "gantry-v2.<hash>.min.js" files 403 on the CDN even in old, fully-mined builds. Track them, don't fail on them.
 export const isPhantom = (file) => /^gantry-v2\.[0-9a-f]+\.min\.js$/.test(file);
 
@@ -44,7 +62,7 @@ const API_RE = new RegExp(`["'\`]((?:${[...KNOWN_NS].join('|')})(?:\\.[a-zA-Z][a
 // A dotted string passed right after an api-call-looking prefix, from a namespace we do not know yet.
 const CAND_RE = /(?:api|apiCall|callApi|method)\W{0,12}["']([a-z][a-zA-Z]{1,24}(?:\.[a-zA-Z][a-zA-Z0-9]{0,40}){1,5})["']/g;
 
-const JUNK = /\.(com|org|net|io|js|json|asar|css|svg|png|html)$/i;
+const JUNK = /\.(com|org|net|io|js|json|asar|css|svg|png|html)$|^(google\.protobuf|platform\.(native|web)\.)|^(presence\.ts|entity\.name|quip\.codes)$/i;
 
 export function extractMethods(js) {
   const known = new Set();

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import zlib from 'node:zlib';
-import { decode, chunkFiles, extractMethods, isPhantom, mergeState } from '../src/lib.mjs';
+import { decode, chunkFiles, extractMethods, isPhantom, manifestChunks, manifestUrl, mergeState } from '../src/lib.mjs';
 
 test('decode handles brotli, gzip and raw', () => {
   const s = 'var a="chat.postMessage";';
@@ -33,4 +33,14 @@ test('mergeState keeps first_seen, updates last_seen, flags removed', () => {
   assert.equal(s['c.d'].last_build, '1');
   s = mergeState(s, ['a.b', 'c.d'], '3', '2026-01-03');
   assert.equal(s['c.d'].removed, false);
+});
+
+test('manifestChunks reads quoted and bare keys from the .u map', () => {
+  const js = 'x.u=e=>""+e+"."+({"about-usergroup-view":"cf4965aa5b8b10e8",node_modules_a_mjs:"8da0512b2a57a717"})[e]+".min.js",y';
+  assert.deepEqual([...manifestChunks(js)].sort(), ['about-usergroup-view.cf4965aa5b8b10e8.min.js', 'node_modules_a_mjs.8da0512b2a57a717.min.js']);
+  assert.equal(manifestChunks('nothing here').size, 0);
+});
+
+test('manifestUrl finds the manifest script', () => {
+  assert.equal(manifestUrl('<script src="https://a.slack-edge.com/bv1-13-br/webpack.manifest.e8371bcf3e3385dc.min.js">'), 'https://a.slack-edge.com/bv1-13-br/webpack.manifest.e8371bcf3e3385dc.min.js');
 });

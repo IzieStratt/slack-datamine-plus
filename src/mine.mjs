@@ -6,7 +6,7 @@
 // Exits 0 on "nothing new", 2 on an unhealthy manifest (nothing is written), 3 on auth failure.
 import fs from 'node:fs';
 import path from 'node:path';
-import { buildInfo, chunkFiles, decode, extractMethods, isPhantom, mergeState } from './lib.mjs';
+import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
 const has = (n) => process.argv.includes(`--${n}`);
@@ -33,7 +33,7 @@ async function fetchHtml() {
       console.error(`landed on the Terms of Service page at ${url}: log in as this account in a browser and accept the terms, then re-run`);
       process.exit(3);
     }
-    if (/sign[_ ]?in|ssb\/redirect/i.test(new URL(url).pathname) || !/version_ts|build-number/.test(html)) {
+    if (/sign[_ ]?in|ssb\/redirect/i.test(new URL(url).pathname) || !/version_ts|build-number|boot_data\.version_uid/.test(html)) {
       fs.mkdirSync('debug', { recursive: true }); fs.writeFileSync('debug/client.html', html);
       console.error(`did not land on an authed client page (ended at ${url}); cookie expired or invalidated? saved debug/client.html`);
       process.exit(3);
@@ -84,12 +84,21 @@ async function main() {
     log(`build ${buildNumber}: discovering chunks`);
 
     // crawl: HTML -> chunk files -> any chunk files those mention, until nothing new
-    const queue = [...chunkFiles(html)], seen = new Set(queue), ok = [], phantom = [], missing = [];
+    const queue = [...chunkFiles(html)];
+    const mUrl = manifestUrl(html);
+    if (mUrl) {
+      const r = await get(mUrl);
+      if (r.status === 200) manifestChunks(r.js).forEach((f) => queue.push(f));
+      else console.error(`webpack manifest fetch: HTTP ${r.status}`);
+    }
+    log(`manifest ${mUrl ?? 'not found'}: ${queue.length} chunk names`);
+    const seen = new Set(queue), ok = [], phantom = [], missing = [];
     await pool(queue, 12, async function visit(file) {
       if (isPhantom(file)) { phantom.push(file); return; }
       const r = await get(info.cdn + file);
       if (r.status !== 200) { missing.push({ file, status: r.status }); return; }
       ok.push(file);
+      if (isGrammarChunk(file)) return;
       const ex = extractMethods(r.js);
       ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n));
       for (const f of chunkFiles(r.js)) if (!seen.has(f)) { seen.add(f); queue.push(f); }
