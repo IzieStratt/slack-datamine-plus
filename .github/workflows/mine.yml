@@ -45,6 +45,7 @@ jobs:
         with:
           name: debug
           path: debug/
+          retention-days: 3
           if-no-files-found: ignore
       - name: Commit and tag
         if: steps.mine.outputs.changed == 'true'

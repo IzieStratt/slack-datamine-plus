@@ -14,6 +14,11 @@ const MIN_CHUNKS = Number(process.env.MIN_CHUNKS || 300); // below this the mani
 const OUT = arg('out') || 'build';
 const STATE = arg('state') || 'state/methods.json';
 const log = (...a) => console.log(...a);
+// Debug files get uploaded as workflow artifacts (downloadable by any GitHub user on a public repo). Never let a token reach them.
+export const redact = (t) => t
+  .replace(/xox[a-z]-[A-Za-z0-9-]{6,}/g, 'xox?-REDACTED')
+  .replace(/("(?:api_token|token|crumb|d|d-s|enterprise_token)":\s*")[^"]{8,}"/g, '$1REDACTED"');
+const writeDebug = (name, text) => { fs.mkdirSync('debug', { recursive: true }); fs.writeFileSync(`debug/${name}`, redact(text)); };
 const sh = (k, v) => process.env.GITHUB_OUTPUT && fs.appendFileSync(process.env.GITHUB_OUTPUT, `${k}=${v}\n`);
 
 async function fetchHtml() {
@@ -34,7 +39,7 @@ async function fetchHtml() {
       process.exit(3);
     }
     if (/sign[_ ]?in|ssb\/redirect/i.test(new URL(url).pathname) || !/version_ts|build-number|boot_data\.version_uid/.test(html)) {
-      fs.mkdirSync('debug', { recursive: true }); fs.writeFileSync('debug/client.html', html);
+      writeDebug('client.html', html);
       console.error(`did not land on an authed client page (ended at ${url}); cookie expired or invalidated? saved debug/client.html`);
       process.exit(3);
     }
@@ -77,7 +82,7 @@ async function main() {
   } else {
     const html = arg('html') ? fs.readFileSync(arg('html'), 'utf8') : await fetchHtml();
     const info = buildInfo(html);
-    if (!info.buildNumber || !info.cdn) { fs.mkdirSync('debug', { recursive: true }); fs.writeFileSync('debug/client.html', html); console.error('no build number / CDN base in HTML; saved debug/client.html'); process.exit(2); }
+    if (!info.buildNumber || !info.cdn) { writeDebug('client.html', html); console.error('no build number / CDN base in HTML; saved debug/client.html'); process.exit(2); }
     buildNumber = info.buildNumber;
     sh('build', buildNumber);
     if (!has('force') && prevMeta.buildNumber === buildNumber) { log(`build ${buildNumber} already mined`); sh('changed', 'false'); return; }
@@ -107,8 +112,8 @@ async function main() {
     log(JSON.stringify(stats));
     if (ok.length < MIN_CHUNKS) {
       console.error(`unhealthy manifest: only ${ok.length} real chunks (< ${MIN_CHUNKS}). Not writing anything.`);
-      fs.mkdirSync('debug', { recursive: true }); fs.writeFileSync('debug/client.html', html);
-      fs.writeFileSync('debug/chunks.json', JSON.stringify({ stats, missing, phantom }, null, 1));
+      writeDebug('client.html', html);
+      writeDebug('chunks.json', JSON.stringify({ stats, missing, phantom }, null, 1));
       sh('changed', 'false'); process.exit(2);
     }
   }
