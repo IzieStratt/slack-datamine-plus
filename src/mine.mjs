@@ -19,7 +19,7 @@ const sh = (k, v) => process.env.GITHUB_OUTPUT && fs.appendFileSync(process.env.
 async function fetchHtml() {
   const cookie = process.env.SLACK_D_COOKIE;
   if (!cookie) { console.error('SLACK_D_COOKIE is not set'); process.exit(3); }
-  let url = process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client';
+  let url = process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E';
   for (let hop = 0; hop < 8; hop++) {
     const host = new URL(url).hostname;
     const headers = { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36' };
@@ -28,6 +28,11 @@ async function fetchHtml() {
     if (res.status >= 300 && res.status < 400) { url = new URL(res.headers.get('location'), url).href; continue; }
     if (!res.ok) { console.error(`client HTML: HTTP ${res.status} at ${url}`); process.exit(3); }
     const html = await res.text();
+    if (/terms-of-service\.[0-9a-f]+\.min\.js/.test(html)) {
+      fs.mkdirSync('debug', { recursive: true });
+      console.error(`landed on the Terms of Service page at ${url}: log in as this account in a browser and accept the terms, then re-run`);
+      process.exit(3);
+    }
     if (/sign[_ ]?in|ssb\/redirect/i.test(new URL(url).pathname) || !/version_ts|build-number/.test(html)) {
       fs.mkdirSync('debug', { recursive: true }); fs.writeFileSync('debug/client.html', html);
       console.error(`did not land on an authed client page (ended at ${url}); cookie expired or invalidated? saved debug/client.html`);

@@ -31,7 +31,7 @@ jobs:
         id: mine
         env:
           SLACK_D_COOKIE: ${{ secrets.SLACK_D_COOKIE }}
-          SLACK_CLIENT_URL: ${{ vars.SLACK_CLIENT_URL || 'https://hackclub.enterprise.slack.com/' }}
+          SLACK_CLIENT_URL: ${{ vars.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E' }}
         run: node src/mine.mjs ${{ inputs.force && '--force' || '' }}
       - name: Upload debug files on failure
         if: failure()

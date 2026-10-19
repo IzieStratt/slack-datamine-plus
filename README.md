@@ -12,7 +12,7 @@ Why it exists: [`3kh0/slack-datamine`](https://github.com/3kh0/slack-datamine) i
 
 1. Repo **Settings -> Secrets and variables -> Actions**: add secret `SLACK_D_COOKIE` (the `d` cookie of a throwaway account; it is a full login session, never paste it anywhere else).
 2. Secret `REDOC_TOKEN`: a fine-grained personal access token limited to `IzieStratt/personal-site` with **Contents: read/write** and **Pull requests: read/write**. Used to open/update the ReDocumented PR (`GITHUB_TOKEN` can't write to another repo).
-3. Optional variable `SLACK_CLIENT_URL` (defaults to `https://hackclub.enterprise.slack.com/`): the page to load with the `d` cookie. If it doesn't land on the client, try a full client URL like `https://app.slack.com/client/E0000000/C0000000`.
+3. Optional variable `SLACK_CLIENT_URL` (defaults to `https://app.slack.com/client/E09V59WQY1E`, the Hack Club org): the page to load with the `d` cookie. If it doesn't land on the client, try a full client URL like `https://app.slack.com/client/E09V59WQY1E/C0000000`.
 4. Public repo = unlimited Actions minutes. Private = 2,000 free minutes/month; at 36 runs/day plus full crawls that is tight, so use a slower cron.
 
 ## Files
