@@ -46,10 +46,14 @@ jobs:
           git config user.name "Izie"
           git config user.email "238573415+IzieStratt@users.noreply.github.com"
           git add build state
-          git commit -m "build ${{ steps.mine.outputs.build }}" \
-            -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
-          git tag -f "${{ steps.mine.outputs.build }}"
-          git push origin HEAD --tags --force
+          if git diff --cached --quiet; then
+            echo "build/state unchanged (forced re-mine); nothing to commit"
+          else
+            git commit -m "build ${{ steps.mine.outputs.build }}" \
+              -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
+            git tag -f "${{ steps.mine.outputs.build }}"
+            git push origin HEAD --tags --force
+          fi
 
       # Refresh ReDocumented. One long-lived branch + PR (datamine/update) so a new build updates the open PR
       # instead of opening a new one every 40 minutes. Needs secret REDOC_TOKEN (see README).
