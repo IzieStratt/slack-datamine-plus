@@ -1,0 +1,51 @@
+name: mine
+
+on:
+  schedule:
+    - cron: '0,40 * * * *' # GitHub cron can't do true 40-minute steps; this is :00 and :40 each hour
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Re-mine even if the build number is unchanged
+        type: boolean
+        default: false
+
+concurrency:
+  group: mine
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  mine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Mine
+        id: mine
+        env:
+          SLACK_D_COOKIE: ${{ secrets.SLACK_D_COOKIE }}
+          SLACK_CLIENT_URL: ${{ vars.SLACK_CLIENT_URL }}
+        run: node src/mine.mjs ${{ inputs.force && '--force' || '' }}
+      - name: Upload debug files on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug
+          path: debug/
+          if-no-files-found: ignore
+      - name: Commit and tag
+        if: steps.mine.outputs.changed == 'true'
+        run: |
+          git config user.name "slack-datamine-plus"
+          git config user.email "238573415+IzieStratt@users.noreply.github.com"
+          git add build state
+          git commit -m "build ${{ steps.mine.outputs.build }}"
+          git tag -f "${{ steps.mine.outputs.build }}"
+          git push origin HEAD --tags --force

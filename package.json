@@ -1,0 +1,13 @@
+{
+  "name": "slack-datamine-plus",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Scheduled miner for Slack's web client bundle (API methods, first/last seen, removed).",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "mine": "node src/mine.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "license": "MIT"
+}
