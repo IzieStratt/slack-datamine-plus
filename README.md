@@ -6,13 +6,14 @@ Why it exists: [`3kh0/slack-datamine`](https://github.com/3kh0/slack-datamine) i
 
 ## How it runs
 
-`.github/workflows/mine.yml` runs at :00 and :40 every hour (GitHub cron can't do true 40-minute steps). Each run fetches the authed client HTML, reads the build number, and stops in seconds if that build was already mined. New builds get a full crawl, and `build/`, `state/` and a tag are committed.
+`.github/workflows/mine.yml` runs at :00 and :40 every hour (GitHub cron can't do true 40-minute steps). Commits are authored as Izie with a `Co-Authored-By: GitHub Actions <automated-tools@izie.top>` trailer. Each run fetches the authed client HTML, reads the build number, and stops in seconds if that build was already mined. New builds get a full crawl, and `build/`, `state/` and a tag are committed. When something changed for ReDocumented (new methods, newly removed, back in the bundle) the run also pushes branch `datamine/update` to `IzieStratt/personal-site` and opens a PR, or updates the one already open (`src/sync-redocumented.mjs`).
 
 ## Setup
 
 1. Repo **Settings -> Secrets and variables -> Actions**: add secret `SLACK_D_COOKIE` (the `d` cookie of a throwaway account; it is a full login session, never paste it anywhere else).
-2. Optional variable `SLACK_CLIENT_URL`: a workspace client URL like `https://app.slack.com/client/T0000000/C0000000` if the default `https://app.slack.com/client` doesn't land on a workspace.
-3. Public repo = unlimited Actions minutes. Private = 2,000 free minutes/month; at 36 runs/day plus full crawls that is tight, so use a slower cron.
+2. Secret `REDOC_TOKEN`: a fine-grained personal access token limited to `IzieStratt/personal-site` with **Contents: read/write** and **Pull requests: read/write**. Used to open/update the ReDocumented PR (`GITHUB_TOKEN` can't write to another repo).
+3. Optional variable `SLACK_CLIENT_URL` (defaults to `https://hackclub.enterprise.slack.com/`): the page to load with the `d` cookie. If it doesn't land on the client, try a full client URL like `https://app.slack.com/client/E0000000/C0000000`.
+4. Public repo = unlimited Actions minutes. Private = 2,000 free minutes/month; at 36 runs/day plus full crawls that is tight, so use a slower cron.
 
 ## Files
 

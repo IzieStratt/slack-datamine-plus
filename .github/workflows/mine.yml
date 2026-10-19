@@ -31,7 +31,7 @@ jobs:
         id: mine
         env:
           SLACK_D_COOKIE: ${{ secrets.SLACK_D_COOKIE }}
-          SLACK_CLIENT_URL: ${{ vars.SLACK_CLIENT_URL }}
+          SLACK_CLIENT_URL: ${{ vars.SLACK_CLIENT_URL || 'https://hackclub.enterprise.slack.com/' }}
         run: node src/mine.mjs ${{ inputs.force && '--force' || '' }}
       - name: Upload debug files on failure
         if: failure()
@@ -43,9 +43,49 @@ jobs:
       - name: Commit and tag
         if: steps.mine.outputs.changed == 'true'
         run: |
-          git config user.name "slack-datamine-plus"
+          git config user.name "Izie"
           git config user.email "238573415+IzieStratt@users.noreply.github.com"
           git add build state
-          git commit -m "build ${{ steps.mine.outputs.build }}"
+          git commit -m "build ${{ steps.mine.outputs.build }}" \
+            -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
           git tag -f "${{ steps.mine.outputs.build }}"
           git push origin HEAD --tags --force
+
+      # Refresh ReDocumented. One long-lived branch + PR (datamine/update) so a new build updates the open PR
+      # instead of opening a new one every 40 minutes. Needs secret REDOC_TOKEN (see README).
+      - name: Check out ReDocumented
+        if: steps.mine.outputs.changed == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: IzieStratt/personal-site
+          token: ${{ secrets.REDOC_TOKEN }}
+          path: personal-site
+          fetch-depth: 0
+      - name: Open or update the ReDocumented PR
+        if: steps.mine.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.REDOC_TOKEN }}
+          BUILD: ${{ steps.mine.outputs.build }}
+        run: |
+          node src/sync-redocumented.mjs personal-site --summary "$PWD/sync-summary.json"
+          cd personal-site
+          python3 scripts/build-redocumented-agent.py
+          if [ -z "$(git status --porcelain)" ]; then echo "ReDocumented already up to date"; exit 0; fi
+          git config user.name "Izie"
+          git config user.email "238573415+IzieStratt@users.noreply.github.com"
+          # checkout is main; carry the working-tree changes onto a branch that is always main + one commit
+          git checkout -B datamine/update
+          git add -A
+          git commit -q -m "redocumented: sync with slack-datamine-plus build $BUILD" \
+            -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
+          git push -f origin datamine/update
+          BODY=$(node -e '
+            const s = JSON.parse(require("fs").readFileSync("../sync-summary.json", "utf8"));
+            const list = (t, a) => a.length ? `**${t} (${a.length})**\n` + a.slice(0, 40).map((n) => `- \`${n}\``).join("\n") + (a.length > 40 ? `\n- ...and ${a.length - 40} more` : "") + "\n\n" : "";
+            process.stdout.write(list("New methods", s.added) + list("Newly removed", s.newlyRemoved) + list("Back in the bundle", s.returned));
+          ')
+          if gh pr view datamine/update --json state -q .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit datamine/update --title "ReDocumented: sync with slack-datamine-plus build $BUILD" --body "$BODY"
+          else
+            gh pr create --base main --head datamine/update --title "ReDocumented: sync with slack-datamine-plus build $BUILD" --body "$BODY"
+          fi
