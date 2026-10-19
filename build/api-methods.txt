@@ -117,6 +117,7 @@ calendar.user.info
 calendar.user.toggleOooStatusSync
 calendar.user.toggleStatusSync
 calls.reject
+calls.request
 canvases.agents.list
 canvases.listHeaders
 channelSections.channels.recommend
@@ -159,6 +160,7 @@ conversations.bulkFetchMetadata
 conversations.bulkJoin
 conversations.bulkReacjiTriggers
 conversations.canCreateSharedInvite
+conversations.history
 conversations.inviteShared
 conversations.list
 conversations.listPrefs
@@ -227,6 +229,8 @@ files.getUploadURL
 files.getUploadURLForFileStore
 files.hasShares
 files.ignorePermissionRequest
+files.info
+files.list
 files.list3pFiles
 files.markRead
 files.open
@@ -234,6 +238,7 @@ files.readStatus
 files.recentlyDeleted
 files.requestPermission
 files.retranscribe
+files.revokePublicURL
 files.share
 files.sharedPublicURL
 files.suggestions.list
@@ -390,13 +395,17 @@ salesHome.workflows.update
 saved.bulkDelete
 saved.delete
 schemaless.getClientLock
+screenhero.rooms.create
 screenhero.rooms.info
 screenhero.rooms.inviteResponse
 screenhero.rooms.join
 screenhero.rooms.proxyLogs
 screenhero.rooms.rename
 search.appDirectory
+search.enterprise
 search.modules.dms
+search.modules.files
+search.team
 sfdc.activities.create
 sfdc.activities.getActionLayout
 sfdc.activities.getActivityTrackedObjects
@@ -442,6 +451,7 @@ sfdc.integration.elevateMigration.complete
 sfdc.integration.elevateMigration.exportFailedUsers
 sfdc.integration.elevateMigration.start
 sfdc.integration.elevateMigration.startManual
+sfdc.integration.listOrgs
 sfdc.layouts.info
 sfdc.licenses.approval.myRequest
 sfdc.licenses.approval.request
@@ -500,6 +510,9 @@ solutions.get
 stars.add
 stars.list
 stars.remove
+subscriptions.thread.clearAll
+subscriptions.thread.getView
+subscriptions.thread.mark
 team.checkEmailDomains
 team.feature.getRequest
 team.feature.request
@@ -541,6 +554,8 @@ users.inviteRequests.create
 users.length
 users.listIgnoredUsers
 users.listOutgoingInvites
+users.prefs.set
+users.prefs.setNotifications
 users.priority.add
 users.priority.getRecommendations
 users.priority.remove
