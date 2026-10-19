@@ -22,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
       - run: npm test
@@ -35,7 +35,7 @@ jobs:
         run: node src/mine.mjs ${{ inputs.force && '--force' || '' }}
       - name: Upload debug files on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: debug
           path: debug/
@@ -59,7 +59,7 @@ jobs:
       # instead of opening a new one every 40 minutes. Needs secret REDOC_TOKEN (see README).
       - name: Check out ReDocumented
         if: steps.mine.outputs.changed == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IzieStratt/personal-site
           token: ${{ secrets.REDOC_TOKEN }}
