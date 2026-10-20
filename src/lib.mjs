@@ -83,15 +83,28 @@ export function extractMethods(js) {
   return { known, candidates, mentioned };
 }
 
-// Merge this run's names into state. A name is `removed` when not in the latest healthy build.
+// Merge this run's names into state.
+//   miss    consecutive mined builds in which the name was not found
+//   absent  true once miss >= ABSENT_AFTER, so one odd build (a lazily loaded chunk, an A/B test) does not flip a method
+//   ours    true once this miner has seen the name itself (as opposed to names only known from 3kh0/slack-datamine history)
+export const ABSENT_AFTER = 3;
+
 export function mergeState(state, names, build, date) {
   const seen = new Set(names);
   for (const n of seen) {
     const e = (state[n] ??= { first_build: build, first_seen: date });
     e.last_build = build;
     e.last_seen = date;
+    e.miss = 0;
+    e.ours = true;
   }
   const out = {};
-  for (const n of Object.keys(state).sort()) out[n] = { ...state[n], removed: !seen.has(n) };
+  for (const n of Object.keys(state).sort()) {
+    const e = { ...state[n] };
+    if (!seen.has(n)) e.miss = (e.miss ?? ABSENT_AFTER) + 1;
+    e.absent = (e.miss ?? ABSENT_AFTER) >= ABSENT_AFTER;
+    delete e.removed;
+    out[n] = e;
+  }
   return out;
 }

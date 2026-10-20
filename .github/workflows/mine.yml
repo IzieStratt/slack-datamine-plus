@@ -106,7 +106,7 @@ jobs:
           BODY=$(node -e '
             const s = JSON.parse(require("fs").readFileSync("../sync-summary.json", "utf8"));
             const list = (t, a) => a.length ? `**${t} (${a.length})**\n` + a.slice(0, 40).map((n) => `- \`${n}\``).join("\n") + (a.length > 40 ? `\n- ...and ${a.length - 40} more` : "") + "\n\n" : "";
-            process.stdout.write(list("New methods", s.added) + list("Newly removed", s.newlyRemoved) + list("Back in the bundle", s.returned));
+            process.stdout.write(list("New methods", s.added) + list("Newly not in the client", s.newlyAbsent) + list("Back in the client", s.returned) + list("Parameters observed or changed", s.paramsAdded));
           ')
           if gh pr view datamine/update --json state -q .state 2>/dev/null | grep -q OPEN; then
             gh pr edit datamine/update --title "ReDocumented: sync with slack-datamine-plus build $BUILD" --body "$BODY"

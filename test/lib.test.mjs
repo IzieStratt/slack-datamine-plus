@@ -26,14 +26,25 @@ test('extractMethods keeps api names, drops hostnames', () => {
   assert.deepEqual([...known].sort(), ['chat.postMessage', 'conversations.history']);
 });
 
-test('mergeState keeps first_seen, updates last_seen, flags removed', () => {
+test('mergeState: first_seen kept, absent only after several misses, ours set when seen', () => {
   let s = mergeState({}, ['a.b', 'c.d'], '1', '2026-01-01');
+  assert.deepEqual(s['a.b'], { first_build: '1', first_seen: '2026-01-01', last_build: '1', last_seen: '2026-01-01', miss: 0, ours: true, absent: false });
   s = mergeState(s, ['a.b'], '2', '2026-01-02');
-  assert.deepEqual(s['a.b'], { first_build: '1', first_seen: '2026-01-01', last_build: '2', last_seen: '2026-01-02', removed: false });
-  assert.equal(s['c.d'].removed, true);
+  assert.equal(s['c.d'].absent, false); // one miss is not enough
+  s = mergeState(s, ['a.b'], '3', '2026-01-03');
+  assert.equal(s['c.d'].absent, false);
+  s = mergeState(s, ['a.b'], '4', '2026-01-04');
+  assert.equal(s['c.d'].absent, true); // third consecutive miss
   assert.equal(s['c.d'].last_build, '1');
-  s = mergeState(s, ['a.b', 'c.d'], '3', '2026-01-03');
-  assert.equal(s['c.d'].removed, false);
+  s = mergeState(s, ['a.b', 'c.d'], '5', '2026-01-05');
+  assert.equal(s['c.d'].absent, false); // back in the client
+  assert.equal(s['c.d'].miss, 0);
+});
+
+test('mergeState: legacy entries without miss that are not seen are absent, and `removed` is dropped', () => {
+  const s = mergeState({ 'x.y': { first_build: '9', first_seen: 'd', last_build: '9', last_seen: 'd', removed: true } }, [], '10', 'e');
+  assert.equal(s['x.y'].absent, true);
+  assert.ok(!('removed' in s['x.y']));
 });
 
 test('manifestChunks reads quoted and bare keys from the .u map', () => {

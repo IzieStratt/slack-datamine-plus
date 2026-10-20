@@ -7,6 +7,7 @@
 // Exits 0 on "nothing new", 2 on an unhealthy manifest (nothing is written), 3 on auth failure.
 import fs from 'node:fs';
 import path from 'node:path';
+import { extractParams, mergeParams, serializeParams } from './params.mjs';
 import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
@@ -91,16 +92,30 @@ async function pool(items, n, fn) {
   await Promise.all(Array.from({ length: n }, worker));
 }
 
+// state/params.json keeps the last observed parameter set per method, so a method that later drops out of the bundle keeps its params.
+function writeParams(params, build, date) {
+  const file = 'state/params.json';
+  const all = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+  for (const [method, keys] of params) {
+    if (!keys.size) continue;
+    all[method] = { build, seen: date, params: serializeParams(keys) };
+  }
+  const sorted = Object.fromEntries(Object.entries(all).sort(([a], [b]) => a.localeCompare(b)));
+  fs.writeFileSync(file, JSON.stringify(sorted, null, 1) + '\n');
+}
+
 async function main() {
   const date = new Date().toISOString().slice(0, 10);
   const prev = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, 'utf8')) : {};
   const prevMeta = fs.existsSync(`${OUT}/meta.json`) ? JSON.parse(fs.readFileSync(`${OUT}/meta.json`, 'utf8')) : {};
-  let buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), stats = {};
+  let buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), params = new Map(), stats = {};
 
   if (arg('from-dir')) {
     buildNumber = arg('build') || 'local';
     for (const f of fs.readdirSync(arg('from-dir')).filter((f) => f.endsWith('.js') && !isGrammarChunk(f))) {
-      const r = extractMethods(decode(fs.readFileSync(path.join(arg('from-dir'), f))));
+      const js = decode(fs.readFileSync(path.join(arg('from-dir'), f)));
+      const r = extractMethods(js);
+      mergeParams(params, extractParams(js));
       r.known.forEach((n) => names.add(n)); r.candidates.forEach((n) => candidates.add(n)); r.mentioned.forEach((n) => mentioned.add(n));
     }
     stats = { source: 'from-dir' };
@@ -130,6 +145,7 @@ async function main() {
       ok.push(file);
       if (isGrammarChunk(file)) return;
       const ex = extractMethods(r.js);
+      mergeParams(params, extractParams(r.js));
       ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n)); ex.mentioned.forEach((n) => mentioned.add(n));
       for (const f of chunkFiles(r.js)) if (!seen.has(f)) { seen.add(f); queue.push(f); }
     });
@@ -155,9 +171,10 @@ async function main() {
   fs.writeFileSync(`${OUT}/api-methods.txt`, [...names].sort().join('\n') + '\n');
   fs.writeFileSync(`${OUT}/api-candidates.txt`, [...candidates].sort().join('\n') + '\n');
   fs.writeFileSync(STATE, JSON.stringify(state, null, 1) + '\n');
-  const removed = Object.values(state).filter((e) => e.removed).length;
-  fs.writeFileSync(`${OUT}/meta.json`, JSON.stringify({ buildNumber, capturedDate: date, ...stats, apiMethods: names.size, tracked: Object.keys(state).length, removed }, null, 1) + '\n');
-  log(`build ${buildNumber}: ${names.size} methods, ${Object.keys(state).length} tracked, ${removed} removed`);
+  const absent = Object.values(state).filter((e) => e.absent).length;
+  writeParams(params, buildNumber, date);
+  fs.writeFileSync(`${OUT}/meta.json`, JSON.stringify({ buildNumber, capturedDate: date, ...stats, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length }, null, 1) + '\n');
+  log(`build ${buildNumber}: ${names.size} methods, ${Object.keys(state).length} tracked, ${absent} absent`);
   sh('changed', 'true');
 }
 main().catch((e) => { console.error(e); process.exit(1); });
