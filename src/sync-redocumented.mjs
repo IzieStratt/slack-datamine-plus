@@ -71,7 +71,8 @@ if (changed) {
     total: ms.length,
     not_in_client: ms.filter((m) => m.not_in_client).length,
     params_observed: ms.filter((m) => m.params_observed).length,
-    live_verified_undocumented: data.counts?.live_verified_undocumented ?? 0,
+    // same definitions as scripts/redocumented_counts.py in personal-site, which re-derives all counts when the build script runs
+    live_verified_undocumented: ms.filter((m) => m.status === 'undocumented' && m.verified === 'live-verified').length,
   };
   delete data.counts.removed;
   data.datamine_latest_build = { ...(data.datamine_latest_build || {}), build: meta.buildNumber, captured: meta.capturedDate };
