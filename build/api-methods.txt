@@ -150,7 +150,6 @@ client.codeChannels.getSummary
 client.codeChannels.join
 client.codeChannels.listSupportedApps
 client.codeChannels.mergePullRequest
-client.codeChannels.requestReviewers
 client.codeChannels.submitReview
 client.dms
 connectableContacts.lookup
@@ -209,9 +208,11 @@ files.completeUpload
 files.completeUploadForFileStore
 files.createCanvas
 files.disableCrossWorkspaceLinkSharing
+files.disableRestrictedSharing
 files.docs.fetchAccessLevelForUsers
 files.embedWithPermissions
 files.enableCrossWorkspaceLinkSharing
+files.enableRestrictedSharing
 files.external.checkPermission
 files.external.getOrCreate
 files.external.getProviders
@@ -222,6 +223,7 @@ files.generateAltText
 files.generateProviderTokenForFileStore
 files.generateThumbnails
 files.getContentHtml
+files.getMetadata
 files.getOverview
 files.getProviderPreviewUrlForFileStore
 files.getShares
@@ -238,7 +240,9 @@ files.readStatus
 files.recentlyDeleted
 files.requestPermission
 files.retranscribe
+files.revokePermission
 files.revokePublicURL
+files.setExcludeFromSlackAi
 files.share
 files.sharedPublicURL
 files.suggestions.list
@@ -431,6 +435,7 @@ sfdc.emailToCaseConfigs.resendVerification
 sfdc.emails.composer.defaults
 sfdc.emails.history
 sfdc.emails.send
+sfdc.events.searchAttendees
 sfdc.files.download
 sfdc.files.upload
 sfdc.getContactListInfo
@@ -513,6 +518,7 @@ stars.remove
 subscriptions.thread.clearAll
 subscriptions.thread.getView
 subscriptions.thread.mark
+team.changeInfo
 team.checkEmailDomains
 team.feature.getRequest
 team.feature.request
