@@ -13,7 +13,7 @@ const sinceArg = process.argv.indexOf('--since') > -1 ? process.argv[process.arg
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] }).trim();
 const show = (ref, f) => { try { return git('show', `${ref}:${f}`); } catch { return null; } };
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-const CAP = 150;
+const CAP = 25; // shown up front; the rest sits in an expander
 
 export const lines = (t) => new Set((t ?? '').split('\n').filter(Boolean));
 export function diffSets(a, b) {
@@ -27,8 +27,10 @@ export function diffExperiments(oldJson, newJson) {
   return { added: d.added.map((k) => (n[k].length ? `${k} [${n[k].join(', ')}]` : k)), removed: d.removed, groups };
 }
 
+// each category collapses; "…and N more" expands to the rest of the list (<details> still shows its content in readers that strip it)
+const li = (list, sign) => list.map((x) => `<li>${sign}<code>${esc(x)}</code></li>`).join('');
 const section = (title, list, sign) => list.length
-  ? `<h3>${esc(title)} (${list.length})</h3><ul>${list.slice(0, CAP).map((x) => `<li>${sign}<code>${esc(x)}</code></li>`).join('')}${list.length > CAP ? `<li>…and ${list.length - CAP} more</li>` : ''}</ul>` : '';
+  ? `<details open><summary><strong>${esc(title)} (${list.length})</strong></summary><ul>${li(list.slice(0, CAP), sign)}</ul>${list.length > CAP ? `<details><summary>…and ${list.length - CAP} more</summary><ul>${li(list.slice(CAP), sign)}</ul></details>` : ''}</details>` : '';
 
 function buildItem() {
   const base = sinceArg || git('rev-list', '-1', '--before=24 hours ago', 'HEAD') || git('rev-list', '--max-parents=0', 'HEAD').split('\n')[0];
@@ -56,7 +58,7 @@ function buildItem() {
 const itemsFile = path.join(site, 'items.json');
 const items = fs.existsSync(itemsFile) ? JSON.parse(fs.readFileSync(itemsFile, 'utf8')) : [];
 const item = buildItem();
-if (item && !items.some((i) => i.id === item.id)) items.unshift(item);
+if (item) { const at = items.findIndex((i) => i.id === item.id); if (at > -1) items[at] = item; else items.unshift(item); }
 const cutoff = new Date(Date.now() - 90 * 864e5).toISOString().slice(0, 10);
 const kept = items.filter((i) => i.date >= cutoff);
 fs.mkdirSync(site, { recursive: true });
