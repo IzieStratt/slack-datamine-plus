@@ -7,7 +7,9 @@
 // Exits 0 on "nothing new", 2 on an unhealthy manifest (nothing is written), 3 on auth failure.
 import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 import { extractParams, mergeParams, serializeParams } from './params.mjs';
+import { emptyExtras, extractExtras, finishExperiments, scanExperiments } from './extras.mjs';
 import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
@@ -108,14 +110,16 @@ async function main() {
   const date = new Date().toISOString().slice(0, 10);
   const prev = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, 'utf8')) : {};
   const prevMeta = fs.existsSync(`${OUT}/meta.json`) ? JSON.parse(fs.readFileSync(`${OUT}/meta.json`, 'utf8')) : {};
-  let buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), params = new Map(), stats = {};
+  let archive = null, buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), params = new Map(), stats = {}, chunkNames = [];
+  const extras = emptyExtras(), expParts = [];
+  const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); };
 
   if (arg('from-dir')) {
     buildNumber = arg('build') || 'local';
     for (const f of fs.readdirSync(arg('from-dir')).filter((f) => f.endsWith('.js') && !isGrammarChunk(f))) {
       const js = decode(fs.readFileSync(path.join(arg('from-dir'), f)));
       const r = extractMethods(js);
-      mergeParams(params, extractParams(js));
+      mergeParams(params, extractParams(js)); collect(js); chunkNames.push(f);
       r.known.forEach((n) => names.add(n)); r.candidates.forEach((n) => candidates.add(n)); r.mentioned.forEach((n) => mentioned.add(n));
     }
     stats = { source: 'from-dir' };
@@ -133,7 +137,7 @@ async function main() {
     const mUrl = manifestUrl(html);
     if (mUrl) {
       const r = await get(mUrl);
-      if (r.status === 200) manifestChunks(r.js).forEach((f) => queue.push(f));
+      if (r.status === 200) { manifestChunks(r.js).forEach((f) => queue.push(f)); archive = { manifest: r.js }; }
       else console.error(`webpack manifest fetch: HTTP ${r.status}`);
     }
     log(`manifest ${mUrl ?? 'not found'}: ${queue.length} chunk names`);
@@ -142,14 +146,14 @@ async function main() {
       if (isPhantom(file)) { phantom.push(file); return; }
       const r = await get(info.cdn + file);
       if (r.status !== 200) { missing.push({ file, status: r.status }); return; }
-      ok.push(file);
+      ok.push(file); chunkNames.push(file);
       if (isGrammarChunk(file)) return;
       const ex = extractMethods(r.js);
-      mergeParams(params, extractParams(r.js));
+      mergeParams(params, extractParams(r.js)); collect(r.js);
       ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n)); ex.mentioned.forEach((n) => mentioned.add(n));
       for (const f of chunkFiles(r.js)) if (!seen.has(f)) { seen.add(f); queue.push(f); }
     });
-    stats = { discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
+    stats = { cdn: info.cdn, manifestUrl: mUrl, versionHash: info.versionHash, versionTs: info.versionTs, discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
     log(JSON.stringify(stats));
     if (ok.length < MIN_CHUNKS) {
       console.error(`unhealthy manifest: only ${ok.length} real chunks (< ${MIN_CHUNKS}). Not writing anything.`);
@@ -173,7 +177,26 @@ async function main() {
   fs.writeFileSync(STATE, JSON.stringify(state, null, 1) + '\n');
   const absent = Object.values(state).filter((e) => e.absent).length;
   writeParams(params, buildNumber, date);
-  fs.writeFileSync(`${OUT}/meta.json`, JSON.stringify({ buildNumber, capturedDate: date, ...stats, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length }, null, 1) + '\n');
+  const exp = finishExperiments(expParts);
+  const counts = {};
+  for (const [cat, set] of Object.entries(extras)) {
+    counts[cat] = set.size;
+    if (set.size) fs.writeFileSync(`${OUT}/${cat}.txt`, [...set].sort().join('\n') + '\n');
+  }
+  // keep the manifest bytes and the entry-script list so this build can be re-mined later (Slack retires whole CDN buckets)
+  if (archive) {
+    fs.mkdirSync(`${OUT}/archive`, { recursive: true });
+    fs.writeFileSync(`${OUT}/archive/${buildNumber}.manifest.js.gz`, zlib.gzipSync(archive.manifest, { level: 9 }));
+  }
+  fs.writeFileSync(`${OUT}/chunks.txt`, chunkNames.sort().join('\n') + '\n');
+  // no selector module found = the extractor broke or the chunk was missing: keep the previous experiments files rather than emptying them
+  if (exp.selectorModules) {
+    fs.writeFileSync(`${OUT}/experiments.json`, JSON.stringify(exp.experiments, null, 1) + '\n');
+    fs.writeFileSync(`${OUT}/experiments.txt`, Object.keys(exp.experiments).join('\n') + '\n');
+  } else console.error('experiments: selector module not found, keeping previous experiments files');
+  counts.experiments = Object.keys(exp.experiments).length;
+  counts.experimentsWithGroups = Object.values(exp.experiments).filter((g) => g.length).length;
+  fs.writeFileSync(`${OUT}/meta.json`, JSON.stringify({ buildNumber, capturedDate: date, ...stats, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length, chunks: chunkNames.length, mined: counts }, null, 1) + '\n');
   log(`build ${buildNumber}: ${names.size} methods, ${Object.keys(state).length} tracked, ${absent} absent`);
   sh('changed', 'true');
 }

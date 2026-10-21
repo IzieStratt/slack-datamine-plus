@@ -1,0 +1,54 @@
+name: feed
+
+# Daily "what changed" RSS feed, committed to personal-site under website/public/__subdomains/slackdatamineplus/
+# and served by the site's worker at https://slackdatamineplus.izie.top/ (feed: /feed.xml). Needs secret REDOC_TOKEN (contents:write there).
+on:
+  schedule:
+    - cron: '30 6 * * *' # once a day, 06:30 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: feed
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  feed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22
+      - name: Check out personal-site
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: IzieStratt/personal-site
+          token: ${{ secrets.REDOC_TOKEN }}
+          persist-credentials: false
+          path: personal-site
+      - name: Build the feed
+        run: node src/feed.mjs personal-site/website/public/__subdomains/slackdatamineplus https://slackdatamineplus.izie.top
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ secrets.REDOC_TOKEN }}
+        run: |
+          cd personal-site
+          if [ -z "$(git status --porcelain)" ]; then echo "no change"; exit 0; fi
+          git config user.name "Izie"
+          git config user.email "238573415+IzieStratt@users.noreply.github.com"
+          git add -A
+          git commit -q -m "slackdatamineplus feed $(date -u +%F)" \
+            -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
+          AUTH="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          for i in 1 2 3; do
+            git -c "http.https://github.com/.extraheader=$AUTH" push origin HEAD:main && exit 0
+            git -c "http.https://github.com/.extraheader=$AUTH" pull --rebase origin main
+          done
+          echo "push to personal-site main failed"; exit 1
