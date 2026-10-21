@@ -67,5 +67,25 @@ ${kept.map((i) => `<item><title>${esc(i.title)}</title><guid isPermaLink="false"
 </channel></rss>
 `;
 fs.writeFileSync(path.join(site, 'feed.xml'), rss);
-fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>slack-datamine-plus changes</title><link rel=alternate type=application/rss+xml href=feed.xml><body style="font:16px system-ui;max-width:48rem;margin:2rem auto;padding:0 1rem"><h1>slack-datamine-plus changes</h1><p><a href=feed.xml>RSS feed</a></p>${kept.map((i) => `<h2>${esc(i.title)}</h2>${i.html}`).join('')}`);
+// uses the site's own stylesheet and theme script (dark mode toggle) from the root of *.izie.top
+fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>slack-datamine-plus changes</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="alternate" type="application/rss+xml" href="feed.xml">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/cdn/theme.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>slack-datamine-plus changes</h1>
+      <p><a href="feed.xml">RSS feed</a></p>
+${kept.map((i) => `      <h2>${esc(i.title)}</h2>\n${i.html}`).join('\n')}
+    </main>
+  </body>
+</html>
+`);
 console.log(item ? `added ${item.title}` : 'no changes today');
