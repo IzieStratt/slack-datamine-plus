@@ -61,14 +61,6 @@
 #{channelName} was archived because it moved from {oldState} to {newState}. The contents will still be browsable and available in search.
 #{channelName} was unarchived because it moved from {oldState} to {newState}.
 $ {amount} USD
-$10 per team / month
-$100 per team / month
-$12 per user / month
-$120 per user / year
-$25 per user / month
-$40 per team / month
-${price} per user / month after first 5 users
-${price} per user / year after first 5 users
 's information
 (All Sheets)
 (Don\u2019t worry, your other file is next.)
@@ -98,12 +90,36 @@ ${price} per user / year after first 5 users
 (you)
 ({memberCount} people)
 ({selectedFileCount} of {maxFileUploadCount} selected)
+*{agent_name}* can be added in Channel Settings.
+*{agent_name}* can be removed in Channel Settings.
+*{cmd}* can only invite a user to a single channel.
+*{cmd}* can only invite one user. Try the invite shortcut to add multiple users!
+*{cmd}* can\u2019t invite people to channels outside this workspace.
+*{cmd}* can\u2019t leave channels outside this workspace.
+*{cmd}* can\u2019t open or join channels outside this workspace.
+*{cmd}* can\u2019t send message to channels outside this workspace.
+*{cmd}* can\u2019t send message to user groups.
 *{command}* failed because the app did not respond. Please try again or contact the app developer.
 *{command}* failed because you are not allowed to perform that action. Talk to your Workspace Owner.
 *{command}* failed with an unknown error.
 *{command}* is not supported in threads. Sorry!
 *{everyone}* has been disabled in this channel, so your message cannot be sent.
+*{input}* is not a recognized member name.
 *{key_word}* has been disabled in this channel, so your message cannot be sent.
+*{member_name}* can\u2019t be invited to this channel because they\u2019re from outside your organization.
+*{member_name}* can\u2019t be invited to this channel because they\u2019re from outside your organization. If you\u2019d like, you can share this channel with {team_name}. <https://get.slack.help/hc/articles/115004151183|Learn more>
+*{member_name}* can\u2019t be invited to this channel because they\u2019re not on Slack.
+*{member_name}* from *{team_name}* isn\u2019t in this channel. If you\u2019d like to add them to the channel, you\u2019ll need to ask someone from *{host_name}* to invite them.
+*{user}* can\u2019t be invited to this channel right now because they don\u2019t have access to the record channels pilot feature. The product development team has been notified of this request, nothing more to do here!
+*{user}* can\u2019t be invited to this channel right now.
+*{user}* is a Multi-Channel Guest. Only your Workspace Admin can invite them to a public channel.
+*{user}* is a Single-Channel Guest and can\u2019t be added to a second channel. To invite {user} to this channel, you\u2019ll need to <{team_url}admin#restricted|upgrade their membership> to a Multi-Channel Guest. \u200BNote: This will add a billable seat to your workspace.
+*{user}* is a Single-Channel Guest and can\u2019t be added to a second channel. Your Workspace Admin can upgrade their membership to a Multi-Channel Guest.
+*{user}* is already in {maxChannels} channels, the limit for Frontline members.
+*{user}* is not a member of any workspaces associated with this channel.
+*{user}* is not a member of this {channel}.
+*{user}* is not a member of {team_name}.
+*{user}* is not a member of {workspaces}.
 + Add bullet
 + Add link
 + {additionalDescriptionsCount} more
@@ -214,6 +230,12 @@ ${price} per user / year after first 5 users
 :wave: Hello, all!
 :wave: Hello, team!
 :wave: Hi everyone!
+:wave: Hi there, we changed your font to your language\u2019s default.
+:wave: Hi there, we changed your font to {supportedFont}. You can always change this in <{fontPreferenceDeepLink}|Appearance preferences>.
+:wave: Hi there, we changed your font to {supportedFont}. You can always change this in Appearance preferences.
+:wave: Hi there, we don\u2019t provide support for this font in your language, so you may run into display issues.
+:wave: Hi there, we don\u2019t provide support for this font, so you may run into display issues. You can switch to an officially supported font in <{fontPreferenceDeepLink}|Appearance preferences>.
+:wave: Hi there, we don\u2019t provide support for this font, so you may run into display issues. You can switch to an officially supported font in Appearance preferences.
 :wave: Hi {name}
 :wave: I\u2019m in!
 :wave: I\u2019ve set up an email address for this channel:
@@ -320,7 +342,9 @@ A specific workspace
 A task was completed
 A teammate just said hello :wave:
 A to Z
+A valid 6 character hex code is required, like `FF0000`.
 A valid channel name is required.
+A valid member name is required.
 A variable with this name already exists
 A video call happened
 A voice call happened
@@ -505,10 +529,12 @@ Add Output
 Add People
 Add Question
 Add Reaction
+Add Review Comment
 Add Sales Elevate users to a Salesforce permission set
 Add Salesforce Org
 Add Salesforce org
 Add Section
+Add Single Comment
 Add Step
 Add Subtask
 Add Task
@@ -706,11 +732,9 @@ Add reaction\u2026
 Add record
 Add relevant people to your workspace
 Add reminder
-Add review comment
 Add section
 Add section?
 Add shortcut
-Add single comment
 Add skill
 Add skills to this skill set
 Add slide here
@@ -914,10 +938,12 @@ All items
 All logs
 All media
 All members of a user group are automatically added to its default channels.
+All members of this workspace are meant to be in *{channel}*, so you won\u2019t be able to remove anyone.
 All new posts
 All new sales notifications created will use the updated mapping to determine when they should send.
 All notifications created by anyone will be deleted immediately.
 All of Slack\u2019s functionality in a compact, more predictable layout designed to be easier to navigate and promote focus.
+All of the users in that user group are already in this channel.
 All of those files are too large and cannot be uploaded. Please contact your Box admin for file size limit.
 All of those files are too large and cannot be uploaded. The limit is {limit}.
 All opportunities
@@ -1098,6 +1124,7 @@ Any amount change
 Any changes to your email?
 Any email sent or forwarded to this address will be posted directly to {channelDisplayName} :sparkles:
 Any file type
+Any files that are saved or shared will show up here.
 Any location
 Any status
 Any templates you build or manage will show up here.
@@ -1841,6 +1868,7 @@ Channel list
 Channel managers can limit channel access to the people who can access the record or allow everyone in your organization to find the record.
 Channel member suggestions
 Channel membership
+Channel muted
 Channel names can\u2019t contain spaces, periods, or most punctuation. Try again?
 Channel navigation bar showing tabs for Messages, Canvas, and Workflows in Slack, with the Workflows tab selected.
 Channel notification overrides
@@ -1860,6 +1888,7 @@ Channel suggestions collapsed
 Channel summary
 Channel topics can only include up to {max} characters \u2014 please make this topic shorter.
 Channel types
+Channel unmuted
 Channel views
 Channel {channelName}
 Channels
@@ -2188,6 +2217,7 @@ Complete Migration
 Complete all overdue to-dos?
 Complete all to-dos?
 Complete an action just by sending a message. Type / in any conversation to see the slash commands available to you.
+Complete the following steps to get started
 Complete to-do
 Complete to-dos
 Complete to-dos overdue 30+ days?
@@ -2229,6 +2259,7 @@ Confirmations and warnings
 Confusing wording
 Connect
 Connect (opens in new window)
+Connect Accounts
 Connect Another Account
 Connect Gmail
 Connect Gmail (opens in a new tab)
@@ -2244,6 +2275,7 @@ Connect Your Support Email
 Connect a Salesforce org to add conditions
 Connect a calendar
 Connect account
+Connect accounts
 Connect an email account to import emails
 Connect an email account to send directly from Slack
 Connect an existing Salesforce organization
@@ -2520,6 +2552,7 @@ Couldn\u2019t clear your to-do. Try again?
 Couldn\u2019t connect to Salesforce
 Couldn\u2019t connect to {name}. The server may be unavailable.
 Couldn\u2019t connect to {name}. Try disconnecting and reconnecting.
+Couldn\u2019t copy huddle link. Try again.
 Couldn\u2019t create a new account record
 Couldn\u2019t create a new contact record
 Couldn\u2019t create new related account. An existing match was automatically selected.
@@ -2607,8 +2640,14 @@ Create VIP unreads section
 Create Win Story
 Create Workflow
 Create a Channel
+Create a Code Channel
+Create a Google Document
+Create a Google Presentation
+Create a Google Spreadsheet
+Create a Google file
 Create a Salesforce Channel
 Create a Section
+Create a Session Channel
 Create a Sidekick
 Create a Workflow
 Create a canvas
@@ -2791,7 +2830,9 @@ Cyan60
 Cyan70
 Cypher
 DM
+DM muted
 DM notifications have changed
+DM unmuted
 DM with {name}
 DMs
 DMs and group DMs
@@ -2809,6 +2850,7 @@ Dang
 Danger (red)
 Dark
 Darker sidebars
+Darn, that didn\u2019t work. Try again or <https://my.{prodRootDomain}/help/requests/new|contact us> if it\u2019s still not working.
 Dart
 Dashboard
 Dashboard actions
@@ -2846,6 +2888,7 @@ Date filter value
 Date picker
 Date range
 Date range is limited to {maxRange} days
+Date to snooze notifications until
 Day
 Day offset range
 Day(s) after
@@ -3556,6 +3599,7 @@ Every {interval} weeks
 Every {interval} years
 Everyone
 Everyone available
+Everyone except VIPs
 Everyone in #{channelName} can use Slackbot.
 Everyone in the channel will be able to view this file once it\u2019s added as a tab.
 Everyone in your organization has the ability to edit.
@@ -3574,6 +3618,7 @@ Everything
 Everything else
 Everything in Pro, plus\u2026
 Everything you need to know to get started and get to work in Slack.
+Ex. #general
 Ex. #project-unicorn
 Ex. Account
 Ex. I\u2019m currently out of office and I won\u2019t be checking Slack.
@@ -3582,6 +3627,7 @@ Ex. Opportunities closing soon
 Ex. Opportunities, accounts, cases
 Ex. Project tracker
 Ex. This is not for a legitimate business purpose
+Ex. Zoe Maxwell
 Ex. {dealAmountValue}
 Ex. {email1}, {email2}
 Ex. {objectType}
@@ -3974,6 +4020,7 @@ Follow opportunities through the sales cycle
 Follow thread
 Follow up with Slackbot on suggested focus areas
 Follow up with leads and track deals without leaving Slack
+Followed thread
 Following the thread in {label}
 Following your conversation with {label}
 Following your group conversation
@@ -4166,6 +4213,7 @@ Get context on past discussions
 Get different push notifications on mobile
 Get fields from another step
 Get help
+Get help or support
 Get in the Halloween spirit
 Get in the spirit with a silly status
 Get more from {skillName}
@@ -4259,6 +4307,7 @@ Go online to change your language.
 Go online to get the latest threads.
 Go online to load details.
 Go online to load more threads.
+Go to Agents Tab
 Go to Channel
 Go to Lists
 Go to app
@@ -4334,6 +4383,8 @@ Greeting card image
 Greeting card video
 Groovy
 Group
+Group DM muted
+Group DM unmuted
 Group Folders
 Group and organize your files
 Group by
@@ -4463,6 +4514,7 @@ Here\u2019s what will happen when you update the mapping:
 Here\u2019s what your team will miss if you don\u2019t upgrade.
 Here\u2019s where you can get back to creating and managing custom notifications.
 Hey there! I\u2019m Slackbot.
+Hey, I just saw an alert that our workspace payment failed. Can you take care of the billing so our plan won\u2019t expire? Here\u2019s the link to 
 Hey, I\u2019m Slackbot!
 Hey, team! Here are a few tips\u2026
 Hi everyone!
@@ -4524,6 +4576,7 @@ Hours
 How can we help?
 How do I use Slack?
 How does the {discountDuration}-month {discountOfferPercent}% discount work?
+How does this impact your current use of Slack or how could it potentially improve your use of Slack in the future?
 How does your team use Slack?
 How does {teamName} use Slack?
 How is the transcript?
@@ -4567,6 +4620,7 @@ Hyphen
 I Want This
 I agree
 I can help you do your best work in Slack.
+I couldn\u2019t find a channel named \u201C{channel_name}\u201D, sorry!
 I couldn\u2019t hear others
 I don\u2019t like how the feature works
 I found this article confusing or difficult to read
@@ -4577,6 +4631,7 @@ I have an update on\u2026
 I have some cool new AI-powered capabilities, but they\u2019re only available on some paid plans.
 I just reviewed it, and I\u2019m ready to provide feedback
 I love it!
+I understand that this feedback goes to our product team only, and that I won\u2019t receive a response from Slack support.
 ICE negotiation failed
 ISO/IEC-27001 certification
 ISO/IEC-27017 attestation
@@ -4590,6 +4645,8 @@ I\u2019m in!
 I\u2019m out of office until {date}.
 I\u2019m your personal AI agent for work right here in Slack.
 I\u2019ve arrived!
+I\u2019ve collapsed all files in this channel for you.
+I\u2019ve expanded all files in this channel for you.
 Icon
 Icon must be a .gif, .jpg, or .png.
 Icon must be at least {minimumIconWidth} x {minimumIconHeight} pixels.
@@ -4603,6 +4660,7 @@ Identifying key decisions and action items\u2026
 Idle
 If I\u2019m not active for more than 2 weeks, send me a mobile notification, summarizing activity I\u2019ve missed
 If any of these appear, the workflow won\u2019t trigger.
+If this channel is public for {memberName}'s org, and they are still connected, they can rejoin.
 If this happens, you\u2019ll need to add this org again and recreate any Sales notifications you set up.
 If you can\u2019t find a conversation, try searching for it by name.
 If you could be any animal\u2026
@@ -4850,11 +4908,14 @@ Ironing folds\u2026
 Is it OK to send this?
 Is there anything else you\u2019d like to share?
 It appears you haven\u2019t authenticated {providerName} for Slack yet.
+It looks like *{user}* isn\u2019t in an IDP group connected to {formattedChannelName}, so it\u2019s not possible to add them to this channel.
 It looks like setting the channel topic didn\u2019t work, for some reason. Try again?
+It looks like this user group has some users who aren\u2019t in an IDP group connected to {formattedChannelName}, so it\u2019s not possible to add them to this channel.
 It looks like you don't have any responses yet. When responses come in, you can download them here.
 It looks like you don\u2019t have access to this record in Salesforce.
 It looks like you don\u2019t have permission to change the channel topic. Please check with your workspace admin.
 It looks like you\u2019re still working on this. You will lose the info you\u2019ve entered so far if you leave now.
+It looks like your browser is blocking popups so here\u2019s a link to your <{url}|document>
 It looks like {inviteesCount, plural, =1 {this user isn\u2019t} other {these users aren\u2019t}} in an IDP group connected to #{channelName}, so it\u2019s not possible to add them to this channel.
 It may be that you don\u2019t have any files yet, or that there aren\u2019t any that fit your current filters.
 It should contain only emails for each person to be added, separated by commas.
@@ -4959,6 +5020,7 @@ June
 Just a bit more digging\u2026 the summary is on its way!
 Just a preview here, friend!
 Just a quick restart and your Slack app will be all up to date. Curious what\u2019s new? 
+Just a reminder that this is a private channel. You may want to check that you\u2019re not sharing sensitive information.
 Just arrived! What\u2019d I miss?
 Just display names
 Just for Japan: a button for sending
@@ -5039,8 +5101,10 @@ Language
 Language & region
 Languages you know
 Last
+Last 12 months
 Last 24 hours
 Last 3 months
+Last 3 years
 Last 30 days
 Last 6 months
 Last 7 days
@@ -5339,7 +5403,6 @@ Logged out
 Login to Add
 Login to Salesforce
 Logins from this IP range can\u2019t perform certain actions. Your Salesforce admin can help with that.
-Logistic regression with stars
 Logout of Tableau Next
 Look at PR comments
 Look for it in the More menu.
@@ -5365,6 +5428,7 @@ Looks like you don\u2019t have access to this list
 Looks like you don\u2019t have permission to create records in {name}.
 Looks like you don\u2019t have permission to link that channel.
 Looks like you don\u2019t have permission to log activities in {name}.
+Looks like you\u2019re on a free plan. Adding more people to a conversation is a paid feature, available with an upgrade.
 Looks like you\u2019re unable to create this channel. Please contact your Sales admin to learn more.
 Looks like your content contains markdown.
 Looks like your content contains rich markdown.
@@ -5709,6 +5773,7 @@ Missing
 Missing Data
 Missing edit permissions
 Missing field
+Missing input values
 Missing next steps
 Missing words or phrases
 Mobile app
@@ -5755,7 +5820,6 @@ More conversations
 More detail
 More details
 More email actions
-More filters
 More folder actions
 More information about Calendar here.
 More information about including skills
@@ -6244,8 +6308,10 @@ Note that deleting this message will not delete the snippet that was uploaded.
 Note that deleting this message will not unshare the file.
 Note that deleting this message will not unshare the post.
 Note that deleting this message will not unshare the snippet.
+Note that:
 Note to self\u2026
 Note: This will not revoke existing tokens, only remove them from Slack systems. You might be able to revoke them from the provider\u2019s site.
+Note: Translations are visible only to you \u2014 others will only see the original.
 Note: this setting is for this computer only and affects all workspaces you are signed in to.
 Note: this setting is for this computer only. You may need to restart Slack to receive app updates.
 Notes and files shared in your huddles will show up here.
@@ -6256,6 +6322,7 @@ Nothing found
 Nothing from your huddles yet
 Nothing here
 Nothing here at the moment
+Nothing here yet
 Nothing here yet. Use the star on any file to add it to this section.
 Nothing here. That shortcut might not exist\u2026yet.
 Nothing left to redo
@@ -6296,6 +6363,7 @@ Notifications created by admin
 Notifications created by you
 Notifications for Slack are disabled in your macOS System Settings. To receive push notifications, you\u2019ll need to enable them in System Settings.
 Notifications for comments, access requests, and new shares
+Notifications resumed
 Notifications set to all new posts
 Notifications set to just mentions
 Notifications set to nothing
@@ -6309,6 +6377,7 @@ Notify everyone
 Notify me for all-day events
 Notify me whenever someone joins using the link or QR code.
 Notify me whenever someone joins using this link
+Notify owner
 Notify pending members
 Notify the new owner
 Notify you about\u2026
@@ -6367,6 +6436,7 @@ Office
 Offline
 Oh heck yeah
 Oh no!
+Oh no! I couldn\u2019t import your newly created file
 Oh, hello!
 Ohana
 Ok
@@ -6416,6 +6486,7 @@ Online {ago}
 Only .csv files are currently supported.
 Only 1 table can be attached to each message. 
 Only 9 people can be in a direct message.
+Only 9 people can be in a group DM (including you). Create a private channel to add more.
 Only AI-generated content can be edited
 Only Show Link
 Only Workspace Admins (or the channel creator) are allowed to rename channels.
@@ -6760,12 +6831,15 @@ Paste with Comments
 Paste with Comments?
 Paste your legacy theme colors
 Pause
+Pause Notifications
 Pause for all except VIPs
 Pause notifications
+Pause notifications for
 Pause notifications for everyone
 Pause notifications for everyone except VIPs
 Pause notifications for\u2026
 Pause notifications until status is cleared
+Pause notifications until\u2026
 Pause notifications\u2026
 Pause recording
 Pause this workflow
@@ -6933,6 +7007,7 @@ Please select one
 Please select one or more roles.
 Please select one or more users.
 Please select the questions to show to the user
+Please specify someone to remove!
 Please try again in a bit
 Please try again in a few minutes, or forward it as a message.
 Please try again in a few minutes.
@@ -7010,7 +7085,6 @@ Press {keys} to find or create a direct message. Press delete to remove a direct
 Prevent downgrade today
 Preview
 Preview AI response
-Preview Form
 Preview Your Invitation
 Preview Your Recap
 Preview click preference saved
@@ -7130,6 +7204,7 @@ Protect your organization and data
 Protect your organization data
 Protect your workspace with SSO
 Prototype
+Provide Inputs
 Provide some details or suggest improvements
 Provide some details or suggest improvements (300 chars max)
 Provide the below inputs to test run this step
@@ -7422,7 +7497,9 @@ Remove Preview
 Remove Task
 Remove Workflow
 Remove access
+Remove agent
 Remove agent from channel
+Remove agent from channel?
 Remove all items with errors
 Remove and Block
 Remove app from your top bar
@@ -7528,6 +7605,7 @@ Remove {count, plural, one {this person} other {# people}}?
 Remove {fileName}
 Remove {fileName} from message
 Remove {memberName}
+Remove {memberName} from {channelName}?
 Remove {name} from selection
 Remove {name} from this canvas?
 Remove {name} from this folder?
@@ -7540,6 +7618,9 @@ Removed item
 Removed {count, plural, =1 {# file} other {# files}} from their sections.
 Removed:
 Removing a reaction from a message
+Removing members from public channels has been restricted by a Workspace Owner or Admin. Try contacting them for help!
+Removing someone from a channel is a restricted action.
+Removing someone from a private channel is a restricted action.
 Removing someone from a user group
 Removing this tab will disable the automatic nightly refresh of the Channel Knowledge Canvas for this channel. You can re-enable it later.
 Removing yourself as a template manager means you\u2019ll immediately lose access to edit this template. To become a template manager of this template again, a current manager will need to add you.
@@ -7613,6 +7694,7 @@ Reposition the cover image
 Request
 Request Access
 Request Access to Today
+Request Changes
 Request Customer Management
 Request Review
 Request Today Access
@@ -7623,7 +7705,6 @@ Request access to Elevate
 Request already sent
 Request an Upgrade
 Request an upgrade to Business+
-Request changes
 Request denied.
 Request edit access
 Request review
@@ -7731,6 +7812,7 @@ Reveal DMs, Activity and other views
 Reveal Views
 Review
 Review & Add
+Review AI workflow access
 Review AI-generated content
 Review Changes
 Review Conversations
@@ -7756,6 +7838,7 @@ Review this message before sending
 Review this message before sharing
 Review type
 Review what\u2019s ahead
+Review workflow access
 Reviewing findings\u2026
 Revoke
 Revoke access
@@ -7983,6 +8066,7 @@ Search DMs
 Search GIFs Instead
 Search Google Workspace Directory
 Search Microsoft Outlook Contacts
+Search More
 Search Slack for any additional context that might help me make a more informed approval decision.
 Search Slackbot conversations
 Search accounts
@@ -8036,6 +8120,7 @@ Search for canvases
 Search for channel
 Search for channel or person
 Search for channels
+Search for conversation
 Search for lists
 Search for new owner
 Search for objects
@@ -8064,7 +8149,6 @@ Search members
 Search message shortcuts\u2026
 Search messages in this channel ({shortcut})
 Search messages older than 90 days
-Search more
 Search objects\u2026
 Search options
 Search or create tag
@@ -8147,6 +8231,7 @@ See all statuses
 See all your unreads in one place
 See all {count, plural, =1 {# attendee} other {# attendees}}
 See all {section}
+See all {slackActionsCount} related actions
 See all {total} fields
 See and update your record
 See details
@@ -8283,6 +8368,8 @@ Select spreadsheet rows
 Select target
 Select text to beginning of current line
 Select text to end of current line
+Select the canvas you wish to run this workflow from
+Select the conversation you wish to run this workflow from
 Select the expiration for your link
 Select the invite type (member, frontline, guest)
 Select the invite type (member, guest)
@@ -8448,6 +8535,7 @@ Set a status
 Set as absolute value
 Set as default for huddle notes
 Set as default for huddle notes?
+Set as default translation language
 Set as percentage
 Set assignee
 Set date
@@ -8529,6 +8617,7 @@ Share message
 Share message\u2026
 Share private {file_count, plural, =1 {file} other {files}} and {file_count, plural, =1 {its} other {their}} comments?
 Share private {file_count, plural, =1 {file} other {files}}?
+Share product feedback
 Share record
 Share section
 Share skill
@@ -8542,6 +8631,8 @@ Share this canvas with someone from {connectedTeamName}?
 Share this channel section
 Share this clip
 Share this dashboard
+Share this document
+Share this event
 Share this file
 Share this file?
 Share this folder
@@ -8569,6 +8660,7 @@ Share with:
 Share workflow
 Share your anniversary?
 Share your canvas with others.
+Share your feedback
 Share your workflow
 Share {demonstrative} with someone from {firstConnectedTeamName}?
 Share {demonstrative} {canvasNumber} with someone from {firstConnectedTeamName}?
@@ -8629,6 +8721,7 @@ Show Edit History
 Show Me
 Show Me Around
 Show Message
+Show More
 Show Pinned
 Show Preview Panel
 Show Slackbot in the navigation bar
@@ -8861,7 +8954,6 @@ Slackbot can read the items in each list when they\u2019re relevant to your ques
 Slackbot conversations will notify in Activity and Threads
 Slackbot couldn\u2019t respond. Give it another try.
 Slackbot does the work for you
-Slackbot ended the call
 Slackbot has responded
 Slackbot has sent the admin who started the migration a CSV file containing all un-migrated users you could use as a starting point.
 Slackbot has some cool new AI-powered capabilities, but they\u2019re only available on some paid plans.
@@ -9010,6 +9102,7 @@ Sorry could not delete link, Please retry.
 Sorry could not save link. Please check if the link is a valid url.
 Sorry something went wrong and we could not send the emails, please try again.
 Sorry! Something went wrong. Please try again.
+Sorry! The name of that file is too long for us to handle. Please try importing a file with a shorter filename.
 Sorry! This part didn\u2019t render correctly.
 Sorry! We can\u2019t create an anchor link that leads to work you did while offline. Try again once you have an internet connection.
 Sorry, but URLs are not allowed in the custom message. Please remove it and try again!
@@ -9032,7 +9125,9 @@ Sorry, we\u2019re having trouble loading that one.
 Sorry, you can\u2019t add a custom message to this invite. Please remove it and try again!
 Sorry, you can\u2019t archive this channel because it is the only channel one of the guest account members belongs to.
 Sorry, you can\u2019t archive this channel because it is the only channel one of the guest account members belongs to. If you first disable the guest account, you will then be able to archive the channel.
+Sorry, you can\u2019t perform this action.
 Sorry, you do not have permission to delete this message
+Sorry, you\u2019ve hit the rate limit. You\u2019ll be able to try again soon.
 Sorry, your message is too long. Please shorten it and try again.
 Sort
 Sort and limit
@@ -9103,6 +9198,7 @@ Start Workflow
 Start a DM
 Start a Free Trial
 Start a Huddle
+Start a Review
 Start a conversation in a DM or channel
 Start a conversation with an agent
 Start a direct message
@@ -9119,7 +9215,6 @@ Start a huddle in thread\u2026
 Start a new chat
 Start a new line
 Start a new message
-Start a review
 Start a task with a coding agent
 Start a thread
 Start a trial to invite people with Slack Connect
@@ -9171,8 +9266,6 @@ Started {minutes, plural, =1 {# minute} other {# minutes}} ago
 Started {weeks} weeks ago
 Starter
 Starter Plan
-Starter Price Annual
-Starter Price Monthly
 Starting a huddle
 Starting a manual migration will sync all user permissions, so make sure you\u2019ve set permissions for selected Salesforce users before starting. After starting, reach out to your Slack partner to monitor and complete the migration progress.
 Starting a workflow from a link, on a schedule, when an emoji reaction is used, and when a person joins a channel.
@@ -9528,9 +9621,6 @@ Tasks performed: {title}
 Team
 Team Member Actions
 Team Plan
-Team Plan, 10 people
-Team Plan, 20 people
-Team Plan, 30 people
 Team channels and direct messages
 Team not able to upload files
 Team photo
@@ -9587,6 +9677,8 @@ Text emphasis formatting options
 Text field content
 Text file icon
 Thank you
+Thank you for helping us make Slack better
+Thank you for submitting a performance profile to Slack!
 Thank you! You\u2019re helping us make Slack better.
 Thanks for letting us know! Your feedback helps us improve Agentforce for everyone.
 Thanks for letting us know! Your feedback helps us keep the good stuff coming.
@@ -9595,6 +9687,7 @@ Thanks for the feedback
 Thanks for your feedback!
 That URL is unavailable. Please choose another.
 That access has already been removed.
+That channel has been archived.
 That channel name can\u2019t be used. Try a different one.
 That code wasn't valid. Give it another go!
 That code\u2019s no longer valid. Check your email for a new code and try again.
@@ -9617,8 +9710,10 @@ That looks like a Tableau Next link. To view this {tableauType} in Slack, you ne
 That looks like a Tableau Next link. To view this {tableauType} in Slack, you need to update your Tableau Next password. Have you updated your Tableau Next password?
 That looks like a Tableau Next link. To view this {tableauType} in Slack, you need to update your Tableau Next password. Would you like to update your Tableau Next password?
 That name or description can\u2019t be used. Try editing it.
+That private channel has been archived.
 That shortcut might not exist\u2026yet.
 That took longer than expected
+That user has been deactivated.
 That workspace name is too long. 
 That\u2019s a bit too long to paste
 That\u2019s a very nice photo, but it\u2019s a bit too big. Try one that\u2019s smaller than 2 MB.
@@ -9745,6 +9840,7 @@ There was a problem connecting to Google Drive. Give it another try in a few min
 There was a problem connecting your calendar. Try again to bring upcoming meetings into view.
 There was a problem connecting. Give it another try in a few minutes.
 There was a problem creating your Google Drive file. Give it another try in a few minutes.
+There was a problem joining \u201C{channel_name}\u201D, sorry!
 There was a problem loading activity for this workflow. Give it another try in a few minutes.
 There was a problem loading advanced conditions.
 There was a problem loading agents. Please try again.
@@ -9778,6 +9874,7 @@ There was a problem uploading this file. Give it another try.
 There was a problem verifying your email. Try connecting your inbox again.
 There was an error checking access to this object. Some fields may not be available.
 There was an error configuring Google Auth. Please try again or choose a different account.
+There was an error connecting your account. Try again.
 There was an error copying your workflow.
 There was an error creating your template.
 There was an error deleting your step.
@@ -9799,6 +9896,7 @@ There was an error updating your workflow.
 There was an issue connecting to {name}.
 There was an issue summarizing this file. This may be because of the format, or because it\u2019s password protected.
 There were too many attempts to submit an email address. Try again in a few minutes.
+There\u2019s a few more inputs required for the workflow to start.
 There\u2019s no activity to show yet.
 These accounts have been deactivated.
 These appear as a banner on your desktop or mobile device.
@@ -9810,6 +9908,7 @@ These features and artifacts will be hidden when your {planName} trial ends on {
 These frontline accounts will expire at 11:59 PM on the date you select.
 These guest accounts will expire at 11:59 PM on the date you select.
 These settings change how the Focused sidebar ranks conversations on this device only. They\u2019re meant for experimenting and don\u2019t sync.
+They can be re-invited to this channel.
 They can\u2019t be sent in DMs
 They can\u2019t post in private channels if their recipient doesn\u2019t have access
 They have a different appearance than a standard message
@@ -9822,11 +9921,15 @@ They\u2019ll appear here once you do - a record for the future you.
 They\u2019ll be added to your workspace as {count, plural, =1 {a member} other {members}}, with full access to all public channels, files, people and user groups.
 They\u2019ll be automatically added to the selected {isMultiChannelGuest, plural, =1 {channels} other {channel}} once they join.
 They\u2019ll have full access to all public channels, files, people and user groups in this workspace.
+They\u2019ll no longer have access to the channel and can only rejoin by invitation.
+They\u2019ll no longer have access to the channel and may need to request to rejoin later.
+They\u2019ll still be able to rejoin, or be added to the conversation.
 They\u2019re not on Slack yet, but you can still message them (they\u2019ll be able to see all direct messages sent to them once they\u2019ve joined).
 Things you visit will show up here
 Think of me as your personal AI assistant. I\u2019m all set up with context from your docs and channels and ready to jump in with you.
 Third
 Third party services used by this app
+Third-party connection needed
 Third-party events
 This AI answer may include information from sources only you have access to. Sharing may expose private or sensitive information.
 This Fiscal Year
@@ -9852,6 +9955,7 @@ This agent can\u2019t be added to the channel. Only channel managers can invite 
 This agent can\u2019t be used to create a code channel.
 This agent can\u2019t be used to create a session channel.
 This app
+This app cannot be invited to this channel.
 This app has no description.
 This app hasn\u2019t shared a privacy policy link. Contact the developer directly for more information.
 This app is no longer available.
@@ -9878,6 +9982,7 @@ This changed just now. Open Versions and pick again.
 This channel can\u2019t be renamed.
 This channel can\u2019t be shared with external people.
 This channel cannot be archived.
+This channel doesn\u2019t allow guests
 This channel has reached capacity, so you can\u2019t add more people right now.
 This channel is inactive. Archive it for everyone \u2014 the contents will still be available in search, and you can always unarchive it in the future.
 This channel is inactive. Leave the channel to tidy up your sidebar \u2014 you can always rejoin it later.
@@ -10027,6 +10132,8 @@ This person has edit access through a certain channel.
 This person is a Single-Channel Guest and can\u2019t be added to a second channel.
 This person needs to be in the workspace before the channel can be shared.
 This person needs to be in {workspaceName} workspace for the channel to be shared.
+This person will no longer have access to the channel and can only rejoin by invitation.
+This person will no longer have access to the channel and may need to request to rejoin later.
 This plan is no longer available.
 This post is now a canvas, which includes version history. Once someone makes an edit, it\u2019ll be here.
 This preview failed to load.
@@ -10134,10 +10241,16 @@ This workflow has an AI step and may take longer to run.
 This workflow has reached the {max_number_of_steps}-step limit. To add more steps, you need to remove some first.
 This workflow is ready to use as-is.
 This workflow is ready to use as-is. Just add your info to the highlighted {stepCount, plural, =1 {step} other {steps}} and publish.
+This workflow may expose sensitive info to third-party apps or other people in your workspace.
 This workflow no longer exists
 This workflow no longer exists.
 This workflow uses AI. The contents of the channel or canvas it\u2019s used in can be shared by the workflow and become visible to the workflow builder.
+This workflow uses AI. The contents of this canvas can be shared by the workflow and become visible to the workflow builder. Make sure you\u2019re ok with sharing this content before continuing.
+This workflow uses AI. The contents of this channel and canvas can be shared by the workflow and become visible to the workflow builder. Make sure you\u2019re ok with sharing this content before continuing.
+This workflow uses AI. The contents of this channel can be shared by the workflow and become visible to the workflow builder. Make sure you\u2019re ok with sharing this content before continuing.
+This workflow uses steps from other apps that require sign in to run.
 This workflow was deleted.
+This workflow will be able to:
 This workflow will stop working once it\u2019s removed from this canvas. The workflow\u2019s creators will be notified.
 This workflow will stop working once it\u2019s removed from this folder. The workflow\u2019s creators will be notified.
 This workflow will stop working once it\u2019s removed from this list. The workflow\u2019s creators will be notified.
@@ -10168,6 +10281,7 @@ Threads older than {days} days
 Threads type
 Threads you\u2019re involved in will be collected right here.
 Threads, {totalUnreadReplies, plural, =0 {no new replies} =1 {# new reply} other {# new replies}}
+Three people celebrating
 Thu
 Thursday
 Tidy Up
@@ -10347,6 +10461,7 @@ Translate messages and get results in your preferred language.
 Translate messages from your teammates with a click
 Translate messages in from your teammates for smoother collaboration.
 Translate summary
+Translate to
 Translated
 Translated from {sourceLanguage}
 Translated from {sourceLanguage}, 
@@ -10360,6 +10475,7 @@ Translation available,
 Translation available.
 Translation completed
 Translation in progress
+Translation language
 Translation requested
 Translation settings
 Translations
@@ -10542,6 +10658,7 @@ Underline links to websites
 Underline text
 Undo
 Undo {changeCount} unpublished {changeCount, plural, =1 {change} other {changes}}
+Unfollowed thread
 Unfortunately you don\u2019t have permission to change this record\u2019s owner, and we couldn\u2019t tell until now. You will not be able to save these changes.
 Unfortunately, Slack can\u2019t provide a transcript of this message.
 Unfortunately, custom messages can\u2019t contain URLs.
@@ -10617,7 +10734,6 @@ Unreads for you
 Unreads only
 Unreads summary not available
 Unsaved Changes
-Unsaved changes on {fieldCount, plural, =1 {# field} other {# fields}}
 Unsend last message (in empty text input)
 Unset as default for huddle notes?
 Unsetting the huddle notes canvas will remove it as the default canvas for the current huddle. Are you sure you want to unset it now?
@@ -10935,8 +11051,10 @@ View Channel
 View Details
 View Details in Salesforce
 View Error
+View Full Diff
 View Image
 View Instructions
+View Message
 View PR #{prNumber}
 View Paid Benefits
 View Raw
@@ -10992,7 +11110,6 @@ View file details
 View file summary
 View files and links
 View files, links, and more
-View full diff
 View full profile
 View full screen
 View full summary
@@ -11080,6 +11197,7 @@ Views by device
 Views over time
 Visible to everyone in your organization, including guests, but not to Slack Connect users.
 Vision assistive
+Visit Help Center
 Visit Sales to see more
 Visit developer website
 Visit the calendar app settings to turn off status sync any time.
@@ -11130,6 +11248,7 @@ We added a new view to the More menu for you to quickly access the messages you 
 We based this on average reading time, but your own pace is the best pace.
 We can automatically downgrade you to the Free plan at your next renewal date. Your subscription will remain active at its current level through the end of the billing period that you\u2019ve already paid for.
 We can automatically prompt you to add alt text to your images before sending messages. You can always turn these reminders on or off in the Accessibility section of Preferences.
+We can\u2019t add anyone from *{userGroupName}* right now. They\u2019ll need to join an associated workspace before they can access this channel.
 We can\u2019t fully display this message.
 We could not open your item at this time. There may be a temporary error with the Quip service.
 We could not request access at this time. There may be a problem with your network connection, or there may be a temporary error with the service.
@@ -11158,6 +11277,7 @@ We found an existing account that could match this lead. Make sure it\u2019s cor
 We found an existing contact and account that could match this lead. Make sure they\u2019re correct before proceeding.
 We found an existing contact that could match this lead. Make sure it\u2019s correct before proceeding.
 We had some trouble connecting. Please try again.
+We only added some members of *{userGroupName}* to this channel. Unfortunately, we couldn\u2019t add everyone because they need to be a member of an associated workspace.
 We spellcheck the languages specified in your system settings. You can find those under System Preferences > Keyboard > Text.
 We turned down the noise
 We tweaked the sidebar
@@ -11229,6 +11349,8 @@ Well done
 Well done! You\u2019ve added the maximum amount of emoji one person can add to one message. For reasons of performance, productivity and sharpened creative thinking, we cap the number of individual reacji to 23.
 What are my payment options? Can I pay by credit card? Can you invoice me?
 What are you using this project for?
+What area of the product are you sharing feedback about?
+What brings you here?
 What can AI help you automate today?
 What can this app do?
 What can you do with {name}?
@@ -11242,6 +11364,7 @@ What happened in Slack this week?
 What is this template for?
 What is this workflow for?
 What is wrong?
+What is your feedback?
 What it will be able to access:
 What needs my attention today?
 What profile content are you flagging?
@@ -11254,6 +11377,7 @@ What type of collection do you want to create?
 What went wrong?
 What were my biggest wins so far this year?
 What will change:
+What will the workflow be able to do?
 What would you like us to know?
 What {name} can do
 What {serverName} can do
@@ -11427,6 +11551,7 @@ Workflow starting
 Workflow templates results
 Workflow title
 Workflow view
+Workflow with risky scopes
 Workflows
 Workflows Educational Video
 Workflows Tabs
@@ -11469,6 +11594,7 @@ Would you like to save your work?
 Wow! Congrats on {count, plural, =1 {# year} other {# years}}.
 Write
 Write something
+Write something\u2026
 Write tools
 Write with AI
 Write your own prompt
@@ -11601,6 +11727,9 @@ You can\u2019t invite {inviteesCount, plural, =1 {this person} other {these peop
 You can\u2019t join this channel. Channel membership limit reached.
 You can\u2019t leave these channels.
 You can\u2019t manage skills from external orgs
+You can\u2019t remove anyone from *{channel}* while it is archived.
+You can\u2019t remove someone from a direct message.
+You can\u2019t remove {member_name} from this channel, because they\u2019re from another organization.
 You can\u2019t submit reviews from Slack yet.
 You cannot add branches in view-only mode
 You cannot add more than {max_branch_count} conditional branches to a workflow.
@@ -11647,6 +11776,10 @@ You don\u2019t have permission to create this code channel.
 You don\u2019t have permission to create this session channel.
 You don\u2019t have permission to do that.
 You don\u2019t have permission to duplicate this step.
+You don\u2019t have permission to invite external people to this channel.
+You don\u2019t have permission to invite external people to this channel. If you would like to invite people from *{team_name}* to this channel, please try again with one person at a time.
+You don\u2019t have permission to invite people from *{team_name}* to this channel.
+You don\u2019t have permission to invite people from *{team_name}* to this channel. If you would like to invite external people to this channel, please try again with one person at a time.
 You don\u2019t have permission to invite people from {count, plural, =1 {this organization} other {these organizations}} to the channel.
 You don\u2019t have permission to invite people to this channel.
 You don\u2019t have permission to invite people.
@@ -11819,6 +11952,8 @@ You\u2019re only allowed to upload 1GB of files each month. You will be able to 
 You\u2019re onto something here
 You\u2019re opening a link you received in an email. Make sure the following URL is where you want to go.
 You\u2019re ready to invite your team
+You\u2019re set to active
+You\u2019re set to away
 You\u2019re the only one here. Enjoy the tranquility, or invite someone.
 You\u2019re up to date
 You\u2019ve been invited to {channelName1} and {channelName2} as a guest
@@ -11842,8 +11977,10 @@ You\u2019ve reached the maximum of {count} connected accounts.
 You\u2019ve reached the reaction limit
 You\u2019ve reached your Slackbot limit for this week. Upgrade for higher limits.
 You\u2019ve reached your workspace limit for Single-Channel Guests. You must invite more paid members first.
+You\u2019ve removed your custom color for {user}.
 You\u2019ve set specific guidance for one conversation.
 You\u2019ve set specific guidance for {numConversations} conversations.
+You\u2019ve set your custom color for {user} to {color}
 You\u2019ve skipped a few times and we hear you
 You\u2019ve stopped receiving Slack Connect invitations from these people.
 You\u2019ve stumped the GIF search. Impressive.
@@ -11928,6 +12065,7 @@ Your email address isn\u2019t verified. Verify it, then try sending the invites 
 Your email has been verified
 Your email may have been sent. Check your Gmail Sent folder before trying again.
 Your experiment assignment
+Your feedback goes to our product teams and helps shape what we build next
 Your file couldn\u2019t be uploaded
 Your file has been uploaded successfully
 Your file was created
@@ -12446,6 +12584,7 @@ draft
 drinks
 e.g. Add dark mode
 e.g. Describe a bug, issue, new feature\u2026
+e.g., huddles, canvas, etc.
 eating
 edit
 edit scheduled status, {emoji} emoji
@@ -13237,6 +13376,7 @@ thinking
 thinking_face
 third
 this
+this agent
 this app
 this canvas
 this connector
@@ -13297,6 +13437,7 @@ unverified
 unwell
 unwind
 unwinding
+update payment details.
 upgrade to {planLabel}
 uploaded and commented on this email
 uploaded and commented on this file
@@ -13807,6 +13948,7 @@ zoom
 {label}, New
 {label}, {countNotifications, plural, =1 {# notification} other {# notifications}}
 {label}, {count} selected
+{label}, {summary}
 {label}, {unreadCount, plural, =1 {# unread} other {# unreads}}
 {language} code block
 {length} {serviceName} {length, plural, =1 {field} other {fields}} included
@@ -13825,6 +13967,7 @@ zoom
 {memberCount, plural, =1 {# member} other {# members}} in huddle. Press {keyboardShortcut} to join huddle
 {memberCount} in the huddle
 {memberNameFromIm} (deactivated)
+{memberName} couldn\u2019t be removed from this channel.
 {memberName} is inviting you to a huddle
 {memberName} is inviting you to a huddle about {topic}
 {memberName} is inviting you to a huddle about {topic} in {channelDisplayName}
@@ -14182,6 +14325,7 @@ zoom
 {user_name} and others are editing this section. They must finish before you can make changes.
 {user_name} is editing this section. They must finish before you can make changes.
 {user} has received a notification to join
+{user} is already in this channel.
 {user} is editing
 {user} joined #{channel}. They\u2019re also new to {team}.
 {value} of {ratingColumnMax}
