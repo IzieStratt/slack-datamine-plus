@@ -1105,8 +1105,8 @@ Any time
 Any title
 Anyone in your entire organization
 Anyone in {teamName} can comment
-Anyone in {teamName} can discover and use
 Anyone in {teamName} can edit
+Anyone in {teamName} can use
 Anyone in {teamName} can use or edit. The skill appears in the directory.
 Anyone in {teamName} can use. The skill appears in the directory.
 Anyone in {teamName} can view
@@ -1395,6 +1395,7 @@ Back
 Back for a recap?
 Back in history
 Back to All channels
+Back to Current
 Back to Skills
 Back to Slack
 Back to card
@@ -1632,7 +1633,6 @@ Can configure Salesforce and add new users
 Can configure Salesforce, add new users, and delete all records
 Can copy this workflow
 Can edit
-Can edit, but not share
 Can edit, publish, and delete this template
 Can edit, publish, and delete this workflow
 Can find and use this workflow
@@ -1641,7 +1641,6 @@ Can manage records
 Can manage records and customize lists
 Can only be viewed or joined by an invitation
 Can only post
-Can only read and comment
 Can post & invite
 Can use
 Can view
@@ -1717,7 +1716,6 @@ Cannot add any more entries
 Cannot add tab.
 Cannot be added here
 Cannot be added to Slack Connect channels
-Cannot edit or share
 Cannot send message to this channel
 Canvas
 Canvas Actions
@@ -1887,7 +1885,6 @@ Chart type
 Chat
 Chat about this
 Chat is disabled for your company.
-Chat room
 Chat with this app\u2019s AI-powered assistant anywhere in Slack \u2014 proofread copy, summarize messages, generate content, find answers, and more.
 Chats
 Check All
@@ -2561,11 +2558,14 @@ Couldn\u2019t load related fields.
 Couldn\u2019t load the report.
 Couldn\u2019t load this skill. The link may have expired.
 Couldn\u2019t load this skill. Try again later.
+Couldn\u2019t load versions.
+Couldn\u2019t make this version current.
 Couldn\u2019t move to Saved. The item couldn\u2019t be found.
 Couldn\u2019t move to Saved. Try again?
 Couldn\u2019t move to your to-dos. The item couldn\u2019t be found.
 Couldn\u2019t move to your to-dos. Try again?
 Couldn\u2019t open comments. Please try again.
+Couldn\u2019t open this version.
 Couldn\u2019t reach the agent. Your message wasn\u2019t sent.
 Couldn\u2019t reload tools. Try again.
 Couldn\u2019t remove this response. Please try again.
@@ -3348,6 +3348,7 @@ Edit workflow title, description, or avatar
 Edit workspace
 Edit workspace details
 Edit your last message
+Edit your notifications
 Edit your status
 Edit your to-do
 Edit your working hours
@@ -3371,7 +3372,6 @@ Editing
 Editing is not permitted
 Editing not permitted
 Editing scheduled status
-Editor Link
 Editor loaded
 Editorial
 Edits Locked
@@ -3564,6 +3564,7 @@ Everyone in {channelDisplayName} will have access to the notes.
 Everyone in {channelDisplayName} will have access to the transcript.
 Everyone in {teamName}
 Everyone internal in {teamName}
+Everyone listed is already a member. Add someone new to invite.
 Everyone who has notifications that reference a re-mapped field will need to delete and recreate those notifications.
 Everyone will need to re-authenticate, recreate existing notifications, and admins will need to reconfigure the deal won celebration.
 Everyone will need to re-authenticate.
@@ -4039,6 +4040,7 @@ Found {fileCount} files\u2026
 Found {messageCount} messages and {fileCount} files\u2026
 Found {messageCount} messages\u2026
 Fourth
+Frankenstein
 Free
 Free Plan
 Free Trial Badge
@@ -4620,7 +4622,6 @@ If your Microsoft account was created recently, try searching again later. If th
 If your company owns or operates under multiple web domains, Slack can help you claim them.
 If your provider didn\u2019t send a confirmation, you\u2019re all set! Send a test email to your support address to make sure it comes into Slack as a case.
 If your team uses a custom opportunity object or custom opportunity fields, you can select them here. This ensures notifications will send when you expect them to.
-Igor\u2019s Lab
 Illustration of Slackbot with a noisemaker surrounded by confetti
 Illustration of a cute polar bear wearing star-shaped sunglasses and holding a sparkler
 Illustration of a screen with a mouse icon moving a workflow step to a new position.
@@ -5311,6 +5312,7 @@ Loading thread preview\u2026
 Loading threads
 Loading threads\u2026
 Loading tools
+Loading versions\u2026
 Loading video\u2026
 Loading view
 Loading workflows
@@ -5389,6 +5391,7 @@ Magenta70
 Magic Wand Icon
 Magnifying glass
 Main content could not be located.
+Make Current
 Make a copy
 Make a copy to change its instructions.
 Make a quick voice recording on the go, or share your screen in a video. Read about more new features and plan limit changes.
@@ -5752,12 +5755,14 @@ More conversations
 More detail
 More details
 More email actions
+More filters
 More folder actions
 More information about Calendar here.
 More information about including skills
 More invite options
 More list actions
 More message shortcuts\u2026
+More notification settings
 More options
 More options for {provider_name}
 More reactions
@@ -6073,6 +6078,7 @@ No default channels
 No description
 No destination
 No direct messages match your search.
+No earlier versions yet.
 No email verification required. This app is now ready to use.
 No emails to import
 No emoji to show
@@ -6455,6 +6461,7 @@ Only visible to you
 Only you can open
 Only you can open this list view in Salesforce. Are you sure you want to share it?
 Only you can see this
+Only you can see this. Others see the current version.
 Only {daysRemaining} {daysRemaining, plural, =1 {day} other {days}} left of {planName}
 Only {maxParticipants} people can join a huddle
 Oops! Looks like assistant is taking longer than usual, send a message to try again.
@@ -6652,6 +6659,7 @@ Organize your team\u2019s conversations
 Organize your work
 Organizer
 Organizing\u2026
+Original
 Other
 Other Google Slides URL
 Other channels
@@ -6733,6 +6741,7 @@ Pascal
 Pass
 PasswordProtectedTransport and windows (use with ADFS for internal/external authentication)
 Past Activity
+Past version saved {dateTime}
 Paste
 Paste Clean
 Paste Last Transcript
@@ -7063,10 +7072,8 @@ Private channel invitations have expired
 Private channels cannot be used with this step
 Private channels only
 Private channels won\u2019t be visible to people who aren\u2019t already in them
-Private chat
 Private code channel
 Private content
-Private document
 Private file
 Private list
 Private message
@@ -7214,14 +7221,12 @@ Reactions
 Reactions cannot span multiple sections.
 Read
 Read Instructions
-Read Only
 Read and use these meeting notes as context: {notesUrls}.
 Read conversations
 Read emoji reactions received in a huddle
 Read more
 Read only
 Read-only
-Reader Link
 Reading a list item
 Reading along in {label}
 Reading list items
@@ -8570,7 +8575,6 @@ Share {tableauType}
 Share {workObjectDisplayType}
 Share, view and work with your cloud files without leaving Slack.
 Share\u2026
-Shareable Link
 Shared
 Shared Channels
 Shared a call
@@ -8700,6 +8704,7 @@ Show {providerName} apps
 Show {remainingCount} more
 Show {replyCount, plural, =1 {# more reply} other {# more replies}}
 Show\u2026
+Showing
 Showing all channels.
 Showing fewer canvases and lists.
 Showing fewer conversations in this section.
@@ -9864,6 +9869,7 @@ This canvas was deleted
 This canvas will be visible to everyone who joins the channel. You know what\u2019s needed for your team so add, edit, and reconfigure as you see fit.
 This canvas\u2019s contents can be used by Slackbot, search AI answers, Canvas AI generation, and AI steps in Workflow Builder.
 This canvas\u2019s contents can be used by Slackbot, search AI answers, and Canvas AI generation.
+This changed just now. Open Versions and pick again.
 This channel can\u2019t be renamed.
 This channel can\u2019t be shared with external people.
 This channel cannot be archived.
@@ -10097,6 +10103,7 @@ This usually takes up to a minute
 This variable is missing.
 This variable\u2019s type changed and the saved comparison is no longer valid.
 This variable\u2019s type changed and the saved comparison is no longer valid. Select a different comparison.
+This version is now current.
 This was locked by a system administrator
 This week
 This will add the workflow to the channel\u2019s workflows tab
@@ -10475,6 +10482,7 @@ Type: agent threads
 Type: code channels
 Type: {itemType}
 TypeScript
+Types
 Typing\u2026
 URL
 URL Input
@@ -10894,6 +10902,7 @@ Verify your domain
 Verify your email
 Verilog
 Version by {author} {date} at {time}
+Versions
 Video
 Video Conferencing
 Video call
@@ -11054,7 +11063,6 @@ View {count, plural, =1 {# data source} other {# data sources}}
 View {name}\u2019s Profile
 View {stepTitle}
 View {stepTitle} step
-View, edit and share
 View-only mode disabled.
 View-only mode enabled.
 Viewed
@@ -13380,7 +13388,6 @@ you, away
 you, away, notifications snoozed
 you, do not disturb
 you, notifications snoozed
-your company
 your direct report owns the opportunity
 your notification sound settings
 your organization
@@ -13486,7 +13493,6 @@ zoom
 {chartType} chart: {title}. The X axis is {xLabel}, the Y axis is {yLabel}. There are {numSeries} series: {seriesList}.
 {chartType} chart: {title}. The X axis is {xLabel}, the Y axis is {yLabel}. There is {numSeries} series: {seriesList}.
 {closingInValue, plural, one {Day} other {Days}}
-{comma_list} and {last_item}
 {commentCount, plural, one {# Comment in {appOrProductName}} other {# Comments in {appOrProductName}}}
 {completedCount} of {totalCount} tasks completed
 {count, plural, =0 {No channels found} =1 {# channel found} other {# channels found}}
@@ -13529,11 +13535,10 @@ zoom
 {count, plural, =1 {# new notification} other {# new notifications}}
 {count, plural, =1 {# notification} other {# notifications}}
 {count, plural, =1 {# other channel} other {# other channels}}
-{count, plural, =1 {# person is already a member here. Add a new email to invite someone.} other {# people are already members here. Add a new email to invite someone.}}
+{count, plural, =1 {# person is already a member. Only new people will be invited.} other {# people are already members. Only new people will be invited.}}
 {count, plural, =1 {# person is a} other {# people are}} Single-Channel {count, plural, =1 {guest} other {guests}}, and can\u2019t be added to this channel.
 {count, plural, =1 {# person is a} other {# people are}} Single-Channel {count, plural, =1 {guest} other {guests}}, so they can\u2019t be added to a second channel.
 {count, plural, =1 {# person is} other {# people are}} already in the channel.
-{count, plural, =1 {# person listed is already a member \u2014 we\u2019ll skip sending them an invitation} other {# people listed are already members \u2014 we\u2019ll skip sending them an invitation}}
 {count, plural, =1 {# person} other {# people}} already {count, plural, =1 {has a guest account} other {have guest accounts}} in another workspace. An admin will need to add them.
 {count, plural, =1 {# prior action} other {# prior actions}}
 {count, plural, =1 {# reaction} other {# reactions}}
@@ -13976,7 +13981,6 @@ zoom
 {publishedDate} at {publishedTime} 
 {qty} channels
 {qty} people
-{queryLength, plural, =0 {Start typing to see results\u2026} other {Keep typing to see results\u2026}}
 {rawListTitle} (View Only)
 {reactionAmount} {reactionAmount, plural, =1 {reaction} other {reactions}}
 {realName} has invited you to work with them in Slack
