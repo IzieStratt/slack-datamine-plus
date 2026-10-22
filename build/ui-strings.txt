@@ -1244,6 +1244,7 @@ As system notifications
 As you and your team work together in Slack, you\u2019ll create a searchable archive of conversations and decisions
 As you work with files in Slack, suggestions will appear here based on your activity.
 Ascending
+Ask
 Ask Agentforce for Analytics
 Ask Slackbot
 Ask Slackbot about your trial
@@ -1266,7 +1267,6 @@ Ask if I want to toggle my away status when I log in after having set myself awa
 Ask in thread
 Ask it to do things for you, like prep for meetings and draft replies.
 Ask me anything
-Ask or insert
 Ask questions, catch up on conversations, and get a head start on your work.
 Ask the Writing coach skill to polish my draft into a clear, on-voice version and summarize what changed.
 Ask the agent or leave feedback on GitHub\u2026
@@ -1813,6 +1813,7 @@ Change the skill\u2019s instructions
 Change tone
 Change translation language
 Change\u2026
+Changed files
 Changes requested
 Changes saved
 Changes to show
@@ -2534,7 +2535,6 @@ Couldn\u2019t display as a diagram. Check the code for syntax errors.
 Couldn\u2019t finish converting mentions to text
 Couldn\u2019t generate an invite link
 Couldn\u2019t get a huddle link for that channel
-Couldn\u2019t get suggestions from {appName}. Keep typing to try again.
 Couldn\u2019t invite
 Couldn\u2019t join the channel. Please try again.
 Couldn\u2019t leave {channelName}
@@ -2846,8 +2846,6 @@ Date filter value
 Date picker
 Date range
 Date range is limited to {maxRange} days
-Date: Earliest first
-Date: Earliest last
 Day
 Day offset range
 Day(s) after
@@ -3810,6 +3808,7 @@ File sharing with external people has been disabled by your admin.
 File summaries
 File summary
 File too large
+File tree
 File type
 File type ({count})
 File type not supported.
@@ -4480,6 +4479,7 @@ Hide conversation
 Hide details
 Hide email preview
 Hide fields
+Hide file tree
 Hide filters
 Hide formatting
 Hide image
@@ -4942,6 +4942,7 @@ Jump to a specific unread\u2026
 Jump to another conversation by just typing its name
 Jump to date
 Jump to draft\u2026
+Jump to file
 Jump to first unread message ({jumpShortcut})
 Jump to latest messages
 Jump to next unread mention
@@ -5592,6 +5593,7 @@ Member
 Member actions
 Member removed from group.
 Members
+Members & Agents
 Members ({memberCount})
 Members can always join other public channels on their own.
 Members in {channelDisplayName} will still be able to manually start AI notes and transcription during a huddle.
@@ -5605,8 +5607,6 @@ Memories
 Memory
 Mention
 Mention @Slackbot whenever your team needs to do research, build a report or answer a question.
-Mention A \u2192 Z
-Mention Z \u2192 A
 Mention someone
 Mention someone\u2026
 Mention view
@@ -5761,7 +5761,6 @@ More message shortcuts\u2026
 More options
 More options for {provider_name}
 More reactions
-More results by source
 More results loaded
 More session channels
 More skill set actions
@@ -6403,7 +6402,6 @@ One or more workflows failed to save, please try again later
 One quick and easy reference point for your daily to-dos, calendars, summaries of important unreads.
 One-click join for Zoom, Meet, Webex, and Teams
 One-click join for Zoom, Webex, and Teams
-OneDrive
 OneDrive & SharePoint
 OneDrive & SharePoint isn\u2019t connected
 Online
@@ -7568,6 +7566,7 @@ Replace complete
 Replace file
 Replace image
 Replace in document
+Replace mention
 Replace mode enabled
 Replaces mention
 Replies
@@ -8652,6 +8651,7 @@ Show fewer details
 Show fewer reactions
 Show fewer unreads and drafts
 Show fields
+Show file tree
 Show filters
 Show formatting
 Show full action menu on hover only
@@ -8886,7 +8886,6 @@ Slackbot\u2019s new skill: Customer management
 Slash
 Slash commands
 Slide
-Slide Deck
 Slide body
 Slide heading
 Slide left
@@ -13725,6 +13724,10 @@ zoom
 {fileName} (uploading)
 {fileName} uploaded successfully.
 {file_name} video preview
+{filename}, added
+{filename}, deleted
+{filename}, modified
+{filename}, renamed
 {filterCount} {filterCount, plural, =1 {Filter} other {Filters}} 
 {filterFieldName}
 {firstEmail}, {secondEmail} {overflowEmailsCount, plural, =1 {and # other} other {and # others}}
@@ -14010,7 +14013,6 @@ zoom
 {scheduledDayString} at {timeString}
 {seconds} {seconds, plural, =1 {second} other {seconds}}
 {sectionName}, huddle in session. Press {keyboardShortcut} to join huddle
-{sectionName}, see all ({count} more)
 {section_style} Section Menu
 {section}, {count, plural, one {# unread chat} other {# unread chats}}
 {selectedDataLabel} (multiple)
@@ -14073,7 +14075,6 @@ zoom
 {status} for {title}
 {stepCount, plural, =1 {# step} other {# steps}}
 {stepCount, plural, =1 {# step} other {# steps}} & {branchCount, plural, =1 {# branch} other {# branches}}
-{stepName}, back to all suggestions
 {stepNumber} of {totalStepCount}
 {stepNumber}/{totalSteps}
 {step_title} (deleted)
