@@ -82,21 +82,16 @@ async function get(url, tries = 3) {
   throw last;
 }
 
-// The glyph set is not in any chunk of the webpack manifest: it sits in the entry script `modern.vendor.<hash>.min.js`, which the signed-in
-// page for the org client does not list but the public workspace client page does. Scan those entry scripts for the set only (they are not
-// run through the method/extras extractors, so nothing else changes). Set ICONS_PAGE_URL to use another page.
-async function findIconSet(html, cdn, already) {
-  const pageUrl = process.env.ICONS_PAGE_URL || 'https://app.slack.com/client/T0266FRGM';
-  let pageHtml = '';
-  try { const r = await fetch(pageUrl, { headers: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36' } }); if (r.ok) pageHtml = await r.text(); else console.error(`icons: ${pageUrl} answered HTTP ${r.status}`); } catch (e) { console.error(`icons: could not fetch ${pageUrl}: ${e.message}`); }
-  const names = [...new Set([...chunkFiles(html), ...chunkFiles(pageHtml)])].filter((f) => !already.has(f) && !f.includes('.marketing.'));
-  names.sort((a, b) => /^modern\.vendor\./.test(b) - /^modern\.vendor\./.test(a)); // most likely first
-  for (const f of names.slice(0, 15)) {
-    const r = await get(cdn + f).catch(() => ({ status: 0 }));
-    const set = r.status === 200 ? extractIconSet(r.js) : null;
-    if (set) { log(`icons: ${Object.keys(set.icons).length} glyphs from ${f}`); return set; }
-  }
-  return null;
+// The signed-in page for the org client lists only the webpack manifest. The client's entry scripts (modern.vendor, application, rollup-core_*,
+// TS.web: the legacy web client, the icon glyph set, most of the method names) are listed by the public workspace client page, so crawl those
+// too. Set ENTRY_PAGE_URL to use another page; if it can't be fetched the crawl just runs without them.
+async function entryScripts() {
+  const pageUrl = process.env.ENTRY_PAGE_URL || 'https://app.slack.com/client/T0266FRGM';
+  try {
+    const r = await fetch(pageUrl, { headers: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36' } });
+    if (!r.ok) { console.error(`entry scripts: ${pageUrl} answered HTTP ${r.status}`); return []; }
+    return [...chunkFiles(await r.text())].filter((f) => !f.includes('.marketing.'));
+  } catch (e) { console.error(`entry scripts: could not fetch ${pageUrl}: ${e.message}`); return []; }
 }
 
 // Workers keep running while any task is in flight, because a finished task may append more items to the shared array.
@@ -162,6 +157,9 @@ async function main() {
       else console.error(`webpack manifest fetch: HTTP ${r.status}`);
     }
     log(`manifest ${mUrl ?? 'not found'}: ${queue.length} chunk names`);
+    const entry = await entryScripts();
+    log(`entry scripts from the public client page: ${entry.length}`);
+    for (const f of entry) if (!queue.includes(f)) queue.push(f);
     const seen = new Set(queue), ok = [], phantom = [], missing = [];
     await pool(queue, 12, async function visit(file) {
       if (isPhantom(file)) { phantom.push(file); return; }
@@ -174,7 +172,6 @@ async function main() {
       ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n)); ex.mentioned.forEach((n) => mentioned.add(n));
       for (const f of chunkFiles(r.js)) if (!seen.has(f)) { seen.add(f); queue.push(f); }
     });
-    if (!iconSet) iconSet = await findIconSet(html, info.cdn, seen);
     stats = { cdn: info.cdn, manifestUrl: mUrl, versionHash: info.versionHash, versionTs: info.versionTs, discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
     log(JSON.stringify(stats));
     if (ok.length < MIN_CHUNKS) {
@@ -205,7 +202,7 @@ async function main() {
     counts[cat] = set.size;
     if (set.size) fs.writeFileSync(`${OUT}/${cat}.txt`, [...set].sort().join('\n') + '\n');
   }
-  // the glyph set behind the icon names (build/icons.json drives the icons PDF); keep the old one if this build's chunk was missing
+  // the glyph set behind the icon names (build/icons.json drives the icons PDF; it comes from modern.vendor); keep the old one if this build's chunk was missing
   if (iconSet) fs.writeFileSync(`${OUT}/icons.json`, JSON.stringify(iconSet) + '\n');
   else console.error('icons: glyph set not found, keeping previous build/icons.json');
   // keep the manifest bytes and the entry-script list so this build can be re-mined later (Slack retires whole CDN buckets)

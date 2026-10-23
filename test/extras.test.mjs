@@ -22,3 +22,10 @@ test('extras: one hit per category', () => {
   assert.ok(x.shortcuts.has('mod+k') && x['ui-strings'].has('Hello there') && x.scopes.has('search:read.im'));
   assert.ok(x['ai-enums'].has('AI_THING=ai_thing') && x['mcp-enums'].has('MCP_X=mcp_x') && x.workflow.has('workflow_id') && x['notification-types'].has('x_notification'));
 });
+
+test('extras: design tokens, internal paths and hosts', () => {
+  const x = extractExtras('{"property":"--dt_color-content-pry"};var a="--dt_color-plt-"+b;var u="/admin/billing";var v="/customize/slackbot";var h="https://files.slack.com/x";var d="https://dev1739.slack.com/";var n="/notadmin/x"');
+  assert.deepEqual([...x['design-tokens']], ['--dt_color-content-pry']);
+  assert.deepEqual([...x.paths].sort(), ['/admin/billing', '/customize/slackbot']);
+  assert.deepEqual([...x.hosts], ['files.slack.com']);
+});

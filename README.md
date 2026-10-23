@@ -8,7 +8,9 @@ Why it exists: [`3kh0/slack-datamine`](https://github.com/3kh0/slack-datamine) i
 
 ## What gets mined
 
-Each run writes to `build/`: `api-methods.txt`, `chunks.txt`, `meta.json` (with per-category counts), and one sorted list per category: `errors`, `scopes`, `slash-commands`, `dev-commands`, `analytics-events`, `workflow`, `notification-types`, `trace-spans`, `icons`, `shortcuts`, `feature-flags`, `ui-strings`, `enums`, `ai-enums`, `mcp-enums`, `blockkit-enums`. Observed method params are in `state/params.json`.
+The crawl starts from the signed-in client page's webpack manifest and also from the entry scripts the public workspace client page lists (`modern.vendor`, `application`, `rollup-core_*`, `TS.web`: the legacy web client, most method names, and the icon glyph set in `build/icons.json`, which the site turns into https://slackdatamineplus.izie.top/icons.pdf).
+
+Each run writes to `build/`: `api-methods.txt`, `chunks.txt`, `meta.json` (with per-category counts), and one sorted list per category: `errors`, `scopes`, `slash-commands`, `dev-commands`, `analytics-events`, `workflow`, `notification-types`, `trace-spans`, `icons`, `shortcuts`, `feature-flags`, `ui-strings`, `enums`, `ai-enums`, `mcp-enums`, `blockkit-enums`, `design-tokens`, `paths`, `hosts`. Observed method params are in `state/params.json`.
 
 Experiments are found like [taut](https://github.com/jeremy46231/taut)'s Experiments plugin does it (`plugins/Experiments.tsx`, `scanCode`): locate the module exporting `getGroupForUser`, map its minified export keys, then regex every `(0,x.key)(state,"name")` call and the group strings it is compared to. Result: `build/experiments.json` (`name -> groups`) and `experiments.txt`. Lists are regex heuristics, so expect some noise (mainly `errors`).
 

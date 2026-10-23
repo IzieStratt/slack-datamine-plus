@@ -84,7 +84,7 @@ const SHORTCUT = /^(?:(?:mod|ctrl|cmd|command|shift|alt|opt|option|meta)\+)+[^"\
 
 const CATEGORIES = [
   'errors', 'scopes', 'slash-commands', 'dev-commands', 'analytics-events', 'workflow', 'notification-types', 'trace-spans', 'icons',
-  'shortcuts', 'feature-flags', 'ui-strings', 'enums', 'ai-enums', 'mcp-enums', 'blockkit-enums',
+  'shortcuts', 'feature-flags', 'ui-strings', 'enums', 'ai-enums', 'mcp-enums', 'blockkit-enums', 'design-tokens', 'paths', 'hosts',
 ];
 export const emptyExtras = () => Object.fromEntries(CATEGORIES.map((c) => [c, new Set()]));
 
@@ -121,6 +121,11 @@ export function extractExtras(js, into = emptyExtras()) {
     if (/^(BLOCK|ELEMENT|RICH_TEXT)/.test(name) || BLOCK_TYPE.test(val) && /BLOCK|ELEMENT|TYPE/.test(name)) add('blockkit-enums', line);
   }
   for (const m of js.matchAll(/\btype:"([a-z_]+)"/g)) if (BLOCK_TYPE.test(m[1]) && m[1].length > 3) add('blockkit-enums', `type=${m[1]}`);
+  // design-system CSS variables (--dt_color-..., --dt_static_space-...); a trailing '-' is a prefix used to build names, not a token
+  for (const m of js.matchAll(/(--dt_[a-z0-9]+(?:[_-][a-z0-9]+)*)(?![\w-])/g)) add('design-tokens', m[1]);
+  // quoted internal page/endpoint paths ("/admin/billing", "/customize/slackbot") and the slack-owned hosts the client talks to
+  for (const m of js.matchAll(/["'`](\/(?:admin|customize|account|ssb|enterprise|services|archives|apps|help|signin|workspace|beacon)(?:\/[A-Za-z0-9_.$-]+)*)["'`]/g)) add('paths', m[1]);
+  for (const m of js.matchAll(/https?:\/\/([a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:slack|slack-edge|slack-files|slack-msgs|slack-imgs|slack-redir|slackb|slack-core|slack-gov)\.com)(?![\w.-])/g)) if (!/^dev\d+\./.test(m[1])) add('hosts', m[1]);
   return into;
 }
 
