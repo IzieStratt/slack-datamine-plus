@@ -1,0 +1,1187 @@
+{
+ "watched": [
+  "byMeta:disableEventLog",
+  "byMeta:enableEventLog",
+  "byMeta:getActiveHuddleCallId",
+  "byMeta:getActiveHuddleChannelId",
+  "byMeta:getAllExperimentAssignments",
+  "byMeta:jumpToReply",
+  "byMeta:openModal",
+  "byMeta:sendReactionMessage",
+  "byMeta:setLocalDraft",
+  "byName:AudioVideoFacadeSubscriber",
+  "byName:buildMarkdownChangeDelta",
+  "byName:canDeleteMessageHelper",
+  "byName:canEditMessage",
+  "byName:convertBlocksToDelta",
+  "byName:convertBlocksToMarkdown",
+  "byName:convertBlocksToMrkdwnDelta",
+  "byName:convertBlocksToPlainText",
+  "byName:convertContentsToStringForDisplay",
+  "byName:convertDeltaToBlocks",
+  "byName:copyDocumentStylesheets",
+  "byName:createStore",
+  "byName:detectLinks",
+  "byName:exposeSelectorForDebug",
+  "byName:getBroadcastKeywordsForUser",
+  "byName:getClientStoreInstance",
+  "byName:getDeltaForMessageObject",
+  "byName:getInputProxy",
+  "byName:getLastMessageByMember",
+  "byName:isInputRegistered",
+  "byName:isThreadViewContext",
+  "byName:x",
+  "component:ActivityRowContentSenderAvatarLayout",
+  "component:AttachmentMedia",
+  "component:BaseAvatarStack",
+  "component:BaseBroadcastPreamble",
+  "component:BaseContextBarV2",
+  "component:BaseMessageAttachmentSlackMessage",
+  "component:BaseMessageSender",
+  "component:BaseMrkdwnChannel",
+  "component:Blocks",
+  "component:ConnectedBaseAvatar",
+  "component:EditAudioButton",
+  "component:EmojiPicker",
+  "component:EmojiPickerPopover",
+  "component:HelpButton",
+  "component:HuddleBaseEvent",
+  "component:HuddleMetaEvent",
+  "component:HuddlesAlertBannerBase",
+  "component:InputContainer",
+  "component:ListChannelEntity",
+  "component:LocalTime",
+  "component:MemberProfileHoverCard",
+  "component:MenuFromTemplate",
+  "component:MessageActionButtonReaction",
+  "component:MessageActions",
+  "component:MessageAttachmentHuddleLink",
+  "component:MessageBackground",
+  "component:MessageBlocks",
+  "component:MessageInput",
+  "component:MessageInputRoadblock",
+  "component:MessageListItem",
+  "component:MessageSender",
+  "component:Presence",
+  "component:Reaction",
+  "component:ReactionAddButton",
+  "component:ReactionAnimation",
+  "component:ReactionBar",
+  "component:RimetoMemberProfileOverflowMenu",
+  "component:RimetoProfilePresence",
+  "component:Serialized(ThreadsFlexpane)",
+  "component:ShortcutsMenuTriggerButton",
+  "component:TextyButtonOverflow",
+  "component:TextyButtons",
+  "component:ThreadSearchButton",
+  "component:ThreadSenderAndTimestampGeneric",
+  "component:ViewBlocks",
+  "component:WysiwygContainer",
+  "rtm:message",
+  "rtm:view_opened",
+  "thunk:addAndUploadPendingFile",
+  "thunk:autocompleteChannels",
+  "thunk:autocompleteMembers",
+  "thunk:blocksFormatFetcher",
+  "thunk:changeReactionFromUserAction",
+  "thunk:chatDeleteFetcher",
+  "thunk:clearDrafts",
+  "thunk:commitMessageEdit",
+  "thunk:currentUserStartedTyping",
+  "thunk:deleteDraftApi",
+  "thunk:displayAlertMessage",
+  "thunk:enqueueHuddleToast",
+  "thunk:ensureMembersArePresent",
+  "thunk:executeAppAction",
+  "thunk:fetchAndUpsertChannelsById",
+  "thunk:fetchRawChannelsById",
+  "thunk:getChannelMembershipInfoForUsers",
+  "thunk:getContextMenuTemplate",
+  "thunk:getMemberContextMenuTemplate",
+  "thunk:handleMessageImmediatelyWithoutPreprocessing",
+  "thunk:initializeUserPrefs",
+  "thunk:joinChannel",
+  "thunk:logExperimentExposure",
+  "thunk:markLastRead",
+  "thunk:maybeFetchBackgrounds",
+  "thunk:openPrefsModal",
+  "thunk:prepareAndSendMessage",
+  "thunk:processAwsTranscription",
+  "thunk:saveMessageEdit",
+  "thunk:searchInline",
+  "thunk:sendMessage",
+  "thunk:setUserPrefByApi",
+  "thunk:setUserPrefFetcher",
+  "thunk:showNotification",
+  "thunk:startEventLog",
+  "thunk:stopEventLog",
+  "thunk:stopHuddle",
+  "thunk:submitAddOrRemoveReaction",
+  "thunk:submitView",
+  "thunk:uploadFiles"
+ ],
+ "found": {
+  "byMeta:disableEventLog": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "bgCu:a1e94ed4"
+   ]
+  },
+  "byMeta:enableEventLog": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "bgCu:a1e94ed4"
+   ]
+  },
+  "byMeta:getActiveHuddleCallId": {
+   "forms": [
+    "registered"
+   ],
+   "modules": [
+    "z10i:54dc6ca9"
+   ]
+  },
+  "byMeta:getActiveHuddleChannelId": {
+   "forms": [
+    "registered"
+   ],
+   "modules": [
+    "z10i:54dc6ca9"
+   ]
+  },
+  "byMeta:jumpToReply": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "pklr:25c28986"
+   ]
+  },
+  "byMeta:openModal": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "jyya:56bfa780"
+   ]
+  },
+  "byMeta:sendReactionMessage": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "tNdm:7f0bd8ed"
+   ]
+  },
+  "byMeta:setLocalDraft": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "XPHL:999e2b3c"
+   ]
+  },
+  "byName:AudioVideoFacadeSubscriber": {
+   "forms": [
+    "class"
+   ],
+   "modules": [
+    "KQpq:a238fc66",
+    "KQpq:b6757d3e"
+   ]
+  },
+  "byName:buildMarkdownChangeDelta": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "5W2L:234c2e9c",
+    "5W2L:62032c02"
+   ]
+  },
+  "byName:canDeleteMessageHelper": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "CRrL:9aeee25f",
+    "CRrL:e5d161ab"
+   ]
+  },
+  "byName:canEditMessage": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "uCTC:7c57c0b2"
+   ]
+  },
+  "byName:convertBlocksToDelta": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "NM6h:157bc780",
+    "NM6h:c672e023"
+   ]
+  },
+  "byName:convertBlocksToMarkdown": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "SOcG:4c1ca03c",
+    "SOcG:c5d4700c"
+   ]
+  },
+  "byName:convertBlocksToMrkdwnDelta": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "8CUC:cdff2bcd",
+    "8CUC:dac9e28e"
+   ]
+  },
+  "byName:convertBlocksToPlainText": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "vz0O:daa086f0"
+   ]
+  },
+  "byName:convertContentsToStringForDisplay": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "8vND:dbc20fa3"
+   ]
+  },
+  "byName:convertDeltaToBlocks": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "eFee:a2c73a60",
+    "eFee:b6a8d7cc"
+   ]
+  },
+  "byName:copyDocumentStylesheets": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "Dyd0:450d0063"
+   ]
+  },
+  "byName:createStore": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "function:f1b53a30"
+   ]
+  },
+  "byName:detectLinks": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "tgvC:ad6778c3"
+   ]
+  },
+  "byName:exposeSelectorForDebug": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "KVP9:cf3de42e",
+    "KVP9:dffd5617"
+   ]
+  },
+  "byName:getBroadcastKeywordsForUser": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "PXtu:5e1f9007"
+   ]
+  },
+  "byName:getClientStoreInstance": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "ssud:6c6a43b3",
+    "ssud:c0aca3e2"
+   ]
+  },
+  "byName:getDeltaForMessageObject": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "25Jl:cac24c02",
+    "25Jl:cf3b2145"
+   ]
+  },
+  "byName:getInputProxy": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "H1/e:3499bc1f",
+    "H1/e:3691b66d"
+   ]
+  },
+  "byName:getLastMessageByMember": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "8SAS:6be31531"
+   ]
+  },
+  "byName:isInputRegistered": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "H1/e:3499bc1f",
+    "H1/e:3691b66d"
+   ]
+  },
+  "byName:isThreadViewContext": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "coFP:fcf2b008"
+   ]
+  },
+  "byName:x": {
+   "forms": [
+    "arrow",
+    "assigned",
+    "class",
+    "function"
+   ],
+   "modules": [
+    "/cCw:e778ed16",
+    "FMzS:c409056a",
+    "HmzA:2dfc3c5a"
+   ]
+  },
+  "component:ActivityRowContentSenderAvatarLayout": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "zXrN:d7eb2743"
+   ]
+  },
+  "component:AttachmentMedia": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "kYD2:fc66f4de"
+   ]
+  },
+  "component:BaseAvatarStack": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "76jM:b6fd2236"
+   ]
+  },
+  "component:BaseBroadcastPreamble": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "cUe1:ba05f2db"
+   ]
+  },
+  "component:BaseContextBarV2": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "ttDa:762c3df5",
+    "ttDa:7cb574bc"
+   ]
+  },
+  "component:BaseMessageAttachmentSlackMessage": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "switch:bdf17b8a"
+   ]
+  },
+  "component:BaseMessageSender": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "gp2B:823c0bd2",
+    "gp2B:e942d02a"
+   ]
+  },
+  "component:BaseMrkdwnChannel": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "P0RV:4d6cc000",
+    "P0RV:e2523a32"
+   ]
+  },
+  "component:Blocks": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "o13R:6790e588",
+    "o13R:e38d4d4d"
+   ]
+  },
+  "component:ConnectedBaseAvatar": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "c2ZC:ea2c7919"
+   ]
+  },
+  "component:EditAudioButton": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "7qjA:09981af0"
+   ]
+  },
+  "component:EmojiPicker": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "++27:3a6169bd",
+    "++27:49af58f0"
+   ]
+  },
+  "component:EmojiPickerPopover": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "pFbY:aac7a24a",
+    "pFbY:b628dfa5"
+   ]
+  },
+  "component:HuddleBaseEvent": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "ty8H:01a27ab5"
+   ]
+  },
+  "component:HuddleMetaEvent": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "ty8H:01a27ab5"
+   ]
+  },
+  "component:HuddlesAlertBannerBase": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "IoxI:226814db"
+   ]
+  },
+  "component:InputContainer": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "rt82:fd566d43"
+   ]
+  },
+  "component:ListChannelEntity": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "7GgQ:6295c913",
+    "7GgQ:fb9289e3"
+   ]
+  },
+  "component:LocalTime": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "LKwN:ad68c5cb"
+   ]
+  },
+  "component:MemberProfileHoverCard": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "H0rq:d6aa896e"
+   ]
+  },
+  "component:MenuFromTemplate": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "0IBG:11bf0837"
+   ]
+  },
+  "component:MessageActionButtonReaction": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "wGfH:abb77fbb",
+    "wGfH:f9eeff6e"
+   ]
+  },
+  "component:MessageActions": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "wGfH:abb77fbb",
+    "wGfH:f9eeff6e"
+   ]
+  },
+  "component:MessageAttachmentHuddleLink": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "switch:bdf17b8a"
+   ]
+  },
+  "component:MessageBackground": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "kUyK:c50c1f57",
+    "kUyK:d99ee5f7"
+   ]
+  },
+  "component:MessageBlocks": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "0yVm:4f5555da",
+    "0yVm:685ebc77"
+   ]
+  },
+  "component:MessageInput": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "/WSU:9756f368"
+   ]
+  },
+  "component:MessageInputRoadblock": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "ayVf:f7d7f6ba"
+   ]
+  },
+  "component:MessageListItem": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "JXrM:81f31a1d",
+    "JXrM:8c1b84d4"
+   ]
+  },
+  "component:MessageSender": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "cQCh:61c9f510",
+    "cQCh:7962aa8c"
+   ]
+  },
+  "component:Presence": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "JyPw:d9c2cade"
+   ]
+  },
+  "component:Reaction": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "xoIl:27bf3387",
+    "xoIl:6b2abd4e"
+   ]
+  },
+  "component:ReactionAddButton": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "LSJr:255b7267",
+    "LSJr:89311d19"
+   ]
+  },
+  "component:ReactionAnimation": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "xoIl:27bf3387",
+    "xoIl:6b2abd4e"
+   ]
+  },
+  "component:ReactionBar": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "qFza:06018889",
+    "qFza:956e0c52"
+   ]
+  },
+  "component:RimetoMemberProfileOverflowMenu": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "4CzZ:058bead7"
+   ]
+  },
+  "component:RimetoProfilePresence": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "4CzZ:058bead7"
+   ]
+  },
+  "component:Serialized(ThreadsFlexpane)": {
+   "forms": [
+    "class",
+    "displayName"
+   ],
+   "modules": [
+    "RKkT:8470340a"
+   ]
+  },
+  "component:ShortcutsMenuTriggerButton": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "switch:bdf17b8a"
+   ]
+  },
+  "component:TextyButtonOverflow": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "uHQm:3349bfa4",
+    "uHQm:d90d702e"
+   ]
+  },
+  "component:TextyButtons": {
+   "forms": [
+    "displayName"
+   ],
+   "modules": [
+    "uHQm:3349bfa4",
+    "uHQm:d90d702e"
+   ]
+  },
+  "component:ThreadSearchButton": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "RKkT:8470340a"
+   ]
+  },
+  "component:ThreadSenderAndTimestampGeneric": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "0upa:a7d1b168"
+   ]
+  },
+  "component:ViewBlocks": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "OwtC:cb6dfecc"
+   ]
+  },
+  "component:WysiwygContainer": {
+   "forms": [
+    "displayName",
+    "function"
+   ],
+   "modules": [
+    "bMMD:76e8f384",
+    "bMMD:c80997f4"
+   ]
+  },
+  "fn:getActiveHuddleCallId": {
+   "forms": [
+    "arrow"
+   ],
+   "modules": [
+    "z10i:54dc6ca9"
+   ]
+  },
+  "fn:getActiveHuddleChannelId": {
+   "forms": [
+    "arrow"
+   ],
+   "modules": [
+    "z10i:54dc6ca9"
+   ]
+  },
+  "fn:getAllExperimentAssignments": {
+   "forms": [
+    "arrow"
+   ],
+   "modules": [
+    "pR6y:f6ad3310"
+   ]
+  },
+  "fn:joinChannel": {
+   "forms": [
+    "arrow"
+   ],
+   "modules": [
+    "aL/R:d459cd1c"
+   ]
+  },
+  "fn:sendMessage": {
+   "forms": [
+    "arrow",
+    "function"
+   ],
+   "modules": [
+    "09ET:9229a941",
+    "09ET:f09870c4",
+    "Ur6Q:7592297a"
+   ]
+  },
+  "fn:uploadFiles": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "switch:17cd8b4f"
+   ]
+  },
+  "rtm:message": {
+   "forms": [
+    "string"
+   ],
+   "modules": [
+    "+LW0:3da945e7",
+    "/0uQ:48ec8ad3",
+    "/cCw:e778ed16"
+   ]
+  },
+  "rtm:view_opened": {
+   "forms": [
+    "string"
+   ],
+   "modules": [
+    "switch:61dac50f"
+   ]
+  },
+  "thunk:addAndUploadPendingFile": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "bk/I:afd771db",
+    "bk/I:c3d053bb"
+   ]
+  },
+  "thunk:autocompleteChannels": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "qmYh:3938ab8d",
+    "qmYh:a8815c39"
+   ]
+  },
+  "thunk:autocompleteMembers": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "LpWf:901d3f99",
+    "LpWf:d0fd0342"
+   ]
+  },
+  "thunk:blocksFormatFetcher": {
+   "forms": [
+    "fetcher"
+   ],
+   "modules": [
+    "bMMD:76e8f384",
+    "bMMD:c80997f4"
+   ]
+  },
+  "thunk:changeReactionFromUserAction": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "Z1kg:086eb346",
+    "Z1kg:454704bc"
+   ]
+  },
+  "thunk:chatDeleteFetcher": {
+   "forms": [
+    "fetcher"
+   ],
+   "modules": [
+    "5FCZ:06bc428b",
+    "5FCZ:ed9d6d04"
+   ]
+  },
+  "thunk:clearDrafts": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "8brc:5d7c09ac"
+   ]
+  },
+  "thunk:commitMessageEdit": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "dlce:2e95432b",
+    "dlce:b5587bcc"
+   ]
+  },
+  "thunk:currentUserStartedTyping": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "gk9u:621682af"
+   ]
+  },
+  "thunk:deleteDraftApi": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "ez9s:30aec5d8"
+   ]
+  },
+  "thunk:displayAlertMessage": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "0XEJ:2dd5c2b6",
+    "0XEJ:923503bc"
+   ]
+  },
+  "thunk:enqueueHuddleToast": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "VVtM:302faee4",
+    "VVtM:a0c78125"
+   ]
+  },
+  "thunk:ensureMembersArePresent": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "PxOA:85389a80"
+   ]
+  },
+  "thunk:executeAppAction": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "TYTj:40ed57eb",
+    "TYTj:b9b44bc4"
+   ]
+  },
+  "thunk:fetchAndUpsertChannelsById": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "W3+L:3b857d11"
+   ]
+  },
+  "thunk:fetchRawChannelsById": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "W3+L:3b857d11"
+   ]
+  },
+  "thunk:getChannelMembershipInfoForUsers": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "C6Fr:712bf369"
+   ]
+  },
+  "thunk:getContextMenuTemplate": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "switch:bdf17b8a",
+    "switch:dd18450c"
+   ]
+  },
+  "thunk:getMemberContextMenuTemplate": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "GvOv:349dfe3e",
+    "GvOv:4b480548"
+   ]
+  },
+  "thunk:handleMessageImmediatelyWithoutPreprocessing": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "08C1:2a581280",
+    "08C1:ad2a8a09"
+   ]
+  },
+  "thunk:initializeUserPrefs": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "hiXg:d6ede838"
+   ]
+  },
+  "thunk:joinChannel": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "oGxd:29ddd81e",
+    "oGxd:2dc1b8ab"
+   ]
+  },
+  "thunk:logExperimentExposure": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "CpYE:e5473dcc"
+   ]
+  },
+  "thunk:markLastRead": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "yq7G:7047b78b"
+   ]
+  },
+  "thunk:maybeFetchBackgrounds": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "DUew:73995b15"
+   ]
+  },
+  "thunk:openPrefsModal": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "2UnP:9a92bfe0",
+    "2UnP:9b13f070"
+   ]
+  },
+  "thunk:prepareAndSendMessage": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "1TxL:002416c8",
+    "1TxL:5a1fd9f8"
+   ]
+  },
+  "thunk:saveMessageEdit": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "jGJx:260b4a50",
+    "jGJx:ab882713"
+   ]
+  },
+  "thunk:searchInline": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "ZFFW:c00dc324"
+   ]
+  },
+  "thunk:sendMessage": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "AUNZ:a4b60f74"
+   ]
+  },
+  "thunk:setUserPrefByApi": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "NpRf:ac8a82e0"
+   ]
+  },
+  "thunk:setUserPrefFetcher": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "ZkAC:affe13aa"
+   ]
+  },
+  "thunk:showNotification": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "H6mZ:9a988479",
+    "H6mZ:f92b9c8f"
+   ]
+  },
+  "thunk:startEventLog": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "xTkX:5d412d67",
+    "xTkX:d7cfc2eb"
+   ]
+  },
+  "thunk:stopEventLog": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "+2dM:316470e2",
+    "+2dM:a4600d60"
+   ]
+  },
+  "thunk:stopHuddle": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "pr6m:0f18e7b6",
+    "pr6m:76dafdb9"
+   ]
+  },
+  "thunk:submitAddOrRemoveReaction": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "azFK:4af56c19",
+    "azFK:8f9ad7a2"
+   ]
+  },
+  "thunk:submitView": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "oYfw:5fa009d4"
+   ]
+  },
+  "thunk:uploadFiles": {
+   "forms": [
+    "meta"
+   ],
+   "modules": [
+    "fvc4:9fc907b9",
+    "fvc4:bfb9395f"
+   ]
+  }
+ }
+}
