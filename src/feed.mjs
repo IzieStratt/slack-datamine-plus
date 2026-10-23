@@ -93,9 +93,10 @@ ${kept.map((i) => `<item><title>${esc(i.title)}</title><guid isPermaLink="false"
 </channel></rss>
 `;
 fs.writeFileSync(path.join(site, 'feed.xml'), rss);
-// uses the site's own stylesheet and theme script (dark mode toggle) from the root of *.izie.top; links reuse its pill `nav a` style
+// uses the site's own stylesheet and theme script (dark mode toggle) from the root of *.izie.top; links reuse its pill `nav a` style.
+// icons.html is linked as /icons: the site serves .html files without the extension and 307s the long form
 const has = (f) => fs.existsSync(path.join(site, f));
-const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons.html', 'Slack icons']] : []), ...(has('icons.pdf') ? [['icons.pdf', 'Icons (PDF)']] : []), ...(has('icons-diff.pdf') ? [['icons-diff.pdf', 'Icon changes (PDF)']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
+const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons', 'Slack icons']] : []), ...(has('icons.pdf') ? [['icons.pdf', 'Icons (PDF)']] : []), ...(has('icons-diff.pdf') ? [['icons-diff.pdf', 'Icon changes (PDF)']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
 fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
 <html lang="en">
   <head>
