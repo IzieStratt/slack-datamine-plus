@@ -42,6 +42,13 @@ export function chunkFiles(text) {
   return files;
 }
 
+// The gantry client page carries its async chunk list inline, as `p.u=e=>{var __cf={"name":"hash",...};...return "gantry-v2-async-"+e+"."+__cf[e]+".min.js"`.
+export function chunkMapFiles(text) {
+  const files = new Set();
+  for (const m of text.matchAll(/\b__cf\s*=\s*\{([^{}]*)\}/g)) for (const p of m[1].matchAll(/(?:"([^"]+)"|([A-Za-z0-9_$]+))\s*:\s*"([0-9a-f]{8,})"/g)) files.add(`gantry-v2-async-${p[1] ?? p[2]}.${p[3]}.min.js`);
+  return files;
+}
+
 // Since ~2026-07 the chunk list lives in the public webpack.manifest script as an rspack/webpack `.u` name->hash map:
 //   __webpack_require__.u=e=>""+e+"."+({"about-usergroup-view":"cf49...",plain_key:"8da0..."})[e]+".min.js"
 // Keys are quoted only when they are not valid identifiers, so JSON.parse can't be used.

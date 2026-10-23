@@ -9,6 +9,7 @@ export function checkHealth(prev, cur) {
   const problems = [];
   if (!cur.entryScripts) problems.push('The public client page listed no entry scripts (modern.vendor, application, rollup-core_*, TS.web), so most of the client was not mined.');
   else if (cur.entryFetched < cur.entryScripts) problems.push(`Only ${cur.entryFetched} of ${cur.entryScripts} entry scripts could be fetched.`);
+  if (cur.gantryPage === false) problems.push('The modern user agent no longer gets the gantry client page (no client-boot script or async chunk map): Slack probably raised its browser-version gate, so the boot bundle is not being mined.');
   if (!cur.iconGlyphs) problems.push('The icon glyph set was not found, so build/icons.json and the icons PDF were not refreshed.');
   if (!cur.experimentsSelector) problems.push('The experiments selector module was not found, so experiments were not refreshed.');
   if (prev?.apiMethods && cur.apiMethods < prev.apiMethods * 0.85) problems.push(`API methods dropped from ${prev.apiMethods} to ${cur.apiMethods}.`);

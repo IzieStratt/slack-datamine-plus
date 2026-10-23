@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import zlib from 'node:zlib';
-import { buildInfo, validBuild, decode, chunkFiles, extractMethods, isPhantom, manifestChunks, manifestUrl, mergeState } from '../src/lib.mjs';
+import { chunkMapFiles, buildInfo, validBuild, decode, chunkFiles, extractMethods, isPhantom, manifestChunks, manifestUrl, mergeState } from '../src/lib.mjs';
 
 test('decode handles brotli, gzip and raw', () => {
   const s = 'var a="chat.postMessage";';
@@ -70,6 +70,8 @@ test('health: flags missing sources and collapsing categories, passes a healthy 
   const ok = { entryScripts: 17, entryFetched: 17, iconGlyphs: 720, experimentsSelector: 1, apiMethods: 1553, chunks: 1800, mined: { 'ui-strings': 32000, scopes: 3 } };
   assert.deepEqual(checkHealth(ok, ok), []);
   assert.deepEqual(checkHealth(undefined, ok), []);
+  assert.ok(checkHealth(ok, { ...ok, gantryPage: false }).join().includes('gantry client page'));
+  assert.deepEqual(checkHealth(ok, { ...ok, gantryPage: true }), []);
   const bad = { ...ok, entryScripts: 0, entryFetched: 0, iconGlyphs: 0, experimentsSelector: 0, apiMethods: 600, mined: { 'ui-strings': 14000, scopes: 0 } };
   const p = checkHealth(ok, bad).join('\n');
   for (const needle of ['no entry scripts', 'icon glyph set', 'experiments selector', 'API methods dropped', 'ui-strings dropped']) assert.ok(p.includes(needle), needle);
@@ -87,4 +89,10 @@ test('sources: page assets keep dotted names and drop hashes; families need a fe
   assert.deepEqual(ids, ['asset:TS.web.min.js', 'asset:application.min.css', 'asset:modern.vendor.min.js', 'family:client']);
   assert.deepEqual(diffSources(ids.slice(0, 3), ids), { added: ['family:client'], removed: [] });
   assert.deepEqual(diffSources(ids, ids.slice(1)), { added: [], removed: ['asset:TS.web.min.js'] });
+});
+
+test('chunkMapFiles: reads the inline __cf map of the gantry client page', () => {
+  const page = 'p.u=e=>{var __cf={"client-boot-vendors":"e6b038aec2795a05","lottie-x":"bf461b3a0c1d2e3f",plain_key:"8da0aaaaaaaa"};if(__cf[e])return "gantry-v2-async-"+e+"."+__cf[e]+".min.js"}';
+  assert.deepEqual([...chunkMapFiles(page)].sort(), ['gantry-v2-async-client-boot-vendors.e6b038aec2795a05.min.js', 'gantry-v2-async-lottie-x.bf461b3a0c1d2e3f.min.js', 'gantry-v2-async-plain_key.8da0aaaaaaaa.min.js']);
+  assert.equal(chunkMapFiles('nothing here').size, 0);
 });

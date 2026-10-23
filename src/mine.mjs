@@ -15,7 +15,7 @@ import { checkHealth } from './health.mjs';
 import { emptyFrontend, finishFrontend, scanFrontend } from './frontend.mjs';
 import { emptyPresence, finishPresence, scanWatched } from './watch.mjs';
 import { diffSources, pageAssets, sourceIds } from './sources.mjs';
-import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
+import { buildInfo, chunkFiles, chunkMapFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
 const has = (n) => process.argv.includes(`--${n}`);
@@ -24,6 +24,12 @@ const OUT = arg('out') || 'build';
 const STATE = arg('state') || 'state/methods.json';
 const exclude = new Set(fs.readFileSync(new URL('./exclude.txt', import.meta.url), 'utf8').split('\n').filter(Boolean));
 const log = (...a) => console.log(...a);
+// Slack serves a different page by browser version (not OS): Chrome below ~138, Safari 17, Firefox 125, curl, an empty UA... get the older shell
+// (webpack manifest only); a recent Chrome/Edge/Firefox/Safari, or any UA with a Slack_SSB token, gets the gantry client page that lists client-boot
+// and gantry-v2-vendors and carries the whole async chunk map inline. We mine both: the legacy shell is the primary page (its manifest crawl and
+// build id), the gantry page is added with the modern UA. A health check fires if the modern UA stops getting the gantry page.
+const UA_LEGACY = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36';
+const UA_MODERN = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36';
 // Debug files get uploaded as workflow artifacts (downloadable by any GitHub user on a public repo). Never let a token reach them,
 // and never upload the authed page itself (it also holds the account's name, email and ids): only counts and script URLs.
 export const redact = (t) => {
@@ -46,7 +52,7 @@ const pageSummary = (html, url) => JSON.stringify({
 const sh = (k, v) => process.env.GITHUB_OUTPUT && fs.appendFileSync(process.env.GITHUB_OUTPUT, `${k}=${v}\n`);
 
 // `startUrl` defaults to the org client. With `tolerant` a page that can't be used returns null instead of ending the run (extra pages are a bonus).
-async function fetchHtml(startUrl = process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E', tolerant = false) {
+async function fetchHtml(startUrl = process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E', tolerant = false, ua = UA_LEGACY) {
   const die = () => { if (!tolerant) process.exit(3); return null; };
   const cookie = process.env.SLACK_D_COOKIE;
   if (!cookie) { console.error('SLACK_D_COOKIE is not set'); process.exit(3); }
@@ -55,7 +61,7 @@ async function fetchHtml(startUrl = process.env.SLACK_CLIENT_URL || 'https://app
   if (!slackHost(url)) { console.error('SLACK_CLIENT_URL must be an https://*.slack.com URL'); return die(); }
   for (let hop = 0; hop < 8; hop++) {
     if (!slackHost(url)) { console.error('refusing to follow a redirect off slack.com (the d cookie would be sent there)'); return die(); }
-    const headers = { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36', cookie: `d=${cookie}` };
+    const headers = { 'user-agent': ua, cookie: `d=${cookie}` };
     const res = await fetch(url, { headers, redirect: 'manual' });
     if (res.status >= 300 && res.status < 400) { url = new URL(res.headers.get('location'), url).href; continue; }
     if (!res.ok) { console.error(`client HTML: HTTP ${res.status} at ${url}`); return die(); }
@@ -93,19 +99,22 @@ async function get(url, tries = 3) {
 // too. Set ENTRY_PAGE_URL to use another page; if it can't be fetched the crawl just runs without them.
 async function entryScripts() {
   const pages = [process.env.ENTRY_PAGE_URL || 'https://app.slack.com/client/T0266FRGM', 'https://slack.com/signin'];
-  const names = new Set(), htmls = [];
+  const names = new Set(), asyncNames = new Set(), htmls = [];
   let complete = true;
-  for (const pageUrl of pages) {
+  // each page with both user agents: the modern one gets the gantry client (client-boot...), the legacy one gets the older shell with its
+  // application/modern.vendor/rollup-* scripts, and both are part of what Slack ships
+  for (const [ua, pageUrl] of ['modern', 'legacy'].flatMap((k) => pages.map((u) => [k === 'modern' ? UA_MODERN : UA_LEGACY, u]))) {
     try {
-      const r = await fetch(pageUrl, { headers: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36' } });
+      const r = await fetch(pageUrl, { headers: { 'user-agent': ua } });
       if (!r.ok && r.status !== 403) { console.error(`entry scripts: ${pageUrl} answered HTTP ${r.status}`); complete = false; continue; }
       const html = await r.text();
       htmls.push(html);
       // every script the page lists, including variants like x.<hash>.primer.min.js that the plain chunk-name pattern does not match
       for (const f of [...chunkFiles(html), ...pageAssets(html).filter((a) => a.ext.endsWith('js')).map((a) => a.file)]) if (!f.includes('.marketing.')) names.add(f);
+      for (const f of chunkMapFiles(html)) asyncNames.add(f); // the gantry client's inline async chunk map (crawled, but not counted as entry scripts)
     } catch (e) { console.error(`entry scripts: could not fetch ${pageUrl}: ${e.message}`); complete = false; }
   }
-  return { names: [...names], htmls, complete };
+  return { names: [...names], asyncNames: [...asyncNames], htmls, complete };
 }
 
 // Workers keep running while any task is in flight, because a finished task may append more items to the shared array.
@@ -139,7 +148,7 @@ async function main() {
   const prevMeta = fs.existsSync(`${OUT}/meta.json`) ? JSON.parse(fs.readFileSync(`${OUT}/meta.json`, 'utf8')) : {};
   let archive = null, buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), params = new Map(), stats = {}, chunkNames = [];
   const extras = emptyExtras(), expParts = [];
-  let iconSet = null, entryComplete = true;
+  let iconSet = null, entryComplete = true, gantryBoot = null, gantryPage = false;
   const pageHtmls = [];
   const frontend = emptyFrontend();
   // names someone looks up in the client by name (src/taut-usage.mjs --json output, see TAUT_WATCH); we record how each one is defined
@@ -163,7 +172,28 @@ async function main() {
     if (!info.buildNumber || !info.cdn) { writeDebug('page-summary.json', pageSummary(html, 'n/a')); console.error('no valid build id / CDN base in HTML; saved debug/page-summary.json'); process.exit(2); }
     buildNumber = info.buildNumber;
     sh('build', buildNumber);
-    if (!has('force') && prevMeta.buildNumber === buildNumber) { log(`build ${buildNumber} already mined`); sh('changed', 'false'); return; }
+    // The gantry client pages (modern UA): the signed-in org and workspace pages (SLACK_EXTRA_CLIENT_URLS is a comma separated list of more), plus
+    // the public ones below. They list client-boot and gantry-v2-vendors and carry the async chunk map. A page that fails is skipped.
+    const extraHtmls = [], extraNames = new Set(), extraAsync = new Set();
+    for (const u of [...new Set([process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E', ...(process.env.SLACK_EXTRA_CLIENT_URLS ?? 'https://app.slack.com/client/T0266FRGM').split(',').map((x) => x.trim()).filter(Boolean)])]) {
+      const h = await fetchHtml(u, true, UA_MODERN);
+      if (!h) { console.error(`extra client page not usable: ${u}`); continue; }
+      extraHtmls.push(h);
+      // names only (no page content): anything in the page that looks like a boot/gantry/vendors bundle, to see how the client loads them
+      const hints = [...new Set([...h.replace(/\\\//g, '/').matchAll(/[A-Za-z0-9_.\/-]{0,60}(?:boot|gantry|vendors)[A-Za-z0-9_.\/-]{0,60}/g)].map((m) => m[0]))].slice(0, 40);
+      log(`signed-in page ${u}: boot-like names: ${hints.join(' ') || 'none'}`);
+      const names = [...chunkFiles(h), ...pageAssets(h).filter((a) => a.ext.endsWith('js')).map((a) => a.file)].filter((f) => !f.includes('.marketing.'));
+      names.forEach((f) => extraNames.add(f));
+      for (const f of chunkMapFiles(h)) extraAsync.add(f);
+      log(`signed-in page ${u}: ${names.length} scripts: ${names.map((f) => f.split('.')[0]).slice(0, 40).join(' ')}`);
+    }
+    const { names: entry0, asyncNames, htmls: entryHtmls, complete } = await entryScripts();
+    const entry = [...new Set([...entry0, ...extraNames])];
+    entryComplete = complete;
+    // which gantry client build this is: the client-boot file name carries its content hash
+    gantryBoot = entry.find((f) => /^client-boot\.[0-9a-f]{16}\.min\.js$/.test(f)) ?? null;
+    gantryPage = !!gantryBoot && (asyncNames.length + extraAsync.size) > 0;
+    if (!has('force') && prevMeta.buildNumber === buildNumber && (prevMeta.gantryBoot ?? null) === gantryBoot) { log(`build ${buildNumber} already mined`); sh('changed', 'false'); return; }
     log(`build ${buildNumber}: discovering chunks`);
     { const urls = new Set([...html.replace(/\\\//g, '/').matchAll(/https:\/\/[a-z0-9.-]*slack-edge\.com\/[^"'\s\\<>)]+/g)].map((m) => m[0].split('?')[0])); log(`page cdn urls (${urls.size}): ${[...urls].slice(0, 80).join(' ')}`); } // public CDN urls only
     log(`page scripts: ${[...html.matchAll(/<script[^>]*\ssrc="([^"?]+)/g)].map((m) => m[1].split('/').pop()).join(' ')}`); // public file names only; shows which entry scripts the crawl starts from
@@ -177,25 +207,11 @@ async function main() {
       else console.error(`webpack manifest fetch: HTTP ${r.status}`);
     }
     log(`manifest ${mUrl ?? 'not found'}: ${queue.length} chunk names`);
-    // The signed-in org page lists only the manifest. A signed-in *workspace* client page can list more entry scripts (the boot bundle Taut
-    // sees), so read it too (SLACK_EXTRA_CLIENT_URLS, comma separated; default: the Hack Club workspace). Failing pages are skipped.
-    const extraHtmls = [], extraNames = new Set();
-    for (const u of (process.env.SLACK_EXTRA_CLIENT_URLS ?? 'https://app.slack.com/client/T0266FRGM').split(',').map((x) => x.trim()).filter(Boolean)) {
-      const h = await fetchHtml(u, true);
-      if (!h) { console.error(`extra client page not usable: ${u}`); continue; }
-      extraHtmls.push(h);
-      // names only (no page content): anything in the page that looks like a boot/gantry/vendors bundle, to see how the client loads them
-      const hints = [...new Set([...h.replace(/\\\//g, '/').matchAll(/[A-Za-z0-9_.\/-]{0,60}(?:boot|gantry|vendors)[A-Za-z0-9_.\/-]{0,60}/g)].map((m) => m[0]))].slice(0, 40);
-      log(`signed-in page ${u}: boot-like names: ${hints.join(' ') || 'none'}`);
-      const names = [...chunkFiles(h), ...pageAssets(h).filter((a) => a.ext.endsWith('js')).map((a) => a.file)].filter((f) => !f.includes('.marketing.'));
-      names.forEach((f) => extraNames.add(f));
-      log(`signed-in page ${u}: ${names.length} scripts: ${names.map((f) => f.split('.')[0]).slice(0, 40).join(' ')}`);
-    }
-    const { names: entry0, htmls: entryHtmls, complete } = await entryScripts();
-    const entry = [...new Set([...entry0, ...extraNames])];
-    entryComplete = complete;
     log(`entry scripts from the public client pages: ${entry.length}`);
     for (const f of entry) if (!queue.includes(f)) queue.push(f);
+    const inQueue = new Set(queue);
+    for (const f of [...chunkMapFiles(html), ...asyncNames, ...extraAsync]) if (!inQueue.has(f)) { inQueue.add(f); queue.push(f); }
+    log(`gantry async chunks from the pages' inline map: ${inQueue.size - queue.length + [...chunkMapFiles(html), ...asyncNames, ...extraAsync].length}`);
     pageHtmls.push(html, ...extraHtmls, ...entryHtmls);
     const seen = new Set(queue), ok = [], phantom = [], missing = [];
     await pool(queue, 12, async function visit(file) {
@@ -266,7 +282,7 @@ async function main() {
   counts.redux = fe.reduxNames.length;
   counts.experiments = Object.keys(exp.experiments).length;
   counts.experimentsWithGroups = Object.values(exp.experiments).filter((g) => g.length).length;
-  const metaOut = { buildNumber, capturedDate: date, ...stats, iconGlyphs: iconSet ? Object.keys(iconSet.icons).length : 0, experimentsSelector: exp.selectorModules, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length, chunks: chunkNames.length, mined: counts };
+  const metaOut = { buildNumber, capturedDate: date, ...stats, gantryBoot, gantryPage, iconGlyphs: iconSet ? Object.keys(iconSet.icons).length : 0, experimentsSelector: exp.selectorModules, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length, chunks: chunkNames.length, mined: counts };
   fs.writeFileSync(`${OUT}/meta.json`, JSON.stringify(metaOut, null, 1) + '\n');
   // gaps (a source missing, a category collapsing) are written down so the workflow can raise them instead of letting them pass silently
   if (stats.source !== 'from-dir') {
