@@ -14,6 +14,12 @@ Each run writes to `build/`: `api-methods.txt`, `chunks.txt`, `meta.json` (with 
 
 Experiments are found like [taut](https://github.com/jeremy46231/taut)'s Experiments plugin does it (`plugins/Experiments.tsx`, `scanCode`): locate the module exporting `getGroupForUser`, map its minified export keys, then regex every `(0,x.key)(state,"name")` call and the group strings it is compared to. Result: `build/experiments.json` (`name -> groups`) and `experiments.txt`. Lists are regex heuristics, so expect some noise (mainly `errors`).
 
+## Health and new sources
+
+A run can succeed while a whole source is missing. So every run writes `build/health.json`:
+- `problems`: an expected source was not found (no entry scripts, no icon glyph set, no experiments selector), or methods/chunks/a category dropped sharply against the previous build. The workflow opens a `mine-health` issue and fails the run once per change; it closes by itself when a run is clean.
+- `notices`: the source inventory (`build/sources.txt`: page assets with their hashes stripped, plus chunk-name families) gained or lost an entry. That opens a `mine-sources` issue (never fails the run). Scripts listed on the public client pages are mined in the same run.
+
 ## If this helped you
 
 If this helped you in any way, I'd love for you to shoot me an email at SlackDataminePlus@izie.top, (if theres any improvements you want lmk!) a link back to this repo, or a star all tell me people actually use this, plus they make me smile :) This isn't something you're forced to do, the license is still AGPL-3.0, it's just a request.
