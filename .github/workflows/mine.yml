@@ -2,7 +2,7 @@ name: mine
 
 on:
   schedule:
-    - cron: '0,40 * * * *' # GitHub cron can't do true 40-minute steps; this is :00 and :40 each hour
+    - cron: '0 6,18 * * *' # twice a day, 06:00 and 18:00 UTC
   workflow_dispatch:
     inputs:
       force:
@@ -83,6 +83,10 @@ jobs:
           node src/sync-redocumented.mjs personal-site --summary "$PWD/sync-summary.json"
           cd personal-site
           python3 scripts/build-redocumented-agent.py
+          cd ..
+          # the icons PDF is only rewritten when the glyph set changed (sha stored next to it)
+          node src/icons-pdf.mjs personal-site/website/public/__subdomains/slackdatamineplus
+          cd personal-site
           git status --porcelain | head -5
       - name: Push ReDocumented to main
         if: steps.mine.outputs.changed == 'true'

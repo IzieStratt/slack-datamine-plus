@@ -21,6 +21,13 @@ const by = new Map(data.methods.map((m) => [m.name, m]));
 // names the existence oracle said are not live dispatch targets (see ReDocumented datamine-2026-09.md)
 const exclude = new Set(fs.readFileSync(new URL('./exclude.txt', import.meta.url), 'utf8').split('\n').filter(Boolean));
 const OURS = 'IzieStratt/slack-datamine-plus (own miner)';
+// The build id is NOT written into every entry: an entry seen in the latest mined build says so generically and follows the single
+// datamine_latest_build.build value. An entry whose call sites were not found in the latest build keeps its own older build and
+// date explicitly, so a method we no longer see is never described as seen in the current build.
+const SOURCE_TAIL = `Mined by ${OURS}. They are real names as written in the client's JavaScript, but the set is partial (spread and computed arguments are invisible), says nothing about which are required, and camelCase client names may be snake_case on the wire. "sites" is how many call sites pass the key.`;
+const observedSource = (o, latest) => String(o.build) === String(latest)
+  ? `Argument names seen at call sites in the latest mined build of Slack's web client (see datamine_latest_build). ${SOURCE_TAIL}`
+  : `Argument names seen at call sites in Slack's web client build ${o.build} (${o.seen}). Later builds no longer show call sites for this method, so these may be out of date. ${SOURCE_TAIL}`;
 const added = [], newlyAbsent = [], returned = [], paramsAdded = [];
 
 for (const [name, e] of Object.entries(state)) {
@@ -55,7 +62,7 @@ for (const [name, e] of Object.entries(state)) {
     const next = o.params;
     if (JSON.stringify(m.params_observed) !== JSON.stringify(next)) paramsAdded.push(name);
     m.params_observed = next;
-    m.params_observed_source = `Argument names seen at call sites in Slack's web client (build ${o.build}, ${o.seen}) by ${OURS}. They are real names as written in the client's JavaScript, but the set is partial (spread and computed arguments are invisible), says nothing about which are required, and camelCase client names may be snake_case on the wire. "sites" is how many call sites pass the key.`;
+    m.params_observed_source = observedSource(o, meta.buildNumber);
   }
 }
 

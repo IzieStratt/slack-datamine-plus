@@ -10,6 +10,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { extractParams, mergeParams, serializeParams } from './params.mjs';
 import { emptyExtras, extractExtras, finishExperiments, scanExperiments } from './extras.mjs';
+import { extractIconSet } from './icons.mjs';
 import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
@@ -112,7 +113,8 @@ async function main() {
   const prevMeta = fs.existsSync(`${OUT}/meta.json`) ? JSON.parse(fs.readFileSync(`${OUT}/meta.json`, 'utf8')) : {};
   let archive = null, buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), params = new Map(), stats = {}, chunkNames = [];
   const extras = emptyExtras(), expParts = [];
-  const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); };
+  let iconSet = null;
+  const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); };
 
   if (arg('from-dir')) {
     buildNumber = arg('build') || 'local';
@@ -183,6 +185,9 @@ async function main() {
     counts[cat] = set.size;
     if (set.size) fs.writeFileSync(`${OUT}/${cat}.txt`, [...set].sort().join('\n') + '\n');
   }
+  // the glyph set behind the icon names (build/icons.json drives the icons PDF); keep the old one if this build's chunk was missing
+  if (iconSet) fs.writeFileSync(`${OUT}/icons.json`, JSON.stringify(iconSet) + '\n');
+  else console.error('icons: glyph set not found, keeping previous build/icons.json');
   // keep the manifest bytes and the entry-script list so this build can be re-mined later (Slack retires whole CDN buckets)
   if (archive) {
     fs.mkdirSync(`${OUT}/archive`, { recursive: true });
