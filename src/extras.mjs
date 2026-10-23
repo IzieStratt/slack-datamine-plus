@@ -17,9 +17,16 @@ const GROUP_SELECTORS = new Set(['getGroupForUser', 'getGroupForUserWithoutExpos
 const CALL_RE = /\(0,([\w$]+)\.([\w$]+)\)\(([^,()]{1,40}),"([a-z][\w.-]{2,120})"[^()]{0,24}\)/g;
 const IMPORT_RE = /[\s,;]([\w$]+)=\w\("([^"\\]+)"\)/g;
 
+// Some files (application, the legacy rollups) declare "use strict" once at the top, so their modules are `id(e,t,a){a.d(...)}` without it.
+// For those the strict pattern finds almost nothing; fall back to ids of 3-8 chars that follow a `,` or the map's `{`.
+const MODULE_HEAD_LOOSE = /(?:^|[,{])\s*("[^"\\]{3,8}"|[A-Za-z0-9_$+/-]{3,8})\((?:\w(?:,\w){0,2})?\)\{/g;
 export function modules(js) {
-  const heads = [...js.matchAll(MODULE_HEAD)];
-  return heads.map((m, i) => ({ id: m[1].replace(/^"|"$/g, ''), src: js.slice(m.index, heads[i + 1]?.index ?? js.length) }));
+  let heads = [...js.matchAll(MODULE_HEAD)];
+  if (js.length > 20000) {
+    const loose = [...js.matchAll(MODULE_HEAD_LOOSE)];
+    if (heads.length < loose.length * 0.5) heads = loose;
+  }
+  return heads.map((m, i) => ({ id: m[1].replace(/^"|"$/g, ''), start: m.index, src: js.slice(m.index, heads[i + 1]?.index ?? js.length) }));
 }
 
 const groupsAround = (src, at, len, groups) => {

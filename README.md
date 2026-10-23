@@ -22,6 +22,10 @@ A run can succeed while a whole source is missing. So every run writes `build/he
 - `problems`: an expected source was not found (no entry scripts, no icon glyph set, no experiments selector), or methods/chunks/a category dropped sharply against the previous build. The workflow opens a `mine-health` issue and fails the run once per change; it closes by itself when a run is clean.
 - `notices`: the source inventory (`build/sources.txt`: page assets with their hashes stripped, plus chunk-name families) gained or lost an entry. That opens a `mine-sources` issue (never fails the run). Scripts listed on the public client pages are mined in the same run.
 
+## Taut watch
+
+`src/taut-usage.mjs` reads [Taut](https://github.com/jeremy46231/taut)'s source for the names it looks up in Slack's client (components, thunks, `byMeta`/`byName` lookups, websocket events, experiments). `mine` records how each name is defined in the current build (`build/taut-presence.json`, every code shape Taut can resolve), and the `taut-watch` workflow, which runs after every mine, keeps one `taut-watch` issue up to date: names that went missing (with the closest names now, and a note when a name still exists but is no longer registered with `.meta`), and modules whose code changed. No AI and no secrets beyond the repo's own token. Set the repo variable `TAUT_REPO` to watch a fork.
+
 ## If this helped you
 
 If this helped you in any way, I'd love for you to shoot me an email at SlackDataminePlus@izie.top, (if theres any improvements you want lmk!) a link back to this repo, or a star all tell me people actually use this, plus they make me smile :) This isn't something you're forced to do, the license is still AGPL-3.0, it's just a request.

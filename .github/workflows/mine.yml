@@ -38,12 +38,23 @@ jobs:
         with:
           node-version: 22
       - run: npm test
+      # Taut (a Slack client mod) looks things up in the client by name. List them so the miner can record how each is defined (build/taut-presence.json).
+      - name: Check out Taut (public) to read which names it looks up
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        continue-on-error: true
+        with:
+          repository: ${{ vars.TAUT_REPO || 'jeremy46231/taut' }}
+          persist-credentials: false
+          path: taut
+      - name: List what Taut looks up
+        run: node src/taut-usage.mjs taut --json > taut-watch.json || rm -f taut-watch.json
       - name: Mine
         id: mine
         env:
           SLACK_D_COOKIE: ${{ secrets.SLACK_D_COOKIE }}
           SLACK_CLIENT_URL: ${{ vars.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E' }}
           ENTRY_PAGE_URL: ${{ inputs.entry_page_url }}
+          TAUT_WATCH: taut-watch.json
         run: node src/mine.mjs ${{ inputs.force && '--force' || '' }}
       - name: Upload debug files on failure
         if: failure()

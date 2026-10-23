@@ -13,6 +13,7 @@ import { emptyExtras, extractExtras, finishExperiments, scanExperiments } from '
 import { extractIconSet } from './icons.mjs';
 import { checkHealth } from './health.mjs';
 import { emptyFrontend, finishFrontend, scanFrontend } from './frontend.mjs';
+import { emptyPresence, finishPresence, scanWatched } from './watch.mjs';
 import { diffSources, pageAssets, sourceIds } from './sources.mjs';
 import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
@@ -139,7 +140,11 @@ async function main() {
   let iconSet = null, entryComplete = true;
   const pageHtmls = [];
   const frontend = emptyFrontend();
-  const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); scanFrontend(js, frontend); };
+  // names someone looks up in the client by name (src/taut-usage.mjs --json output, see TAUT_WATCH); we record how each one is defined
+  const watchFile = process.env.TAUT_WATCH || arg('watch');
+  const watch = watchFile && fs.existsSync(watchFile) ? [...new Map(JSON.parse(fs.readFileSync(watchFile, 'utf8')).uses.map((u) => [`${u.kind}:${u.name}`, { kind: u.kind, name: u.name }])).values()] : [];
+  const presence = emptyPresence();
+  const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); scanFrontend(js, frontend); if (watch.length) scanWatched(js, watch, presence); };
 
   if (arg('from-dir')) {
     buildNumber = arg('build') || 'local';
@@ -239,6 +244,7 @@ async function main() {
     fs.writeFileSync(`${OUT}/redux.txt`, fe.reduxNames.join('\n') + '\n');
     fs.writeFileSync(`${OUT}/redux.json`, JSON.stringify(fe.redux) + '\n');
   } else console.error('components/redux: none found, keeping the previous files');
+  if (watch.length) fs.writeFileSync(`${OUT}/taut-presence.json`, JSON.stringify(finishPresence(presence, watch), null, 1) + '\n');
   counts.components = fe.componentNames.length;
   counts.redux = fe.reduxNames.length;
   counts.experiments = Object.keys(exp.experiments).length;

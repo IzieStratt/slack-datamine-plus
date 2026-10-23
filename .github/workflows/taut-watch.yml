@@ -1,0 +1,61 @@
+name: taut-watch
+
+# After every mine run: are the things Taut (https://github.com/jeremy46231/taut) looks up in Slack's client still there?
+# Keeps one issue (label `taut-watch`) up to date: opened when a name goes missing or the code behind one changed recently,
+# commented when new names go missing, closed when all is well. No AI, no extra secrets: it only needs the repo's own token.
+on:
+  workflow_run:
+    workflows: [mine]
+    types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: taut-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: write # state/taut.json
+  issues: write
+
+jobs:
+  watch:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22
+      - name: Check out Taut (public)
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: ${{ vars.TAUT_REPO || 'jeremy46231/taut' }}
+          persist-credentials: false
+          path: taut
+      - name: Check what Taut looks up against the latest build
+        id: check
+        run: node src/taut-watch.mjs taut
+      - name: Update the issue
+        if: steps.check.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node src/taut-report.mjs
+          cat taut-report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Save state
+        if: steps.check.outcome == 'success'
+        run: |
+          git add state/taut.json
+          if git diff --cached --quiet; then echo "state unchanged"; exit 0; fi
+          git config user.name "Izie"
+          git config user.email "238573415+IzieStratt@users.noreply.github.com"
+          git commit -q -m "taut-watch: state" \
+            -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
+          for i in 1 2 3; do
+            git push origin HEAD:main && exit 0
+            git pull --rebase origin main
+          done
+          echo "push failed"; exit 1
