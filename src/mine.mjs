@@ -45,32 +45,34 @@ const pageSummary = (html, url) => JSON.stringify({
 }, null, 1);
 const sh = (k, v) => process.env.GITHUB_OUTPUT && fs.appendFileSync(process.env.GITHUB_OUTPUT, `${k}=${v}\n`);
 
-async function fetchHtml() {
+// `startUrl` defaults to the org client. With `tolerant` a page that can't be used returns null instead of ending the run (extra pages are a bonus).
+async function fetchHtml(startUrl = process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E', tolerant = false) {
+  const die = () => { if (!tolerant) process.exit(3); return null; };
   const cookie = process.env.SLACK_D_COOKIE;
   if (!cookie) { console.error('SLACK_D_COOKIE is not set'); process.exit(3); }
-  let url = process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E';
+  let url = startUrl;
   const slackHost = (u) => { const x = new URL(u); return x.protocol === 'https:' && (x.hostname === 'slack.com' || x.hostname.endsWith('.slack.com')); };
-  if (!slackHost(url)) { console.error('SLACK_CLIENT_URL must be an https://*.slack.com URL'); process.exit(3); }
+  if (!slackHost(url)) { console.error('SLACK_CLIENT_URL must be an https://*.slack.com URL'); return die(); }
   for (let hop = 0; hop < 8; hop++) {
-    if (!slackHost(url)) { console.error('refusing to follow a redirect off slack.com (the d cookie would be sent there)'); process.exit(3); }
+    if (!slackHost(url)) { console.error('refusing to follow a redirect off slack.com (the d cookie would be sent there)'); return die(); }
     const headers = { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36', cookie: `d=${cookie}` };
     const res = await fetch(url, { headers, redirect: 'manual' });
     if (res.status >= 300 && res.status < 400) { url = new URL(res.headers.get('location'), url).href; continue; }
-    if (!res.ok) { console.error(`client HTML: HTTP ${res.status} at ${url}`); process.exit(3); }
+    if (!res.ok) { console.error(`client HTML: HTTP ${res.status} at ${url}`); return die(); }
     const html = await res.text();
     if (/terms-of-service\.[0-9a-f]+\.min\.js/.test(html)) {
       fs.mkdirSync('debug', { recursive: true });
       console.error(`landed on the Terms of Service page at ${url}: log in as this account in a browser and accept the terms, then re-run`);
-      process.exit(3);
+      return die();
     }
     if (/sign[_ ]?in|ssb\/redirect/i.test(new URL(url).pathname) || !/version_ts|build-number|boot_data\.version_uid/.test(html)) {
       writeDebug('page-summary.json', pageSummary(html, url));
       console.error(`did not land on an authed client page (ended at ${url}); cookie expired or invalidated? saved debug/page-summary.json`);
-      process.exit(3);
+      return die();
     }
     return html;
   }
-  console.error('too many redirects'); process.exit(3);
+  console.error('too many redirects'); return die();
 }
 
 async function get(url, tries = 3) {
@@ -175,11 +177,23 @@ async function main() {
       else console.error(`webpack manifest fetch: HTTP ${r.status}`);
     }
     log(`manifest ${mUrl ?? 'not found'}: ${queue.length} chunk names`);
-    const { names: entry, htmls: entryHtmls, complete } = await entryScripts();
+    // The signed-in org page lists only the manifest. A signed-in *workspace* client page can list more entry scripts (the boot bundle Taut
+    // sees), so read it too (SLACK_EXTRA_CLIENT_URLS, comma separated; default: the Hack Club workspace). Failing pages are skipped.
+    const extraHtmls = [], extraNames = new Set();
+    for (const u of (process.env.SLACK_EXTRA_CLIENT_URLS ?? 'https://app.slack.com/client/T0266FRGM').split(',').map((x) => x.trim()).filter(Boolean)) {
+      const h = await fetchHtml(u, true);
+      if (!h) { console.error(`extra client page not usable: ${u}`); continue; }
+      extraHtmls.push(h);
+      const names = [...chunkFiles(h), ...pageAssets(h).filter((a) => a.ext.endsWith('js')).map((a) => a.file)].filter((f) => !f.includes('.marketing.'));
+      names.forEach((f) => extraNames.add(f));
+      log(`signed-in page ${u}: ${names.length} scripts: ${names.map((f) => f.split('.')[0]).slice(0, 40).join(' ')}`);
+    }
+    const { names: entry0, htmls: entryHtmls, complete } = await entryScripts();
+    const entry = [...new Set([...entry0, ...extraNames])];
     entryComplete = complete;
     log(`entry scripts from the public client pages: ${entry.length}`);
     for (const f of entry) if (!queue.includes(f)) queue.push(f);
-    pageHtmls.push(html, ...entryHtmls);
+    pageHtmls.push(html, ...extraHtmls, ...entryHtmls);
     const seen = new Set(queue), ok = [], phantom = [], missing = [];
     await pool(queue, 12, async function visit(file) {
       if (isPhantom(file)) { phantom.push(file); return; }
