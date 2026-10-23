@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { SEARCH_CSS, pills, searchHtml } from './ui.mjs';
 
 const [site, url] = process.argv.slice(2, 4);
 if (!site || !url) { console.error('usage: feed.mjs <site-dir> <site-url> [--since ref]'); process.exit(1); }
@@ -43,7 +44,7 @@ const SKIP = new Set(['chunks', 'experiments.txt']); // experiments.json covers 
 // it and re-reports the same changes. A category file that did not exist at `base` is reported as a new category, never dropped.
 function buildItem(base, head) {
   if (!base || base === head) return null;
-  const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons)\.json$/.test(f));
+  const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons|health)\.json$/.test(f));
   let html = '', total = 0;
   const build = (JSON.parse(show('HEAD', 'build/meta.json') ?? '{}')).buildNumber;
   for (const f of files) {
@@ -92,7 +93,9 @@ ${kept.map((i) => `<item><title>${esc(i.title)}</title><guid isPermaLink="false"
 </channel></rss>
 `;
 fs.writeFileSync(path.join(site, 'feed.xml'), rss);
-// uses the site's own stylesheet and theme script (dark mode toggle) from the root of *.izie.top
+// uses the site's own stylesheet and theme script (dark mode toggle) from the root of *.izie.top; links reuse its pill `nav a` style
+const has = (f) => fs.existsSync(path.join(site, f));
+const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons.html', 'Slack icons']] : []), ...(has('icons.pdf') ? [['icons.pdf', 'Icons (PDF)']] : []), ...(has('icons-diff.pdf') ? [['icons-diff.pdf', 'Icon changes (PDF)']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
 fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
 <html lang="en">
   <head>
@@ -103,36 +106,59 @@ fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
     <link rel="alternate" type="application/rss+xml" href="feed.xml">
     <link rel="stylesheet" href="/style.css">
     <script src="/cdn/theme.js"></script>
+    <style>${SEARCH_CSS}
+      .item { content-visibility: auto; contain-intrinsic-size: auto 800px; }
+    </style>
   </head>
   <body>
     <main>
       <h1>slack-datamine-plus changes</h1>
-      <p><a href="feed.xml">RSS feed</a>${fs.existsSync(path.join(site, 'icons.pdf')) ? ' · <a href="icons.pdf">All Slack icons (PDF)</a>' : ''}</p>
-      <p><input id="q" type="search" placeholder="Search changes (e.g. agent, bluesky, SCOPE)" aria-label="Search changes" autocomplete="off" style="width:100%;max-width:32rem"> <span id="count"></span></p>
+      ${pills(links)}
+      ${searchHtml('Search every change (e.g. agent, bluesky, SCOPE)', 'Search changes')}
 ${kept.map((i) => `      <section class="item"><h2>${esc(i.title)}</h2>\n${i.html}</section>`).join('\n')}
     </main>
     <script>
-      // client-side filter over every listed value; categories and days with no match are hidden, matching categories open
+      // Search over every listed value, built to stay quick on a page with tens of thousands of rows:
+      // the text index is built on the first search, input is debounced, typing more only re-checks rows that still matched,
+      // and a row is only touched when its state changes. Categories and days with no match hide; matching categories open.
       const q = document.getElementById('q'), count = document.getElementById('count');
-      const items = [...document.querySelectorAll('.item')].map((el) => ({ el, cats: [...el.querySelectorAll(':scope > details')].map((d) => ({ d, lis: [...d.querySelectorAll('li')], open: d.open })) }));
-      for (const it of items) for (const c of it.cats) for (const li of c.lis) li.dataset.t = li.textContent.toLowerCase();
+      const items = [...document.querySelectorAll('.item')];
+      let idx = null, last = '', timer;
+      function build() {
+        idx = items.map((el) => ({ el, cats: [...el.querySelectorAll(':scope > details')].map((d) => {
+          const lis = [...d.querySelectorAll('li')];
+          return { d, lis, t: lis.map((l) => l.textContent.toLowerCase()), on: new Uint8Array(lis.length).fill(1), open: d.open, nested: [...d.querySelectorAll('details')] };
+        }) }));
+      }
       function run() {
-        const term = q.value.trim().toLowerCase();
+        let term = q.value.trim().toLowerCase().replace(/\\s+/g, ' ');
+        const short = term.length > 0 && term.length < 2; // one character matches nearly everything
+        if (short) term = '';
+        if (term === last && !short) return;
+        const narrower = last !== '' && term.startsWith(last); // appending only removes matches
+        last = term;
+        if (!idx) build();
+        const terms = term ? term.split(' ') : [];
         let hits = 0;
-        for (const it of items) {
-          let any = false;
+        for (const it of idx) {
+          let any = !term;
           for (const c of it.cats) {
             let n = 0;
-            for (const li of c.lis) { const m = !term || li.dataset.t.includes(term); li.hidden = !m; if (m) n++; }
-            c.d.hidden = !!term && !n; any = any || !term || n > 0; hits += term ? n : 0;
-            c.d.querySelectorAll('details').forEach((x) => { x.open = !!term; x.hidden = !!term && ![...x.querySelectorAll('li')].some((l) => !l.hidden); });
-            c.d.open = term ? n > 0 : c.open;
+            for (let i = 0; i < c.lis.length; i++) {
+              if (!(narrower && !c.on[i])) {
+                const v = terms.every((t) => c.t[i].includes(t)) ? 1 : 0;
+                if (c.on[i] !== v) { c.on[i] = v; c.lis[i].hidden = !v; }
+              }
+              n += c.on[i];
+            }
+            c.d.hidden = !!term && !n; c.d.open = term ? n > 0 : c.open; any = any || n > 0; hits += term ? n : 0;
+            for (const x of c.nested) { x.open = !!term; x.hidden = !!term && !x.querySelector('li:not([hidden])'); }
           }
           it.el.hidden = !!term && !any;
         }
-        count.textContent = term ? hits + ' match' + (hits === 1 ? '' : 'es') : '';
+        count.textContent = short ? 'type at least 2 characters' : term ? hits + ' match' + (hits === 1 ? '' : 'es') : '';
       }
-      q.addEventListener('input', run);
+      q.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(run, 80); });
     </script>
   </body>
 </html>

@@ -3,6 +3,7 @@
 // vendors chunk. extractIconSet() pulls it out of a chunk, renderIconsPdf() draws every glyph as vector paths into a PDF with nothing
 // but node's own zlib (no browser, no fonts to embed: labels use the built-in Helvetica).
 import zlib from 'node:zlib';
+import { SEARCH_CSS, pills, searchHtml } from './ui.mjs';
 
 // the blob sits in a module as JSON.parse('{"prefix":"...","icons":{...}}'); cut at the first unescaped quote and undo the JS escaping
 export function extractIconSet(js) {
@@ -116,13 +117,39 @@ export function bodyShapes(body) {
   return shapes;
 }
 
+// ---- comparing two sets, and markup that is safe to put in a page ----
+export function diffIconSets(prev, cur) {
+  const a = prev.icons, b = cur.icons;
+  return {
+    added: Object.keys(b).filter((n) => !(n in a)).sort(),
+    removed: Object.keys(a).filter((n) => !(n in b)).sort(),
+    changed: Object.keys(b).filter((n) => n in a && a[n].body !== b[n].body).sort(),
+  };
+}
+export const hasChanges = (d) => !!(d && (d.added.length || d.removed.length || d.changed.length));
+
+// The glyph bodies come from Slack's bundle. Pages and the sprite only get an allowlist of shape tags and attributes with plain values.
+const ATTRS = new Set(['d', 'fill', 'fill-rule', 'clip-rule', 'stroke', 'stroke-width', 'stroke-linecap', 'stroke-linejoin', 'x', 'y', 'width', 'height', 'rx', 'ry', 'cx', 'cy', 'r']);
+export function safeBody(body) {
+  return String(body).replace(/<(\/?)([a-zA-Z]+)([^<>]*)>/g, (_, close, tag, attrs) => {
+    tag = tag.toLowerCase();
+    if (!['path', 'circle', 'ellipse', 'rect', 'g'].includes(tag)) return '';
+    if (close) return tag === 'g' ? '</g>' : '';
+    const kept = [...attrs.matchAll(/([a-zA-Z-]+)="([^"<>&]*)"/g)].filter(([, k, v]) => ATTRS.has(k) && /^[-0-9a-zA-Z .,#()]*$/.test(v)).map(([, k, v]) => `${k}="${v}"`);
+    return `<${tag}${kept.length ? ' ' + kept.join(' ') : ''}${tag === 'g' ? '' : '/'}>`;
+  });
+}
+
+export const renderIconsSprite = (set) => `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${Object.entries(set.icons).map(([n, v]) => `<symbol id="${n}" viewBox="0 0 ${set.width} ${set.height}">${safeBody(v.body)}</symbol>`).join('\n')}\n</svg>\n`;
+
 // ---- PDF ----
 const f = (v) => String(Math.round(v * 1000) / 1000);
 const pdfStr = (s) => `(${s.replace(/[\\()]/g, '\\$&')})`;
-const BG = '0.102 0.114 0.129', FG = '1 1 1', LABEL = '0.82 0.82 0.83';
-const PAGE = { w: 612, h: 792 }, COLS = 9, MARGIN_X = 18, MARGIN_TOP = 22, CELL_H = 64, ICON = 30, FONT = 6.2;
-// rough Helvetica advance: good enough to decide where a label wraps (it only wraps at hyphens)
-const textWidth = (s) => [...s].reduce((w, c) => w + (c === '-' || c === 'i' || c === 'l' || c === 'j' || c === 't' || c === 'f' || c === 'r' ? 0.3 : c === 'm' || c === 'w' ? 0.8 : 0.52), 0) * FONT;
+const BG = '0.102 0.114 0.129', FG = '1 1 1', LABEL = '0.82 0.82 0.83', DIM = '0.56 0.58 0.62', HEAD = '0.93 0.93 0.94';
+const PAGE = { w: 612, h: 792 }, COLS = 9, MARGIN_X = 18, MARGIN_TOP = 40, MARGIN_BOTTOM = 14, CELL_H = 62, ICON = 30, FONT = 6.2, TITLE_H = 26;
+// rough Helvetica advance: good enough to decide where a label wraps (it only wraps at hyphens) and to size link boxes
+const units = (s) => [...s].reduce((w, c) => w + (c === '-' || c === 'i' || c === 'l' || c === 'j' || c === 't' || c === 'f' || c === 'r' || c === '.' || c === '/' || c === ':' ? 0.3 : c === 'm' || c === 'w' ? 0.8 : 0.52), 0);
+const textWidth = (s, size = FONT) => units(s) * size;
 export function labelLines(name, max) {
   const parts = name.split('-'), lines = [];
   let cur = '';
@@ -146,37 +173,64 @@ function iconOps(shapes, scale, x, y) {
   return ops.join('\n');
 }
 
-// returns a Buffer; identical input gives identical bytes (no dates), so an unchanged set never shows up as a diff
-export function renderIconsPdf(set, { title = 'Slack icons' } = {}) {
-  const names = Object.keys(set.icons);
-  const cellW = (PAGE.w - 2 * MARGIN_X) / COLS, rows = Math.floor((PAGE.h - MARGIN_TOP - 14) / CELL_H), perPage = rows * COLS;
-  const scale = ICON / set.width;
-  const pages = [];
-  for (let start = 0; start < names.length; start += perPage) {
-    const ops = [`${BG} rg 0 0 ${PAGE.w} ${PAGE.h} re f`];
-    names.slice(start, start + perPage).forEach((name, k) => {
-      const col = k % COLS, row = Math.floor(k / COLS);
-      const cx = MARGIN_X + col * cellW + cellW / 2, top = PAGE.h - MARGIN_TOP - row * CELL_H;
-      let shapes = [];
-      try { shapes = bodyShapes(set.icons[name].body); } catch { /* an unparseable glyph still gets its label */ }
-      ops.push(iconOps(shapes, scale, cx - ICON / 2, top - ICON));
-      labelLines(name, cellW - 4).slice(0, 3).forEach((line, li) => {
-        ops.push(`BT /F1 ${FONT} Tf ${LABEL} rg ${f(cx - textWidth(line) / 2)} ${f(top - ICON - 10 - li * (FONT + 1.4))} Td ${pdfStr(line)} Tj ET`);
-      });
+const text = (s, x, y, size, color, extra = '') => `BT /F1 ${size} Tf ${color} rg ${extra}${f(x)} ${f(y)} Td ${pdfStr(s)} Tj ET`;
+
+// sections: [{title?, cells: [{label, body, width, sub?}]}]; header: [{text, url}] drawn top-right of the first page as clickable links
+function layoutPages(sections, header) {
+  const cellW = (PAGE.w - 2 * MARGIN_X) / COLS, pages = [];
+  let ops, links, y, col;
+  const newPage = () => {
+    ops = [`${BG} rg 0 0 ${PAGE.w} ${PAGE.h} re f`]; links = []; pages.push({ ops, links }); y = PAGE.h - MARGIN_TOP; col = 0;
+    if (pages.length === 1) header.forEach((h, i) => {
+      const size = 7, w = textWidth(h.text, size), x = PAGE.w - MARGIN_X - w, base = PAGE.h - 16 - i * 11;
+      ops.push(text(h.text, x, base, size, LABEL), `${LABEL} RG 0.4 w ${f(x)} ${f(base - 1.6)} m ${f(x + w)} ${f(base - 1.6)} l S`);
+      links.push({ rect: [x - 1, base - 3, x + w + 1, base + size], url: h.url });
     });
-    pages.push(ops.join('\n'));
+  };
+  newPage();
+  for (const sec of sections) {
+    if (!sec.cells.length) continue;
+    if (sec.title) {
+      if (y - TITLE_H - CELL_H < MARGIN_BOTTOM) newPage();
+      ops.push(text(sec.title, MARGIN_X, y - 11, 10, HEAD)); y -= TITLE_H;
+    }
+    col = 0;
+    for (const cell of sec.cells) {
+      if (col === 0 && y - CELL_H < MARGIN_BOTTOM) newPage();
+      const cx = MARGIN_X + col * cellW + cellW / 2;
+      let shapes = [];
+      try { shapes = bodyShapes(cell.body); } catch { /* an unparseable glyph still gets its label */ }
+      ops.push(iconOps(shapes, ICON / cell.width, cx - ICON / 2, y - ICON));
+      const lines = labelLines(cell.label, cellW - 4).slice(0, 3);
+      lines.forEach((line, li) => ops.push(text(line, cx - textWidth(line) / 2, y - ICON - 10 - li * (FONT + 1.4), FONT, LABEL)));
+      // a wrapped name is also written once, invisibly, so searching the whole hyphenated name finds it
+      if (lines.length > 1) ops.push(text(cell.label, cx - textWidth(cell.label) / 2, y - ICON - 10, FONT, LABEL, '3 Tr ').replace(' ET', ' 0 Tr ET'));
+      if (cell.sub) ops.push(text(cell.sub, cx - textWidth(cell.sub, 5.5) / 2, y - ICON - 10 - lines.length * (FONT + 1.4), 5.5, DIM));
+      if (++col === COLS) { col = 0; y -= CELL_H; }
+    }
+    if (col > 0) { col = 0; y -= CELL_H; }
   }
-  // objects: 1 catalog, 2 pages, 3 font, 4 info, then (page, content) pairs
+  return pages;
+}
+
+// returns a Buffer; identical input gives identical bytes (no dates), so an unchanged set never shows up as a diff
+function assemblePdf(pages, title) {
+  // objects: 1 catalog, 2 pages, 3 font, 4 info, then per page: page, content, link annotations
   const objs = [null, '<< /Type /Catalog /Pages 2 0 R >>', null, '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>', `<< /Title ${pdfStr(title)} >>`];
-  const kids = [];
-  const streams = new Map();
-  pages.forEach((content, i) => {
-    const pageId = 5 + i * 2, contentId = pageId + 1;
-    kids.push(`${pageId} 0 R`);
-    objs[pageId] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PAGE.w} ${PAGE.h}] /Resources << /Font << /F1 3 0 R >> >> /Contents ${contentId} 0 R >>`;
+  const kids = [], streams = new Map();
+  let next = 5;
+  for (const pg of pages) {
+    const pageId = next++, contentId = next++, annots = [];
+    for (const l of pg.links) {
+      const id = next++;
+      objs[id] = `<< /Type /Annot /Subtype /Link /Rect [${l.rect.map(f).join(' ')}] /Border [0 0 0] /A << /S /URI /URI ${pdfStr(l.url)} >> >>`;
+      annots.push(`${id} 0 R`);
+    }
+    objs[pageId] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PAGE.w} ${PAGE.h}] /Resources << /Font << /F1 3 0 R >> >> /Contents ${contentId} 0 R${annots.length ? ` /Annots [${annots.join(' ')}]` : ''} >>`;
     objs[contentId] = null;
-    streams.set(contentId, zlib.deflateSync(Buffer.from(content, 'latin1'), { level: 9 }));
-  });
+    streams.set(contentId, zlib.deflateSync(Buffer.from(pg.ops.join('\n'), 'latin1'), { level: 9 }));
+    kids.push(`${pageId} 0 R`);
+  }
   objs[2] = `<< /Type /Pages /Kids [${kids.join(' ')}] /Count ${kids.length} >>`;
   const chunks = [Buffer.from('%PDF-1.4\n%\xe2\xe3\xcf\xd3\n', 'latin1')], offsets = [];
   let pos = chunks[0].length;
@@ -194,4 +248,91 @@ export function renderIconsPdf(set, { title = 'Slack icons' } = {}) {
   tail += `trailer\n<< /Size ${objs.length} /Root 1 0 R /Info 4 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
   push(Buffer.from(tail, 'latin1'));
   return Buffer.concat(chunks);
+}
+
+const cellOf = (set, name, extra = {}) => ({ label: name, body: set.icons[name].body, width: set.width, ...extra });
+
+export function renderIconsPdf(set, { title = 'Slack icons', header = [] } = {}) {
+  return assemblePdf(layoutPages([{ cells: Object.keys(set.icons).map((n) => cellOf(set, n)) }], header), title);
+}
+
+// what changed between two sets: added and redrawn glyphs (redrawn show before and after), removed glyphs drawn from the old set
+export function renderDiffPdf(prev, cur, diff, { title = 'Slack icon changes', header = [] } = {}) {
+  const sections = [
+    { title: `Added (${diff.added.length})`, cells: diff.added.map((n) => cellOf(cur, n)) },
+    { title: `Redrawn (${diff.changed.length}): before, then now`, cells: diff.changed.flatMap((n) => [cellOf(prev, n, { sub: 'before' }), cellOf(cur, n, { sub: 'now' })]) },
+    { title: `Removed (${diff.removed.length})`, cells: diff.removed.map((n) => cellOf(prev, n)) },
+  ];
+  return assemblePdf(layoutPages(sections, header), title);
+}
+
+// ---- the gallery page: searchable, click a glyph to copy its name (shift-click copies the SVG) ----
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+export function renderIconsHtml(set, diff, { links = [] } = {}) {
+  const flag = new Map([...(diff?.added ?? []).map((n) => [n, 'new']), ...(diff?.changed ?? []).map((n) => [n, 'redrawn'])]);
+  const tile = (n) => `<button class="ico" type="button" data-n="${esc(n)}"${flag.has(n) ? ` data-flag="${flag.get(n)}"` : ''} title="${esc(n)}"><svg viewBox="0 0 ${set.width} ${set.height}" width="40" height="40" fill="currentColor" aria-hidden="true">${safeBody(set.icons[n].body)}</svg><span>${esc(n)}</span></button>`;
+  const names = Object.keys(set.icons);
+  const changes = hasChanges(diff) ? `<details class="changes"><summary>What changed since the previous icon set: ${diff.added.length} added, ${diff.changed.length} redrawn, ${diff.removed.length} removed</summary>${[['Added', diff.added], ['Redrawn', diff.changed], ['Removed', diff.removed]].filter(([, l]) => l.length).map(([t, l]) => `<p><strong>${t}</strong>: ${l.map((n) => `<code>${esc(n)}</code>`).join(' ')}</p>`).join('')}</details>` : '';
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slack icons</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/cdn/theme.js"></script>
+    <style>${SEARCH_CSS}
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: .4rem; }
+      .ico { position: relative; display: flex; flex-direction: column; align-items: center; gap: .35rem; padding: .7rem .3rem .5rem; border: 1px solid transparent; border-radius: .6rem; background: none; color: var(--fg); font: inherit; cursor: pointer; content-visibility: auto; contain-intrinsic-size: 6.5rem 5.6rem; }
+      .ico:hover, .ico:focus-visible { border-color: var(--fg); outline: none; }
+      .ico span { font-size: .72rem; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
+      .ico[data-flag]::after { content: attr(data-flag); position: absolute; top: .25rem; right: .3rem; padding: 0 .35rem; border-radius: 999px; background: var(--fg); color: var(--bg); font-size: .6rem; }
+      .changes { margin: 0 0 1.25rem; }
+      .changes code { margin-right: .3rem; }
+      #toast { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); padding: .4rem .9rem; border-radius: 999px; background: var(--fg); color: var(--bg); opacity: 0; pointer-events: none; transition: opacity 150ms ease; }
+      #toast.on { opacity: 1; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Slack icons</h1>
+      <p>${names.length} glyphs from Slack's web client. Click one to copy its name; shift-click copies the SVG.</p>
+      ${pills(links)}
+      ${searchHtml('Search icons (e.g. sparkle, brand, arrow)', 'Search icons')}
+      ${changes}
+      <div class="grid" id="grid">${names.map(tile).join('')}</div>
+      <div id="toast" role="status"></div>
+    </main>
+    <script>
+      const q = document.getElementById('q'), count = document.getElementById('count'), toast = document.getElementById('toast');
+      const tiles = [...document.querySelectorAll('.ico')], names = tiles.map((t) => t.dataset.n);
+      let last = null, timer;
+      function run() {
+        const terms = q.value.toLowerCase().split(/\\s+/).filter(Boolean);
+        const key = terms.join(' ');
+        if (key === last) return;
+        last = key;
+        let n = 0;
+        for (let i = 0; i < tiles.length; i++) {
+          const ok = terms.every((t) => names[i].includes(t));
+          if (tiles[i].hidden === ok) tiles[i].hidden = !ok; // only touch tiles whose state changes
+          if (ok) n++;
+        }
+        count.textContent = terms.length ? n + ' of ' + tiles.length : '';
+      }
+      q.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(run, 60); });
+      let hide;
+      document.getElementById('grid').addEventListener('click', (e) => {
+        const b = e.target.closest('.ico');
+        if (!b) return;
+        const svg = b.querySelector('svg').outerHTML;
+        const value = e.shiftKey ? svg : b.dataset.n;
+        (navigator.clipboard ? navigator.clipboard.writeText(value) : Promise.reject()).then(() => { toast.textContent = (e.shiftKey ? 'Copied SVG of ' : 'Copied ') + b.dataset.n; }, () => { toast.textContent = b.dataset.n; });
+        toast.classList.add('on'); clearTimeout(hide); hide = setTimeout(() => toast.classList.remove('on'), 1400);
+      });
+    </script>
+  </body>
+</html>
+`;
 }
