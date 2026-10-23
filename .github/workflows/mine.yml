@@ -2,7 +2,7 @@ name: mine
 
 on:
   schedule:
-    - cron: '0 6,18 * * *' # twice a day, 06:00 and 18:00 UTC
+    - cron: '*/30 * * * *' # every 30 minutes
   workflow_dispatch:
     inputs:
       force:
