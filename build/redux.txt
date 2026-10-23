@@ -157,6 +157,7 @@ action:awaitEmptyQueue
 action:badgeEmojiCollection
 action:beginExternalGuestMediaAccess
 action:beginThreadsPageRequest
+action:beginTodoPaginationRequest
 action:bindPendingAutoInitThreadTarget
 action:bindVideo
 action:broadcastKickNotificationMessage
@@ -292,6 +293,7 @@ action:clearDraftExpansion
 action:clearDraftFilePermissionsByFileId
 action:clearDraftPendingFileIds
 action:clearDraftSending
+action:clearEchoedSlackbotPendingThreadMarks
 action:clearedFilteredList
 action:clearEditHistory
 action:clearEditModeSelectedChannelIds
@@ -517,6 +519,7 @@ action:dismissSmartInvitesChannelSuggestion
 action:doneExpanding
 action:downgradeStatsFetchSuccess
 action:eagerDismissJitByEventId
+action:echoSlackbotPendingThreadMark
 action:editMemberAssignments
 action:editMessage
 action:enableBBM
@@ -727,6 +730,7 @@ action:openCustomSolutionModalCircular
 action:openCustomStatusDialogCircular
 action:openDataTableFullscreenModalCircular
 action:openDataVisualizationAsTableCircular
+action:openDataVisualizationInNewWindowCircular
 action:openDeleteFileDialogCircular
 action:openDeleteMessageDialogCircular
 action:openDesktopDownload
@@ -2566,6 +2570,7 @@ action:setSlackAiDataTimeRange
 action:setSlackAiNuxStep
 action:setSlackbotChannelId
 action:setSlackbotDmChannelId
+action:setSlackbotExcludedChannelIds
 action:setSlackbotMiniDictating
 action:setSlackbotMiniKeyboardShortcut
 action:setSlackbotMiniNuxImpressionCount
@@ -2573,6 +2578,7 @@ action:setSlackbotMiniOpened
 action:setSlackbotModelOverride
 action:setSlackbotNoResultsDraft
 action:setSlackbotOnboardingWelcomeActive
+action:setSlackbotPendingThreadMark
 action:setSlackbotThreadTs
 action:setSlackbotWritePermissionsBypassPageLayout
 action:setSlackbotWritePermissionsMode
@@ -4512,6 +4518,7 @@ thunk:dispatchAppHomeOpenEvent
 thunk:dispatchContextBarActionThunk
 thunk:dispatchDegradedModeEventsForFileUpload
 thunk:displayAlertMessage
+thunk:displayHelpTip
 thunk:displayMessageSendErrorToast
 thunk:displayModelOrViewById
 thunk:diveDeeper
@@ -4781,6 +4788,7 @@ thunk:fetchAppsDataAvailableDateRange
 thunk:fetchAppsRealTimeUpdatedTimestamp
 thunk:fetchAssignedItems
 thunk:fetchAsyncRecordDigest
+thunk:fetchAutoSlackLaunchpadState
 thunk:fetchAutoStarterLicenses
 thunk:fetchBookmarkSlugs
 thunk:fetchBrowserSearchAutocompleteSuggestions
@@ -4957,6 +4965,7 @@ thunk:fetchSidebarDms
 thunk:fetchSidebarRecommendScores
 thunk:fetchSlackAiDataAvailableDateRange
 thunk:fetchSlackbotAiUsage
+thunk:fetchSlackbotExcludedChannelIds
 thunk:fetchSlackbotTasksOnConnected
 thunk:fetchSlackbotTasksUsage
 thunk:fetchSlackConnectDmEligibility
@@ -5058,7 +5067,6 @@ thunk:getActionsForKeyboardShortcutsThunk
 thunk:getActionsTemplate
 thunk:getActivityItemMenuTemplate
 thunk:getAgentRedirectInfo
-thunk:getAllDmsForDmsPage
 thunk:getAllSentMessages
 thunk:getAndProcessUnchangedChannels
 thunk:getAndResetNavigatedAwayForUnifiedFiles
@@ -5272,7 +5280,6 @@ thunk:handlePotentialNewPack
 thunk:handlePricingOrPromoFlow
 thunk:handlePublishSuccess
 thunk:handleReactionClick
-thunk:handleSavedShortcut
 thunk:handleSearchUnmount
 thunk:handleSelectGif
 thunk:handleShareDialogErrors
@@ -5476,6 +5483,7 @@ thunk:logExpressTemplatesFeedback
 thunk:logExthuddleSidebarRowClick
 thunk:logMemoryNuxButtonClick
 thunk:logMessage
+thunk:logOmniSlackbotModeExposure
 thunk:logPermissions
 thunk:logSlackbotAiEvent
 thunk:logSlackbotAiNavigateEvents
@@ -5706,8 +5714,6 @@ thunk:maybeOpenPrivateCanvasCommentForwardingSpeedBump
 thunk:maybeOpenPrivateMessageForwardingSpeedBump
 thunk:maybeOpenRemovedFromWorkspaceRefreshDialog
 thunk:maybeOpenRemoveFileTabConfirmationModal
-thunk:maybeOpenSavedFlexpane
-thunk:maybeOpenSavedTile
 thunk:maybeOpenShareEmbeddedCanvasModal
 thunk:maybeOpenShareFileAsFolderItemConfirmationModal
 thunk:maybeOpenShareFileAsTabConfirmationModal
@@ -5895,7 +5901,6 @@ thunk:messageEditUploadNewFiles
 thunk:messageSearchSortChanged
 thunk:messageToContentsString
 thunk:migrateListAssignmentFields
-thunk:mobileAwarenessTeamMenuEntrypointLinkUpdateMaybeLogExposure
 thunk:moveChannelSection
 thunk:moveFileCollection
 thunk:moveFileToCollection
@@ -5972,7 +5977,6 @@ thunk:navigateToWorkObject
 thunk:navigateWithDetailView
 thunk:neverSuggestTranslatingLocale
 thunk:newMessageShortcut
-thunk:newYearPromoFy27MaybeLogExposure
 thunk:normalizeAPIFailures
 thunk:normalizeAPIFailuresUG
 thunk:notificationClicked
@@ -6145,6 +6149,7 @@ thunk:openComposerPage
 thunk:openConfirmDeleteWorkflowModal
 thunk:openConnectorAccountModal
 thunk:openConversationBetweenMembersAndView
+thunk:openConversationDetailsReportForm
 thunk:openCreateChannelSectionModal
 thunk:openCreateGDocDialog
 thunk:openCreateHandoffChannelModal
@@ -6160,6 +6165,8 @@ thunk:openCustomStatusDialogCircularHandler
 thunk:openDataTableFullscreenModalHandler
 thunk:openDataVisualizationAsTable
 thunk:openDataVisualizationAsTableHandler
+thunk:openDataVisualizationInNewWindow
+thunk:openDataVisualizationInNewWindowHandler
 thunk:openDeadEndLinkDialog
 thunk:openDeleteFileDialog
 thunk:openDeleteFileDialogCircularHandler
@@ -6212,7 +6219,6 @@ thunk:openEmailToCaseDialog
 thunk:openEmailToCaseErrorDialog
 thunk:openEmbeddedCanvasInNewWindow
 thunk:openEndDmDialog
-thunk:openEventInfoModal
 thunk:openExploreMyTrialFeature
 thunk:openExploreMyTrialFeatureCircularHandler
 thunk:openExplorerInChildWindow
@@ -6415,7 +6421,6 @@ thunk:openRevokePublicUrlDialog
 thunk:openRoleChangeRefreshDialog
 thunk:openSalesforceListViewInWindow
 thunk:openSavedForLaterView
-thunk:openSavedView
 thunk:openScdm
 thunk:openScdmAndSendMessage
 thunk:openScheduleMessageDialog
@@ -6705,6 +6710,7 @@ thunk:recoverSalesforceFieldNamesForMessage
 thunk:redactAiResponse
 thunk:redirectToGeneralChannel
 thunk:redo
+thunk:refetchActivityIfRemindersVisibilityChanged
 thunk:refetchAddToMpdmPreviewHistory
 thunk:refetchChannelHistory
 thunk:refetchEnabledSkills
@@ -6840,7 +6846,6 @@ thunk:requestAgentSunroofApps
 thunk:requestDownmarketCrmLicense
 thunk:requestExternalGuestMediaAccess
 thunk:requestHistoryInDegradedMode
-thunk:requestOfflineCounts
 thunk:requestOrgConnection
 thunk:requestQuipComments
 thunk:requestReplies
@@ -7558,6 +7563,7 @@ thunk:thunk
 thunk:timeOutStuckCalendarWindowFetch
 thunk:toastPinnedItemsChange
 thunk:toggleActivityDmsOptOut
+thunk:toggleActivityRemindersInActivity
 thunk:toggleActivityViews
 thunk:toggleAudioOnlyMode
 thunk:toggleCaretBrowsing
@@ -7628,7 +7634,6 @@ thunk:toggleSavedListRecordFieldComplete
 thunk:toggleSavedMessage
 thunk:toggleSavedMessageArchived
 thunk:toggleSavedMessageComplete
-thunk:toggleSavedViews
 thunk:toggleScreenShare
 thunk:toggleSelectedDraftId
 thunk:toggleSelfMicrophone
@@ -7832,7 +7837,8 @@ thunk:updateSelfEnterpriseName
 thunk:updateSfdcRecordThunk
 thunk:updateSharedInviteLink
 thunk:updateSlackAiEnabledStatus
-thunk:updateSlackbotExclusionChannelProperty
+thunk:updateSlackbotChannelExclusion
+thunk:updateSlackbotChannelExclusions
 thunk:updateSlackbotSkillsAnnouncementStateMachine
 thunk:updateSort
 thunk:updateSplitColumnMode
@@ -7859,6 +7865,7 @@ thunk:updateTrigger
 thunk:updateTriggerCoachmark
 thunk:updateUnfurledJoinersTeamCount
 thunk:updateUnreadCounts
+thunk:updateUnreadCountsAfterStreamedReply
 thunk:updateUnreadCountsForThreadMentionBroadcasts
 thunk:updateUpdatedSegmentationQuestionsStateMachine
 thunk:updateUserGroup
