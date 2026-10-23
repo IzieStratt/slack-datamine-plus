@@ -5,6 +5,10 @@ on:
     - cron: '*/30 * * * *' # every 30 minutes
   workflow_dispatch:
     inputs:
+      entry_page_url:
+        description: Test only. Page that lists the client entry scripts (default is the public workspace client page)
+        type: string
+        default: ''
       force:
         description: Re-mine even if the build number is unchanged
         type: boolean
@@ -16,6 +20,7 @@ concurrency:
 
 permissions:
   contents: write
+  issues: write # the health report opens/closes an issue
 
 jobs:
   mine:
@@ -38,6 +43,7 @@ jobs:
         env:
           SLACK_D_COOKIE: ${{ secrets.SLACK_D_COOKIE }}
           SLACK_CLIENT_URL: ${{ vars.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E' }}
+          ENTRY_PAGE_URL: ${{ inputs.entry_page_url }}
         run: node src/mine.mjs ${{ inputs.force && '--force' || '' }}
       - name: Upload debug files on failure
         if: failure()
@@ -108,3 +114,10 @@ jobs:
             git -c "http.https://github.com/.extraheader=$AUTH" pull --rebase origin main
           done
           echo "push to personal-site main failed"; exit 1
+
+      # Last, so the mined data is already committed and pushed. Opens/updates/closes the `mine-health` issue; fails the run once per change.
+      - name: Report mine health
+        if: always() && steps.mine.outputs.health != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node src/health-report.mjs

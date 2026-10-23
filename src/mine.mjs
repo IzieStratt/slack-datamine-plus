@@ -11,6 +11,7 @@ import zlib from 'node:zlib';
 import { extractParams, mergeParams, serializeParams } from './params.mjs';
 import { emptyExtras, extractExtras, finishExperiments, scanExperiments } from './extras.mjs';
 import { extractIconSet } from './icons.mjs';
+import { checkHealth } from './health.mjs';
 import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
@@ -172,7 +173,7 @@ async function main() {
       ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n)); ex.mentioned.forEach((n) => mentioned.add(n));
       for (const f of chunkFiles(r.js)) if (!seen.has(f)) { seen.add(f); queue.push(f); }
     });
-    stats = { cdn: info.cdn, manifestUrl: mUrl, versionHash: info.versionHash, versionTs: info.versionTs, discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
+    stats = { entryScripts: entry.length, entryFetched: entry.filter((f) => ok.includes(f)).length, cdn: info.cdn, manifestUrl: mUrl, versionHash: info.versionHash, versionTs: info.versionTs, discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
     log(JSON.stringify(stats));
     if (ok.length < MIN_CHUNKS) {
       console.error(`unhealthy manifest: only ${ok.length} real chunks (< ${MIN_CHUNKS}). Not writing anything.`);
@@ -218,7 +219,15 @@ async function main() {
   } else console.error('experiments: selector module not found, keeping previous experiments files');
   counts.experiments = Object.keys(exp.experiments).length;
   counts.experimentsWithGroups = Object.values(exp.experiments).filter((g) => g.length).length;
-  fs.writeFileSync(`${OUT}/meta.json`, JSON.stringify({ buildNumber, capturedDate: date, ...stats, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length, chunks: chunkNames.length, mined: counts }, null, 1) + '\n');
+  const metaOut = { buildNumber, capturedDate: date, ...stats, iconGlyphs: iconSet ? Object.keys(iconSet.icons).length : 0, experimentsSelector: exp.selectorModules, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length, chunks: chunkNames.length, mined: counts };
+  fs.writeFileSync(`${OUT}/meta.json`, JSON.stringify(metaOut, null, 1) + '\n');
+  // gaps (a source missing, a category collapsing) are written down so the workflow can raise them instead of letting them pass silently
+  if (stats.source !== 'from-dir') {
+    const problems = checkHealth(prevMeta, metaOut);
+    fs.writeFileSync(`${OUT}/health.json`, JSON.stringify({ ok: !problems.length, problems }, null, 1) + '\n');
+    sh('health', problems.length ? 'bad' : 'ok');
+    for (const x of problems) console.error(`health: ${x}`);
+  }
   log(`build ${buildNumber}: ${names.size} methods, ${Object.keys(state).length} tracked, ${absent} absent`);
   sh('changed', 'true');
 }

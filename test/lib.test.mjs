@@ -64,3 +64,15 @@ test('buildInfo only ever yields a plain numeric or 12-hex build id', () => {
   assert.equal(buildInfo('build-number="12\nchanged=true"').buildNumber, null);
   assert.ok(validBuild('134791') && validBuild('54e9692853f0') && !validBuild('abc') && !validBuild('1 2'));
 });
+
+import { checkHealth } from '../src/health.mjs';
+test('health: flags missing sources and collapsing categories, passes a healthy run', () => {
+  const ok = { entryScripts: 17, entryFetched: 17, iconGlyphs: 720, experimentsSelector: 1, apiMethods: 1553, chunks: 1800, mined: { 'ui-strings': 32000, scopes: 3 } };
+  assert.deepEqual(checkHealth(ok, ok), []);
+  assert.deepEqual(checkHealth(undefined, ok), []);
+  const bad = { ...ok, entryScripts: 0, entryFetched: 0, iconGlyphs: 0, experimentsSelector: 0, apiMethods: 600, mined: { 'ui-strings': 14000, scopes: 0 } };
+  const p = checkHealth(ok, bad).join('\n');
+  for (const needle of ['no entry scripts', 'icon glyph set', 'experiments selector', 'API methods dropped', 'ui-strings dropped']) assert.ok(p.includes(needle), needle);
+  assert.ok(!p.includes('scopes'), 'tiny lists are not flagged');
+  assert.ok(checkHealth(ok, { ...ok, entryFetched: 10 }).join().includes('Only 10 of 17'));
+});
