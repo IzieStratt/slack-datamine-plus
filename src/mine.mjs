@@ -12,6 +12,7 @@ import { extractParams, mergeParams, serializeParams } from './params.mjs';
 import { emptyExtras, extractExtras, finishExperiments, scanExperiments } from './extras.mjs';
 import { extractIconSet } from './icons.mjs';
 import { checkHealth } from './health.mjs';
+import { emptyFrontend, finishFrontend, scanFrontend } from './frontend.mjs';
 import { diffSources, pageAssets, sourceIds } from './sources.mjs';
 import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
@@ -137,7 +138,8 @@ async function main() {
   const extras = emptyExtras(), expParts = [];
   let iconSet = null, entryComplete = true;
   const pageHtmls = [];
-  const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); };
+  const frontend = emptyFrontend();
+  const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); scanFrontend(js, frontend); };
 
   if (arg('from-dir')) {
     buildNumber = arg('build') || 'local';
@@ -229,6 +231,16 @@ async function main() {
     fs.writeFileSync(`${OUT}/experiments.json`, JSON.stringify(exp.experiments, null, 1) + '\n');
     fs.writeFileSync(`${OUT}/experiments.txt`, Object.keys(exp.experiments).join('\n') + '\n');
   } else console.error('experiments: selector module not found, keeping previous experiments files');
+  // components and redux (thunks, actions, fetchers, ...): lists for the changes feed, json with module ids/hashes and descriptions
+  const fe = finishFrontend(frontend);
+  if (fe.componentNames.length && fe.reduxNames.length) {
+    fs.writeFileSync(`${OUT}/components.txt`, fe.componentNames.join('\n') + '\n');
+    fs.writeFileSync(`${OUT}/components.json`, JSON.stringify(fe.components) + '\n');
+    fs.writeFileSync(`${OUT}/redux.txt`, fe.reduxNames.join('\n') + '\n');
+    fs.writeFileSync(`${OUT}/redux.json`, JSON.stringify(fe.redux) + '\n');
+  } else console.error('components/redux: none found, keeping the previous files');
+  counts.components = fe.componentNames.length;
+  counts.redux = fe.reduxNames.length;
   counts.experiments = Object.keys(exp.experiments).length;
   counts.experimentsWithGroups = Object.values(exp.experiments).filter((g) => g.length).length;
   const metaOut = { buildNumber, capturedDate: date, ...stats, iconGlyphs: iconSet ? Object.keys(iconSet.icons).length : 0, experimentsSelector: exp.selectorModules, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length, chunks: chunkNames.length, mined: counts };

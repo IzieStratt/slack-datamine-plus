@@ -44,7 +44,7 @@ const SKIP = new Set(['chunks', 'experiments.txt']); // experiments.json covers 
 // it and re-reports the same changes. A category file that did not exist at `base` is reported as a new category, never dropped.
 function buildItem(base, head) {
   if (!base || base === head) return null;
-  const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons|health)\.json$/.test(f));
+  const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons|health|components|redux)\.json$/.test(f));
   let html = '', total = 0;
   const build = (JSON.parse(show('HEAD', 'build/meta.json') ?? '{}')).buildNumber;
   for (const f of files) {

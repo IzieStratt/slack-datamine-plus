@@ -17,7 +17,7 @@ const GROUP_SELECTORS = new Set(['getGroupForUser', 'getGroupForUserWithoutExpos
 const CALL_RE = /\(0,([\w$]+)\.([\w$]+)\)\(([^,()]{1,40}),"([a-z][\w.-]{2,120})"[^()]{0,24}\)/g;
 const IMPORT_RE = /[\s,;]([\w$]+)=\w\("([^"\\]+)"\)/g;
 
-function modules(js) {
+export function modules(js) {
   const heads = [...js.matchAll(MODULE_HEAD)];
   return heads.map((m, i) => ({ id: m[1].replace(/^"|"$/g, ''), src: js.slice(m.index, heads[i + 1]?.index ?? js.length) }));
 }
