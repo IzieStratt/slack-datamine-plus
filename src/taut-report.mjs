@@ -18,7 +18,7 @@ if (process.env.UPSTREAM !== 'true' && !dry) { console.log('no TAUT_ISSUES_TOKEN
 
 const gh = (...a) => (dry ? (console.log('gh', a.join(' ')), '') : execFileSync('gh', a, { encoding: 'utf8' }));
 const TITLE = "Automated check: names Taut looks up that changed in Slack's web client";
-const intro = `> Automated report from [slack-datamine-plus](https://github.com/IzieStratt/slack-datamine-plus) (workflow \`taut-watch\`, run by IzieStratt). It compares the names Taut looks up in Slack's client with Slack's current **web** build, so a name missing here may still exist in the desktop build. This issue edits itself as things change and comments when new names go missing. Close it to silence it: it won't be reopened or filed again unless a name goes missing that this issue never mentioned.\n\n`;
+const intro = `> Automated report from [slack-datamine-plus](https://github.com/IzieStratt/slack-datamine-plus) (workflow \`taut-watch\`, run by IzieStratt). It compares the names Taut looks up in Slack's client with Slack's current **web** build, so a name missing here may still exist in the desktop build or in the client's boot bundle, which the miner can't reach yet. This issue edits itself as things change and comments when new names go missing. Close it to silence it: it won't be reopened or filed again unless a name goes missing that this issue never mentioned.\n\n`;
 const body = intro + report;
 
 let issues = [];

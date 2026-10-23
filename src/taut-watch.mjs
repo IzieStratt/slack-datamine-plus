@@ -12,6 +12,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { scanTaut } from './taut-usage.mjs';
 
+// names a maintainer confirmed are fine even though the miner can't see them (see src/taut-ignore.json); they are listed, not reported
+const IGNORE = JSON.parse(fs.readFileSync(new URL('./taut-ignore.json', import.meta.url), 'utf8'));
+
 const KEEP_EVENTS = 20;
 
 const tokens = (name) => name.replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2').toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
@@ -36,7 +39,7 @@ export function candidates(name, pool, limit = 5, min = 0.5) {
 }
 
 // uses: [{kind, name, file, line}]; inv: {components, redux, experiments}; state: {hashes, reported, events}
-export function checkTaut(uses, inv, state = {}) {
+export function checkTaut(uses, inv, state = {}, ignore = IGNORE) {
   const presence = inv.presence ?? { watched: [], found: {} };
   const watched = new Set(presence.watched);
   const reduxByName = new Map();
@@ -51,7 +54,7 @@ export function checkTaut(uses, inv, state = {}) {
     const k = `${u.kind}:${u.name}`;
     (by.get(k) ?? by.set(k, { kind: u.kind, name: u.name, where: [] }).get(k)).where.push(`${u.file}:${u.line}`);
   }
-  const missing = [], unchecked = [], hashes = {}, changed = [];
+  const missing = [], unchecked = [], ignored = [], hashes = {}, changed = [];
   for (const [k, f] of by) {
     let present, modules, pool;
     if (f.kind === 'experiment') { present = f.name in inv.experiments; pool = pools.experiment; }
@@ -61,6 +64,7 @@ export function checkTaut(uses, inv, state = {}) {
       pool = f.kind === 'component' ? pools.component : pools.redux;
       present = !!e; modules = e?.modules;
     } else { unchecked.push(f); continue; } // not in the miner's watch list yet (new in Taut since its last run)
+    if (!present && ignore[f.name]) { ignored.push({ ...f, reason: ignore[f.name] }); continue; }
     if (!present) { missing.push({ ...f, candidates: candidates(f.name, pool), plain: (f.kind === 'byMeta' || f.kind === 'thunk') ? presence.found[`fn:${f.name}`] : undefined }); continue; }
     if (modules?.length) {
       hashes[k] = [...new Set(modules)].sort();
@@ -68,13 +72,13 @@ export function checkTaut(uses, inv, state = {}) {
       if (before && JSON.stringify(before) !== JSON.stringify(hashes[k])) changed.push({ ...f, before, after: hashes[k] });
     }
   }
-  return { missing, changed, unchecked, hashes, checked: by.size - unchecked.length };
+  return { missing, changed, unchecked, ignored, hashes, checked: by.size - unchecked.length };
 }
 
 const sortBy = (list) => [...list].sort((a, b) => a.kind.localeCompare(b.kind) || a.name.localeCompare(b.name));
 const loc = (f) => f.where.slice(0, 3).map((w) => `\`${w}\``).join(', ') + (f.where.length > 3 ? ` +${f.where.length - 3}` : '');
 
-export function renderReport({ missing, changed, unchecked, checked, dynamic, events, build }) {
+export function renderReport({ missing, changed, unchecked, ignored = [], checked, dynamic, events, build }) {
   const out = [`Checked ${checked} things Taut looks up in Slack's client against build \`${build ?? '?'}\`.`, ''];
   out.push(missing.length ? `## Missing (${missing.length})\n\nThese lookups no longer find anything in the client's code. The plugin that uses each is probably broken.\n` : '## Missing\n\nNothing: every name Taut looks up is still in the client.\n');
   for (const f of sortBy(missing)) {
@@ -87,7 +91,8 @@ export function renderReport({ missing, changed, unchecked, checked, dynamic, ev
     out.push('', `## Code changed in the module that defines it\n\nNot proof of breakage: any edit to the module counts. Newest first (last ${events.length} runs with changes).\n`);
     for (const e of events) out.push(`- build \`${e.build}\` (${e.date}): ${e.names.map((n) => `\`${n}\``).join(', ')}`);
   }
-  out.push('', `<sub>${unchecked.length} lookups were not searched yet (new in Taut since the last mine run)${dynamic ? `, and ${dynamic} calls build their name at runtime` : ''}. Names are matched as strings in Slack's code. This issue updates itself.</sub>`);
+  if (ignored.length) out.push('', `Not reported, confirmed fine by a maintainer: ${ignored.map((f) => `\`${f.name}\``).join(', ')}.`);
+  out.push('', `<sub>Names are searched for in the files Slack serves to the pages the miner can read. The client's boot bundle (where modules like \`UexS\` and \`sRq/\` live) is not reachable yet, so a name reported missing here may live there: check before trusting a finding. ${unchecked.length} lookups were not searched yet (new in Taut since the last mine run)${dynamic ? `, and ${dynamic} calls build their name at runtime` : ''}. This issue updates itself.</sub>`);
   return out.join('\n') + '\n';
 }
 

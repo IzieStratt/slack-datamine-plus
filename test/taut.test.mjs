@@ -53,6 +53,14 @@ test('taut-watch: missing, changed and unchecked are told apart', () => {
   assert.ok(md.includes('**BaseAvatarStack** (component)') && md.includes('`AvatarStackBase`') && md.includes('plain function') && md.includes('build `b1`'));
 });
 
+test('taut-watch: a maintainer-confirmed name is listed, not reported', () => {
+  const r = checkTaut(uses, { ...inv, presence }, {}, { getAll: 'fine' });
+  assert.ok(!r.missing.some((m) => m.name === 'getAll'));
+  assert.deepEqual(r.ignored.map((i) => i.name), ['getAll']);
+  const md = renderReport({ ...r, dynamic: 0, events: [], build: 'b1' });
+  assert.ok(md.includes('confirmed fine by a maintainer: `getAll`') && md.includes('boot bundle'));
+});
+
 test('taut-watch: wrapped component names are looked up by what they wrap', () => {
   const p = { watched: ['component:Serialized(Panel)'], found: { 'component:Serialized(Panel)': { forms: ['displayName'], modules: ['p:1'] } } };
   const r = checkTaut([{ kind: 'component', name: 'Serialized(Panel)', file: 'a.ts', line: 1 }], { ...inv, presence: p }, {});
