@@ -40,7 +40,7 @@ const everAdded = (ref, f) => {
 const SKIP = new Set(['chunks', 'experiments.txt']); // experiments.json covers experiments.txt
 
 // `base` is the commit the previous item was computed up to (state.json), not "24 hours ago": a window that drifts overlaps the one before
-// it and re-reports the same changes. A category that did not exist at `base` is a baseline, not "everything is new".
+// it and re-reports the same changes. A category file that did not exist at `base` is reported as a new category, never dropped.
 function buildItem(base, head) {
   if (!base || base === head) return null;
   const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons)\.json$/.test(f));
@@ -50,7 +50,7 @@ function buildItem(base, head) {
     const name = path.basename(f).replace(/\.(txt|json)$/, '');
     if (SKIP.has(name) || SKIP.has(path.basename(f))) continue;
     const before = show(base, f);
-    if (before === null) continue;
+    const fresh = before === null; // category file first appeared since the last report: reported in full, labelled as such
     let added, removed, extra = [];
     if (f.endsWith('experiments.json')) {
       const d = diffExperiments(before, show('HEAD', f));
@@ -60,7 +60,7 @@ function buildItem(base, head) {
       if (added.length) { const seen = everAdded(base, f); added = added.filter((x) => !seen.has(x)); }
     }
     total += added.length + removed.length + extra.length;
-    html += section(`${name}: new`, added, '+ ') + section(`${name}: gone`, removed, '− ') + section(`${name}: new groups`, extra, '');
+    html += section(`${name}: ${fresh ? 'new category' : 'new'}`, added, '+ ') + section(`${name}: gone`, removed, '− ') + section(`${name}: new groups`, extra, '');
   }
   if (!total) return null;
   const date = new Date().toISOString().slice(0, 10);
