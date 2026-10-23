@@ -82,6 +82,23 @@ async function get(url, tries = 3) {
   throw last;
 }
 
+// The glyph set is not in any chunk of the webpack manifest: it sits in the entry script `modern.vendor.<hash>.min.js`, which the signed-in
+// page for the org client does not list but the public workspace client page does. Scan those entry scripts for the set only (they are not
+// run through the method/extras extractors, so nothing else changes). Set ICONS_PAGE_URL to use another page.
+async function findIconSet(html, cdn, already) {
+  const pageUrl = process.env.ICONS_PAGE_URL || 'https://app.slack.com/client/T0266FRGM';
+  let pageHtml = '';
+  try { const r = await fetch(pageUrl, { headers: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36' } }); if (r.ok) pageHtml = await r.text(); else console.error(`icons: ${pageUrl} answered HTTP ${r.status}`); } catch (e) { console.error(`icons: could not fetch ${pageUrl}: ${e.message}`); }
+  const names = [...new Set([...chunkFiles(html), ...chunkFiles(pageHtml)])].filter((f) => !already.has(f) && !f.includes('.marketing.'));
+  names.sort((a, b) => /^modern\.vendor\./.test(b) - /^modern\.vendor\./.test(a)); // most likely first
+  for (const f of names.slice(0, 15)) {
+    const r = await get(cdn + f).catch(() => ({ status: 0 }));
+    const set = r.status === 200 ? extractIconSet(r.js) : null;
+    if (set) { log(`icons: ${Object.keys(set.icons).length} glyphs from ${f}`); return set; }
+  }
+  return null;
+}
+
 // Workers keep running while any task is in flight, because a finished task may append more items to the shared array.
 async function pool(items, n, fn) {
   let i = 0, inflight = 0;
@@ -157,6 +174,7 @@ async function main() {
       ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n)); ex.mentioned.forEach((n) => mentioned.add(n));
       for (const f of chunkFiles(r.js)) if (!seen.has(f)) { seen.add(f); queue.push(f); }
     });
+    if (!iconSet) iconSet = await findIconSet(html, info.cdn, seen);
     stats = { cdn: info.cdn, manifestUrl: mUrl, versionHash: info.versionHash, versionTs: info.versionTs, discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
     log(JSON.stringify(stats));
     if (ok.length < MIN_CHUNKS) {
