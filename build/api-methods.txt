@@ -187,6 +187,7 @@ ai.alpha.canvas.getTopicSuggestions
 ai.alpha.canvas.refineContent
 ai.alpha.canvas.resolveDraft
 ai.alpha.canvas.reviseContentWithSources
+ai.alpha.canvases.drafts.view
 ai.alpha.digest.addToDigest
 ai.alpha.digest.info
 ai.alpha.digest.list
@@ -218,6 +219,7 @@ ai.alpha.slackbot.channelSkills.getConfiguration
 ai.alpha.slackbot.channelSkills.removeSkill
 ai.alpha.slackbot.channelSkills.setCustomInstructions
 ai.alpha.slackbot.createSlackbotInitiatedThread
+ai.alpha.slackbot.resolveVoiceToolApproval
 ai.alpha.slackbot.searchAnswerThreads.create
 ai.alpha.slackbot.skillSets.addToLibrary
 ai.alpha.slackbot.skillSets.listEnabled
@@ -248,6 +250,7 @@ ai.alpha.slackbot.skills.setDisabled
 ai.alpha.slackbot.skills.unpublishFromCatalog
 ai.alpha.slackbot.skills.unsetCanvasAsSkill
 ai.alpha.slackbot.skills.updateMetadata
+ai.alpha.slackbot.voices.list
 ai.alpha.slackbotBigMode.listRecommendations
 ai.alpha.slackbotBigMode.listSuggestions
 ai.alpha.slackbotNuxCarousel.addMemory
@@ -357,12 +360,21 @@ assistant.threads.changeContext
 assistant.threads.rename
 assistant.threads.startThread
 audit.logs
+auth.captcha
 auth.emailToken
+auth.enterpriseSignout
 auth.findTeam
 auth.loginMagic
 auth.magicLogins.create
+auth.passkeys.auth.begin
+auth.passkeys.auth.complete
+auth.passkeys.auth.shouldProceed
+auth.passkeys.register.begin
 auth.passkeys.register.list
+auth.removePendingTeam
 auth.signin
+auth.signout
+auth.sso
 auth.test
 auth.twofactor.slackbotMessage
 avatars.crop
@@ -380,7 +392,9 @@ bookmarks.remove
 bookmarks.reorder
 bots.info
 calbootstrap.contactsList
+calendar.alerts.ack
 calendar.alerts.list
+calendar.alerts.snooze
 calendar.disconnect
 calendar.event.copy
 calendar.event.create
@@ -390,6 +404,7 @@ calendar.event.list
 calendar.event.listByDateRange
 calendar.event.next
 calendar.event.rsvp
+calendar.event.setLocation
 calendar.freebusy
 calendar.getConnectedCalendars
 calendar.getInstalledCalendars
@@ -441,6 +456,7 @@ client.appCommands
 client.apps.composerSuggestions
 client.boot
 client.channels
+client.checkVersion
 client.codeChannels.action
 client.codeChannels.addReviewComment
 client.codeChannels.browse
@@ -464,6 +480,7 @@ client.counts
 client.dms
 client.extras
 client.gantryBoot
+client.getWebSocketURL
 client.init
 client.shouldReload
 client.userBoot
@@ -503,6 +520,7 @@ conversations.emailaddresses.info
 conversations.emailaddresses.update
 conversations.export
 conversations.findEligibleWorkspaces
+conversations.findTeamsEligibility
 conversations.genericInfo
 conversations.getGeneral
 conversations.getRetention
@@ -523,6 +541,7 @@ conversations.list
 conversations.listPrefs
 conversations.mark
 conversations.meetingnotes.getLock
+conversations.members
 conversations.moveTab
 conversations.open
 conversations.pendingInvites.list
@@ -550,6 +569,7 @@ conversations.sharedApprovals.list
 conversations.sharedInviteAcceptanceEligibility
 conversations.sharedInviteInfo
 conversations.sharedInviteLinkCopied
+conversations.suggestions
 conversations.teamConnections
 conversations.unarchive
 conversations.updateDefaultState
@@ -652,6 +672,7 @@ enterprise.migrations.fetchIntents
 enterprise.migrations.getAvailableTimes
 enterprise.migrations.getHistory
 enterprise.migrations.getStatus
+enterprise.name
 enterprise.nameTaken
 enterprise.prefs.get
 enterprise.prefs.set
@@ -714,6 +735,7 @@ features.access.policies.list
 feedback.submitEnterpriseSearchFeedback
 feedback.submitFeedback
 feedback.submitPilotFeedback
+feedback.submitSalesforceFeedback
 feedback.submitSearchInProductSurvey
 feedback.submitSlackWrappedFeedback
 feedback.submitUserFeedback
@@ -854,6 +876,7 @@ huddles.external.listExternalParticipants
 huddles.external.new
 huddles.get
 huddles.getIndirectHuddle
+huddles.getTrackUrls
 huddles.history
 huddles.knock
 huddles.knockResponse
@@ -940,12 +963,14 @@ meetings.processRecording
 meetings.removeChannel
 meetings.resolve
 meetings.sharedContent.list
+meetings.transcribeChunk
 meetings.update
 meetings.usersetdata
 megaphone.executeEvent
 megaphone.notifications.list
 megaphone.setNotificationAsSeen
 megaphone.visualizer.notifications.get
+megaphone.visualizer.spaces.get
 messages.list
 messages.sent.list
 moderation.flags.create
@@ -1086,6 +1111,7 @@ screenhero.rooms.inviteResponse
 screenhero.rooms.join
 screenhero.rooms.proxyAnalytics
 screenhero.rooms.proxyLogs
+screenhero.rooms.proxyMeetingEvents
 screenhero.rooms.refreshToken
 screenhero.rooms.rename
 screenhero.rooms.userEvent
@@ -1263,6 +1289,7 @@ share.prompts.listInvokedSkills
 sharedInvites.accept
 sharedInvites.canAccept
 sharedInvites.canGetLink
+sharedInvites.findTeamsEligibility
 sharedInvites.get
 sharedInvites.getLink
 sharedInvites.ignoreInvite
@@ -1272,10 +1299,13 @@ sidebar.dms
 signin.confirmCode
 signin.findWorkspaces
 signup.addLead
+signup.checkEmail
 signup.checkSignupDomains
 signup.checkUsername
 signup.confirmCode
 signup.confirmEmail
+signup.createTeam
+signup.getGroup
 slackAi.permissions.getForUser
 slackConnect.domain.setPrimary
 slackbot.mcp.callTool
@@ -1320,6 +1350,7 @@ slackbot.projects.threads.remove
 slackbot.projects.threads.update
 slackbot.projects.update
 slackbot.suggestions.list
+slackbot.suggestions.listForDesktop
 slides.addAttachment
 slides.update
 solutions.collaborators.add
@@ -1364,6 +1395,7 @@ team.info
 team.nav.get
 team.newHires
 team.paidfeatures.get
+team.php
 team.prefs.get
 team.prefs.set
 team.profile.get
@@ -1476,12 +1508,14 @@ users.length
 users.list
 users.listIgnoredUsers
 users.listOutgoingInvites
+users.markAllRead
 users.prefs.get
 users.prefs.set
 users.prefs.setNotifications
 users.preparePhoto
 users.priority.add
 users.priority.getRecommendations
+users.priority.list
 users.priority.remove
 users.profile.get
 users.profile.getExtras
