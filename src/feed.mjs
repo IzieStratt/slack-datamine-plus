@@ -34,7 +34,7 @@ const section = (title, list, sign) => list.length
 
 // Everything that was ever added to a category file up to <ref>. A value that comes back after being gone is not "new": it was reported before.
 const everAdded = (ref, f) => {
-  try { return new Set(git('log', ref, '--format=', '-p', '--no-color', '--', f).split('\n').filter((l) => l.startsWith('+') && !l.startsWith('+++')).map((l) => l.slice(1))); } catch { return new Set(); }
+  return new Set(git('log', ref, '--format=', '-p', '--no-color', '--', f).split('\n').filter((l) => l.startsWith('+') && !l.startsWith('+++')).map((l) => l.slice(1)));
 };
 // categories whose names are content hashes of the bundle: every build "adds" and "removes" all of them
 const SKIP = new Set(['chunks', 'experiments.txt']); // experiments.json covers experiments.txt
@@ -76,7 +76,9 @@ const today = `${url}/#${new Date().toISOString().slice(0, 10)}`;
 // a second run on the same day extends today's item from the same starting point instead of reporting only its own slice
 const base = items.find((i) => i.id === today)?.base || state.lastCommit || sinceArg;
 let item = null;
-try { item = buildItem(base && git('rev-parse', base), head); } catch (e) { console.error(`feed: could not diff from ${base}: ${e.message}`); }
+try { item = buildItem(base && git('rev-parse', base), head); } catch (e) { console.error(`feed: could not diff from ${base}: ${e.message}`); process.exit(1); } // fail before state.json moves, so nothing is skipped
+// a rerun that now finds nothing must not leave today's earlier item up
+if (!item) { const at = items.findIndex((i) => i.id === today); if (at > -1) items.splice(at, 1); }
 if (item) { const at = items.findIndex((i) => i.id === item.id); if (at > -1) items[at] = item; else items.unshift(item); }
 fs.mkdirSync(site, { recursive: true });
 fs.writeFileSync(stateFile, JSON.stringify({ lastCommit: head }, null, 1) + '\n');

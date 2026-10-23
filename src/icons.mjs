@@ -9,9 +9,9 @@ export function extractIconSet(js) {
   const start = js.indexOf(`JSON.parse('{"prefix":`);
   if (start < 0) return null;
   let end = start + 12;
-  while (end < js.length && !(js[end] === "'" && js[end - 1] !== '\\')) end++;
+  while (end < js.length && js[end] !== "'") end += js[end] === '\\' ? 2 : 1; // a backslash escapes the next character
   const literal = js.slice(start + 12, end);
-  const json = literal.replace(/\\(u[0-9a-fA-F]{4}|.)/gs, (_, c) => c[0] === 'u' ? String.fromCharCode(parseInt(c.slice(1), 16)) : c === 'n' ? '\n' : c === 't' ? '\t' : c);
+  const json = literal.replace(/\\(u[0-9a-fA-F]{4}|x[0-9a-fA-F]{2}|.)/gs, (_, c) => c[0] === 'u' || (c[0] === 'x' && c.length === 3) ? String.fromCharCode(parseInt(c.slice(1), 16)) : c === 'n' ? '\n' : c === 't' ? '\t' : c);
   try {
     const set = JSON.parse(json);
     if (!set.icons || typeof set.icons !== 'object' || !Object.keys(set.icons).length) return null;
