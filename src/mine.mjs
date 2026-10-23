@@ -133,6 +133,7 @@ async function main() {
     sh('build', buildNumber);
     if (!has('force') && prevMeta.buildNumber === buildNumber) { log(`build ${buildNumber} already mined`); sh('changed', 'false'); return; }
     log(`build ${buildNumber}: discovering chunks`);
+    { const urls = new Set([...html.replace(/\\\//g, '/').matchAll(/https:\/\/[a-z0-9.-]*slack-edge\.com\/[^"'\s\\<>)]+/g)].map((m) => m[0].split('?')[0])); log(`page cdn urls (${urls.size}): ${[...urls].slice(0, 80).join(' ')}`); } // public CDN urls only
     log(`page scripts: ${[...html.matchAll(/<script[^>]*\ssrc="([^"?]+)/g)].map((m) => m[1].split('/').pop()).join(' ')}`); // public file names only; shows which entry scripts the crawl starts from
 
     // crawl: HTML -> chunk files -> any chunk files those mention, until nothing new
