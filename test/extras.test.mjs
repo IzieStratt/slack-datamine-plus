@@ -29,3 +29,12 @@ test('extras: design tokens, internal paths and hosts', () => {
   assert.deepEqual([...x.paths].sort(), ['/admin/billing', '/customize/slackbot']);
   assert.deepEqual([...x.hosts], ['files.slack.com']);
 });
+
+test('experiments: newer selector module shape (inline exports calling getGroupForUserImpl)', () => {
+  const selectors = 'pR6y(H,q,G){"use strict";let getAssignmentByName=(H,q)=>H?.experiments?.[q],getGroupForUserImpl=(H,q,{shouldLogExposure:G=!0}={})=>{let e=getAssignmentByName(H,q);return e?e.group:null};G.d(q,{},{KK:getAssignmentByName,_Z:(H,q,G=!0)=>getGroupForUserImpl(H,q,{shouldLogExposure:G}),ze:(H,q)=>getGroupForUserImpl(H,q,{shouldLogExposure:!1})})}';
+  const user = 'T(e,t,n){"use strict";var c=n("pR6y");let u="on"===(0,c._Z)(e,"new_thing");return["a","b"].includes((0,c.ze)(e,"other_thing"))}';
+  const r = finishExperiments([scanExperiments(selectors), scanExperiments(user)]);
+  assert.equal(r.selectorModules, 1);
+  assert.deepEqual(r.experiments.new_thing, ['on']);
+  assert.deepEqual(r.experiments.other_thing, ['a', 'b']);
+});

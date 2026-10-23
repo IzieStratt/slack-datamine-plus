@@ -48,6 +48,13 @@ export function scanExperiments(js) {
       for (const m of exp.matchAll(/([\w$]+):([\w$]+)/g)) if (names.has(m[2])) keys[m[1]] = names.get(m[2]);
       if (Object.keys(keys).length) defs.push({ id, keys });
     }
+    // newer shape (2026-10): plain functions, exports are inline arrows: `_Z:(H,q,G=!0)=>getGroupForUserImpl(H,q,..)`, `KK:getAssignmentByName`
+    if (src.includes('getGroupForUserImpl=')) {
+      const keys = {};
+      for (const m of src.matchAll(/([\w$]+):\([^)]*\)=>getGroupForUserImpl\(/g)) keys[m[1]] = 'getGroupForUserImpl';
+      for (const m of src.matchAll(/([\w$]+):getAssignmentByName[,}]/g)) keys[m[1]] = 'getAssignmentByName';
+      if (Object.keys(keys).length) defs.push({ id, keys });
+    }
     if (!src.includes(',"')) continue;
     const alias = new Map([...src.matchAll(IMPORT_RE)].map((m) => [m[1], m[2]]));
     for (const m of src.matchAll(CALL_RE)) {
