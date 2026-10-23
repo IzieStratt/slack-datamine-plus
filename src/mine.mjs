@@ -133,6 +133,7 @@ async function main() {
     sh('build', buildNumber);
     if (!has('force') && prevMeta.buildNumber === buildNumber) { log(`build ${buildNumber} already mined`); sh('changed', 'false'); return; }
     log(`build ${buildNumber}: discovering chunks`);
+    log(`page scripts: ${[...html.matchAll(/<script[^>]*\ssrc="([^"?]+)/g)].map((m) => m[1].split('/').pop()).join(' ')}`); // public file names only; shows which entry scripts the crawl starts from
 
     // crawl: HTML -> chunk files -> any chunk files those mention, until nothing new
     const queue = [...chunkFiles(html)];
