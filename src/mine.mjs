@@ -12,6 +12,7 @@ import { extractParams, mergeParams, serializeParams } from './params.mjs';
 import { emptyExtras, extractExtras, finishExperiments, scanExperiments } from './extras.mjs';
 import { extractIconSet } from './icons.mjs';
 import { checkHealth } from './health.mjs';
+import { diffSources, pageAssets, sourceIds } from './sources.mjs';
 import { buildInfo, chunkFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
@@ -87,12 +88,20 @@ async function get(url, tries = 3) {
 // TS.web: the legacy web client, the icon glyph set, most of the method names) are listed by the public workspace client page, so crawl those
 // too. Set ENTRY_PAGE_URL to use another page; if it can't be fetched the crawl just runs without them.
 async function entryScripts() {
-  const pageUrl = process.env.ENTRY_PAGE_URL || 'https://app.slack.com/client/T0266FRGM';
-  try {
-    const r = await fetch(pageUrl, { headers: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36' } });
-    if (!r.ok) { console.error(`entry scripts: ${pageUrl} answered HTTP ${r.status}`); return []; }
-    return [...chunkFiles(await r.text())].filter((f) => !f.includes('.marketing.'));
-  } catch (e) { console.error(`entry scripts: could not fetch ${pageUrl}: ${e.message}`); return []; }
+  const pages = [process.env.ENTRY_PAGE_URL || 'https://app.slack.com/client/T0266FRGM', 'https://slack.com/signin'];
+  const names = new Set(), htmls = [];
+  let complete = true;
+  for (const pageUrl of pages) {
+    try {
+      const r = await fetch(pageUrl, { headers: { 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36' } });
+      if (!r.ok && r.status !== 403) { console.error(`entry scripts: ${pageUrl} answered HTTP ${r.status}`); complete = false; continue; }
+      const html = await r.text();
+      htmls.push(html);
+      // every script the page lists, including variants like x.<hash>.primer.min.js that the plain chunk-name pattern does not match
+      for (const f of [...chunkFiles(html), ...pageAssets(html).filter((a) => a.ext.endsWith('js')).map((a) => a.file)]) if (!f.includes('.marketing.')) names.add(f);
+    } catch (e) { console.error(`entry scripts: could not fetch ${pageUrl}: ${e.message}`); complete = false; }
+  }
+  return { names: [...names], htmls, complete };
 }
 
 // Workers keep running while any task is in flight, because a finished task may append more items to the shared array.
@@ -126,7 +135,8 @@ async function main() {
   const prevMeta = fs.existsSync(`${OUT}/meta.json`) ? JSON.parse(fs.readFileSync(`${OUT}/meta.json`, 'utf8')) : {};
   let archive = null, buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), params = new Map(), stats = {}, chunkNames = [];
   const extras = emptyExtras(), expParts = [];
-  let iconSet = null;
+  let iconSet = null, entryComplete = true;
+  const pageHtmls = [];
   const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); };
 
   if (arg('from-dir')) {
@@ -158,9 +168,11 @@ async function main() {
       else console.error(`webpack manifest fetch: HTTP ${r.status}`);
     }
     log(`manifest ${mUrl ?? 'not found'}: ${queue.length} chunk names`);
-    const entry = await entryScripts();
-    log(`entry scripts from the public client page: ${entry.length}`);
+    const { names: entry, htmls: entryHtmls, complete } = await entryScripts();
+    entryComplete = complete;
+    log(`entry scripts from the public client pages: ${entry.length}`);
     for (const f of entry) if (!queue.includes(f)) queue.push(f);
+    pageHtmls.push(html, ...entryHtmls);
     const seen = new Set(queue), ok = [], phantom = [], missing = [];
     await pool(queue, 12, async function visit(file) {
       if (isPhantom(file)) { phantom.push(file); return; }
@@ -224,9 +236,20 @@ async function main() {
   // gaps (a source missing, a category collapsing) are written down so the workflow can raise them instead of letting them pass silently
   if (stats.source !== 'from-dir') {
     const problems = checkHealth(prevMeta, metaOut);
-    fs.writeFileSync(`${OUT}/health.json`, JSON.stringify({ ok: !problems.length, problems }, null, 1) + '\n');
+    // source inventory: a bundle, page asset or chunk family we have not seen before (or that vanished) is reported, not silently skipped.
+    // The first run only writes the baseline. If a page failed to fetch, nothing is reported as gone (it would just come back next run).
+    const sourcesFile = `${OUT}/sources.txt`;
+    const prevSources = fs.existsSync(sourcesFile) ? fs.readFileSync(sourcesFile, 'utf8').split('\n').filter(Boolean) : null;
+    let ids = sourceIds({ pages: pageHtmls, chunks: chunkNames });
+    if (prevSources && !entryComplete) ids = [...new Set([...ids, ...prevSources])].sort();
+    const notices = [];
+    if (prevSources) { const d = diffSources(prevSources, ids); notices.push(...d.added.map((x) => `new source: ${x}`), ...d.removed.map((x) => `source gone: ${x}`)); }
+    fs.writeFileSync(sourcesFile, ids.join('\n') + '\n');
+    fs.writeFileSync(`${OUT}/health.json`, JSON.stringify({ ok: !problems.length, problems, notices }, null, 1) + '\n');
     sh('health', problems.length ? 'bad' : 'ok');
+    sh('notices', notices.length ? 'yes' : 'no');
     for (const x of problems) console.error(`health: ${x}`);
+    for (const x of notices) log(`sources: ${x}`);
   }
   log(`build ${buildNumber}: ${names.size} methods, ${Object.keys(state).length} tracked, ${absent} absent`);
   sh('changed', 'true');

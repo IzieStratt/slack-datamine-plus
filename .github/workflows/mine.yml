@@ -117,7 +117,7 @@ jobs:
 
       # Last, so the mined data is already committed and pushed. Opens/updates/closes the `mine-health` issue; fails the run once per change.
       - name: Report mine health
-        if: always() && steps.mine.outputs.health != ''
+        if: always() && steps.mine.outputs.health != ''  # also files the new-source notices
         env:
           GH_TOKEN: ${{ github.token }}
         run: node src/health-report.mjs

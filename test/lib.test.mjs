@@ -76,3 +76,15 @@ test('health: flags missing sources and collapsing categories, passes a healthy 
   assert.ok(!p.includes('scopes'), 'tiny lists are not flagged');
   assert.ok(checkHealth(ok, { ...ok, entryFetched: 10 }).join().includes('Only 10 of 17'));
 });
+
+import { pageAssets, chunkFamilies, sourceIds, diffSources } from '../src/sources.mjs';
+test('sources: page assets keep dotted names and drop hashes; families need a few chunks', () => {
+  const html = '<script src="https://a.slack-edge.com/bv1-13-br/modern.vendor.cf96ae1c2d386af8.min.js"></script><link href="/application.9ecf7b2c65dc284f.min.css"><script src="TS.web.21a28268dbc76ea4.min.js">';
+  assert.deepEqual(pageAssets(html).map((a) => `${a.name}|${a.ext}`), ['modern.vendor|min.js', 'application|min.css', 'TS.web|min.js']);
+  const chunks = ['client-a.1.min.js', 'client-b.1.min.js', 'client-c.1.min.js', 'client-d.1.min.js', 'client-e.1.min.js', 'lottie-x.1.min.js'];
+  assert.deepEqual(chunkFamilies(chunks), ['client']);
+  const ids = sourceIds({ pages: [html], chunks });
+  assert.deepEqual(ids, ['asset:TS.web.min.js', 'asset:application.min.css', 'asset:modern.vendor.min.js', 'family:client']);
+  assert.deepEqual(diffSources(ids.slice(0, 3), ids), { added: ['family:client'], removed: [] });
+  assert.deepEqual(diffSources(ids, ids.slice(1)), { added: [], removed: ['asset:TS.web.min.js'] });
+});
