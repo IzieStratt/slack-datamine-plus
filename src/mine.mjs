@@ -184,6 +184,9 @@ async function main() {
       const h = await fetchHtml(u, true);
       if (!h) { console.error(`extra client page not usable: ${u}`); continue; }
       extraHtmls.push(h);
+      // names only (no page content): anything in the page that looks like a boot/gantry/vendors bundle, to see how the client loads them
+      const hints = [...new Set([...h.replace(/\\\//g, '/').matchAll(/[A-Za-z0-9_.\/-]{0,60}(?:boot|gantry|vendors)[A-Za-z0-9_.\/-]{0,60}/g)].map((m) => m[0]))].slice(0, 40);
+      log(`signed-in page ${u}: boot-like names: ${hints.join(' ') || 'none'}`);
       const names = [...chunkFiles(h), ...pageAssets(h).filter((a) => a.ext.endsWith('js')).map((a) => a.file)].filter((f) => !f.includes('.marketing.'));
       names.forEach((f) => extraNames.add(f));
       log(`signed-in page ${u}: ${names.length} scripts: ${names.map((f) => f.split('.')[0]).slice(0, 40).join(' ')}`);
