@@ -268,9 +268,9 @@ export function renderDiffPdf(prev, cur, diff, { title = 'Slack icon changes', h
 
 // ---- the gallery page: searchable, click a glyph to copy its name (shift-click copies the SVG) ----
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-export function renderIconsHtml(set, diff, { links = [] } = {}) {
+export function renderIconsHtml(set, diff, { links = [], notes = {} } = {}) {
   const flag = new Map([...(diff?.added ?? []).map((n) => [n, 'new']), ...(diff?.changed ?? []).map((n) => [n, 'redrawn'])]);
-  const tile = (n) => `<button class="ico" type="button" data-n="${esc(n)}"${flag.has(n) ? ` data-flag="${flag.get(n)}"` : ''} title="${esc(n)}"><svg viewBox="0 0 ${set.width} ${set.height}" width="40" height="40" fill="currentColor" aria-hidden="true">${safeBody(set.icons[n].body)}</svg><span>${esc(n)}</span></button>`;
+  const tile = (n) => `<button class="ico" type="button" data-n="${esc(n)}"${flag.has(n) ? ` data-flag="${flag.get(n)}"` : ''}${notes[n] ? ` data-note="${esc(notes[n])}"` : ''} title="${esc(notes[n] ? `${n}: ${notes[n]}` : n)}"><svg viewBox="0 0 ${set.width} ${set.height}" width="40" height="40" fill="currentColor" aria-hidden="true">${safeBody(set.icons[n].body)}</svg><span>${esc(n)}</span></button>`;
   const names = Object.keys(set.icons);
   const changes = hasChanges(diff) ? `<details class="changes"><summary>What changed since the previous icon set: ${diff.added.length} added, ${diff.changed.length} redrawn, ${diff.removed.length} removed</summary>${[['Added', diff.added], ['Redrawn', diff.changed], ['Removed', diff.removed]].filter(([, l]) => l.length).map(([t, l]) => `<p><strong>${t}</strong>: ${l.map((n) => `<code>${esc(n)}</code>`).join(' ')}</p>`).join('')}</details>` : '';
   return `<!doctype html>
@@ -288,6 +288,7 @@ export function renderIconsHtml(set, diff, { links = [] } = {}) {
       .ico:hover, .ico:focus-visible { border-color: var(--fg); outline: none; }
       .ico span { font-size: .72rem; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
       .ico[data-flag]::after { content: attr(data-flag); position: absolute; top: .25rem; right: .3rem; padding: 0 .35rem; border-radius: 999px; background: var(--fg); color: var(--bg); font-size: .6rem; }
+      .ico[data-note]::before { content: "i"; position: absolute; top: .3rem; left: .35rem; display: grid; place-items: center; width: 1rem; height: 1rem; border: 1px solid currentColor; border-radius: 50%; font-size: .65rem; opacity: .6; }
       .changes { margin: 0 0 1.25rem; }
       .changes code { margin-right: .3rem; }
       #toast { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); padding: .4rem .9rem; border-radius: 999px; background: var(--fg); color: var(--bg); opacity: 0; pointer-events: none; transition: opacity 150ms ease; }
@@ -306,7 +307,7 @@ export function renderIconsHtml(set, diff, { links = [] } = {}) {
     </main>
     <script>
       const q = document.getElementById('q'), count = document.getElementById('count'), toast = document.getElementById('toast');
-      const tiles = [...document.querySelectorAll('.ico')], names = tiles.map((t) => t.dataset.n);
+      const tiles = [...document.querySelectorAll('.ico')], names = tiles.map((t) => (t.dataset.n + ' ' + (t.dataset.note || '')).toLowerCase()); // notes are searchable too
       let last = null, timer;
       function run() {
         const terms = q.value.toLowerCase().split(/\\s+/).filter(Boolean);

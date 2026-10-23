@@ -1,7 +1,8 @@
 name: feed
 
-# Daily "what changed" RSS feed, committed to personal-site under website/public/__subdomains/slackdatamineplus/
-# and served by the site's worker at https://slackdatamineplus.izie.top/ (feed: /feed.xml). Needs secret REDOC_TOKEN (contents:write there).
+# The once-a-day push to personal-site: the "what changed" feed (website/public/__subdomains/slackdatamineplus/, served at
+# https://slackdatamineplus.izie.top/), ReDocumented (synced from state/ and build/), and the icons gallery/PDFs. All of it only reads what mine.yml
+# has committed, and it lands as ONE commit. Needs secret REDOC_TOKEN (contents:write there).
 on:
   schedule:
     - cron: '30 6 * * *' # once a day, 06:30 UTC
@@ -32,6 +33,12 @@ jobs:
           token: ${{ secrets.REDOC_TOKEN }}
           persist-credentials: false
           path: personal-site
+      - name: Sync ReDocumented and the icons
+        run: |
+          node src/sync-redocumented.mjs personal-site --summary "$PWD/sync-summary.json"
+          (cd personal-site && python3 scripts/build-redocumented-agent.py)
+          # only rewritten when the glyph set changed (sha stored next to it); before the feed so its page can link to them
+          node src/icons-pdf.mjs personal-site/website/public/__subdomains/slackdatamineplus
       - name: Build the feed
         run: node src/feed.mjs personal-site/website/public/__subdomains/slackdatamineplus https://slackdatamineplus.izie.top
       - name: Publish
@@ -43,7 +50,7 @@ jobs:
           git config user.name "Izie"
           git config user.email "238573415+IzieStratt@users.noreply.github.com"
           git add -A
-          git commit -q -m "slackdatamineplus feed $(date -u +%F)" \
+          git commit -q -m "slackdatamineplus: daily sync $(date -u +%F) (feed, ReDocumented, icons)" \
             -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
           AUTH="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
           echo "::add-mask::$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"

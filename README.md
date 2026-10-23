@@ -16,6 +16,10 @@ Each run writes to `build/`: `api-methods.txt`, `chunks.txt`, `meta.json` (with 
 
 Experiments are found like [taut](https://github.com/jeremy46231/taut)'s Experiments plugin does it (`plugins/Experiments.tsx`, `scanCode`): locate the module exporting `getGroupForUser`, map its minified export keys, then regex every `(0,x.key)(state,"name")` call and the group strings it is compared to. Result: `build/experiments.json` (`name -> groups`) and `experiments.txt`. Lists are regex heuristics, so expect some noise (mainly `errors`).
 
+## What is authenticated
+
+Not everything here comes from public files. The webpack manifest (and with it the ~1,800 async chunks) is read from the signed-in Hack Club enterprise-grid client page (`SLACK_CLIENT_URL`, default `https://app.slack.com/client/E09V59WQY1E`) with the `SLACK_D_COOKIE` secret. The entry scripts (`modern.vendor`, `application`, ...) come from a public client page. Debug output is redacted and never includes the page itself. `src/icon-notes.json` holds hand-written notes about single icons shown in the icons gallery.
+
 ## Health and new sources
 
 A run can succeed while a whole source is missing. So every run writes `build/health.json`:

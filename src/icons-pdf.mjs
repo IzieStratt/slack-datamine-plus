@@ -10,7 +10,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { diffIconSets, hasChanges, renderDiffPdf, renderIconsHtml, renderIconsPdf, renderIconsSprite } from './icons.mjs';
 
-const FORMAT = 'v3'; // bump when the output formats change so every file is rebuilt once
+const FORMAT = 'v4'; // bump when the output formats change so every file is rebuilt once
 const site = process.argv[2];
 if (!site) { console.error('usage: icons-pdf.mjs <site-dir> [--icons file] [--host name]'); process.exit(1); }
 const arg = (n, d) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : d; };
@@ -18,7 +18,8 @@ const iconsFile = arg('icons', 'build/icons.json');
 const host = arg('host', 'sdmp.izie.top');
 if (!fs.existsSync(iconsFile)) { console.log('no icon set mined yet'); process.exit(0); }
 const raw = fs.readFileSync(iconsFile, 'utf8');
-const tag = `${crypto.createHash('sha256').update(raw).digest('hex')} ${FORMAT}`;
+const notes = JSON.parse(fs.readFileSync(new URL('./icon-notes.json', import.meta.url), 'utf8')); // hand-written facts about single icons
+const tag = `${crypto.createHash('sha256').update(raw + JSON.stringify(notes)).digest('hex')} ${FORMAT}`; // notes are part of the page, so editing one rebuilds it
 const at = (f) => path.join(site, f);
 const outputs = ['icons.pdf', 'icons.html', 'icons.svg', 'icons.json'];
 if (fs.existsSync(at('icons.sha256')) && fs.readFileSync(at('icons.sha256'), 'utf8').trim() === tag && outputs.every((f) => fs.existsSync(at(f)))) { console.log('icons unchanged'); process.exit(0); }
@@ -39,6 +40,6 @@ fs.writeFileSync(at('icons.pdf'), renderIconsPdf(set, { title: 'Slack icons', he
 if (diffPdf) fs.writeFileSync(at('icons-diff.pdf'), renderDiffPdf(prev, set, diff, { header: [{ text: `${host}/icons-diff.pdf`, url: url('icons-diff.pdf') }, { text: `All icons: ${host}/icons.pdf`, url: url('icons.pdf') }] }));
 else fs.rmSync(at('icons-diff.pdf'), { force: true });
 fs.writeFileSync(at('icons.svg'), renderIconsSprite(set));
-fs.writeFileSync(at('icons.html'), renderIconsHtml(set, diff, { links: [['/', 'Changes feed'], ['icons.pdf', 'PDF'], ...(diffPdf ? [['icons-diff.pdf', 'Changes (PDF)']] : []), ['icons.svg', 'SVG sprite'], ['icons.json', 'JSON']] }));
+fs.writeFileSync(at('icons.html'), renderIconsHtml(set, diff, { notes, links: [['/', 'Changes feed'], ['icons.pdf', 'PDF'], ...(diffPdf ? [['icons-diff.pdf', 'Changes (PDF)']] : []), ['icons.svg', 'SVG sprite'], ['icons.json', 'JSON']] }));
 fs.writeFileSync(at('icons.sha256'), tag + '\n');
 console.log(`wrote ${Object.keys(set.icons).length} icons${diffPdf ? `; changes: +${diff.added.length} ~${diff.changed.length} -${diff.removed.length}` : ''}`);

@@ -1,8 +1,9 @@
 name: taut-watch
 
 # After every mine run: are the things Taut (https://github.com/jeremy46231/taut) looks up in Slack's client still there?
-# Keeps one issue (label `taut-watch`) up to date: opened when a name goes missing or the code behind one changed recently,
-# commented when new names go missing, closed when all is well. No AI, no extra secrets: it only needs the repo's own token.
+# Keeps one issue on the Taut repo up to date (authored by the account behind the TAUT_ISSUES_TOKEN secret): opened when a name goes missing
+# or the code behind one changed recently, commented when new names go missing, closed when all is well. No AI. Without the secret it
+# files nothing and only writes the job summary.
 on:
   workflow_run:
     workflows: [mine]
@@ -38,10 +39,14 @@ jobs:
       - name: Check what Taut looks up against the latest build
         id: check
         run: node src/taut-watch.mjs taut
-      - name: Update the issue
+      - name: Update the issue on the Taut repo
         if: steps.check.outcome == 'success'
         env:
-          GH_TOKEN: ${{ github.token }}
+          # an issue filed with the repo's own token would come from the Actions bot, and the token can't write to someone else's repo anyway.
+          # TAUT_ISSUES_TOKEN is a personal access token (classic, scope public_repo) of the account that should author the issue.
+          GH_TOKEN: ${{ secrets.TAUT_ISSUES_TOKEN }}
+          UPSTREAM: ${{ secrets.TAUT_ISSUES_TOKEN != '' }}
+          TAUT_REPO: ${{ vars.TAUT_REPO || 'jeremy46231/taut' }}
         run: |
           node src/taut-report.mjs
           cat taut-report.md >> "$GITHUB_STEP_SUMMARY"

@@ -82,49 +82,8 @@ jobs:
             git push --force origin "refs/tags/$BUILD"
           fi
 
-      # Refresh ReDocumented by pushing straight to personal-site main (no PR). Needs secret REDOC_TOKEN with contents:write there.
-      # The token is NOT persisted in the checkout and NOT in the env of the steps that run repo code
-      # (personal-site's build script, our sync script); only the final push step gets it.
-      - name: Check out ReDocumented
-        if: steps.mine.outputs.changed == 'true'
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          repository: IzieStratt/personal-site
-          token: ${{ secrets.REDOC_TOKEN }}
-          persist-credentials: false
-          path: personal-site
-          fetch-depth: 0
-      - name: Sync ReDocumented files
-        if: steps.mine.outputs.changed == 'true'
-        run: |
-          node src/sync-redocumented.mjs personal-site --summary "$PWD/sync-summary.json"
-          cd personal-site
-          python3 scripts/build-redocumented-agent.py
-          cd ..
-          # the icons PDF is only rewritten when the glyph set changed (sha stored next to it)
-          node src/icons-pdf.mjs personal-site/website/public/__subdomains/slackdatamineplus
-          cd personal-site
-          git status --porcelain | head -5
-      - name: Push ReDocumented to main
-        if: steps.mine.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.REDOC_TOKEN }}
-          BUILD: ${{ steps.mine.outputs.build }}
-        run: |
-          cd personal-site
-          if [ -z "$(git status --porcelain)" ]; then echo "ReDocumented already up to date"; exit 0; fi
-          git config user.name "Izie"
-          git config user.email "238573415+IzieStratt@users.noreply.github.com"
-          git add -A
-          git commit -q -m "redocumented: sync with slack-datamine-plus build $BUILD" \
-            -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
-          AUTH="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
-          echo "::add-mask::$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
-          for i in 1 2 3; do
-            git -c "http.https://github.com/.extraheader=$AUTH" push origin HEAD:main && exit 0
-            git -c "http.https://github.com/.extraheader=$AUTH" pull --rebase origin main
-          done
-          echo "push to personal-site main failed"; exit 1
+      # ReDocumented, the icons PDF and the changes feed are refreshed once a day by feed.yml (it only reads what is committed here), so a
+      # new Slack build no longer means a new commit on personal-site.
 
       # Last, so the mined data is already committed and pushed. Opens/updates/closes the `mine-health` issue; fails the run once per change.
       - name: Report mine health
