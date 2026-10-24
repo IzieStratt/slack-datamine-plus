@@ -4144,6 +4144,7 @@ thunk:clearSolutionTemplatePrefState
 thunk:clearStaleHuddleInvite
 thunk:clearStaleImportanceFeedback
 thunk:clearStatusShortcut
+thunk:clearSyncedSlackbotDraft
 thunk:clearSyncedSlackbotZeroStateDraft
 thunk:clearToastQueue
 thunk:clearToastQueueForWindow
@@ -4306,6 +4307,7 @@ thunk:closeDeletedTaskDetails
 thunk:closeDesktopIncomingInviteWindow
 thunk:closeFile
 thunk:closeFlexpane
+thunk:closeFloatingViewAfterNavigation
 thunk:closeHuddleCanvas
 thunk:closeIdentityTransferWindowForAppId
 thunk:closeMeetingSession
@@ -5857,6 +5859,7 @@ thunk:maybePrefetchCanvasFromNotification
 thunk:maybePrefetchGoogleContacts
 thunk:maybePrejoinHuddle
 thunk:maybePreventHistoryOnPopState
+thunk:maybePromptForMacNotificationPermission
 thunk:maybePurgeChannelHistoryAfterMutations
 thunk:maybeReactToLastMessageInChannel
 thunk:maybeRecordRecentNavigationEvent
@@ -6043,6 +6046,7 @@ thunk:moveChannelSection
 thunk:moveFileCollection
 thunk:moveFileToCollection
 thunk:moveFileToCollectionClientOnly
+thunk:moveFloatingViewToSplitView
 thunk:moveManyChannels
 thunk:moveManyChannelsToNewSection
 thunk:moveManyEntities
@@ -6054,6 +6058,9 @@ thunk:muteChannelById
 thunk:muteConversationShortcut
 thunk:mwebSigninExperienceMaybeLogExposure
 thunk:navigate
+thunk:navigateFloatingViewToPrimaryView
+thunk:navigateFloatingViewToPrimaryViewAndClose
+thunk:navigateFloatingViewToSplitView
 thunk:navigateForUnifiedFile
 thunk:navigateFromFileToWorkObject
 thunk:navigateHistoryInChildWindow
@@ -6190,6 +6197,7 @@ thunk:onUpdateTeamIcon
 thunk:onUpdateTeamName
 thunk:onUpsertView
 thunk:onViewClosed
+thunk:onWebappBooted
 thunk:onWindowFocusChange
 thunk:onWindowRefocused
 thunk:onWindowUnloading
@@ -6508,6 +6516,7 @@ thunk:openNativeAiSummaryFeedbackModal
 thunk:openNewBrowseDm
 thunk:openNonDismissibleWelcomeModal
 thunk:openNoPaymentMethodNotifyOwnerModal
+thunk:openNotifications
 thunk:openNuxCalendarDetails
 thunk:openOnboardingCompletionModal
 thunk:openOnboardingProfileModal
@@ -7788,6 +7797,7 @@ thunk:syncDraftCreate
 thunk:syncDraftFilePermissionsState
 thunk:syncDraftUnfurlState
 thunk:syncDraftUpdates
+thunk:syncFloatingSlackbotComposer
 thunk:synchronizeArchiveStateForThreadId
 thunk:syncMemberPerms
 thunk:syncPlaceholderWithUploads
@@ -8145,6 +8155,7 @@ thunk:uploadEmailAttachment
 thunk:uploadFiles
 thunk:uploadFilesToCanvas
 thunk:uploadFilesToChannelFolder
+thunk:uploadMeetingRecording
 thunk:uploadOrPostCloudFile
 thunk:uploadQueueEmptiedWithDelay
 thunk:uploadToNewDraft
