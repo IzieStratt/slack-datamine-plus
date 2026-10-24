@@ -17,14 +17,19 @@ const GROUP_SELECTORS = new Set(['getGroupForUser', 'getGroupForUserWithoutExpos
 const CALL_RE = /\(0,([\w$]+)\.([\w$]+)\)\(([^,()]{1,40}),"([a-z][\w.-]{2,120})"[^()]{0,24}\)/g;
 const IMPORT_RE = /[\s,;]([\w$]+)=\w\("([^"\\]+)"\)/g;
 
-// Some files (application, the legacy rollups) declare "use strict" once at the top, so their modules are `id(e,t,a){a.d(...)}` without it.
-// For those the strict pattern finds almost nothing; fall back to ids of 3-8 chars that follow a `,` or the map's `{`.
-const MODULE_HEAD_LOOSE = /(?:^|[,{])\s*("[^"\\]{3,8}"|[A-Za-z0-9_$+/-]{3,8})\((?:\w(?:,\w){0,2})?\)\{/g;
+// Modules are declared in a few shapes, each tied to how the file was built:
+//   id(e,t,n){"use strict";...                 strict, per module (modern.vendor, most async chunks)
+//   id(e,t,a){a.d(...)}                         "use strict" once at the top of the file (application, the legacy rollups)
+//   id:(function(e,t,n){"use strict";...        the gantry client (client-boot, gantry-v2-vendors)
+// rspack ids are exactly 4 chars; an unquoted one has a capital or digit (method and property names don't), so the loose shapes don't split on code.
+const ID4 = '("[^"\\\\]{4}"|(?=[A-Za-z0-9_$]*[A-Z0-9])[A-Za-z0-9_$]{4})';
+const MODULE_HEAD_LOOSE = new RegExp(`(?:^|[,{])\\s*${ID4}\\((?:\\w(?:,\\w){0,2})?\\)\\{`, 'g');
+const MODULE_HEAD_FN = new RegExp(`(?:^|[,{])\\s*${ID4}\\s*:\\s*\\(?function\\s*\\((?:\\w(?:,\\w){0,2})?\\)\\s*\\{`, 'g');
 export function modules(js) {
   let heads = [...js.matchAll(MODULE_HEAD)];
-  if (js.length > 20000) {
-    const loose = [...js.matchAll(MODULE_HEAD_LOOSE)];
-    if (heads.length < loose.length * 0.5) heads = loose;
+  if (js.length > 20000) for (const re of [MODULE_HEAD_LOOSE, MODULE_HEAD_FN]) {
+    const other = [...js.matchAll(re)];
+    if (other.length > heads.length * (re === MODULE_HEAD_LOOSE ? 2 : 1)) heads = other; // loose needs to clearly win; the fn shape is only ever matched by gantry files
   }
   return heads.map((m, i) => ({ id: m[1].replace(/^"|"$/g, ''), start: m.index, src: js.slice(m.index, heads[i + 1]?.index ?? js.length) }));
 }

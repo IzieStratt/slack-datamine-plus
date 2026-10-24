@@ -71,8 +71,11 @@ export function checkTaut(uses, inv, state = {}, ignore = IGNORE) {
     if (!present) { missing.push({ ...f, candidates: candidates(f.name, pool), plain: (f.kind === 'byMeta' || f.kind === 'thunk') ? presence.found[`fn:${f.name}`] : undefined }); continue; }
     if (modules?.length) {
       hashes[k] = [...new Set(modules)].sort();
-      const before = state.hashes?.[k];
-      if (before && JSON.stringify(before) !== JSON.stringify(hashes[k])) changed.push({ ...f, before, after: hashes[k] });
+      // changed = a module present in both runs (same id) whose code hash differs. A name whose modules have different ids moved or the miner
+      // identifies modules differently now; that is not a code change, so it only resets the baseline.
+      const before = state.hashes?.[k], idOf = (x) => x.slice(0, x.lastIndexOf(':'));
+      const prev = new Map((before ?? []).map((x) => [idOf(x), x]));
+      if (before && hashes[k].some((x) => prev.has(idOf(x)) && prev.get(idOf(x)) !== x)) changed.push({ ...f, before, after: hashes[k] });
     }
   }
   return { missing, changed, unchecked, ignored, plainOk, hashes, checked: by.size - unchecked.length };

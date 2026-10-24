@@ -63,6 +63,11 @@ test('taut-watch: a maintainer-confirmed name is listed, not reported', () => {
   assert.ok(md.includes('confirmed fine by a maintainer: `BaseAvatarStack`') && md.includes('boot bundle') && md.includes('resolve to plain functions'));
 });
 
+test('taut-watch: a name whose modules have different ids is not a code change', () => {
+  const r = checkTaut(uses, { ...inv, presence }, { hashes: { 'component:Panel': ['other:9'] } });
+  assert.deepEqual(r.changed, []);
+});
+
 test('taut-watch: wrapped component names are looked up by what they wrap', () => {
   const p = { watched: ['component:Serialized(Panel)'], found: { 'component:Serialized(Panel)': { forms: ['displayName'], modules: ['p:1'] } } };
   const r = checkTaut([{ kind: 'component', name: 'Serialized(Panel)', file: 'a.ts', line: 1 }], { ...inv, presence: p }, {});
