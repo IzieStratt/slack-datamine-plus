@@ -52,7 +52,7 @@
   "byName:buildMarkdownChangeDelta": [
    "5W2L:62032c02",
    "5W2L:659850fe",
-   "HtUL:453f8e78"
+   "HtUL:e47e807e"
   ],
   "byName:canDeleteMessageHelper": [
    "CRrL:9aeee25f",
@@ -64,7 +64,7 @@
    "uCTC:7c57c0b2"
   ],
   "byName:convertBlocksToDelta": [
-   "HtUL:453f8e78",
+   "HtUL:e47e807e",
    "NM6h:157bc780",
    "NM6h:79ac32aa"
   ],
@@ -90,7 +90,7 @@
   ],
   "byName:convertDeltaToBlocks": [
    "0Pqp:225e50e2",
-   "HtUL:453f8e78",
+   "HtUL:e47e807e",
    "eFee:54649629"
   ],
   "byName:copyDocumentStylesheets": [
@@ -108,9 +108,9 @@
    "tgvC:ad6778c3"
   ],
   "byName:exposeSelectorForDebug": [
+   "KVP9:4caa40b2",
    "KVP9:cf3de42e",
-   "KVP9:dffd5617",
-   "rh6W:9fc0eded"
+   "KVP9:dffd5617"
   ],
   "byName:getBroadcastKeywordsForUser": [
    "HEm1:c4ae91dc",
@@ -130,7 +130,7 @@
   "byName:getInputProxy": [
    "H1/e:3499bc1f",
    "H1/e:3691b66d",
-   "HtUL:453f8e78"
+   "HtUL:e47e807e"
   ],
   "byName:getLastMessageByMember": [
    "8SAS:6be31531",
@@ -169,7 +169,7 @@
   ],
   "component:BaseMessageAttachmentSlackMessage": [
    "3/Pr:2e51488e",
-   "74lO:d287ba37"
+   "74lO:ba0bc33d"
   ],
   "component:BaseMessageSender": [
    "Vaoa:8dd8c4b6",
@@ -177,7 +177,7 @@
    "gp2B:823c0bd2"
   ],
   "component:BaseMrkdwnChannel": [
-   "HtUL:453f8e78",
+   "HtUL:e47e807e",
    "P0RV:4d6cc000",
    "P0RV:7932b835"
   ],
@@ -206,7 +206,7 @@
    "vt6y:20fa4d12"
   ],
   "component:HelpButton": [
-   "74lO:d287ba37"
+   "74lO:ba0bc33d"
   ],
   "component:HuddleBaseEvent": [
    "XsfF:8b475ac8",
@@ -254,7 +254,7 @@
   ],
   "component:MessageAttachmentHuddleLink": [
    "3/Pr:2e51488e",
-   "74lO:d287ba37"
+   "74lO:ba0bc33d"
   ],
   "component:MessageBackground": [
    "6k+V:61a73712",
@@ -321,7 +321,7 @@
   ],
   "component:ShortcutsMenuTriggerButton": [
    "3/Pr:2e51488e",
-   "74lO:d287ba37"
+   "74lO:ba0bc33d"
   ],
   "component:TextyButtonOverflow": [
    "7iVZ:b5268f3a",
@@ -357,7 +357,7 @@
   ],
   "rtm:view_opened": [
    "3/Pr:2e51488e",
-   "74lO:d287ba37"
+   "74lO:ba0bc33d"
   ],
   "thunk:addAndUploadPendingFile": [
    "bk/I:afd771db",
@@ -445,7 +445,7 @@
   ],
   "thunk:getContextMenuTemplate": [
    "3/Pr:2e51488e",
-   "74lO:d287ba37",
+   "74lO:ba0bc33d",
    "IimM:a4484fda"
   ],
   "thunk:getMemberContextMenuTemplate": [
@@ -559,6 +559,70 @@
  },
  "reported": [],
  "events": [
+  {
+   "build": "169c9ec2807e",
+   "date": "2026-10-24",
+   "names": [
+    "AudioVideoFacadeSubscriber",
+    "buildMarkdownChangeDelta",
+    "canDeleteMessageHelper",
+    "convertBlocksToDelta",
+    "convertBlocksToMarkdown",
+    "convertBlocksToMrkdwnDelta",
+    "convertDeltaToBlocks",
+    "createStore",
+    "exposeSelectorForDebug",
+    "getDeltaForMessageObject",
+    "getInputProxy",
+    "isInputRegistered",
+    "BaseContextBarV2",
+    "BaseMessageAttachmentSlackMessage",
+    "BaseMessageSender",
+    "BaseMrkdwnChannel",
+    "Blocks",
+    "EmojiPicker",
+    "EmojiPickerPopover",
+    "HelpButton",
+    "ListChannelEntity",
+    "MessageActionButtonReaction",
+    "MessageActions",
+    "MessageAttachmentHuddleLink",
+    "MessageBackground",
+    "MessageBlocks",
+    "MessageSender",
+    "Reaction",
+    "ReactionAddButton",
+    "ReactionAnimation",
+    "ReactionBar",
+    "ShortcutsMenuTriggerButton",
+    "TextyButtonOverflow",
+    "TextyButtons",
+    "WysiwygContainer",
+    "view_opened",
+    "addAndUploadPendingFile",
+    "autocompleteChannels",
+    "autocompleteMembers",
+    "blocksFormatFetcher",
+    "changeReactionFromUserAction",
+    "chatDeleteFetcher",
+    "commitMessageEdit",
+    "displayAlertMessage",
+    "enqueueHuddleToast",
+    "executeAppAction",
+    "getContextMenuTemplate",
+    "getMemberContextMenuTemplate",
+    "handleMessageImmediatelyWithoutPreprocessing",
+    "openPrefsModal",
+    "prepareAndSendMessage",
+    "saveMessageEdit",
+    "showNotification",
+    "startEventLog",
+    "stopEventLog",
+    "stopHuddle",
+    "submitAddOrRemoveReaction",
+    "uploadFiles"
+   ]
+  },
   {
    "build": "a5d835310ec9",
    "date": "2026-10-24",
