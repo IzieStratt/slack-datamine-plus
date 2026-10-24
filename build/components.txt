@@ -169,6 +169,7 @@ ActivityMentionWrapped
 ActivityMessage
 ActivityMoreViewContent
 ActivityMPDMName
+ActivityNavCounts
 ActivityPage
 ActivityPageContext
 ActivityPageContextProvider
@@ -1454,7 +1455,6 @@ BaseSectionHeadingConfirmationModal
 BaseSegmentPreview
 BaseSelectField
 BaseSelectSalesforceOrg
-BaseSetupChecklistPopout
 BaseSharedChannelNoteScreen
 BaseSharedChannelOrgList
 BaseSharedInviteLandingView
@@ -2267,11 +2267,27 @@ Checkboxgroup
 CheckboxMenuRowComponent
 CheckboxOptionRenderer
 CheckboxRow
+ChecklistAnnouncer
+ChecklistCard
+ChecklistCloseButton
+ChecklistFromDefinition
+ChecklistHeader
+ChecklistHeaderButton
+ChecklistHeaderIcon
+ChecklistHeaderStart
 ChecklistPanelPeekContent
+ChecklistProgress
 ChecklistProgressBar
+ChecklistRoot
+ChecklistSidebarPopout
+ChecklistTaskRegion
+ChecklistTasks
+ChecklistTitle
+ChecklistToggle
 CheckmarkIcon
 CheckoutRescueBanner
 ChevronIcon
+ChildAutoInstallCheckbox
 ChildCodeChannelCards
 ChildCodeChannelMenuButton
 ChildCodeChannelPeekRow
@@ -3830,6 +3846,7 @@ ExternalCitation
 ExternalConnectionsConnectableContactNotOnSlack
 ExternalConnectionsContactAdminLink
 ExternalConnectionsCta
+ExternalConnectionsHeaderActions
 ExternalConnectorDateFilter
 ExternalConnectorsButton
 ExternalDirectoryEmptyState
@@ -5947,6 +5964,7 @@ maybeRenderCalendarSyncPicture
 maybeRenderChannelInviteManageInvitations
 maybeRenderCheckbox
 maybeRenderChildren
+maybeRenderCoachmarkAnchor
 maybeRenderConnectInviteCoachmark
 maybeRenderContactSharingPrefContent
 maybeRenderCustomizeMenu
@@ -6711,6 +6729,7 @@ NavigationScreen
 NavLink
 NavShownCoachmarkAnchor
 NeedsReviewEmptyState
+NeedsReviewModal
 NeedsReviewPage
 NestedBlocks
 NestedBranchesAwarenessBanner
@@ -8295,6 +8314,7 @@ renderSubSection
 renderSubsettings
 renderSubtext
 renderSubtitle
+renderSurfaceSourcesSharingCheckbox
 renderTabActions
 renderTabbedContent
 renderTabContents
@@ -8449,6 +8469,7 @@ RevealedControls
 RevealStoreContext
 RevealTabsPref
 RevertNote
+ReviewButton
 ReviewChanges
 ReviewChangesChannelRow
 ReviewChangesEmptyState
@@ -9115,9 +9136,7 @@ SetupAccountSwitcher
 SetupAppsModal
 SetupBannerAppInstallButton
 SetupBannerButton
-SetupChecklistPopout
 SetupChecklistPopoutPlantIcon
-SetupChecklistTaskList
 SetupComposerTip
 SetUpDomainWideAuthModal
 SetupForwardingPane
@@ -9709,6 +9728,7 @@ SlackConnectDMBannerContainer
 SlackConnectDmEmailModalV2
 SlackConnectDmInternalEmailSpeedbump
 SlackConnectDmInviteSuccessModal
+SlackConnectDmTrialAdminCoachmark
 SlackConnectDMTrialBanner
 SlackConnectDMTrialBaseBanner
 SlackConnectDMTrialIneligibleBanner
@@ -9732,6 +9752,7 @@ SlackConnectInviteFormInput
 SlackConnectInviterButtons
 SlackConnectInviteSteps
 SlackConnectInviteSwitchRow
+SlackConnectManageMenu
 SlackConnectMemberInfo
 SlackConnectMultiAvatar
 SlackConnectPage
@@ -10917,6 +10938,7 @@ UpgradeCtaWithSegmentedOffer
 UpgradeEmailFeatureAccessRevokedBanner
 UpgradeMessageHistoryBanner
 UpgradesBadge
+UpgradesCoachmark
 UpgradesIcon
 UploadButton
 UploadProfileButtonWithPreview

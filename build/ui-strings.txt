@@ -1873,6 +1873,7 @@ All activity
 All admins, via Slackbot
 All agents
 All app types
+All apps
 All available fields have been added
 All available workspaces
 All canvases
@@ -2940,6 +2941,7 @@ Available apps
 Available at your first renewal after June 17, 2026
 Available for purchases made via sales rep only.
 Available in bulk action mode
+Available in the Slack Marketplace
 Available on Paid Plans
 Available times
 Available to Slackbot
@@ -4787,6 +4789,7 @@ Connection
 Connection & authentication
 Connection details
 Connection error
+Connection expired. Reconnect to keep using it.
 Connection failed
 Connection failed. Please try again.
 Connection interrupted
@@ -7287,6 +7290,7 @@ Everyone ready to start AI notes and transcription?
 Everyone ready to start AI notes?
 Everyone ready to start transcription?
 Everyone who can post in the channel
+Everyone who can view this can see the queries behind its data.
 Everyone who has notifications that reference a re-mapped field will need to delete and recreate those notifications.
 Everyone will be able to add replies to messages posted in this channel, regardless of overall posting permissions
 Everyone will need to re-authenticate, recreate existing notifications, and admins will need to reconfigure the deal won celebration.
@@ -9797,6 +9801,7 @@ Installed agent results
 Installed agents
 Installed in #{channelName}
 Installed on
+Installed. Connect your account to use it.
 Installing {appName} could take a few moments to complete. You will receive a message from Slackbot when it is finished.
 Instantly connect over audio or video
 Instantly connect over audio or video from any channel or DM
@@ -11852,6 +11857,7 @@ More actions for {buttonName} button
 More actions for {channelName}
 More actions for {label}
 More actions for {listName}
+More actions for {metricName}
 More actions for {skillName}
 More actions for {skillSetName}
 More actions for {title}
@@ -12200,6 +12206,7 @@ Needs Review
 Needs approval
 Needs attention
 Needs input
+Needs reinstall
 Needs you
 Negative numbers are not allowed.
 Neither is good
@@ -15867,6 +15874,7 @@ Review your channel resources
 Review your mentions
 Review your notifications
 Review your {entity} audit logs
+Review {appName}
 Review {name}
 Reviewers
 Reviewing findings\u2026
@@ -16620,6 +16628,7 @@ See Teams Calls information in search results
 See Upgrade Options
 See all
 See all Plan Benefits
+See all Slackbot supported apps
 See all activity
 See all apps
 See all conversations
@@ -17606,6 +17615,7 @@ Show completed items
 Show completed tasks
 Show conversation with {recipients}
 Show conversation with {recipient}
+Show data queries
 Show deal won celebration
 Show deleted statuses and stages
 Show description
@@ -18146,6 +18156,7 @@ Slackbot skill
 Slackbot skills aren\u2019t available in this workspace, so this skill can\u2019t be added.
 Slackbot skills created
 Slackbot skills used
+Slackbot supported apps
 Slackbot teaser
 Slackbot uses this context across conversations in the project and may update it automatically each week.
 Slackbot uses this description to determine when to run this skill.
@@ -19887,6 +19898,7 @@ There was a problem syncing with Salesforce
 There was a problem updating Slackbot access for #{channelName}. Give it another try in a few minutes.
 There was a problem updating permissions, please try again.
 There was a problem updating this step. Give it another try.
+There was a problem updating who can see the queries. Give it another try.
 There was a problem uploading the file {filename}. Please try again in a few minutes.
 There was a problem uploading this file. Give it another try.
 There was a problem uploading your CSV file.
@@ -19936,6 +19948,7 @@ There\u2019s no activity to show yet.
 There\u2019s one for every emotion
 These accounts have been deactivated.
 These appear as a banner on your desktop or mobile device.
+These apps work with Slackbot and connect through MCP.
 These are channels you share with {connectedTeamIds} teams
 These are channels you share with {connectedTeamName}
 These are defined in the {triggerName} workflow trigger. You can map variables from the parent workflow to these inputs.
@@ -30313,6 +30326,7 @@ sync
 syringe
 t-rex
 table
+table with {columnCount, plural, =1 {# column} other {# columns}} and {rowCount, plural, =1 {# row} other {# rows}}.
 table_tennis_paddle_and_ball
 tableware
 tabs
@@ -30788,6 +30802,18 @@ victory
 vicu\xf1a
 video
 video is {videoIsActive}, audio is {audioIsActive}
+video: {title}
+video: {title} By {authorName}
+video: {title} By {authorName} on {providerName}
+video: {title} On {providerName}
+video: {title} {description}
+video: {title} {description} By {authorName}
+video: {title} {description} By {authorName} on {providerName}
+video: {title} {description} On {providerName}
+video: {title}, {description}
+video: {title}, {description} By {authorName}
+video: {title}, {description} By {authorName} on {providerName}
+video: {title}, {description} On {providerName}
 video_camera
 video_game
 videogame
@@ -31330,6 +31356,7 @@ zzz
 {canvasName}: {sectionText}
 {canvasTitle}, created by an agent {timeAgo}
 {canvasTitle}, created by {agentName} {timeAgo}
+{caption}, table with {columnCount, plural, =1 {# column} other {# columns}} and {rowCount, plural, =1 {# row} other {# rows}}.
 {cardCount, plural, =1 {{name} link preview added to your message} other {{name} and {otherCardCount} more link previews added to your message}}
 {categoryLabel} prompts
 {categoryName}
@@ -32262,6 +32289,8 @@ zzz
 {newUnreadMsgCount, plural, =1 {# new message} other {# new messages}}
 {noCount} no
 {notResponded, plural, =1 {# hasn\u2019t responded } other {# haven\u2019t responded}}
+{notificationCount, plural, =1 {# unread notification, new since your last visit} other {# unread notifications, with new ones since your last visit}}
+{notificationCount, plural, =1 {# unread notification} other {# unread notifications}}
 {notificationInfo} and {unreadChannelInfo} in {currentTeamDisplayName}
 {notificationInfo} in {currentTeamDisplayName}
 {notificationSum, plural, =1 {{notificationSum} notification} other {{notificationSum} notifications}}
@@ -32679,6 +32708,9 @@ zzz
 {title}, {timeRange}
 {title}. Couldn\u2019t invite {count, plural, =1 {# person} other {# people}}
 {title}: {status}
+{todoCount, plural, =1 {# overdue to-do} other {# overdue to-dos}}
+{todoCount, plural, =1 {# overdue to-do} other {# overdue to-dos}} and {notificationCount, plural, =1 {# unread notification, new since your last visit} other {# unread notifications, with new ones since your last visit}}
+{todoCount, plural, =1 {# overdue to-do} other {# overdue to-dos}} and {notificationCount, plural, =1 {# unread notification} other {# unread notifications}}
 {toolCount, plural, =1 {Used # tool} other {Used # tools}}
 {toolCount, plural, =1 {Using # tool} other {Using # tools}}
 {toolCount} other {toolCount, plural, one {tool} other {tools}}
