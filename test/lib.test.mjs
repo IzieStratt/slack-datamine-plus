@@ -91,6 +91,11 @@ test('sources: page assets keep dotted names and drop hashes; families need a fe
   assert.deepEqual(diffSources(ids, ids.slice(1)), { added: [], removed: ['asset:TS.web.min.js'] });
 });
 
+test('isPhantom: the translation bundles the signed-in pages list are known-unfetchable', () => {
+  assert.ok(isPhantom('gantry-v2-translations_en-US.gantry-v2.9fd811ca5eaaadd802f5.min.js') && isPhantom('gantry-v2.abc123.min.js'));
+  assert.ok(!isPhantom('client-boot.58b485809e42a9b6.min.js'));
+});
+
 test('chunkMapFiles: reads the inline __cf map of the gantry client page', () => {
   const page = 'p.u=e=>{var __cf={"client-boot-vendors":"e6b038aec2795a05","lottie-x":"bf461b3a0c1d2e3f",plain_key:"8da0aaaaaaaa"};if(__cf[e])return "gantry-v2-async-"+e+"."+__cf[e]+".min.js"}';
   assert.deepEqual([...chunkMapFiles(page)].sort(), ['gantry-v2-async-client-boot-vendors.e6b038aec2795a05.min.js', 'gantry-v2-async-lottie-x.bf461b3a0c1d2e3f.min.js', 'gantry-v2-async-plain_key.8da0aaaaaaaa.min.js']);

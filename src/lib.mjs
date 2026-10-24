@@ -68,7 +68,8 @@ export function manifestChunks(js) {
 export const isGrammarChunk = (file) => /node_modules_(shikijs?|mermaid|codemirror|highlight|prismjs|monaco|vscode-textmate|lezer)|^codemirror|^(shiki|mermaid)/i.test(file);
 
 // Same-name "gantry-v2.<hash>.min.js" files 403 on the CDN even in old, fully-mined builds. Track them, don't fail on them.
-export const isPhantom = (file) => /^gantry-v2\.[0-9a-f]+\.min\.js$/.test(file);
+// The gantry translation bundles listed by the signed-in pages (gantry-v2-translations_<locale>.gantry-v2.<hash>.min.js) are 403 on every CDN path too.
+export const isPhantom = (file) => /^gantry-v2\.[0-9a-f]+\.min\.js$/.test(file) || /^gantry-v2-translations_[\w-]+\.gantry-v2\.[0-9a-f]+\.min\.js$/.test(file);
 
 const API_RE = new RegExp(`["'\`]((?:${[...KNOWN_NS].join('|')})(?:\\.[a-zA-Z][a-zA-Z0-9_]{0,40}){1,5})["'\`]`, 'g');
 // A dotted string passed right after an api-call-looking prefix, from a namespace we do not know yet.

@@ -38,27 +38,29 @@ const uses = [
   { kind: 'rtm', name: 'message', file: 'plugins/O.tsx', line: 2 },
   { kind: 'experiment', name: 'exp_gone', file: 'plugins/X.tsx', line: 4 },
   { kind: 'thunk', name: 'brandNew', file: 'plugins/N.tsx', line: 5 },
+  { kind: 'thunk', name: 'plainThunk', file: 'plugins/T.tsx', line: 6 },
 ];
-const presence = { watched: ['component:BaseAvatarStack', 'component:Panel', 'byMeta:getAll', 'rtm:view_opened', 'rtm:message'], found: { 'component:Panel': { forms: ['displayName'], modules: ['p:2'] }, 'rtm:message': { forms: ['string'], modules: [] }, 'fn:getAll': { forms: ['arrow'], modules: ['m:9'] } } };
+const presence = { watched: ['component:BaseAvatarStack', 'component:Panel', 'byMeta:getAll', 'rtm:view_opened', 'rtm:message', 'thunk:plainThunk'], found: { 'component:Panel': { forms: ['displayName'], modules: ['p:2'] }, 'rtm:message': { forms: ['string'], modules: [] }, 'fn:getAll': { forms: ['arrow'], modules: ['m:9'] }, 'fn:plainThunk': { forms: ['function'], modules: ['t:1'] } } };
 
 test('taut-watch: missing, changed and unchecked are told apart', () => {
   const r = checkTaut(uses, { ...inv, presence }, { hashes: { 'component:Panel': ['p:1'] } });
-  assert.deepEqual(r.missing.map((m) => `${m.kind}:${m.name}`).sort(), ['byMeta:getAll', 'component:BaseAvatarStack', 'experiment:exp_gone', 'rtm:view_opened']);
+  assert.deepEqual(r.missing.map((m) => `${m.kind}:${m.name}`).sort(), ['component:BaseAvatarStack', 'experiment:exp_gone', 'rtm:view_opened', 'thunk:plainThunk']);
   assert.equal(r.missing.find((m) => m.name === 'BaseAvatarStack').candidates[0].name, 'AvatarStackBase');
-  assert.ok(r.missing.find((m) => m.name === 'getAll').plain, 'a byMeta name that still exists as a plain function says so');
+  assert.ok(r.missing.find((m) => m.name === 'plainThunk').plain, 'a thunk that still exists as a plain function is missing, and says so');
+  assert.deepEqual(r.plainOk.map((f) => f.name), ['getAll']); // a byMeta lookup that resolves to a plain function counts as present
   assert.deepEqual(r.changed.map((c) => c.name), ['Panel']); // module hash p:1 -> p:2
   assert.deepEqual(r.unchecked.map((u) => u.name), ['brandNew']); // not in the miner's watch list yet: not judged
-  assert.equal(r.checked, 6);
+  assert.equal(r.checked, 7);
   const md = renderReport({ ...r, dynamic: 2, events: [{ build: 'b1', date: '2026-10-23', names: ['Panel'] }], build: 'b1' });
   assert.ok(md.includes('**BaseAvatarStack** (component)') && md.includes('`AvatarStackBase`') && md.includes('plain function') && md.includes('build `b1`'));
 });
 
 test('taut-watch: a maintainer-confirmed name is listed, not reported', () => {
-  const r = checkTaut(uses, { ...inv, presence }, {}, { getAll: 'fine' });
-  assert.ok(!r.missing.some((m) => m.name === 'getAll'));
-  assert.deepEqual(r.ignored.map((i) => i.name), ['getAll']);
+  const r = checkTaut(uses, { ...inv, presence }, {}, { BaseAvatarStack: 'fine' });
+  assert.ok(!r.missing.some((m) => m.name === 'BaseAvatarStack'));
+  assert.deepEqual(r.ignored.map((i) => i.name), ['BaseAvatarStack']);
   const md = renderReport({ ...r, dynamic: 0, events: [], build: 'b1' });
-  assert.ok(md.includes('confirmed fine by a maintainer: `getAll`') && md.includes('boot bundle'));
+  assert.ok(md.includes('confirmed fine by a maintainer: `BaseAvatarStack`') && md.includes('boot bundle') && md.includes('resolve to plain functions'));
 });
 
 test('taut-watch: wrapped component names are looked up by what they wrap', () => {

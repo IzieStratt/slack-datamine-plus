@@ -225,7 +225,8 @@ async function main() {
       ex.known.forEach((n) => names.add(n)); ex.candidates.forEach((n) => candidates.add(n)); ex.mentioned.forEach((n) => mentioned.add(n));
       for (const f of chunkFiles(r.js)) if (!seen.has(f)) { seen.add(f); queue.push(f); }
     });
-    stats = { entryScripts: entry.length, entryFetched: entry.filter((f) => ok.includes(f)).length, cdn: info.cdn, manifestUrl: mUrl, versionHash: info.versionHash, versionTs: info.versionTs, discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
+    stats = { entryScripts: entry.filter((f) => !isPhantom(f)).length, entryFetched: entry.filter((f) => ok.includes(f)).length, cdn: info.cdn, manifestUrl: mUrl, versionHash: info.versionHash, versionTs: info.versionTs, discovered: seen.size, fetched: ok.length, phantom: phantom.length, missing: missing.length };
+    { const lost = entry.filter((f) => !isPhantom(f) && !ok.includes(f)); if (lost.length) console.error(`entry scripts that could not be fetched: ${lost.join(' ')}`); }
     log(JSON.stringify(stats));
     if (ok.length < MIN_CHUNKS) {
       console.error(`unhealthy manifest: only ${ok.length} real chunks (< ${MIN_CHUNKS}). Not writing anything.`);

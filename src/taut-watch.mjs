@@ -54,7 +54,7 @@ export function checkTaut(uses, inv, state = {}, ignore = IGNORE) {
     const k = `${u.kind}:${u.name}`;
     (by.get(k) ?? by.set(k, { kind: u.kind, name: u.name, where: [] }).get(k)).where.push(`${u.file}:${u.line}`);
   }
-  const missing = [], unchecked = [], ignored = [], hashes = {}, changed = [];
+  const missing = [], unchecked = [], ignored = [], plainOk = [], hashes = {}, changed = [];
   for (const [k, f] of by) {
     let present, modules, pool;
     if (f.kind === 'experiment') { present = f.name in inv.experiments; pool = pools.experiment; }
@@ -63,6 +63,9 @@ export function checkTaut(uses, inv, state = {}, ignore = IGNORE) {
       const e = presence.found[k];
       pool = f.kind === 'component' ? pools.component : pools.redux;
       present = !!e; modules = e?.modules;
+      // Slack stopped tagging selectors with .meta (10-20 build) and Taut names them itself, so a byMeta lookup that still exists as a plain function is fine
+      const plain = presence.found[`fn:${f.name}`];
+      if (!present && f.kind === 'byMeta' && plain) { present = true; modules = plain.modules; plainOk.push(f); }
     } else { unchecked.push(f); continue; } // not in the miner's watch list yet (new in Taut since its last run)
     if (!present && ignore[f.name]) { ignored.push({ ...f, reason: ignore[f.name] }); continue; }
     if (!present) { missing.push({ ...f, candidates: candidates(f.name, pool), plain: (f.kind === 'byMeta' || f.kind === 'thunk') ? presence.found[`fn:${f.name}`] : undefined }); continue; }
@@ -72,13 +75,13 @@ export function checkTaut(uses, inv, state = {}, ignore = IGNORE) {
       if (before && JSON.stringify(before) !== JSON.stringify(hashes[k])) changed.push({ ...f, before, after: hashes[k] });
     }
   }
-  return { missing, changed, unchecked, ignored, hashes, checked: by.size - unchecked.length };
+  return { missing, changed, unchecked, ignored, plainOk, hashes, checked: by.size - unchecked.length };
 }
 
 const sortBy = (list) => [...list].sort((a, b) => a.kind.localeCompare(b.kind) || a.name.localeCompare(b.name));
 const loc = (f) => f.where.slice(0, 3).map((w) => `\`${w}\``).join(', ') + (f.where.length > 3 ? ` +${f.where.length - 3}` : '');
 
-export function renderReport({ missing, changed, unchecked, ignored = [], checked, dynamic, events, build }) {
+export function renderReport({ missing, changed, unchecked, ignored = [], plainOk = [], checked, dynamic, events, build }) {
   const out = [`Checked ${checked} things Taut looks up in Slack's client against build \`${build ?? '?'}\`.`, ''];
   out.push(missing.length ? `## Missing (${missing.length})\n\nThese lookups no longer find anything in the client's code. The plugin that uses each is probably broken.\n` : '## Missing\n\nNothing: every name Taut looks up is still in the client.\n');
   for (const f of sortBy(missing)) {
@@ -92,6 +95,7 @@ export function renderReport({ missing, changed, unchecked, ignored = [], checke
     for (const e of events) out.push(`- build \`${e.build}\` (${e.date}): ${e.names.map((n) => `\`${n}\``).join(', ')}`);
   }
   if (ignored.length) out.push('', `Not reported, confirmed fine by a maintainer: ${ignored.map((f) => `\`${f.name}\``).join(', ')}.`);
+  if (plainOk.length) out.push('', `${plainOk.length} byMeta lookup${plainOk.length === 1 ? '' : 's'} (${plainOk.map((f) => `\`${f.name}\``).join(', ')}) resolve to plain functions: Slack no longer tags selectors with \`.meta\` and Taut names them itself, so they count as present.`);
   out.push('', `<sub>Names are searched for in the files Slack serves to the pages the miner can read. The client's boot bundle (where modules like \`UexS\` and \`sRq/\` live) is not reachable yet, so a name reported missing here may live there: check before trusting a finding. ${unchecked.length} lookups were not searched yet (new in Taut since the last mine run)${dynamic ? `, and ${dynamic} calls build their name at runtime` : ''}. This issue updates itself.</sub>`);
   return out.join('\n') + '\n';
 }
