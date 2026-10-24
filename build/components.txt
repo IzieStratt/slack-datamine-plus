@@ -1017,6 +1017,7 @@ AutoAcceptCore
 AutoAcceptScInvitesConnectionBulkModalWrapper
 AutoAcceptScInvitesConnectionWrapper
 AutoChargeFeatureTrialsManageTrialWorkspaceMenuCta
+AutoChargeFeatureTrialsPaidBenefitsHeaderReminder
 AutoChargeTrialEntryModal
 AutoChargeTrialStartModalWithConfetti
 AutoClog
@@ -1093,6 +1094,7 @@ BackupButton
 Badge
 BadgeAriaDescription
 BadgeHomeIcon
+balanceRow
 BalloonsAnimation
 BannerContent
 BannerDownloadApp
@@ -1153,6 +1155,7 @@ BaseAutoClog
 BaseAutoSlackLaunchpadEditProfileModal
 BaseAutoSlackSalesforceChannelAutoPeekRecordOverviewCoachmark
 BaseAvatar
+BaseAvatarStack
 BaseBanner
 BaseBannerDownload
 BaseBannerEnablePopups
@@ -1459,6 +1462,7 @@ BaseSectionHeadingConfirmationModal
 BaseSegmentPreview
 BaseSelectField
 BaseSelectSalesforceOrg
+BaseSetupChecklistPopout
 BaseSharedChannelNoteScreen
 BaseSharedChannelOrgList
 BaseSharedInviteLandingView
@@ -1544,6 +1548,7 @@ BaseWorkObjectRecordChannelCreationModal
 BaseWorkspaceAdminNavigationMenu
 BasicChannelSettingsModal
 BasicContainer
+BasicOrgChartLoader
 BasicSelect
 BasicSelectInput
 BBMNuxModal
@@ -1608,6 +1613,7 @@ boldHuddleTopicInStatus
 BookmarkIconWorkflow
 BookmarkItem
 BookmarkPinnedMessagesButton
+BookmarksPage
 BookmarksPageHeader
 BookmarksSettingsMenu
 BookmarksSidebarLink
@@ -1787,8 +1793,11 @@ CalendarCardContent
 CalendarCardError
 CalendarConnectCard
 CalendarConnectCardSkeleton
+CalendarCurrentTimeTodayPointer
+CalendarDay
 CalendarDisconnectModal
 CalendarDraftDateTimeInput
+CalendarEvent
 CalendarHeader
 CalendarHuddlesInvitePreferences
 CalendarIcon
@@ -1810,6 +1819,7 @@ CalendarNotificationsPref
 CalendarPage
 CalendarPrefsDialog
 CalendarStripe
+CalendarView
 Call
 CallButton
 callButtonFunctionComponent
@@ -2579,6 +2589,7 @@ ConnectedAgentSessionRow
 ConnectedAppBasedSearchSource
 ConnectedAppsList
 ConnectedAutoChargeFeatureTrialsManageTrialWorkspaceMenuCta
+ConnectedAutoChargeFeatureTrialsPaidBenefitsHeaderReminder
 ConnectedAutomationCoachmark
 ConnectedAvatar
 ConnectedBannerDownloadSsb
@@ -3087,6 +3098,8 @@ DefaultOnNuxSidebarSetupSpaceHeader
 DefaultSender
 DefaultWorkflowSpeedbumpModal
 DefaultWrappedFormValue
+DegradedBanner
+DegradedBannerLoadMessagesLink
 DelaySummary
 DelayTreatment
 DelegateActions
@@ -3212,6 +3225,7 @@ DisconnectUserModal
 DisconnectUserTeamSummary
 DisconnectUserTeamSummaryPublicChannelItemDetails
 DisconnectUserTeamSummaryStandardItemDetails
+DiscountOfferButton
 DiscountPromo
 DismissableSalesHomeNuxBanner
 DismissDraftButton
@@ -3225,6 +3239,7 @@ dispatchSkillToast
 DisplayRulesFooter
 DisplayRulesPill
 Divider
+DlpFileScanningBanner
 DlpFileUploadErrorDialogMessage
 DLPUserWarningResend
 DlpUserWarningShareMessageModal
@@ -3512,6 +3527,7 @@ EditViewMenuComponent
 EditWorkspaceInfoModal
 EditWorkspacesModal
 EditWorkspacesSelect
+EducationBanner
 EducationBannerBase
 EducationCard
 EducationCoachmark
@@ -3528,7 +3544,12 @@ EducationTile
 EducationTiles
 EduDiscountPeek
 EduDiscountSidebarPromo
+EinsteinActivityCaptureBanner
 ElementValidationError
+EmailActivityCaptureBanner
+EmailActivityCaptureDialog
+EmailActivityCapturePane
+EmailActivityCapturePrefs
 EmailAddress
 EmailAddressEntity
 EmailAttachmentGallery
@@ -3776,6 +3797,7 @@ ErrorState
 ErrorToast
 Event
 EventHeader
+EventInfoModal
 ExcludeAiIngestionModal
 ExcludeCheckbox
 ExcludeKeywordsFilterItem
@@ -3800,7 +3822,9 @@ ExpirationDateColumn
 ExpirationModal
 ExpiredBespokeSidebarPeekContent
 ExplainErrorButton
+ExplorePaidFeaturesCard
 ExplorePaidFeaturesModalView
+ExplorePaidFeaturesPage
 ExplorePaidFeaturesSubpage
 Explorer
 ExplorerAccordion
@@ -3870,6 +3894,7 @@ ExternalFilterSearchableMultiSelect
 ExternalFiltersRenderer
 ExternalGuestHuddleWindow
 ExternalGuestIcon
+ExternalHuddleMenuItem
 ExternalHuddlesGuestClient
 ExternalHuddlesGuestInviteButton
 ExternalInviteActions
@@ -4240,6 +4265,7 @@ ForecastReminderFlowPage
 ForgetMemberDialog
 form
 Form
+formatBannerMessageHtml
 formatCalculationResult
 formatConjunctions
 formatDelta
@@ -4337,6 +4363,7 @@ GalleryPhotoLayout
 GalleryScroller
 GalleryScrollerArrow
 GantryNavigationMenu
+GcalMeetingMenuItem
 GdriveCreateModal
 GeneralFolderDetailItem
 GeneralNetworkWarning
@@ -4700,6 +4727,7 @@ GptLiveSlackbotTileArt
 GptLiveThreadPanel
 GptLiveVoiceExperience
 GptLiveVoiceMenu
+GptLiveVoiceVisualizer
 GradientsCheckbox
 GradientText
 GrantAccessMicrosoftPane
@@ -4869,11 +4897,14 @@ HuddleBaseEvent
 HuddleBottomBar
 HuddleBottomBarContent
 HuddleBroadcastMsgText
+HuddleButtonMenu
 HuddleButtonMenuItem
 HuddleCameraButton
 HuddleCameraPreviewMenu
 HuddleCameraPreviewMenuItem
 HuddleCanvasFooter
+HuddleChannelHeaderButton
+HuddleChannelHeaderButtonWrapper
 HuddleChannelName
 HuddleChannelTooltip
 HuddleClientContainer
@@ -5423,7 +5454,9 @@ JoinChannelsModal
 JoinChannelsResultToast
 JoinerAvatarPartyHat
 JoinerFollowUpPrompts
+JoinerLaunchpad
 JoinerLaunchpadDismissedCoachmark
+JoinerLaunchpadErrorScreen
 JoinerLaunchpadHelpTipCard
 JoinerLaunchpadHelpTipCards
 JoinerLaunchpadPeopleCarousel
@@ -5512,6 +5545,7 @@ LaterTab
 LaterTabButtonNudge
 LaterTabInMoreCoachmark
 LaterTimePicker
+LaterTodayNux
 LaterTodoErrorToast
 LaterTodoFilterBar
 LaterTodoFilterPanel
@@ -5519,6 +5553,7 @@ LaterTodoRow
 LaterTodosCoachmark
 LaterTodoSettingsMenu
 LaterTodosHeader
+LaterTodosSavedBanner
 LaterTodosSavedCoachmark
 LaterTodosTabGlow
 LaterTodoToast
@@ -5836,6 +5871,7 @@ LoadingState
 LoadingUserProfileUnfurl
 LoadingWorkflowCard
 LoadMoreSentinel
+LoadOlderMessage
 LocalDiscountAwarenessBanner
 LocalePref
 LocalTime
@@ -6389,6 +6425,7 @@ MessageColumnMenu
 MessageComposerFilePicker
 MessageContainerContext
 MessageContainerError
+MessageContainerLoading
 MessageContent
 MessageContext
 MessageCountSlideComponent
@@ -6451,6 +6488,10 @@ MessagePaneInput
 MessagePaneInputAtMentionInviteWarning
 MessagePaneInputBroadcastWarning
 MessagePaneInputCanvasCommentForwardingLinkSpeedBump
+MessagePaneInputDisabled
+MessagePaneInputDisabledBarriered
+MessagePaneInputDisabledPendingDm
+MessagePaneInputDisabledUpgradeBanner
 MessagePaneInputExternalFileSpeedBump
 MessagePaneInputExternalMembersSpeedBump
 MessagePaneInputLinkWarning
@@ -6782,6 +6823,7 @@ NewTeamLaunchpadSidebarSetupSpaceHeader
 NewTeamLaunchpadStpPlansModal
 NewViewModal
 NewWorkflowManagementHomeCoachmark
+NewYearPromo27SidebarBanner
 NextBestAction
 NextMeetingCard
 NextSteps
@@ -7010,6 +7052,7 @@ OrganizeMessageActionsSubmenu
 OrganizeModeMenu
 OrgCard
 OrgCardSkeleton
+OrgChartMemberCardActions
 OrgCustomGuestExpiration
 OrgDashDetailsDataCallout
 OrgExternalMembers
@@ -7093,6 +7136,7 @@ PaginationBar
 PaginationBullet
 PaidBadge
 PaidBenefitsCard
+PaidBenefitsView
 PaidBenefitsViewPnP
 PaidBenefitsViewPnPHeader
 PaidFeatureBadge
@@ -7150,6 +7194,7 @@ PendingAgentsTableEmptyState
 PendingAudioFile
 PendingAudioMessageUpload
 PendingChangesModal
+PendingDmEmailVerificationAlert
 PendingFile
 PendingFileGalleryItem
 PendingFileGallerySingleVideo
@@ -7874,6 +7919,7 @@ RenameTabModal
 render
 renderAccessories
 renderAccountTypeFilter
+renderAction
 renderActionButtons
 renderActionGroup
 renderActionIcons
@@ -7979,7 +8025,9 @@ renderConnectorLabel
 renderContactAdmin
 renderContainer
 renderContent
+renderContents
 renderContextMenu
+renderContextMenuForItem
 renderContextualFile
 renderContextualMessage
 renderCopyButton
@@ -8079,6 +8127,7 @@ renderFilterBarRightContent
 renderFilterMenuTrigger
 renderFilters
 renderFiltersContent
+renderFinePrint
 renderFloatingActions
 renderFooter
 renderFooterLink
@@ -8212,6 +8261,9 @@ renderOverrideMenuBody
 renderOverridesSection
 renderOwnerAndAdminRadioButtons
 renderPageContent
+renderPageFooter
+renderPageHeader
+renderPaidBenefits
 renderPaidBenefitsCards
 renderPauseToggle
 renderPDFViewer
@@ -8535,12 +8587,18 @@ RichTextTag
 RichTextTodoInput
 RichTextWorkObjectMention
 RimetoAgentProfileBio
+RimetoBrowseOrgChartPage
 RimetoCopyContactTooltip
 RimetoEditAgentDescriptionAndPrompts
 RimetoMemberProfileField
 RimetoMemberProfileFlexpane
 RimetoMemberProfileOverflowMenu
 RimetoOrgChartHeader
+RimetoOrgChartLeftArrow
+RimetoOrgChartMemberCard
+RimetoOrgChartPage
+RimetoOrgChartRightArrow
+RimetoOrgChartRow
 RimetoProfileActionRow
 RimetoProfileBio
 RimetoProfileCelebration
@@ -8797,13 +8855,22 @@ SaveAndUpdatePermissionToast
 SaveAsDefaultCheckbox
 SaveButton
 SaveContactModal
+SavedEducation
+SavedEmptyState
 SavedForLaterHeader
 SavedForLaterNewReminderButton
+SavedForLaterPage
 SavedHeader
 SavedItemActionsContextMenu
 SavedItemActionsMenu
+SavedItemFile
+SavedItemFileComment
+SavedItemMessage
 SavedItemPrivacyBlur
+SavedItemsList
 SavedItemsLoadingSkeleton
+SavedItemTombstone
+SavedPage
 SavedTabActions
 SaveForEveryone
 SaveNewStepErrorMessage
@@ -8920,6 +8987,7 @@ SearchInProductSurveyMegaphone
 SearchInProductSurveyModal
 SearchInputBox
 SearchMessageClampedBody
+SearchMessageSkeleton
 SearchNoResultsEmptyStateSlackbot
 SearchPendingContext
 SearchPref
@@ -9166,7 +9234,9 @@ SetupAccountSwitcher
 SetupAppsModal
 SetupBannerAppInstallButton
 SetupBannerButton
+SetupChecklistPopout
 SetupChecklistPopoutPlantIcon
+SetupChecklistTaskList
 SetupComposerTip
 SetUpDomainWideAuthModal
 SetupForwardingPane
@@ -9779,6 +9849,7 @@ SlackConnectInstructionSection
 SlackConnectInvitationsEmptyPage
 SlackConnectInvitationsMobileAndTabletGate
 SlackConnectInvitationsTeamSite
+SlackConnectInvitationView
 SlackConnectInviteActions
 SlackConnectInviteeButtons
 SlackConnectInviteFormInput
@@ -10015,6 +10086,7 @@ SourceSegmentedButton
 SourceSelectModal
 SourcesModal
 SourceTab
+Sparkle
 Speaker
 SpecialChannelsForeword
 SpecificMembersMultiSelect
@@ -10340,6 +10412,10 @@ TabViewWrapper
 Tag
 TagBlock
 TaskCard
+TaskChecklist
+TaskChecklistCheckmark
+TaskChecklistLoading
+TaskChecklistProgressBar
 TaskDetailsPane
 TaskIcon
 TaskItem
@@ -10769,11 +10845,14 @@ TrialButtons
 TrialEndPromoDiscountSidebarCta
 TrialEndPromoOfferModal
 TrialEndUsageStatsModal
+TrialEngagementPocketGuide
+TrialEngagementSidebarHeader
 TrialEntryPointModal
 TrialExpirationCarouselModal
 TrialExpirationDiscountModalNew
 TrialFeatureTooltip
 TrialInfo
+TrialInfoFooter
 TrialPlanCard
 TrialProBadge
 TrialsDismissibleEntryPointBanner
@@ -10972,6 +11051,7 @@ UpgradeButton
 UpgradeCta
 UpgradeCtaWithSegmentedOffer
 UpgradeEmailFeatureAccessRevokedBanner
+UpgradeFooter
 UpgradeMessageHistoryBanner
 UpgradesBadge
 UpgradesCoachmark
@@ -11419,6 +11499,7 @@ ViewHeaderMore
 ViewHeaderPrimaryButton
 ViewHeaderPrimaryDropdownButton
 ViewHeaderRecordType
+ViewHeaderSearch
 ViewHeaderStar
 ViewHeaderStarButton
 ViewHeaderTopic
