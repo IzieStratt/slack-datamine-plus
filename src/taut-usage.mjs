@@ -40,7 +40,7 @@ export function scanTaut(root) {
     for (const file of sources(path.join(root, dir))) {
       const text = fs.readFileSync(file, 'utf8');
       const lineOf = (i) => text.slice(0, i).split('\n').length;
-      for (const [kind, re] of CALLS) for (const m of text.matchAll(re)) uses.push({ kind, name: m[2], file: path.relative(root, file), line: lineOf(m.index) });
+      for (const [kind, re] of CALLS) for (const m of text.matchAll(re)) if (/^[\w$().:-]{1,120}$/.test(m[2])) uses.push({ kind, name: m[2], file: path.relative(root, file), line: lineOf(m.index) });
       dynamic += [...text.matchAll(DYNAMIC)].length;
     }
   }

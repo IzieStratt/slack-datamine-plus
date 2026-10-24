@@ -14,12 +14,19 @@ test('taut-usage: finds lookups by kind, handles generics and counts runtime-bui
     "this.api.redux.patchThunk('markLastRead', f); this.api.redux.waitForThunkCreator('submitView'); x.dispatchThunk(\"enqueueToast\", {})",
     "this.api.byMeta('setLocalDraft'); this.api.byName('getInputProxy'); this.api.rtm.on('view_opened', h); this.api.experiments.set('reskin', 'off')",
     'this.api.patchComponent(name, f); this.api.byMeta(variable)',
+    "this.api.byMeta('bad`name@x #12'); this.api.byMeta('ok.Name_1')",
   ].join('\n'));
   const r = scanTaut(dir);
   const got = r.uses.map((u) => `${u.kind}:${u.name}`).sort();
-  assert.deepEqual(got, ['byMeta:setLocalDraft', 'byName:getInputProxy', 'component:BaseAvatarStack', 'experiment:reskin', 'rtm:view_opened', 'thunk:enqueueToast', 'thunk:markLastRead', 'thunk:submitView']);
+  assert.deepEqual(got, ['byMeta:ok.Name_1', 'byMeta:setLocalDraft', 'byName:getInputProxy', 'component:BaseAvatarStack', 'experiment:reskin', 'rtm:view_opened', 'thunk:enqueueToast', 'thunk:markLastRead', 'thunk:submitView']);
   assert.equal(r.dynamic, 2);
   assert.equal(r.uses[0].file, path.join('plugins', 'A.tsx'));
+});
+
+test('taut-watch: text from Slack cannot ping, link or mangle a public issue', () => {
+  const md = renderReport({ missing: [{ kind: 'component', name: 'Foo', where: ['a.ts:1'], candidates: [{ name: 'FooBar', score: 0.8, note: 'ping @someone, see #123 <b>x</b> `code`' }] }], changed: [], unchecked: [], checked: 1, dynamic: 0, events: [], build: 'b' });
+  assert.ok(!md.includes('@someone') && !md.includes('#123') && !md.includes('<b>') && !md.includes('`code`'));
+  assert.ok(md.includes('see'));
 });
 
 test('taut-watch: similarity ranks renames and word reorders above unrelated names', () => {

@@ -65,6 +65,7 @@ jobs:
           retention-days: 3
           if-no-files-found: ignore
       - name: Commit and tag
+        id: commit
         if: steps.mine.outputs.changed == 'true'
         env:
           BUILD: ${{ steps.mine.outputs.build }}
@@ -77,7 +78,12 @@ jobs:
           else
             git commit -m "build $BUILD" \
               -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
-            git push origin HEAD
+            # other workflows (taut-watch, feed) push to main too: rebase and retry rather than lose the build
+            for i in 1 2 3; do
+              git push origin HEAD && break
+              [ "$i" = 3 ] && { echo "push failed"; exit 1; }
+              git pull --rebase origin main
+            done
             git tag -f "$BUILD"
             git push --force origin "refs/tags/$BUILD"
           fi
@@ -90,4 +96,5 @@ jobs:
         if: always() && steps.mine.outputs.health != ''  # also files the new-source notices
         env:
           GH_TOKEN: ${{ github.token }}
+          COMMIT_OUTCOME: ${{ steps.commit.outcome }}
         run: node src/health-report.mjs

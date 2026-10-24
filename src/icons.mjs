@@ -140,7 +140,7 @@ export function safeBody(body) {
   });
 }
 
-export const renderIconsSprite = (set) => `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${Object.entries(set.icons).map(([n, v]) => `<symbol id="${n}" viewBox="0 0 ${set.width} ${set.height}">${safeBody(v.body)}</symbol>`).join('\n')}\n</svg>\n`;
+export const renderIconsSprite = (set) => `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${Object.entries(set.icons).filter(([n]) => /^[\w-]+$/.test(n)).map(([n, v]) => `<symbol id="${n}" viewBox="0 0 ${Number(set.width) || 20} ${Number(set.height) || 20}">${safeBody(v.body)}</symbol>`).join('\n')}\n</svg>\n`;
 
 // ---- PDF ----
 const f = (v) => String(Math.round(v * 1000) / 1000);

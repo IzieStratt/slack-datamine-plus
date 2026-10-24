@@ -4,8 +4,8 @@
 // Actions bot). Without that token nothing is filed (the report is still in the job summary), so there are never stray issues in this repo.
 //   node src/taut-report.mjs [--dry] [taut-result.json] [taut-report.md]      env: GH_TOKEN, UPSTREAM=true, TAUT_REPO=owner/name
 // Behaviour: open when something Taut looks up is missing or the code behind one changed recently; edit the body as the report changes;
-// comment when NEW names go missing (that is what notifies); close it when all is well. If the maintainer closes it, stay quiet: only file
-// again when a name goes missing that the closed issue never mentioned. Never fails the run.
+// comment when NEW names go missing (that is what notifies); close it when all is well, and reopen it if something goes wrong again. If someone
+// else (the maintainer) closes it, stay quiet: only file again when a name goes missing that the closed issue never mentioned. Never fails the run.
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
@@ -24,6 +24,11 @@ const body = intro + report;
 let issues = [];
 try { issues = JSON.parse(gh('issue', 'list', '--repo', repo, '--author', '@me', '--state', 'all', '--search', `in:title "Automated check: names Taut looks up"`, '--limit', '20', '--json', 'number,state,body') || '[]'); } catch { issues = []; }
 const open = issues.find((i) => i.state === 'OPEN'), closed = issues.find((i) => i.state === 'CLOSED');
+// who closed the latest closed issue: the account we act as (an earlier all-clear of ours, or the owner) or someone else (the maintainer)
+const closedByUs = () => {
+  if (dry) return false;
+  try { return gh('api', `repos/${repo}/issues/${closed.number}/events`, '--jq', '[.[] | select(.event == "closed")] | last | .actor.login').trim() === gh('api', 'user', '--jq', '.login').trim(); } catch { return false; }
+};
 const wanted = result.missing.length > 0 || result.recentChanges > 0;
 
 if (!wanted) {
@@ -36,8 +41,15 @@ if (open) {
   if (open.body.trim() !== body.trim()) gh('issue', 'edit', n, '--repo', repo, '--body', body);
   if (result.newMissing.length) gh('issue', 'comment', n, '--repo', repo, '--body', `Newly missing in build \`${result.build}\`: ${result.newMissing.map((k) => `\`${k.split(':').slice(1).join(':')}\` (${k.split(':')[0]})`).join(', ')}. See the report above.`);
   console.log('updated the issue');
-} else if (closed && result.missing.every((k) => closed.body.includes(k.split(':').slice(1).join(':')))) {
-  console.log('the issue was closed and nothing new is missing; staying quiet');
+} else if (closed && closedByUs()) {
+  // we closed it ourselves (all clear earlier): a new problem reopens it, whatever the old body said
+  const n = String(closed.number);
+  gh('issue', 'reopen', n, '--repo', repo);
+  gh('issue', 'edit', n, '--repo', repo, '--body', body);
+  gh('issue', 'comment', n, '--repo', repo, '--body', `Reopened: something Taut looks up is missing or changed again (build \`${result.build}\`). See the report above.`);
+  console.log('reopened the issue');
+} else if (closed && result.missing.every((k) => closed.body.includes(`**${k.split(':').slice(1).join(':')}**`))) {
+  console.log('the maintainer closed the issue and nothing new is missing; staying quiet');
 } else {
   gh('issue', 'create', '--repo', repo, '--title', TITLE, '--body', body);
   console.log('opened an issue');

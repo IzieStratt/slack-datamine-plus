@@ -16,10 +16,13 @@ const run = process.env.GITHUB_SERVER_URL && process.env.GITHUB_RUN_ID ? `${proc
 const body = (ps) => `The last mine run found gaps. These categories or sources may be frozen until this is fixed:\n\n${ps.map((p) => `- ${p}`).join('\n')}\n${run ? `\nLatest run: ${run}\n` : ''}\nThis issue closes by itself when a run is clean.`;
 
 // new/gone sources are a notice, not a failure: one issue per change, labelled `mine-sources`, never fails the run
-if (health.notices?.length) {
+if (health.notices?.length && process.env.COMMIT_OUTCOME !== 'failure') { // if the commit failed the inventory was not saved: the same notices would come back next run
   const text = `The latest mine run saw the client change shape:\n\n${health.notices.map((n) => `- ${n}`).join('\n')}\n${run ? `\nRun: ${run}\n` : ''}\nScripts listed on the public client pages are mined in the same run and chunk families are part of the manifest crawl. Check whether this is a new kind of source that needs its own handling (a different page, file type or loader).`;
   try { gh('label', 'create', 'mine-sources', '--color', '0E8A16', '--description', 'The client gained or lost a source the miner tracks'); } catch { /* exists */ }
-  gh('issue', 'create', '--title', `mine: client sources changed (${health.notices.length})`, '--label', 'mine-sources', '--body', text);
+  let openSrc = [];
+  try { openSrc = JSON.parse(gh('issue', 'list', '--label', 'mine-sources', '--state', 'open', '--json', 'number') || '[]'); } catch { openSrc = []; }
+  if (openSrc.length) gh('issue', 'comment', String(openSrc[0].number), '--body', text); // one open issue collects the changes, close it when read
+  else gh('issue', 'create', '--title', `mine: client sources changed (${health.notices.length})`, '--label', 'mine-sources', '--body', text);
   for (const n of health.notices) console.error(`::notice::${n}`);
 }
 

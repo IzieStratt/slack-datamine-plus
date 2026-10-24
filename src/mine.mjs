@@ -106,8 +106,9 @@ async function entryScripts() {
   for (const [ua, pageUrl] of ['modern', 'legacy'].flatMap((k) => pages.map((u) => [k === 'modern' ? UA_MODERN : UA_LEGACY, u]))) {
     try {
       const r = await fetch(pageUrl, { headers: { 'user-agent': ua } });
-      if (!r.ok && r.status !== 403) { console.error(`entry scripts: ${pageUrl} answered HTTP ${r.status}`); complete = false; continue; }
       const html = await r.text();
+      // slack.com/signin answers 403 to non-browsers but still returns its page; a 403 with no assets in it is a block, not a page
+      if (!r.ok && !(r.status === 403 && pageAssets(html).length)) { console.error(`entry scripts: ${pageUrl} answered HTTP ${r.status}`); complete = false; continue; }
       htmls.push(html);
       // every script the page lists, including variants like x.<hash>.primer.min.js that the plain chunk-name pattern does not match
       for (const f of [...chunkFiles(html), ...pageAssets(html).filter((a) => a.ext.endsWith('js')).map((a) => a.file)]) if (!f.includes('.marketing.')) names.add(f);
@@ -175,13 +176,11 @@ async function main() {
     // The gantry client pages (modern UA): the signed-in org and workspace pages (SLACK_EXTRA_CLIENT_URLS is a comma separated list of more), plus
     // the public ones below. They list client-boot and gantry-v2-vendors and carry the async chunk map. A page that fails is skipped.
     const extraHtmls = [], extraNames = new Set(), extraAsync = new Set();
+    let extraOk = true;
     for (const u of [...new Set([process.env.SLACK_CLIENT_URL || 'https://app.slack.com/client/E09V59WQY1E', ...(process.env.SLACK_EXTRA_CLIENT_URLS ?? 'https://app.slack.com/client/T0266FRGM').split(',').map((x) => x.trim()).filter(Boolean)])]) {
       const h = await fetchHtml(u, true, UA_MODERN);
-      if (!h) { console.error(`extra client page not usable: ${u}`); continue; }
+      if (!h) { console.error(`extra client page not usable: ${u}`); extraOk = false; continue; }
       extraHtmls.push(h);
-      // names only (no page content): anything in the page that looks like a boot/gantry/vendors bundle, to see how the client loads them
-      const hints = [...new Set([...h.replace(/\\\//g, '/').matchAll(/[A-Za-z0-9_.\/-]{0,60}(?:boot|gantry|vendors)[A-Za-z0-9_.\/-]{0,60}/g)].map((m) => m[0]))].slice(0, 40);
-      log(`signed-in page ${u}: boot-like names: ${hints.join(' ') || 'none'}`);
       const names = [...chunkFiles(h), ...pageAssets(h).filter((a) => a.ext.endsWith('js')).map((a) => a.file)].filter((f) => !f.includes('.marketing.'));
       names.forEach((f) => extraNames.add(f));
       for (const f of chunkMapFiles(h)) extraAsync.add(f);
@@ -189,11 +188,19 @@ async function main() {
     }
     const { names: entry0, asyncNames, htmls: entryHtmls, complete } = await entryScripts();
     const entry = [...new Set([...entry0, ...extraNames])];
-    entryComplete = complete;
+    entryComplete = complete && extraOk; // a page that failed this run must not make its assets look gone
     // which gantry client build this is: the client-boot file name carries its content hash
     gantryBoot = entry.find((f) => /^client-boot\.[0-9a-f]{16}\.min\.js$/.test(f)) ?? null;
     gantryPage = !!gantryBoot && (asyncNames.length + extraAsync.size) > 0;
-    if (!has('force') && prevMeta.buildNumber === buildNumber && (prevMeta.gantryBoot ?? null) === gantryBoot) { log(`build ${buildNumber} already mined`); sh('changed', 'false'); return; }
+    // a failed gantry fetch (gantryBoot null) must not look like a new build, or every flap re-mines without the gantry chunks
+    const bootSame = gantryBoot === null || prevMeta.gantryBoot == null || prevMeta.gantryBoot === gantryBoot;
+    if (gantryBoot === null && prevMeta.gantryBoot) console.error('::warning::the gantry client page could not be read this run');
+    if (!has('force') && prevMeta.buildNumber === buildNumber && bootSame) { log(`build ${buildNumber} already mined`); sh('changed', 'false'); return; }
+    // fail before writing anything: mining without the gantry client now would make everything only it contains look removed
+    if (prevMeta.gantryPage && !gantryPage && !has('force')) {
+      console.error('the modern user agent no longer gets the gantry client page (no client-boot or chunk map): Slack may have raised its browser-version gate. Not writing anything (use --force to override).');
+      sh('changed', 'false'); process.exit(2);
+    }
     log(`build ${buildNumber}: discovering chunks`);
     { const urls = new Set([...html.replace(/\\\//g, '/').matchAll(/https:\/\/[a-z0-9.-]*slack-edge\.com\/[^"'\s\\<>)]+/g)].map((m) => m[0].split('?')[0])); log(`page cdn urls (${urls.size}): ${[...urls].slice(0, 80).join(' ')}`); } // public CDN urls only
     log(`page scripts: ${[...html.matchAll(/<script[^>]*\ssrc="([^"?]+)/g)].map((m) => m[1].split('/').pop()).join(' ')}`); // public file names only; shows which entry scripts the crawl starts from

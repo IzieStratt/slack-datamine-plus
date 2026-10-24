@@ -43,6 +43,8 @@ test('icons: diff, header links in the PDF, searchable gallery, and markup is sa
   assert.ok(!html.includes('onload') && !safeBody('<script>x</script><path d="M1 1" onclick="x" fill="red"/>').includes('script'));
   assert.equal(safeBody('<path d="M1 1" onclick="x" fill="red"/>'), '<path d="M1 1" fill="red"/>');
   assert.ok(renderIconsSprite(a).includes('<symbol id="a-one" viewBox="0 0 20 20">'));
+  const evil = { ...a, icons: { ...a.icons, 'x"><script>': { body: '<path d="M1 1"/>' } } };
+  assert.ok(!renderIconsSprite(evil).includes('script') && renderIconsSprite(evil).includes('id="a-one"'));
   const noted = renderIconsHtml(a, null, { notes: { 'a-one': 'A "note" <b>' } });
   assert.ok(noted.includes('data-note="A &quot;note&quot; &lt;b&gt;"') && noted.includes('toLowerCase()'));
 });

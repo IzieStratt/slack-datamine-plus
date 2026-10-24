@@ -81,6 +81,8 @@ export function checkTaut(uses, inv, state = {}, ignore = IGNORE) {
   return { missing, changed, unchecked, ignored, plainOk, hashes, checked: by.size - unchecked.length };
 }
 
+// text from Slack's bundle ends up in a public issue on someone else's repo: no markup, no mentions, no cross-references
+const clean = (s) => String(s).replace(/[`<>\[\]]/g, '').replace(/@/g, '@\u200b').replace(/#(?=\d)/g, '#\u200b').replace(/\s+/g, ' ').slice(0, 160);
 const sortBy = (list) => [...list].sort((a, b) => a.kind.localeCompare(b.kind) || a.name.localeCompare(b.name));
 const loc = (f) => f.where.slice(0, 3).map((w) => `\`${w}\``).join(', ') + (f.where.length > 3 ? ` +${f.where.length - 3}` : '');
 
@@ -90,7 +92,7 @@ export function renderReport({ missing, changed, unchecked, ignored = [], plainO
   for (const f of sortBy(missing)) {
     out.push(`- **${f.name}** (${f.kind}), used in ${loc(f)}`);
     if (f.plain) out.push(`  - the name still exists as a plain function (module \`${f.plain.modules[0] ?? '?'}\`) but is no longer registered with \`.meta\`, so \`${f.kind === 'byMeta' ? 'byMeta' : 'the thunk lookup'}\` can't find it`);
-    if (f.candidates.length) out.push(`  - closest names now: ${f.candidates.map((c) => `\`${c.name}\` (${Math.round(c.score * 100)}%)${c.note ? `: ${c.note}` : ''}`).join('; ')}`);
+    if (f.candidates.length) out.push(`  - closest names now: ${f.candidates.map((c) => `\`${c.name}\` (${Math.round(c.score * 100)}%)${c.note ? `: ${clean(c.note)}` : ''}`).join('; ')}`);
     else out.push('  - no close name found: it may have been removed');
   }
   if (events.length) {
