@@ -11,6 +11,8 @@ import { SEARCH_CSS, pills, searchHtml } from './ui.mjs';
 const [site, url] = process.argv.slice(2, 4);
 if (!site || !url) { console.error('usage: feed.mjs <site-dir> <site-url> [--since ref]'); process.exit(1); }
 const sinceArg = process.argv.indexOf('--since') > -1 ? process.argv[process.argv.indexOf('--since') + 1] : null;
+// `url` is the base of the item ids (guids) and must not change, or readers show every item twice; `--link` is where the feed points readers now
+const linkBase = process.argv.indexOf('--link') > -1 ? process.argv[process.argv.indexOf('--link') + 1] : url;
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] }).trim();
 const show = (ref, f) => { try { return git('show', `${ref}:${f}`); } catch { return null; } };
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -88,8 +90,8 @@ const kept = items.filter((i) => i.date >= cutoff);
 fs.mkdirSync(site, { recursive: true });
 fs.writeFileSync(itemsFile, JSON.stringify(kept, null, 1) + '\n');
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel><title>slack-datamine-plus daily changes</title><link>${esc(url)}</link><description>Daily summary of what changed in Slack's web client bundle.</description>
-${kept.map((i) => `<item><title>${esc(i.title)}</title><guid isPermaLink="false">${esc(i.id)}</guid><link>${esc(url)}</link><pubDate>${new Date(i.date + 'T06:30:00Z').toUTCString()}</pubDate><description>${esc(i.html)}</description></item>`).join('\n')}
+<rss version="2.0"><channel><title>slack-datamine-plus daily changes</title><link>${esc(linkBase)}</link><description>Daily summary of what changed in Slack's web client bundle.</description>
+${kept.map((i) => `<item><title>${esc(i.title)}</title><guid isPermaLink="false">${esc(i.id)}</guid><link>${esc(linkBase)}</link><pubDate>${new Date(i.date + 'T06:30:00Z').toUTCString()}</pubDate><description>${esc(i.html)}</description></item>`).join('\n')}
 </channel></rss>
 `;
 fs.writeFileSync(path.join(site, 'feed.xml'), rss);

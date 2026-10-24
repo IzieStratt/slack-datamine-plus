@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-// Pieces shared by the pages this repo generates for https://slackdatamineplus.izie.top (feed index, icons gallery).
+// Pieces shared by the pages this repo generates for https://sdmp.izie.top (feed index, icons gallery).
 // They rely on the site's /style.css variables (--bg, --fg, --focus), so both themes work; links use the site's pill `nav a` style.
 
 export const SEARCH_CSS = `

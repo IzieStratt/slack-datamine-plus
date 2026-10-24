@@ -8,7 +8,7 @@ Why it exists: [`3kh0/slack-datamine`](https://github.com/3kh0/slack-datamine) i
 
 ## What gets mined
 
-The crawl starts from the signed-in client page's webpack manifest and also from the entry scripts the public workspace client page lists (`modern.vendor`, `application`, `rollup-core_*`, `TS.web`: the legacy web client, most method names, and the icon glyph set in `build/icons.json`, which the site turns into https://slackdatamineplus.izie.top/icons.pdf).
+The crawl starts from the signed-in client page's webpack manifest and also from the entry scripts the public workspace client page lists (`modern.vendor`, `application`, `rollup-core_*`, `TS.web`: the legacy web client, most method names, and the icon glyph set in `build/icons.json`, which the site turns into https://sdmp.izie.top/icons.pdf).
 
 Each run writes to `build/`: `api-methods.txt`, `chunks.txt`, `meta.json` (with per-category counts), and one sorted list per category: `errors`, `scopes`, `slash-commands`, `dev-commands`, `analytics-events`, `workflow`, `notification-types`, `trace-spans`, `icons`, `shortcuts`, `feature-flags`, `ui-strings`, `enums`, `ai-enums`, `mcp-enums`, `blockkit-enums`, `design-tokens`, `paths`, `hosts`, `components`, `redux`.
 
@@ -39,4 +39,4 @@ If you're looking for a list of all the weird and badly/undocumented API methods
 
 ## Daily changes feed
 
-`src/feed.mjs` (workflow `feed`) posts one item a day with what was added/removed per category to https://slackdatamineplus.izie.top/feed.xml (files live in personal-site under `website/public/__subdomains/slackdatamineplus/`).
+`src/feed.mjs` (workflow `feed`) posts one item a day with what was added/removed per category to https://sdmp.izie.top/feed.xml (files live in personal-site under `website/public/__subdomains/slackdatamineplus/`).
