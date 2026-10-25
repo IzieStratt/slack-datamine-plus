@@ -81,7 +81,7 @@
   "byName:convertBlocksToPlainText": [
    "8e8r:fa64db0b",
    "FuTk:8b010357",
-   "vz0O:0c8e3dcb"
+   "FuTk:9fac3470"
   ],
   "byName:convertContentsToStringForDisplay": [
    "8vND:dbc20fa3",
@@ -164,11 +164,12 @@
   ],
   "component:BaseContextBarV2": [
    "XRWb:7e906856",
-   "ttDa:8f53741a",
-   "ttDa:da4e825d"
+   "XRWb:89631cbe",
+   "ttDa:8f53741a"
   ],
   "component:BaseMessageAttachmentSlackMessage": [
    "3/Pr:2e51488e",
+   "3fWi:e2340cde",
    "74lO:ba0bc33d"
   ],
   "component:BaseMessageSender": [
@@ -206,6 +207,7 @@
    "vt6y:20fa4d12"
   ],
   "component:HelpButton": [
+   "3fWi:e2340cde",
    "74lO:ba0bc33d"
   ],
   "component:HuddleBaseEvent": [
@@ -235,6 +237,7 @@
   ],
   "component:MemberProfileHoverCard": [
    "02Ne:6c17319f",
+   "02Ne:cf4f7e24",
    "H0rq:fd018e4c"
   ],
   "component:MenuFromTemplate": [
@@ -254,6 +257,7 @@
   ],
   "component:MessageAttachmentHuddleLink": [
    "3/Pr:2e51488e",
+   "3fWi:e2340cde",
    "74lO:ba0bc33d"
   ],
   "component:MessageBackground": [
@@ -321,6 +325,7 @@
   ],
   "component:ShortcutsMenuTriggerButton": [
    "3/Pr:2e51488e",
+   "3fWi:e2340cde",
    "74lO:ba0bc33d"
   ],
   "component:TextyButtonOverflow": [
@@ -343,6 +348,7 @@
   ],
   "component:ViewBlocks": [
    "OwtC:a15fb46a",
+   "p1+x:3747c936",
    "p1+x:9718deac"
   ],
   "component:WysiwygContainer": [
@@ -357,6 +363,7 @@
   ],
   "rtm:view_opened": [
    "3/Pr:2e51488e",
+   "3fWi:e2340cde",
    "74lO:ba0bc33d"
   ],
   "thunk:addAndUploadPendingFile": [
@@ -445,8 +452,8 @@
   ],
   "thunk:getContextMenuTemplate": [
    "3/Pr:2e51488e",
-   "74lO:ba0bc33d",
-   "IimM:a4484fda"
+   "3fWi:e2340cde",
+   "74lO:ba0bc33d"
   ],
   "thunk:getMemberContextMenuTemplate": [
    "1OSw:3bc82f08",
@@ -484,7 +491,7 @@
   "thunk:openPrefsModal": [
    "L6cb:00f3d895",
    "L6cb:1744f478",
-   "auqX:703ffafc"
+   "auqX:3dd8d1db"
   ],
   "thunk:prepareAndSendMessage": [
    "1TxL:2608a59c",
@@ -492,7 +499,8 @@
    "Gn6R:1afa7047"
   ],
   "thunk:processAwsTranscription": [
-   "UexS:26c99231"
+   "UexS:26c99231",
+   "UexS:fa6b5ec2"
   ],
   "thunk:saveMessageEdit": [
    "jGJx:0400ee95",
@@ -559,6 +567,67 @@
  },
  "reported": [],
  "events": [
+  {
+   "build": "49345ae90a57",
+   "date": "2026-10-25",
+   "names": [
+    "AudioVideoFacadeSubscriber",
+    "buildMarkdownChangeDelta",
+    "canDeleteMessageHelper",
+    "convertBlocksToDelta",
+    "convertBlocksToMarkdown",
+    "convertBlocksToMrkdwnDelta",
+    "convertBlocksToPlainText",
+    "createStore",
+    "exposeSelectorForDebug",
+    "getDeltaForMessageObject",
+    "getInputProxy",
+    "isInputRegistered",
+    "BaseContextBarV2",
+    "BaseMessageSender",
+    "BaseMrkdwnChannel",
+    "Blocks",
+    "EmojiPicker",
+    "EmojiPickerPopover",
+    "ListChannelEntity",
+    "MemberProfileHoverCard",
+    "MessageActionButtonReaction",
+    "MessageActions",
+    "MessageBackground",
+    "MessageBlocks",
+    "MessageSender",
+    "Reaction",
+    "ReactionAddButton",
+    "ReactionAnimation",
+    "ReactionBar",
+    "TextyButtonOverflow",
+    "TextyButtons",
+    "ViewBlocks",
+    "WysiwygContainer",
+    "addAndUploadPendingFile",
+    "autocompleteChannels",
+    "autocompleteMembers",
+    "blocksFormatFetcher",
+    "changeReactionFromUserAction",
+    "chatDeleteFetcher",
+    "commitMessageEdit",
+    "displayAlertMessage",
+    "enqueueHuddleToast",
+    "executeAppAction",
+    "getMemberContextMenuTemplate",
+    "handleMessageImmediatelyWithoutPreprocessing",
+    "openPrefsModal",
+    "prepareAndSendMessage",
+    "processAwsTranscription",
+    "saveMessageEdit",
+    "showNotification",
+    "startEventLog",
+    "stopEventLog",
+    "stopHuddle",
+    "submitAddOrRemoveReaction",
+    "uploadFiles"
+   ]
+  },
   {
    "build": "237efcfa2ccc",
    "date": "2026-10-24",
