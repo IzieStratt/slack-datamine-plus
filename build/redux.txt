@@ -504,6 +504,7 @@ action:disableBBM
 action:disableEventLog
 action:disableFullscreen
 action:disableRestrictedSharingForFile
+action:discardEditAction
 action:discardRecordUpdateError
 action:disconnected
 action:disconnectHuddlesFromMediaServer
@@ -687,6 +688,7 @@ action:markListFetchSuccess
 action:markMembersDndAsStaleCircular
 action:markPlansAndCostDataAsNotLoaded
 action:markPlanStatusDataAsNotLoaded
+action:markProjectContentChanged
 action:markProjectThreadsChanged
 action:markSfdcActivityComplete
 action:markSlackbotThreadUnread
@@ -833,6 +835,7 @@ action:refreshReset
 action:refreshStart
 action:refreshWidgetPlacement
 action:registerPendingAutoInitThreadTarget
+action:registerSingerTurn
 action:registerVisibleVideoTile
 action:rehighlightNewRecords
 action:rehydrateOpenFilesList
@@ -1911,6 +1914,7 @@ action:setIsLongRequest
 action:setIsLoungeMusicBannerDismissed
 action:setIsLoungeMusicPlaying
 action:setIsMeetingNotesOpen
+action:setIsMonitorShowingInactive
 action:setIsMutedCoachmarkOpen
 action:setIsNewQuerySessionOnEmpty
 action:setIsNotesOpen
@@ -2534,7 +2538,6 @@ action:setShowHuddleSummaryPendingBanner
 action:setShowListDescriptionById
 action:setShowMutedChannelsHiddenConfirmationCoachmark
 action:setShownWorkspaceSelectStep
-action:setShowProgDiscSuccessCoachmark
 action:setShowScdmEducationCoachmark
 action:setShowSectionMenuCoachmark
 action:setShowSuccessBanner
@@ -3965,6 +3968,7 @@ thunk:applyRawDetailViewToViewSet
 thunk:applySidebarAutoCollapsedForSecondary
 thunk:applySidebarAutoCollapseOverridden
 thunk:applySidebarCollapsedForBigModeTab
+thunk:applySingerResponseDraft
 thunk:applyTaskTrackingBundleToList
 thunk:applyTodoFilterPrefChange
 thunk:applyUpcomingRemindersPrefChange
@@ -4458,7 +4462,6 @@ thunk:createSharedInviteLink
 thunk:createShortcutWorkflowFromTemplate
 thunk:createSnippetShortcut
 thunk:createSpreadsheet
-thunk:createTodo
 thunk:createTriggerlessWorkflow
 thunk:createUserGroup
 thunk:createView
@@ -4598,6 +4601,7 @@ thunk:downloadFileAndClog
 thunk:downloadFiles
 thunk:downloadTableAsTsv
 thunk:draftEmailWithAi
+thunk:draftSingerResponse
 thunk:dragLinksToComposer
 thunk:duplicateCanvas
 thunk:duplicateSkill
@@ -5122,6 +5126,7 @@ thunk:followThreadShortcut
 thunk:forceBrowserRefetchOnNextMount
 thunk:forceUnfurlDraftLink
 thunk:forgetClient
+thunk:forgetRecordedSearch
 thunk:forgetSfdcTaskTodosOfDisconnectedOrgs
 thunk:formatAndApplyCounts
 thunk:forwardMessageAsPrompt
@@ -5438,6 +5443,7 @@ thunk:initializeDesktopSubscriptions
 thunk:initializeEditUnfurls
 thunk:initializeJustInTimeOnce
 thunk:initializeMutedChannelsFromPref
+thunk:initializeSingerSession
 thunk:initializeSlackbotAiThread
 thunk:initializeUnifiedFilePickerBrowsers
 thunk:initializeUnreadCountsFromChannels
@@ -5785,6 +5791,7 @@ thunk:maybeLoadSrpCardDensityPref
 thunk:maybeLoadSuggestedChannels
 thunk:maybeLogEmailConnectorNewteamsExposure
 thunk:maybeLogExperimentExposureAndNavigateToInitialChannel
+thunk:maybeLogGoldenGateBizPlusTrialExposure
 thunk:maybeLogSlackbotBigModeGaExposure
 thunk:maybeMarkChannelFromThread
 thunk:maybeMarkDay1OnboardingComplete
@@ -6811,6 +6818,7 @@ thunk:prepareScheduledDraftBeforeEditing
 thunk:prepareSearchFromCmdF
 thunk:prepareSearchFromCmdFWithEntity
 thunk:prepareSharedInviteLink
+thunk:prepareSingerMessage
 thunk:prePendMessageInputAboutChannelEmail
 thunk:prependMessageInputWithEmailConversation
 thunk:preprocessImsgs
@@ -6892,6 +6900,7 @@ thunk:recordRecentNavigationEventOnNavigate
 thunk:recordSalesforceEchoFrecencyEvent
 thunk:recordSalesforceSearchResultEngagement
 thunk:recordSearchAccept
+thunk:recordSingerThreadMessage
 thunk:recordSlackAiInteractions
 thunk:recordTrialProBannerInteraction
 thunk:recordUserInteraction
@@ -6921,6 +6930,7 @@ thunk:refreshLoadedSfdcRecordActivities
 thunk:refreshRecap
 thunk:refreshRecapChannel
 thunk:refreshSidebarRecommendScores
+thunk:refreshSingerNotificationCursors
 thunk:refreshSmartInvitesChannelSuggestionCollaborators
 thunk:refreshStraightToPaidTimeLimitOnReconnect
 thunk:refreshUserContextInputIfRequired
@@ -7282,6 +7292,9 @@ thunk:sendReaction
 thunk:sendSharedChannelInviteByEmail
 thunk:sendSharedChannelInvites
 thunk:sendShareMessage
+thunk:sendSingerDestinationMessage
+thunk:sendSingerMessage
+thunk:sendSingerMessageInternal
 thunk:sendSlackbotAiMessage
 thunk:sendSsoBindEmailToMember
 thunk:sendSurveyResult
@@ -7308,6 +7321,7 @@ thunk:setAtlassianPromoDismissedPref
 thunk:setAutoTracerTagProvider
 thunk:setBBMSettings
 thunk:setBigModeSidebarVisible
+thunk:setBizPlusUpgradePocketGuideV2AnimationSeen
 thunk:setBootData
 thunk:setBrowseChannelsTaskComplete
 thunk:setBuilderCoachmark
@@ -7646,7 +7660,6 @@ thunk:showWelcomePartyWebPushNotification
 thunk:showWorkflowApprovalFailedToast
 thunk:sidebarAppNuxMaybeLogExposure
 thunk:sidebarCtaSimplificationMaybeLogExposure
-thunk:sidebarOnboardingTasksV2LargeMaybeLogExposure
 thunk:sidebarOnboardingTasksV2SmallMaybeLogExposure
 thunk:signInAndAddWorkspace
 thunk:signIntoOrganization
@@ -8156,7 +8169,6 @@ thunk:uploadEmailAttachment
 thunk:uploadFiles
 thunk:uploadFilesToCanvas
 thunk:uploadFilesToChannelFolder
-thunk:uploadMeetingRecording
 thunk:uploadOrPostCloudFile
 thunk:uploadQueueEmptiedWithDelay
 thunk:uploadToNewDraft

@@ -981,6 +981,7 @@ AttachmentSkeletonCompact
 AttachmentSkeletonFull
 AttachmentSkeletonMediaEmbed
 AttachmentSkeletonTextEmbed
+AttachmentSkeletonTypeIcon
 AttachmentSkeletonWorkObjectExpanded
 AttachmentText
 AttachmentThumb
@@ -2233,6 +2234,7 @@ ChannelTabsListContent
 ChannelTabsListFolderSection
 ChannelTabsListSection
 ChannelTabsListTabsSection
+ChannelTabsListWorkflowRow
 ChannelTabSlugPeekTrigger
 ChannelTabsNewFilesTabCoachmark
 ChannelTabsNewPinsTabCoachmark
@@ -2287,9 +2289,11 @@ ChecklistProgress
 ChecklistProgressBar
 ChecklistRoot
 ChecklistSidebarPopout
+ChecklistSubtitle
 ChecklistTaskRegion
 ChecklistTasks
 ChecklistTitle
+ChecklistTitleGroup
 ChecklistToggle
 CheckmarkIcon
 CheckoutRescueBanner
@@ -2655,6 +2659,7 @@ ConnectedRecordEntityExpandedPreview
 ConnectedRequestBizPlusWorkspaceMenu
 ConnectedRequestToPurchaseCta
 ConnectedRolesNewChannelPermissionsCoachmark
+ConnectedSearchRow
 ConnectedSharedChannelTrialBanner
 ConnectedSlackConnectDmTrialBanner
 ConnectedSlackConnectExternalChannelDisconnectionWarningBanner
@@ -2878,6 +2883,7 @@ CreateRecordTypeSelect
 createRefContext
 createRenderBlocks
 CreateSidekickModal
+createSingerWebMedia
 CreateSkillModal
 CreateSkillOption
 CreateSkillPane
@@ -3152,7 +3158,11 @@ desktopMenuItemClicked
 DesktopPref
 DesktopUpdateBanner
 DestinationAvatar
+DestinationFilter
+DestinationIcon
+DestinationRow
 DestinationTagPill
+DetailLayout
 DetailsPageColumn
 DetailsPageWrapper
 DetailsTab
@@ -3794,6 +3804,7 @@ ExpandableTrigger
 Expanded
 ExpandedList
 ExpandedListRecord
+ExpandedThreadBreadcrumb
 ExpandingWorkspaceList
 ExpandInputButton
 ExpandMoreButton
@@ -3827,6 +3838,8 @@ ExplorerGridWorkflowTemplate
 ExplorerHeader
 ExplorerHeroTitle
 ExplorerLoadMoreButton
+ExplorerRowItem
+ExplorerRowsList
 ExplorerSearch
 ExplorerSectionTitle
 ExplorerViewTypeToggle
@@ -3921,6 +3934,7 @@ ExtractionNudgeAside
 ExtractionNudgeToast
 ExtraFieldsChildFilterSection
 ExtTimeout
+Eye
 Face
 Facepile
 Faces
@@ -4062,6 +4076,7 @@ FileRow
 Files
 FileSampleContent
 FilesAndLinksRows
+FilesAndLinksSectionList
 FileSaveToast
 FilesCard
 FileSearchJustification
@@ -4103,6 +4118,7 @@ FileThumbnailException
 FileTitleBadge
 FileTopResult
 FileTrashNotificationButtons
+FileTreeResizer
 FileUnfurl
 FileUploadBanner
 FileUploadBlockedOverlay
@@ -4402,6 +4418,7 @@ getChannelSettingsTemplate
 getClipsButtons
 getCollapsedToggleButton
 getColumnString
+getCommenterNames
 getCommentSpeedBumpDescription
 getComposerIconElement
 getConfigurationWarning
@@ -4640,6 +4657,7 @@ getTopLevelModalDescription
 getTopLevelOptionData
 getTopLevelStatus
 getTopLevelTypeOptionData
+getTopOfMindTemplate
 getTrailingContent
 getTrailingControl
 getTranscriptMenuItem
@@ -5023,6 +5041,7 @@ HuddleReactionsPref
 HuddleReactjiExplosionCoachmark
 HuddleReadinessChecker
 HuddleRecordingIndicator
+HuddleRowItem
 HuddlesActiveSection
 HuddlesActiveTile
 HuddlesActiveTimer
@@ -5089,6 +5108,7 @@ HuddlesPermissionModal
 HuddlesPermissionSubtitle
 HuddleSpinner
 HuddlesRows
+HuddlesSectionList
 HuddlesSidebarLinkTooltipWrapper
 HuddlesSuggestionTile
 HuddleStartedSummary
@@ -5518,7 +5538,6 @@ LaterTabInMoreCoachmark
 LaterTimePicker
 LaterTodoErrorToast
 LaterTodoFilterBar
-LaterTodoFilterPanel
 LaterTodoRow
 LaterTodosCoachmark
 LaterTodoSettingsMenu
@@ -5688,7 +5707,6 @@ ListItemError
 ListItemName
 ListLimitsArchiveBanner
 ListLoadingState
-ListName
 ListNameField
 ListNameInput
 ListPageContext
@@ -6117,6 +6135,7 @@ MeasureContainer
 MediaFileSearchJustification
 MediaFileThumbnail
 MediaGridSkeleton
+MediaOverflowItem
 MediaPlaceholderImpl
 MediaPlaybackInProgress
 MediaPlaybackSpeedControl
@@ -6128,7 +6147,9 @@ MediaReactionsEmojiPickerTrigger
 MediaReactionsReel
 MediaReactionsReelItem
 MediaRows
+MediaSectionList
 MediaThreadPlaybackContext
+MediaTileItem
 MediaTranscript
 MediaTranscriptFooter
 MediaTranscriptLineBase
@@ -6635,6 +6656,7 @@ mountListSharingSettings
 mountListsSettings
 mountMigrationBlocker
 mountOrgRetentionRequest
+mountSingerSurface
 mountSlackConnectAccountVisibilitySettings
 mountSlackConnectAutoAcceptSettings
 mountSlackConnectAwayTeamInvitePermissionsSettings
@@ -8977,6 +8999,8 @@ SeasonalComposerModal
 SeasonalSidebarLinkWrapper
 SecondaryHeaderMore
 Section
+SectionActivityPeek
+SectionActivityPeekContent
 SectionChannelRow
 SectionContainer
 SectionContainerHeaderButton
@@ -8997,6 +9021,7 @@ SectionNavigationContext
 SectionNavigationManager
 SectionNavigationProvider
 SectionNavRow
+SectionPeekChannelGroup
 SectionRenderingBatcher
 Sections
 SectionTitleView
@@ -9169,6 +9194,7 @@ SettingsSection
 SettingsTabContentWrapper
 SettingTabHeaderCoachmark
 SetupAccountSwitcher
+SetupAppsDetail
 SetupAppsModal
 SetupBannerAppInstallButton
 SetupBannerButton
@@ -9411,6 +9437,23 @@ SimpleFeatureColumn
 SimpleInlineError
 SimpleMessagePreview
 SimpleRichTextPreview
+Singer
+SingerContent
+SingerControl
+SingerDesktopFallback
+SingerDestinationComposer
+SingerDestinationComposerForDraft
+SingerDestinationPanel
+SingerDestinationPanelForDestination
+SingerFace
+SingerIcon
+SingerMeetingPanel
+SingerMeetingSurface
+SingerMotionPreview
+SingerPocket
+SingerSettings
+SingerTaskBubble
+SingerTaskBubbles
 SingleAttachment
 SingleChannelGuest
 SingleChannelGuestGrid
@@ -9657,6 +9700,7 @@ SlackbotMemberProfilePrompts
 SlackbotMemoriesTab
 SlackbotMemoryNuxPill
 SlackbotMini
+SlackbotMiniDraftInput
 SlackbotMiniHeader
 SlackbotMiniInput
 SlackbotMiniNuxPill
@@ -10096,6 +10140,7 @@ StatusContainer
 StatusEntity
 StatusLabel
 StatusLink
+statusMark
 StatusSeparator
 StatusTooltip
 SteerSendButton
@@ -10621,6 +10666,7 @@ TitleCardFields
 TitleCardSegment
 TitleSuffix
 TitleWord
+toArtifactRow
 Toast
 ToastConfigContext
 ToastConfigProvider
@@ -10775,6 +10821,7 @@ TriageTabsFallback
 TriageTabsWithFallback
 TrialAwarenessModal
 TrialButtons
+TrialDiscountOffer
 TrialEndPromoDiscountSidebarCta
 TrialEndPromoOfferModal
 TrialEndUsageStatsModal
@@ -11649,6 +11696,7 @@ WorkflowsMoreActionsMenu
 WorkflowsPeek
 WorkflowsPreview
 WorkflowsSectionItemV2
+WorkflowsSectionList
 WorkflowsTabAiStepEduBanner
 WorkflowsTabConditionalsEduBanner
 WorkflowsTabFooterContent
