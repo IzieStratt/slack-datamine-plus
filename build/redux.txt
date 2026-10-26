@@ -1799,6 +1799,7 @@ action:setHuddlePreviewCameraStatus
 action:setHuddlePreviewMicStatus
 action:setHuddleSurface
 action:setHuddleWasJoinedFromPrejoin
+action:setHydratedBootStateMachines
 action:setIgnoreKnockingUser
 action:setIncludeArchived
 action:setIncludePrivate
@@ -1890,6 +1891,7 @@ action:setIsHuddleWindowOpen
 action:setIsHuddleWorkspaceRepositioned
 action:setIsImportInProgress
 action:setIsImportWaitingForCsvMapping
+action:setIsInitialActivityFeedPending
 action:setIsInitialApiError
 action:setIsInproductTeamCreationStateMachineLoaded
 action:setIsJoinerOnboardingNuxSession
@@ -2538,6 +2540,7 @@ action:setShowHuddleSummaryPendingBanner
 action:setShowListDescriptionById
 action:setShowMutedChannelsHiddenConfirmationCoachmark
 action:setShownWorkspaceSelectStep
+action:setShowProgDiscSuccessCoachmark
 action:setShowScdmEducationCoachmark
 action:setShowSectionMenuCoachmark
 action:setShowSuccessBanner
@@ -4462,6 +4465,7 @@ thunk:createSharedInviteLink
 thunk:createShortcutWorkflowFromTemplate
 thunk:createSnippetShortcut
 thunk:createSpreadsheet
+thunk:createTodo
 thunk:createTriggerlessWorkflow
 thunk:createUserGroup
 thunk:createView
@@ -6832,6 +6836,7 @@ thunk:processAndSubmitPostingPermissions
 thunk:processAndUpsertBlockUnfurlAttachments
 thunk:processAndUpsertGifUnfurlAttachments
 thunk:processAwsTranscription
+thunk:processBootStateMachines
 thunk:processDmMegaphoneClientEvent
 thunk:processIncomingMessages
 thunk:processResultRenderTelemetry
@@ -7660,6 +7665,7 @@ thunk:showWelcomePartyWebPushNotification
 thunk:showWorkflowApprovalFailedToast
 thunk:sidebarAppNuxMaybeLogExposure
 thunk:sidebarCtaSimplificationMaybeLogExposure
+thunk:sidebarOnboardingTasksV2LargeMaybeLogExposure
 thunk:sidebarOnboardingTasksV2SmallMaybeLogExposure
 thunk:signInAndAddWorkspace
 thunk:signIntoOrganization
@@ -8169,6 +8175,7 @@ thunk:uploadEmailAttachment
 thunk:uploadFiles
 thunk:uploadFilesToCanvas
 thunk:uploadFilesToChannelFolder
+thunk:uploadMeetingRecording
 thunk:uploadOrPostCloudFile
 thunk:uploadQueueEmptiedWithDelay
 thunk:uploadToNewDraft

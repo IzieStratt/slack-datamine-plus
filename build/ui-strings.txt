@@ -168,6 +168,8 @@ $ {amount} USD
 (formerly #{previous_name})
 (formerly {names})
 (inactive for at least 10 seconds)
+(invalid selection)
+(invalid selection, validating\u2026)
 (invited you)
 (message missing text)
 (message still being sent)
@@ -178,6 +180,7 @@ $ {amount} USD
 (required)
 (resolved)
 (stopped)
+(validating\u2026)
 (you)
 (your time to edit ran out)
 ({memberCount} people)
@@ -998,6 +1001,7 @@ Activity saved to Salesforce.
 Activity tabs
 Activity type
 Activity type ({count})
+Activity type, {count, plural, =1 {1 filter} other {# filters}} applied
 Activity type, {count} filters applied
 Actual prompt
 Add
@@ -1204,6 +1208,7 @@ Add a task
 Add a task to have this agent run a prompt on a schedule.
 Add a team icon
 Add a title
+Add a title to save your changes.
 Add a title to the Salesforce record placeholder so people using your canvas will know which type of record to insert.
 Add a title to the {label} placeholder to distinctly identify your {pluralLabel}.
 Add a to-do from any message, or write your own.
@@ -1661,6 +1666,7 @@ Additional calendar controls
 Additional configuration needed
 Additional context:
 Additional fields
+Additional filters
 Additional information about this resolution
 Additional information provided to Slack.
 Additional options
@@ -2710,6 +2716,7 @@ Ask your owner to renew
 Ask your team to upgrade your plan
 Ask your workspace owner to enable AI search
 Ask {agentName} in Channel
+Ask {appName}
 Asked in {channelName} \xb7 I\u2019ll draft it for you
 Asking Agentforce
 Asking Slackbot\u2026
@@ -2924,6 +2931,7 @@ Automatically log your emails with contacts and leads
 Automatically mute channels
 Automatically play consent message
 Automatically read new messages in the current conversation
+Automatically request approval when an approved app adds new permissions
 Automatically send alerts for more visibility with less overhead.
 Automatically sign users out
 Automatically summarize and see summaries from files you and your team share.
@@ -3526,6 +3534,7 @@ Can\u2019t load scope descriptions. Refresh to try again.
 Can\u2019t load scores from this model, so the score debugger is using the current scores.
 Can\u2019t load scores from {model}.
 Can\u2019t load some project context.
+Can\u2019t load your tasks.
 Can\u2019t move a record to a deleted stage
 Can\u2019t move a record to a deleted status
 Can\u2019t open this canvas right now
@@ -4123,7 +4132,9 @@ Choose a markdown file to upload
 Choose a new limit
 Choose a new owner
 Choose a plan
+Choose a reaction
 Choose a schedule
+Choose a schedule or event
 Choose a server
 Choose a short, unique name to identify your authorized sender.
 Choose a song
@@ -4210,6 +4221,7 @@ Choose this if you\u2019d like your reply to post in the channel, too
 Choose this if you\u2019d like your reply to post in the main conversation, too
 Choose to have members sign back in whenever they close Slack, or after a certain time period.
 Choose to send notifications when a user\u2019s sessions are ended
+Choose up to {count} reactions.
 Choose up to {options} options
 Choose view
 Choose view: {selectedViewName}
@@ -4314,8 +4326,10 @@ Click for options
 Click preference options
 Click the \u2B50 star on any canvas or list to add it here for later.
 Click the \u2B50 star on any conversation to add it here for later.
+Click the \u2B50 star on any file to add it here for later.
 Click the question mark icon to open the Help Center whenever you need it.
 Click the star on any canvas or list to add it here for later
+Click the star on any file to add it here for later
 Click this
 Click to collapse
 Click to copy the test result to your clipboard.
@@ -5193,6 +5207,7 @@ Couldn\u2019t clear the saved item. Try again?
 Couldn\u2019t clear your to-do. The item couldn\u2019t be found.
 Couldn\u2019t clear your to-do. Try again?
 Couldn\u2019t connect to Salesforce
+Couldn\u2019t connect to {name}. Please try again.
 Couldn\u2019t connect to {name}. The server may be unavailable.
 Couldn\u2019t connect to {name}. Try disconnecting and reconnecting.
 Couldn\u2019t copy huddle link. Try again.
@@ -5451,6 +5466,7 @@ Create a table for \u2026
 Create a table for a project release schedule for # 
 Create a table for comparing our company\u2019s paid plans
 Create a table for roles and responsibilities of people in # 
+Create a task
 Create a task list for this week.
 Create a task with Slackbot
 Create a template
@@ -6206,6 +6222,7 @@ Didn\u2019t use the paid features
 Diff
 Diff display options
 Diff truncated \u2014 too many files or changes to display
+Diff view settings
 Difference (days)
 Difficult
 Dig Deeper
@@ -6824,6 +6841,7 @@ Edit primary organization
 Edit profile
 Edit profile details
 Edit profile photo
+Edit reaction
 Edit read records
 Edit read-only tools access
 Edit record field
@@ -6971,6 +6989,7 @@ Email import isn\u2019t available on this plan
 Email interactions will start logging to build your relationship history
 Email is set by the organization and can\u2019t be changed.
 Email logging wasn\u2019t turned on. Check Preferences for details.
+Email not sent. Sending from Slack isn\u2019t available, but you can still open or copy this draft.
 Email provider connect options
 Email results
 Email sent
@@ -7252,6 +7271,7 @@ Event guest
 Events
 Events in {name}
 Every 3 months on the {nthDay} {dayOfWeek}
+Every Monday \xb7 {time}
 Every [[recurring_date]], send a message to [[channel]], with a summary of items that are [[task_completion_state]] whose due dates are [[due_date_filter]]
 Every [[recurring_date]], send an activity notification to assignee when an item is not complete and its due date is [[due_date_filter]]
 Every channel has its own canvas. Open a blank channel canvas to see more templates.
@@ -8659,6 +8679,7 @@ Give me the vibe of this channel: key topics, tone, and anything unresolved
 Give people a quick start to chatting with the agent. Keep them short and sweet.
 Give someone from your Slack workspace access to customer management features with a user license for your Salesforce org.
 Give the AI a role, add variables to reference information from the previous steps, define how you\u2019d like the response formatted, and clarify how you\u2019d like the sources to be used.
+Give this agent a prompt and a schedule. It runs the prompt for you and sends you what it finds, so you don\u2019t have to ask again.
 Give your approval to merge these changes.
 Give your channel a name to continue. You can always change the name later.
 Give your huddle a vibe
@@ -8670,6 +8691,7 @@ Give your team access
 Give your team secure, easy access to Slack
 Give your variables a descriptive name that will let your team know what information to enter. 
 Give your {name} template a name
+Give {agentName} a prompt and a schedule. It runs the prompt for you and sends you what it finds, so you don\u2019t have to ask again.
 Glad it was easy. Was anything confusing? Select all that apply.
 Global
 Global Administrator access required. Share this link with your Global Administrator to get set up.
@@ -9269,6 +9291,7 @@ How it works:
 How many files should they upload?
 How satisfied are you with the customer relationship management (CRM) features in Slack so far?
 How should I use Slackbot for my role?
+How tasks work
 How the workflow starts can\u2019t be changed after it\u2019s been published
 How to get started
 How to notify you
@@ -9822,6 +9845,7 @@ Insert huddle link
 Insert item
 Insert link
 Insert question here
+Insert result
 Insert row
 Insert row above
 Insert row below
@@ -10123,6 +10147,7 @@ Item limit
 Item not found
 Item options
 Item view
+Items
 Items added
 Items deleted
 JOIN
@@ -10146,6 +10171,7 @@ Japanese
 Java
 JavaScript
 Jazz Snaps
+Jazz themes
 Jersey
 Jitter
 Join
@@ -10208,10 +10234,12 @@ Join their channels
 Join this call
 Join this channel to get notified
 Join this channel to interact
+Join this channel to interact with {agentName}
 Join this channel to start a huddle
 Join this workspace to start working with them on Slack.
 Join when ready.
 Join when you\u2019re ready!
+Join when you\u2019re ready.
 Join whenever you\u2019re ready
 Join without microphone
 Join {name} and Launch Slack
@@ -12321,6 +12349,7 @@ New Jersey
 New List
 New Message
 New Mexico
+New Option
 New Project
 New Salesforce org connected
 New Section
@@ -12976,6 +13005,7 @@ Not available agents
 Not available for this organization.
 Not available in Slack
 Not available on this device
+Not available to connect yet
 Not available while filtering
 Not checked
 Not complete
@@ -13226,6 +13256,7 @@ Oct
 October
 Of course you want a name with an emoji. Sadly, it is not to be. Try letters?
 Off
+Offer \u201CShow more\u201D
 Offer available through {formattedDate}
 Offer ends in {daysRemaining, plural, =1 {# day} other {# days}}
 Offer valid for {daysRemaining, plural, =1 {# day} other {# days}}
@@ -13248,6 +13279,7 @@ Old:
 Older
 Older drafts
 Older result
+Older than {count} days
 Older than {monthCount, plural, =1 {# month} other {# months}}
 Oldest
 Oldest channel
@@ -13832,6 +13864,7 @@ Organizations need at least 10 people to be shown individually.
 Organize
 Organize contacts and account information in one place
 Organize external conversations into the External Connections section
+Organize external conversations into the External conversations section
 Organize files
 Organize files and tools
 Organize files in this channel
@@ -13944,6 +13977,7 @@ PDF Viewer
 PDF file icon
 PDFs
 PHP
+PR #{number}
 PR approved
 PR closed
 PR draft
@@ -14520,6 +14554,7 @@ Press Down Arrow for more options
 Press Enter to activate top result.
 Press R
 Press Right Arrow to ask in thread
+Press again to also select items
 Press alt + shift + up/down arrow to navigate between unread items.
 Press delete to remove a direct message from the sidebar
 Press delete to remove messages from an app from the sidebar
@@ -14822,6 +14857,7 @@ Put AI to work, anywhere in Slack
 Put a face to the name
 Put a face to your name
 Put agents to work in Slack
+Put repetitive work on autopilot
 Put words here, or get a little help:
 Put your pen to paper, or get a fast first draft:
 Putting it all together\u2026
@@ -14874,6 +14910,7 @@ Radio Buttons
 Radio button options
 Raise hand
 Raised hand
+Ran this morning
 Random
 Range
 Range\u2026
@@ -17268,6 +17305,7 @@ Sent right away when a server is requested.
 Sent to
 Sent to Org Primary Owners and Security Admins
 Sent to Security Admins
+Sent to your DMs
 Sent to {agentName}
 Sent to {agentName} in channel
 Sent to {entity} Primary Owners
@@ -17637,6 +17675,7 @@ Sharing this list with someone will add them as a Salesforce user. They\u2019ll 
 Sheets
 Shell
 Shift
+Shift tab to manage items
 Shoot. It looks like this {recordLabel} may have moved or been deleted. You can try searching in Salesforce to find where it went.
 Short answer
 Shortcut
@@ -17808,6 +17847,7 @@ Show thread & transcript
 Show unreads only
 Show up prepared for every meeting
 Show up prepared to every meeting
+Show up to
 Show upcoming reminders
 Show workspace switcher
 Show {count, plural, =1 {# company} other {# companies}}
@@ -18363,6 +18403,7 @@ Some time in the past week, the Windows Action Center was unable to deliver your
 Some tool access settings weren\u2019t saved. Check them and try again.
 Some tools in this MCP server require an agent to perform actions in Slack.
 Some types of records can\u2019t be viewed in Slack. To see this list, open it in Salesforce.
+Some variables in this prompt aren\u2019t available for this trigger. They\u2019ll be removed when you save.
 Some views are hidden when you start using Slack to help you focus on joining the conversation with your team.
 Some workflow apps weren\u2019t approved.
 Someone else updated this record after you started editing.
@@ -18939,6 +18980,7 @@ Stay in the loop on channels you care about
 Stay in the loop on important conversations.
 Stay informed about opportunity updates
 Stay on the same page
+Stay on top of sales tasks
 Stay on top of your Sales info
 Stay on top of your calendar
 Stay on top of your schedule without leaving Slack. Connect your calendar to get started.
@@ -19439,6 +19481,7 @@ Task
 Task actions
 Task conversation
 Task created successfully.
+Task created, but some of its prompt variables couldn\u2019t be connected.
 Task deleted
 Task details
 Task enqueued! You will receive a response soon.
@@ -20008,6 +20051,7 @@ There was a problem saving this record to Salesforce
 There was a problem saving this record to Salesforce.
 There was a problem saving to Salesforce.
 There was a problem searching Salesforce. Try again in a few minutes, or contact your administrator.
+There was a problem setting up customer management. Please contact your admin for help.
 There was a problem setting up your email connection. Give it a moment and try again.
 There was a problem sharing this record
 There was a problem starting your migration
@@ -20055,6 +20099,7 @@ There was an issue and we couldn\u2019t display this {displayType}. Try again in
 There was an issue clearing some notifications
 There was an issue connecting to {name}.
 There was an issue connecting. Please try again.
+There was an issue sharing this file.
 There was an issue summarizing this file. This may be because of the format, or because it\u2019s password protected.
 There were too many attempts to submit an email address. Try again in a few minutes.
 There\u2019s a few automations that will make your life easier. Set them up in a flash.
@@ -20695,6 +20740,7 @@ This thread has been closed by the agent
 This thread has been removed by an admin.
 This thread is currently unavailable
 This thread no longer exists on GitHub.
+This title can only be changed in the canvas below.
 This tool uses AI to generate responses, so some information may be inaccurate.
 This tool uses AI to generate workflows and may not always get it right. Let us know how it went.
 This tool uses generative AI, which can produce inaccurate or harmful responses.
@@ -21036,6 +21082,7 @@ Today, I\u2019m working on\u2026
 Today, more than ever, it\u2019s important to focus on our wellbeing and build our resilience to overcome and thrive during these challenging times. We offer a comprehensive package of wellness benefits for our employees.
 Today, {count} meeting{count, plural, one {} other {s}}
 Today, {schedule}
+Today\u2019s agenda
 Today\u2019s focus areas
 Todo
 Todo list dismissed
@@ -21149,6 +21196,7 @@ Track projects
 Track projects or gather feedback
 Track sales deals
 Track the agenda and outcome of a weekly status meeting.
+Track the follow-ups, next steps and tasks that need doing to move your sales cycle forward.
 Track this thread\u2026
 Track with lists
 Track your customer accounts together
@@ -22948,6 +22996,7 @@ Weekly on {dayOfWeek}
 Weekly on {dayOfWeek}s
 Weekly stats hidden
 Weekly stats shown
+Weekly support digest
 Weekly sync
 Welcome address by [Event Host/Hostess]
 Welcome back
@@ -23170,6 +23219,7 @@ When joining a huddle\u2026
 When left idle 
 When members submit requests to install agents to your organization, you\u2019ll see them here.
 When messages are sent
+When off, Slack stops automatically requesting approval for new permissions that already-approved apps add.
 When on, each conversation\u2019s base is its rank among your conversations, so the top one scores 1. When off, the recommendation score is used as-is.
 When on, only users assigned the Slack Access permission set in Salesforce can authenticate.
 When pasting links to places outside Slack, URLs will be shortened.
@@ -23188,6 +23238,7 @@ When someone reacts with \u{1F525} create a new incident channel and send inform
 When the conditions you\u2019ve set up are met,
 When the conditions you\u2019ve set up are met, the notifications will appear here.
 When the huddle starts, the host or another teammate will let you in.
+When the task runs
 When they close Slack on desktop
 When this file appears in a channel or conversation, it\u2019ll also appear here.
 When this link is shared in other Slack messages, they will show up here.
@@ -24525,6 +24576,7 @@ Your canvas, list, and workflows are always here so your team can easily find wh
 Your card was sent!
 Your change triggered multiple validation rules
 Your changes may not have saved properly. Reload data to confirm they saved or to try saving again.
+Your changes to this skill\u2019s details haven\u2019t been saved. The instructions save automatically.
 Your changes weren\u2019t saved. Try again.
 Your changes will be lost.
 Your changes will not be saved.
@@ -27919,6 +27971,7 @@ improving
 in
 in office
 in the
+in the key of jazz
 in the last 28 days
 in the last 3 months
 in the last 7 days
@@ -31624,6 +31677,9 @@ zzz
 {count, plural, =1 {# group} other {# groups}} this app allows couldn\u2019t be loaded.
 {count, plural, =1 {# item waiting in Later} other {# items waiting in Later}}
 {count, plural, =1 {# item} other {# items}}
+{count, plural, =1 {# item} other {# items}} removed
+{count, plural, =1 {# item} other {# items}} selected
+{count, plural, =1 {# item} other {# items}} selected. Press again to also select search query
 {count, plural, =1 {# link} other {# links}}, 
 {count, plural, =1 {# link} other {# links}}.
 {count, plural, =1 {# list} other {# lists}}
@@ -32132,6 +32188,7 @@ zzz
 {label}, read only
 {label}, {countNotifications, plural, =1 {# notification} other {# notifications}}
 {label}, {count} selected
+{label}, {selectedTokenCount, plural, =1 {# item} other {# items}}{errorCount, plural, =0 {} other {, # invalid}}
 {label}, {summary}
 {label}, {unreadCount, plural, =1 {# unread} other {# unreads}}
 {label}: {value}
@@ -32357,7 +32414,9 @@ zzz
 {name} in {channel}: {message} {date} at {time}.
 {name} is already a member of this channel.
 {name} is already in {count, plural, one {that channel} other {those channels}}.
+{name} is already installed for your team.
 {name} is already taken by a channel, username, or user group.
+{name} is connected.
 {name} is not on Slack yet, but you can still message them (they\u2019ll be able to see all direct messages sent to them once they\u2019ve joined).
 {name} is not yet ready for org wide install and can only be installed to individual workspaces from the App Directory.
 {name} is trying to reach you
@@ -32604,6 +32663,7 @@ zzz
 {qty} people
 {queryLength, plural, =0 {Start typing to see results\u2026} other {Keep typing to see results\u2026}}
 {query_length, plural, =0 {Start typing to see results\u2026} other {Keep typing to see results\u2026}}
+{query} selected
 {rawListTitle} (View Only)
 {reactionAmount} {reactionAmount, plural, =1 {reaction} other {reactions}}
 {readCount} of {totalCount} marked read
@@ -32869,6 +32929,12 @@ zzz
 {todoCount, plural, =1 {# overdue to-do} other {# overdue to-dos}}
 {todoCount, plural, =1 {# overdue to-do} other {# overdue to-dos}} and {notificationCount, plural, =1 {# unread notification, new since your last visit} other {# unread notifications, with new ones since your last visit}}
 {todoCount, plural, =1 {# overdue to-do} other {# overdue to-dos}} and {notificationCount, plural, =1 {# unread notification} other {# unread notifications}}
+{tokenLabel} added
+{tokenLabel} added to {multiSelectLabel}
+{tokenLabel} removed
+{tokenLabel} removed from {multiSelectLabel}
+{tokenLabel} selected
+{tokenLabel} selected. Press again to also select search query
 {toolCount, plural, =1 {Used # tool} other {Used # tools}}
 {toolCount, plural, =1 {Using # tool} other {Using # tools}}
 {toolCount} other {toolCount, plural, one {tool} other {tools}}
