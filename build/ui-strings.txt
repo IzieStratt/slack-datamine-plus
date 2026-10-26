@@ -2613,6 +2613,7 @@ Are you sure? You won\u2019t be able to restore this {objectLabel}.
 Are you sure? You\u2019ve not completed setting up your web form.
 Are you trying to move sections?
 Area
+Area chart
 Argentina
 Arizona
 Arkansas
@@ -6068,6 +6069,7 @@ Delete unavailable servers from {orgCount, plural, =1 {{orgName1}} =2 {{orgName1
 Delete view
 Delete workflow
 Delete {columns, plural, =1{column}other{# columns}}
+Delete {count}
 Delete {count} {count, plural, =1 {Workflow} other {Workflows}}
 Delete {count} {count, plural, =1 {file} other {files}}
 Delete {emojiName} emoji
@@ -17319,6 +17321,7 @@ Sent when the close date is approaching on an opportunity
 Sent when the close date is passed on an opportunity
 Sent when your team wins a deal
 Sent!
+Sent, {count, plural, =1 {# scheduled} other {# scheduled}}
 Sent/received
 Sep
 Separate direct messages and apps from channels in sidebar
@@ -21811,15 +21814,18 @@ Unread activity counts
 Unread comments
 Unread conversations
 Unread conversations, plus your Starred section
+Unread direct messages for you
 Unread items
 Unread mention
 Unread mentions
+Unread mentions for you
 Unread messages from your manager
 Unread only
 Unread thread
 Unread thread over its channel
 Unread thread reply
 Unread threads
+Unread threads for you
 Unreads
 Unreads & drafts
 Unreads for you
@@ -22692,6 +22698,7 @@ Visit Sales to see more
 Visit developer website
 Visit the calendar app settings to turn off status sync any time.
 Visit the channel settings tab to review permissions \u2014 and keep an eye out for more controls to come!
+Visitors
 Voice
 Voice and video calls
 Voice and video conversations with your team
@@ -24280,6 +24287,7 @@ You\u2019ll still be notified in Activity at your requested time.
 You\u2019ll use the display name to get the group\u2019s attention. It should be all lowercase, with no spaces.
 You\u2019re a guest in {workspaceName}, so you can\u2019t accept Slack Connect invitations.
 You\u2019re a true pro!
+You\u2019re a visitor in this channel. It belongs to a workspace you\u2019re not a member of.
 You\u2019re about to delete this sidekick. Do you want to proceed?
 You\u2019re about to delete {count} {count, plural, =1 {Workflow} other {Workflows}}
 You\u2019re about to delete {count} {count, plural, =1 {file} other {files}}
@@ -31610,6 +31618,10 @@ zzz
 {chartType} chart: {title}, with {numSegments, plural, one {# segment} other {# segments}}.
 {chartType} chart: {title}. The X axis is {xLabel}, the Y axis is {yLabel}. There are {numSeries} series: {seriesList}.
 {chartType} chart: {title}. The X axis is {xLabel}, the Y axis is {yLabel}. There is {numSeries} series: {seriesList}.
+{chartType}: {title}
+{chartType}: {title}, with {numSegments, plural, one {# segment} other {# segments}}.
+{chartType}: {title}. The X axis is {xLabel}, the Y axis is {yLabel}. There are {numSeries} series: {seriesList}.
+{chartType}: {title}. The X axis is {xLabel}, the Y axis is {yLabel}. There is {numSeries} series: {seriesList}.
 {checkboxColumnLabel}: {checkboxColumnValue}
 {closingInValue, plural, one {Day} other {Days}}
 {column} contains non-numeric values, but {field} requires a number.
@@ -31659,6 +31671,7 @@ zzz
 {count, plural, =1 {# comment} other {# comments}}
 {count, plural, =1 {# conversation} other {# conversations}}
 {count, plural, =1 {# conversation} other {# conversations}} selected
+{count, plural, =1 {# draft selected} other {# drafts selected}}
 {count, plural, =1 {# duplicate email} other {# duplicate emails}}.
 {count, plural, =1 {# entry has} other {# entries have}} multiple matches. Select entry to resolve.
 {count, plural, =1 {# error} other {# errors}}
