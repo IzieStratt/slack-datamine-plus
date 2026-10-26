@@ -16,6 +16,7 @@ const linkBase = process.argv.indexOf('--link') > -1 ? process.argv[process.argv
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] }).trim();
 const show = (ref, f) => { try { return git('show', `${ref}:${f}`); } catch { return null; } };
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const WATCH = new RegExp(fs.readFileSync(new URL('./watch-keywords.txt', import.meta.url), 'utf8').split('\n').filter((l) => l && !l.startsWith('#')).join('|'), 'i');
 const CAP = 25; // shown up front; the rest sits in an expander
 
 export const lines = (t) => new Set((t ?? '').split('\n').filter(Boolean));
@@ -48,6 +49,7 @@ function buildItem(base, head) {
   if (!base || base === head) return null;
   const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons|health|components|redux)\.json$/.test(f));
   let html = '', total = 0;
+  const hits = []; // values matching src/watch-keywords.txt in any category, so a themed rollout is not buried in a long list
   const build = (JSON.parse(show('HEAD', 'build/meta.json') ?? '{}')).buildNumber;
   for (const f of files) {
     const name = path.basename(f).replace(/\.(txt|json)$/, '');
@@ -63,11 +65,12 @@ function buildItem(base, head) {
       if (added.length) { const seen = everAdded(base, f); added = added.filter((x) => !seen.has(x)); }
     }
     total += added.length + removed.length + extra.length;
+    for (const [list, sign] of [[added, '+ '], [removed, '− '], [extra, '']]) for (const x of list) if (WATCH.test(x)) hits.push(`${sign}${name}: ${x}`);
     html += section(`${name}: ${fresh ? 'new category' : 'new'}`, added, '+ ') + section(`${name}: gone`, removed, '− ') + section(`${name}: new groups`, extra, '');
   }
   if (!total) return null;
   const date = new Date().toISOString().slice(0, 10);
-  return { id: `${url}/#${date}`, date, base, title: `Slack client changes ${date} (build ${build})`, html: `<p>${total} changes since ${base.slice(0, 7)}.</p>${html}` };
+  return { id: `${url}/#${date}`, date, base, title: `Slack client changes ${date} (build ${build})`, html: `<p>${total} changes since ${base.slice(0, 7)}.</p>${section('watch: keyword matches', hits, '')}${html}` };
 }
 
 const itemsFile = path.join(site, 'items.json');
