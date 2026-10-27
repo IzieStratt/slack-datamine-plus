@@ -4073,6 +4073,7 @@ thunk:cancelLoading
 thunk:cancelPendingClearForItem
 thunk:cancelProvisionalConnectionTimeout
 thunk:cancelUnresolvedDraftInvitesAfterTimeout
+thunk:canGrantSkillAdminEditAccess
 thunk:canLeaveChannelWithReason
 thunk:canMemberJoinChannelWithReason
 thunk:canMentionAgent
@@ -4289,6 +4290,7 @@ thunk:clogSearchyModeClick
 thunk:clogSeasonalDelightWebPushNotificationActions
 thunk:clogSfdcFileEvent
 thunk:clogSidebarItemClick
+thunk:clogSidebarSearchOpen
 thunk:clogSimplifiedOnboardingDmPrefReveal
 thunk:clogSimplifiedOnboardingPrefReveal
 thunk:clogSkillAddedToSet
@@ -5834,6 +5836,7 @@ thunk:maybeOpenInSurfaceOrNavigate
 thunk:maybeOpenInWindow
 thunk:maybeOpenNonDismissibleWelcomeModalOnBoot
 thunk:maybeOpenOnboardingTasksPopoverOnEditProfileModalClose
+thunk:maybeOpenOnboardingTasksPopoverOnInviteModalClose
 thunk:maybeOpenOnboardingTasksPopoverOnQRCodeSigninModalClose
 thunk:maybeOpenPlaceholderTextWarningDialog
 thunk:maybeOpenPopoverForCompletedTask
@@ -7411,6 +7414,7 @@ thunk:setHuddleTopic
 thunk:setIaThemePrefByApi
 thunk:setIdentityTransferUserPrefs
 thunk:setInitData
+thunk:setInviteTeamMembersTaskComplete
 thunk:setIsEditMode
 thunk:setIsHidingSelf
 thunk:setIsSidebarVisible
@@ -7659,6 +7663,7 @@ thunk:showWelcomePartyWebPushNotification
 thunk:showWorkflowApprovalFailedToast
 thunk:sidebarAppNuxMaybeLogExposure
 thunk:sidebarCtaSimplificationMaybeLogExposure
+thunk:sidebarOnboardingTasksV2SmallMaybeLogExposure
 thunk:signInAndAddWorkspace
 thunk:signIntoOrganization
 thunk:signIntoSalesforceOrg
