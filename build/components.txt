@@ -440,6 +440,8 @@ AgentGridItem
 AgentHomeTitleRow
 AgentHomeViewHeaderNewConversation
 AgentHomeViewMessageInput
+AgentHoverCard
+AgentHoverCardLoading
 AgenticBrowseAndFind
 AgenticBrowseAndFindPage
 AgenticBrowseAndFindViewComponent
@@ -755,6 +757,7 @@ AppHomeError
 AppHomeRestricted
 AppHomeTabView
 AppHomeTabViewBase
+AppHoverCard
 AppInfo
 AppItem
 AppJoinToView
@@ -823,7 +826,6 @@ AppScopes
 AppSecurityComplianceList
 AppSessionOpenThreadReplyNugget
 AppSessionReplyNugget
-AppSessionsTabSessionRow
 AppSessionsTabView
 AppSessionsTabViewBase
 AppSessionStopReplyNugget
@@ -966,6 +968,7 @@ AttachmentSkeleton
 AttachmentSkeletonCompact
 AttachmentSkeletonFull
 AttachmentSkeletonMediaEmbed
+AttachmentSkeletonQuote
 AttachmentSkeletonTextEmbed
 AttachmentSkeletonTypeIcon
 AttachmentSkeletonWorkObjectExpanded
@@ -1198,7 +1201,6 @@ BaseContextBarSharedContent
 BaseContextBarV2
 BaseCopyCodeBlockContextMenuTrigger
 BaseCreateRecordView
-BaseCreateTaskModal
 BaseCreatorGuidedSetupInvitationCoachmark
 BaseCreatorGuidedSetupTabCoachmark
 BaseCreatorGuidedSetupWelcomeModal
@@ -1232,7 +1234,6 @@ BaseEditMessage
 BaseEditProfileField
 BaseEditProfilePhoto
 BaseEditRecordView
-BaseEditTaskModal
 BaseEmailInvitesForm
 BaseEmbedIframeContainer
 BaseEmojiGroup
@@ -2568,13 +2569,13 @@ ConnectedAccounts
 ConnectedAccountSwitcherRow
 ConnectedAddToMpdmOnboardingCoachmark
 ConnectedAddWorkspacesToSSBModal
+ConnectedAgentHoverCard
 ConnectedAgentRow
 ConnectedAgentSessionRow
 ConnectedAppBasedSearchSource
 ConnectedAppsList
 ConnectedAutoChargeFeatureTrialsManageTrialWorkspaceMenuCta
 ConnectedAutomationCoachmark
-ConnectedAvatar
 ConnectedBannerDownloadSsb
 ConnectedBaseAvatar
 ConnectedByCell
@@ -2929,11 +2930,9 @@ CustomConnectorConnectView
 CustomConnectorEnableModal
 CustomConnectorEnableView
 CustomDragLayer
-CustomEndOptions
 CustomFieldForm
 CustomFileSectionsNux
 CustomFileSectionsNuxBubble
-CustomFrequencyOptions
 CustomHEXPickerSection
 CustomizableInputs
 CustomizeButton
@@ -3042,6 +3041,7 @@ DatePickerInput
 DatePickerSelect
 DatePickerTrigger
 DateRangeModal
+DateRangeOptionComponent
 DateRangePicker
 DateRangePickerCalendar
 DateRangePickerInput
@@ -3149,6 +3149,7 @@ DesktopPref
 DesktopUpdateBanner
 DestinationAvatar
 DestinationFilter
+DestinationFilters
 DestinationIcon
 DestinationRow
 DestinationTagPill
@@ -4141,10 +4142,8 @@ FilterContext
 FilterContextProvider
 FilterDropdownIcon
 FilterExcludeOthers
-FilterHuddleDate
 FilterHuddleHas
 FilterHuddleIn
-FilterHuddleType
 FilterHuddleWithUsers
 FilterInput
 FilterInputBase
@@ -4375,6 +4374,7 @@ getAttachmentsLinks
 getAttachmentText
 getAudioVideoSection
 getAvPane
+getBanner
 getBannerContent
 getBannerText
 getBody
@@ -4570,6 +4570,7 @@ getRecepientList
 getRefreshLinkMenuItemTemplate
 getReplyCount
 getRestrictedToOrgAlertText
+getRowIcon
 getRowItems
 getSalesforceAppTemplate
 getSalesforceDataFieldInterpolatedString
@@ -6376,7 +6377,6 @@ MessageAttachmentWistia
 MessageAttachmentWorkObject
 MessageAttachmentWorkObjectsMetaTextWrapper
 MessageAttachmentYouTube
-MessageAvatar
 MessageBackground
 MessageBannerButtons
 MessageBlockDocumentUnfurl
@@ -8828,7 +8828,6 @@ ScheduledEditContent
 ScheduledNotificationPreview
 ScheduledStatusOverlapAlert
 ScheduledStatusToast
-ScheduledTriggerForm
 ScheduledTriggerRunAccessHelpText
 ScheduledTriggerSummary
 ScheduleForwardToast
@@ -8905,7 +8904,6 @@ SearchFilterDivision
 SearchFilterDropdown
 SearchFilterFileType
 SearchFilterFrom
-SearchFilterIn
 SearchFilterLocation
 SearchFilterMenuItemContent
 SearchFilterMultiSelect
@@ -8925,7 +8923,6 @@ SearchFilterSourcesExternalOption
 SearchFilterSourcesWorkObjectOption
 SearchFiltersTruncationWrapper
 SearchFilterTitle
-SearchFilterWith
 SearchFilterWorkspace
 SearchHistoryCoachmark
 SearchInProductSurveyMegaphone
@@ -9441,6 +9438,7 @@ SingerPocket
 SingerSettings
 SingerTaskBubble
 SingerTaskBubbles
+SingerUnreadBadge
 SingleAttachment
 SingleChannelGuest
 SingleChannelGuestGrid
@@ -9746,7 +9744,9 @@ SlackbotSidebarIcon
 SlackbotSidebarIconForPageView
 SlackbotSidebarLinkWrapper
 SlackbotSidebarPeekTrigger
+SlackbotSidebarRenameDialog
 SlackbotSidebarSurfacePeek
+SlackbotSidebarThreadContextMenu
 SlackbotSidebarThreadPeek
 SlackbotSidebarWelcome
 SlackbotSkillsAnnouncementAlternateSkillBanner
@@ -10150,6 +10150,7 @@ StepManualInvitesAndGoogle
 StepPeople
 StepPlans
 StepPlansCompareContent
+StepPlansComparison
 StepPlansContent
 StepPlansPaidForwardCard
 StepPlansRightSection
@@ -10619,7 +10620,6 @@ ThumbnailContainer
 ThumbnailImg
 ThunkContextProvider
 TimeBadge
-TimeBucketSelect
 Timeline
 TimelineCondensed
 TimelineGroup
@@ -10766,7 +10766,6 @@ TooltipWrapper
 ToolTypeAccessCard
 ToolTypeAccessRow
 TopAgent
-TopAgents
 TopAgentSession
 TopAnchor
 TopEmojiCardContent
@@ -10801,7 +10800,6 @@ translateMadLibsSentenceHardcoded
 TranslationKnownLanguagesMultiSelect
 TranslationLanguageSelect
 TransparencyTimeseries
-TrayAgents
 TriageTabActions
 TriageTabButton
 TriageTabMenuButton
@@ -11068,7 +11066,6 @@ useCanvasSectionRowRenderer
 useCanvasTemplatePublishCategories
 useChangeBackgroundMenuItem
 useChangeVideoBackgroundMenuItem
-useChannelFilesExplorer
 useChannelMgmtActionMenu
 useChannelName
 useChannelPurposeInput
@@ -11452,7 +11449,6 @@ ViewEditorMenuComponent
 ViewErrorButton
 ViewersByDepartment
 ViewHeader
-ViewHeaderAgentDmDetailsButton
 ViewHeaderAiApp
 ViewHeaderAppConnection
 ViewHeaderAppHomeContextTeam
@@ -11512,7 +11508,6 @@ WebhookTriggerSummary
 WebSearchHoverCard
 WebSearchPref
 WebSourceItem
-WeekdaysPicker
 WelcomeCardFile
 WelcomeModalContent
 WelcomeNewTeammates
