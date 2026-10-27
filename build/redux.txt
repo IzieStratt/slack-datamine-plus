@@ -2542,7 +2542,6 @@ action:setShowHuddleSummaryPendingBanner
 action:setShowListDescriptionById
 action:setShowMutedChannelsHiddenConfirmationCoachmark
 action:setShownWorkspaceSelectStep
-action:setShowProgDiscSuccessCoachmark
 action:setShowScdmEducationCoachmark
 action:setShowSectionMenuCoachmark
 action:setShowSuccessBanner
@@ -3851,7 +3850,6 @@ thunk:addAppCollaboratorFailureHandler
 thunk:addAppCollaborators
 thunk:addAppsToConversation
 thunk:addAppToChannel
-thunk:addAppToChannelByMemberId
 thunk:addAutoStarterMember
 thunk:addBookmarkFolderForChannel
 thunk:addBookmarkForChannel
@@ -4468,7 +4466,6 @@ thunk:createSharedInviteLink
 thunk:createShortcutWorkflowFromTemplate
 thunk:createSnippetShortcut
 thunk:createSpreadsheet
-thunk:createTodo
 thunk:createTriggerlessWorkflow
 thunk:createUserGroup
 thunk:createView
@@ -4833,7 +4830,6 @@ thunk:fetchAndUpsertRecentlyRunTriggers
 thunk:fetchAndUpsertRecentMedia
 thunk:fetchAndUpsertRecentWorkflows
 thunk:fetchAndUpsertRecommendedChannelsForJoinerLaunchpad
-thunk:fetchAndUpsertRecommendedPriorityUsers
 thunk:fetchAndUpsertRecordListTabViewData
 thunk:fetchAndUpsertRecordsCircularHandler
 thunk:fetchAndUpsertRecordsForList
@@ -4928,7 +4924,6 @@ thunk:fetchExternalHuddleLinkStatus
 thunk:fetchFeaturedTemplates
 thunk:fetchFeatureRequest
 thunk:fetchFieldReferences
-thunk:fetchFileCollections
 thunk:fetchFilters
 thunk:fetchFirstSetOfMembers
 thunk:fetchForMentions
@@ -5048,7 +5043,6 @@ thunk:fetchSlackAiDataAvailableDateRange
 thunk:fetchSlackbotAiUsage
 thunk:fetchSlackbotExcludedChannelIds
 thunk:fetchSlackbotTasksOnConnected
-thunk:fetchSlackbotTasksUsage
 thunk:fetchSlackConnectDmEligibility
 thunk:fetchSlackConnectPrefs
 thunk:fetchSlackCrmBuildFromUserInputState
@@ -5393,7 +5387,6 @@ thunk:handleStartErrorInner
 thunk:handleStraightToPaidFlow
 thunk:handleSuggestedPromptsButtonClick
 thunk:handleSupportedFontSelected
-thunk:handleTabChange
 thunk:handleTimestampClick
 thunk:handleUpdateFilterRefineClogs
 thunk:handleUpdateShowAndHideColumnsRefineClogs
@@ -5490,7 +5483,6 @@ thunk:inviteToWorkspaceShortcut
 thunk:inviteUserGroupToChannel
 thunk:invokeSkill
 thunk:isActivityRowReadyToTakeFocus
-thunk:isAgentInDmSidebarThunk
 thunk:isEligibleForPaidAcquisitionSelfServe
 thunk:isFileCreatedByAi
 thunk:isFocusTransitioningThunk
@@ -5842,7 +5834,6 @@ thunk:maybeOpenInSurfaceOrNavigate
 thunk:maybeOpenInWindow
 thunk:maybeOpenNonDismissibleWelcomeModalOnBoot
 thunk:maybeOpenOnboardingTasksPopoverOnEditProfileModalClose
-thunk:maybeOpenOnboardingTasksPopoverOnInviteModalClose
 thunk:maybeOpenOnboardingTasksPopoverOnQRCodeSigninModalClose
 thunk:maybeOpenPlaceholderTextWarningDialog
 thunk:maybeOpenPopoverForCompletedTask
@@ -6017,7 +6008,6 @@ thunk:maybeUpdateChannelBadgeCount
 thunk:maybeUpdateDocRoute
 thunk:maybeUpdateEphemeralEntitiesInSidebar
 thunk:maybeUpdateFocusModeSideEffectHandler
-thunk:maybeUpdateHuddleFromCallsMenuNUX
 thunk:maybeUpdateInproductTeamCreationStateMachine
 thunk:maybeUpdateInstantSlackChannelMembersInSidebar
 thunk:maybeUpdateMessagesToDeleteWithMessage
@@ -6257,7 +6247,6 @@ thunk:openAppLauncherView
 thunk:openAppMentionCreateChannelModalHandler
 thunk:openAppPermissionDialog
 thunk:openApprovalSettingsModalForTeam
-thunk:openAppsBrowserModal
 thunk:openAppUpdateDialog
 thunk:openAppWithTab
 thunk:openArchiveChannelModalDisconnectConfirmation
@@ -6507,7 +6496,6 @@ thunk:openListTemplateConvertSpeedbumpModal
 thunk:openLlmLinkDialog
 thunk:openLoginInitiateRedirectLinkWarningDialog
 thunk:openLoopWithLookupFlow
-thunk:openManageEmailConnectionDialog
 thunk:openManageIntegrationsModal
 thunk:openManageWorkflowIntegrations
 thunk:openManualDenyRequestModal
@@ -6691,7 +6679,6 @@ thunk:openSolutionsSetupFlowModalCircularHandler
 thunk:openSolutionTemplateModal
 thunk:openSpreadsheetInNewChildWindow
 thunk:openStepFormModal
-thunk:openStickerModal
 thunk:openStreamlinePlansModal
 thunk:openSummaryInChildWindow
 thunk:openSuspiciousLinkDialog
@@ -7424,7 +7411,6 @@ thunk:setHuddleTopic
 thunk:setIaThemePrefByApi
 thunk:setIdentityTransferUserPrefs
 thunk:setInitData
-thunk:setInviteTeamMembersTaskComplete
 thunk:setIsEditMode
 thunk:setIsHidingSelf
 thunk:setIsSidebarVisible
@@ -7673,8 +7659,6 @@ thunk:showWelcomePartyWebPushNotification
 thunk:showWorkflowApprovalFailedToast
 thunk:sidebarAppNuxMaybeLogExposure
 thunk:sidebarCtaSimplificationMaybeLogExposure
-thunk:sidebarOnboardingTasksV2LargeMaybeLogExposure
-thunk:sidebarOnboardingTasksV2SmallMaybeLogExposure
 thunk:signInAndAddWorkspace
 thunk:signIntoOrganization
 thunk:signIntoSalesforceOrg
@@ -8183,7 +8167,6 @@ thunk:uploadEmailAttachment
 thunk:uploadFiles
 thunk:uploadFilesToCanvas
 thunk:uploadFilesToChannelFolder
-thunk:uploadMeetingRecording
 thunk:uploadOrPostCloudFile
 thunk:uploadQueueEmptiedWithDelay
 thunk:uploadToNewDraft
