@@ -393,6 +393,7 @@ action:clearShouldRefetchExternalFileProviders
 action:clearShouldRemoveHighlighted
 action:clearShouldRestoreViewOnListReturn
 action:clearSiwsDomains
+action:clearSlackbotThreadsUnread
 action:clearSlackbotThreadUnread
 action:clearSlackbotWritePermissionsConfig
 action:clearSmartInvitesChannelSuggestionCreatedChannel
@@ -691,6 +692,7 @@ action:markPlanStatusDataAsNotLoaded
 action:markProjectContentChanged
 action:markProjectThreadsChanged
 action:markSfdcActivityComplete
+action:markSlackbotThreadsUnread
 action:markSlackbotThreadUnread
 action:markStreamingAnimationFinished
 action:markTriggerUnfurlsAsStaleForSession
@@ -2540,7 +2542,6 @@ action:setShowHuddleSummaryPendingBanner
 action:setShowListDescriptionById
 action:setShowMutedChannelsHiddenConfirmationCoachmark
 action:setShownWorkspaceSelectStep
-action:setShowProgDiscSuccessCoachmark
 action:setShowScdmEducationCoachmark
 action:setShowSectionMenuCoachmark
 action:setShowSuccessBanner
@@ -3849,7 +3850,6 @@ thunk:addAppCollaboratorFailureHandler
 thunk:addAppCollaborators
 thunk:addAppsToConversation
 thunk:addAppToChannel
-thunk:addAppToChannelByMemberId
 thunk:addAutoStarterMember
 thunk:addBookmarkFolderForChannel
 thunk:addBookmarkForChannel
@@ -4146,6 +4146,7 @@ thunk:clearSearchInChannelSessionData
 thunk:clearSearchInput
 thunk:clearSearchInputOnSrpExit
 thunk:clearSessionTimeoutsOnSearchMount
+thunk:clearSlackbotUnreadThreadsOnMarkAllRead
 thunk:clearSolutionTemplatePref
 thunk:clearSolutionTemplatePrefState
 thunk:clearStaleHuddleInvite
@@ -4465,7 +4466,6 @@ thunk:createSharedInviteLink
 thunk:createShortcutWorkflowFromTemplate
 thunk:createSnippetShortcut
 thunk:createSpreadsheet
-thunk:createTodo
 thunk:createTriggerlessWorkflow
 thunk:createUserGroup
 thunk:createView
@@ -4830,7 +4830,6 @@ thunk:fetchAndUpsertRecentlyRunTriggers
 thunk:fetchAndUpsertRecentMedia
 thunk:fetchAndUpsertRecentWorkflows
 thunk:fetchAndUpsertRecommendedChannelsForJoinerLaunchpad
-thunk:fetchAndUpsertRecommendedPriorityUsers
 thunk:fetchAndUpsertRecordListTabViewData
 thunk:fetchAndUpsertRecordsCircularHandler
 thunk:fetchAndUpsertRecordsForList
@@ -4925,7 +4924,6 @@ thunk:fetchExternalHuddleLinkStatus
 thunk:fetchFeaturedTemplates
 thunk:fetchFeatureRequest
 thunk:fetchFieldReferences
-thunk:fetchFileCollections
 thunk:fetchFilters
 thunk:fetchFirstSetOfMembers
 thunk:fetchForMentions
@@ -5045,7 +5043,6 @@ thunk:fetchSlackAiDataAvailableDateRange
 thunk:fetchSlackbotAiUsage
 thunk:fetchSlackbotExcludedChannelIds
 thunk:fetchSlackbotTasksOnConnected
-thunk:fetchSlackbotTasksUsage
 thunk:fetchSlackConnectDmEligibility
 thunk:fetchSlackConnectPrefs
 thunk:fetchSlackCrmBuildFromUserInputState
@@ -5319,6 +5316,7 @@ thunk:goToNextPage
 thunk:goToNextSetupPageStep
 thunk:goToPage
 thunk:goToPrevPage
+thunk:grantSkillAdminEditAccess
 thunk:gxInProductSurveyMaybeLogExposure
 thunk:halt
 thunk:handleActiveMigration
@@ -5389,7 +5387,6 @@ thunk:handleStartErrorInner
 thunk:handleStraightToPaidFlow
 thunk:handleSuggestedPromptsButtonClick
 thunk:handleSupportedFontSelected
-thunk:handleTabChange
 thunk:handleTimestampClick
 thunk:handleUpdateFilterRefineClogs
 thunk:handleUpdateShowAndHideColumnsRefineClogs
@@ -5486,7 +5483,6 @@ thunk:inviteToWorkspaceShortcut
 thunk:inviteUserGroupToChannel
 thunk:invokeSkill
 thunk:isActivityRowReadyToTakeFocus
-thunk:isAgentInDmSidebarThunk
 thunk:isEligibleForPaidAcquisitionSelfServe
 thunk:isFileCreatedByAi
 thunk:isFocusTransitioningThunk
@@ -6013,7 +6009,6 @@ thunk:maybeUpdateChannelBadgeCount
 thunk:maybeUpdateDocRoute
 thunk:maybeUpdateEphemeralEntitiesInSidebar
 thunk:maybeUpdateFocusModeSideEffectHandler
-thunk:maybeUpdateHuddleFromCallsMenuNUX
 thunk:maybeUpdateInproductTeamCreationStateMachine
 thunk:maybeUpdateInstantSlackChannelMembersInSidebar
 thunk:maybeUpdateMessagesToDeleteWithMessage
@@ -6144,6 +6139,7 @@ thunk:notificationClicked
 thunk:notifyAccessLimited
 thunk:notifyServerLeave
 thunk:observeChannelNominationNavigation
+thunk:offerCaptureAfterGmailSignIn
 thunk:onAddMessages
 thunk:onBadgeCountsUpdated
 thunk:onboardJoinersWithSlackbotBigmodeMaybeLogExposure
@@ -6252,7 +6248,6 @@ thunk:openAppLauncherView
 thunk:openAppMentionCreateChannelModalHandler
 thunk:openAppPermissionDialog
 thunk:openApprovalSettingsModalForTeam
-thunk:openAppsBrowserModal
 thunk:openAppUpdateDialog
 thunk:openAppWithTab
 thunk:openArchiveChannelModalDisconnectConfirmation
@@ -6502,7 +6497,6 @@ thunk:openListTemplateConvertSpeedbumpModal
 thunk:openLlmLinkDialog
 thunk:openLoginInitiateRedirectLinkWarningDialog
 thunk:openLoopWithLookupFlow
-thunk:openManageEmailConnectionDialog
 thunk:openManageIntegrationsModal
 thunk:openManageWorkflowIntegrations
 thunk:openManualDenyRequestModal
@@ -6686,7 +6680,6 @@ thunk:openSolutionsSetupFlowModalCircularHandler
 thunk:openSolutionTemplateModal
 thunk:openSpreadsheetInNewChildWindow
 thunk:openStepFormModal
-thunk:openStickerModal
 thunk:openStreamlinePlansModal
 thunk:openSummaryInChildWindow
 thunk:openSuspiciousLinkDialog
@@ -6854,6 +6847,7 @@ thunk:provisionallyConnectedSideEffectHandler
 thunk:provisionTemplate
 thunk:provisionTemplateForChannelId
 thunk:pruneBlockState
+thunk:pruneReadUnreadThreadsOnHistoryLoad
 thunk:publishCanvasTemplate
 thunk:publishDraftWorkObject
 thunk:publishEditorWorkflow
@@ -7126,6 +7120,7 @@ thunk:restorePinnedDropZone
 thunk:restorePinnedItemsInSidebar
 thunk:restoreQuipVersion
 thunk:restoreSearchQueryIfHandoffFailed
+thunk:restoreSlackbotUnreadThreadsOnUndoMarkAllRead
 thunk:restoreWorkflowFromVersion
 thunk:restoreWorkflowFromVersionSuccessHandler
 thunk:resumeDesktopDownloadHandler
@@ -7666,7 +7661,6 @@ thunk:showWelcomePartyWebPushNotification
 thunk:showWorkflowApprovalFailedToast
 thunk:sidebarAppNuxMaybeLogExposure
 thunk:sidebarCtaSimplificationMaybeLogExposure
-thunk:sidebarOnboardingTasksV2LargeMaybeLogExposure
 thunk:sidebarOnboardingTasksV2SmallMaybeLogExposure
 thunk:signInAndAddWorkspace
 thunk:signIntoOrganization
@@ -8176,7 +8170,6 @@ thunk:uploadEmailAttachment
 thunk:uploadFiles
 thunk:uploadFilesToCanvas
 thunk:uploadFilesToChannelFolder
-thunk:uploadMeetingRecording
 thunk:uploadOrPostCloudFile
 thunk:uploadQueueEmptiedWithDelay
 thunk:uploadToNewDraft
