@@ -245,6 +245,7 @@ $ {amount} USD
 , Unstar
 , deactivated
 , has new edits
+, has updates
 , invitation pending
 , opens in a new tab
 , with participants: 
@@ -1001,6 +1002,7 @@ Activity tabs
 Activity type
 Activity type ({count})
 Activity type, {count, plural, =1 {1 filter} other {# filters}} applied
+Activity type, {count} filters applied
 Actual prompt
 Add
 Add ({count})
@@ -1664,6 +1666,7 @@ Additional calendar controls
 Additional configuration needed
 Additional context:
 Additional fields
+Additional filters
 Additional information about this resolution
 Additional information provided to Slack.
 Additional options
@@ -1745,6 +1748,7 @@ After a set number of occurrences
 After a specific date
 After hours, {firstName}? I\u2019m here for it
 After the app is installed:
+After you connect, you can choose to log emails with contacts and leads on their Salesforce records.
 After you connect, you can choose to save emails with contacts and leads to the matching records.
 After {dateString}
 After {daysRemaining, plural, =1 {# day} other {# days}}, your external channels won\u2019t reconnect automatically
@@ -2346,6 +2350,7 @@ Anyone in {teamName} can use or edit. The skill appears in the directory.
 Anyone in {teamName} can use. The skill appears in the directory.
 Anyone in {teamName} can view
 Anyone on your team who can see those contacts and leads can read the saved emails.
+Anyone on your team who can see those records can read the logged emails.
 Anyone who can view record
 Anyone who doesn\u2019t already use 2FA will:
 Anyone who requested this app will get a Slackbot message with this information.
@@ -2932,6 +2937,7 @@ Automatically log your emails with contacts and leads
 Automatically mute channels
 Automatically play consent message
 Automatically read new messages in the current conversation
+Automatically request approval when an approved app adds new permissions
 Automatically send alerts for more visibility with less overhead.
 Automatically sign users out
 Automatically summarize and see summaries from files you and your team share.
@@ -6223,6 +6229,7 @@ Didn\u2019t use the paid features
 Diff
 Diff display options
 Diff truncated \u2014 too many files or changes to display
+Diff view settings
 Difference (days)
 Difficult
 Dig Deeper
@@ -7004,6 +7011,7 @@ Email {name}
 Emails
 Emails are logged automatically
 Emails are sent to this channel by using the email address you created for it.
+Emails between you and your contacts and leads are added to their Salesforce records without you copying them over.
 Emails from {address}
 Emails have been disabled for this channel
 Emails sent or forwarded to the email address for {channelDisplayName} will no longer be posted in the channel when you delete the email address.
@@ -10174,6 +10182,7 @@ Japanese
 Java
 JavaScript
 Jazz Snaps
+Jazz themes
 Jersey
 Jitter
 Join
@@ -10236,10 +10245,12 @@ Join their channels
 Join this call
 Join this channel to get notified
 Join this channel to interact
+Join this channel to interact with {agentName}
 Join this channel to start a huddle
 Join this workspace to start working with them on Slack.
 Join when ready.
 Join when you\u2019re ready!
+Join when you\u2019re ready.
 Join whenever you\u2019re ready
 Join without microphone
 Join {name} and Launch Slack
@@ -11029,6 +11040,7 @@ Log out of Tableau Next
 Log users out every {duration} {units}
 Log users out whenever they close the application
 Log your emails
+Log your emails in Salesforce
 Logged out
 Login to Add
 Login to Salesforce
@@ -12349,6 +12361,7 @@ New Jersey
 New List
 New Message
 New Mexico
+New Option
 New Project
 New Salesforce org connected
 New Section
@@ -13256,6 +13269,7 @@ Oct
 October
 Of course you want a name with an emoji. Sadly, it is not to be. Try letters?
 Off
+Offer \u201CShow more\u201D
 Offer available through {formattedDate}
 Offer ends in {daysRemaining, plural, =1 {# day} other {# days}}
 Offer valid for {daysRemaining, plural, =1 {# day} other {# days}}
@@ -13279,6 +13293,7 @@ Older
 Older drafts
 Older result
 Older than {count} days
+Older than {monthCount, plural, =1 {# month} other {# months}}
 Oldest
 Oldest channel
 Oldest file
@@ -13862,6 +13877,7 @@ Organizations need at least 10 people to be shown individually.
 Organize
 Organize contacts and account information in one place
 Organize external conversations into the External Connections section
+Organize external conversations into the External conversations section
 Organize files
 Organize files and tools
 Organize files in this channel
@@ -15624,6 +15640,7 @@ Replace complete
 Replace file
 Replace image
 Replace in document
+Replace mention
 Replace mode enabled
 Replace split view
 Replace the impromptu meetings from your office, with live, voice-first conversations in a channel or direct message. Brainstorm, review work over screen share or just catch up \u2013 all at the flip of a switch.
@@ -15631,6 +15648,7 @@ Replace the impromptu meetings from your office, with live, voice-first conversa
 Replace with a new link
 Replace with a new or existing workflow.
 Replace your saved message with this draft?
+Replaces mention
 Replied
 Replies
 Replies and reactions have been turned off for this thread.
@@ -17851,6 +17869,7 @@ Show thread & transcript
 Show unreads only
 Show up prepared for every meeting
 Show up prepared to every meeting
+Show up to
 Show upcoming reminders
 Show workspace switcher
 Show {count, plural, =1 {# company} other {# companies}}
@@ -19024,6 +19043,7 @@ Steps from third-party apps can use AI-generated content and run without approva
 Steps from third-party apps can use AI-generated content, but require member approval before running.
 Steps from third-party apps can\u2019t use AI-generated content.
 Steps such as sending messages are shown for your approval. Each approval applies only to the action you reviewed.
+Sticker
 Stickers
 Stickers stay on until you remove them.
 Still get notified when VIPs send messages.
@@ -23227,6 +23247,7 @@ When joining a huddle\u2026
 When left idle 
 When members submit requests to install agents to your organization, you\u2019ll see them here.
 When messages are sent
+When off, Slack stops automatically requesting approval for new permissions that already-approved apps add.
 When on, each conversation\u2019s base is its rank among your conversations, so the top one scores 1. When off, the recommendation score is used as-is.
 When on, only users assigned the Slack Access permission set in Salesforce can authenticate.
 When pasting links to places outside Slack, URLs will be shortened.
@@ -24484,6 +24505,7 @@ Your GitHub account doesn\u2019t have permission to merge this pull request.
 Your GitHub account doesn\u2019t have permission to request reviews on this pull request.
 Your GitHub account doesn\u2019t have permission to review this pull request.
 Your Gmail connection doesn\u2019t allow sending yet. Reconnect to send email from Slack.
+Your Gmail is connected. Add your emails to their Salesforce records.
 Your Gmail is connected. Turn on logging to save emails to the matching records.
 Your Google Drive file wasn\u2019t created
 Your Meetings
@@ -24636,6 +24658,8 @@ Your email address isn\u2019t verified. Verify it, then try sending the invites 
 Your email has been verified
 Your email highlights will appear here.
 Your email may have been sent. Check your Gmail Sent folder before trying again.
+Your emails with contacts and leads are logged on their Salesforce records.
+Your emails with contacts and leads are now logged on their Salesforce records.
 Your emails with contacts and leads are now saved to the matching records.
 Your emails with contacts and leads are saved to the matching records.
 Your emails with contacts and leads aren\u2019t logged.
@@ -27981,6 +28005,7 @@ improving
 in
 in office
 in the
+in the key of jazz
 in the last 28 days
 in the last 3 months
 in the last 7 days
