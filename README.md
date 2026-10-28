@@ -40,3 +40,4 @@ If you're looking for a list of all the weird and badly/undocumented API methods
 ## Daily changes feed
 
 `src/feed.mjs` (workflow `feed`) posts one item a day with what was added/removed per category to https://sdmp.izie.top/feed.xml (files live in personal-site under `website/public/__subdomains/slackdatamineplus/`).
+Each item links to its own day (`https://sdmp.izie.top/#2026-10-28`), has a short plain-text `<description>` (counts per category plus any watch-keyword hits, which is what Slack's native RSS bot and reader previews show), the full lists in `<content:encoded>` (with the "…and N more" expanders turned into a link to the site, to keep the feed small), and a `<category>` per category with changes. The feed carries the latest 14 items; the site keeps 90 days. The rendering lives in `src/feed-lib.mjs`.
