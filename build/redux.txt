@@ -884,6 +884,7 @@ action:removeChannelPrefix
 action:removeChannels
 action:removeChannelSectionChannels
 action:removeCodeChannelPullRequest
+action:removeCodeChannelPullRequestComment
 action:removeCollection
 action:removeColumn
 action:removeCommand
@@ -2966,6 +2967,7 @@ action:updateChannelRetentionSettings
 action:updateChannelSectionChannelId
 action:updateChannelShareStatus
 action:updateChannelSlackbotExclusion
+action:updateCodeChannelPullRequestComment
 action:updateCollection
 action:updateCommentsEditError
 action:updateCommentsLoading
@@ -6875,6 +6877,7 @@ thunk:recordAndClearNotification
 thunk:recordAndReloadNotification
 thunk:recordEmojiFrecencyEvent
 thunk:recordExperimentGroupsAsTrace
+thunk:recordFastSocketOpened
 thunk:recordFrecencyEvent
 thunk:recordLastDismissedScrollSearchTooltipTimestamp
 thunk:recordManualSidebarToggle
@@ -6893,6 +6896,7 @@ thunk:recordSalesforceSearchResultEngagement
 thunk:recordSearchAccept
 thunk:recordSingerThreadMessage
 thunk:recordSlackAiInteractions
+thunk:recordSocketOpened
 thunk:recordTrialProBannerInteraction
 thunk:recordUserInteraction
 thunk:recordVisitsByApi
@@ -6927,6 +6931,7 @@ thunk:refreshStraightToPaidTimeLimitOnReconnect
 thunk:refreshUserContextInputIfRequired
 thunk:refreshVisitsListOnConnect
 thunk:refreshVisitsListOnFocus
+thunk:refreshVisitsListOnQuickSwitcherOpen
 thunk:refreshWorkObject
 thunk:refreshWritableCalendarSignal
 thunk:regenerateSearchSummary

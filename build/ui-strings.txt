@@ -1885,6 +1885,7 @@ All admins, via Slackbot
 All agents
 All app types
 All apps
+All automations
 All available fields have been added
 All available workspaces
 All canvases
@@ -2465,6 +2466,8 @@ Approve this app for installation?
 Approve this approval work item
 Approve who can use or request {appName} in workflows. Your choice will apply to the listed workflow options, and it will be the default setting for future {appName} additions.
 Approve { accessibilityLabel }
+Approve {appName} for all workspaces in {orgName}
+Approve {appName} for {workspaceName}
 Approve {connectorName} for workflows
 Approved
 Approved by admin
@@ -2961,7 +2964,6 @@ Available apps
 Available at your first renewal after June 17, 2026
 Available for purchases made via sales rep only.
 Available in bulk action mode
-Available in the Slack Marketplace
 Available on Paid Plans
 Available times
 Available to Slackbot
@@ -3224,6 +3226,9 @@ Browse
 Browse AI agents
 Browse Agents
 Browse Agents and Apps
+Browse All Apps
+Browse All Apps in the Slack Marketplace, opens in your browser
+Browse All Apps that work with Slackbot in the Slack Marketplace, opens in your browser
 Browse Apps
 Browse Channels
 Browse Files
@@ -3582,7 +3587,9 @@ Cancel and don\u2019t use template
 Cancel connection request
 Cancel inline edit settings
 Cancel recording
+Cancel request
 Cancel schedule and save to drafts
+Cancel this app request
 Cancel this app request?
 Cancel this connection request?
 Cancel upload
@@ -4542,6 +4549,7 @@ Command suggestions collapsed
 Commands
 Comment
 Comment added
+Comment deleted
 Comment on GitHub\u2026
 Comment on selection
 Comment on this section
@@ -4553,6 +4561,7 @@ Comment only
 Comment posted
 Comment toolbar hidden
 Comment toolbar visible
+Comment updated
 Comments
 Comments added to canvases
 Comments added to lists
@@ -4740,6 +4749,8 @@ Connect with external partners
 Connect with external partners in a shared channel.
 Connect your AI tools
 Connect your GitHub account to comment.
+Connect your GitHub account to delete this comment.
+Connect your GitHub account to edit this comment.
 Connect your GitHub account to merge this pull request.
 Connect your GitHub account to request reviews.
 Connect your GitHub account to submit a review.
@@ -4756,7 +4767,6 @@ Connect your account to view and review pull requests from this channel.
 Connect your accounts to see even more information in Slack search results. Anything you can find there, you\u2019ll be able to find here, too. The below have been approved by your administrator.
 Connect your accounts to use them with Slackbot. The below have been approved by your administrator.
 Connect your apps
-Connect your apps and the web to get better answers.
 Connect your apps to Slackbot
 Connect your apps to use it without leaving Slack.
 Connect your calendar
@@ -4827,6 +4837,7 @@ Connection
 Connection & authentication
 Connection details
 Connection error
+Connection expired
 Connection expired. Reconnect to keep using it.
 Connection failed
 Connection failed. Please try again.
@@ -4840,6 +4851,7 @@ Connection request status
 Connection status
 Connection updated! Next, migrate your users
 Connections
+Connector
 Connector Approval Needed
 Connector sources
 Connector sources are blocked.
@@ -5207,6 +5219,7 @@ Couldn\u2019t ask Slackbot. Your message is still here.
 Couldn\u2019t assign role.
 Couldn\u2019t attach file
 Couldn\u2019t attach that meeting. Try again.
+Couldn\u2019t cancel this request. Try again in a moment.
 Couldn\u2019t capture your computer\u2019s audio. Please try again.
 Couldn\u2019t check verification status. Try again.
 Couldn\u2019t clear the saved item. The item couldn\u2019t be found.
@@ -5229,6 +5242,7 @@ Couldn\u2019t create the project. Try again.
 Couldn\u2019t create {channel}.
 Couldn\u2019t delete profile for {possessiveTargetName} account
 Couldn\u2019t delete this version.
+Couldn\u2019t deny {appName}. Try again in a moment.
 Couldn\u2019t disable {name}. Try again.
 Couldn\u2019t disconnect {name}. Try again.
 Couldn\u2019t display as a diagram. Check the code for syntax errors.
@@ -5766,15 +5780,18 @@ Daily Briefing
 Daily Priorities
 Daily actions taken
 Daily active people
+Daily at end of day
 Daily at {time} {timezone}
 Daily between {startTime} and {endTime} {timezone}
 Daily briefing
+Daily in the afternoon
 Daily priorities
 Daily reads
 Daily recaps
 Daily recaps for your whole organization
 Daily schedule overview
 Daily tools
+Daily wrap
 Daily/Weekly Briefing
 Dang
 Danger (red)
@@ -5962,7 +5979,6 @@ Delete AI Notes & Transcript
 Delete AI notes
 Delete AI notes & transcript
 Delete AI notes?
-Delete Block
 Delete Canvas and Transcript
 Delete Channel
 Delete Clip
@@ -5997,6 +6013,7 @@ Delete child object
 Delete clip
 Delete clip?
 Delete comment
+Delete comment?
 Delete comment\u2026
 Delete condition
 Delete condition group
@@ -6134,6 +6151,7 @@ Deny invitation request?
 Deny localization request
 Deny request
 Deny request?
+Deny {appName}
 Deny {connectorName} for workflows
 Department
 Depending on the number of invitation requests, approvals may take some time.
@@ -7076,6 +7094,7 @@ Enable email imports to this workspace
 Enable enterprise search
 Enable enterprise search for the entire organization
 Enable external file thumbnail previews for:
+Enable for Slackbot
 Enable group
 Enable in conversations
 Enable invitations to new channels to be automatically accepted
@@ -8185,6 +8204,7 @@ Follow opportunities through the sales cycle
 Follow thread
 Follow up
 Follow up on a meeting
+Follow up reminder
 Follow up with Slackbot on suggested focus areas
 Follow up with Slackbot on these focus areas to help you get your day started.
 Follow up with Slackbot on these focus areas to help you prep for tomorrow.
@@ -9901,7 +9921,6 @@ Installed agent results
 Installed agents
 Installed in #{channelName}
 Installed on
-Installed. Connect your account to use it.
 Installing {appName} could take a few moments to complete. You will receive a message from Slackbot when it is finished.
 Installing {name}, opens in your browser
 Instantly connect over audio or video
@@ -11972,6 +11991,7 @@ More about how it works
 More about this app
 More about {appName}
 More actions
+More actions for comment by {author}
 More actions for skill set
 More actions for {agentName}
 More actions for {buttonName} button
@@ -12449,6 +12469,7 @@ New keyword mention in {channelName}: {message}
 New keyword mention in {channelName}: {message} At {time}.
 New keyword mention in {channelName}: {message} {date} at {time}.
 New lead
+New line inserted
 New list
 New mention from {name} in thread in {channelName}, at {time}: {message}
 New mention from {name} in thread in {channelName}, {date} at {time}: {message}
@@ -12667,7 +12688,7 @@ No apps connected yet.
 No apps found
 No apps here yet.
 No apps in this filter match your search.
-No apps match \u201C{query}\u201D.
+No apps match \u201C{query}\u201D. Try the Slack Marketplace for more.
 No apps match your search.
 No artifacts available to you
 No artifacts found
@@ -12961,6 +12982,7 @@ No vote from you
 No workflows found.
 No workflows or apps are available in this workspace.
 No workflows yet
+No workflows, tasks or apps are available in this workspace.
 No workspace found
 No workspaces
 No workspaces added
@@ -14517,7 +14539,7 @@ Posting to *{channel_name}* has been restricted to select members.
 Posts
 Potential sales opportunities you\u2019ve converted from qualified leads.
 Potential spam activity
-Power Slackbot with your apps and tools
+Power Slack with your apps
 Power Slackbot with your tools
 Power source
 Power up productivity with AI in Slack
@@ -15124,6 +15146,7 @@ Recommended for you
 Recommended integrations for skill
 Recommended skills
 Recommended skills for you
+Recommended tasks
 Reconnect
 Reconnect Gmail to send email
 Reconnect account
@@ -16391,6 +16414,7 @@ Saving 'Match any' filters is not supported
 Saving Changes\u2026
 Saving changes
 Saving changes\u2026
+Saving comment
 Saving failed
 Saving project
 Saving project memory
@@ -16564,6 +16588,7 @@ Search channels
 Search channels at {teamName}
 Search cleared
 Search code channels
+Search connectors
 Search contacts
 Search conversations
 Search current conversation
@@ -16652,6 +16677,7 @@ Search in {channelName}
 Search index of Customer Data
 Search is broken
 Search is missing a feature
+Search isn\u2019t available in this view. Use Filters to browse templates.
 Search isn\u2019t available in this view. Use the filters below to browse templates.
 Search keyboard shortcuts
 Search list
@@ -16796,7 +16822,6 @@ See Teams Calls information in search results
 See Upgrade Options
 See all
 See all Plan Benefits
-See all Slackbot supported apps
 See all activity
 See all apps
 See all conversations
@@ -18143,6 +18168,7 @@ Slack can only handle letters, numbers, spaces, and dashes here, with up to 80 c
 Slack can only keep messages for up to 99 years, but thanks for your vote of confidence.
 Slack can show up to {maxRecords} records in search, so there might be records that match your search but aren\u2019t shown here.
 Slack can use my message history and any connected calendars to create Salesforce records
+Slack can use them to find answers and get work done for you.
 Slack channel
 Slack channel ID
 Slack collects and uses these categories of personal information to operate our Services and business, including:
@@ -18337,7 +18363,6 @@ Slackbot skill
 Slackbot skills aren\u2019t available in this workspace, so this skill can\u2019t be added.
 Slackbot skills created
 Slackbot skills used
-Slackbot supported apps
 Slackbot teaser
 Slackbot uses this context across conversations in the project and may update it automatically each week.
 Slackbot uses this description to determine when to run this skill.
@@ -20041,6 +20066,7 @@ There was a problem converting the canvas to template. Try again in a few minute
 There was a problem converting the list to template.
 There was a problem creating new integration
 There was a problem creating your Google Drive file. Give it another try in a few minutes.
+There was a problem deleting this comment. Give it another try.
 There was a problem disconnecting your Salesforce organization
 There was a problem giving you edit access. Give it another try in a few minutes.
 There was a problem joining \u201C{channel_name}\u201D, sorry!
@@ -20084,6 +20110,7 @@ There was a problem saving changes. Give it another try in a few minutes.
 There was a problem saving mappings
 There was a problem saving new mappings
 There was a problem saving these changes. Give it another try in a few minutes.
+There was a problem saving this comment. Give it another try.
 There was a problem saving this notification. Please try again.
 There was a problem saving this record to Salesforce
 There was a problem saving this record to Salesforce.
@@ -20150,7 +20177,6 @@ There\u2019s no activity to show yet.
 There\u2019s one for every emotion
 These accounts have been deactivated.
 These appear as a banner on your desktop or mobile device.
-These apps work with Slackbot and connect through MCP.
 These are channels you share with {connectedTeamIds} teams
 These are channels you share with {connectedTeamName}
 These are defined in the {triggerName} workflow trigger. You can map variables from the parent workflow to these inputs.
@@ -20268,6 +20294,7 @@ This agent is not in the {workspace_name} workspace. Contact a Slack Admin to re
 This agent is temporarily unavailable, but should be back online soon.
 This agent is unavailable
 This agent is unavailable. Contact a Slack Admin to learn more.
+This also deletes the comment on GitHub. This can\u2019t be undone.
 This answer content is no longer valid. Try generating a new answer.
 This answer is no longer available to share.
 This app
@@ -20362,6 +20389,7 @@ This clip can\u2019t be displayed
 This clip can\u2019t be edited
 This clip isn\u2019t available
 This command is not available in this channel
+This comment no longer exists on GitHub.
 This condition has missing fields.
 This configuration couldn\u2019t be saved. Looks like there was an issue with the previous step. Please review and try again.
 This connection expired.
@@ -21205,6 +21233,7 @@ Top things to check out
 Top updated opportunities
 Top wins
 Topic
+Topic tracker
 Total
 Total AI usage
 Total Amount
@@ -21312,6 +21341,7 @@ Translated,
 Translated.
 Translating message\u2026
 Translating\u2026
+Translation
 Translation Completed
 Translation In Progress
 Translation Requested
@@ -23040,8 +23070,10 @@ Weekdays (skip weekends)
 Weekend mode? I\u2019m still here
 Weekly
 Weekly active people
+Weekly on Fridays
 Weekly on {dayOfWeek}
 Weekly on {dayOfWeek}s
+Weekly recap
 Weekly stats hidden
 Weekly stats shown
 Weekly support digest
@@ -23607,6 +23639,7 @@ Working with another company?
 Working with partners and vendors
 Working with someone who isn\u2019t here yet? Bring them in.
 Working\u2026
+Works with Slackbot
 Workspace
 Workspace Add Members Table
 Workspace Admin
@@ -24532,6 +24565,8 @@ Your GST/HST ID should have 15 characters: 9 numbers, the letters RT and then fo
 Your GSTIN ID can\u2019t contain special characters.
 Your GSTIN ID should have 15 characters
 Your GitHub account doesn\u2019t have permission to comment on this pull request.
+Your GitHub account doesn\u2019t have permission to delete this comment.
+Your GitHub account doesn\u2019t have permission to edit this comment.
 Your GitHub account doesn\u2019t have permission to merge this pull request.
 Your GitHub account doesn\u2019t have permission to request reviews on this pull request.
 Your GitHub account doesn\u2019t have permission to review this pull request.
@@ -31604,6 +31639,8 @@ zzz
 {basePolicy}, {lockedText}
 {bg_color} highlight
 {blockName}, {blockType}
+{blockType} \u2014 {language} block
+{block} inserted
 {block} selected
 {boost} weight
 {branchCount, plural, =1 {# branch} other {# branches}}
@@ -32486,6 +32523,7 @@ zzz
 {name} installed
 {name} installed. Connect your account to finish.
 {name} is already a member of this channel.
+{name} is already in this workspace. Switched to a direct message.
 {name} is already in {count, plural, one {that channel} other {those channels}}.
 {name} is already installed for your team.
 {name} is already taken by a channel, username, or user group.

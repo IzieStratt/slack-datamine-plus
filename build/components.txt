@@ -493,6 +493,7 @@ AgentPromptButton
 AgentPromptCollapsedBody
 AgentRowPrimaryButton
 AgentSalesforceOrg
+AgentsAndToolsSection
 AgentsAppsTab
 AgentsBanner
 AgentScopeGroupItem
@@ -539,6 +540,7 @@ AgentTrayPeekSession
 AgentTrayPeekView
 AgentTrayPickerMenu
 AgentTrayRowMenu
+AgentTraySessionsButton
 AgentTrayTile
 AgentTrayToolbar
 AgentUninstallModal
@@ -835,6 +837,7 @@ AppsGalleryLoading
 AppsGalleryNoResults
 AppsGalleryPagination
 AppsIndexTeamPicker
+AppsList
 AppsListActionBar
 AppSpaceProfileDescription
 AppSpaceProfileInfo
@@ -844,6 +847,7 @@ AppSpaceSlashCommand
 AppSpaceSlashCommands
 AppSpaceView
 AppSpaceWrapper
+AppsSection
 AppsTableCell
 AppsTrialAwarenessBanner
 AppSuggestionRowElement
@@ -1029,6 +1033,7 @@ AutomationGroupRow
 AutomationsHeaderActions
 AutomationsItem
 AutomationsList
+AutomationsPane
 AutomationsPeekTrigger
 AutomationsPeekView
 AutomationsPeekViewTabs
@@ -1213,6 +1218,7 @@ BaseDefaultOnNuxSidebarSetupSpaceHeader
 BaseDeleteChannelEmailAddressModal
 BaseDeleteMessageAttachmentDialog
 BaseDeleteMessageDialog
+BaseDeleteMessageErrorDialog
 BaseDeprecatedOnboardingPeopleBrowser
 BaseDetailsPane
 BaseDictationButton
@@ -1313,6 +1319,7 @@ BaseListEntity
 BaseListErrorState
 BaseListIcon
 BaseListRecordDetailAddCommentButton
+BaseListRecordDetailCopyLinkButton
 BaseListRecordStaticEntity
 BaseLoadingModal
 BaseLogActivityView
@@ -1641,6 +1648,7 @@ BrowsePageResults
 BrowsePageUserGroup
 BrowsePane
 BrowsePaneHeaderActions
+BrowsePaneTabs
 BrowsePeekMenu
 BrowsePeekMenuItemContainer
 BrowsePeekTrigger
@@ -1867,6 +1875,7 @@ CanvasMermaidPreview
 CanvasMermaidViewerModal
 CanvasMessageUnfurl
 CanvasNotes
+CanvasOpaqueBlockCardProvider
 CanvasOrFileSidebarContextMenu
 CanvasOrListDisplayName
 CanvasOverflowActions
@@ -1942,6 +1951,7 @@ Card
 CardAction
 CardActionOverflow
 CardActions
+CardBody
 CardButtonOptionRenderer
 CardColumn
 CardContainer
@@ -2440,6 +2450,7 @@ Comment
 CommentActions
 CommentAvatar
 CommentBody
+CommentComposerFrame
 CommentGutter
 CommentGutterTip
 CommentListToggle
@@ -3104,7 +3115,6 @@ DeleteFilterMenuItemComponent
 DeleteItemMenuItem
 DeleteMcpServerListModal
 DeleteMemoryConfirmationModal
-DeleteMessageErrorDialog
 DeleteMetricModal
 DeleteOlderDraftsModal
 DeleteRecordModal
@@ -3484,6 +3494,7 @@ EditProfileSectionModal
 EditProfileSelectPhotoPane
 EditProfileUploadButton
 EditProfileUploadIconButton
+EditProfileUploadInput
 EditProfileUploadPane
 EditProfileUploadPreview
 EditRecordActionsMenu
@@ -3828,6 +3839,7 @@ ExplorerGridWorkflowTemplate
 ExplorerHeader
 ExplorerHeroTitle
 ExplorerLoadMoreButton
+ExplorerResults
 ExplorerRowItem
 ExplorerRowsList
 ExplorerSearch
@@ -4680,7 +4692,11 @@ GitHubAuthPrompt
 GithubMarkdownLink
 GithubMarkdownTable
 GitHubPrComment
+GitHubPrCommentActions
 GitHubPrCommentBody
+GitHubPrCommentContent
+GitHubPrCommentDeleteDialog
+GitHubPrCommentEditor
 GlobalClassNameImpl
 GlobalCreateCoachmark
 GlobalCreateMenuPopover
@@ -5195,7 +5211,6 @@ IconCompletePane
 IconContainer
 IconCropPane
 iconElement
-iconForBlockType
 IconForFormat
 IconImg
 IconIntroModal
@@ -5579,6 +5594,7 @@ LeaveChannelsToast
 LeaveChannelsZeroState
 LeavingPrivateChannelsSpeedBump
 LeftGutterDisplayViewInner
+LegacyAutomationsPane
 LegacyBadge
 LegacyContainerIdContext
 LegacyContainerIdProvider
@@ -5707,7 +5723,6 @@ ListRecordDetailActionsFooter
 ListRecordDetailArchiveFooter
 ListRecordDetailArchiveHeaderContent
 ListRecordDetailContent
-ListRecordDetailCopyLinkButton
 ListRecordDetailFieldDragger
 ListRecordDetailFooter
 ListRecordDetailFooterToolbar
@@ -6946,7 +6961,6 @@ OooMpdmMessage
 OooMpdmTooltip
 OooProfileLink
 OpacitySlider
-OpaqueBlockChip
 OpaqueBlockDragHandle
 OpaqueBlockHoverPreview
 OpaqueBlockPortal
@@ -7298,6 +7312,7 @@ PollMessageFile
 PolymorphicTriggerFilterField
 Popover
 PopoverRowActions
+PopoverWrapper
 PopularCategorySkeleton
 PopularCategorySkeletonList
 PopularContentSkeleton
@@ -7701,6 +7716,8 @@ RecipientsSelect
 RecommendationPromptRow
 RecommendationsSlide
 Recommended
+RecommendedTaskCard
+RecommendedTasks
 ReconnectToast
 RecordActionsMenu
 RecordBreadcrumb
@@ -8169,6 +8186,7 @@ renderLinkOrSpinner
 renderLinkOrText
 renderList
 renderListEditPostfix
+renderListEnd
 renderListItems
 renderLoader
 renderLoading
@@ -10915,6 +10933,7 @@ UnfurlHovercard
 UnfurlsLimitWarning
 UnfurlText
 unfurlTransform
+UnifiedAutomationsPane
 UnifiedDirectoryRowElement
 UnifiedFilePicker
 UnifiedFilePickerCoachmark
@@ -11333,6 +11352,7 @@ useTabSchemaToTabItems
 useTabsItemPropsBuilder
 useTabsOverflowMenuRenderer
 useTabViewRenderer
+useTaskTemplateKickoff
 UseTemplateButton
 useTemplateEditing
 useTemplateSettingsModal
@@ -11351,6 +11371,8 @@ useVerifyEmailToAccept
 useViewBreadcrumbIcon
 useWarningBannerAlertText
 useWidgetActionsBar
+useWorkflowsCreateMenuTemplate
+useWorkflowsMoreActionsMenuTemplate
 useWorkflowViewReadOnlyCondition
 useWorkObjectContextMenuItems
 useWorkspacesButton
@@ -11679,6 +11701,7 @@ WorkflowsInFolderAlert
 WorkflowsMoreActionsMenu
 WorkflowsPeek
 WorkflowsPreview
+WorkflowsSection
 WorkflowsSectionList
 WorkflowsTabAiStepEduBanner
 WorkflowsTabConditionalsEduBanner
@@ -11843,6 +11866,7 @@ WorkspacesList
 WorkspacesSidePaneContainer
 WorkspacesSidePanel
 WorkspacesSidePanelList
+WorkspaceStateProviderComponent
 WorkspacesView
 WorkspaceSwitcherMenu
 WorkspaceSwitcherToggleButton

@@ -30,6 +30,7 @@
   "byName:getLastMessageByMember",
   "byName:isInputRegistered",
   "byName:isThreadViewContext",
+  "byName:legacy_createStore",
   "byName:x",
   "component:ActivityRowContentSenderAvatarLayout",
   "component:AttachmentMedia",
@@ -206,8 +207,8 @@
     "class"
    ],
    "modules": [
-    "KQpq:a7b13ed5",
-    "KQpq:de7dec79",
+    "KQpq:0deebc30",
+    "KQpq:da6fcdd8",
     "u1Mm:0cb377fd"
    ]
   },
@@ -408,6 +409,16 @@
     "fILv:cce57361"
    ]
   },
+  "byName:legacy_createStore": {
+   "forms": [
+    "function"
+   ],
+   "modules": [
+    "9Tf0:47f2259a",
+    "9Tf0:51ec7a6c",
+    "9Tf0:6809ec91"
+   ]
+  },
   "byName:x": {
    "forms": [
     "arrow",
@@ -473,8 +484,8 @@
     "displayName"
    ],
    "modules": [
-    "B5yZ:fc2ef63e",
-    "J0bt:7b94ba7d"
+    "B5yZ:a965f792",
+    "J0bt:2486851f"
    ]
   },
   "component:BaseMessageSender": {
@@ -553,7 +564,7 @@
     "displayName"
    ],
    "modules": [
-    "J0bt:7b94ba7d"
+    "J0bt:2486851f"
    ]
   },
   "component:HuddleBaseEvent": {
@@ -660,8 +671,8 @@
     "displayName"
    ],
    "modules": [
-    "B5yZ:fc2ef63e",
-    "J0bt:7b94ba7d"
+    "B5yZ:a965f792",
+    "J0bt:2486851f"
    ]
   },
   "component:MessageBackground": {
@@ -692,8 +703,8 @@
     "displayName"
    ],
    "modules": [
-    "/WSU:c5db6824",
-    "fqr4:e78e6af3"
+    "/WSU:4b46f5d6",
+    "fqr4:d84d21a7"
    ]
   },
   "component:MessageInputRoadblock": {
@@ -797,8 +808,8 @@
     "displayName"
    ],
    "modules": [
-    "5FBJ:29ef8dbc",
-    "bmRm:b46a188e"
+    "5FBJ:2b26e211",
+    "bmRm:f945de97"
    ]
   },
   "component:ShortcutsMenuTriggerButton": {
@@ -806,8 +817,8 @@
     "displayName"
    ],
    "modules": [
-    "B5yZ:fc2ef63e",
-    "J0bt:7b94ba7d"
+    "B5yZ:a965f792",
+    "J0bt:2486851f"
    ]
   },
   "component:TextyButtonOverflow": {
@@ -836,8 +847,8 @@
     "function"
    ],
    "modules": [
-    "5FBJ:29ef8dbc",
-    "bmRm:b46a188e"
+    "5FBJ:2b26e211",
+    "bmRm:f945de97"
    ]
   },
   "component:ThreadSenderAndTimestampGeneric": {
@@ -925,8 +936,8 @@
     "function"
    ],
    "modules": [
-    "4MJD:118ac5c0",
-    "F6w4:806068f3"
+    "HaRt:49e80916",
+    "i5Pv:c468d782"
    ]
   },
   "rtm:message": {
@@ -944,8 +955,8 @@
     "string"
    ],
    "modules": [
-    "B5yZ:fc2ef63e",
-    "J0bt:7b94ba7d"
+    "B5yZ:a965f792",
+    "J0bt:2486851f"
    ]
   },
   "thunk:addAndUploadPendingFile": {
@@ -1015,7 +1026,7 @@
    "modules": [
     "8brc:f82cf730",
     "E1ec:fb7e5b1d",
-    "sfJQ:6676f46e"
+    "sfJQ:af6cfc2c"
    ]
   },
   "thunk:commitMessageEdit": {
@@ -1044,7 +1055,7 @@
    "modules": [
     "7x8M:5b99446a",
     "ez9s:9f877909",
-    "sfJQ:6676f46e"
+    "sfJQ:af6cfc2c"
    ]
   },
   "thunk:displayAlertMessage": {
@@ -1092,9 +1103,9 @@
     "meta"
    ],
    "modules": [
-    "W3+L:7f341d4a",
-    "Xd99:54c9c973",
-    "hoD1:94f499f4"
+    "W3+L:2455acc8",
+    "Xd99:69efb968",
+    "hoD1:33f40cdd"
    ]
   },
   "thunk:fetchRawChannelsById": {
@@ -1102,9 +1113,9 @@
     "meta"
    ],
    "modules": [
-    "W3+L:7f341d4a",
-    "Xd99:54c9c973",
-    "hoD1:94f499f4"
+    "W3+L:2455acc8",
+    "Xd99:69efb968",
+    "hoD1:33f40cdd"
    ]
   },
   "thunk:getChannelMembershipInfoForUsers": {
@@ -1122,9 +1133,9 @@
     "meta"
    ],
    "modules": [
-    "B5yZ:fc2ef63e",
+    "B5yZ:a965f792",
     "IimM:1fe75854",
-    "J0bt:7b94ba7d"
+    "J0bt:2486851f"
    ]
   },
   "thunk:getMemberContextMenuTemplate": {
@@ -1152,7 +1163,7 @@
     "meta"
    ],
    "modules": [
-    "J0bt:7b94ba7d",
+    "J0bt:2486851f",
     "hiXg:d6ede838"
    ]
   },
@@ -1249,7 +1260,7 @@
    "modules": [
     "AUNZ:37c3178a",
     "WA5Y:32ae26e0",
-    "v6QQ:867ce9e8"
+    "v6QQ:169c4083"
    ]
   },
   "thunk:setUserPrefByApi": {
