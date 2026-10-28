@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { SEARCH_CSS, pills, searchHtml } from './ui.mjs';
+import { esc, itemSlug, renderRss } from './feed-lib.mjs';
 
 const [site, url] = process.argv.slice(2, 4);
 if (!site || !url) { console.error('usage: feed.mjs <site-dir> <site-url> [--since ref]'); process.exit(1); }
@@ -15,7 +16,6 @@ const sinceArg = process.argv.indexOf('--since') > -1 ? process.argv[process.arg
 const linkBase = process.argv.indexOf('--link') > -1 ? process.argv[process.argv.indexOf('--link') + 1] : url;
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] }).trim();
 const show = (ref, f) => { try { return git('show', `${ref}:${f}`); } catch { return null; } };
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const WATCH = new RegExp(fs.readFileSync(new URL('./watch-keywords.txt', import.meta.url), 'utf8').split('\n').filter((l) => l && !l.startsWith('#')).join('|'), 'i');
 const CAP = 25; // shown up front; the rest sits in an expander
 
@@ -107,22 +107,24 @@ const cutoff = new Date(Date.now() - 90 * 864e5).toISOString().slice(0, 10);
 const kept = items.filter((i) => i.date >= cutoff);
 fs.mkdirSync(site, { recursive: true });
 fs.writeFileSync(itemsFile, JSON.stringify(kept, null, 1) + '\n');
-const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel><title>slack-datamine-plus daily changes</title><link>${esc(linkBase)}</link><description>Daily summary of what changed in Slack's web client bundle.</description>
-${kept.map((i) => `<item><title>${esc(i.title)}</title><guid isPermaLink="false">${esc(i.id)}</guid><link>${esc(linkBase)}</link><pubDate>${new Date(i.date + 'T06:30:00Z').toUTCString()}</pubDate><description>${esc(i.html)}</description></item>`).join('\n')}
-</channel></rss>
-`;
+const rss = renderRss(kept, { linkBase });
 fs.writeFileSync(path.join(site, 'feed.xml'), rss);
 // uses the site's own stylesheet and theme script (dark mode toggle) from the root of *.izie.top; links reuse its pill `nav a` style.
 // icons.html is linked as /icons: the site serves .html files without the extension and 307s the long form
 const has = (f) => fs.existsSync(path.join(site, f));
-const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons', 'Slack icons']] : []), ...(has('icons.pdf') ? [['icons.pdf', 'Icons (PDF)']] : []), ...(has('icons-diff.pdf') ? [['icons-diff.pdf', 'Icon changes (PDF)']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
+const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons', 'Slack icons']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
 fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>slack-datamine-plus changes</title>
+    <meta name="description" content="Daily summary of what changed in Slack's web client bundle: new and removed API methods, components, errors, experiments and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="slack-datamine-plus changes">
+    <meta property="og:description" content="Daily summary of what changed in Slack's web client bundle: new and removed API methods, components, errors, experiments and more.">
+    <meta property="og:url" content="${esc(linkBase)}/">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="alternate" type="application/rss+xml" href="feed.xml">
     <link rel="stylesheet" href="/style.css">
@@ -146,7 +148,7 @@ fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
       ${pills(links)}
       ${searchHtml('Search every change: a name, a category, a day (press /)', 'Search changes')}
       ${freshPanel(kept[0])}
-${kept.map((i) => `      <section class="item"><h2>${esc(i.title)}</h2>\n${i.html}</section>`).join('\n')}
+${kept.map((i) => `      <section class="item" id="${esc(itemSlug(i))}"><h2>${esc(i.title)}</h2>\n${i.html}</section>`).join('\n')}
     </main>
     <script>
       // Search over every listed value, built to stay quick on a page with tens of thousands of rows:
