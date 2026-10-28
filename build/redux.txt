@@ -513,6 +513,7 @@ action:disconnectHuddlesFromMediaServer
 action:disconnectOrgExternalMember
 action:disconnectPendingFileFromDraft
 action:disconnectPendingFileFromMessage
+action:dismissAssistiveSummaryInline
 action:dismissBadge
 action:dismissDetectedMeeting
 action:dismissJitEvent
@@ -1031,6 +1032,7 @@ action:removeTimestamp
 action:removeTodayItems
 action:removeTriggerById
 action:removeTriggerPreviewById
+action:removeUnjoinedChannelMentions
 action:removeUnreadAgentCanvas
 action:removeUserFromPagination
 action:removeUserFromUserSearchResults
@@ -1982,6 +1984,7 @@ action:setJpPocketGuidePopoverOpen
 action:setJson
 action:setKeepAliveAudio
 action:setKnockingUsers
+action:setKnockToEnterAlreadyInHuddle
 action:setKnockToEnterCredentials
 action:setKnockToEnterHuddleHasStarted
 action:setKnockToEnterRequestAccepted
@@ -3332,6 +3335,7 @@ action:upsertTriggerCategoriesAvailableForWorkflowBuilder
 action:upsertTriggerPreviews
 action:upsertTriggers
 action:upsertTriggersAvailableForWorkflowBuilder
+action:upsertUnjoinedChannelMentions
 action:upsertUserGroupMembership
 action:upsertUserInsightsInfo
 action:upsertView
@@ -5076,6 +5080,7 @@ thunk:fetchTemplatesByIds
 thunk:fetchTodayItems
 thunk:fetchTrialInfo
 thunk:fetchTrialUsage
+thunk:fetchUnjoinedChannelMentions
 thunk:fetchUnknownListFiles
 thunk:fetchUnreadAgentCanvases
 thunk:fetchUserAuth
@@ -6289,7 +6294,6 @@ thunk:openChannelExpertConfigCircularHandler
 thunk:openChannelExpertConfigModal
 thunk:openChannelExpertSettingsModal
 thunk:openChannelExpertSettingsModalCircularHandler
-thunk:openChannelInputPlaceholderDialog
 thunk:openChannelInviteModal
 thunk:openChannelNotificationPrefsModal
 thunk:openChannelNotificationPrefsModalCircularHandler
@@ -6910,6 +6914,7 @@ thunk:recordWssRailVisibility
 thunk:recoverEmptyCalendarWindow
 thunk:recoverSalesforceFieldNamesForMessage
 thunk:redactAiResponse
+thunk:redirectExternalGuestToExitPage
 thunk:redirectExternalGuestToUnavailableExitPage
 thunk:redirectToGeneralChannel
 thunk:redo
@@ -7340,7 +7345,6 @@ thunk:setChannelNotificationsShortcut
 thunk:setChannelPrefsByAPIAndUpdateStore
 thunk:setChannelPropertiesAutoOpenTabId
 thunk:setChannelPropertiesCanvasFileId
-thunk:setChannelPropertiesInputPlaceholder
 thunk:setChannelPropertiesMuteCanvasTabUpdates
 thunk:setChannelPropertiesMuteCanvasUpdates
 thunk:setChannelPropertiesMuteFolderUpdates
@@ -7491,6 +7495,7 @@ thunk:setSidebarExtraWideColumn
 thunk:setSidebarLaterColumn
 thunk:setSidebarWideColumn
 thunk:setSlackbotAiNuxState
+thunk:setSlackbotExcludedFromChannel
 thunk:setSlackbotMcpServers
 thunk:setSlackbotMiniKeyboardShortcut
 thunk:setSlackbotMiniNuxImpressionCount

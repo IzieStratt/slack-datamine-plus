@@ -419,10 +419,21 @@ AgentCheckingDetailsLoader
 AgentConversationSectionHeader
 AgentCountButton
 AgentCreatedBy
+AgentDmDetailsActivity
+AgentDmDetailsContent
+AgentDmDetailsHeader
+AgentDmDetailsManageSettingsButton
+AgentDmDetailsSections
+AgentDmDetailsSettings
+AgentDmForeword
 AgentDmPeekSection
 AgentDmPeekSessionRow
 AgentDmPeekTrigger
 AgentDmPeekView
+AgentDmSessionsIndicator
+AgentDmSessionsIndicatorBody
+AgentDmSessionsSection
+AgentDmSessionsSectionRow
 AgentDmWelcomeHeader
 AgentElement
 AgentExchangeGridItem
@@ -523,7 +534,6 @@ AgentsSelect
 AgentsTab
 AgentStatus
 AgentStatusIcon
-AgentSuggestionButton
 AgentSunroof
 AgentSunroofCustomizationMenu
 AgentSunroofCustomizationMenuItem
@@ -613,7 +623,6 @@ AiSuggestedItemRow
 AiSuggestedItems
 AiSummaryDescription
 AiSummaryDetails
-AiSummaryDetailsErrorState
 AiSummaryDetailsLoadingState
 AiSummaryDetailsSectionTypingEffect
 AiSummaryDetailsView
@@ -734,6 +743,7 @@ AppConfigurationBanner
 AppConnectionRowActions
 AppConnectionStatusTag
 AppContent
+AppDetail
 AppDetails
 AppDetailsActionButton
 AppDetailsDescription
@@ -766,6 +776,7 @@ AppHomeRestricted
 AppHomeTabView
 AppHomeTabViewBase
 AppHoverCard
+AppIcon
 AppInfo
 AppItem
 AppJoinToView
@@ -1119,6 +1130,7 @@ BaseAgentTaskModal
 BaseAiFeedbackButton
 BaseAiFeedbackButtonGroup
 BaseAiSamplingChannelSummaryContextualNudge
+BaseAiSummaryDetailsErrorState
 BaseAllUnreadsSectionFilter
 BaseAllUnreadsSortMenu
 BaseAnalyticsApps
@@ -1270,6 +1282,7 @@ BaseExternalDirectoryContent
 BaseExternalDirectoryContentError
 BaseExternalLimitedInviteTeammatesModal
 BaseFeatureTrialDownmarketCrmSidebarMenuHeaderBanner
+BaseFeedbackSummaryButtons
 BaseFeedbackSummaryRatingButton
 BaseField
 BaseFieldEmptyHoverableValue
@@ -1475,6 +1488,7 @@ BaseSlackbotChannelSettingApps
 BaseSlackbotChannelSettingGeneral
 BaseSlackbotChannelSettingMemory
 BaseSlackbotChannelSettingSkills
+BaseSlackbotChannelSettingStatus
 BaseSlackbotSidebarArtifactItem
 BaseSlackbotSidebarHeaderControls
 BaseSlackbotSidebarThreadItem
@@ -2060,6 +2074,7 @@ ChannelExpertSettingsWhoCanManage
 ChannelExpertSourceCapacity
 ChannelExpertSourceFile
 ChannelExpertTabbedContent
+ChannelFacepile
 ChannelForeword
 ChannelForewordButtons
 ChannelForewordCard
@@ -2079,8 +2094,6 @@ ChannelHuddlesCard
 ChannelHuddlesCardSettingsModal
 ChannelIcon
 ChannelInfo
-ChannelInputPlaceholderDialog
-ChannelInputPlaceholderField
 ChannelInsightsErrorBanner
 ChannelInsightsModal
 ChannelInviteAddButton
@@ -2415,7 +2428,6 @@ CodeChannelReviewComment
 CodeChannelReviewMessage
 CodeChannelReviewRequestMessage
 CodeChannelReviewRequestSummary
-CodeChannelSectionHeader
 CodeChannelShowMoreRow
 CodeChannelStatusPrefixIcon
 CodeChannelSummarySkeleton
@@ -2691,6 +2703,7 @@ ConnectedTrialExpirationModal
 ConnectedTrialPlanCard
 ConnectedTrialSidebarLink
 ConnectedTrialSidebarLinkForHeader
+ConnectedUnjoinedMentionRow
 ConnectedUpdateCanvasTreatment
 ConnectedUpdateCanvasV2Treatment
 ConnectedUpdateCanvasVariablesTreatment
@@ -2826,8 +2839,6 @@ ConvertLeadErrorAlert
 ConvertLeadModal
 ConvertLeadRecordBanner
 ConvertLeadRecordCard
-ConvertMpimToPrivateChannelModal
-ConvertMpimToPrivateChannelModalContents
 ConvertToLimitedModal
 ConvertToLimitedModalContents
 ConvertToPrivateModal
@@ -3311,7 +3322,6 @@ DomainVerificationSuccessPane
 DoneCheckbox
 doPrint
 Dot
-Download20Icon
 DownloadAppFullscreenModal
 DownloadAppModal
 DownloadButton
@@ -3807,6 +3817,7 @@ ExcludeCheckbox
 ExcludeKeywordsFilterItem
 ExcludeSpecificUsersSelect
 ExitBBMButton
+ExpandableAppRow
 ExpandableContainer
 ExpandableContent
 ExpandableContext
@@ -3979,7 +3990,6 @@ FeedbackCoachmark
 FeedbackConfirmationModal
 FeedbackLink
 FeedbackModal
-FeedbackSummaryButtons
 FeedBody
 FeedHeader
 FeedItem
@@ -4295,13 +4305,11 @@ formatTruncatedObjectList
 formatValue
 formatWorkspaceNameText
 FormCard
-FormCheckboxImpl
 FormContents
 FormFieldsTab
 FormFieldValueReadOnly
 FormHint
 FormikContext
-FormInputImpl
 FormLoadingScreen
 FormModal
 FormPreview
@@ -4435,7 +4443,6 @@ getCommenterNames
 getCommentSpeedBumpDescription
 getComposerIconElement
 getConfigurationWarning
-getConnectedTeamNames
 getConnectedTeamsCount
 getConnectionOptionData
 getConnectionStatusAction
@@ -4557,6 +4564,7 @@ getModalBanner
 getModalContent
 getModalDescription
 getModalSubtext
+getMoreMenuIcon
 getMsgSourceRow
 getMultiGridCellRenderer
 getNewWindowTemplate
@@ -4670,7 +4678,6 @@ getTopLevelOptionData
 getTopLevelStatus
 getTopLevelTypeOptionData
 getTopOfMindTemplate
-getTrailingContent
 getTrailingControl
 getTranscriptMenuItem
 getTransformedErrorMessage
@@ -5216,6 +5223,7 @@ IaDetailsPopoverMemberItemActionsMenu
 IaDetailsPopoverMemberItemActionsMenuWrapper
 IADetailsPopoverMemberItemComponent
 IaDetailsPopoverMembers
+IaDetailsPopoverMpimFullConvertContent
 IAMemberProfileStatus
 IaPins
 Icon
@@ -5407,6 +5415,7 @@ InvitedWorkspaces
 InviteEscapeHatchLabel
 InviteeTooltip
 InviteForm
+InviteFormError
 InviteHeader
 InviteLinkButtonWithMenu
 InviteLinkTab
@@ -5624,8 +5633,6 @@ LegendSubtext
 LensDebug
 LicenseRequestItem
 LicenseRequestsModal
-Lightbox
-LightboxTrigger
 LimitedAccessGroupDropdown
 LimitedBlocksTextyInput
 LimitedHistoryAlert
@@ -6040,7 +6047,6 @@ maybeRenderSaveButton
 maybeRenderSCG
 maybeRenderSettingsButton
 maybeRenderShowMoreButton
-maybeRenderSingleChannelGuestAlert
 maybeRenderSlackConnectSection
 maybeRenderSubForm
 maybeRenderUpgradeState
@@ -6634,8 +6640,6 @@ ModeSwitchSpeedBumpContent
 Month
 MoreActionsMenu
 MoreFiltersDropdown
-MoreMenuCheckboxRow
-MoreMenuContent
 MoreMessageActionsSubmenu
 MoreOptionsSubmenu
 MorePlatformSidebar
@@ -6694,6 +6698,8 @@ MpdmMoveMessageSubtype
 MPDMName
 MPDMTitle
 MpimContent
+MpimConvertToPrivateChannelText
+MpimCreatePrivateChannelText
 MPIMMask
 MpimName
 MpimRow
@@ -7144,6 +7150,7 @@ PaneLoading
 PanelSection
 PanelSectionPlain
 PanelSectionsContainer
+PaneTabView
 ParentExcludedNotice
 ParentExecutionLink
 ParentPeopleNotice
@@ -7173,9 +7180,12 @@ PDFViewer
 PeekAgendaContent
 PeekAgendaLayout
 PeekArtifact
+PeekBody
 PeekContext
 PeekHeaderLink
 PeekMenuContent
+PeekMessageRow
+PeekMessageRowContent
 PeekSection
 PeekTrigger
 PeekTriggerContext
@@ -7396,7 +7406,6 @@ Presence
 PresencePromptDialog
 presentConversationBody
 PresentedItemsPane
-PrevIcon
 PreviewBlockText
 PreviewButton
 PreviewChannel
@@ -8128,6 +8137,7 @@ renderFilterMenuTrigger
 renderFilters
 renderFiltersContent
 renderFloatingActions
+renderFollowUp
 renderFooter
 renderFooterLink
 renderForm
@@ -8312,6 +8322,7 @@ renderRedesignedMetadataChangeText
 renderRemindMenu
 renderRequestedBy
 renderRequestItem
+renderRequestType
 renderRequire2faCheckbox
 renderResetConfirmation
 renderResultContent
@@ -9021,6 +9032,7 @@ SecondaryHeaderMore
 Section
 SectionActivityPeek
 SectionActivityPeekContent
+SectionButton
 SectionChannelRow
 SectionContainer
 SectionContainerHeaderButton
@@ -9190,8 +9202,10 @@ ServicesChannelPickerSharedAlertComponent
 ServicesCountCallout
 ServiceTriggerSummary
 SessionDurationInfo
+SessionLocationIcon
 SessionResetModal
 SessionRow
+SessionRowView
 SessionStatusPrefixIcon
 SetGuestExpiration
 SetGuestExpirationContainer
@@ -9213,6 +9227,7 @@ SettingsRowActionsV2
 SettingsRowV2
 SettingsSection
 SettingsTabContentWrapper
+SettingsTabPanel
 SettingTabHeaderCoachmark
 SetupAccountSwitcher
 SetupAppsDetail
@@ -9247,6 +9262,7 @@ SfdcDataBlockCardEditFooter
 SfdcDataMentionCard
 SfdcRecordCard
 SfdcReference
+SfEmbedRequestToPurchaseCta
 SfEmbedRequestToPurchaseCtaBase
 SfEmbedRequestToPurchaseModal
 ShareableFolderDetailView
@@ -9386,6 +9402,8 @@ SidebarHeader
 SidebarHeaderMenu
 SidebarItemSkeleton
 SidebarItemSkeletonList
+SidebarLatestMessagePeekContent
+SidebarLatestMessagePeekTrigger
 SidebarLink
 SidebarListItem
 SidebarMenuHeader
@@ -9418,6 +9436,7 @@ SidebarSearchProvider
 SidebarSearchRelated
 SidebarSearchResults
 SidebarSearchSidebarResults
+SidebarSearchSwitcherTrigger
 SidebarSearchTopActions
 SidebarSectionPickerForListView
 SidebarShowAllOverrideContext
@@ -9687,6 +9706,7 @@ SlackbotCalendarCard
 SlackbotChannelExclusionModal
 SlackbotChannelHoverCardDetails
 SlackbotChannelInstructionsEditor
+SlackbotChannelSettingAppRow
 SlackbotChannelSettingsDetail
 SlackbotChannelSettingsLanding
 SlackbotChannelSettingsListItem
@@ -10604,6 +10624,8 @@ ThreadBroadcastFooter
 ThreadBroadcastPreamble
 ThreadCompactGutterGeneric
 ThreadConnector
+ThreadContextMenu
+ThreadFacepile
 ThreadFlexpaneAdminTools
 ThreadFloatingBanners
 ThreadFooter
@@ -10639,6 +10661,7 @@ ThreadSeparatorRow
 ThreadSeparatorRowCanvas
 ThreadSeparatorRowGeneric
 ThreadsError
+ThreadSessionRow
 ThreadsFlexpane
 ThreadsFlexpaneAutoSummary
 ThreadShareEntity
@@ -11339,6 +11362,7 @@ useShareTableauMetric
 useShorterReverseGiftTrialSidebar
 useShowErrorAlerts
 useShowNoiseSuppressionMenuItem
+useSidebarSearchConversationItem
 useSidePanel
 useSidePanelData
 useSkillEditLeaveGuard
