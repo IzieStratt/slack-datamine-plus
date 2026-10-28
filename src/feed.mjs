@@ -47,7 +47,7 @@ const SKIP = new Set(['chunks', 'experiments.txt']); // experiments.json covers 
 // it and re-reports the same changes. A category file that did not exist at `base` is reported as a new category, never dropped.
 function buildItem(base, head) {
   if (!base || base === head) return null;
-  const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons|health|components|redux)\.json$/.test(f));
+  const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons|health|components|redux|taut-presence)\.json$/.test(f));
   let html = '', total = 0;
   const hits = []; // values matching src/watch-keywords.txt in any category, so a themed rollout is not buried in a long list
   const build = (JSON.parse(show('HEAD', 'build/meta.json') ?? '{}')).buildNumber;
@@ -71,6 +71,21 @@ function buildItem(base, head) {
   if (!total) return null;
   const date = new Date().toISOString().slice(0, 10);
   return { id: `${url}/#${date}`, date, base, title: `Slack client changes ${date} (build ${build})`, html: `<p>${total} changes since ${base.slice(0, 7)}.</p>${section('watch: keyword matches', hits, '')}${html}` };
+}
+
+// "New" row at the top: the latest item's additions flattened to chips, read back from its stored html so older items work too
+const NEW_CHIPS = 10; // values shown per category
+function freshPanel(i) {
+  if (!i) return '';
+  const unesc = (x) => x.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+  const cats = i.html.split('<details open>').slice(1).map((c) => ({
+    name: unesc(c.match(/<strong>([^<]*?)(?::\s*(?:new category|new))?\s*\(\d+\)<\/strong>/)?.[1] ?? ''),
+    isNew: /<strong>[^<]*: new(?: category)? \(\d+\)/.test(c) || /<strong>watch: /.test(c),
+    vals: [...c.matchAll(/<li>\+ <code>(.*?)<\/code>/g)].map((m) => unesc(m[1])),
+  })).filter((c) => c.isNew && c.vals.length).sort((a, b) => (b.name.startsWith('watch') - a.name.startsWith('watch')) || b.vals.length - a.vals.length);
+  if (!cats.length) return '';
+  const chip = (v) => `<button type="button" class="chip" data-q="${esc(v)}">${esc(v.length > 60 ? v.slice(0, 59) + '…' : v)}</button>`;
+  return `<section id="fresh"><h2>New in ${esc(i.title.replace(/^Slack client changes /, ''))}</h2>${cats.map((c) => `<div class="fresh-row"><button type="button" class="cat" data-q="${esc(c.name.replace(/^watch$/, ''))}">${esc(c.name)} <small>${c.vals.length}</small></button>${c.vals.slice(0, NEW_CHIPS).map(chip).join('')}${c.vals.length > NEW_CHIPS ? `<span class="more">+${c.vals.length - NEW_CHIPS} more</span>` : ''}</div>`).join('')}</section>`;
 }
 
 const itemsFile = path.join(site, 'items.json');
@@ -114,13 +129,23 @@ fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
     <script src="/cdn/theme.js"></script>
     <style>${SEARCH_CSS}
       .item { content-visibility: auto; contain-intrinsic-size: auto 800px; }
+      #fresh { margin: 0 0 1.5rem; padding: .75rem 1rem; border: 2px solid var(--fg); border-radius: 1rem; }
+      #fresh h2 { margin: 0 0 .5rem; }
+      .fresh-row { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin: .35rem 0; }
+      #fresh button { font: inherit; font-size: .9rem; color: var(--fg); background: transparent; border: 1px solid var(--fg); border-radius: 999px; padding: .1rem .6rem; cursor: pointer; }
+      #fresh .cat { font-weight: 700; border-width: 2px; }
+      #fresh .chip { font-family: monospace; }
+      #fresh button:hover, #fresh button:focus-visible { border-color: var(--focus); outline: none; }
+      #fresh .more { opacity: .65; font-size: .9rem; }
+      mark { background: color-mix(in srgb, var(--focus) 35%, transparent); color: inherit; border-radius: 2px; }
     </style>
   </head>
   <body>
     <main>
       <h1>slack-datamine-plus changes</h1>
       ${pills(links)}
-      ${searchHtml('Search every change (e.g. agent, bluesky, SCOPE)', 'Search changes')}
+      ${searchHtml('Search every change: a name, a category, a day (press /)', 'Search changes')}
+      ${freshPanel(kept[0])}
 ${kept.map((i) => `      <section class="item"><h2>${esc(i.title)}</h2>\n${i.html}</section>`).join('\n')}
     </main>
     <script>
@@ -133,7 +158,9 @@ ${kept.map((i) => `      <section class="item"><h2>${esc(i.title)}</h2>\n${i.htm
       function build() {
         idx = items.map((el) => ({ el, cats: [...el.querySelectorAll(':scope > details')].map((d) => {
           const lis = [...d.querySelectorAll('li')];
-          return { d, lis, t: lis.map((l) => l.textContent.toLowerCase()), on: new Uint8Array(lis.length).fill(1), open: d.open, nested: [...d.querySelectorAll('details')] };
+          // a row also matches on its category and day, so "scope" lists every new scope and "10-28" lists that day
+          const ctx = ' ' + d.querySelector('summary').textContent.toLowerCase() + ' ' + el.querySelector('h2').textContent.toLowerCase();
+          return { d, lis, t: lis.map((l) => l.textContent.toLowerCase() + ctx), on: new Uint8Array(lis.length).fill(1), open: d.open, nested: [...d.querySelectorAll('details')] };
         }) }));
       }
       function run() {
@@ -162,8 +189,28 @@ ${kept.map((i) => `      <section class="item"><h2>${esc(i.title)}</h2>\n${i.htm
           }
           it.el.hidden = !!term && !any;
         }
+        fresh.hidden = !!term;
+        mark(terms);
+        history.replaceState(null, '', term ? '?q=' + encodeURIComponent(term) : location.pathname);
         count.textContent = short ? 'type at least 2 characters' : term ? hits + ' match' + (hits === 1 ? '' : 'es') : '';
       }
+      const fresh = document.getElementById('fresh') || { hidden: false };
+      // wrap matched text in <mark>; only the visible rows of open categories are touched
+      function mark(terms) {
+        for (const m of document.querySelectorAll('mark')) m.replaceWith(m.textContent);
+        document.querySelectorAll('.item code').forEach((c) => c.normalize());
+        if (!terms.length) return;
+        const re = new RegExp('(' + terms.map((t) => t.replace(/[.*+?^$()|{}[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
+        for (const c of document.querySelectorAll('.item li:not([hidden]) code')) if (re.test(c.textContent)) { re.lastIndex = 0; c.innerHTML = c.innerHTML.replace(re, (m) => '<mark>' + m + '</mark>'); }
+      }
+      const setQ = (v) => { q.value = v; clearTimeout(timer); run(); q.focus(); };
+      document.getElementById('fresh')?.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setQ(b.dataset.q); });
+      addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== q && !e.metaKey && !e.ctrlKey) { e.preventDefault(); q.focus(); q.select(); }
+        else if (e.key === 'Escape' && q.value) { q.value = ''; run(); }
+      });
+      const init = new URLSearchParams(location.search).get('q');
+      if (init) setQ(init);
       q.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(run, 80); });
     </script>
   </body>
