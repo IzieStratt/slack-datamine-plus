@@ -116,6 +116,10 @@ ActivityFilterByMenu
 ActivityFilterBySpecific
 ActivityFilterLayoutToggle
 ActivityFilterPill
+ActivityFilterRow
+ActivityFilterRowMoreMenu
+ActivityFilterRowToggle
+ActivityFilterRowUnreadsToggle
 ActivityFilterSaveButton
 ActivityFilterSaveViewConfirmationModal
 ActivityFilterSaveViewModal
@@ -530,6 +534,7 @@ AgentSunroofReorderableMenuItem
 AgentTaskItem
 AgentTaskMoreActionsMenu
 AgentTasksEmptyStateHero
+AgentTasksRecentPrompts
 AgentTasksTabEmptyState
 AgentTasksTabViewContent
 AgentThreadPeekItem
@@ -726,6 +731,7 @@ AppChatTabView
 AppCheckbox
 AppComplianceLabel
 AppConfigurationBanner
+AppConnectionRowActions
 AppConnectionStatusTag
 AppContent
 AppDetails
@@ -1056,7 +1062,6 @@ AutoSummaryCard
 AutoSummaryCardError
 AutoSummaryCardLoading
 AutoSummaryMoreMenu
-AutoThreadSummary
 AutoTracing
 AvailabilitySection
 Avatar
@@ -1538,6 +1543,8 @@ BaseWorkflowTrialsBanner
 BaseWorkflowTriggerSpeedbumpModal
 BaseWorkObjectRecordChannelCreationModal
 BaseWorkspaceAdminNavigationMenu
+BaseWorkspaceDirectory
+BaseWorkspaceDirectoryEmptyState
 BasicChannelSettingsModal
 BasicContainer
 BasicSelect
@@ -2217,6 +2224,7 @@ ChannelsTableCell
 ChannelsTableNameCell
 ChannelSuffixDraftIconTooltipContent
 ChannelSuffixPendingIconTooltipContent
+ChannelSummaryCtaActionsBlock
 ChannelSummaryHint
 ChannelsWorkspaceLabel
 ChannelTabAddedMessage
@@ -4167,6 +4175,8 @@ FilterPillSurfaceContext
 FilterPropsContext
 FilterPropsProvider
 FilterRow
+FilterRowPill
+FilterRowSourceMenu
 FiltersButtonCollapsed
 FiltersLink
 FiltersModal
@@ -4274,7 +4284,6 @@ formatOthersTip
 formatPermissionSettings
 formatSalesTrackerDate
 formatSender
-FormattedDate
 FormattedHuddleTopic
 FormattedMeetingTitle
 FormattedTimestamp
@@ -5315,7 +5324,6 @@ InlineFormEditableView
 InlineFormResponses
 InlineMediaPref
 InlineMemberEntity
-InlineMenuHistoryTextImpl
 InlineMpimEntity
 InlineMrkdwn
 InlineOfflineIndicator
@@ -5889,8 +5897,6 @@ MadLibsModal
 MadLibsTextHighlight
 MagicLoginQrCode
 MainErrorView
-mainTextDisplay
-MainTextDisplay
 MainView
 MakeChannelManagerModal
 MakeChannelManagerModalWrapper
@@ -6628,6 +6634,8 @@ ModeSwitchSpeedBumpContent
 Month
 MoreActionsMenu
 MoreFiltersDropdown
+MoreMenuCheckboxRow
+MoreMenuContent
 MoreMessageActionsSubmenu
 MoreOptionsSubmenu
 MorePlatformSidebar
@@ -7518,7 +7526,6 @@ ProToBusinessPlusTrialOfferModal
 Prototype
 PrototypeImpl
 ProTrialsEntryPointModal
-Provider
 ProviderIcon
 PrudentPigeonDark
 PrudentPigeonLight
@@ -7667,7 +7674,6 @@ ReactionTip
 ReactionTriggerSummary
 ReactivateModal
 ReactRedux
-ReactReduxImmediateContext
 ReadinessAccessState
 ReadinessAudioConnectivity
 ReadinessAudioInputCheck
@@ -7721,6 +7727,8 @@ RecentFileListMenuItem
 RecentFilesCard
 RecentFilesSettingsModal
 RecentPostsBadge
+RecentPromptAgent
+RecentPromptItem
 RecentsConversationRow
 RecipientName
 RecipientsSelect
@@ -8771,6 +8779,7 @@ SalesforceString
 SalesforceStringDisplay
 SalesforceStyleSandbox
 SalesforceTask
+SalesforceTaskReminderContent
 SalesforceTaskRow
 SalesforceTeamMemberBase
 SalesforceTextArea
@@ -9971,7 +9980,6 @@ SlackKitProvider
 SlackListEmbedOpenButton
 SlackListSlackConnectMessage
 SlackLogo
-SlackMainTextDisplay
 SlackObjectObserver
 SlackScribe
 SlackScribeDesktopPopup
@@ -9984,7 +9992,6 @@ SlackSourceLabel
 SlackTeamMemberBase
 SlackThemes
 SlackTip
-SlackUserNameImpl
 SlashCommandList
 SlashCommandsAutocompleteMenu
 SlashCommandsAutocompleteMenuEntity
@@ -10787,7 +10794,6 @@ ToolPermissionToggle
 ToolsCoachmark
 ToolsTabAiStepCoachmark
 ToolsTabSidebarHeaderAiStepBanner
-tooltip
 Tooltip
 tooltipGetLabel
 TooltipMemberName
@@ -10833,6 +10839,7 @@ TranslationLanguageSelect
 TransparencyTimeseries
 TriageTabActions
 TriageTabButton
+TriageTabChip
 TriageTabMenuButton
 TriageTabOverflowMenu
 TriageTabsFallback
@@ -11042,7 +11049,6 @@ UpdateDnsRecordPane
 UpdateLegacyConnectionAlert
 UpdateStepErrorMessage
 UpdateTriggerErrorMessage
-UpfrontSegmentationPage
 UpfrontSegmentationStepLayout
 UpgradeBannerUnavailableSteps
 UpgradeButton
@@ -11203,6 +11209,7 @@ useMessageRowRenderer
 useMicSettingsMenuItems
 useMonitorHuddleLanguageChange
 useMultiViewWindowTitle
+useNavItemContextMenu
 useNestedThreadContextMenuTemplate
 useNoCustomSearch
 useNoResultsMessage
@@ -11303,7 +11310,6 @@ UserInviteSection
 UserItem
 UserJoinedChannelSummary
 UserMenu
-UserNameImpl
 UserPicker
 UserProfileUnfurl
 UserRelevantWorkspacesPicker
@@ -11834,12 +11840,10 @@ WorkspaceBootRetrying
 WorkspaceCellContent
 WorkspaceColumn
 WorkspaceCreationLoader
-WorkspaceDirectory
 WorkspaceDirectoryBanner
 WorkspaceDirectoryButton
 WorkspaceDirectoryCard
 WorkspaceDirectoryDialog
-WorkspaceDirectoryEmptyState
 WorkspaceDirectoryHeader
 WorkspaceDocumentTitle
 WorkspaceFavicon
