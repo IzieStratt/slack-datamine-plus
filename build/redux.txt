@@ -569,6 +569,8 @@ action:hideDefaultView
 action:hideSlowNetworkAlert
 action:hideStreamingUnreadsSpinner
 action:hideThreadBroadcast
+action:huddleAloneTimeoutPromptMounted
+action:huddleAloneTimeoutPromptUnmounted
 action:hydrateFilters
 action:hydrateUiStateForSearchView
 action:hydrateUnreadsFilterState
@@ -848,7 +850,6 @@ action:registerSingerTurn
 action:registerVisibleVideoTile
 action:rehighlightNewRecords
 action:rehydrateOpenFilesList
-action:relayOverlays
 action:removeActionsForAppIds
 action:removeActiveDownload
 action:removeActivityIA4Item
@@ -1797,6 +1798,7 @@ action:setHighlightsSelectedTab
 action:setHostIdForCalendarHuddle
 action:setHoveredQuickReactionsSlot
 action:setHuddleActionForCalendarHuddle
+action:setHuddleAloneTimeout
 action:setHuddleBannerActiveState
 action:setHuddleEducationPromptEntrypoint
 action:setHuddleHistory
@@ -3829,7 +3831,6 @@ middleware:broadcastBBMSettingsMiddleware
 middleware:broadcastClientThemeMiddleware
 middleware:broadcastConnectivityMiddleware
 middleware:broadcastFullscreenMiddleware
-middleware:broadcastOverlaysMiddleware
 middleware:broadcastViewLayoutMiddleware
 middleware:broadcastWorkspacesMiddleware
 middleware:clientHuddlesMiddleware
@@ -4115,6 +4116,7 @@ thunk:checkEkmOnConnected
 thunk:checkForChangesInDndStatus
 thunk:checkForOldChannelsToClose
 thunk:checkForOldCodeChannelsToClose
+thunk:checkHuddleAloneTimeout
 thunk:checkIfRemotePeerIsValid
 thunk:checkIpDownloadsAllowed
 thunk:checkSlackbotAiHistory
@@ -4341,6 +4343,7 @@ thunk:closePrimaryViewIfNeeded
 thunk:closePromoModal
 thunk:closeRecord
 thunk:closeSearchOverlay
+thunk:closeSegmentation
 thunk:closeSidebarChannel
 thunk:closeSplitView
 thunk:closeTextyModals
@@ -5432,6 +5435,7 @@ thunk:highlightAppRow
 thunk:highlightWorkspaceRows
 thunk:historyHandler
 thunk:huddlesInviteModalUpgradeSpeedbumpMaybeLogExposure
+thunk:hydrateAutocompleteTopUsersPool
 thunk:hydrateEventAttendees
 thunk:hydrateFacetSuggestions
 thunk:hydrateNuxKickoffThreadTsesOnFirstConnection
@@ -5548,6 +5552,7 @@ thunk:leaveChannelsInBulk
 thunk:leaveCommand
 thunk:leaveConversationApi
 thunk:leaveConversationShortcut
+thunk:leaveHuddleForAloneTimeout
 thunk:leaveUnavailableSalesTracker
 thunk:legacyMessageReceivedHandlerThunk
 thunk:listAndUpsertFiles
@@ -5901,7 +5906,6 @@ thunk:maybeRedeemTrialOnSalesforceDataLoaded
 thunk:maybeRedirectFromBenefitsPage
 thunk:maybeRedirectFromPaidBenefitsPageCircularHandler
 thunk:maybeRedirectJoinerToSlackbot
-thunk:maybeRedirectToFlowFirstStep
 thunk:maybeRedirectToSlackbotDayOne
 thunk:maybeRefetchSlackbotAiLimitFromMegaphoneOnReconnect
 thunk:maybeRefetchSlackbotHistoryOnReconnect
@@ -5947,6 +5951,7 @@ thunk:maybeSaveScrollmark
 thunk:maybeSaveThreadScrollmarks
 thunk:maybeSaveWindowRestorationData
 thunk:maybeSaveWindowRestorationDataInternal
+thunk:maybeSeedRecentlyViewedFiles
 thunk:maybeSeedSalesforceEchoFrecency
 thunk:maybeSendAwarenessQuery
 thunk:maybeSendCloseState
@@ -6659,6 +6664,7 @@ thunk:openSidebarDocumentInNewWindow
 thunk:openSidebarSearchFromShortcut
 thunk:openSidebarSearchOrOmniSwitcher
 thunk:openSidebarSweeper
+thunk:openSidebarThread
 thunk:openSidekickAvatarCropModal
 thunk:openSignIntoSalesforceOrgModal
 thunk:openSkillCatalogModalCircularHandler
@@ -7075,6 +7081,7 @@ thunk:replaceMessages
 thunk:replaceTemporaryIdAndPersist
 thunk:replaceViewSet
 thunk:reportMessage
+thunk:reportPinnedItemsChange
 thunk:requestAccessModalThunk
 thunk:requestAgentSunroofApps
 thunk:requestDownmarketCrmLicense
@@ -7831,7 +7838,6 @@ thunk:syncToActivityStore
 thunk:syncTriggerInputs
 thunk:syncWorkspacesToDesktop
 thunk:syncWorkspacesToDesktopOnAdditionalTeamBoot
-thunk:tcRedesignUpfrontSegmentationMaybeLogExposure
 thunk:teamCreationHoldoutMaybeLogExposure
 thunk:teamCreationInviteOptimizationsV2MaybeLogExposure
 thunk:teamCreationSegmentationMaybeLogExposure
@@ -7840,7 +7846,6 @@ thunk:threadsUnreadCountChanged
 thunk:throttledThunk
 thunk:thunk
 thunk:timeOutStuckCalendarWindowFetch
-thunk:toastPinnedItemsChange
 thunk:toggleActivityDmsOptOut
 thunk:toggleActivityRemindersInActivity
 thunk:toggleActivityViews

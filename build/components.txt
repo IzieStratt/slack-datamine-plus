@@ -426,8 +426,9 @@ AgentDmDetailsManageSettingsButton
 AgentDmDetailsSections
 AgentDmDetailsSettings
 AgentDmForeword
+AgentDmPeekChannelSessionRow
 AgentDmPeekSection
-AgentDmPeekSessionRow
+AgentDmPeekSessionRowContent
 AgentDmPeekTrigger
 AgentDmPeekView
 AgentDmSessionsIndicator
@@ -568,6 +569,7 @@ AggregationSteps
 AIAbout
 AIAboutContent
 AIAdditionalButtons
+AiAndAgentsPane
 AiAnswerSpeedBump
 AiAppHistoryItem
 AiAppHistoryList
@@ -654,6 +656,7 @@ Alert
 AlertBanner
 AlertBlock
 AlertMarkdown
+AlertRenderable
 AlertWithAutoClog
 AllCompanyNameTemplatesForeword
 AllDayEventsMounter
@@ -766,7 +769,6 @@ AppDisclaimer
 AppErrorActivityMessage
 AppExternalHuddleGuestBanner
 AppExternalTeamBanner
-AppFilterChipButton
 AppFunctions
 AppHelpButton
 AppHistoryTabView
@@ -1104,7 +1106,6 @@ BackToTop
 BackupButton
 Badge
 BadgeAriaDescription
-BadgeHomeIcon
 BalloonsAnimation
 BannerContent
 BannerDownloadApp
@@ -1339,6 +1340,7 @@ BaseListErrorState
 BaseListIcon
 BaseListRecordDetailAddCommentButton
 BaseListRecordDetailCopyLinkButton
+BaseListRecordDetailUnarchiveButton
 BaseListRecordStaticEntity
 BaseLoadingModal
 BaseLogActivityView
@@ -1505,7 +1507,6 @@ BaseStandaloneCanvasHeaderBanner
 BaseStartTrialCoachmark
 BaseStepProfile
 BaseStepTeamName
-BaseStepTeamNameAndProfile
 BaseSTPFloatingBanner
 BaseSuggestionAskSlackbot
 BaseSuggestionNlTypeahead
@@ -1658,6 +1659,7 @@ BroadcastFooter
 BrowseAppListItem
 BrowseAppsList
 BrowseAppsPane
+BrowseMarketplaceLink
 BrowseOmniswitcher
 BrowsePageAutocomplete
 BrowsePageChannelFilesSkeleton
@@ -1895,6 +1897,7 @@ CanvasMention
 CanvasMermaid
 CanvasMermaidPreview
 CanvasMermaidViewerModal
+CanvasMessageBlocksInput
 CanvasMessageUnfurl
 CanvasNotes
 CanvasOpaqueBlockCardProvider
@@ -2324,6 +2327,8 @@ CheckoutRescueBanner
 ChevronIcon
 ChildAutoInstallCheckbox
 ChildCodeChannelCards
+ChildCodeChannelEntityRow
+ChildCodeChannelLegacyRow
 ChildCodeChannelMenuButton
 ChildCodeChannelPeekRow
 ChildCodeChannelsArtifactsList
@@ -2534,7 +2539,6 @@ ComprehensibleInviteTeamPermissions
 computeDragHandle
 computeIcon
 computeText
-computeUserType
 CondensedReactionBar
 ConditionalInputsWithAdvancedFilterOptions
 ConditionalInputsWithAdvancedOptions
@@ -2733,6 +2737,7 @@ ConnectionStatus
 ConnectionUpdateStatus
 Connector
 ConnectorAppIcon
+ConnectorCard
 ConnectorCheckboxLine
 ConnectorChip
 ConnectorConnectedAccountSection
@@ -4395,7 +4400,6 @@ GenericSearchEmptyState
 GenericSystemMessage
 getAcceptPrivateOptionData
 getAccessibilitySection
-getAccessory
 getActiveUsersTimeseriesSubheader
 getActivityIcon
 getAddToChannelTemplate
@@ -4694,7 +4698,6 @@ getUnsupportedContent
 getUpdatedText
 getUpgradeLink
 getUpsellParagraph
-getUserDetailRowInfoMessage
 getUserLabel
 getUserMentions
 getVariableMenuItemLabel
@@ -4844,7 +4847,6 @@ HelpSearchContainer
 HeroBanner
 HeroBannerContainer
 HeroBannerCTA
-HiddenFileInput
 HiddenInstructionsInput
 HiddenMessageBody
 HiddenUserAvatar
@@ -5149,6 +5151,7 @@ HuddlesTemporaryControlBannerRequesters
 HuddlesTemporaryControlBannerSurvey
 HuddleStickerGrid
 HuddleStickerTabButton
+HuddleStillHereModal
 HuddlesToolTipDeviceContent
 HuddlesTrialAwarenessBanner
 HuddleSummaryAutostartErrorBanner
@@ -5505,7 +5508,6 @@ KanbanColumnOrderProvider
 keepEmoticonsUnbroken
 KeyboardAccessibleEmojiButton
 KeyboardFocusContext
-KeyboardFocusDeferredContext
 KeyboardFocusPropsProvider
 KeyboardKey
 KeyboardKeysTooltip
@@ -5554,6 +5556,7 @@ LaterListView
 LaterPeekContent
 LaterPeekTrigger
 LaterPeekView
+LaterPlainTextLabel
 LaterReminderHeader
 LaterReminderToken
 LaterRemoveModal
@@ -5618,6 +5621,7 @@ LeaveChannelsToast
 LeaveChannelsZeroState
 LeavingPrivateChannelsSpeedBump
 LeftGutterDisplayViewInner
+LegacyAiAndAgentsPane
 LegacyAutomationsPane
 LegacyBadge
 LegacyContainerIdContext
@@ -5751,7 +5755,6 @@ ListRecordDetailFooterToolbar
 ListRecordDetailManagement
 ListRecordDetailMarkCompletedButtonComponent
 ListRecordDetailTitle
-ListRecordDetailUnarchiveButton
 ListRecordDetailView
 ListRecordEntityExpandedFooter
 ListRecordErrorState
@@ -6106,6 +6109,7 @@ McpServerDisconnectedOrgBanner
 McpServerEmptyState
 McpServerEnableErrorBanner
 McpServerEntity
+McpServerFeatureIcon
 McpServerList
 McpServerListAlert
 McpServerManageModal
@@ -6180,6 +6184,8 @@ MediaViewerFileSummaryButton
 MediaViewerModalHeader
 MediaViewerModalNavigation
 MediaViewerPipButton
+MediaViewerSidebarResizer
+MediaViewerSidebarRow
 MediaViewerThreads
 MediaViewerThreadToggleButton
 MediaViewerTranscriptButton
@@ -6570,7 +6576,6 @@ MigrationPartialSuccess
 MigrationPartialSuccessAlert
 MigrationReloadBanner
 MilesDavisThemeCtaInner
-minimalObjectRowInfo
 MinimizedSelfLayoutComponent
 MiniPanelButtonHint
 MiniSideBySideLayoutComponent
@@ -6890,6 +6895,7 @@ NotificationTemplateEntity
 NotificationWarning
 NotifyUsersIcon
 NotQualifiedDropTarget
+NoValueCell
 NoWorkspaces
 NoWorkspacesBlockerView
 NudgeBanner
@@ -7123,7 +7129,6 @@ OverflowTabGlow
 OverflowTabsItem
 OverflowUsersTile
 OverlayContent
-OverlaysContext
 OverrideAlert
 OverviewCallouts
 OverviewSection
@@ -7274,6 +7279,7 @@ PinnedDropZoneRowElement
 PinnedItemRemove
 PinnedItemRemoveConfirm
 PinnedItemsListIA
+PinnedRemoveZoneRowElement
 PinsListFile
 PinsListHeading
 PinsListMessage
@@ -7361,6 +7367,7 @@ PopularMessagesContainer
 PopularStepSkeleton
 PopularStepSkeletonList
 PortableAnimatePresence
+PortableContentDragCoachmarkAnchor
 PortableDraggable
 PortableList
 PortableMultiGrid
@@ -7485,7 +7492,6 @@ ProfileLongTextElement
 ProfileMenuUpgradeMenuItem
 ProfilePhotoExampleItem
 ProfilePhotoUpload
-profilePicturePlaceholder
 ProfilePreparationContent
 ProfilePreviewMenu
 ProfileTag
@@ -7959,7 +7965,6 @@ renderAllowed2FAMethodsRadio
 renderAllowListsPrefSelectionRadios
 renderAllWorkspaces
 renderAnalyticsMetricViewer
-renderAnchor
 renderApp
 renderAppFilterInput
 renderAppIcon
@@ -8095,7 +8100,6 @@ renderEllipsisButton
 renderEmailIcon
 renderEmailInviteList
 renderEmailPreviewLink
-renderEmailSection
 renderEmailTextBox
 renderEmbedIframe
 renderEmoji
@@ -8295,7 +8299,6 @@ renderPointIcon
 renderPolicyLink
 renderPopover
 renderPresence
-renderPresenceInfoSection
 renderPresetDuration
 renderPresetOptions
 renderPreview
@@ -8428,8 +8431,8 @@ renderTextInputEditor
 renderTextOption
 renderTextOrLink
 renderTextViewer
-renderThread
 renderThreadEditor
+renderTileContent
 renderTimeline
 renderTimestamp
 renderTitle
@@ -9213,6 +9216,7 @@ ServicesChannelPickerSharedAlertComponent
 ServicesCountCallout
 ServiceTriggerSummary
 SessionDurationInfo
+SessionEntity
 SessionLocationIcon
 SessionResetModal
 SessionRow
@@ -9630,8 +9634,6 @@ SlackbotAiAppDetail
 SlackbotAiAppDetailContent
 SlackbotAiAppDetailsViewInner
 SlackbotAiAppEnableSwitch
-SlackbotAiAppsTabView
-SlackbotAiAppsView
 SlackbotAiBackToHomeButton
 SlackbotAiBuiltinSkillDetailView
 SlackbotAiBuiltinSkillInstructions
@@ -9657,14 +9659,12 @@ SlackbotAiHistorySortMenu
 SlackbotAiHistoryTabViewContent
 SlackbotAiHistoryTaskChatFilterMenu
 SlackbotAiNewChatButton
-SlackbotAiNotInstalledPanel
 SlackbotAiNux
 SlackbotAiNuxCloseCoachmark
 SlackbotAiNuxSplash
 SlackbotAiOnboardingCards
 SlackbotAiOrgSkillDetailView
 SlackbotAiPaywallWarning
-SlackbotAiPendingPanel
 SlackbotAiPref
 SlackbotAiPreviewBadge
 SlackbotAiProjectCanvasModal
@@ -9813,9 +9813,7 @@ SlackbotSidebarIcon
 SlackbotSidebarIconForPageView
 SlackbotSidebarLinkWrapper
 SlackbotSidebarPeekTrigger
-SlackbotSidebarRenameDialog
 SlackbotSidebarSurfacePeek
-SlackbotSidebarThreadContextMenu
 SlackbotSidebarThreadPeek
 SlackbotSidebarWelcome
 SlackbotSkillsAnnouncementAlternateSkillBanner
@@ -10227,8 +10225,6 @@ StepPreviewLoading
 StepPrivateChannelMessageAlert
 StepsAccessPicker
 StepSalesforceChannelDataAlert
-StepSegFamiliarityInfo
-StepSegUsabilityInfo
 StepsLibraryModal
 StepsLibraryModalContent
 StepTada
@@ -10370,7 +10366,6 @@ SVPicker
 SwarmKnowledgeFooter
 SwitchboardDictationButton
 SwitchForm
-SwitchImpl
 SwitchSegmentPreview
 SwitchSummary
 SwitchWorkspaceSubmenu
@@ -10474,7 +10469,6 @@ TeamImageBanner
 TeamInviteList
 TeamJoinerInviteContent
 TeamList
-TeamLogoCropModal
 TeammateCard
 TeamMessagesProgressBar
 TeamName
@@ -10737,7 +10731,6 @@ ToastContainer
 ToastIcon
 ToastImpl
 ToastStatusIcon
-ToastTriggerImpl
 toChipTabItems
 TodayActionButton
 TodayActionsMenu
@@ -10850,6 +10843,7 @@ TopLevelPolicyContentCheckbox
 TopLevelPolicyContentRadio
 TopLevelPolicyContext
 TopLevelPolicyProvider
+TopMcpConnectors
 TopOfMindPickerModal
 TopOfMindPickerRow
 TopPostCardContent
@@ -10991,6 +10985,7 @@ UnfurlHovercard
 UnfurlsLimitWarning
 UnfurlText
 unfurlTransform
+UnifiedAgentsAndAppsPane
 UnifiedAutomationsPane
 UnifiedDirectoryRowElement
 UnifiedFilePicker
@@ -11087,7 +11082,6 @@ UpdateDnsRecordPane
 UpdateLegacyConnectionAlert
 UpdateStepErrorMessage
 UpdateTriggerErrorMessage
-UpfrontSegmentationStepLayout
 UpgradeBannerUnavailableSteps
 UpgradeButton
 UpgradeCta
