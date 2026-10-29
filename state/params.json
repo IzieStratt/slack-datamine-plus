@@ -1,6 +1,6 @@
 {
  "activity.clearBefore": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -42,7 +42,7 @@
   }
  },
  "activity.getEntries": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "keys": {
@@ -56,7 +56,7 @@
   }
  },
  "activity.markAllRead": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "filters": {
@@ -74,7 +74,7 @@
   }
  },
  "activity.unarchive": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "key": {
@@ -96,7 +96,7 @@
   }
  },
  "activity.views.hide": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -114,7 +114,7 @@
   }
  },
  "activity.views.unhide": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -157,6 +157,14 @@
     "sites": 1,
     "type": "number"
    },
+   "frecency": {
+    "sites": 1,
+    "type": "boolean"
+   },
+   "includeAutomatedTriggers": {
+    "sites": 1,
+    "type": "boolean"
+   },
    "key": {
     "sites": 1,
     "type": "unknown"
@@ -166,6 +174,10 @@
     "type": "unknown"
    },
    "onDismiss": {
+    "sites": 1,
+    "type": "unknown"
+   },
+   "onInsertWorkflow": {
     "sites": 1,
     "type": "unknown"
    },
@@ -185,6 +197,10 @@
     "sites": 1,
     "type": "unknown"
    },
+   "source": {
+    "sites": 1,
+    "type": "string"
+   },
    "viewType": {
     "sites": 1,
     "type": "unknown"
@@ -192,7 +208,7 @@
   }
  },
  "admin.accountType.permissions.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "domain": {
@@ -218,7 +234,7 @@
   }
  },
  "admin.accountType.permissions.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -248,7 +264,7 @@
   }
  },
  "admin.analytics.ai.getAnalytics": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -258,7 +274,7 @@
   }
  },
  "admin.analytics.ai.getAvailableDateRange": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -278,7 +294,7 @@
   }
  },
  "admin.analytics.channels.modal.export": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -296,7 +312,7 @@
   }
  },
  "admin.analytics.getAppsAnalytics": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "query": {
@@ -322,7 +338,7 @@
   }
  },
  "admin.analytics.getAvailableDateRange": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -340,7 +356,7 @@
   }
  },
  "admin.analytics.getChannelAnalytics": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "privacy": {
@@ -366,7 +382,7 @@
   }
  },
  "admin.analytics.getMcpServersAnalytics": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "count": {
@@ -392,7 +408,7 @@
   }
  },
  "admin.analytics.getMemberAnalytics": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "memberTypes": {
@@ -426,7 +442,7 @@
   }
  },
  "admin.apps.allowlist.scopesRating.configure": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -444,7 +460,7 @@
   }
  },
  "admin.apps.allowlist.scopesRating.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channel": {
@@ -462,7 +478,7 @@
   }
  },
  "admin.apps.allowlistAutomation.rules.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -506,7 +522,7 @@
   }
  },
  "admin.apps.allowlistAutomation.rules.reorder": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -520,7 +536,7 @@
   }
  },
  "admin.apps.allowlistAutomation.rules.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isEnabled": {
@@ -542,7 +558,7 @@
   }
  },
  "admin.apps.approved.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -624,7 +640,7 @@
   }
  },
  "admin.apps.clearResolution": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -646,7 +662,7 @@
   }
  },
  "admin.apps.domainWideAuth.addDomain": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "record": {
@@ -680,7 +696,7 @@
   }
  },
  "admin.apps.domainWideAuth.enable": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -764,25 +780,49 @@
   }
  },
  "admin.apps.domainWideAuth.google.getAuthorizeUrl": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
+   "channelId": {
+    "sites": 6,
+    "type": "unknown"
+   },
+   "entryPoint": {
+    "sites": 4,
+    "type": "unknown"
+   },
+   "isExternalLimited": {
+    "sites": 4,
+    "type": "unknown"
+   },
+   "message": {
+    "sites": 4,
+    "type": "unknown"
+   },
+   "trackingId": {
+    "sites": 4,
+    "type": "unknown"
+   },
    "calAppUser": {
     "sites": 2,
     "type": "unknown"
    },
-   "channelId": {
+   "emails": {
     "sites": 2,
     "type": "unknown"
    },
    "teamId": {
     "sites": 2,
     "type": "unknown"
+   },
+   "userIds": {
+    "sites": 2,
+    "type": "unknown"
    }
   }
  },
  "admin.apps.domainWideAuth.microsoft.getConsentUrl": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -808,7 +848,7 @@
   }
  },
  "admin.apps.domainWideAuth.removeDomain": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -882,11 +922,15 @@
   }
  },
  "admin.apps.internal.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 10,
+    "sites": 11,
+    "type": "unknown"
+   },
+   "channelId": {
+    "sites": 3,
     "type": "unknown"
    },
    "appId": {
@@ -894,10 +938,6 @@
     "type": "unknown"
    },
    "channel": {
-    "sites": 2,
-    "type": "unknown"
-   },
-   "channelId": {
     "sites": 2,
     "type": "unknown"
    },
@@ -1044,7 +1084,7 @@
   }
  },
  "admin.apps.permissions.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -1058,7 +1098,7 @@
   }
  },
  "admin.apps.permissions.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -1088,7 +1128,7 @@
   }
  },
  "admin.apps.productivity.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -1134,7 +1174,7 @@
   }
  },
  "admin.apps.requests.bulkCancel": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -1184,7 +1224,7 @@
   }
  },
  "admin.apps.restricted.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -1466,7 +1506,7 @@
   }
  },
  "admin.conversations.export": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -1738,7 +1778,7 @@
   }
  },
  "admin.emailDomains.count": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "approvals": {
@@ -1748,7 +1788,7 @@
   }
  },
  "admin.emailDomains.export": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -1778,7 +1818,7 @@
   }
  },
  "admin.enterpriseSearch.connectors.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -1858,7 +1898,7 @@
   }
  },
  "admin.functions.permissions.bulkSet": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "configuredInputs": {
@@ -1956,7 +1996,7 @@
   }
  },
  "admin.roles.addUsergroups": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "allTeams": {
@@ -2002,7 +2042,7 @@
   }
  },
  "admin.roles.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "description": {
@@ -2024,7 +2064,7 @@
   }
  },
  "admin.roles.edit": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "description": {
@@ -2050,7 +2090,7 @@
   }
  },
  "admin.roles.permissions.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listId": {
@@ -2072,7 +2112,7 @@
   }
  },
  "admin.users.conversations.counts": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2090,7 +2130,7 @@
   }
  },
  "admin.users.passkeys.removeAll": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2100,7 +2140,7 @@
   }
  },
  "admin.users.search": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "salesforceOrgId": {
@@ -2110,7 +2150,7 @@
   }
  },
  "admin.users.session.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2280,7 +2320,7 @@
   }
  },
  "admin.workflows.unpublish": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2294,7 +2334,7 @@
   }
  },
  "agents.threads.archive": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2336,7 +2376,7 @@
   }
  },
  "agents.threads.pin": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "delay": {
@@ -2350,7 +2390,7 @@
   }
  },
  "agents.threads.unpin": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2388,7 +2428,7 @@
   }
  },
  "ai.alpha.agents.stop": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2438,7 +2478,7 @@
   }
  },
  "ai.alpha.analyze.startThread": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -2456,7 +2496,7 @@
   }
  },
  "ai.alpha.canvas.computeDraftDiff": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "canvasId": {
@@ -2496,7 +2536,7 @@
   }
  },
  "ai.alpha.canvas.getTopicSuggestions": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelIds": {
@@ -2536,7 +2576,7 @@
   }
  },
  "ai.alpha.canvas.resolveDraft": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "canvasId": {
@@ -2608,7 +2648,7 @@
   }
  },
  "ai.alpha.canvases.drafts.view": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "canvasId": {
@@ -2666,7 +2706,7 @@
   }
  },
  "ai.alpha.digest.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "digestId": {
@@ -2680,7 +2720,7 @@
   }
  },
  "ai.alpha.digest.markComplete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2702,7 +2742,7 @@
   }
  },
  "ai.alpha.digest.markUnread": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2762,7 +2802,7 @@
   }
  },
  "ai.alpha.getChannelJoinReason": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -2880,15 +2920,15 @@
   }
  },
  "ai.alpha.internal.feedbackDatasets": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 8,
+    "sites": 9,
     "type": "unknown"
    },
    "channelId": {
-    "sites": 5,
+    "sites": 6,
     "type": "unknown"
    },
    "serviceId": {
@@ -3014,7 +3054,7 @@
   }
  },
  "ai.alpha.search.getNoResultsPrompts": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "moduleName": {
@@ -3032,18 +3072,18 @@
   }
  },
  "ai.alpha.sidekicks.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
+   "channelId": {
+    "sites": 2,
+    "type": "unknown"
+   },
    "highlightedChannelId": {
     "sites": 2,
     "type": "unknown"
    },
    "avatarTempId": {
-    "sites": 1,
-    "type": "unknown"
-   },
-   "channelId": {
     "sites": 1,
     "type": "unknown"
    },
@@ -3156,7 +3196,7 @@
   }
  },
  "ai.alpha.sidekicks.getOrCreateMemoryCanvas": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -3170,7 +3210,7 @@
   }
  },
  "ai.alpha.sidekicks.rewritePrompt": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "customSolutionTemplateId": {
@@ -3220,7 +3260,7 @@
   }
  },
  "ai.alpha.sidekicks.testPrompt": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "externalDirectory": {
@@ -3298,7 +3338,7 @@
   }
  },
  "ai.alpha.sidekicks.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -3352,7 +3392,7 @@
   }
  },
  "ai.alpha.slackbot.automationGroups.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "deleteChildren": {
@@ -3370,7 +3410,7 @@
   }
  },
  "ai.alpha.slackbot.automationGroups.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "creationSourceId": {
@@ -3384,7 +3424,7 @@
   }
  },
  "ai.alpha.slackbot.automationGroups.setActive": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "groupId": {
@@ -3402,7 +3442,7 @@
   }
  },
  "ai.alpha.slackbot.channelResponses.redact": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -3420,7 +3460,7 @@
   }
  },
  "ai.alpha.slackbot.channelResponses.restore": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -3446,7 +3486,7 @@
   }
  },
  "ai.alpha.slackbot.searchAnswerThreads.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "followUpQuery": {
@@ -3510,7 +3550,7 @@
   }
  },
  "ai.alpha.slackbot.skills.getAggregateMetrics": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -3524,7 +3564,7 @@
   }
  },
  "ai.alpha.slackbot.skills.getBuiltinUsageCounts": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "builtinSkillIds": {
@@ -3538,7 +3578,7 @@
   }
  },
  "ai.alpha.slackbot.skills.listSkillEnablementDetails": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -3548,7 +3588,7 @@
   }
  },
  "ai.alpha.slackbot.skills.redeemShareLink": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -3566,7 +3606,7 @@
   }
  },
  "ai.alpha.slackbot.skills.removeFromLibrary": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -3716,7 +3756,7 @@
   }
  },
  "ai.alpha.slackbot.skills.search": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -3726,7 +3766,7 @@
   }
  },
  "ai.alpha.slackbot.skills.setAutoEnabled": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "permissionType": {
@@ -3748,7 +3788,7 @@
   }
  },
  "ai.alpha.slackbot.skills.unsetCanvasAsSkill": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -3886,11 +3926,11 @@
   }
  },
  "ai.alpha.slackbot.skillSets.addToLibrary": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 18,
+    "sites": 19,
     "type": "unknown"
    },
    "hasError": {
@@ -3902,7 +3942,7 @@
     "type": "unknown"
    },
    "channelId": {
-    "sites": 4,
+    "sites": 5,
     "type": "unknown"
    },
    "draftId": {
@@ -3981,10 +4021,6 @@
     "sites": 1,
     "type": "unknown"
    },
-   "cursor": {
-    "sites": 1,
-    "type": "unknown"
-   },
    "duplicatedRecordId": {
     "sites": 1,
     "type": "unknown"
@@ -4010,10 +4046,6 @@
     "type": "unknown"
    },
    "isSplitView": {
-    "sites": 1,
-    "type": "unknown"
-   },
-   "limit": {
     "sites": 1,
     "type": "unknown"
    },
@@ -4158,7 +4190,7 @@
   }
  },
  "ai.alpha.slackbotBigMode.listRecommendations": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "markdownContentToRefine": {
@@ -4184,7 +4216,7 @@
   }
  },
  "ai.alpha.slackbotBigMode.listSuggestions": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -4210,7 +4242,7 @@
   }
  },
  "ai.alpha.slackbotNuxCarousel.addMemory": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "content": {
@@ -4224,7 +4256,7 @@
   }
  },
  "ai.alpha.slackbotNuxCarousel.fetch": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -4242,7 +4274,7 @@
   }
  },
  "ai.alpha.slackbotNuxCarousel.recommendations": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -4252,7 +4284,7 @@
   }
  },
  "ai.alpha.slackiversary.fetch": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -4262,7 +4294,7 @@
   }
  },
  "ai.alpha.surfaces.getSourcesShared": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -4276,7 +4308,7 @@
   }
  },
  "ai.alpha.surfaces.listVersions": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -4290,7 +4322,7 @@
   }
  },
  "ai.alpha.surfaces.openCardComment": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "cardId": {
@@ -4312,7 +4344,7 @@
   }
  },
  "ai.alpha.surfaces.setSourcesShared": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -4330,7 +4362,7 @@
   }
  },
  "ai.alpha.translate.locales": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -4364,7 +4396,7 @@
   }
  },
  "ai.alpha.translate.promptSummary": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -4394,7 +4426,7 @@
   }
  },
  "ai.crm.draftEmail": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -4540,7 +4572,7 @@
   }
  },
  "ai.crm.records.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -4550,7 +4582,7 @@
   }
  },
  "ai.savedPrompts.addTrigger": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -4568,7 +4600,7 @@
   }
  },
  "ai.savedPrompts.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "agentUserId": {
@@ -4590,7 +4622,7 @@
   }
  },
  "ai.savedPrompts.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -4604,7 +4636,7 @@
   }
  },
  "ai.savedPrompts.execute": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -4618,7 +4650,7 @@
   }
  },
  "ai.savedPrompts.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "agentUserId": {
@@ -4636,7 +4668,7 @@
   }
  },
  "ai.savedPrompts.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -4658,7 +4690,7 @@
   }
  },
  "ai.savedPrompts.updateTrigger": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -4680,7 +4712,7 @@
   }
  },
  "ai.swarmKnowledge.generate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -4698,7 +4730,7 @@
   }
  },
  "ai.workflows.steps.response": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -4748,7 +4780,7 @@
   }
  },
  "aiApps.deletePhoto": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -4774,7 +4806,7 @@
   }
  },
  "aiApps.history": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -4788,7 +4820,7 @@
   }
  },
  "aiApps.setPhoto": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -4796,7 +4828,7 @@
     "type": "unknown"
    },
    "reason": {
-    "sites": 4,
+    "sites": 5,
     "type": "unknown"
    },
    "data": {
@@ -4903,6 +4935,10 @@
     "sites": 1,
     "type": "unknown"
    },
+   "team": {
+    "sites": 1,
+    "type": "unknown"
+   },
    "teamId": {
     "sites": 1,
     "type": "unknown"
@@ -4918,7 +4954,7 @@
   }
  },
  "analytics.clogData": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "async": {
@@ -4944,7 +4980,7 @@
   }
  },
  "apps.activities.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -4966,7 +5002,7 @@
   }
  },
  "apps.auth.external.authMapping.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -4996,7 +5032,7 @@
   }
  },
  "apps.auth.external.start": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -5104,7 +5140,7 @@
   }
  },
  "apps.certified.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appIds": {
@@ -5118,7 +5154,7 @@
   }
  },
  "apps.context.changed": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -5176,7 +5212,7 @@
   }
  },
  "apps.datasources.external.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "datasourceId": {
@@ -5190,7 +5226,7 @@
   }
  },
  "apps.datasources.external.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "creationSource": {
@@ -5204,7 +5240,7 @@
   }
  },
  "apps.index.filters.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelsData": {
@@ -5226,7 +5262,7 @@
   }
  },
  "apps.productivity.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isQueryUserGenerated": {
@@ -5252,7 +5288,7 @@
   }
  },
  "apps.profile.lookup": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appIds": {
@@ -5266,7 +5302,7 @@
   }
  },
  "apps.recommendations.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -5348,7 +5384,7 @@
   }
  },
  "apps.team.variables.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "names": {
@@ -5366,7 +5402,7 @@
   }
  },
  "auth.test": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -5388,7 +5424,7 @@
   }
  },
  "blocks.format": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "blocks": {
@@ -5482,30 +5518,14 @@
   }
  },
  "calendar.alerts.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
-   "frecency": {
-    "sites": 1,
-    "type": "boolean"
-   },
-   "includeAutomatedTriggers": {
-    "sites": 1,
-    "type": "boolean"
-   },
    "limit": {
     "sites": 1,
     "type": "number"
    },
-   "onInsertWorkflow": {
-    "sites": 1,
-    "type": "unknown"
-   },
    "reason": {
-    "sites": 1,
-    "type": "string"
-   },
-   "source": {
     "sites": 1,
     "type": "string"
    },
@@ -5516,7 +5536,7 @@
   }
  },
  "calendar.event.getByEventLinkId": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "container": {
@@ -5562,7 +5582,7 @@
   }
  },
  "calendar.getNotificationPrefs": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "calAppType": {
@@ -5576,7 +5596,7 @@
   }
  },
  "calendar.setNotificationPrefs": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "calAppType": {
@@ -5594,7 +5614,7 @@
   }
  },
  "canvases.agents.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -5604,7 +5624,7 @@
   }
  },
  "canvases.drafts.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "canvasId": {
@@ -5622,7 +5642,7 @@
   }
  },
  "canvases.listHeaders": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -5654,7 +5674,7 @@
   }
  },
  "channelSections.channels.recommend": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -5744,7 +5764,7 @@
   }
  },
  "channelSections.recommend": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "debugInfo": {
@@ -5770,7 +5790,7 @@
   }
  },
  "client.apps.composerSuggestions": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "externalDirectory": {
@@ -5796,7 +5816,7 @@
   }
  },
  "client.codeChannels.browse": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "agentUserId": {
@@ -5838,7 +5858,7 @@
   }
  },
  "client.codeChannels.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -5872,7 +5892,7 @@
   }
  },
  "client.codeChannels.createAndStart": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -5902,7 +5922,7 @@
   }
  },
  "client.codeChannels.getPrWorkObject": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -5920,7 +5940,7 @@
   }
  },
  "client.codeChannels.listSupportedApps": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -5930,7 +5950,7 @@
   }
  },
  "client.codeChannels.mergePullRequest": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -5986,7 +6006,7 @@
   }
  },
  "client.codeChannels.setReviewThreadResolved": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -6044,7 +6064,7 @@
   }
  },
  "client.codeChannels.submitReview": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -6074,7 +6094,7 @@
   }
  },
  "connectableContacts.lookup": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "email": {
@@ -6088,7 +6108,7 @@
   }
  },
  "connectInvites.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "inviteTypes": {
@@ -6118,7 +6138,7 @@
   }
  },
  "conversations.archive.recommendations": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6136,7 +6156,7 @@
   }
  },
  "conversations.bulkArchive": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6154,7 +6174,7 @@
   }
  },
  "conversations.bulkJoin": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelIds": {
@@ -6182,7 +6202,7 @@
   }
  },
  "conversations.canSetProperties": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -6200,49 +6220,69 @@
   }
  },
  "conversations.convertExternalLimited": {
-  "build": "c6145181fd08",
-  "seen": "2026-10-28",
+  "build": "f8c9a4481197",
+  "seen": "2026-10-29",
   "params": {
-   "attachments": {
+   "channel": {
     "sites": 2,
-    "type": "unknown"
+    "type": "object"
    },
-   "channelId": {
+   "didFetchFileForViewer": {
     "sites": 2,
-    "type": "unknown"
-   },
-   "messageBlocks": {
-    "sites": 2,
-    "type": "unknown"
-   },
-   "ts": {
-    "sites": 2,
-    "type": "unknown"
-   },
-   "windowId": {
-    "sites": 2,
-    "type": "unknown"
-   },
-   "endpoint": {
-    "sites": 1,
-    "type": "unknown"
-   },
-   "EXPEDITED": {
-    "sites": 1,
     "type": "boolean"
    },
-   "promise": {
+   "view": {
+    "sites": 2,
+    "type": "unknown"
+   },
+   "attempt": {
     "sites": 1,
     "type": "unknown"
    },
-   "workflow": {
+   "collection": {
     "sites": 1,
     "type": "unknown"
+   },
+   "cropSize": {
+    "sites": 1,
+    "type": "unknown"
+   },
+   "cropX": {
+    "sites": 1,
+    "type": "unknown"
+   },
+   "cropY": {
+    "sites": 1,
+    "type": "unknown"
+   },
+   "fileId": {
+    "sites": 1,
+    "type": "unknown"
+   },
+   "imageId": {
+    "sites": 1,
+    "type": "unknown"
+   },
+   "reactionKey": {
+    "sites": 1,
+    "type": "unknown"
+   },
+   "reason": {
+    "sites": 1,
+    "type": "string"
+   },
+   "source": {
+    "sites": 1,
+    "type": "string"
+   },
+   "suppressToast": {
+    "sites": 1,
+    "type": "boolean"
    }
   }
  },
  "conversations.createFromDmMpdm": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isPrivate": {
@@ -6276,7 +6316,7 @@
   }
  },
  "conversations.disconnectSharedTeam": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6316,7 +6356,7 @@
   }
  },
  "conversations.ignoreUser": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6366,7 +6406,7 @@
   }
  },
  "conversations.invite": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "idsToFetch": {
@@ -6380,7 +6420,7 @@
   }
  },
  "conversations.joinConnectedShared": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "inviteId": {
@@ -6422,7 +6462,7 @@
   }
  },
  "conversations.joinPendingShared": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6448,7 +6488,7 @@
   }
  },
  "conversations.leave.recommendations": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6490,7 +6530,7 @@
   }
  },
  "conversations.pendingInvites.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6532,7 +6572,7 @@
   }
  },
  "conversations.permissions.accountTypes.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6570,7 +6610,7 @@
   }
  },
  "conversations.permissions.accountTypes.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "pref": {
@@ -6656,7 +6696,7 @@
   }
  },
  "conversations.requestSharedInvite.approve": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "customStatusId": {
@@ -6698,7 +6738,7 @@
   }
  },
  "conversations.requestSharedInvite.deny": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "error": {
@@ -6748,7 +6788,7 @@
   }
  },
  "conversations.revokeSharedInvite": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "inviteId": {
@@ -6774,7 +6814,7 @@
   }
  },
  "conversations.revokeSharedInvitesBulk": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -6796,7 +6836,7 @@
   }
  },
  "conversations.searchLinks": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -6818,7 +6858,7 @@
   }
  },
  "conversations.setTeams": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channel": {
@@ -6840,7 +6880,7 @@
   }
  },
  "conversations.setTopic": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channel": {
@@ -6858,7 +6898,7 @@
   }
  },
  "conversations.sharedApprovals.bulkApprove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "description": {
@@ -6932,7 +6972,7 @@
   }
  },
  "conversations.sharedApprovals.bulkDecline": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "approvals": {
@@ -6946,7 +6986,7 @@
   }
  },
  "conversations.sharedApprovals.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "limit": {
@@ -6980,7 +7020,7 @@
   }
  },
  "conversations.sharedInviteInfo": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "emojiNameSuggestion": {
@@ -6994,7 +7034,7 @@
   }
  },
  "conversations.sharedInviteLinkCopied": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -7012,7 +7052,7 @@
   }
  },
  "developer.apps.mcp.updateToolsSnapshot": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -7030,7 +7070,7 @@
   }
  },
  "directory.disconnect": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listId": {
@@ -7084,7 +7124,7 @@
   }
  },
  "directory.token.hasScopes": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "provider": {
@@ -7098,7 +7138,7 @@
   }
  },
  "directory.users.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "cursor": {
@@ -7120,7 +7160,7 @@
   }
  },
  "dotcom.templates.search": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -7134,7 +7174,7 @@
   }
  },
  "drafts.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "draftId": {
@@ -7148,7 +7188,7 @@
   }
  },
  "drafts.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isActive": {
@@ -7166,7 +7206,7 @@
   }
  },
  "drafts.listActive": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "limit": {
@@ -7184,7 +7224,7 @@
   }
  },
  "email.affiliations.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -7194,7 +7234,7 @@
   }
  },
  "email.digest": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "limit": {
@@ -7230,7 +7270,7 @@
   }
  },
  "email.domains.updateExternalAccess": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "domain": {
@@ -7248,7 +7288,7 @@
   }
  },
  "email.domains.verify": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "domain": {
@@ -7262,7 +7302,7 @@
   }
  },
  "emailConnectorSelfServe.disconnect": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "provider": {
@@ -7276,7 +7316,7 @@
   }
  },
  "emailConnectorSelfServe.emails.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "cursor": {
@@ -7302,7 +7342,7 @@
   }
  },
  "emailConnectorSelfServe.enable": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -7312,7 +7352,7 @@
   }
  },
  "emailConnectorSelfServe.importedEmails.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -7334,7 +7374,7 @@
   }
  },
  "emoji.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "memberId": {
@@ -7352,7 +7392,7 @@
   }
  },
  "enterprise.channels.setShared": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -7374,7 +7414,7 @@
   }
  },
  "enterprise.security.ipAllowlist.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "ipAddressCidrs": {
@@ -7392,7 +7432,7 @@
   }
  },
  "enterprise.security.ipAllowlist.translateCsv": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -7484,7 +7524,7 @@
   }
  },
  "enterprise.users.admin.removeUser": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "userIds": {
@@ -7518,7 +7558,7 @@
   }
  },
  "enterpriseSearch.getEntity": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "lookupFunction": {
@@ -7536,7 +7576,7 @@
   }
  },
  "enterpriseSearch.searchFilterResults": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -7642,7 +7682,7 @@
   }
  },
  "entities.refs.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -7668,7 +7708,7 @@
   }
  },
  "entities.refs.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -7706,7 +7746,7 @@
   }
  },
  "experiments.exposureAttributes.snapshot": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "experimentGroup": {
@@ -7728,7 +7768,7 @@
   }
  },
  "experiments.getConfigById": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "experimentId": {
@@ -7742,7 +7782,7 @@
   }
  },
  "externalWorkspaces.invites.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channels": {
@@ -7756,7 +7796,7 @@
   }
  },
  "externalWorkspaces.invites.revokeBulk": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "disconnectReason": {
@@ -7782,7 +7822,7 @@
   }
  },
  "featureEligibility.check": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "feature": {
@@ -7796,7 +7836,7 @@
   }
  },
  "feedback.submitFeedback": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "attachments": {
@@ -7814,7 +7854,7 @@
   }
  },
  "feedback.submitPilotFeedback": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "pilot": {
@@ -7836,7 +7876,7 @@
   }
  },
  "feedback.submitSlackWrappedFeedback": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "contact": {
@@ -7858,7 +7898,7 @@
   }
  },
  "feedback.submitUserFeedback": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "productArea": {
@@ -7880,7 +7920,7 @@
   }
  },
  "files.acceptPermissionRequest": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "accessLevel": {
@@ -7906,7 +7946,7 @@
   }
  },
  "files.channelSettingsAllowDownloads": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -7920,7 +7960,7 @@
   }
  },
  "files.collections.bulkUpdate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -7934,7 +7974,7 @@
   }
  },
  "files.collections.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "collection": {
@@ -7948,7 +7988,7 @@
   }
  },
  "files.collections.reorder": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "leftCollection": {
@@ -7970,7 +8010,7 @@
   }
  },
  "files.disableRestrictedSharing": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -7984,7 +8024,7 @@
   }
  },
  "files.embedWithPermissions": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -8150,7 +8190,7 @@
   }
  },
  "files.enableCrossWorkspaceLinkSharing": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -8180,7 +8220,7 @@
   }
  },
  "files.enableRestrictedSharing": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -8194,7 +8234,7 @@
   }
  },
  "files.external.checkPermission": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -8220,7 +8260,7 @@
   }
  },
  "files.external.preview": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -8238,7 +8278,7 @@
   }
  },
  "files.external.searchConnector": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "pref": {
@@ -8272,7 +8312,7 @@
   }
  },
  "files.generateProviderTokenForFileStore": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "bypassCache": {
@@ -8330,7 +8370,7 @@
   }
  },
  "files.getContentHtml": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -8392,7 +8432,7 @@
   }
  },
  "files.getOverview": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -8406,7 +8446,7 @@
   }
  },
  "files.getProviderPreviewUrlForFileStore": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "externalDirectory": {
@@ -8468,7 +8508,7 @@
   }
  },
  "files.getShares": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -8482,7 +8522,7 @@
   }
  },
  "files.ignorePermissionRequest": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -8516,7 +8556,7 @@
   }
  },
  "files.importFromExternalURL": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -8646,7 +8686,7 @@
   }
  },
  "files.open": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -8664,7 +8704,7 @@
   }
  },
  "files.readStatus": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -8722,7 +8762,7 @@
   }
  },
  "files.requestPermission": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -8740,7 +8780,7 @@
   }
  },
  "files.revokePermission": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -8770,7 +8810,7 @@
   }
  },
  "files.setExcludeFromSlackAi": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "excludeFromSlackAi": {
@@ -8788,7 +8828,7 @@
   }
  },
  "files.unlock": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -8882,7 +8922,7 @@
   }
  },
  "files.updatePermission": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -8900,7 +8940,7 @@
   }
  },
  "folders.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "description": {
@@ -8922,7 +8962,7 @@
   }
  },
  "folders.items.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileIds": {
@@ -8940,7 +8980,7 @@
   }
  },
  "folders.items.reorder": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "center": {
@@ -8966,7 +9006,7 @@
   }
  },
  "folders.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "description": {
@@ -8984,7 +9024,7 @@
   }
  },
  "functions.categories.steps.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -9082,7 +9122,7 @@
   }
  },
  "functions.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "functionType": {
@@ -9218,7 +9258,7 @@
   }
  },
  "functions.workflows.collaborators.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "trial_redemption_status": {
@@ -9304,7 +9344,7 @@
   }
  },
  "functions.workflows.executions.confirmDelivery": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "delivered": {
@@ -9356,7 +9396,7 @@
   }
  },
  "functions.workflows.executions.getAgentConversationHandoffStatus": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channel": {
@@ -9374,7 +9414,7 @@
   }
  },
  "functions.workflows.executions.resume": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channel": {
@@ -9396,7 +9436,7 @@
   }
  },
  "functions.workflows.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelIds": {
@@ -9418,7 +9458,7 @@
   }
  },
  "functions.workflows.permissions.copy.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -9504,33 +9544,9 @@
   }
  },
  "functions.workflows.restoreFromVersion": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
-   "channelId": {
-    "sites": 4,
-    "type": "unknown"
-   },
-   "emails": {
-    "sites": 4,
-    "type": "unknown"
-   },
-   "googleFileContext": {
-    "sites": 4,
-    "type": "unknown"
-   },
-   "inviteSource": {
-    "sites": 4,
-    "type": "unknown"
-   },
-   "inviteType": {
-    "sites": 4,
-    "type": "unknown"
-   },
-   "targetTeamId": {
-    "sites": 4,
-    "type": "unknown"
-   },
    "reason": {
     "sites": 2,
     "type": "string"
@@ -9546,7 +9562,7 @@
   }
  },
  "functions.workflows.steps.aiFilePrecheck": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileSize": {
@@ -9564,7 +9580,7 @@
   }
  },
  "functions.workflows.steps.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -9582,7 +9598,7 @@
   }
  },
  "functions.workflows.steps.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "functionId": {
@@ -9600,7 +9616,7 @@
   }
  },
  "functions.workflows.steps.move": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "afterStepId": {
@@ -9622,7 +9638,7 @@
   }
  },
  "functions.workflows.steps.responses.export": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -9640,7 +9656,7 @@
   }
  },
  "gif.featured": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -9678,7 +9694,7 @@
   }
  },
  "gif.search": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "limit": {
@@ -9700,7 +9716,7 @@
   }
  },
  "google.directory.groups.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -9722,7 +9738,7 @@
   }
  },
  "help.issues.ticketStats": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "pref": {
@@ -9786,7 +9802,7 @@
   }
  },
  "helpcenter.postFeedback": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "direction": {
@@ -9816,7 +9832,7 @@
   }
  },
  "helpcenter.track": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "assetId": {
@@ -9834,7 +9850,7 @@
   }
  },
  "helpdesk.categories": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "filter": {
@@ -9864,7 +9880,7 @@
   }
  },
  "helpdesk.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "teamId": {
@@ -9894,7 +9910,7 @@
   }
  },
  "helpdesk.getArticle": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "articleId": {
@@ -9912,7 +9928,7 @@
   }
  },
  "helpdesk.getSectionsAndArticlesByCategory": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -9946,7 +9962,7 @@
   }
  },
  "huddles.cancelKnock": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "teamId": {
@@ -9958,11 +9974,11 @@
     "type": "unknown"
    },
    "reason": {
-    "sites": 6,
+    "sites": 5,
     "type": "unknown"
    },
    "channelId": {
-    "sites": 5,
+    "sites": 4,
     "type": "unknown"
    },
    "finalId": {
@@ -10020,7 +10036,7 @@
   }
  },
  "huddles.external.listExternalParticipants": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -10038,7 +10054,7 @@
   }
  },
  "huddles.external.new": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "duration": {
@@ -10056,15 +10072,15 @@
   }
  },
  "huddles.knock": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 12,
+    "sites": 11,
     "type": "unknown"
    },
    "channelId": {
-    "sites": 6,
+    "sites": 5,
     "type": "unknown"
    },
    "limit": {
@@ -10222,7 +10238,7 @@
   }
  },
  "huddles.readiness": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelSearchResponse": {
@@ -10249,6 +10265,14 @@
     "sites": 1,
     "type": "unknown"
    },
+   "channelIds": {
+    "sites": 1,
+    "type": "array"
+   },
+   "isExcludedFromSlackbot": {
+    "sites": 1,
+    "type": "unknown"
+   },
    "scrollmark": {
     "sites": 1,
     "type": "unknown"
@@ -10264,7 +10288,7 @@
   }
  },
  "huddles.recording.cancel": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -10314,7 +10338,7 @@
   }
  },
  "huddles.recording.setLanguage": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -10480,7 +10504,7 @@
   }
  },
  "idpgroups.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "actionableApprovalsCount": {
@@ -10502,7 +10526,7 @@
   }
  },
  "insights.messageStats.export": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channel": {
@@ -10520,7 +10544,7 @@
   }
  },
  "links.disconnectApps": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appIds": {
@@ -10534,7 +10558,7 @@
   }
  },
  "links.getTransferPayload": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -10560,7 +10584,7 @@
   }
  },
  "lists.columns.revert": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -10594,7 +10618,7 @@
   }
  },
  "lists.edits.getLastForCell": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "columnId": {
@@ -10616,7 +10640,7 @@
   }
  },
  "lists.edits.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "editedMemberId": {
@@ -10638,7 +10662,7 @@
   }
  },
  "lists.getApprovalReviewPending": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "approvalReference": {
@@ -10656,7 +10680,7 @@
   }
  },
  "lists.getDefaultView": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -10694,7 +10718,7 @@
   }
  },
  "lists.getMyItems": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "includeApprovals": {
@@ -10712,7 +10736,7 @@
   }
  },
  "lists.getThreadsForRecord": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listId": {
@@ -10730,7 +10754,7 @@
   }
  },
  "lists.history.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "limit": {
@@ -10748,7 +10772,7 @@
   }
  },
  "lists.history.load": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -10774,7 +10798,7 @@
   }
  },
  "lists.history.restoreExecute": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -10804,7 +10828,7 @@
   }
  },
  "lists.history.restorePreview": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listId": {
@@ -10822,7 +10846,7 @@
   }
  },
  "lists.import": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "file": {
@@ -10836,7 +10860,7 @@
   }
  },
  "lists.open": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listId": {
@@ -10850,7 +10874,7 @@
   }
  },
  "lists.records.count": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listId": {
@@ -10864,7 +10888,7 @@
   }
  },
  "lists.records.open": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -10926,7 +10950,7 @@
   }
  },
  "lists.records.restore": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -10948,7 +10972,7 @@
   }
  },
  "lists.records.subscriptions.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -10966,7 +10990,7 @@
   }
  },
  "lists.records.subscriptions.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "duration": {
@@ -10981,9 +11005,17 @@
     "sites": 11,
     "type": "unknown"
    },
+   "reason": {
+    "sites": 3,
+    "type": "string"
+   },
    "announceContentAsAssertive": {
     "sites": 2,
     "type": "boolean"
+   },
+   "channelId": {
+    "sites": 2,
+    "type": "unknown"
    },
    "conversationId": {
     "sites": 2,
@@ -10997,10 +11029,6 @@
     "sites": 2,
     "type": "unknown"
    },
-   "reason": {
-    "sites": 2,
-    "type": "string"
-   },
    "svgIconProps": {
     "sites": 2,
     "type": "unknown"
@@ -11010,10 +11038,6 @@
     "type": "unknown"
    },
    "broadcast": {
-    "sites": 1,
-    "type": "unknown"
-   },
-   "channelId": {
     "sites": 1,
     "type": "unknown"
    },
@@ -11045,6 +11069,10 @@
     "sites": 1,
     "type": "unknown"
    },
+   "skipSimpleArraySerializationInGetFormData": {
+    "sites": 1,
+    "type": "boolean"
+   },
    "threadTs": {
     "sites": 1,
     "type": "unknown"
@@ -11056,6 +11084,10 @@
    "type": {
     "sites": 1,
     "type": "string"
+   },
+   "userIds": {
+    "sites": 1,
+    "type": "array"
    }
   }
  },
@@ -11078,7 +11110,7 @@
   }
  },
  "lists.updateApproval": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "approvalReference": {
@@ -11096,7 +11128,7 @@
   }
  },
  "lists.views.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listId": {
@@ -11118,7 +11150,7 @@
   }
  },
  "lists.views.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -11136,7 +11168,7 @@
   }
  },
  "meetings.channel.getOrCreate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "eventLinkId": {
@@ -11154,7 +11186,7 @@
   }
  },
  "megaphone.journeys.dismiss": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11248,7 +11280,7 @@
   }
  },
  "megaphone.notifications.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "criticalOnly": {
@@ -11276,7 +11308,7 @@
   }
  },
  "megaphone.visualizer.notifications.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "notification": {
@@ -11290,7 +11322,7 @@
   }
  },
  "megaphone.visualizer.spaces.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11322,7 +11354,7 @@
   }
  },
  "moderation.locks.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -11340,7 +11372,7 @@
   }
  },
  "moderation.thread.hide": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -11358,7 +11390,7 @@
   }
  },
  "pins.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channel": {
@@ -11372,7 +11404,7 @@
   }
  },
  "pins.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11398,7 +11430,7 @@
   }
  },
  "pins.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11424,7 +11456,7 @@
   }
  },
  "platform.requests.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "entityId": {
@@ -11450,7 +11482,7 @@
   }
  },
  "polls.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "allowMultipleChoice": {
@@ -11472,7 +11504,7 @@
   }
  },
  "profiling.addJSTrace": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11590,7 +11622,7 @@
   }
  },
  "promo.campaigns.eligibilityInfo": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11612,7 +11644,7 @@
   }
  },
  "quip.history.restoreVersion": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -11642,7 +11674,7 @@
   }
  },
  "quip.thread.archive": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -11660,7 +11692,7 @@
   }
  },
  "quip.thread.archiveAll": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -11674,7 +11706,7 @@
   }
  },
  "quip.thread.synchronize": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -11692,7 +11724,7 @@
   }
  },
  "quip.thread.unarchive": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -11710,7 +11742,7 @@
   }
  },
  "quip.updateRootComment": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "contentSnippet": {
@@ -11744,7 +11776,7 @@
   }
  },
  "recordChannels.configs.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "objectTypes": {
@@ -11762,7 +11794,7 @@
   }
  },
  "recordChannels.configs.getObjectTypes": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11776,7 +11808,7 @@
   }
  },
  "recordChannels.configs.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11790,7 +11822,7 @@
   }
  },
  "recordChannels.configs.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11804,7 +11836,7 @@
   }
  },
  "recordChannels.digest": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11818,7 +11850,7 @@
   }
  },
  "recordChannels.link": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -11912,7 +11944,7 @@
   }
  },
  "recordChannels.objectTypes.getDefaultVisibility": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "objectType": {
@@ -11930,7 +11962,7 @@
   }
  },
  "recordChannels.objectTypes.getEligibleRelatedObjects": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "objectType": {
@@ -11948,7 +11980,7 @@
   }
  },
  "recordChannels.objectTypes.getNamingFields": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "objectType": {
@@ -11966,7 +11998,7 @@
   }
  },
  "recordChannels.objectTypes.getRelatedLists": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "expirationTs": {
@@ -11996,7 +12028,7 @@
   }
  },
  "recordChannels.objectTypes.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -12010,7 +12042,7 @@
   }
  },
  "recordChannels.open": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12068,15 +12100,11 @@
   }
  },
  "recordChannels.requestAccess": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 16,
-    "type": "unknown"
-   },
-   "channelId": {
-    "sites": 4,
+    "sites": 15,
     "type": "unknown"
    },
    "pref": {
@@ -12094,6 +12122,10 @@
    "apiReason": {
     "sites": 3,
     "type": "string"
+   },
+   "channelId": {
+    "sites": 3,
+    "type": "unknown"
    },
    "propertyUpdate": {
     "sites": 3,
@@ -12242,7 +12274,7 @@
   }
  },
  "recordChannels.unlink": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channel": {
@@ -12260,7 +12292,7 @@
   }
  },
  "records.share": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -12278,7 +12310,7 @@
   }
  },
  "rooms.startTranscription": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "callId": {
@@ -12292,7 +12324,7 @@
   }
  },
  "salesHome.admin.addMembers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12310,7 +12342,7 @@
   }
  },
  "salesHome.admin.addOrg": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12324,7 +12356,7 @@
   }
  },
  "salesHome.admin.addValidatedMembers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12338,7 +12370,7 @@
   }
  },
  "salesHome.admin.exportMembers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12352,7 +12384,7 @@
   }
  },
  "salesHome.admin.getSuggestedListViews": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12366,7 +12398,7 @@
   }
  },
  "salesHome.admin.listOrgs": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12376,7 +12408,7 @@
   }
  },
  "salesHome.admin.removeMembers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12394,7 +12426,7 @@
   }
  },
  "salesHome.admin.setDatasourceId": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "datasourceId": {
@@ -12412,7 +12444,7 @@
   }
  },
  "salesHome.admin.setSuggestedListViews": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12430,7 +12462,7 @@
   }
  },
  "salesHome.admin.validateEmails": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "file": {
@@ -12444,7 +12476,7 @@
   }
  },
  "salesHome.dealWinCelebrations.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12458,7 +12490,7 @@
   }
  },
  "salesHome.insights.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12468,7 +12500,7 @@
   }
  },
  "salesHome.insights.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "insights": {
@@ -12486,7 +12518,7 @@
   }
  },
  "salesHome.listViews.getAdminSuggested": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12496,7 +12528,7 @@
   }
  },
  "salesHome.notifications.formatShare": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "createdTs": {
@@ -12514,7 +12546,7 @@
   }
  },
  "salesHome.notifications.mutePrefs.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isMuted": {
@@ -12532,7 +12564,7 @@
   }
  },
  "salesHome.notifications.share": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -12554,7 +12586,7 @@
   }
  },
  "salesHome.salesforceOrgs.getAdminConfig": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -12594,7 +12626,7 @@
   }
  },
  "salesHome.workflows.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12608,7 +12640,7 @@
   }
  },
  "saved.bulkUpdate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "direction": {
@@ -12626,7 +12658,7 @@
   }
  },
  "saved.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12668,7 +12700,7 @@
   }
  },
  "schemaless.getClientLock": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12708,7 +12740,7 @@
   }
  },
  "search.autocomplete.tags": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "elementId": {
@@ -12726,7 +12758,7 @@
   }
  },
  "search.autocomplete.topEngagedFiles": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -12768,7 +12800,7 @@
   }
  },
  "search.modules.dms": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "count": {
@@ -12798,7 +12830,7 @@
   }
  },
  "search.modules.external": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -12988,7 +13020,7 @@
   }
  },
  "search.modules.workObjects": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -13142,7 +13174,7 @@
   }
  },
  "sfdc.activities.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fields": {
@@ -13156,7 +13188,7 @@
   }
  },
  "sfdc.activities.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "itemTypes": {
@@ -13198,7 +13230,7 @@
   }
  },
  "sfdc.activities.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "activityId": {
@@ -13216,7 +13248,7 @@
   }
  },
  "sfdc.admin.configs.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13230,7 +13262,7 @@
   }
  },
  "sfdc.admin.configs.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13256,7 +13288,7 @@
   }
  },
  "sfdc.admin.currency.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "currencyIsoCode": {
@@ -13274,7 +13306,7 @@
   }
  },
  "sfdc.admin.slackbotRules.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "level": {
@@ -13338,7 +13370,7 @@
   }
  },
  "sfdc.agentforce.admin.enableMcpServer": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "items": {
@@ -13384,7 +13416,7 @@
   }
  },
  "sfdc.agentforce.admin.enableMcpServers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13418,7 +13450,7 @@
   }
  },
  "sfdc.agentforce.admin.getMcpServersDetails": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "handleSnooze": {
@@ -13436,7 +13468,7 @@
   }
  },
  "sfdc.agentforce.channelAgent.configure": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -13474,7 +13506,7 @@
   }
  },
  "sfdc.agentforce.channelAgent.tokenCount": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isLoadingChannels": {
@@ -13532,7 +13564,7 @@
   }
  },
  "sfdc.agentforce.feedback": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -13570,7 +13602,7 @@
   }
  },
  "sfdc.agentforce.listGroupedScopes": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "agentName": {
@@ -13612,7 +13644,7 @@
   }
  },
  "sfdc.agentforce.provisionCka": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13626,7 +13658,7 @@
   }
  },
  "sfdc.agentforce.setSlackbotEnabled": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isEnabled": {
@@ -13648,7 +13680,7 @@
   }
  },
  "sfdc.autoStarter.integration.admin.removeMembers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "onSuccessAction": {
@@ -13686,7 +13718,7 @@
   }
  },
  "sfdc.captchaKeys.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "label": {
@@ -13712,7 +13744,7 @@
   }
  },
  "sfdc.captchaKeys.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13734,7 +13766,7 @@
   }
  },
  "sfdc.domainVerification.activate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "memberId": {
@@ -13764,7 +13796,7 @@
   }
  },
  "sfdc.domainVerification.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "alternateSelector": {
@@ -13794,7 +13826,7 @@
   }
  },
  "sfdc.domainVerification.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13816,7 +13848,7 @@
   }
  },
  "sfdc.domainVerification.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "domain": {
@@ -13834,7 +13866,7 @@
   }
  },
  "sfdc.domainVerification.isVerified": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13860,7 +13892,7 @@
   }
  },
  "sfdc.eacConfigs.disconnect": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13874,7 +13906,7 @@
   }
  },
  "sfdc.eacConfigs.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -13888,7 +13920,7 @@
   }
  },
  "sfdc.eacConfigs.init": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -13905,6 +13937,10 @@
    },
    "oldest": {
     "sites": 4,
+    "type": "unknown"
+   },
+   "limit": {
+    "sites": 3,
     "type": "unknown"
    },
    "channelIds": {
@@ -13931,7 +13967,7 @@
     "sites": 2,
     "type": "unknown"
    },
-   "limit": {
+   "isSubjectToMessageLimit": {
     "sites": 2,
     "type": "unknown"
    },
@@ -13987,6 +14023,10 @@
     "sites": 1,
     "type": "unknown"
    },
+   "cursor": {
+    "sites": 1,
+    "type": "unknown"
+   },
    "extras": {
     "sites": 1,
     "type": "object"
@@ -14012,10 +14052,6 @@
     "type": "unknown"
    },
    "type": {
-    "sites": 1,
-    "type": "unknown"
-   },
-   "userIds": {
     "sites": 1,
     "type": "unknown"
    }
@@ -14120,7 +14156,7 @@
   }
  },
  "sfdc.emails.capture.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "enabled": {
@@ -14138,7 +14174,7 @@
   }
  },
  "sfdc.emails.history": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14192,7 +14228,7 @@
   }
  },
  "sfdc.emails.send": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -14266,7 +14302,7 @@
   }
  },
  "sfdc.emailToCaseConfigs.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14340,7 +14376,7 @@
   }
  },
  "sfdc.emailToCaseConfigs.notifyCopy": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -14438,7 +14474,7 @@
   }
  },
  "sfdc.emailToCaseConfigs.resendVerification": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "context": {
@@ -14477,10 +14513,6 @@
     "sites": 1,
     "type": "unknown"
    },
-   "channelId": {
-    "sites": 1,
-    "type": "unknown"
-   },
    "clientReqId": {
     "sites": 1,
     "type": "unknown"
@@ -14516,7 +14548,7 @@
   }
  },
  "sfdc.events.searchAttendees": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "query": {
@@ -14602,7 +14634,7 @@
   }
  },
  "sfdc.fields.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14628,7 +14660,7 @@
   }
  },
  "sfdc.fields.edit": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14658,7 +14690,7 @@
   }
  },
  "sfdc.fields.listEligible": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "objectApiName": {
@@ -14676,7 +14708,7 @@
   }
  },
  "sfdc.fields.updateVisibility": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fieldApiNames": {
@@ -14730,7 +14762,7 @@
   }
  },
  "sfdc.files.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14800,7 +14832,7 @@
   }
  },
  "sfdc.files.upload": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14830,7 +14862,7 @@
   }
  },
  "sfdc.getContactDetails": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14868,7 +14900,7 @@
   }
  },
  "sfdc.getContactListInfo": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14882,7 +14914,7 @@
   }
  },
  "sfdc.getImportObjectAvailableFields": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "domain": {
@@ -14928,7 +14960,7 @@
   }
  },
  "sfdc.getImportObjectCSVSample": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -14986,7 +15018,7 @@
   }
  },
  "sfdc.getListViews": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "asIntegrationUser": {
@@ -15004,9 +15036,13 @@
   }
  },
  "sfdc.getObjectsOfType": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
+   "reason": {
+    "sites": 7,
+    "type": "string"
+   },
    "channelId": {
     "sites": 6,
     "type": "unknown"
@@ -15014,10 +15050,6 @@
    "fileId": {
     "sites": 6,
     "type": "unknown"
-   },
-   "reason": {
-    "sites": 6,
-    "type": "string"
    },
    "container": {
     "sites": 3,
@@ -15099,6 +15131,10 @@
     "sites": 1,
     "type": "unknown"
    },
+   "cursor": {
+    "sites": 1,
+    "type": "unknown"
+   },
    "docEmbed": {
     "sites": 1,
     "type": "unknown"
@@ -15118,6 +15154,10 @@
    "kickedUserId": {
     "sites": 1,
     "type": "unknown"
+   },
+   "limit": {
+    "sites": 1,
+    "type": "number"
    },
    "note": {
     "sites": 1,
@@ -15158,7 +15198,7 @@
   }
  },
  "sfdc.getOpportunity": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -15176,7 +15216,7 @@
   }
  },
  "sfdc.getOwnerChangeOptions": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15347,10 +15387,6 @@
     "sites": 1,
     "type": "unknown"
    },
-   "skipSimpleArraySerializationInGetFormData": {
-    "sites": 1,
-    "type": "boolean"
-   },
    "sortBy": {
     "sites": 1,
     "type": "unknown"
@@ -15377,7 +15413,7 @@
    },
    "userIds": {
     "sites": 1,
-    "type": "array"
+    "type": "unknown"
    },
    "userQuery": {
     "sites": 1,
@@ -15386,7 +15422,7 @@
   }
  },
  "sfdc.integration.admin.activateOrg": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15400,7 +15436,7 @@
   }
  },
  "sfdc.integration.admin.addMembers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15426,7 +15462,7 @@
   }
  },
  "sfdc.integration.admin.addValidatedMembers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15440,7 +15476,7 @@
   }
  },
  "sfdc.integration.admin.checkProvisioningEligibility": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15450,7 +15486,7 @@
   }
  },
  "sfdc.integration.admin.exportUserMappings": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "details": {
@@ -15472,7 +15508,7 @@
   }
  },
  "sfdc.integration.admin.listEligibleCkaOrgs": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15490,7 +15526,7 @@
   }
  },
  "sfdc.integration.admin.previewUsers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15508,7 +15544,7 @@
   }
  },
  "sfdc.integration.admin.requestConnection": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15550,7 +15586,7 @@
   }
  },
  "sfdc.integration.admin.syncMemberPerms": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15564,7 +15600,7 @@
   }
  },
  "sfdc.integration.admin.updateOrgConfig": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15612,7 +15648,7 @@
   }
  },
  "sfdc.integration.disconnectUser": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15630,7 +15666,7 @@
   }
  },
  "sfdc.integration.elevateMigration.complete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15644,7 +15680,7 @@
   }
  },
  "sfdc.integration.elevateMigration.exportFailedUsers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15658,7 +15694,7 @@
   }
  },
  "sfdc.integration.elevateMigration.start": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15672,7 +15708,7 @@
   }
  },
  "sfdc.integration.elevateMigration.startManual": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15686,7 +15722,7 @@
   }
  },
  "sfdc.integration.listOrgs": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15696,7 +15732,7 @@
   }
  },
  "sfdc.integration.searchUsers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15728,7 +15764,7 @@
   }
  },
  "sfdc.layouts.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15798,7 +15834,7 @@
   }
  },
  "sfdc.licenses.approval.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -15816,11 +15852,11 @@
   }
  },
  "sfdc.licenses.approval.myRequest": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 73,
+    "sites": 71,
     "type": "unknown"
    },
    "salesforceOrgId": {
@@ -15912,10 +15948,6 @@
     "type": "unknown"
    },
    "permission": {
-    "sites": 2,
-    "type": "unknown"
-   },
-   "quipThreadId": {
     "sites": 2,
     "type": "unknown"
    },
@@ -16106,7 +16138,7 @@
   }
  },
  "sfdc.licenses.approval.request": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -16368,7 +16400,7 @@
   }
  },
  "sfdc.listViews.loadPreferences": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listViewId": {
@@ -16386,7 +16418,7 @@
   }
  },
  "sfdc.listViews.recommend": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -16436,7 +16468,7 @@
   }
  },
  "sfdc.listViews.savePreferences": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "listViewId": {
@@ -16458,11 +16490,11 @@
   }
  },
  "sfdc.records.changeOwner": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 14,
+    "sites": 13,
     "type": "unknown"
    },
    "channelId": {
@@ -16593,10 +16625,6 @@
     "sites": 1,
     "type": "boolean"
    },
-   "cursor": {
-    "sites": 1,
-    "type": "unknown"
-   },
    "inviteToChannel": {
     "sites": 1,
     "type": "boolean"
@@ -16612,10 +16640,6 @@
    "latest": {
     "sites": 1,
     "type": "unknown"
-   },
-   "limit": {
-    "sites": 1,
-    "type": "number"
    },
    "listId": {
     "sites": 1,
@@ -16684,7 +16708,7 @@
   }
  },
  "sfdc.records.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -16726,7 +16750,7 @@
   }
  },
  "sfdc.records.performQuickAction": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "action_api_name": {
@@ -16772,7 +16796,7 @@
   }
  },
  "sfdc.records.undelete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -16798,11 +16822,11 @@
   }
  },
  "sfdc.salesTracker.convertLead": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 4,
+    "sites": 3,
     "type": "string"
    },
    "dealAmount": {
@@ -16825,10 +16849,6 @@
     "sites": 2,
     "type": "unknown"
    },
-   "filter": {
-    "sites": 1,
-    "type": "unknown"
-   },
    "huddleId": {
     "sites": 1,
     "type": "unknown"
@@ -16837,14 +16857,6 @@
     "sites": 1,
     "type": "unknown"
    },
-   "searchQuery": {
-    "sites": 1,
-    "type": "unknown"
-   },
-   "useChannelsListFilter": {
-    "sites": 1,
-    "type": "boolean"
-   },
    "userId": {
     "sites": 1,
     "type": "unknown"
@@ -16852,7 +16864,7 @@
   }
  },
  "sfdc.salesTracker.getContent": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "availableLicenses": {
@@ -16886,7 +16898,7 @@
   }
  },
  "sfdc.salesTracker.updateStageSettings": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "leadStatuses": {
@@ -16908,7 +16920,7 @@
   }
  },
  "sfdc.shareSalesTracker": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -16926,7 +16938,7 @@
   }
  },
  "sfdc.startCSVImport": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -16968,7 +16980,7 @@
   }
  },
  "sfdc.tasks.lookup": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -16986,7 +16998,7 @@
   }
  },
  "sfdc.webToLeads.updateSettings": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -17008,7 +17020,7 @@
   }
  },
  "share.prompts.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "machineName": {
@@ -17058,7 +17070,7 @@
   }
  },
  "share.prompts.listInvokedSkills": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -17076,7 +17088,7 @@
   }
  },
  "sharedInvites.canGetLink": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -17086,7 +17098,7 @@
   }
  },
  "sharedInvites.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -17124,7 +17136,7 @@
   }
  },
  "sharedInvites.revoke": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "id": {
@@ -17138,7 +17150,7 @@
   }
  },
  "sidebar.dms": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -17148,7 +17160,7 @@
   }
  },
  "signup.checkSignupDomains": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -17162,7 +17174,7 @@
   }
  },
  "slackbot.mcp.servers.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "authType": {
@@ -17184,7 +17196,7 @@
   }
  },
  "slackbot.mcp.servers.installOrRequest": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -17198,7 +17210,7 @@
   }
  },
  "slackbot.memories.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "content": {
@@ -17220,7 +17232,7 @@
   }
  },
  "slackbot.memories.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "memoryId": {
@@ -17234,7 +17246,7 @@
   }
  },
  "slackbot.memories.import": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "memoriesText": {
@@ -17248,7 +17260,7 @@
   }
  },
  "slackbot.memories.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "content": {
@@ -17270,7 +17282,7 @@
   }
  },
  "slackbot.memories.updateSettings": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isDistillationEnabled": {
@@ -17284,7 +17296,7 @@
   }
  },
  "slackbot.projects.canvases.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -17302,7 +17314,7 @@
   }
  },
  "slackbot.projects.canvases.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "projectContextId": {
@@ -17320,7 +17332,7 @@
   }
  },
  "slackbot.projects.channels.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -17338,7 +17350,7 @@
   }
  },
  "slackbot.projects.channels.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "projectContextId": {
@@ -17356,7 +17368,7 @@
   }
  },
  "slackbot.projects.context.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "projectId": {
@@ -17370,7 +17382,7 @@
   }
  },
  "slackbot.projects.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "description": {
@@ -17392,7 +17404,7 @@
   }
  },
  "slackbot.projects.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "projectId": {
@@ -17406,7 +17418,7 @@
   }
  },
  "slackbot.projects.files.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -17424,7 +17436,7 @@
   }
  },
  "slackbot.projects.files.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "projectId": {
@@ -17438,7 +17450,7 @@
   }
  },
  "slackbot.projects.files.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "fileId": {
@@ -17456,7 +17468,7 @@
   }
  },
  "slackbot.projects.memoryInfo": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "projectId": {
@@ -17470,7 +17482,7 @@
   }
  },
  "slackbot.projects.memoryUpdate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "content": {
@@ -17492,7 +17504,7 @@
   }
  },
  "slackbot.projects.reportInfo": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "projectId": {
@@ -17506,7 +17518,7 @@
   }
  },
  "slackbot.projects.reportUpdate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "isEnabled": {
@@ -17524,7 +17536,7 @@
   }
  },
  "slackbot.projects.threads.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelSectionId": {
@@ -17546,7 +17558,7 @@
   }
  },
  "slackbot.projects.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "projectId": {
@@ -17560,7 +17572,7 @@
   }
  },
  "slackbot.suggestions.listForDesktop": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -17582,7 +17594,7 @@
   }
  },
  "slides.addAttachment": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "attachment": {
@@ -17600,7 +17612,7 @@
   }
  },
  "solutions.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -17698,7 +17710,7 @@
   }
  },
  "solutions.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -17776,7 +17788,7 @@
   }
  },
  "subteams.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "actions": {
@@ -17932,7 +17944,7 @@
   }
  },
  "team.connectedOrgs.export": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "columnsToExport": {
@@ -17950,7 +17962,7 @@
   }
  },
  "team.newHires": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "limit": {
@@ -17964,7 +17976,7 @@
   }
  },
  "team.prefs.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -17994,7 +18006,7 @@
   }
  },
  "team.slackConnectGuidelines.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18008,7 +18020,7 @@
   }
  },
  "team.slackConnectPrefs.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18018,7 +18030,7 @@
   }
  },
  "team.stats.timeSeries": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18028,7 +18040,7 @@
   }
  },
  "teams.authorized.ip.range.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18038,7 +18050,7 @@
   }
  },
  "teams.authorized.ip.range.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -18056,7 +18068,7 @@
   }
  },
  "teams.selfReportedSegmentation.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18066,7 +18078,7 @@
   }
  },
  "teams.trials.usage": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18076,7 +18088,7 @@
   }
  },
  "templates.admins.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18090,7 +18102,7 @@
   }
  },
  "templates.integrations.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18100,7 +18112,7 @@
   }
  },
  "today.focus": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18130,7 +18142,7 @@
   }
  },
  "today.items.blocks.dismiss": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "blockId": {
@@ -18152,7 +18164,7 @@
   }
  },
  "today.items.clear": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "itemIds": {
@@ -18166,7 +18178,7 @@
   }
  },
  "today.items.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "itemId": {
@@ -18184,7 +18196,7 @@
   }
  },
  "usergroups.disable": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18198,7 +18210,7 @@
   }
  },
  "usergroups.enable": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18212,7 +18224,7 @@
   }
  },
  "usergroups.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18226,7 +18238,7 @@
   }
  },
  "usergroups.search": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18292,7 +18304,7 @@
   }
  },
  "users.admin.canAddUltraRestricted": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -18314,7 +18326,7 @@
   }
  },
  "users.admin.disable2FA": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18328,7 +18340,7 @@
   }
  },
  "users.admin.inviteSms": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "phoneNumbers": {
@@ -18346,7 +18358,7 @@
   }
  },
  "users.admin.reactivateFrontline": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channels": {
@@ -18368,7 +18380,7 @@
   }
  },
  "users.admin.sendSSOBind": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18382,7 +18394,7 @@
   }
  },
  "users.admin.setAdmin": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "selectedInviteRowIds": {
@@ -18416,7 +18428,7 @@
   }
  },
  "users.admin.setRegular": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18430,7 +18442,7 @@
   }
  },
  "users.admin.setRestricted": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channels": {
@@ -18494,7 +18506,7 @@
   }
  },
  "users.admin.updateSharedInvite": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "campaign": {
@@ -18592,7 +18604,7 @@
   }
  },
  "users.channelSections.createLink": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18850,7 +18862,7 @@
   }
  },
  "users.channelSections.validateShare": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channels": {
@@ -18868,7 +18880,7 @@
   }
  },
  "users.channelSuggestions.dismiss": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelSuggestionId": {
@@ -18882,7 +18894,7 @@
   }
  },
  "users.channelSuggestions.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -18892,7 +18904,7 @@
   }
  },
  "users.channelSuggestions.update": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelSuggestionId": {
@@ -18914,7 +18926,7 @@
   }
  },
  "users.consent.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -18932,7 +18944,7 @@
   }
  },
  "users.consent.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -18946,7 +18958,7 @@
   }
  },
  "users.consent.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appId": {
@@ -18964,7 +18976,7 @@
   }
  },
  "users.customStatus.deleteScheduled": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "customStatusId": {
@@ -18978,7 +18990,7 @@
   }
  },
  "users.customStatus.schedule": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "dateExpire": {
@@ -19036,7 +19048,7 @@
   }
  },
  "users.delegates.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -19054,7 +19066,7 @@
   }
  },
  "users.delegates.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -19072,7 +19084,7 @@
   }
  },
  "users.deletePhoto": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19102,7 +19114,7 @@
   }
  },
  "users.emailtoken.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19112,7 +19124,7 @@
   }
  },
  "users.emailtoken.delete": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "emailTokenId": {
@@ -19126,7 +19138,7 @@
   }
  },
  "users.emailtoken.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19136,7 +19148,7 @@
   }
  },
  "users.interactions.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19182,7 +19194,7 @@
   }
  },
  "users.listIgnoredUsers": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19192,7 +19204,7 @@
   }
  },
  "users.priority.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19342,7 +19354,7 @@
   }
  },
  "users.priority.getRecommendations": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "limit": {
@@ -19356,19 +19368,19 @@
   }
  },
  "users.priority.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
-    "sites": 21,
-    "type": "unknown"
-   },
-   "channelId": {
-    "sites": 7,
+    "sites": 20,
     "type": "unknown"
    },
    "query": {
     "sites": 7,
+    "type": "unknown"
+   },
+   "channelId": {
+    "sites": 6,
     "type": "unknown"
    },
    "openEmailToCaseDialog": {
@@ -19534,7 +19546,7 @@
   }
  },
  "users.profile.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19548,7 +19560,7 @@
   }
  },
  "users.profile.getTrailheadRank": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19594,7 +19606,7 @@
   }
  },
  "users.removeUserBlock": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "email": {
@@ -19608,7 +19620,7 @@
   }
  },
  "users.slackConnect.orgList": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -19650,7 +19662,7 @@
   }
  },
  "users.upgradeGuests.request": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "availableData": {
@@ -19740,7 +19752,7 @@
   }
  },
  "visits.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "checksum": {
@@ -19758,7 +19770,7 @@
   }
  },
  "visits.record": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "clientNowMs": {
@@ -19776,7 +19788,7 @@
   }
  },
  "workflows.activity.export": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "filters": {
@@ -19794,7 +19806,7 @@
   }
  },
  "workflows.activity.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -19828,7 +19840,7 @@
   }
  },
  "workflows.ai.feedback": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "additionalFeedback": {
@@ -19858,7 +19870,7 @@
   }
  },
  "workflows.ai.generate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "prompt": {
@@ -19872,7 +19884,7 @@
   }
  },
  "workflows.channelOptIn.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -19886,7 +19898,7 @@
   }
  },
  "workflows.channelOptIn.set": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -19908,7 +19920,7 @@
   }
  },
  "workflows.featured.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "channelId": {
@@ -19950,7 +19962,7 @@
   }
  },
  "workflows.notificationOptOut.info": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20124,7 +20136,7 @@
   }
  },
  "workflows.notificationOptOut.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20378,7 +20390,7 @@
   }
  },
  "workflows.taskRuns.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20392,7 +20404,7 @@
   }
  },
  "workflows.templates.collaborators.add": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "collaboratorIds": {
@@ -20410,7 +20422,7 @@
   }
  },
  "workflows.templates.collaborators.remove": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20428,7 +20440,7 @@
   }
  },
  "workflows.templates.create": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "name": {
@@ -20454,7 +20466,7 @@
   }
  },
  "workflows.templates.get": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20468,7 +20480,7 @@
   }
  },
  "workflows.templates.getBuiltinTemplate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20482,7 +20494,7 @@
   }
  },
  "workflows.templates.listForUser": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "cursor": {
@@ -20504,7 +20516,7 @@
   }
  },
  "workflows.templates.localize": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20522,7 +20534,7 @@
   }
  },
  "workflows.templates.validate": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "name": {
@@ -20536,7 +20548,7 @@
   }
  },
  "workflows.triggers.auth.external.list": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20564,7 +20576,7 @@
   }
  },
  "workflows.triggers.listRecentlyRunForUser": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "reason": {
@@ -20604,7 +20616,7 @@
   }
  },
  "workflows.triggers.trip": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "clientToken": {
@@ -20630,7 +20642,7 @@
   }
  },
  "workObjects.editComment": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "comment": {
@@ -20660,7 +20672,7 @@
   }
  },
  "workObjects.getEntity": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "appearance": {
@@ -20702,7 +20714,7 @@
   }
  },
  "workObjects.postComment": {
-  "build": "cb641d1cf03c",
+  "build": "f8c9a4481197",
   "seen": "2026-10-29",
   "params": {
    "comment": {
