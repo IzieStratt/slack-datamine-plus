@@ -1756,6 +1756,7 @@ action:setHasLoadedMembersInitially
 action:setHasMissingVariableData
 action:setHasNewLaunchpadRecommendations
 action:setHasNewUnreadsFeedTs
+action:setHasOpenedPlansComparisonCheckout
 action:setHasPrePopulatedChannels
 action:setHasReachedScgLimit
 action:setHasReachedTodayItemBottomById
@@ -2605,6 +2606,7 @@ action:setSlackbotModelOverride
 action:setSlackbotNoResultsDraft
 action:setSlackbotOnboardingWelcomeActive
 action:setSlackbotPendingThreadMark
+action:setSlackbotServerUnreadThreads
 action:setSlackbotThreadTs
 action:setSlackbotWritePermissionsBypassPageLayout
 action:setSlackbotWritePermissionsMode
@@ -4402,6 +4404,7 @@ thunk:copyHuddleLinkByChannelId
 thunk:copyImageToClipboardWithToast
 thunk:copyLink
 thunk:copyLinkToCanvas
+thunk:copyLinkToCodeChannelView
 thunk:copyLinkToFile
 thunk:copyLinkToList
 thunk:copyLinkToPrompt
@@ -5061,6 +5064,7 @@ thunk:fetchSidebarRecommendScores
 thunk:fetchSlackAiDataAvailableDateRange
 thunk:fetchSlackbotAiUsage
 thunk:fetchSlackbotExcludedChannelIds
+thunk:fetchSlackbotServerUnreadThreads
 thunk:fetchSlackbotTasksOnConnected
 thunk:fetchSlackConnectDmEligibility
 thunk:fetchSlackConnectPrefs
@@ -5090,6 +5094,7 @@ thunk:fetchTemplateCoachmarks
 thunk:fetchTemplates
 thunk:fetchTemplatesByIds
 thunk:fetchTodayItems
+thunk:fetchTractorChannelSimplificationSetupTourState
 thunk:fetchTrialInfo
 thunk:fetchTrialUsage
 thunk:fetchUnjoinedChannelMentions
@@ -5403,7 +5408,6 @@ thunk:handleStartErrorInner
 thunk:handleStraightToPaidFlow
 thunk:handleSuggestedPromptsButtonClick
 thunk:handleSupportedFontSelected
-thunk:handleTabChange
 thunk:handleTimestampClick
 thunk:handleUpdateFilterRefineClogs
 thunk:handleUpdateShowAndHideColumnsRefineClogs
@@ -5910,6 +5914,7 @@ thunk:maybeRefetchSlackbotHistoryOnReconnect
 thunk:maybeRefocusExistingChannelWindow
 thunk:maybeRefocusExistingWindow
 thunk:maybeRefreshAllThreads
+thunk:maybeRefreshJpPocketGuideV2AfterSegmentation
 thunk:maybeRefreshPlansForBuilderBundleAnswer
 thunk:maybeRefreshPreviewBannerSpace
 thunk:maybeRefreshQuickReactionsNotificationData
@@ -6828,6 +6833,7 @@ thunk:prefetchSunroofAgents
 thunk:prefetchVisitEntities
 thunk:prefillDmCanvasRemovalMaybeLogExposure
 thunk:prefsShortcut
+thunk:preloadClientOnBoot
 thunk:preloadExternalConnectors
 thunk:preloadPreviewData
 thunk:prepareAndSaveEditMessage
@@ -6858,6 +6864,7 @@ thunk:processDmMegaphoneClientEvent
 thunk:processIncomingMessages
 thunk:processResultRenderTelemetry
 thunk:processSearchMessage
+thunk:processThreads
 thunk:processUnchangedChannels
 thunk:processUnchangedChannelsAndAddMembership
 thunk:promiseToGetLegacyAppProfileByServiceId
