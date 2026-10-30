@@ -14,6 +14,7 @@
  ({appName})
  ({privateCount, plural, =1 {# private} other {# private}})
  ({teamName})
+ - 
  As a reminder, make sure you\u2019re not sharing sensitive information.
  Awaiting admin approval from {homeTeam} and {awayTeam}.
  Awaiting admin approval from {team}.
@@ -5667,6 +5668,8 @@ Current version
 Current view
 Current:
 Current: {selectedNotificationSetting}
+Currently Editing
+Currently Viewing
 Currently connected accounts will be disconnected.
 Currently in Starred
 Currently in {numPrivateChannels, plural, =1 {a private channel} other {# private channels}}
@@ -5744,6 +5747,7 @@ Customize slot 2
 Customize slot 3
 Customize tabs
 Customize user roles and secure your data.
+Customize with a prompt
 Customize workspace
 Customize your Slack Connect invitation
 Customize your sales stages with Slackbot
@@ -6358,6 +6362,7 @@ Dismiss Halloween themes banner
 Dismiss Salesforce sign-in reminder
 Dismiss Sign In Reminder
 Dismiss Suggested Message
+Dismiss Until Start Time
 Dismiss and continue running workflow
 Dismiss channel suggestion
 Dismiss channel summary notification
@@ -6376,6 +6381,7 @@ Dismiss themes banner
 Dismiss todo list
 Dismiss transcript generation prompt
 Dismiss trial countdown
+Dismiss until start time
 Display
 Display Name
 Display Text
@@ -8622,6 +8628,7 @@ Get the Halloween emoji pack
 Get the Slack App
 Get the Slack Mobile App
 Get the app to view and send messages.
+Get the best of Slack, free for 30 days.
 Get the conversation started.
 Get the group\u2019s feedback with a live screenshare
 Get the highlights from key channels
@@ -9700,6 +9707,7 @@ In 3 hours
 In 30 mins
 In < 1 min
 In < 1m
+In <1 min
 In Activity
 In Progress
 In Slack, channels keep your work focused by giving each topic, project or team its own space.
@@ -10258,6 +10266,7 @@ Join all channels
 Join all {teamName}channels
 Join and Launch Slack
 Join and Open
+Join and record notes
 Join call for {title}
 Join channel
 Join channel actions
@@ -12724,6 +12733,7 @@ No code channels yet
 No comments on this surface yet.
 No comments or reactions on this section
 No commitment needed
+No commitments. Your plan reverts to the free version of Slack when the trial ends.
 No connected apps
 No connection
 No connection.
@@ -13435,6 +13445,7 @@ OneDrive & SharePoint isn\u2019t connected
 OneDrive and SharePoint
 OneDrive, meet Slack
 Online
+Online {ago}
 Only .csv files are currently supported.
 Only 1 table can be attached to each message. 
 Only 9 people can be in a direct message.
@@ -13840,6 +13851,7 @@ Opportunity type
 Opt
 Optimize huddles performance by turning off videos, reducing screen share quality, and more.
 Optimize readability
+Opting into a Salesforce Notification will enable that notification for all members of the channel.
 Option
 Option 1
 Option 2
@@ -15801,6 +15813,7 @@ Request to Join {name}
 Request to Unlock AI Search
 Request to Upgrade
 Request to add guest to more channels
+Request to join
 Request to join huddle?
 Request to join the huddle?
 Request to upgrade so you can keep access to all the paid features your team uses. We\u2019ll send your request to people on your team with permission to purchase.
@@ -16266,6 +16279,8 @@ Salesforce Lists
 Salesforce Lists views
 Salesforce MCP Servers
 Salesforce MCP servers
+Salesforce Notifications
+Salesforce Notifications available in this channel
 Salesforce Org
 Salesforce Organization
 Salesforce Organizations | Slack Admin
@@ -16835,6 +16850,7 @@ See all events in your calendar
 See all events in your calendar, opens in new window
 See all external people in direct message conversations and channels.
 See all files ({total})
+See all in Salesforce
 See all invalid range values
 See all media
 See all notification settings
@@ -18792,6 +18808,7 @@ Spreadsheet rendering. The data is also available in the table below.
 Spreadsheets
 Square images under 128KB and with transparent backgrounds work best. If your image is too large, we\u2019ll try to resize it for you.
 Sri Lanka
+Stable
 Stage
 Stage changed
 Stage changes to\u2026
@@ -19412,6 +19429,8 @@ Switch integrations
 Switch layouts to review your messages in bulk.
 Switch to Channel
 Switch to Enhanced Text
+Switch to Experimental
+Switch to Stable
 Switch to Text
 Switch to This Tab
 Switch to URL
@@ -22290,6 +22309,7 @@ User Group Members
 User Groups
 User ID
 User ID: { userId }
+User Information
 User Menu
 User Type
 User account creation
@@ -22439,12 +22459,14 @@ Verify your email address to accept invitations with this account.
 Verify your email address, then try again.
 Verilog
 Vermont
+Version
 Version by {author} {date} at {time}
 Version by {author}, external user from {orgName}, {date} at {time}
 Version by {author}, {date} at {time}
 Version deleted.
 Version history
 Version history for {title}
+Version: {version}
 Versions
 Very difficult
 Very dissatisfied
@@ -23012,6 +23034,7 @@ We\u2019ll continue to preview in Slack.
 We\u2019ll create a form for this step using the info you\u2019ve already set up.
 We\u2019ll get you back to the app in just a minute.
 We\u2019ll hide the Translate button for messages in these languages. Nice work, polyglot.
+We\u2019ll let people in this huddle know you\u2019re here.
 We\u2019ll let people know you\u2019re here.
 We\u2019ll let you know when the cleanup\u2019s complete.
 We\u2019ll make a prorated charge to your credit card to cover your new team member\u2019s account for the remainder of the current billing period.
@@ -23852,6 +23875,7 @@ You are no longer reading this document in read only view.
 You are not a member of the channel currently selected, so the name can\u2019t be shown
 You are not a member of this channel and therefore cannot see any thread messages.
 You are not allowed to add other members to channels.
+You are not currently in a huddle
 You are on this call
 You are on this call on another device
 You are one with the focus
@@ -23974,6 +23998,7 @@ You can select up to {maxSelectedItems} people.
 You can send one invite every 24 hours.
 You can send one invite every 5 minutes.
 You can send the owner a reminder.
+You can set mobile notification preferences for your calendar in the Slack mobile app.
 You can still build a form manually and connect it to this step later.
 You can still build a form manually connect it to this step later.
 You can still find any item you had previously cleared.
@@ -23983,6 +24008,7 @@ You can stop logging your emails in Preferences.
 You can tell me things to remember anytime.
 You can undo this later in preferences.
 You can update this anytime
+You can upload any important email to Slack by forwarding it to a unique email address. Slack will deliver the email, and you can keep it private or share it with your team.
 You can upload any important email to Slack by forwarding it to a unique email address. Slackbot will deliver the email, and you can keep it private or share it with your team.
 You can use up to {max} apps in conversations. Turn one off to add another.
 You can view your chat history with Slackbot anytime.
@@ -24427,6 +24453,7 @@ You\u2019re agreeing to being transcribed, so make sure that everyone else is co
 You\u2019re agreeing to your audio being captured, so make sure everyone else is cool with that, too. No audio recording or transcription will be stored.
 You\u2019re all caught up
 You\u2019re all caught up :tada:
+You\u2019re all caught up! Here are some recent conversations:
 You\u2019re all caught up.
 You\u2019re all caught up. Enjoy the rest of your day.
 You\u2019re all caught up. Nice work!
@@ -32326,6 +32353,7 @@ zzz
 {imageScale}%
 {invalidApprovalsCount, plural, =1 {# request not {invalidApprovalsText}} other {# requests not {invalidApprovalsText}}}
 {inviteeName} is already in {maxChannels} channels, the limit for Frontline members.
+{inviteeText}{separator}{timeRemainingText}
 {inviteesCount, plural, =1 {That doesn\u2019t} other {These don\u2019t}} look like a valid email {inviteesCount, plural, =1 {address} other {addresses}}!
 {inviteesCount, plural, =1 {This agent can\u2019t} other {These agents can\u2019t}} be added to this channel. Check that {inviteesCount, plural, =1 {the agent is} other {the agents are}} available in this workspace and that you have permission to add agents.
 {inviteesCount, plural, =1 {This agent isn\u2019t} other {These agents aren\u2019t}} available in the workspace that hosts this channel. Ask an admin to add {inviteesCount, plural, =1 {it} other {them}} to that workspace, then try again.

@@ -264,6 +264,7 @@ action:clearApprovals
 action:clearApps
 action:clearAriaAnnounceMessageTs
 action:clearAudioAlerts
+action:clearAutoDismissByEventId
 action:clearAutoRecord
 action:clearBannerMessageForList
 action:clearBulkItems
@@ -522,6 +523,7 @@ action:dismissSlackiversary
 action:dismissSmartInvitesChannelSuggestion
 action:doneExpanding
 action:downgradeStatsFetchSuccess
+action:eagerDismissJitByEventId
 action:echoSlackbotPendingThreadMark
 action:editMemberAssignments
 action:editMessage
@@ -556,6 +558,8 @@ action:flashSearchResult
 action:forgetPersonalDefaultViewById
 action:forwardMessageToAnnouncerAPI
 action:getScreenThumbnails
+action:goToNextJitEvent
+action:goToPreviousJitEvent
 action:handleActiveMigration
 action:handleMeetingEvents
 action:handleStartError
@@ -598,6 +602,7 @@ action:initiateAiSummary
 action:initiateAiWorkflows
 action:initiateCanvasContentCreationSession
 action:initiateSearchSummary
+action:initRequestSentOnce
 action:initVideoPermission
 action:innerOpenPip
 action:innerRemoveWindow
@@ -845,6 +850,7 @@ action:registerSingerTurn
 action:registerVisibleVideoTile
 action:rehighlightNewRecords
 action:rehydrateOpenFilesList
+action:relayOverlays
 action:removeActionsForAppIds
 action:removeActiveDownload
 action:removeActivityIA4Item
@@ -1323,6 +1329,7 @@ action:setAttachmentActionAsPending
 action:setAttachmentLoaderAsShowing
 action:setAudioDetectionWasPerformed
 action:setAudioOnlyModeCameraWasEnabled
+action:setAutoDismiss
 action:setAutomationsPeekSelectedTab
 action:setAutoProvisionedTeams
 action:setAutoSlackUserObjectState
@@ -3277,6 +3284,7 @@ action:upsertHuddle
 action:upsertHuddleHistory
 action:upsertInvite
 action:upsertJoinCredentialsForChannel
+action:upsertJustInTimeEvents
 action:upsertLanguageGroups
 action:upsertLastReadTimestampById
 action:upsertLayoutTypeRecords
@@ -3825,6 +3833,7 @@ middleware:broadcastBBMSettingsMiddleware
 middleware:broadcastClientThemeMiddleware
 middleware:broadcastConnectivityMiddleware
 middleware:broadcastFullscreenMiddleware
+middleware:broadcastOverlaysMiddleware
 middleware:broadcastViewLayoutMiddleware
 middleware:broadcastWorkspacesMiddleware
 middleware:clientHuddlesMiddleware
@@ -5365,6 +5374,7 @@ thunk:handleHuddleKnockToEnterRequestExpired
 thunk:handleHuddleMissedCallNotification
 thunk:handleIdentityTransferLinkClick
 thunk:handleInviteClient
+thunk:handleJustInTimeRtm
 thunk:handleKnockToEnterUserJoin
 thunk:handleLastInviteStatusForHuddleUsers
 thunk:handleMeetingEvents
@@ -5457,6 +5467,7 @@ thunk:initializeCalendarPrefsOnce
 thunk:initializeClient
 thunk:initializeDesktopSubscriptions
 thunk:initializeEditUnfurls
+thunk:initializeJustInTimeOnce
 thunk:initializeMutedChannelsFromPref
 thunk:initializeSingerSession
 thunk:initializeSlackbotAiThread
@@ -6780,6 +6791,7 @@ thunk:performMoveManyChannelsToSection
 thunk:performMoveManyEntitiesToNewSection
 thunk:persistNuxKickoffThreadTses
 thunk:persistReduxState
+thunk:persistSlackbotFirstSendThreadInHistory
 thunk:persistSlackCrmActiveThread
 thunk:persistSlackCrmPreviewThread
 thunk:persistUnreadThreads
@@ -6807,6 +6819,7 @@ thunk:pollClientUnreadsOnInterval
 thunk:pollForFileProcessing
 thunk:popOutBlockKitModal
 thunk:populateCalendarHuddleInformation
+thunk:populateJitFromCalendarWindow
 thunk:populateMessageComposerWithStashedDraft
 thunk:popViewFromStack
 thunk:postChannelCanvasRouting
