@@ -264,7 +264,6 @@ action:clearApprovals
 action:clearApps
 action:clearAriaAnnounceMessageTs
 action:clearAudioAlerts
-action:clearAutoDismissByEventId
 action:clearAutoRecord
 action:clearBannerMessageForList
 action:clearBulkItems
@@ -523,7 +522,6 @@ action:dismissSlackiversary
 action:dismissSmartInvitesChannelSuggestion
 action:doneExpanding
 action:downgradeStatsFetchSuccess
-action:eagerDismissJitByEventId
 action:echoSlackbotPendingThreadMark
 action:editMemberAssignments
 action:editMessage
@@ -558,8 +556,6 @@ action:flashSearchResult
 action:forgetPersonalDefaultViewById
 action:forwardMessageToAnnouncerAPI
 action:getScreenThumbnails
-action:goToNextJitEvent
-action:goToPreviousJitEvent
 action:handleActiveMigration
 action:handleMeetingEvents
 action:handleStartError
@@ -602,7 +598,6 @@ action:initiateAiSummary
 action:initiateAiWorkflows
 action:initiateCanvasContentCreationSession
 action:initiateSearchSummary
-action:initRequestSentOnce
 action:initVideoPermission
 action:innerOpenPip
 action:innerRemoveWindow
@@ -1328,7 +1323,6 @@ action:setAttachmentActionAsPending
 action:setAttachmentLoaderAsShowing
 action:setAudioDetectionWasPerformed
 action:setAudioOnlyModeCameraWasEnabled
-action:setAutoDismiss
 action:setAutomationsPeekSelectedTab
 action:setAutoProvisionedTeams
 action:setAutoSlackUserObjectState
@@ -2556,6 +2550,7 @@ action:setShowErrorAlert
 action:setShowHuddleSummaryBannerVisibility
 action:setShowHuddleSummaryPendingBanner
 action:setShowListDescriptionById
+action:setShowMacMenuBarIcon
 action:setShowMutedChannelsHiddenConfirmationCoachmark
 action:setShownWorkspaceSelectStep
 action:setShowScdmEducationCoachmark
@@ -3282,7 +3277,6 @@ action:upsertHuddle
 action:upsertHuddleHistory
 action:upsertInvite
 action:upsertJoinCredentialsForChannel
-action:upsertJustInTimeEvents
 action:upsertLanguageGroups
 action:upsertLastReadTimestampById
 action:upsertLayoutTypeRecords
@@ -4232,6 +4226,7 @@ thunk:clogFileTypeFilterChange
 thunk:clogFilterCompleterClick
 thunk:clogFilterCompleterImpression
 thunk:clogFirstLogin
+thunk:clogFirstNavigationSuggestionImpression
 thunk:clogFormattingToggle
 thunk:clogGoButtonAction
 thunk:clogItemClick
@@ -4716,6 +4711,7 @@ thunk:ensureMembersArePresent
 thunk:ensureMessages
 thunk:ensureModelsArePresent
 thunk:ensureModelsForIdsArePresent
+thunk:ensurePopoverRowsLoaded
 thunk:ensureProjectsLoaded
 thunk:ensureProjectThreadsLoaded
 thunk:ensureSlackbotAiSessionId
@@ -5369,7 +5365,6 @@ thunk:handleHuddleKnockToEnterRequestExpired
 thunk:handleHuddleMissedCallNotification
 thunk:handleIdentityTransferLinkClick
 thunk:handleInviteClient
-thunk:handleJustInTimeRtm
 thunk:handleKnockToEnterUserJoin
 thunk:handleLastInviteStatusForHuddleUsers
 thunk:handleMeetingEvents
@@ -5462,7 +5457,6 @@ thunk:initializeCalendarPrefsOnce
 thunk:initializeClient
 thunk:initializeDesktopSubscriptions
 thunk:initializeEditUnfurls
-thunk:initializeJustInTimeOnce
 thunk:initializeMutedChannelsFromPref
 thunk:initializeSingerSession
 thunk:initializeSlackbotAiThread
@@ -5906,6 +5900,7 @@ thunk:maybeRedeemTrialOnSalesforceDataLoaded
 thunk:maybeRedirectFromBenefitsPage
 thunk:maybeRedirectFromPaidBenefitsPageCircularHandler
 thunk:maybeRedirectJoinerToSlackbot
+thunk:maybeRedirectToFlowFirstStep
 thunk:maybeRedirectToSlackbotDayOne
 thunk:maybeRefetchSlackbotAiLimitFromMegaphoneOnReconnect
 thunk:maybeRefetchSlackbotHistoryOnReconnect
@@ -6812,7 +6807,6 @@ thunk:pollClientUnreadsOnInterval
 thunk:pollForFileProcessing
 thunk:popOutBlockKitModal
 thunk:populateCalendarHuddleInformation
-thunk:populateJitFromCalendarWindow
 thunk:populateMessageComposerWithStashedDraft
 thunk:popViewFromStack
 thunk:postChannelCanvasRouting
@@ -7507,6 +7501,7 @@ thunk:setSeenThisSession
 thunk:setSelfMicrophone
 thunk:setSessionDurationAndUpsert
 thunk:setSetupQueryStringPref
+thunk:setShowMacMenuBarIcon
 thunk:setSidebarColumn
 thunk:setSidebarCustomTheme
 thunk:setSidebarExtraWideColumn

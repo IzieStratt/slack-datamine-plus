@@ -14,7 +14,6 @@
  ({appName})
  ({privateCount, plural, =1 {# private} other {# private}})
  ({teamName})
- - 
  As a reminder, make sure you\u2019re not sharing sensitive information.
  Awaiting admin approval from {homeTeam} and {awayTeam}.
  Awaiting admin approval from {team}.
@@ -274,6 +273,7 @@ $ {amount} USD
 1 hour
 1 hour ago
 1 instance in locked content skipped.
+1 instance replaced
 1 instance replaced.
 1 instance skipped.
 1 instance within a card skipped.
@@ -592,6 +592,7 @@ A huddle link has been shared
 A lead status and an opportunity stage can\u2019t share a name. Rename one to save.
 A limit has been reached. Waiting a moment before trying again is recommended.
 A list email was sent
+A list for your sales contacts
 A list item you added as a to-do was deleted. Remove it from To-dos?
 A list item you added as a to-do was not found. Remove it from To-dos?
 A list item you saved was deleted. Remove it from Saved?
@@ -925,6 +926,7 @@ Account used
 Account used for this step
 Accounts
 Accounts are for keeping tabs on the details of your customers, including any opportunities or contacts you\u2019ve saved at each company.
+Accounts are for keeping tabs on the details of your customers. Accounts can be linked to opportunities in your Sales Tracker.
 Accounts from third-parties that you setup while creating and using workflows, functions, and apps
 Accurate information
 Acknowledgment of sponsors and partners
@@ -1100,6 +1102,7 @@ Add Variable
 Add Variables
 Add Workflow
 Add Workspace
+Add Workspace (opens in new window)
 Add Workspaces
 Add \u201C{filterQuery}\u201D
 Add a Divider
@@ -1598,6 +1601,8 @@ Add {name} to channels
 Add {name} to conversation
 Add {name} to conversation. Use arrows to navigate suggestions.
 Add {numChannels, plural, =0 {Channels} =1 {# Channel} other {# Channels}}
+Add {provider_name} to this workspace
+Add {provider_name} to this workspace before you add this file as a tab.
 Add {serverName}
 Add {subject} to {laneTitle}
 Add {total, plural, =1 {# Contact} other {# Contacts}}
@@ -1976,6 +1981,7 @@ All statuses
 All suggested objects ({numSuggested})
 All tasks complete
 All templates
+All the companies you sell to, in one place
 All the right conversations - organized just for your team
 All these features are included with your current plan
 All threads
@@ -2416,6 +2422,7 @@ App permissions and security
 App source
 App status
 App suggestions collapsed
+App type
 App website
 App- or bot-generated messages and files
 App/service has sub-processors
@@ -2692,6 +2699,7 @@ Ask about this thread in {label} \u2014 or anything
 Ask about your conversation with {label} \u2014 or anything
 Ask about your {label} messages \u2014 or anything
 Ask about {label} \u2014 or anything
+Ask an admin to give this workspace access to {provider_name} before you add this file as a tab.
 Ask an admin to install it from the Slack Marketplace.
 Ask an admin to install {provider_name} in this workspace before you add this file as a tab.
 Ask an admin to reinstall it so Slackbot gets the access it needs.
@@ -3308,6 +3316,7 @@ Bulk manage conversations
 Bulk manage files
 Bulk permission for {category}
 Bulk permission for {title}
+Bulk select
 Bullet {number}
 Bulleted List
 Bulleted list
@@ -3834,6 +3843,7 @@ Change your preferences
 Change {providerName} account
 Change\u2026
 Changed files
+Changes apply to everyone in this channel. A workflow that\u2019s paused doesn\u2019t post here, and nothing is sent later.
 Changes apply to everyone on your team and update the available statuses on all lead and opportunity records.
 Changes couldn\u2019t be saved. Looks like there was a problem with your network connection.
 Changes have been made to this {displayType}. Sync to get the latest version.
@@ -4253,6 +4263,7 @@ Choose which parts of a message to include and the order in which they are annou
 Choose which stage counts as closed and lost.
 Choose which stage counts as won.
 Choose which status marks a lead as converted.
+Choose which workflows post here
 Choose which workspaces to connect to this channel:
 Choose who can add, remove, and reorder tabs
 Choose who can manage the Channel Agent
@@ -5582,6 +5593,8 @@ Created by {count, plural, =1 {{count} teammate} other {{count} teammates}}
 Created by {name}
 Created by {teamName}
 Created by {user}
+Created by: You
+Created by: {name}
 Created horizontal rule
 Created in {conversation}
 Created invite link to:
@@ -5731,7 +5744,6 @@ Customize slot 2
 Customize slot 3
 Customize tabs
 Customize user roles and secure your data.
-Customize with a prompt
 Customize workspace
 Customize your Slack Connect invitation
 Customize your sales stages with Slackbot
@@ -6346,7 +6358,6 @@ Dismiss Halloween themes banner
 Dismiss Salesforce sign-in reminder
 Dismiss Sign In Reminder
 Dismiss Suggested Message
-Dismiss Until Start Time
 Dismiss and continue running workflow
 Dismiss channel suggestion
 Dismiss channel summary notification
@@ -6365,7 +6376,6 @@ Dismiss themes banner
 Dismiss todo list
 Dismiss transcript generation prompt
 Dismiss trial countdown
-Dismiss until start time
 Display
 Display Name
 Display Text
@@ -7921,6 +7931,7 @@ Filter by channel name
 Filter by channel owner
 Filter by channel privacy
 Filter by channel type
+Filter by creator
 Filter by date\u2026
 Filter by entry type
 Filter by field
@@ -8998,6 +9009,7 @@ Has new comment
 Has new messages
 Has new replies
 Has pin
+Has unread replies
 Has your Tableau Next password been updated?
 Has your Tableau Next user been configured?
 Has {count, plural, =1 {{count} file type} other {{count} file types}}
@@ -9688,7 +9700,6 @@ In 3 hours
 In 30 mins
 In < 1 min
 In < 1m
-In <1 min
 In Activity
 In Progress
 In Slack, channels keep your work focused by giving each topic, project or team its own space.
@@ -10247,7 +10258,6 @@ Join all channels
 Join all {teamName}channels
 Join and Launch Slack
 Join and Open
-Join and record notes
 Join call for {title}
 Join channel
 Join channel actions
@@ -12810,6 +12820,7 @@ No matching channels
 No matching code channels
 No matching columns
 No matching objects
+No matching people
 No matching requests found.
 No matching session channels
 No matching sessions or workflows
@@ -13115,6 +13126,7 @@ Note:
 Note: Changing this setting will change the corresponding files setting for AI search.
 Note: Changing this setting will change the corresponding files setting for Slackbot.
 Note: DNS records can take 24 hours to appear. If you can\u2019t find this record, you\u2019ll need to try again later.
+Note: Please don\u2019t include sensitive or proprietary information.
 Note: This can\u2019t be undone, so make sure it\u2019s what you want to do.
 Note: This setting will only apply to members who access Slack from an unmanaged mobile device. Settings for other members are controlled by your EMM service.
 Note: This will not revoke existing tokens, only remove them from Slack systems. You might be able to revoke them from the provider\u2019s site.
@@ -13828,7 +13840,6 @@ Opportunity type
 Opt
 Optimize huddles performance by turning off videos, reducing screen share quality, and more.
 Optimize readability
-Opting into a Salesforce Notification will enable that notification for all members of the channel.
 Option
 Option 1
 Option 2
@@ -14024,6 +14035,7 @@ PDFs
 PHP
 PR #{number}
 PR approved
+PR blocked
 PR closed
 PR draft
 PR feedback
@@ -15789,7 +15801,6 @@ Request to Join {name}
 Request to Unlock AI Search
 Request to Upgrade
 Request to add guest to more channels
-Request to join
 Request to join huddle?
 Request to join the huddle?
 Request to upgrade so you can keep access to all the paid features your team uses. We\u2019ll send your request to people on your team with permission to purchase.
@@ -16255,8 +16266,6 @@ Salesforce Lists
 Salesforce Lists views
 Salesforce MCP Servers
 Salesforce MCP servers
-Salesforce Notifications
-Salesforce Notifications available in this channel
 Salesforce Org
 Salesforce Organization
 Salesforce Organizations | Slack Admin
@@ -17837,6 +17846,7 @@ Show full history
 Show full link
 Show history
 Show huddle thread
+Show icon in macOS menu bar
 Show icon, name and description only
 Show icon, name, description, and all provided fields
 Show images and files from linked websites
@@ -20220,6 +20230,7 @@ These settings change how the Focused sidebar ranks conversations on this device
 These teammates may be waiting for your reply.
 These tools will be shared with anyone who reviews this app.
 These workflows are connected to this list.
+These workflows post updates about this channel\u2019s Salesforce record.
 These workflows will no longer work and have been unpublished. Delete them here or update them in Workflow Builder.
 These {numMembers} members will have the {roleName} role in:
 They can be re-invited to this channel.
@@ -23001,7 +23012,6 @@ We\u2019ll continue to preview in Slack.
 We\u2019ll create a form for this step using the info you\u2019ve already set up.
 We\u2019ll get you back to the app in just a minute.
 We\u2019ll hide the Translate button for messages in these languages. Nice work, polyglot.
-We\u2019ll let people in this huddle know you\u2019re here.
 We\u2019ll let people know you\u2019re here.
 We\u2019ll let you know when the cleanup\u2019s complete.
 We\u2019ll make a prorated charge to your credit card to cover your new team member\u2019s account for the remainder of the current billing period.
@@ -23651,6 +23661,8 @@ Workflows have their own channel tab for even easier access.
 Workflows managed by you
 Workflows that use this account for a data source will stop running.
 Workflows will appear here when they are paused.
+Workflows with Salesforce Data
+Workflows with Salesforce data
 Workflows with custom steps
 Workflows with steps that use {title} will stop working immediately. Are you sure you want to delete this integration?
 Workflows with third-party connector steps
@@ -23840,7 +23852,6 @@ You are no longer reading this document in read only view.
 You are not a member of the channel currently selected, so the name can\u2019t be shown
 You are not a member of this channel and therefore cannot see any thread messages.
 You are not allowed to add other members to channels.
-You are not currently in a huddle
 You are on this call
 You are on this call on another device
 You are one with the focus
@@ -23963,7 +23974,6 @@ You can select up to {maxSelectedItems} people.
 You can send one invite every 24 hours.
 You can send one invite every 5 minutes.
 You can send the owner a reminder.
-You can set mobile notification preferences for your calendar in the Slack mobile app.
 You can still build a form manually and connect it to this step later.
 You can still build a form manually connect it to this step later.
 You can still find any item you had previously cleared.
@@ -24346,6 +24356,7 @@ You\u2019ll have access to Slackbot soon
 You\u2019ll have to sign in again to join conversations in this workspace. You\u2019re still a member, and will appear in directories.
 You\u2019ll join the huddle once your host starts it.
 You\u2019ll join this channel when you send this message.
+You\u2019ll keep track of contacts here. Contacts can be linked to opportunities in your Sales Tracker.
 You\u2019ll lose access to this canvas
 You\u2019ll lose access to this folder
 You\u2019ll lose access to this list
@@ -24416,7 +24427,6 @@ You\u2019re agreeing to being transcribed, so make sure that everyone else is co
 You\u2019re agreeing to your audio being captured, so make sure everyone else is cool with that, too. No audio recording or transcription will be stored.
 You\u2019re all caught up
 You\u2019re all caught up :tada:
-You\u2019re all caught up! Here are some recent conversations:
 You\u2019re all caught up.
 You\u2019re all caught up. Enjoy the rest of your day.
 You\u2019re all caught up. Nice work!
@@ -24934,6 +24944,7 @@ Your template is ready to go
 Your templates
 Your templates (internal)
 Your thread summary is ready.
+Your threads
 Your top MCP connectors
 Your trial
 Your trial ends in {daysRemaining, plural, one {# day} other {# days}}
@@ -32075,6 +32086,7 @@ zzz
 {count} groups
 {count} high risk {count,plural,=1{scope} other {scopes}}
 {count} in progress
+{count} instances replaced
 {count} instances replaced.
 {count} instances skipped.
 {count} instances within cards skipped.
@@ -32314,7 +32326,6 @@ zzz
 {imageScale}%
 {invalidApprovalsCount, plural, =1 {# request not {invalidApprovalsText}} other {# requests not {invalidApprovalsText}}}
 {inviteeName} is already in {maxChannels} channels, the limit for Frontline members.
-{inviteeText}{separator}{timeRemainingText}
 {inviteesCount, plural, =1 {That doesn\u2019t} other {These don\u2019t}} look like a valid email {inviteesCount, plural, =1 {address} other {addresses}}!
 {inviteesCount, plural, =1 {This agent can\u2019t} other {These agents can\u2019t}} be added to this channel. Check that {inviteesCount, plural, =1 {the agent is} other {the agents are}} available in this workspace and that you have permission to add agents.
 {inviteesCount, plural, =1 {This agent isn\u2019t} other {These agents aren\u2019t}} available in the workspace that hosts this channel. Ask an admin to add {inviteesCount, plural, =1 {it} other {them}} to that workspace, then try again.
@@ -32844,6 +32855,7 @@ zzz
 {providerName} accounts
 {provider_name} connection
 {provider_name} has been successfully connected.
+{provider_name} isn\u2019t turned on for this workspace
 {provider_name} needs to be installed
 {provider_name}: Connected
 {provider_name}: Connecting\u2026
