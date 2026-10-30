@@ -7,6 +7,7 @@ A11yObjectSectionWrapper
 A11yPrefsContext
 A11yPrefsProvider
 AboutPage
+AboutPageCollapsibleSection
 AboutPageConnectionBanner
 AboutPageDescription
 AboutPageEmptyState
@@ -403,6 +404,8 @@ AgendaEventItem
 AgendaMarkTaskCompleteToast
 AgendaNotAuthed
 AgendaSections
+AgendaTabButton
+AgendaTabs
 AgentActionMessage
 AgentAvatar
 AgentAvatarIcon
@@ -420,6 +423,8 @@ AgentCheckingDetailsLoader
 AgentConversationSectionHeader
 AgentCountButton
 AgentCreatedBy
+AgentDescription
+AgentDmDetailsAbout
 AgentDmDetailsActivity
 AgentDmDetailsContent
 AgentDmDetailsHeader
@@ -458,6 +463,7 @@ AgentHomeTitleRow
 AgentHomeViewHeaderNewConversation
 AgentHomeViewMessageInput
 AgentHoverCard
+AgentHoverCardFooter
 AgentHoverCardLoading
 AgenticBrowseAndFind
 AgenticBrowseAndFindPage
@@ -508,6 +514,7 @@ AgentProfileSharedWorkspaces
 AgentProfileSuggestedPromptButton
 AgentPromptButton
 AgentPromptCollapsedBody
+AgentResponseModeButton
 AgentRowPrimaryButton
 AgentSalesforceOrg
 AgentsAndToolsSection
@@ -543,6 +550,7 @@ AgentSunroofMenu
 AgentSunroofMenuItem
 AgentSunroofMenuItemActionMenu
 AgentSunroofReorderableMenuItem
+AgentTabContent
 AgentTaskItem
 AgentTaskMoreActionsMenu
 AgentTasksEmptyStateHero
@@ -579,6 +587,7 @@ AiAppsContext
 AiAppsOptInModalShell
 AiAppStatusIndicator
 AiAppView
+AiAssistantMessageButton
 AiAssistantOverlay
 AiContentCreationOverlay
 AIDisabledAlert
@@ -886,6 +895,7 @@ ArchiveChannelModal
 ArchiveChannelModalContents
 ArchiveChannelModalDisconnectConfirmation
 ArchiveChannelsToast
+ArchiveChannelSummary
 ArchiveCommentButton
 ArchiveConfirmationModal
 ArchiveItemMenuItem
@@ -1052,6 +1062,7 @@ AutoClogWithNavigationState
 AutoClogWrapper
 AutoHotPeekNuxBanner
 AutomationAlert
+automationGroupErrorToast
 AutomationGroupRow
 AutomationsHeaderActions
 AutomationsItem
@@ -1635,6 +1646,7 @@ BoardViewFieldRenderer
 boldHuddleTopicInStatus
 BookmarkIconWorkflow
 BookmarkItem
+BookmarkMessageModal
 BookmarkPinnedMessagesButton
 BookmarksPageHeader
 BookmarksSettingsMenu
@@ -2260,6 +2272,7 @@ ChannelTabPanelBase
 ChannelTabPreview
 ChannelTabsAddCanvasCoachmark
 ChannelTabsListContent
+ChannelTabsListEmptyState
 ChannelTabsListFolderSection
 ChannelTabsListSection
 ChannelTabsListTabsSection
@@ -2283,6 +2296,7 @@ ChannelWorkflowNoticeContext
 ChannelWorkflowNoticeContextWrapper
 ChannelWorkflowNoticeListItem
 ChannelWorkflowNoticeModal
+ChannelWorkspace
 CharacterCount
 ChartEmptyState
 chartLegend
@@ -2425,6 +2439,7 @@ CodeChannelLivePreview
 CodeChannelMessagePreview
 CodeChannelNameFilter
 CodeChannelOriginFilter
+CodeChannelOriginPreview
 CodeChannelPrCommentsMessage
 CodeChannelPrCommentsRow
 CodeChannelPreviewHoverCard
@@ -2437,6 +2452,7 @@ CodeChannelPrTabLabel
 CodeChannelPrTabPeek
 CodeChannelPullRequestTabView
 CodeChannelRedesignCard
+CodeChannelResponseModeMessage
 CodeChannelResultRow
 CodeChannelReviewComment
 CodeChannelReviewMessage
@@ -2867,6 +2883,7 @@ CopyButton
 CopyCodeBlockButton
 CopyItemsMenuItem
 CopyLinkToItemMenuItem
+CopyMeetingLinkButton
 CopyMembers
 CopyShareLinkModal
 CopyShareLinkModalContent
@@ -2874,6 +2891,7 @@ copyTagHandler
 CopyUserGroupId
 CopyWorkflowConfirmToast
 CopyWorkflowManagersButton
+CountdownButton
 CpuCompetitionWarning
 createAppProfileCardMenu
 CreateASectionRowElement
@@ -3098,6 +3116,9 @@ DateToken
 DayDivider
 DayDividerJumper
 DayDividerLabel
+DayGlanceBody
+DayGlanceCalendarIcon
+DayGlanceCard
 DayPickerSection
 DaysOfWeek
 DeactivateMemberModal
@@ -3173,6 +3194,7 @@ DeprecatedChanvasUpdateMessage
 DeprecatedChanvasUpdatesMessage
 DeprecatedCoachmarkAnchor
 DeprecatedCoachmarkCloseButton
+DeprecatedDialog
 DeprecatedEducationalButton
 DeprecatedEducationalContextBar
 DeprecatedEnhancedSelect
@@ -3380,6 +3402,8 @@ DraftManagementButton
 DraftManagementButtonCoachmark
 DraftPreview
 DraftRichTextPreview
+DraftRow
+DraftsList
 DraftsPage
 DraftsPageRow
 DraftsTabActions
@@ -3927,6 +3951,7 @@ ExternalGuestIcon
 ExternalHuddleIllustration
 ExternalHuddlesGuestClient
 ExternalHuddlesGuestInviteButton
+ExternalHuddlesNewMeetingMenuNewTag
 ExternalInviteActions
 ExternalInviteContent
 ExternalInvitePrimary
@@ -3993,6 +4018,7 @@ Featured
 FeaturedAppRow
 FeaturedAppsSection
 FeaturedContactCard
+FeaturedMeeting
 FeaturedSection
 FeaturedSkillCard
 FeatureExample
@@ -4289,7 +4315,9 @@ FollowUpPrompt
 FontSelectionLink
 Footer
 FooterActionButton
+FooterButton
 FooterSteps
+FooterWithSender
 ForceBackendFailuresToast
 ForceBuildVersionToast
 ForcePasswordResetModal
@@ -4435,6 +4463,7 @@ getBotScopeIcon
 getBoxAlertText
 getBreadCrumbComponents
 getBuiltinIcon
+getButton
 getButtonTooltip
 getCalAppIcon
 getCalendarPreview
@@ -4618,6 +4647,7 @@ getQueryRowLabel
 getRadiusHandle
 getReactionsMenuTemplate
 getRecepientList
+getRedesignSubtitle
 getRefreshLinkMenuItemTemplate
 getReplyCount
 getRestrictedToOrgAlertText
@@ -6434,6 +6464,7 @@ MessageBannerButtons
 MessageBlockDocumentUnfurl
 MessageBlocks
 MessageBodyOnly
+MessageButton
 MessageByEmailRowElement
 MessageCitation
 MessageClearedToast
@@ -6849,6 +6880,7 @@ NewViewModal
 NewWorkflowManagementHomeCoachmark
 NextBestAction
 NextMeetingCard
+NextMeetingTimeBadge
 NextSteps
 NFXSteps
 NoAudioWarning
@@ -7310,6 +7342,7 @@ PlaceholderInsertionModal
 PlaceholderLinkUnfurl
 PlaceholderPlusIcon
 PlaceholderVariablePopover
+PlainRow
 PlainText
 PlainTextBuilderTexty
 PlainTextInputElement
@@ -7368,6 +7401,7 @@ PolymorphicTriggerFilterField
 Popover
 PopoverRowActions
 PopoverTriggerWithKeyboardFocus
+PopoverWithWindow
 PopoverWrapper
 PopularCategorySkeleton
 PopularCategorySkeletonList
@@ -8106,6 +8140,7 @@ renderDynamicContent
 renderEditCustomSolutionModal
 renderEditFileGallery
 renderEditor
+RenderedRow
 RenderedViewContents
 renderEllipsisButton
 renderEmailIcon
@@ -8249,6 +8284,7 @@ renderMarketingConsent
 renderMaxChannelManagersAlert
 renderMcpDetail
 renderMeetingNotesLeadSentence
+renderMember
 renderMemberEntity
 renderMembers
 renderMenu
@@ -8687,6 +8723,7 @@ RowItem
 RowPrimary
 rowRenderer
 RowSecondary
+RowShell
 RowTertiary
 RsvpStatusIcon
 runInModalDialog
@@ -8894,6 +8931,10 @@ SavedTabActions
 SaveForEveryone
 SaveNewStepErrorMessage
 SaveNewWorkflowErrorMessage
+SaveToExternalProviderFailedToast
+SaveToExternalProviderFooter
+SaveToExternalProviderFooterConnector
+SaveToExternalProviderSavedToast
 ScdmEducationCoachmarkAnchor
 ScdmEducationLauncher
 ScdmInviteEscapeHatch
@@ -10805,11 +10846,14 @@ TodayTabIcon
 TodayV2Content
 TodayViewBetaBanner
 TodayViewHeader
+TodoAddInput
 TodoApproachingLimitBanner
 TodoHittingLimitBanner
 TodoInlineComposer
 TodoInput
+TodosAndMeetingsSplitViewPage
 TodosEmptyState
+TodosList
 TodosPage
 ToggleBar
 ToggleMute
@@ -11172,6 +11216,7 @@ useCopyAsTemplate
 useCopyMessages
 useCreateCanvasFromTemplate
 useCreateFolder
+useCreateHuddleLink
 useCreateSalesforceListTab
 useCreatorBaseTasks
 useCsvImportGoogleContactsModal
@@ -11614,6 +11659,7 @@ WfbAiStepToolsRailTabDot
 WfbPreviewBlocks
 WhoCanManageRadio
 WidgetBlock
+WidgetFooterLink
 WidgetTabView
 WindowContext
 WindowContextProvider

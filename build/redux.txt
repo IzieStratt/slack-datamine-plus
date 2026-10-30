@@ -268,6 +268,7 @@ action:clearAutoRecord
 action:clearBannerMessageForList
 action:clearBulkItems
 action:clearCalendarEvent
+action:clearCanvasContentDraftViewRequest
 action:clearChannelData
 action:clearChannelHistory
 action:clearChannelIds
@@ -694,6 +695,7 @@ action:markPlansAndCostDataAsNotLoaded
 action:markPlanStatusDataAsNotLoaded
 action:markProjectContentChanged
 action:markProjectThreadsChanged
+action:markScheduledExternalHuddleHighlightPlayed
 action:markSfdcActivityComplete
 action:markSlackbotThreadsUnread
 action:markSlackbotThreadUnread
@@ -1058,12 +1060,15 @@ action:replaceScheduledStatuses
 action:replaceSeasonalStatusSections
 action:replaceStarredCollectionId
 action:replaceTempOpenedFiles
+action:replayScheduledExternalHuddleHighlight
 action:reportAppMetrics
+action:requestCanvasContentDraftView
 action:requestJukeboxSong
 action:requestJukeboxStop
 action:requestNavigationHistoryPrefetch
 action:requestPreviewStreamForDeviceId
 action:requestRecordTeamRefresh
+action:requestScheduledExternalHuddleHighlight
 action:resendMessageAfterDlpWarningOrErrorCircular
 action:reset
 action:resetActions
@@ -6059,6 +6064,7 @@ thunk:messageActionsShareAction
 thunk:messageEditUploadNewFiles
 thunk:messageToContentsString
 thunk:migrateListAssignmentFields
+thunk:mintShortUrlForInvite
 thunk:mobileAwarenessTeamMenuEntrypointLinkUpdateMaybeLogExposure
 thunk:moveAgentToTop
 thunk:moveChannelSection
@@ -6274,6 +6280,7 @@ thunk:openBizPlusPocketGuideV2ChecklistPanel
 thunk:openBizPlusTrialCheckoutUrl
 thunk:openBizPlusUpgradeCheckoutUrl
 thunk:openBlockKitModal
+thunk:openBlockKitUrl
 thunk:openBookmarkStackedOnTabsList
 thunk:openBoxFilePicker
 thunk:openBroadcastKeywordWarningDialog
@@ -6328,6 +6335,7 @@ thunk:openConnectorAccountModal
 thunk:openConversationBetweenMembersAndView
 thunk:openConversationDetailsReportForm
 thunk:openCreateChannelSectionModal
+thunk:openCreateCodeChannelFromMessage
 thunk:openCreateGDocDialog
 thunk:openCreateHandoffChannelModal
 thunk:openCreateRecordCircularHandler
@@ -7142,6 +7150,7 @@ thunk:restorePinnedItemsInSidebar
 thunk:restoreQuipVersion
 thunk:restoreSearchQueryIfHandoffFailed
 thunk:restoreSlackbotUnreadThreadsOnUndoMarkAllRead
+thunk:restoreThreadRootLastRead
 thunk:restoreWorkflowFromVersion
 thunk:restoreWorkflowFromVersionSuccessHandler
 thunk:resumeDesktopDownloadHandler
@@ -7829,6 +7838,7 @@ thunk:syncMemberPerms
 thunk:syncPlaceholderWithUploads
 thunk:syncReorderBookmarkForChannel
 thunk:syncSlackbotZeroStateComposer
+thunk:syncThreadRootLastRead
 thunk:syncToActivityStore
 thunk:syncTriggerInputs
 thunk:syncWorkspacesToDesktop
@@ -8252,4 +8262,5 @@ thunk:workspaceModalSharedInviteLinkTenuredTeamsMaybeLogExposure
 thunk:workspacesChangedSinceLastBoot
 thunk:workspaceSigninRedirectMaybeLogExposure
 thunk:writeDisplayRulesPref
+thunk:writeRootLastRead
 thunk:writeTextLists
