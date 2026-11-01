@@ -995,6 +995,7 @@ Activities
 Activity
 Activity Log
 Activity count type
+Activity dismissed. Messages stay unread.
 Activity history has been disabled for this canvas
 Activity interval
 Activity item actions
@@ -3712,6 +3713,7 @@ Captions unavailable in region
 Capture anything, from quick notes to onboarding docs
 Capture leads from your website to Slack
 Capture the knowledge from this swarm for the knowledge base?
+Captured when you clicked Catch Up
 Capturing your huddle
 Capturing your huddle in {channel}
 Card
@@ -3729,6 +3731,7 @@ Carry on.
 Case
 Catalan
 Catalog
+Catch Up
 Catch me up
 Catch me up daily on my busiest conversation.
 Catch me up on my unread DMs from {name1} and {name2}
@@ -3737,6 +3740,7 @@ Catch me up on my {count} unread DMs
 Catch me up on my {count} unread channels
 Catch me up on the conversation so far
 Catch me up on these app messages
+Catch me up on these unread updates. Highlight what needs my attention and link to the messages. Keep it brief.
 Catch me up on this channel
 Catch me up on this conversation
 Catch me up on this group conversation
@@ -6379,12 +6383,14 @@ Dismiss Halloween themes banner
 Dismiss Salesforce sign-in reminder
 Dismiss Sign In Reminder
 Dismiss Suggested Message
+Dismiss activity
 Dismiss and continue running workflow
 Dismiss channel suggestion
 Dismiss channel summary notification
 Dismiss connector suggestions
 Dismiss dialogs
 Dismiss educational context bar
+Dismiss for now. Messages stay unread.
 Dismiss meeting notes
 Dismiss message limit announcement
 Dismiss message suggestions
@@ -11468,6 +11474,7 @@ Mark Messages Read and Unread
 Mark Read
 Mark Recap Read
 Mark Recap Unread
+Mark These Updates as Read
 Mark Unread
 Mark a message as unread
 Mark above as read
@@ -11511,6 +11518,7 @@ Marked {numChannels, plural, =1 {# channel} other {# channels}} as read.
 Marked {numChannels, plural, =1 {# conversation} other {# conversations}} as read.
 Market segmentation modal
 Marketing assets
+Marking as Read\u2026
 Marking lead as unqualified\u2026
 Marking opportunity as closed lost\u2026
 Marshall Islands
@@ -12539,6 +12547,7 @@ New messages
 New messages from {name1} and {name2}
 New messages in {channelList}
 New messages in {channelList} and {numberOfOtherChannels, plural, =1 {# more channel} other {# more channels}}
+New messages show a DM, channel or thread marked New. Several updates show counts and Catch Up, which opens a private summary.
 New opportunity
 New org available
 New owner
@@ -13518,6 +13527,7 @@ Only email invitations
 Only external people
 Only for existing channels
 Only for you. Nothing is sent later.
+Only fully summarized updates will be marked as read.
 Only get notified if someone @mentions you personally
 Only if approvals are not required
 Only in-progress
@@ -13586,6 +13596,7 @@ Only specific people or groups
 Only specific people or groups can use this server.
 Only specific people or groups with server access
 Only teams on paid plans can start direct messages with Slack Connect.
+Only the captured updates will be marked as read.
 Only the channel owner can add people to this channel.
 Only the first {linkLimit} link previews are shown.
 Only the last 90 days of your message history will be visible.
@@ -14000,6 +14011,7 @@ Other tools ({count})
 Other tools access
 Other tools default access
 Other unreads
+Other updates are still unread.
 Other users are editing this section. They must finish before you can make changes.
 Other workspaces
 Other workspaces have new messages
@@ -15195,6 +15207,7 @@ Reconnect Gmail to send email
 Reconnect account
 Reconnect external channels
 Reconnect the Salesforce organization to view this server\u2019s tools.
+Reconnect to mark these updates as read.
 Reconnect your Salesforce account, then try again.
 Reconnect your account to continue.
 Reconnect your external channels
@@ -17825,6 +17838,7 @@ Show Today when you first open Slack
 Show Workspace Switcher
 Show a celebratory message to user profiles when they close an opportunity and it is a win.
 Show activity
+Show activity in the island
 Show advanced mobile overrides
 Show all
 Show all DMs
@@ -18081,6 +18095,7 @@ Since you only have permission to manage private channels, public channels are h
 Since you only have permission to manage public channels, private channels are hidden.
 Since you\u2019re the last one here, you\u2019ll need to invite an admin and ask them to archive the channel.
 Singapore
+Singer island
 Singer isn\u2019t available in this desktop session yet. You can keep using Slackbot Mini.
 Singer settings
 Singer uses the apps and permissions you\u2019ve connected to Slackbot. Shared files stay in your Slack conversation.
@@ -18529,6 +18544,7 @@ Some time in the past week, the Windows Action Center was unable to deliver your
 Some tool access settings weren\u2019t saved. Check them and try again.
 Some tools in this MCP server require an agent to perform actions in Slack.
 Some types of records can\u2019t be viewed in Slack. To see this list, open it in Salesforce.
+Some updates couldn\u2019t be marked as read.
 Some variables in this prompt aren\u2019t available for this trigger. They\u2019ll be removed when you save.
 Some views are hidden when you start using Slack to help you focus on joining the conversation with your team.
 Some workflow apps weren\u2019t approved.
@@ -19347,6 +19363,7 @@ Summarize the discussion up to now
 Summarize the file 
 Summarize the recent messages from {vipName} in our shared channels
 Summarize the thread in {channelName} that\u2019s waiting on me and draft a response
+Summarize these updates with Slackbot
 Summarize this
 Summarize this approval
 Summarize this canvas
@@ -20293,6 +20310,8 @@ These settings apply to all tools. Once the server connects, you can set permiss
 These settings change how the Focused sidebar ranks conversations on this device only. They\u2019re meant for experimenting and don\u2019t sync.
 These teammates may be waiting for your reply.
 These tools will be shared with anyone who reviews this app.
+These updates are marked as read.
+These updates couldn\u2019t be fully summarized and are still unread.
 These workflows are connected to this list.
 These workflows post updates about this channel\u2019s Salesforce record.
 These workflows will no longer work and have been unpublished. Delete them here or update them in Workflow Builder.
@@ -20854,6 +20873,7 @@ This setting changed since you opened it. Close and reopen to see the latest.
 This setting has been customized for this organization
 This setting is controlled by your EMM service.
 This setting isn\u2019t available to you.
+This setting only changes the island. Slack notifications, sounds, badges and unread counts stay the same.
 This sheet is too large to preview.
 This sheet will be automatically generated from the values below.
 This shortcut is reserved by the system. Try a different one.
@@ -22815,6 +22835,7 @@ View thread, {replyCount, plural, =1 {# reply} other {# replies}}
 View to-dos
 View transcript
 View trigger
+View updates in Singer
 View user details
 View user information in Jira that the user has access to, including usernames, email addresses, and avatars.
 View version history
