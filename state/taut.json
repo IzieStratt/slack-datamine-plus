@@ -164,12 +164,13 @@
   ],
   "component:BaseContextBarV2": [
    "Jrtb:0d7d2a86",
-   "pjkP:0caa4e5d",
-   "pjkP:89296fc8"
+   "Jrtb:4a7833f5",
+   "pjkP:0caa4e5d"
   ],
   "component:BaseMessageAttachmentSlackMessage": [
    "T7V0:2ccbda7d",
-   "sRm9:61293177"
+   "sRm9:61293177",
+   "sRm9:9fa7702f"
   ],
   "component:BaseMessageSender": [
    "Vaoa:38c5f002",
@@ -206,7 +207,8 @@
    "pFbY:cebcf410"
   ],
   "component:HelpButton": [
-   "sRm9:61293177"
+   "sRm9:61293177",
+   "sRm9:9fa7702f"
   ],
   "component:HuddleBaseEvent": [
    "XsfF:d85a73cf",
@@ -244,17 +246,18 @@
   ],
   "component:MessageActionButtonReaction": [
    "CzB1:92be745e",
-   "wGfH:4fb55a48",
-   "wGfH:c3bfa2f0"
+   "CzB1:ba4b5c25",
+   "wGfH:4fb55a48"
   ],
   "component:MessageActions": [
    "CzB1:92be745e",
-   "wGfH:4fb55a48",
-   "wGfH:c3bfa2f0"
+   "CzB1:ba4b5c25",
+   "wGfH:4fb55a48"
   ],
   "component:MessageAttachmentHuddleLink": [
    "T7V0:2ccbda7d",
-   "sRm9:61293177"
+   "sRm9:61293177",
+   "sRm9:9fa7702f"
   ],
   "component:MessageBackground": [
    "6k+V:84b529ab",
@@ -268,7 +271,8 @@
   ],
   "component:MessageInput": [
    "/WSU:4d13515e",
-   "fqr4:31fd3e25"
+   "fqr4:31fd3e25",
+   "fqr4:a5b46e7d"
   ],
   "component:MessageInputRoadblock": [
    "akHC:cfef0e15",
@@ -317,11 +321,13 @@
   ],
   "component:Serialized(ThreadsFlexpane)": [
    "ZMMG:4bccd16d",
+   "hV7L:59d75371",
    "hV7L:e093d88c"
   ],
   "component:ShortcutsMenuTriggerButton": [
    "T7V0:2ccbda7d",
-   "sRm9:61293177"
+   "sRm9:61293177",
+   "sRm9:9fa7702f"
   ],
   "component:TextyButtonOverflow": [
    "Pgm1:673d677e",
@@ -335,6 +341,7 @@
   ],
   "component:ThreadSearchButton": [
    "ZMMG:4bccd16d",
+   "hV7L:59d75371",
    "hV7L:e093d88c"
   ],
   "component:ThreadSenderAndTimestampGeneric": [
@@ -357,7 +364,8 @@
   ],
   "rtm:view_opened": [
    "T7V0:2ccbda7d",
-   "sRm9:61293177"
+   "sRm9:61293177",
+   "sRm9:9fa7702f"
   ],
   "thunk:addAndUploadPendingFile": [
    "bk/I:afd771db",
@@ -460,7 +468,8 @@
   ],
   "thunk:initializeUserPrefs": [
    "hiXg:d6ede838",
-   "sRm9:61293177"
+   "sRm9:61293177",
+   "sRm9:9fa7702f"
   ],
   "thunk:joinChannel": [
    "5Bzu:6540f089",
@@ -593,6 +602,7 @@
   ],
   "component:ThreadFlexpaneAdminTools": [
    "ZMMG:4bccd16d",
+   "hV7L:59d75371",
    "hV7L:e093d88c"
   ],
   "byName:getFocusedWorkspace": [
@@ -608,6 +618,76 @@
  },
  "reported": [],
  "events": [
+  {
+   "build": "bd04d97486bf",
+   "date": "2026-11-01",
+   "names": [
+    "AudioVideoFacadeSubscriber",
+    "buildMarkdownChangeDelta",
+    "canDeleteMessageHelper",
+    "convertBlocksToDelta",
+    "convertBlocksToMarkdown",
+    "convertBlocksToMrkdwnDelta",
+    "convertDeltaToBlocks",
+    "createStore",
+    "exposeSelectorForDebug",
+    "getDeltaForMessageObject",
+    "getInputProxy",
+    "getStoreInstanceByTeamId",
+    "isInputRegistered",
+    "legacy_createStore",
+    "x",
+    "BaseContextBarV2",
+    "BaseMessageAttachmentSlackMessage",
+    "BaseMessageSender",
+    "BaseMrkdwnChannel",
+    "Blocks",
+    "EmojiPicker",
+    "EmojiPickerPopover",
+    "HelpButton",
+    "ListChannelEntity",
+    "MessageActionButtonReaction",
+    "MessageActions",
+    "MessageAttachmentHuddleLink",
+    "MessageBackground",
+    "MessageBlocks",
+    "MessageInput",
+    "MessageSender",
+    "Reaction",
+    "ReactionAddButton",
+    "ReactionAnimation",
+    "ReactionBar",
+    "Serialized(ThreadsFlexpane)",
+    "ShortcutsMenuTriggerButton",
+    "TextyButtonOverflow",
+    "TextyButtons",
+    "ThreadFlexpaneAdminTools",
+    "ThreadSearchButton",
+    "WysiwygContainer",
+    "view_opened",
+    "addAndUploadPendingFile",
+    "autocompleteChannels",
+    "autocompleteMembers",
+    "blocksFormatFetcher",
+    "changeReactionFromUserAction",
+    "chatDeleteFetcher",
+    "commitMessageEdit",
+    "displayAlertMessage",
+    "enqueueHuddleToast",
+    "executeAppAction",
+    "getMemberContextMenuTemplate",
+    "handleMessageImmediatelyWithoutPreprocessing",
+    "initializeUserPrefs",
+    "openPrefsModal",
+    "prepareAndSendMessage",
+    "saveMessageEdit",
+    "showNotification",
+    "stopEventLog",
+    "stopHuddle",
+    "submitAddOrRemoveReaction",
+    "uploadFiles"
+   ]
+  },
   {
    "build": "eb69305183cb",
    "date": "2026-11-01",
@@ -2081,93 +2161,6 @@
     "prepareAndSendMessage",
     "processAwsTranscription",
     "saveMessageEdit",
-    "sendMessage",
-    "showNotification",
-    "startEventLog",
-    "stopEventLog",
-    "stopHuddle",
-    "submitAddOrRemoveReaction",
-    "uploadFiles"
-   ]
-  },
-  {
-   "build": "50897bdb9404",
-   "date": "2026-10-28",
-   "names": [
-    "sendReactionMessage",
-    "AudioVideoFacadeSubscriber",
-    "buildMarkdownChangeDelta",
-    "canDeleteMessageHelper",
-    "convertBlocksToDelta",
-    "convertBlocksToMarkdown",
-    "convertBlocksToMrkdwnDelta",
-    "convertBlocksToPlainText",
-    "convertDeltaToBlocks",
-    "copyDocumentStylesheets",
-    "createStore",
-    "exposeSelectorForDebug",
-    "getDeltaForMessageObject",
-    "getInputProxy",
-    "isInputRegistered",
-    "legacy_createStore",
-    "x",
-    "ActivityRowContentSenderAvatarLayout",
-    "BaseBroadcastPreamble",
-    "BaseContextBarV2",
-    "BaseMessageAttachmentSlackMessage",
-    "BaseMessageSender",
-    "BaseMrkdwnChannel",
-    "Blocks",
-    "ConnectedBaseAvatar",
-    "EmojiPicker",
-    "EmojiPickerPopover",
-    "HuddleBaseEvent",
-    "HuddleMetaEvent",
-    "HuddlesAlertBannerBase",
-    "InputContainer",
-    "ListChannelEntity",
-    "MemberProfileHoverCard",
-    "MessageActionButtonReaction",
-    "MessageActions",
-    "MessageAttachmentHuddleLink",
-    "MessageBackground",
-    "MessageBlocks",
-    "MessageInput",
-    "MessageSender",
-    "Reaction",
-    "ReactionAddButton",
-    "ReactionAnimation",
-    "ReactionBar",
-    "RimetoMemberProfileOverflowMenu",
-    "RimetoProfilePresence",
-    "Serialized(ThreadsFlexpane)",
-    "ShortcutsMenuTriggerButton",
-    "TextyButtonOverflow",
-    "TextyButtons",
-    "ThreadSearchButton",
-    "ViewBlocks",
-    "WysiwygContainer",
-    "message",
-    "view_opened",
-    "addAndUploadPendingFile",
-    "autocompleteChannels",
-    "autocompleteMembers",
-    "blocksFormatFetcher",
-    "changeReactionFromUserAction",
-    "chatDeleteFetcher",
-    "commitMessageEdit",
-    "displayAlertMessage",
-    "enqueueHuddleToast",
-    "executeAppAction",
-    "fetchAndUpsertChannelsById",
-    "fetchRawChannelsById",
-    "getContextMenuTemplate",
-    "getMemberContextMenuTemplate",
-    "handleMessageImmediatelyWithoutPreprocessing",
-    "openPrefsModal",
-    "prepareAndSendMessage",
-    "saveMessageEdit",
-    "searchInline",
     "sendMessage",
     "showNotification",
     "startEventLog",
