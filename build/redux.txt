@@ -950,6 +950,7 @@ action:removeItems
 action:removeJoiner
 action:removeLeaver
 action:removeList
+action:removeListMentions
 action:removeMcpServerByKey
 action:removeMcpServers
 action:removeMeeting
@@ -3287,6 +3288,7 @@ action:upsertLanguageGroups
 action:upsertLastReadTimestampById
 action:upsertLayoutTypeRecords
 action:upsertListHistory
+action:upsertListMentions
 action:upsertListViewIdSearchResultsMap
 action:upsertListViewSearchResults
 action:upsertMaybeUnknownSavedItems
@@ -4964,6 +4966,8 @@ thunk:fetchInstalledAgentforceAgents
 thunk:fetchInstalledAgents
 thunk:fetchInternalApps
 thunk:fetchIsUserAlreadyAssignedToRole
+thunk:fetchListMentions
+thunk:fetchListMentionsWithRetries
 thunk:fetchListOfRoleMembers
 thunk:fetchListOfRoles
 thunk:fetchListOfRoleUserGroups
