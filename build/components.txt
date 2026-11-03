@@ -402,7 +402,9 @@ AgendaContent
 AgendaError
 AgendaEventItem
 AgendaMarkTaskCompleteToast
+AgendaNavCount
 AgendaNotAuthed
+AgendaPage
 AgendaSections
 AgendaTabButton
 AgendaTabs
@@ -428,7 +430,6 @@ AgentDmDetailsAbout
 AgentDmDetailsActivity
 AgentDmDetailsContent
 AgentDmDetailsHeader
-AgentDmDetailsManageSettingsButton
 AgentDmDetailsSections
 AgentDmDetailsSettings
 AgentDmForeword
@@ -801,6 +802,7 @@ AppLauncherPageHeader
 AppleCreateSignInView
 AppLinkManager
 AppListEntity
+ApplyFooter
 AppManageInstallRemoveBulkConfirmPane
 AppManagementAppAlert
 AppManagementAppSummary
@@ -833,7 +835,6 @@ AppPermissionRequestDialog
 AppPreviews
 AppProfile
 AppProfileCard
-AppProfileCardHeader
 AppProfileCardInstallationSummary
 AppRequestsPage
 AppResolutionColumn
@@ -1168,6 +1169,7 @@ BaseAppLauncherConnectedBanner
 BaseAppLauncherPersistentBanner
 BaseAppleLoginButton
 BaseAppManagementGrantFutureWorkspaces
+BaseAppProfileCardHeader
 BaseAppSpace
 BaseAppSpaceProfileDisclaimer
 BaseAppSpaceProfileSideLinksFunction
@@ -1189,6 +1191,7 @@ BaseBotName
 BaseBoxErrorModals
 BaseBroadcastPreamble
 BaseBrowsePageMember
+BaseBrowsePageMemberCardEntity
 BaseBrowsePageUserGroupEntity
 BaseButton
 BaseButtonInternal
@@ -1246,9 +1249,14 @@ BaseCreatorGuidedSetupTabCoachmark
 BaseCreatorGuidedSetupWelcomeModal
 BaseCustomizeChannelEmailAddressModal
 BaseCustomResponseInfoBadge
+BaseCustomStatus
 BaseCustomStatusCalendarFooter
 BaseCustomStatusCalendarModalContent
+BaseCustomStatusEmoji
+BaseCustomStatusExpiration
 BaseCustomStatusModal
+BaseCustomStatusText
+BaseCustomStatusTooltipContent
 BaseDefaultOnNuxSidebarSetupSpaceHeader
 BaseDeleteChannelEmailAddressModal
 BaseDeleteMessageAttachmentDialog
@@ -1274,6 +1282,7 @@ BaseDynamicList
 BaseEditMessage
 BaseEditProfileField
 BaseEditProfilePhoto
+BaseEditProfileUploadPreview
 BaseEditRecordView
 BaseEmailInvitesForm
 BaseEmbedIframeContainer
@@ -1310,7 +1319,6 @@ BaseFieldReferenceSelect
 BaseFieldRendererFactory
 BaseFileEntityUserMention
 BaseFilePublicUrlDialog
-BaseFileUploadBannerCancelButton
 BaseFileViewer
 BaseFileViewerContainer
 BaseFlexpaneRecordTextInput
@@ -1330,6 +1338,7 @@ BaseHuddleInviteButton
 BaseHuddleMilesDavisCoachmark
 BaseHuddleReactjiExplosionCoachmark
 BaseHuddleScheduleExternalEduBanner
+BaseHuddleStatus
 BaseHuddleThreadAiNotesAutostartNudge
 BaseIcon
 BaseImageElement
@@ -1349,6 +1358,7 @@ BaseLeaveWorkspaceDialog
 BaseLegacyDisconnectedChannelWarning
 BaseLink
 BaseList
+BaseListArchivedRecordOverflowMenuTrigger
 BaseListDetail
 BaseListEditAvatar
 BaseListEditPostfix
@@ -1412,6 +1422,7 @@ BasePollViewer
 BasePopoverTrigger
 BasePostUnfurl
 BasePrefsSectionSidebar
+BasePresence
 BasePrivateChannelPrompt
 BaseProfileImagePreview
 BasePromoDiscountEndModal
@@ -1495,9 +1506,11 @@ BaseSectionHeadingConfirmationModal
 BaseSegmentPreview
 BaseSelectField
 BaseSelectSalesforceOrg
+BaseSelectUserGroupsTable
 BaseSharedChannelNoteScreen
 BaseSharedChannelOrgList
 BaseSharedInviteLandingView
+BaseShareEventInChannel
 BaseSidebarMenuHeader
 BaseSlackAiAwarenessFooterBanner
 BaseSlackAiSearchNuxBanner
@@ -1575,6 +1588,7 @@ BaseWelcomePartyChannelJoinReplyNudge
 BaseWelcomeToProModal
 BaseWorkflowPreview
 BaseWorkflowsSection
+BaseWorkflowStartButton
 BaseWorkflowTrialsBanner
 BaseWorkflowTriggerSpeedbumpModal
 BaseWorkObjectRecordChannelCreationModal
@@ -1689,7 +1703,6 @@ BrowsePageChannelSharedChannelInfo
 BrowsePageChannelSubtext
 BrowsePageControls
 BrowsePageLayout
-BrowsePageMemberCardEntity
 BrowsePageResults
 BrowsePageUserGroup
 BrowsePane
@@ -2814,7 +2827,6 @@ ContextBarExternalText
 ContextBarGovslackText
 ContextBarHuddlesUserNonVisibleThreadIcon
 ContextBarInfoItem
-ContextBarInvitedUserGlowUpContent
 ContextBarItems
 ContextBarMessageByEmailContent
 ContextBarOutOfOffice
@@ -3009,12 +3021,10 @@ CustomPromptsCard
 CustomPromptsNullStateCard
 CustomResponseTeamName
 CustomRetentionDurationInput
+CustomRowWrapper
 CustomSearchWrapper
-CustomStatus
 CustomStatusCalendarIcon
 CustomStatusDurationDefault
-CustomStatusEmoji
-CustomStatusExpiration
 CustomStatusInput
 CustomStatusInputHint
 CustomStatusItem
@@ -3028,8 +3038,6 @@ CustomStatusPauseNotifications
 CustomStatusPresetItem
 CustomStatusPresets
 CustomStatusScheduledDuration
-CustomStatusText
-CustomStatusTooltipContent
 CustomTheme
 CustomToast
 CustomTopLevelPolicyProvider
@@ -3558,7 +3566,6 @@ EditProfileUploadButton
 EditProfileUploadIconButton
 EditProfileUploadInput
 EditProfileUploadPane
-EditProfileUploadPreview
 EditRecordActionsMenu
 EditRecordFooter
 EditRecordFormContent
@@ -4099,7 +4106,6 @@ FileEntityUserTimestamp
 FileErrorState
 FileFieldset
 FileGallery
-FileGalleryImageFile
 FileGalleryOverflowOverlay
 FileGallerySpan
 FileGalleryVideoFile
@@ -4226,6 +4232,7 @@ FilterHuddleIn
 FilterHuddleWithUsers
 FilterInput
 FilterInputBase
+FilterMenuItem
 FilterPill
 FilterPillSurfaceContext
 FilterPropsContext
@@ -4247,6 +4254,7 @@ FilterWorkspaceTable
 FinalSlideComponent
 FindBar
 FindBarNotificationBubble
+FindInputRow
 FindPeekView
 FindSidebarPeekWrapper
 FindWorkflowsEducationCoachmark
@@ -4526,6 +4534,7 @@ getDisclaimer
 getDisconnectChannelFileOwnershipText
 getDisplay
 getDmInviteText
+getDocumentLabel
 GetDownloadSSBCopy
 getDropdownHintContent
 getEditorMessagePostedSummary
@@ -4641,6 +4650,7 @@ getPanes
 getParagraphStyleMenuItemTemplate
 getParticipantsLabel
 getPinnedChannelsTemplate
+getPinnedSectionTemplate
 getPlaceholderElement
 getPlaceholderText
 getPlansPageCtaComponent
@@ -4731,7 +4741,6 @@ getTopLevelModalDescription
 getTopLevelOptionData
 getTopLevelStatus
 getTopLevelTypeOptionData
-getTopOfMindTemplate
 getTrailingControl
 getTranscriptMenuItem
 getTransformedErrorMessage
@@ -4791,6 +4800,7 @@ GptLiveApprovalCard
 GptLiveAuthCard
 GptLiveButton
 GptLiveButtonInner
+GptLiveCall
 GptLiveCallPip
 GptLiveCallPipLayer
 GptLiveCallPipSession
@@ -4910,9 +4920,11 @@ HideEditorComponent
 HideUserConfirmationModal
 HighlightRowMenuItemComponent
 Hint
+HistoryArrow
 HistoryButtons
 HistoryOptionsModalHeader
 HistoryOptionsPane
+HistoryPeekContent
 HistoryPreview
 HitlFieldsTreatment
 HittingLimitBanner
@@ -5509,6 +5521,7 @@ ItemRelatedThread
 ItemThreads
 ItemTypeSelect
 JanuaryCardMediaPanel
+JellyfishSprite
 JiraCloudAppDisclaimer
 JitAllDayEventsEnabled
 JitItemButtons
@@ -5729,7 +5742,6 @@ LinkUnfurlPreview
 LinkWithSystemSettings
 List
 ListA11yStructuresViewInner
-ListArchivedRecordOverflowMenuTrigger
 ListBanner
 ListBannersContainer
 ListCellsCopiedToast
@@ -5898,6 +5910,7 @@ ListViewSharingSettingsBanner
 ListViewSharingSettingSubtitle
 ListViewToastText
 ListWorkflowsModal
+LiveAudioSpeedBumpModal
 LiveHuddleButton
 LlmLinkWarning
 load
@@ -6198,7 +6211,6 @@ MediaFileSearchJustification
 MediaFileThumbnail
 MediaGridSkeleton
 MediaOverflowItem
-MediaPlaceholderImpl
 MediaPlaybackInProgress
 MediaPlaybackSpeedControl
 MediaPlayerPipContainer
@@ -6385,6 +6397,7 @@ MentionOptOutOverrides
 MentionOptOutRow
 Menu
 MenuIconWrapper
+MenuImpl
 MenuItem
 MenuItemActionButtonBase
 MenuItemGroup
@@ -7047,6 +7060,7 @@ OpaqueBlockPortal
 OpaqueBlockPortalHost
 OpaqueBlockPreview
 OpaqueBlockRemoveButton
+Open3pAgentConversationSummary
 openActivateSalesforceOrgDialog
 openAgentInstallModal
 openAgentUninstallModal
@@ -7325,6 +7339,8 @@ PinnedDropZoneRowElement
 PinnedItemRemove
 PinnedItemRemoveConfirm
 PinnedItemsListIA
+PinnedPickerModal
+PinnedPickerRow
 PinnedRemoveZoneRowElement
 PinsListFile
 PinsListHeading
@@ -7344,7 +7360,6 @@ PlaceholderAddLinkModal
 PlaceholderInput
 PlaceholderInsertionModal
 PlaceholderLinkUnfurl
-PlaceholderPlusIcon
 PlaceholderVariablePopover
 PlainRow
 PlainText
@@ -7469,7 +7484,6 @@ PrejoinDmWelcomePartyAlertContent
 PrejoinDmWelcomePartyNotificationSubtype
 PreparationContent
 PrepWithAiButton
-Presence
 PresencePromptDialog
 presentConversationBody
 PresentedItemsPane
@@ -7616,6 +7630,7 @@ PublishStatusText
 PublishTemplateConfirmation
 PublishTemplateModal
 PullRequestAuthorName
+PullRequestDescriptionEditor
 PullRequestOpenedBy
 PullRequestStatuses
 PurposeButton
@@ -7881,7 +7896,6 @@ RecordTabViewSelect
 RecordTeam
 RecordTextInput
 RecordUnfurlSettings
-RecordUnfurlSettingsBanner
 RecordUnfurlSettingsModal
 RecordView
 RedactedToast
@@ -8623,6 +8637,7 @@ ReviewChanges
 ReviewChangesChannelRow
 ReviewChangesEmptyState
 ReviewConnectionUpdateDialog
+ReviewRequestedAlert
 ReviewThread
 ReviewThreadResolveButton
 ReviewVerdictTag
@@ -8719,6 +8734,7 @@ RowContainer
 RowFooter
 RowHeader
 RowIcon
+RowImpl
 RowItem
 RowPrimary
 rowRenderer
@@ -8734,8 +8750,6 @@ Salesforce
 SalesforceAdminErrorAlert
 SalesforceAdminMigrateUsersLaterCoachmark
 SalesforceAdminMigrateUsersLaterCoachmarkBase
-SalesforceAgentforceAdminStartCoachmark
-SalesforceAgentforceAdminStartCoachmarkBase
 SalesforceAppForeword
 SalesforceAppListViewBrowserTabView
 SalesforceAppNoAuthEmptyState
@@ -9253,8 +9267,11 @@ SendWelcomeCardSuccess
 SendWelcomeStep
 SentByColumn
 SentByMenu
+SentDayGroup
+SentList
 SentPage
 SentPageItem
+SentRow
 SentToColumn
 SeparatePrivateChannelsPref
 Separator
@@ -9270,11 +9287,14 @@ ServicesCountCallout
 ServiceTriggerSummary
 SessionDurationInfo
 SessionEntity
+SessionListFilterBar
+SessionListFilterMenu
 SessionLocationIcon
 SessionResetModal
 SessionRow
 SessionRowView
 SessionStatusPrefixIcon
+SessionTypeFilterMenu
 SetGuestExpiration
 SetGuestExpirationContainer
 SetPill
@@ -9386,7 +9406,6 @@ SharedInviteWorkspacesList
 SharedWorkflowMCPConnectionWrapper
 ShareEmbeddedCanvasModal
 ShareEmbeddedPromptButton
-ShareEventInChannel
 ShareExternalRecordModal
 ShareFileAsChannelFolderItemConfirmationModal
 ShareFileAsFolderItemErrorDialog
@@ -9817,6 +9836,7 @@ SlackbotHomeModeSwitch
 SlackbotInChannelsCoachmark
 SlackbotInChannelsCoachmarkAnchor
 SlackbotInChannelsCoachmarkHero
+SlackbotJellyfish
 SlackbotLegacyBadge
 SlackbotMcpConnectorSuggestions
 SlackbotMcpContextBarCta
@@ -9864,6 +9884,7 @@ SlackbotRecordRuleRows
 SlackbotSamplingAwarenessFooterBanner
 SlackbotSection
 SlackbotSendIconOverlay
+SlackbotSessionRowContent
 SlackbotSettings
 SlackbotSettingsApps
 SlackbotSettingsCustomInstructions
@@ -9880,7 +9901,9 @@ SlackbotSidebarIcon
 SlackbotSidebarIconForPageView
 SlackbotSidebarLinkWrapper
 SlackbotSidebarPeekTrigger
+SlackbotSidebarRenameDialog
 SlackbotSidebarSurfacePeek
+SlackbotSidebarThreadContextMenu
 SlackbotSidebarThreadPeek
 SlackbotSidebarWelcome
 SlackbotSkillsAnnouncementAlternateSkillBanner
@@ -10868,7 +10891,6 @@ TodoApproachingLimitBanner
 TodoHittingLimitBanner
 TodoInlineComposer
 TodoInput
-TodosAndMeetingsSplitViewPage
 TodosEmptyState
 TodosList
 TodosPage
@@ -10917,8 +10939,6 @@ TopLevelPolicyContentRadio
 TopLevelPolicyContext
 TopLevelPolicyProvider
 TopMcpConnectors
-TopOfMindPickerModal
-TopOfMindPickerRow
 TopPostCardContent
 TopPostSlideComponent
 TopReactions
@@ -11763,6 +11783,7 @@ WorkflowCanvas
 WorkflowCard
 WorkflowCardHeader
 WorkflowCardWithError
+WorkflowComposerContainer
 WorkflowComposerOverflowMenuButton
 WorkflowComposerWorkflow
 WorkflowComposerWorkflowSkeleton
@@ -11837,6 +11858,7 @@ WorkflowsSectionList
 WorkflowsTabAiStepEduBanner
 WorkflowsTabConditionalsEduBanner
 WorkflowsTabFooterContent
+WorkflowStartButton
 WorkflowStatusToast
 WorkflowsTemplatePreviews
 WorkflowStepEntity
