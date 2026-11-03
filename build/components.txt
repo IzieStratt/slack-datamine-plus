@@ -1696,6 +1696,7 @@ BroadcastFooter
 BrowseAppListItem
 BrowseAppsList
 BrowseAppsPane
+BrowseListHeading
 BrowseMarketplaceLink
 BrowseOmniswitcher
 BrowsePageAutocomplete
@@ -1819,7 +1820,6 @@ ButtonConfiguration
 ButtonConfigurations
 ButtonEdit
 ButtonElement
-ButtonElementWithClientHandledActions
 ButtonExpiryTimestampInput
 ButtonField
 ButtonGeneric
@@ -1997,8 +1997,6 @@ CanvasUserMention
 CanvasViewHeader
 CanvasViewHeaderDefault
 CanvasViewTemplateHeader
-canvasWithOriginalLastRead
-CanvasWithOriginalLastRead
 canWorkspaceConfigure
 CaptionsButton
 CaptionsItemsMenu
@@ -2073,6 +2071,8 @@ ChangeVideoBackgroundDialog
 ChangeWorkspaceMemberAccountType
 Channel
 ChannelAccessModal
+ChannelAgentSessionsTabView
+ChannelAgentSessionsTabViewBase
 ChannelAnalyticsExport
 ChannelArchiveMessage
 ChannelArchiveSuggestionBanner
@@ -2460,6 +2460,8 @@ CodeChannelPrCommentsRow
 CodeChannelPreviewHoverCard
 CodeChannelPreviewHoverCardTrigger
 CodeChannelPreviewText
+CodeChannelPrLink
+CodeChannelPrLinkTrigger
 CodeChannelPrStatusMessage
 CodeChannelPrStatusRow
 CodeChannelPrStatusTag
@@ -2490,6 +2492,7 @@ CodeViewsCollapsedButtons
 Collaborator
 Collaborators
 CollaboratorsDialog
+CollapsedCtaComponentForProTeams
 CollapsibleCard
 CollapsibleCommentBody
 CollapsibleDebugCard
@@ -2813,6 +2816,7 @@ ContentForCancel
 ContentForDisconnect
 ContentForDisconnectSlackcrm
 ContentForRemove
+ContentsEntry
 ContentText
 Context
 ContextActions
@@ -2993,6 +2997,7 @@ CsvImportPartialSuccessToast
 CsvImportStatusBar
 CsvResult
 CsvTsvViewer
+CtaComponentForProTeams
 CtaField
 CtaWrapper
 CuddlesNuxCoachmark
@@ -3341,6 +3346,7 @@ DndSchedule
 DnsRecordFieldGroup
 DockBadgeListener
 DocListItem
+DocumentEntry
 DocumentLink
 DocumentMatchRow
 DocumentOverlaysViewInner
@@ -3781,6 +3787,7 @@ EmojiTooltipEmoji
 EmptyChannelsState
 EmptyDisplayRuleSectionRowElement
 EmptyEmoji
+EmptyHost
 emptyListErrorMessage
 EmptyMembersState
 EmptyPage
@@ -3827,6 +3834,9 @@ EntityContainer
 EntityContainerContext
 EntityContainerProvider
 EntityContent
+EntityFilterChip
+EntityFilterRow
+EntityFilterSeeAllRow
 EntityFilterSortSingleSelect
 EntityFooter
 EntityHeader
@@ -3961,6 +3971,8 @@ ExternalFilterSearchableMultiSelect
 ExternalFiltersRenderer
 ExternalGuestHuddleWindow
 ExternalGuestIcon
+ExternalHuddleGuestCanvasState
+ExternalHuddleGuestQuipView
 ExternalHuddleIllustration
 ExternalHuddlesGuestClient
 ExternalHuddlesGuestInviteButton
@@ -4040,7 +4052,6 @@ FeatureRow
 FeaturesListItem
 FeaturesSection
 Feed
-FeedbackButtonsElement
 FeedbackCoachmark
 FeedbackConfirmationModal
 FeedbackLink
@@ -4241,6 +4252,7 @@ FilterPillSurfaceContext
 FilterPropsContext
 FilterPropsProvider
 FilterRow
+FilterRowMentionsPill
 FilterRowPill
 FilterRowSourceMenu
 FiltersButtonCollapsed
@@ -4466,6 +4478,7 @@ getAttachmentFooterText
 getAttachmentsLinks
 getAttachmentText
 getAudioVideoSection
+getAuthenticationStatus
 getAvPane
 getBanner
 getBannerContent
@@ -5525,7 +5538,6 @@ ItemRelatedThread
 ItemThreads
 ItemTypeSelect
 JanuaryCardMediaPanel
-JellyfishSprite
 JiraCloudAppDisclaimer
 JitAllDayEventsEnabled
 JitItemButtons
@@ -6159,6 +6171,7 @@ McpAppToolCallSpeedbump
 McpCatalogueModal
 McpCataloguePane
 McpCatalogueTablePane
+McpConnectorCards
 McpConnectorsButton
 McpConnectorsSection
 MCPSelect
@@ -6397,6 +6410,7 @@ MentionAvatar
 MentionButton
 MentionContextMenuTrigger
 MentionHeader
+MentionKindsMenu
 MentionOptOutOverrides
 MentionOptOutRow
 Menu
@@ -7072,6 +7086,7 @@ openAgentInstallModal
 openAgentUninstallModal
 openAndRender
 openCodeRequestReviewersModal
+openConfirm
 openConnectSalesforceOrgDialog
 OpenDesktopAppMenuItem
 openDisconnectSalesforceOrgDialog
@@ -7204,6 +7219,7 @@ PageContentPane
 PageHeader
 PageHeaderBreadcrumbs
 PageHeaderButtons
+PageHost
 PageRowElement
 PageTitle
 PageWorkflowDeleted
@@ -7546,6 +7562,7 @@ PrivateChannelMembershipLimitEditModal
 PrivateConversation
 PrivateMessageForwardingSpeedbump
 PrivateWorkflowButton
+PrLinkClickInterceptor
 PrMergeButton
 ProBadge
 ProBusinessPlusTrialsModal
@@ -7638,6 +7655,8 @@ PublishTemplateModal
 PullRequestAuthorName
 PullRequestDescriptionEditor
 PullRequestOpenedBy
+PullRequestReviewerName
+PullRequestReviewers
 PullRequestStatuses
 PurposeButton
 PushedDownInviterSubText
@@ -7648,14 +7667,9 @@ QueryFailed
 QueryInterpretationLabel
 QueryPending
 QueryTimedOut
-QuestionDefaultSelect
 QuestionDefaultValue
 QuestionEditModal
 QuestionFileDetails
-QuestionItemEdit
-QuestionItemPreview
-QuestionListController
-QuestionOptionsList
 QuestionPreview
 QuestionSelectDefaultValue
 QuestionView
@@ -8017,6 +8031,7 @@ renderAccountTypeFilter
 renderAction
 renderActionButtons
 renderActionGroup
+renderActionIcon
 renderActionIcons
 renderActions
 renderActiveConversation
@@ -8142,6 +8157,7 @@ renderDay
 renderDaysRemainingIcon
 renderDebuggerBody
 renderDefaultActionButtons
+renderDefaultLink
 renderDefaultOverlayInfo
 renderDepartmentFilter
 renderDeprecationString
@@ -8301,6 +8317,7 @@ renderList
 renderListEditPostfix
 renderListEnd
 renderListItems
+renderLists
 renderLoader
 renderLoading
 renderLocationFilter
@@ -9118,6 +9135,7 @@ SecondaryHeaderMore
 Section
 SectionActivityPeek
 SectionActivityPeekContent
+SectionBlock
 SectionButton
 SectionChannelRow
 SectionContainer
@@ -9555,6 +9573,7 @@ SidebarTrialPeekTrigger
 SidebarTrialPeekView
 SidebarViewContents
 SidebarVisualUpdatesCoachmark
+SideGroup
 SidekickAvatarCropModal
 SidekickAvatarUpload
 SidekickGridItem
@@ -9605,6 +9624,7 @@ SingerMessageActions
 SingerMotionPreview
 SingerOutfitArtwork
 SingerPocket
+SingerReopenHint
 SingerSettings
 SingerTaskBubble
 SingerTaskBubbles
@@ -9852,7 +9872,6 @@ SlackbotHomeModeSwitch
 SlackbotInChannelsCoachmark
 SlackbotInChannelsCoachmarkAnchor
 SlackbotInChannelsCoachmarkHero
-SlackbotJellyfish
 SlackbotLegacyBadge
 SlackbotMcpConnectorSuggestions
 SlackbotMcpContextBarCta
@@ -10224,6 +10243,7 @@ SourceGroup
 SourceMessageItem
 SourceQuery
 Sources
+SourcesBox
 SourceSection
 SourceSegmentedButton
 SourceSelectModal
@@ -10568,6 +10588,7 @@ TaskTrackingFieldsAndDataToast
 TbdClient
 TbdConversation
 TbdRail
+TbdWikiView
 TeamBlurb
 TeamDomain
 TeamIcon
@@ -10988,6 +11009,7 @@ TriageTabsFallback
 TriageTabsWithFallback
 TrialAwarenessModal
 TrialBadge
+TrialBadgeWithImpression
 TrialButtons
 TrialDiscountOffer
 TrialEndPromoDiscountSidebarCta
@@ -11713,6 +11735,8 @@ WhoCanManageRadio
 WidgetBlock
 WidgetFooterLink
 WidgetTabView
+WikiEmpty
+WikiPage
 WindowContext
 WindowContextProvider
 WindowFooterTargetContext
@@ -11729,7 +11753,6 @@ WithCallMenu
 withChannelSubscription
 withColumnLayout
 withConfirm
-WithConfirmDialog
 withDisabledTooltip
 withDocumentTitle
 withEmojiErrorBoundary

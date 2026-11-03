@@ -515,7 +515,7 @@ $ {amount} USD
 <{googleSheetUrl}|Open in Google Sheets>
 <{listUrl}|Open in Slack lists>
 @ symbol illustration
-@-mentions only
+@-mention
 @Slackbot
 @channel
 @channel and @here
@@ -1250,6 +1250,7 @@ Add an agent
 Add an agent to this channel
 Add an app
 Add an app to your workspace, then turn it on for Slackbot
+Add an artifact
 Add an assignee
 Add an associated account
 Add an asterisks (*) before the name if it\u2019s a wildcard domain.
@@ -1522,7 +1523,6 @@ Add to Slack
 Add to Slack, opens in new window
 Add to Slackbot
 Add to Template
-Add to Top of mind
 Add to VIP
 Add to Workflows Tab
 Add to Workspace
@@ -1800,6 +1800,7 @@ Agent scopes have been updated to enable various Slack Actions. Please reinstall
 Agent selection
 Agent session
 Agent sessions
+Agent sessions started in this conversation will show up here.
 Agent stopped
 Agent suggestion dismissed
 Agent thread \xb7 {ago}
@@ -1938,6 +1939,7 @@ All files
 All files & links
 All files shared in this channel up until this point will remain publicly accessible.
 All files unsupported
+All folders
 All guest accounts will be deactivated.
 All huddles
 All in-progress to-do items will be removed from your to-do list. This can\u2019t be undone.
@@ -1946,7 +1948,6 @@ All invites failed to send. Please try again.
 All items
 All lists
 All logs
-All mapped users are authenticated. Contact your Salesforce admin to change this
 All media
 All meeting reminders dismissed
 All members of a user group are automatically added to its default channels.
@@ -1971,6 +1972,7 @@ All other tools access
 All overdue to-do items will be marked as completed. This can\u2019t be undone.
 All overdue to-dos marked complete
 All people
+All photos and videos
 All pull requests
 All ratings
 All read-only tools access
@@ -2008,9 +2010,11 @@ All tools
 All translation states
 All types
 All unread messages in {viewName} marked read
+All user groups
 All users
 All workflow apps approved for everyone
 All workflows
+All workflows managed by you
 All workspace members can use the app.
 All workspaces
 All workspaces are enabled for Slack Connect. You can change this in Slack Connect Settings.
@@ -2084,6 +2088,7 @@ Allow multiple selections
 Allow notifications:
 Allow once
 Allow only for some objects
+Allow only specific users
 Allow others to send messages on your behalf in specific channels. Delegates you add here will see a \u201CFrom\u201D option in their message composer.
 Allow people to choose
 Allow phone number calls in Slack (only in direct messages)
@@ -2643,6 +2648,7 @@ Art by Hudson Christie
 Art by Luis Mendo
 Artifacts
 Artifacts ({count})
+Artifacts in this channel can only be updated by the Channel Creator or Workspace Admins/Owner.
 Artifacts only
 Artifacts results
 Aruba
@@ -2728,13 +2734,13 @@ Ask it to do things for you, like prep for meetings and draft replies.
 Ask me anything
 Ask members of [[channel_id]] for [[message]] every [[schedule]]
 Ask questions, catch up on conversations, and get a head start on your work.
-Ask the Salesforce admin to assign it, then have the user sign in again.
 Ask the Writing coach skill to polish my draft into a clear, on-voice version and summarize what changed.
 Ask the agent or leave feedback on GitHub\u2026
 Ask the user to try authenticating again. If the issue persists, verify the Salesforce connection settings.
 Ask them to unshare and archive the channel.
 Ask whoever shared this huddle with you for a new link.
 Ask whoever shared this huddle with you for another way to join.
+Ask your Salesforce admin to assign this user the Slack Access permission set.
 Ask your owner to renew
 Ask your team to upgrade your plan
 Ask your workspace owner to enable AI search
@@ -3931,6 +3937,7 @@ Channel analytics
 Channel and DM tabs can have up to 100 total folders, folder items, pins, or workflows. To add another, remove one of those items from the conversation\u2019s tabs or folders.
 Channel archive suggestion
 Channel archived
+Channel artifacts
 Channel associated
 Channel canvas
 Channel canvases only
@@ -4293,6 +4300,7 @@ Choose which stage counts as won.
 Choose which status marks a lead as converted.
 Choose which workflows post here
 Choose which workspaces to connect to this channel:
+Choose who can add, remove, and reorder artifacts
 Choose who can add, remove, and reorder tabs
 Choose who can manage the Channel Agent
 Choose who can see information about a channel before being invited to join, including when they see it in search or when it\u2019s mentioned.
@@ -4991,6 +4999,7 @@ Continue without saving changes?
 Continue without saving?
 Continue workflow
 Continue your installation from the Slack Marketplace
+Continue your setup
 Continued in thread
 Continuing without a calendar\u2026
 Contributor
@@ -5297,6 +5306,7 @@ Couldn\u2019t finish converting mentions to text
 Couldn\u2019t finish this request
 Couldn\u2019t generate an invite link
 Couldn\u2019t get a huddle link for that channel
+Couldn\u2019t hide Singer. Try again.
 Couldn\u2019t import Google contacts. Please try again.
 Couldn\u2019t import memories. Please try again.
 Couldn\u2019t invite
@@ -5363,6 +5373,7 @@ Couldn\u2019t make {targetMemberName} a Single-Channel Guest. You\u2019ve reache
 Couldn\u2019t mark as read. Try again.
 Couldn\u2019t mark read. Try again.
 Couldn\u2019t mark task complete. Try again.
+Couldn\u2019t move Singer. Check that another display is connected and try again.
 Couldn\u2019t move to Saved. The item couldn\u2019t be found.
 Couldn\u2019t move to Saved. Try again?
 Couldn\u2019t move to your to-dos. The item couldn\u2019t be found.
@@ -5373,6 +5384,7 @@ Couldn\u2019t open comments. Please try again.
 Couldn\u2019t open that conversation. Try again.
 Couldn\u2019t open this version.
 Couldn\u2019t reach the agent. Your message wasn\u2019t sent.
+Couldn\u2019t reach {agentName}. Try again.
 Couldn\u2019t reload tools. Try again.
 Couldn\u2019t remove that memory. Please try again.
 Couldn\u2019t remove this response. Please try again.
@@ -5763,6 +5775,7 @@ Custom workflow steps allow you to bring systems and business logic unique to yo
 Custom workflow steps allow you to bring systems and business logic unique to your organization into a workflow. They are built by developers using Slack APIs.
 Custom, depending on the section
 Custom\u2026
+Customer
 Customer Relationships image
 Customer acknowledgement required
 Customer management and teamwork in one place
@@ -5770,6 +5783,7 @@ Customer management for growing teams
 Customer relationship management
 Customer relationship management image
 Customer support
+Customers
 Customers with FedRAMP Support
 Customizable sections
 Customizable security settings
@@ -5779,6 +5793,7 @@ Customize Slackbot
 Customize Tool Permissions
 Customize Workspace
 Customize Your Template
+Customize artifacts
 Customize email appearance
 Customize how to start the workflow
 Customize navigation bar
@@ -6054,6 +6069,7 @@ Delete all
 Delete all errors
 Delete all older drafts?
 Delete and Cancel
+Delete artifact
 Delete bookmark
 Delete calculation
 Delete canvas
@@ -6271,6 +6287,7 @@ Details for conversation with {mpdmNames}
 Details for folder {name}
 Details for list {listName}
 Details for skill set {name}
+Details for {name}
 Details for {quipLabel} {name}
 Details tabs
 Details to show in channel message unfurls
@@ -6443,6 +6460,7 @@ Display emoji as plain text
 Display information about who is currently typing a message
 Display muted items outside of sidebar menus
 Display name
+Display names
 Display names are automatically set by your organization.
 Display options
 Display text
@@ -6839,6 +6857,7 @@ Edit all sections
 Edit alt text
 Edit and reorder workspaces
 Edit approval settings
+Edit artifacts
 Edit bookmark
 Edit button
 Edit canceled
@@ -8481,6 +8500,7 @@ Full Context image
 Full Name
 Full access to your message history
 Full name
+Full names
 Full permissions, security and compliance
 Full personality
 Full preview shown above
@@ -9275,6 +9295,7 @@ Hide DMs Tab
 Hide Muted Channels
 Hide Page
 Hide Sidebar
+Hide Singer
 Hide Slackbot
 Hide Slackbot in the navigation bar
 Hide This Person
@@ -9284,6 +9305,7 @@ Hide all threads
 Hide answer
 Hide archived channels
 Hide archived items
+Hide artifact
 Hide artifacts
 Hide attachment
 Hide canvas
@@ -10436,7 +10458,6 @@ Just exploring / Not sure yet
 Just for Japan: a button for sending
 Just for today
 Just for you on this device. Changes apply right away.
-Just full names
 Just landed! How can I help?
 Just mentions
 Just now
@@ -10898,7 +10919,6 @@ Limit of {limit} addresses exceeeded
 Limit sharing
 Limit sharing so only canvas owners can share their canvases with other people and channels.
 Limit sharing so only list owners can share their lists with other people and channels.
-Limit to permission set
 Limited
 Limited - Anyone who can view record
 Limited - Record editors
@@ -11061,6 +11081,7 @@ Loading clip\u2026
 Loading code channels
 Loading code tasks\u2026
 Loading comments
+Loading commits\u2026
 Loading complete.
 Loading complete. There {count, plural, =1 {is # unknown entry} other {are # unknown entries}}.
 Loading conditions
@@ -11393,12 +11414,14 @@ Manage all Salesforce orgs
 Manage allowed domains
 Manage and monitor Salesforce orgs connected to Slack
 Manage and monitor the Salesforce org connected to Slack
+Manage and reorder artifacts
 Manage and reorder tabs
 Manage and review Slack Connect invitation requests from members of your workspace.
 Manage and update CRM records without leaving Slack
 Manage app access
 Manage apps
 Manage apps\u2026
+Manage artifacts
 Manage audit logs
 Manage authentication
 Manage automatic statuses
@@ -11811,6 +11834,7 @@ Mentions
 Mentions and direct messages
 Mentions only
 Mentions, direct messages, and keywords
+Mentions, {count, plural, =1 {# kind} other {# kinds}}
 Menu
 Menu actions for 
 Menu actions for {name}
@@ -12183,6 +12207,8 @@ Move all
 Move all saved items to to-dos?
 Move and invite
 Move app
+Move artifact down
+Move artifact up
 Move below
 Move between workspaces
 Move branch here
@@ -12234,6 +12260,7 @@ Move to bottom left
 Move to folder
 Move to in progress
 Move to new section
+Move to next display
 Move to project
 Move to saved
 Move to section
@@ -12483,6 +12510,7 @@ Never too late for something good.
 New
 New Account
 New Action
+New Artifact
 New Brunswick
 New Business
 New Caledonia
@@ -13276,6 +13304,7 @@ Nothing to show yet.
 Nothing to summarize
 Nothing to translate here.
 Nothing turned up
+Nothing written yet
 Nothing yet. Slackbot remembers feedback people give it in this channel.
 Notification
 Notification ID copied to clipboard.
@@ -13479,6 +13508,7 @@ On the free version of Slack, messages and files older than {limitInDays} days w
 On the free version of Slack, messages and files sent more than {limitInDays} days ago will be hidden.
 On the last day of the month
 On the {dayOfMonth, selectordinal, one {#st} two {#nd} few {#rd} other {#th}} day
+On this page
 On {dateString}
 On {date}
 On {enterprisePlanName} plan, you can place a legal hold on specific members to preserve their messages and files in Slack. This means that messages and files sent by all members in a conversation will be saved regardless of retention settings or if members edit or delete any content.
@@ -13671,8 +13701,7 @@ Only the people you select can update records using Slackbot
 Only the person who asked Slackbot for this draft can save it.
 Only these captured updates will be marked read. Newer messages stay unread.
 Only transcription mode is allowed for huddles.
-Only users assigned the Slack Access permission set in Salesforce can authenticate.
-Only users assigned to the Slack Access permission set in Salesforce will be synced. Contact your Salesforce admin to change this.
+Only users with the Allow Slack Access permission in Salesforce can authenticate.
 Only visible to Team Owners
 Only visible to you
 Only visible to your organization
@@ -13795,6 +13824,7 @@ Open formatting menu
 Open full table
 Open huddle window
 Open in
+Open in GitHub
 Open in Google Drive (opens in a new tab)
 Open in Google Sheets
 Open in Home
@@ -13951,7 +13981,6 @@ Option
 Option 1
 Option 2
 Option 3
-Option {optionValue}
 Optional
 Optional (Add a message)
 Optional authorizations
@@ -14715,10 +14744,12 @@ Presentation automations in Workflow Builder
 Presentations
 Press + or =
 Press -
+Press Ctrl twice to reopen Singer
 Press Down Arrow for more options
 Press Enter to activate top result.
 Press R
 Press Right Arrow to ask in thread
+Press \u2318\u21E7O to reopen Singer
 Press again to also select items
 Press alt + shift + up/down arrow to navigate between unread items.
 Press delete to remove a direct message from the sidebar
@@ -14882,6 +14913,7 @@ Processing your file\u2026
 Processing {dlpProcessingFileCount, plural, =1 {file} other {files}}\u2026
 Processing {fileDescription}
 Processing\u2026
+Product
 Product management
 Product vision
 Production
@@ -14890,6 +14922,7 @@ Productivity & collaboration
 Productivity and collaboration
 Productivity and collaboration image
 Productivity and collaboration tools
+Products
 Professional
 Professional Services
 Professional community or network
@@ -15044,7 +15077,6 @@ Query
 Query copied to clipboard
 Query copied!
 Query for {name}
-Question
 Question type
 Question type is set to match the Field type, so people can submit info in the right format.
 Question {questionNumber}
@@ -15402,6 +15434,7 @@ Reject this approval work item
 Reject { accessibilityLabel }
 Rejected
 Rejoice!
+Related
 Related Channels
 Related Channels List
 Related List Tab {listNumber}
@@ -15577,7 +15610,6 @@ Remove from Org Owners
 Remove from Saved
 Remove from Slackbot
 Remove from Starred
-Remove from Top of mind
 Remove from VIP
 Remove from all sections
 Remove from bookmarks
@@ -15757,6 +15789,7 @@ Removing {appName} could take a few moments to complete. You will receive a mess
 Rename
 Rename Channel
 Rename a channel
+Rename artifact
 Rename channel
 Rename conversation
 Rename conversation: {title}
@@ -15780,6 +15813,9 @@ Renew
 Renew online
 Renew to the new Enterprise+ to get access to enterprise search and AI search now.
 Reopen Sales Tracker settings to review and try again.
+Reopen Singer from Slack
+Reopen Singer from Slack\u2019s menu bar icon
+Reopen Singer from Slack\u2019s menu bar icon or your Slackbot shortcut.
 Reopen last closed window
 Reorder
 Reorder Automation Rules
@@ -15787,7 +15823,9 @@ Reorder list
 Reorder table menu actions for {rule}
 Reorder {label}
 Reorder {viewLabel}
+Reorder, add, remove, and hide artifacts in this app.
 Reorder, add, remove, and hide tabs in this app.
+Reorder, add, remove, and hide the artifacts that everyone sees in this channel.
 Reorder, add, remove, and hide the tabs that everyone sees in this channel.
 Repeat
 Repeat days changed to {day}.
@@ -16662,6 +16700,7 @@ Search Again
 Search Channel Managers
 Search Confluence
 Search DMs
+Search DMs at {teamName}
 Search GIFs Instead
 Search Google Workspace Directory
 Search MCP servers by name
@@ -16955,15 +16994,18 @@ See Pricing Plans
 See Teams Calls information in search results
 See Upgrade Options
 See all
+See all DMs
 See all Plan Benefits
 See all activity
 See all apps
+See all channels
 See all conversations
 See all conversations with 
 See all drafts
 See all events in your calendar
 See all events in your calendar, opens in new window
 See all external people in direct message conversations and channels.
+See all files
 See all files ({total})
 See all invalid range values
 See all media
@@ -17935,6 +17977,7 @@ Show all trial tasks
 Show an Example
 Show anyway
 Show archived channels
+Show artifact
 Show as a left Sidebar
 Show as a left sidebar
 Show attachment
@@ -19769,6 +19812,7 @@ Team support template
 Team support template with a pre-scheduled weekly huddle
 Teammates
 Teammates who aren\u2019t on Slack yet will get your messages by email
+Teams
 Teams Calls installed. To sign into your account, go to the app\u2019s home in Slack.
 Technical specifications canvas template
 Technology
@@ -20479,9 +20523,6 @@ This action can\u2019t be undone.
 This action can\u2019t be undone. All of your saved items will be permanently removed.
 This action cannot be undone. Previous requests that were resolved by this rule will not be changed, but this rule will no longer be executed or available in the future.
 This action is blocked by your connector preferences.
-This action is only available in the original message
-This action is only available in the original table
-This action isn\u2019t available here
 This address will be permanently deleted
 This adds it as a button to the message composer
 This adds seven fields to this list to track agent work: Work status, Agent, Agent status, Needs from, Waiting on, Summary and Link. They stay on the list if you stop tracking.
@@ -20763,6 +20804,7 @@ This is not a valid string.
 This is not a valid timestamp.
 This is open in the conversation.
 This is required \u2014 you\u2019ll need to enter an email.
+This is set in Salesforce. Contact your Salesforce admin to change it.
 This is still a work in progress
 This is taking a while but we haven\u2019t given up yet\u2026
 This is taking a while\u2026
@@ -20925,7 +20967,6 @@ This prompt uses skills you haven\u2019t added yet. Add them to your library to 
 This pull request has new changes since this message was posted.
 This pull request has new changes. Reload the Code tab to comment on them.
 This pull request has new changes. Reload the Code tab to review them.
-This question needs attention
 This quick toggle allows you to filter down to unread messages to make sure there\u2019s nothing you missed.
 This record can\u2019t be viewed in Slack
 This record no longer exists.
@@ -21030,10 +21071,10 @@ This type of answer cannot be shared.
 This type of user cannot be removed.
 This user
 This user can\u2019t be added.
+This user doesn\u2019t have the Allow Slack Access permission in Salesforce.
 This user group is automatically generated for Workspace Admins.
 This user group is automatically generated for Workspace Owners.
 This user is not a member of the preferred Digital Experiences site.
-This user isn\u2019t assigned the Slack Access permission set in Salesforce.
 This user won\u2019t be able to access Slack because the Digital Experience site hasn\u2019t been configured.
 This usually takes up to a minute
 This value contains deleted items.
@@ -21143,9 +21184,11 @@ Thread in
 Thread in a direct message
 Thread in channel {channelName}
 Thread in conversation with {memberName}
+Thread in direct message
 Thread in {channelName}
 Thread in {channel_name}
 Thread in {channel_name}: {thread_title}
+Thread in {channel}
 Thread in {name}
 Thread is resolved {date} at {time}.
 Thread link copied
@@ -21446,7 +21489,6 @@ Top decreased opportunities
 Top filter
 Top increased opportunities
 Top left
-Top of mind
 Top result: {resultName}. Press Enter to activate.
 Top right
 Top things to check out
@@ -22483,7 +22525,6 @@ User Menu
 User Type
 User account creation
 User account mapping
-User authentication
 User clicked button: {buttonName}
 User group
 User group channels and sections
@@ -23541,7 +23582,7 @@ When left idle
 When members submit requests to install agents to your organization, you\u2019ll see them here.
 When messages are sent
 When on, each conversation\u2019s base is its rank among your conversations, so the top one scores 1. When off, the recommendation score is used as-is.
-When on, only users assigned the Slack Access permission set in Salesforce can authenticate.
+When on, only users with the Allow Slack Access permission in Salesforce can authenticate.
 When pasting links to places outside Slack, URLs will be shortened.
 When people are using Slack Connect to direct message, they can copy over their current conversation into a new Slack Connect channel.
 When people are using Slack Connect to direct message, they can copy over their current conversation into a new private Slack Connect channel, skipping the invitation process.
@@ -23651,6 +23692,7 @@ White
 White circle indicates low importance
 Who are my admins?
 Who are we if we can\u2019t change our minds?
+Who can access Salesforce in Slack
 Who can access?
 Who can approve requests and manage Slack Connect Channels?
 Who can be added to this group?
@@ -23700,6 +23742,7 @@ Why? (optional)
 Widely shared
 Widget
 Widget view
+Wiki
 Will be added
 Will be invited by email as an external guest
 Will not be added
@@ -24285,7 +24328,7 @@ You don\u2019t have access to this list
 You don\u2019t have access to this list.
 You don\u2019t have access to this message (either it\u2019s private or in a workspace you\u2019re not a part of)
 You don\u2019t have access to this message (it may be private, in a workspace you\u2019re not a part of, or deleted)
-You don\u2019t have access to this org in Slack. Ask your Salesforce admin to add you to the Slack Access permission set.
+You don\u2019t have access to this org in Slack. Ask your Salesforce admin to assign you the Slack Access permission set.
 You don\u2019t have access to this private message
 You don\u2019t have access to this private message.
 You don\u2019t have access to this skill.
@@ -24727,6 +24770,7 @@ You\u2019ve been invited to {channelName1} and {channelName2} as a guest
 You\u2019ve been invited to {channelName} and {ChannelCount} other channels as a guest
 You\u2019ve been invited to {channelName} as a guest
 You\u2019ve completed all your action items.
+You\u2019ve completed {completedCount} of 3 steps. You can pick it up right where you left off anytime.
 You\u2019ve disallowed notifications in your browser. You\u2019ll need to open your browser preferences to change that.
 You\u2019ve done some initial outreach to these leads.
 You\u2019ve exceeded the maximum of {maxEmailDomains} email domains.
@@ -24889,6 +24933,7 @@ Your admin has alt text reminders turned on for this workspace
 Your admin has blocked access to your email account
 Your admin has declined a request for this MCP, so it can\u2019t be added to your workspace. Contact your admin if you think this is a mistake.
 Your admin has disabled access to the text of messages in private channels for this trigger. Remove private channels or contact an admin to continue.
+Your admin has limited who can start new direct messages. You can still message people you already have a conversation with.
 Your admin has restricted use of this step. To request access to edit this step or publish this workflow, contact your admin.
 Your admin has to review this first.
 Your admin has to review this invite to {name} first.
@@ -24909,6 +24954,7 @@ Your admins haven\u2019t shared the permissions required to accept Slack Connect
 Your admins haven\u2019t shared the permissions required to accept Slack Connect invitations. You may want to ask an admin for help.
 Your agenda got an upgrade
 Your agenda is getting its prep game on\u2026 :muscle:
+Your agent keeps what it learns about you, your projects and your people here.
 Your agent sessions
 Your alert is now live
 Your anniversary
@@ -32294,6 +32340,7 @@ zzz
 {count, plural, other {# drafts}}
 {count, plural, other {# new in Activity}}
 {count, plural, other {# objects are outside the Objects setting above.}}
+{count, plural, other {#+ messages}}
 {count, plural, other {Teammates are discussing {topic} in # channels}}
 {countConfigs} configurations were removed
 {count} ({privateCount} private)
@@ -32500,7 +32547,6 @@ zzz
 {fileType, select, quip {Canvases} other {Lists}} are undergoing ownership transfer.
 {fileType}
 {fileType} \u2013 {size}
-{fileType} \u2013 {size}kb
 {fileType} file {fileName} ({fileAltText}) uploaded by {userName} on {dateStr} at {timeStr}
 {fileType} file {fileName} uploaded by {userName} on {dateStr} at {timeStr}
 {file_name}
@@ -32860,8 +32906,6 @@ zzz
 {name} is trying to reach you
 {name} joined
 {name} just joined Slack
-{name} marked as important for today.
-{name} marked as not important for today.
 {name} mentioned you in thread in {channelName}, at {time}: {message}
 {name} mentioned you in thread in {channelName}, {date} at {time}: {message}
 {name} mentioned you in thread in {channelName}: {message}
@@ -33010,7 +33054,6 @@ zzz
 {numberUnreads} new replies
 {numberUnreads} new {numberUnreads, plural, =1 {reply} other {replies}}
 {numberUnreads} new {numberUnreads, plural, =1 {reply} other {replies}}, show thread
-{number}\u2014 {title}
 {num} characters maximum
 {objectLabel} configuration was added
 {objectLabel} is outside the Objects setting above.

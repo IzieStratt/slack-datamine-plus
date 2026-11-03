@@ -447,6 +447,7 @@ action:convertToChannel
 action:copyWorkflowFailure
 action:copyWorkflowSuccess
 action:costFetchSuccess
+action:countAgentChannelSessionMessage
 action:createAppAction
 action:createCanvasAndNavigateToTabCircular
 action:createdWorkflowAndTriggerFromAiPreviewSuccess
@@ -676,6 +677,7 @@ action:mapWorkflowPreviewIdToWorkflowId
 action:markAdminSuggestedListViewsForSidebarAsFresh
 action:markAdminSuggestedListViewsForSidebarAsStale
 action:markAgentforceInteractabilityRefreshAttempted
+action:markAgentSunroofMoreAppsStale
 action:markAiAppsFilterKeyFetched
 action:markAiAppsFilterKeyInFlight
 action:markAiSummaryRead
@@ -1256,11 +1258,14 @@ action:setAgentHomeNewConversation
 action:setAgentHomeViewMode
 action:setAgentHomeViewModeLoading
 action:setAgents
+action:setAgentSessionMessageCounts
+action:setAgentSessionMessageCountsRequestedAt
 action:setAgentSessions
 action:setAgentSessionsIsFetched
 action:setAgentSessionsIsLoading
 action:setAgentSplitViewChannelId
 action:setAgentSunroofApps
+action:setAgentSunroofMenuOpen
 action:setAiAgentforceAppsListApiLoaded
 action:setAiAppActiveBotUserId
 action:setAiAppActiveStateForBotUserId
@@ -2809,6 +2814,7 @@ action:setWelcomePartyObjectState
 action:setWhatsNewFetchFailed
 action:setWhatsNewLoading
 action:setWhatsNewUpdates
+action:setWikiDocuments
 action:setWildcardAndClearPublicChannels
 action:setWindow
 action:setWindowIdToRender
@@ -2910,6 +2916,7 @@ action:toggleShowAiTranslation
 action:toggleShowOnlySelected
 action:toggleTodoSectionCollapsed
 action:toggleVideo
+action:toggleWikiGroup
 action:touchLastEventTimeMs
 action:touchLastQuerySessionTimeMs
 action:touchLastSearchSessionTimeMs
@@ -2925,6 +2932,7 @@ action:ttlAwarenessEntries
 action:turnOffChannelButtonHighliting
 action:turnOffSmartInvitesChannelSuggestions
 action:unbindVideo
+action:uncountAgentChannelSessionMessage
 action:unexpectedSocketClosure
 action:unHideBanner
 action:unhideComment
@@ -4177,7 +4185,6 @@ thunk:clearSlackbotUnreadThreadsOnMarkAllRead
 thunk:clearSolutionTemplatePref
 thunk:clearSolutionTemplatePrefState
 thunk:clearStaleHuddleInvite
-thunk:clearStaleImportanceFeedback
 thunk:clearStatusShortcut
 thunk:clearSyncedSlackbotDraft
 thunk:clearSyncedSlackbotZeroStateDraft
@@ -4679,7 +4686,6 @@ thunk:enqueueCopyLinkSuccessToast
 thunk:enqueueEnablePopupsToast
 thunk:enqueueGenericErrorToast
 thunk:enqueueHuddleToast
-thunk:enqueueMarkImportantToast
 thunk:enqueueMuteChannelToast
 thunk:enqueuePinnedToast
 thunk:enqueueSkillAddErrorToast
@@ -4860,9 +4866,7 @@ thunk:fetchAndUpsertPasskeys
 thunk:fetchAndUpsertPriorityUsers
 thunk:fetchAndUpsertProviders
 thunk:fetchAndUpsertRecentEntities
-thunk:fetchAndUpsertRecentFiles
 thunk:fetchAndUpsertRecentlyRunTriggers
-thunk:fetchAndUpsertRecentMedia
 thunk:fetchAndUpsertRecentWorkflows
 thunk:fetchAndUpsertRecommendedChannelsForJoinerLaunchpad
 thunk:fetchAndUpsertRecordListTabViewData
@@ -5050,7 +5054,6 @@ thunk:fetchRecordsForList
 thunk:fetchRecordSubscriptions
 thunk:fetchRecordWithSubtasks
 thunk:fetchRelatedChannelsForRecord
-thunk:fetchRemote
 thunk:fetchRemotePreviewUrl
 thunk:fetchRoleAssignmentsForMember
 thunk:fetchRoleMembers
@@ -5753,6 +5756,7 @@ thunk:maybeColdBootOnSocketTimeouts
 thunk:maybeCollapseSidebar
 thunk:maybeCollapseSidebarForBigModeSecondary
 thunk:maybeCollapseSidebarForBigModeSecondaryOnResize
+thunk:maybeCountAgentChannelSessionMessage
 thunk:maybeCountCuddleUsage
 thunk:maybeCreatePresenceSubscription
 thunk:maybeDecayJoinerLaunchpad
@@ -6038,6 +6042,7 @@ thunk:maybeTriggerMessagePinnedMegaphoneEvent
 thunk:maybeTriggerSlackbotNuxClose
 thunk:maybeTriggerSlackbotNuxCloseEvent
 thunk:maybeTriggerUserExpectationsSurvey
+thunk:maybeUncountAgentChannelSessionMessage
 thunk:maybeUnexcludeTeam
 thunk:maybeUpdateAllThreadsOnNewMessage
 thunk:maybeUpdateAppPermissionsAfterChannelAdd
@@ -6870,6 +6875,7 @@ thunk:prependMessageInputWithEmailConversation
 thunk:preprocessImsgs
 thunk:presencePromptSideEffectHandler
 thunk:previewFile
+thunk:previewFileOrOpenSurface
 thunk:previewHistoryHandler
 thunk:pricingCheckoutReorderMaybeLogExposure
 thunk:pricingPaidPlanEscapeHatchMaybeLogExposure
@@ -7257,7 +7263,6 @@ thunk:scheduleForwardMessage
 thunk:scheduleRecentlyOnlineRefresh
 thunk:scheduleSendMessage
 thunk:scoreJoinedChannelForSidebar
-thunk:search
 thunk:searchAdminAppsByContext
 thunk:searchAdminUserGroups
 thunk:searchAndBulkUpsertOrgUserGroups
