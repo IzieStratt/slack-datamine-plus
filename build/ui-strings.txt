@@ -1009,6 +1009,7 @@ Activity tabs
 Activity type
 Activity type ({count})
 Activity type, {count, plural, =1 {1 filter} other {# filters}} applied
+Acts as an MCP server
 Actual prompt
 Add
 Add ({count})
@@ -1910,6 +1911,7 @@ All channels except {channelCount, plural, =1 {# channel} other {# channels}}
 All channels except\u2026
 All channels, except Slack Connect channels
 All clear
+All code channels in Slack
 All comments
 All comments for {title}
 All completed to-do items will be removed from your to-do list. This can\u2019t be undone.
@@ -2737,6 +2739,7 @@ Ask your owner to renew
 Ask your team to upgrade your plan
 Ask your workspace owner to enable AI search
 Ask {agentName} in Channel
+Ask {agent}
 Ask {appName}
 Asked in {channelName} \xb7 I\u2019ll draft it for you
 Asking Agentforce
@@ -3021,6 +3024,7 @@ Back to All channels
 Back to Current
 Back to Editing
 Back to Filters
+Back to Input
 Back to Message
 Back to Skills
 Back to Slack
@@ -3442,6 +3446,7 @@ Call Back
 Call Declined
 Call Ended
 Call Started
+Call disconnected
 Call location options
 Call moved to {corner} corner
 Call on AI to take a specific action or kick things off
@@ -4081,6 +4086,7 @@ Chatwork
 Check Again
 Check It Out
 Check Status
+Check Tasks
 Check a list item
 Check all roles in Salesforce
 Check back in 24 hours to see additional metrics and details about your organization\u2019s channels
@@ -4114,6 +4120,7 @@ Check your earlier messages in Slack before sending more. Your draft is saved he
 Check your email
 Check your email for a link
 Check your email!
+Check your microphone
 Check your system preferences to make sure Slack has screen recording permission, and try again.
 Check your system preferences to make sure your browser has screen recording permission, and try again.
 Check your system settings
@@ -4491,6 +4498,10 @@ Code channels are a multiplayer coding environment designed for everyone, not ju
 Code channels created by workflows are always public.
 Code copied to clipboard.
 Code formatting
+Code task started. Your other tasks can keep working.
+Code tasks
+Code with {agent}
+Coding agent
 CoffeeScript
 ColdFusion
 Collaborate in #{channelName} and get free access to paid features while working with {invitingTeamName} 
@@ -4740,6 +4751,7 @@ Connect accounts
 Connect all your apps
 Connect all your apps and daily tools
 Connect an MCP server you built to Slackbot.
+Connect an account to continue
 Connect an email account to import emails
 Connect an email account to send directly from Slack
 Connect an existing Salesforce organization
@@ -5282,6 +5294,7 @@ Couldn\u2019t display as a diagram. Check the code for syntax errors.
 Couldn\u2019t download all the content for printing. Would you like to print anyway? Some images may be blurry, or some embedded content may not appear.
 Couldn\u2019t finish
 Couldn\u2019t finish converting mentions to text
+Couldn\u2019t finish this request
 Couldn\u2019t generate an invite link
 Couldn\u2019t get a huddle link for that channel
 Couldn\u2019t import Google contacts. Please try again.
@@ -5297,6 +5310,8 @@ Couldn\u2019t load apps.
 Couldn\u2019t load automation rules
 Couldn\u2019t load capabilities for {name}.
 Couldn\u2019t load channels. Try again in a few minutes.
+Couldn\u2019t load code tasks. Open code channels in Slack to check.
+Couldn\u2019t load coding agents. Your task is saved in the input.
 Couldn\u2019t load comments.
 Couldn\u2019t load conversations
 Couldn\u2019t load details.
@@ -5384,6 +5399,7 @@ Couldn\u2019t send. Your message is still here. Try again when you\u2019re conne
 Couldn\u2019t start connecting to GitHub Enterprise. Try again later.
 Couldn\u2019t start recording. Please try again.
 Couldn\u2019t start the camera. Please try again.
+Couldn\u2019t start the task. Check the agent, then try again.
 Couldn\u2019t start tracking agent work. Please try again.
 Couldn\u2019t start your costume suggestion. Please try again.
 Couldn\u2019t stop tracking agent work. Please try again.
@@ -6412,6 +6428,7 @@ Dismiss themes banner
 Dismiss todo list
 Dismiss transcript generation prompt
 Dismiss trial countdown
+Dismiss updates
 Display
 Display Name
 Display Text
@@ -6735,6 +6752,7 @@ Each guest needs to be in at least one channel.
 Each link or QR code works for up to 400 people. To keep your workspace secure, only share the invite with people in your organization.
 Each new search defaults you to the option you last used
 Each organization\u2019s messages will live in their respective data regions.
+Each task gets a private code channel. Write your task in the input; the agent will ask if it needs you.
 Each variable can have only one type. You can revisit and edit existing variables types anytime.
 Earlier
 Earliest date created
@@ -11041,6 +11059,7 @@ Loading channels
 Loading channels\u2026
 Loading clip\u2026
 Loading code channels
+Loading code tasks\u2026
 Loading comments
 Loading complete.
 Loading complete. There {count, plural, =1 {is # unknown entry} other {are # unknown entries}}.
@@ -12435,7 +12454,9 @@ Needs input
 Needs reinstall
 Needs you
 Needs your OK
+Needs your attention
 Needs your input
+Needs your okay
 Negative numbers are not allowed.
 Neither is good
 Neither satisfied nor dissatisfied
@@ -12801,6 +12822,7 @@ No channels are connected to this group
 No channels found
 No code
 No code channels yet
+No coding agent is available in this workspace. Your task is saved in the input.
 No comments on this surface yet.
 No comments or reactions on this section
 No commitment needed
@@ -13866,6 +13888,7 @@ Open unread options
 Open video call
 Open view
 Open voice call
+Open voice details
 Open without template
 Open workflow details
 Open workflow in new window
@@ -14126,6 +14149,7 @@ PR closed
 PR draft
 PR feedback
 PR merged
+PR needs attention
 PR open
 PR status
 PRO
@@ -15259,6 +15283,7 @@ Reconnect your external channels
 Reconnect your {providerName} account, then try again.
 Reconnect {name}
 Reconnecting
+Reconnecting\u2026
 Record
 Record Audio Clip
 Record Edits
@@ -15798,6 +15823,7 @@ Reply count
 Reply in a thread
 Reply in thread
 Reply posted
+Reply ready
 Reply to Email
 Reply to Sam
 Reply to comment
@@ -15888,6 +15914,7 @@ Request sent
 Request sent to the {teamName} workspace!
 Request sent to your admin
 Request sent. You\u2019ll be notified once it\u2019s been shared with you.
+Request stopped
 Request submitted
 Request submitted for admin approval
 Request submitted successfully
@@ -18958,6 +18985,7 @@ Start Editing
 Start Free Trial
 Start Huddle
 Start Meeting Assistant
+Start Meeting Notes
 Start Migration
 Start New Message
 Start Notes
@@ -18974,6 +19002,7 @@ Start Workflow
 Start a Call
 Start a DM
 Start a DM conversation while you wait to join the channel.
+Start a Different Task
 Start a Free Trial
 Start a Huddle
 Start a Review
@@ -20971,6 +21000,7 @@ This step uses AI-generated content and will pause for someone to review before 
 This tab will be hidden from Activity.
 This table has reached the maximum number of cells allowed in a canvas.
 This table is too big to send as an attachment.
+This task may already have a code channel. Check your tasks before starting another. Your request is saved here.
 This task will be removed and no longer run
 This template already exists, choose a different name
 This template already exists, choose a different name.
@@ -22510,6 +22540,7 @@ Users will no longer be able to use this template.
 Uses
 Uses AI
 Uses LLM/AI
+Uses Slack\u2019s MCP server
 Uses token rotation
 Using Google for OAuth makes it possible for your team to securely and easily sign in to Slack using their Google accounts \u2014 that\u2019s one less password to remember.
 Using emoji for names makes some sense, but sadly, not enough. Try again?
@@ -22688,6 +22719,7 @@ View Slack Marketplace
 View Slack Pro Features
 View Slack users with access to this org
 View Slackbot Thread
+View Tasks
 View Transcript
 View Warning
 View Workspaces
@@ -22977,8 +23009,10 @@ Voice call failed. Click to retry.
 Voice calls
 Voice calls are unavailable for this workspace
 Voice calls aren\u2019t supported in this browser.
+Voice connected
 Voice conversation failed
 Voice settings
+Voice with Slackbot
 Voice/video huddles with screen share
 Volume
 Vote
@@ -22998,6 +23032,7 @@ Waiting Room
 Waiting for Upload\u2026
 Waiting for admin approval
 Waiting for an admin\u2019s approval
+Waiting for an update
 Waiting for approval
 Waiting for datasource sync to complete
 Waiting for others to join
@@ -23841,6 +23876,7 @@ Working hours
 Working on a response\u2026
 Working on it\u2026
 Working on sales, support, or marketing? Send a request to your team for access to get started.
+Working on your request
 Working with another company?
 Working with partners and vendors
 Working with someone who isn\u2019t here yet? Bring them in.
@@ -24908,6 +24944,7 @@ Your city name can\u2019t contain special characters.
 Your closest collab
 Your closest collabs
 Your code channel was created, but it couldn\u2019t be fully set up. Find it in your sidebar.
+Your code tasks will appear here.
 Your collection will be available as a variable to use in next steps
 Your comment is on GitHub, but it couldn\u2019t be sent to {agentName} in channel.
 Your computer is plugged into a power source, which will optimize peformance.
@@ -25011,6 +25048,7 @@ Your message, along with any files and attachments, has been saved to your draft
 Your mic is off \u2014 nothing is being recorded.
 Your mic is off \u2014 this clip won\u2019t have any narration.
 Your microphone is blocked. Other people in the huddle won\u2019t be able to hear you.
+Your microphone is muted in system settings. Open voice details to unmute it.
 Your microphone is unavailable. Make sure it\u2019s connected and that you\u2019ve granted permission to share audio with Slack.
 Your microphone is unavailable. Try closing other apps that may be using it, switching to a different microphone, or restarting Slack.
 Your name
@@ -25093,6 +25131,7 @@ Your street address can\u2019t contain special characters.
 Your suggested channels will no longer be automatically summarized. You can start receiving recaps again anytime.
 Your support address is verified
 Your system administrator has disabled Windows Action Center notifications for Slack.
+Your tasks
 Your team can fill out a form that creates a copy of the canvas and replaces variables with form responses.
 Your team got the most out of Slack. Don\u2019t lose the following:
 Your team has a Salesforce integration to make viewing data and updating info easier without leaving Slack.
