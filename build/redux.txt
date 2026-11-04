@@ -23,6 +23,7 @@ action:addBulkItems
 action:addChannel
 action:addChannelManagers
 action:addChannelPrefix
+action:addCodeChannelPullRequestComments
 action:addCollection
 action:addDegradedSystemMessage
 action:addDigestChannels
@@ -449,6 +450,7 @@ action:copyWorkflowFailure
 action:copyWorkflowSuccess
 action:costFetchSuccess
 action:countAgentChannelSessionMessage
+action:countAgentSessionsFetchSent
 action:createAppAction
 action:createCanvasAndNavigateToTabCircular
 action:createdWorkflowAndTriggerFromAiPreviewSuccess
@@ -1264,6 +1266,7 @@ action:setAgents
 action:setAgentSessionMessageCounts
 action:setAgentSessionMessageCountsRequestedAt
 action:setAgentSessions
+action:setAgentSessionsAppliedFetchSeq
 action:setAgentSessionsIsFetched
 action:setAgentSessionsIsLoading
 action:setAgentSplitViewChannelId
@@ -1486,6 +1489,8 @@ action:setClipsNuxOverride
 action:setClosedCaptionsEnabled
 action:setCodeChannelAiSummary
 action:setCodeChannelPullRequest
+action:setCodeChannelPullRequestCommentsError
+action:setCodeChannelPullRequestCommentsLoading
 action:setCodeChannelPullRequestDescription
 action:setCodeChannelPullRequestError
 action:setCodeChannelPullRequestLoading
@@ -1524,6 +1529,7 @@ action:setContextDismissedForConversation
 action:setConversationIncomingMessageAnnouncement
 action:setConversationIncomingMessageSound
 action:setConversationSentMessageSound
+action:setConversationsFilters
 action:setConversationsListPrefs
 action:setCoreClientRequestId
 action:setCountsAreApplied
@@ -4035,6 +4041,7 @@ thunk:attachHuddleNotesFromFileId
 thunk:attachHuddleNotesFromMessage
 thunk:attachUploadToDraft
 thunk:attachUploadToMessage
+thunk:attachWholeMessageQuote
 thunk:attachWorkflowToMessage
 thunk:attemptToDiscardSalesforceFormChanges
 thunk:attemptToDiscardTodo
@@ -4072,6 +4079,7 @@ thunk:buildAndUpsertSearchData
 thunk:buildDragItemsForChannelSidebarChannels
 thunk:buildHuddleWindowFeatures
 thunk:buildViewSetForSingleColumnMode
+thunk:buildWholeMessageQuoteRequest
 thunk:bulkAddChannels
 thunk:bulkAddExperiments
 thunk:bulkAddOrUpdateChannelMutationTimestamps
@@ -4254,6 +4262,7 @@ thunk:clogFileOrderUpdate
 thunk:clogFileRemoved
 thunk:clogFileResultClick
 thunk:clogFileShareClick
+thunk:clogFileSnapshotClick
 thunk:clogFileTypeFilterChange
 thunk:clogFilterCompleterClick
 thunk:clogFilterCompleterImpression
@@ -4618,6 +4627,7 @@ thunk:dismissJourneyNotification
 thunk:dismissMeetSlackbotNotification
 thunk:dismissNuxCarousel
 thunk:dismissOnboardingTasksLinkFromSidebar
+thunk:dismissPinnedAgentSuggestion
 thunk:dismissPinnedDropZone
 thunk:dismissReadMessages
 thunk:dismissReport
@@ -4921,6 +4931,7 @@ thunk:fetchCalendarWindow
 thunk:fetchCanvasTemplatesByNames
 thunk:fetchCanvasTopicSuggestions
 thunk:fetchCellEdit
+thunk:fetchChannelAgents
 thunk:fetchChannelById
 thunk:fetchChannelCustomRetention
 thunk:fetchChannelHistory
@@ -5012,6 +5023,7 @@ thunk:fetchMembersDataAvailableDateRange
 thunk:fetchMembersForPermission
 thunk:fetchMetricsForInsights
 thunk:fetchMetricsMetadataForInsights
+thunk:fetchMoreCodeChannelPullRequestComments
 thunk:fetchMoreUsers
 thunk:fetchMpimList
 thunk:fetchMusic
@@ -5314,6 +5326,7 @@ thunk:getOrCreateMeetingForEvent
 thunk:getOrgDefaultChannelIsMandatoryById
 thunk:getOrgDefaultChannelPrefsById
 thunk:getOrgTeamInfo
+thunk:getPendingSingerBrowserSend
 thunk:getPersonalActivityForResurrectedUser
 thunk:getPortableContentSourceUnfurls
 thunk:getPrefCompliantMemberNameLowerCase
@@ -5354,6 +5367,7 @@ thunk:getTargetChannel
 thunk:getTimeForSchedulingOptionThunk
 thunk:getToggleUnreadsData
 thunk:getToggleVipActionMaybe
+thunk:getUnifiedFilesMediaGalleryOptions
 thunk:getUnresolvedMentionAndSlugIds
 thunk:getUserMXCurrentCalendar
 thunk:getValidFlannelUrl
@@ -5814,7 +5828,6 @@ thunk:maybeFetchRelevantRecordOptions
 thunk:maybeFetchSlackbotAiUsageOnPermissions
 thunk:maybeFetchSlackbotMcpServers
 thunk:maybeFetchStarredUnifiedFiles
-thunk:maybeFetchTableauEmbedTokenForUrl
 thunk:maybeFetchTeamSegmentation
 thunk:maybeFetchTranslationLocales
 thunk:maybeFinishRefreshing
@@ -6168,7 +6181,6 @@ thunk:navigateToRow
 thunk:navigateToSalesforceListView
 thunk:navigateToScheduledMessages
 thunk:navigateToSearch
-thunk:navigateToSent
 thunk:navigateToSkillsBrowser
 thunk:navigateToSkillsLibrary
 thunk:navigateToSlackbot
@@ -6469,6 +6481,7 @@ thunk:openFileViewerErrorModal
 thunk:openFindMoreWorkspacesModal
 thunk:openFirstConnectionApprovalModal
 thunk:openFlexpaneInDetachedWindow
+thunk:openFocusedSectionQuickRead
 thunk:openForwardNotificationModal
 thunk:openFreemiumTrialOfferModal
 thunk:openFreeToPlusTrialCheckoutUrl
@@ -6603,7 +6616,6 @@ thunk:openPermalinkInClient
 thunk:openPinnedItem
 thunk:openPinnedPickerModal
 thunk:openPip
-thunk:openPlanRecommendationCheckout
 thunk:openPlansAtGlanceModal
 thunk:openPlanSourcesModalHandler
 thunk:openPollModal
@@ -6747,7 +6759,6 @@ thunk:openSolutionTemplateModal
 thunk:openSpreadsheetInNewChildWindow
 thunk:openStepFormModal
 thunk:openStreamlinePlansModal
-thunk:openSummaryInChildWindow
 thunk:openSuspiciousLinkDialog
 thunk:openTabFromList
 thunk:openTabInNewWindow
@@ -6852,7 +6863,6 @@ thunk:playSoundOnYouLeft
 thunk:pollClientUnreadsOnInterval
 thunk:pollForFileProcessing
 thunk:popOutBlockKitModal
-thunk:populateCalendarHuddleInformation
 thunk:populateMessageComposerWithStashedDraft
 thunk:popViewFromStack
 thunk:postChannelCanvasRouting
@@ -7196,6 +7206,7 @@ thunk:restoreEditorWorkflowFromVersionSuccessHandler
 thunk:restoreLimitAndWelcomeBanner
 thunk:restoreLimitBanner
 thunk:restoreOpenWorkflowsFromLocalStorage
+thunk:restorePinnedAgentSuggestion
 thunk:restorePinnedDropZone
 thunk:restorePinnedItemsInSidebar
 thunk:restoreQuipVersion
@@ -7269,6 +7280,7 @@ thunk:saveRecordChannelConfig
 thunk:saveSecondaryViewColumn
 thunk:saveSidebarViewColumn
 thunk:saveSunroofOrder
+thunk:saveSunroofUserPref
 thunk:saveWorkObject
 thunk:scActivityInviteShowEmailMaybeLogExposure
 thunk:scheduleDraft

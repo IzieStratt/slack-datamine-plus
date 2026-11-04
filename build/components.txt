@@ -403,12 +403,13 @@ AgendaError
 AgendaEventItem
 AgendaMarkTaskCompleteToast
 AgendaNavCount
+AgendaNavMeetingBubble
 AgendaNotAuthed
-AgendaPage
+AgendaPeekMeetings
+AgendaPeekTodos
+AgendaPeekView
 AgendaSections
-AgendaTabButton
-AgendaTabs
-AgentActionMessage
+AgendaSidebarPeekWrapper
 AgentAvatar
 AgentAvatarIcon
 AgentBrowserTabRailCoachmark
@@ -465,6 +466,7 @@ AgentHomeViewHeaderNewConversation
 AgentHomeViewMessageInput
 AgentHoverCard
 AgentHoverCardFooter
+AgentHoverCardJoinToView
 AgentHoverCardLoading
 AgenticBrowseAndFind
 AgenticBrowseAndFindPage
@@ -480,6 +482,7 @@ AgenticShowSidebarButton
 AgenticSidebarHeader
 AgenticSidebarSearch
 AgenticWorkspaceButton
+AgenticWorkspaceFilterBanner
 AgentInstallCKASelectSalesforceOrgPane
 AgentInstallCKASuccessPane
 AgentInstallCKASwitchOrgPane
@@ -736,6 +739,7 @@ AppAccessAssignMembersPane
 AppAccessChannelEnablementPane
 AppAccessChannelsTable
 AppAccessEnablementPane
+AppAccessRestrictedNotice
 AppActionFailToast
 AppActionsPillow
 AppActionSuccessToast
@@ -786,7 +790,6 @@ AppHelpButton
 AppHistoryTabView
 AppHomeBlocks
 AppHomeError
-AppHomeRestricted
 AppHomeTabView
 AppHomeTabViewBase
 AppHoverCard
@@ -852,6 +855,7 @@ ApprovedOrgInfoConnectionBulkModalWrapper
 ApprovedOrgInfoConnectionWrapper
 ApproveMenuItem
 AppRow
+AppRowConnectPrompt
 AppRowSkeleton
 AppsAgentsSection
 AppsBrowserFilter
@@ -874,7 +878,6 @@ AppSpaceProfileDescription
 AppSpaceProfileInfo
 AppSpaceProfileSideAvatar
 AppSpaceScreenshots
-AppSpaceSlashCommands
 AppSpaceView
 AppSpaceWrapper
 AppsSection
@@ -1027,6 +1030,7 @@ AttentionProjectPage
 AttentionTimeline
 AttritedGridsBanner
 AttritedGridsBannerBase
+AudibleWindowDocumentTitle
 AudioAndVideoSection
 AudioAvatarWithWaveform
 AudioClipOverflowMenu
@@ -1097,10 +1101,6 @@ AutoSlackSalesforcePlusTrialGuide
 AutoSortActivityAnnotation
 AutoSortBanner
 AutoStarterMembersTable
-AutoSummaryCard
-AutoSummaryCardError
-AutoSummaryCardLoading
-AutoSummaryMoreMenu
 AutoTracing
 AvailabilitySection
 Avatar
@@ -1115,6 +1115,7 @@ AwarenessIcon
 AwayChannelPermissionsColumn
 AwayTeamScInvitePermissionsConnectionWrapper
 AwayTeamScInvitePermissionsContentWrapper
+BackdropImpl
 BackgroundableConnect
 BackgroundableConnectedWorkspaceDocumentTitle
 BackgroundableConnectWorkspaceBadgeItem
@@ -1186,6 +1187,7 @@ BaseAppSpace
 BaseAppSpaceProfileDisclaimer
 BaseAppSpaceProfileSideLinksFunction
 BaseAppSpaceSlashCommand
+BaseAppSpaceSlashCommands
 BaseAppsTable
 BaseAppsTableHeader
 BaseAppsTrialAwarenessBanner
@@ -1396,6 +1398,7 @@ BaseMediaScrubberReactionsOverlay
 BaseMediaVideo
 BaseMeetSlackbotModalContents
 BaseMemberAnalyticsDisabledAlert
+BaseMembersTableHeader
 BaseMessage
 BaseMessageActionsContainer
 BaseMessageAttachmentSlackMessage
@@ -1563,7 +1566,6 @@ BaseSubtaskContextMenu
 BaseSuggestionAskSlackbot
 BaseSuggestionNlTypeahead
 BaseTable
-BaseTableauContainer
 BaseTabsRevealCoachmark
 BaseTeamIcon
 BaseTeamPickerMenu
@@ -1736,6 +1738,7 @@ BrowsePeekTrigger
 BrowserDeprecationWarning
 BrowserDeprecationWarningContainer
 browserLink
+BrowserSettingsContent
 BrowseSearchInput
 BrowseSearchResultsLoading
 BrowseSessionProvider
@@ -1951,6 +1954,7 @@ CanvasLinkUrlInput
 CanvasMention
 CanvasMermaid
 CanvasMermaidPreview
+CanvasMermaidPreviewLazy
 CanvasMermaidViewerModal
 CanvasMessageBlocksInput
 CanvasMessageUnfurl
@@ -1970,9 +1974,9 @@ CanvasQuipThread
 CanvasReactionBar
 CanvasRevokeAccessSpeedBump
 CanvasSalesforceRichTextPreview
+CanvasSearchInput
 CanvasSection
 CanvasSectionReminderContent
-CanvasSectionRow
 CanvasSelection
 CanvasSelfLockoutSpeedBump
 CanvasShareDialog
@@ -1982,7 +1986,6 @@ CanvasShareDialogList
 CanvasShareDialogPeoplePage
 CanvasShareDialogSettingsPage
 CanvasShareDialogWorkflowsPage
-CanvasShareEmailInviteBanner
 CanvasShareFailedAlert
 CanvasShareMessage
 CanvasSharePrimaryButton
@@ -2031,6 +2034,7 @@ CardActionOverflow
 CardActions
 CardBody
 CardButtonOptionRenderer
+CardClickBoundary
 CardColumn
 CardContainer
 CardContent
@@ -2415,7 +2419,6 @@ Circle
 Citation
 ClampedContent
 Classification
-CleanupMenuButton
 CleanUpTabbedChannelModal
 ClearAllBeforeDialog
 ClearAllFilteredDialog
@@ -2486,8 +2489,6 @@ CodeChannelPreviewHoverCardTrigger
 CodeChannelPreviewText
 CodeChannelPrLink
 CodeChannelPrLinkTrigger
-CodeChannelPrStatusMessage
-CodeChannelPrStatusRow
 CodeChannelPrStatusTag
 CodeChannelPrTabLabel
 CodeChannelPrTabPeek
@@ -2563,6 +2564,7 @@ ComparePlanFeatures
 ComparePlansTablePnp
 CompletedItemsSwitch
 CompletionAnimation
+CompletionFadeIn
 Composer
 ComposerAttachments
 ComposerButton
@@ -2671,6 +2673,7 @@ ConnectedAccountSwitcherRow
 ConnectedAddToMpdmOnboardingCoachmark
 ConnectedAddWorkspacesToSSBModal
 ConnectedAgentHoverCard
+ConnectedAgentHoverCardJoinToView
 ConnectedAgentRow
 ConnectedAgentSessionRow
 ConnectedAppBasedSearchSource
@@ -2896,8 +2899,11 @@ ConversationListEntity
 ConversationListItem
 ConversationResultRow
 ConversationRow
+ConversationsFilterRow
 ConversationsSelectElementInner
 ConversationsSkeleton
+ConversationsTabActions
+ConversationsTypePill
 ConvertChannelToLimitedModal
 ConvertChannelToLimitedModalContents
 ConvertChannelToPrivateModal
@@ -3239,11 +3245,13 @@ DeprecatedChanvasUpdateMessage
 DeprecatedChanvasUpdatesMessage
 DeprecatedCoachmarkAnchor
 DeprecatedCoachmarkCloseButton
+DeprecatedConversationsSelect
 DeprecatedDialog
 DeprecatedEducationalButton
 DeprecatedEducationalContextBar
 DeprecatedEnhancedSelect
 DeprecatedHuddleName
+DeprecatedMembersSelect
 DeprecatedOptionsList
 DeprecatedSelect
 DeprecatedSelectContainer
@@ -3449,8 +3457,6 @@ DraftManagementButton
 DraftManagementButtonCoachmark
 DraftPreview
 DraftRichTextPreview
-DraftRow
-DraftsList
 DraftsPage
 DraftsPageRow
 DraftsTabActions
@@ -3867,9 +3873,11 @@ EntityContainerContext
 EntityContainerProvider
 EntityContent
 EntityFilterChip
+EntityFilterFileRow
 EntityFilterRow
 EntityFilterSeeAllRow
 EntityFilterSortSingleSelect
+EntityFilterSuggestionFile
 EntityFooter
 EntityHeader
 EntityIcon
@@ -4027,6 +4035,7 @@ ExternalOrgsColumn
 ExternalOrgsTable
 ExternalPeopleManagementPermissionsAlert
 ExternalPeopleTeamSite
+ExternalProviderConnectState
 ExternalProviderReadinessModal
 ExternalRecordLink
 ExternalRecordSearchIcon
@@ -4193,7 +4202,6 @@ FileRemoveButton
 FileRemoveContext
 FileRequestAccessButton
 FileResults
-FileRow
 Files
 FileSampleContent
 FilesAndLinksRows
@@ -4384,6 +4392,7 @@ ForceBuildVersionToast
 ForcePasswordResetModal
 ForecastReminderFlowHeader
 ForecastReminderFlowPage
+ForgetConfirmation
 ForgetMemberDialog
 form
 Form
@@ -4564,7 +4573,6 @@ getConversationPreview
 getCopyForError
 getCopyLinkToSectionMenuItemTemplate
 getCopySubmenuTemplate
-getCopyTemplate
 getCreateCodeChannelMenuItem
 getCreateHuddleLinkErrorMessage
 getCTA
@@ -4831,6 +4839,7 @@ GitHubPrCommentBody
 GitHubPrCommentContent
 GitHubPrCommentDeleteDialog
 GitHubPrCommentEditor
+GitHubPrCommentsLoadMore
 GlobalClassNameImpl
 GlobalCreateCoachmark
 GlobalCreateMenuPopover
@@ -4851,6 +4860,7 @@ GptLiveAuthCard
 GptLiveButton
 GptLiveButtonInner
 GptLiveCall
+GptLiveCallBottomBarContent
 GptLiveCallPip
 GptLiveCallPipLayer
 GptLiveCallPipSession
@@ -5453,6 +5463,7 @@ InlineMrkdwn
 InlineOfflineIndicator
 InlinePlaceholderEditForm
 innerConnect
+InPlaceStreamingRenderer
 InProductTeamCreationComparePlansModal
 InProductTeamCreationPromoSidebarBanner
 InputArrayFileEntity
@@ -5663,7 +5674,6 @@ LaterItemRow
 LaterItems
 LaterLabel
 LaterList
-LaterListView
 LaterPeekContent
 LaterPeekTrigger
 LaterPeekView
@@ -5678,10 +5688,8 @@ LaterTabButtonNudge
 LaterTabInMoreCoachmark
 LaterTimePicker
 LaterTodoErrorToast
-LaterTodoFilterBar
 LaterTodosCoachmark
 LaterTodoSettingsMenu
-LaterTodosHeader
 LaterTodosSavedCoachmark
 LaterTodosTabGlow
 LaterTodoToast
@@ -5871,7 +5879,6 @@ ListRecordField
 ListRecordOverflowMenuTrigger
 ListRecordReference
 ListRecordRemindMenu
-ListRecordRow
 ListRecordSubtasks
 ListRecordUnfurl
 ListRecordUpdatedFilter
@@ -6520,7 +6527,6 @@ MessageAttachmentSlackhelp
 MessageAttachmentSlackMessageCard
 MessageAttachmentSlackMessageDocumentComment
 MessageAttachmentSpotify
-MessageAttachmentTableauDashboard
 MessageAttachmentTruncatedBlocks
 MessageAttachmentTwitterX
 MessageAttachmentVimeo
@@ -6637,7 +6643,6 @@ MessageResend
 MessageResults
 MessageRetentionModal
 MessageRetentionModalContents
-MessageRow
 MessagesCountCallout
 MessageSender
 MessageSendErrorToast
@@ -6888,7 +6893,6 @@ MuteFolderTabUpdatesModal
 MuteRecapEducationModal
 MutuallyExclusiveButtonConfig
 MyAgentsListItem
-MyStuffViewSidebar
 MyTasksRowMenu
 MyTasksRowMenuTrigger
 Name
@@ -7389,6 +7393,7 @@ PinItemRow
 PinListViewsPanel
 PinMessageFormStep
 PinMessageSummary
+PinnedAgentSuggestionRowElement
 PinnedDropZoneRowElement
 PinnedItemRemove
 PinnedItemRemoveConfirm
@@ -7415,7 +7420,6 @@ PlaceholderInput
 PlaceholderInsertionModal
 PlaceholderLinkUnfurl
 PlaceholderVariablePopover
-PlainRow
 PlainText
 PlainTextCanvasInput
 PlainTextInputElement
@@ -7436,6 +7440,7 @@ PlanRecommendationSlackbotCard
 PlanRecommendationSlackbotPlansComparison
 PlanRecommendationSlackbotResponse
 PlanRecommendationSlackbotResponseInner
+PlanRecommendationSlackbotUpgradeFooter
 PlansAtGlance
 PlansPageCTABase
 PlansTable
@@ -7775,6 +7780,9 @@ QuipUpdateModal
 QuipView
 QuipViewWithErrorBoundary
 QuoteCarousel
+QuoteReplyComposerStrip
+QuoteReplyHeader
+QuoteReplyHeaderContent
 RacerDoodFace
 RacerDoodSkin
 RadioButtonCard
@@ -8015,7 +8023,6 @@ ReminderAvatarStack
 ReminderCustomModal
 ReminderMessage
 ReminderOptions
-ReminderRow
 RemindersPreferences
 ReminderText
 ReminderTimeMenu
@@ -8215,7 +8222,6 @@ renderDynamicContent
 renderEditCustomSolutionModal
 renderEditFileGallery
 renderEditor
-RenderedRow
 RenderedViewContents
 renderEllipsisButton
 renderEmailIcon
@@ -8544,6 +8550,7 @@ renderTabbedContent
 renderTabContents
 renderTable
 renderTabPage
+renderTag
 renderTask
 renderTeamIcon
 renderTeamOption
@@ -8639,7 +8646,6 @@ RequestEntryMiniPlayerContentComponent
 RequesterSelect
 RequestLicenseApprovalModal
 RequestPendingPermalinkDialog
-RequestReviewButton
 RequestReviewersModal
 RequestsEmptyState
 RequestsPendingInvitesTable
@@ -8800,7 +8806,6 @@ RowItem
 RowPrimary
 rowRenderer
 RowSecondary
-RowShell
 RowTertiary
 RsvpStatusIcon
 runInModalDialog
@@ -8928,7 +8933,6 @@ SalesforceStringDisplay
 SalesforceStyleSandbox
 SalesforceTask
 SalesforceTaskReminderContent
-SalesforceTaskRow
 SalesforceTeamMemberBase
 SalesforceTextArea
 SalesforceTextAreaDisplay
@@ -9328,11 +9332,8 @@ SendWelcomeCardSuccess
 SendWelcomeStep
 SentByColumn
 SentByMenu
-SentDayGroup
-SentList
 SentPage
 SentPageItem
-SentRow
 SentToColumn
 SeparatePrivateChannelsPref
 Separator
@@ -9537,7 +9538,6 @@ showMembersContent
 showMenuWithCommandSource
 ShowMutedItemsOutsideSidebarMenusPref
 ShowNewerButton
-ShowPrimaryViewButton
 showSelectedUsers
 showSuccessToast
 showToast
@@ -9636,6 +9636,9 @@ SingerAgendaMeeting
 SingerAgendaPanel
 SingerAgendaReminder
 SingerAgendaSettings
+SingerBrowserSettings
+SingerBrowserTaskView
+SingerBrowserViewer
 SingerCatchupFooter
 SingerCatchupHeader
 SingerCatchupOverview
@@ -10738,7 +10741,6 @@ TermsOfService
 TestableAutomatedSubtype
 TestFileUpload
 TestPromptPanel
-TestsPassingAction
 Text
 TextareaInput
 TextBase
@@ -10815,6 +10817,7 @@ ThreadActionDialog
 ThreadActionMenuItem
 ThreadAgentControlsRow
 ThreadAgentResponseModeRow
+ThreadBannerButtonsGeneric
 ThreadBannerContainerGeneric
 ThreadBroadcastFooter
 ThreadBroadcastPreamble
@@ -10860,13 +10863,10 @@ ThreadSeparatorRowGeneric
 ThreadsError
 ThreadSessionRow
 ThreadsFlexpane
-ThreadsFlexpaneAutoSummary
 ThreadShareEntity
 ThreadsTabLabel
 ThreadsTabView
 ThreadSubtitle
-ThreadSummaryBanner
-ThreadSummaryRenderer
 ThreadsView
 threadsViewer
 ThreadsViewHeader
@@ -10980,15 +10980,12 @@ TodayTabIcon
 TodayV2Content
 TodayViewBetaBanner
 TodayViewHeader
-TodoAddInput
 TodoApproachingLimitBanner
 TodoHittingLimitBanner
 TodoInlineComposer
 TodoInput
 TodosEmptyState
-TodosList
 TodosPage
-TodosTabContent
 ToggleBar
 ToggleMute
 TogglePlayButton
@@ -11790,7 +11787,6 @@ WfbAiStepToolsRailTabDot
 WfbPreviewBlocks
 WhoCanManageRadio
 WidgetBlock
-WidgetFooterLink
 WidgetTabView
 WikiEmpty
 WikiOrgNavigator
@@ -11828,6 +11824,8 @@ withHover
 WithKeyboardFocusListItem
 withKeyboardFocusProps
 WithKeyboardLocale
+withKeyboardOnlyFocus
+WithKeyboardOnlyFocus
 WithMediaThreadPlayback
 withMessageContainer
 WithMessageContainer
@@ -12126,6 +12124,7 @@ WorkspaceWeaverDropdown
 WorkspaceWorkflowExportSettings
 wrapAppHomeBlock
 wrapChildBlocks
+wrapInPlaceItem
 WrappedAutoClog
 WrappedConnectAppModal
 WrappedInSalesforceKitContainer
