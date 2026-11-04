@@ -140,6 +140,8 @@ admin.roles.listUsergroups
 admin.roles.permissions.list
 admin.roles.removeMembers
 admin.roles.removeUsergroup
+admin.sessions.dbsc.countAffectedUsers
+admin.sessions.dbsc.enforceAllSessions
 admin.slackbot.channelExclusions.add
 admin.slackbot.channelExclusions.list
 admin.slackbot.channelExclusions.remove
@@ -484,6 +486,7 @@ client.codeChannels.getPullRequestSummary
 client.codeChannels.getSummary
 client.codeChannels.getView
 client.codeChannels.join
+client.codeChannels.listPullRequests
 client.codeChannels.listSupportedApps
 client.codeChannels.mergePullRequest
 client.codeChannels.removeReaction
@@ -675,7 +678,6 @@ enterprise.channels.admin.setDefault
 enterprise.channels.admin.setMandatory
 enterprise.channels.createShared
 enterprise.channels.listShared
-enterprise.channels.setShared
 enterprise.groups.createShared
 enterprise.info
 enterprise.migrations.add

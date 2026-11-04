@@ -835,7 +835,6 @@ AppPermissionRequestDialog
 AppPreviews
 AppProfile
 AppProfileCard
-AppProfileCardInstallationSummary
 AppRequestsPage
 AppResolutionColumn
 AppResolutionStatus
@@ -875,7 +874,6 @@ AppSpaceProfileDescription
 AppSpaceProfileInfo
 AppSpaceProfileSideAvatar
 AppSpaceScreenshots
-AppSpaceSlashCommand
 AppSpaceSlashCommands
 AppSpaceView
 AppSpaceWrapper
@@ -915,6 +913,7 @@ ArrowCTA
 Article
 Articles
 ArtifactChannelGroup
+ArtifactMetadata
 AsanaAppDisclaimer
 AsAnnouncerAPIMessage
 AskAgentButton
@@ -965,6 +964,8 @@ AssistiveSummaryInline
 AssistiveSummaryLoading
 AssistiveSummaryTitle
 AssistiveThreadSummary
+AstroFace
+AstroSkin
 AsyncChunkRenderer
 AsyncImage
 AttachButton
@@ -1170,9 +1171,11 @@ BaseAppLauncherPersistentBanner
 BaseAppleLoginButton
 BaseAppManagementGrantFutureWorkspaces
 BaseAppProfileCardHeader
+BaseAppProfileCardInstallationSummary
 BaseAppSpace
 BaseAppSpaceProfileDisclaimer
 BaseAppSpaceProfileSideLinksFunction
+BaseAppSpaceSlashCommand
 BaseAppsTable
 BaseAppsTableHeader
 BaseAppsTrialAwarenessBanner
@@ -1248,6 +1251,7 @@ BaseCreateRecordView
 BaseCreatorGuidedSetupInvitationCoachmark
 BaseCreatorGuidedSetupTabCoachmark
 BaseCreatorGuidedSetupWelcomeModal
+BaseCropPreview
 BaseCustomizeChannelEmailAddressModal
 BaseCustomResponseInfoBadge
 BaseCustomStatus
@@ -1342,6 +1346,7 @@ BaseHuddleScheduleExternalEduBanner
 BaseHuddleStatus
 BaseHuddleThreadAiNotesAutostartNudge
 BaseIcon
+BaseImageCrop
 BaseImageElement
 BaseImForeword
 BaseInlineEntity
@@ -1369,7 +1374,9 @@ BaseListIcon
 BaseListRecordDetailAddCommentButton
 BaseListRecordDetailCopyLinkButton
 BaseListRecordDetailUnarchiveButton
+BaseListRecordOverflowMenuTrigger
 BaseListRecordStaticEntity
+BaseListThreadZeroState
 BaseLoadingModal
 BaseLogActivityView
 BaseMatchingDomainWorkspaceSuggestion
@@ -1525,6 +1532,7 @@ BaseSlackbotChannelSettingGeneral
 BaseSlackbotChannelSettingMemory
 BaseSlackbotChannelSettingSkills
 BaseSlackbotChannelSettingStatus
+BaseSlackbotChannelSkillSetMenu
 BaseSlackbotSidebarArtifactItem
 BaseSlackbotSidebarHeaderControls
 BaseSlackbotSidebarThreadItem
@@ -1541,6 +1549,7 @@ BaseStartTrialCoachmark
 BaseStepProfile
 BaseStepTeamName
 BaseSTPFloatingBanner
+BaseSubtaskContextMenu
 BaseSuggestionAskSlackbot
 BaseSuggestionNlTypeahead
 BaseTable
@@ -1557,6 +1566,7 @@ BaseThemePreviewRadio
 BaseThemingCoachmark
 BaseThirdPartyAuthButton
 BaseThreadRowChannelContext
+BaseTimeSlotSelector
 BaseTodayAdminOptInCoachmark
 BaseTodayAgendaDayOneCoachmark
 BaseTodayCalendarCardPrepCoachmark
@@ -1673,6 +1683,7 @@ BooleanField
 BooleanSchemaInput
 BoostMentionsPref
 BoostRow
+BootRetrying
 BotContextMenu
 BotScopeListItem
 BotScopesList
@@ -1730,6 +1741,8 @@ BrowseSidebarSpacer
 BrowseTabContent
 BrowseUnifiedFilesFolderView
 BrowseUnifiedFilesView
+BrowseViewsFlyout
+BrowseViewsMenuItem
 BubbleImpl
 BucketedOptionalScopesItems
 BucketedScopesItems
@@ -2985,7 +2998,6 @@ CrmProvisioningPageComponent
 CrmSignalLabel
 CrmUpsellBusinessPlusModal
 CrmWorkspaceScanCheckbox
-CropPreview
 CspDowngradeAdminMenuBanner
 CspDowngradeAdminMenuBannerNonDismissable
 CspDowngradePlanExpiringWarningBanner
@@ -3139,6 +3151,9 @@ DayGlanceHeader
 DayNavButtons
 DayPickerSection
 DaysOfWeek
+DbscEnforceAllSessionsModal
+DbscEnforcementRow
+DbscEnforcementSetting
 DeactivateMemberModal
 DeactivateMemberModalError
 DeadEndLinkDialog
@@ -3479,6 +3494,8 @@ DroppableOverflowMenuTab
 DSARestrictedMessageBody
 DualActivityBadge
 DualActivityPeek
+DuckFace
+DuckSkin
 DunningNoticeBanner
 DunningNoticeContainer
 DunningNoticeDay14AdminBillingBanner
@@ -3616,6 +3633,8 @@ EducationTiles
 EduDiscountPeek
 EduDiscountSidebarPromo
 EinsteinActivityCaptureBanner
+EinsteinFace
+EinsteinSkin
 elementForContext
 ElementShell
 ElementValidationError
@@ -5344,7 +5363,6 @@ IgnoreModalInlineError
 IgnoreThisModal
 Image
 ImageContainerImpl
-ImageCrop
 ImageFields
 ImageFileEntity
 ImageFileThumbnailImage
@@ -5906,7 +5924,6 @@ ListTemplatePreview
 ListTemplatePreviewContent
 ListTemplatePreviewModal
 ListTemplatesFooter
-ListThreadZeroState
 ListTitleHeader
 ListUndoToast
 ListUserAvatar
@@ -6076,7 +6093,6 @@ MaybeConnectStatefulElement
 maybeGetErrors
 MaybeHoverCard
 MaybeLink
-MaybePrivacyModeRevealProvider
 maybeRenderAccountVisibilityPrefContent
 maybeRenderAccountVisiblityPrefAlert
 maybeRenderActionsElement
@@ -6414,7 +6430,6 @@ MentionKindsMenu
 MentionOptOutOverrides
 MentionOptOutRow
 Menu
-MenuIconWrapper
 MenuImpl
 MenuItem
 MenuItemActionButtonBase
@@ -6834,8 +6849,6 @@ MultiSelectTokenOption
 MultiSelectTokensListbox
 MultiSelectUnknownText
 MultiSelectV2
-MultiSelectV2PreviewControls
-MultiSelectV2PreviewModal
 MultiSkintoneEmojiPopover
 MultiSkinToneEmojiPopoverItem
 MultiSpeedbumpModal
@@ -7160,6 +7173,7 @@ OrgMembersActionMenu
 OrgMembersChannelsPermissionsPanel
 OrgMembersChannelsTable
 OrgMembersChannelsTableWrapper
+OrgNodeView
 OrgRetentionRequest
 OrgRowCanvases
 OrgRowConnections
@@ -7341,6 +7355,8 @@ PermissionSummaryRow
 PersonaCardContent
 PersonaShareModal
 PersonaSlideComponent
+PersonCard
+PersonName
 PhotoLayout
 PhotoUploadButton
 Pile
@@ -7553,6 +7569,7 @@ PriorityVipBadge
 PriorityVipLaunchBanner
 PriorityVipWizard
 PrivacyBlurredForeword
+PrivacyMessageScope
 PrivacyModeBanner
 PrivacyModeRevealContext
 PrivacyModeRevealProvider
@@ -7741,6 +7758,8 @@ QuipUpdateModal
 QuipView
 QuipViewWithErrorBoundary
 QuoteCarousel
+RacerDoodFace
+RacerDoodSkin
 RadioButtonCard
 RadioButtonCardImage
 RadioButtons
@@ -8349,6 +8368,7 @@ renderNameMaybe
 renderNewBadge
 renderNewConversation
 renderNewEmails
+renderNotConnectedState
 renderNotFromFilter
 renderNotice
 renderNotificationEndTimeSelect
@@ -8507,6 +8527,7 @@ renderTabbedContent
 renderTabContents
 renderTable
 renderTabPage
+renderTask
 renderTeamIcon
 renderTeamOption
 renderTeamRow
@@ -9136,7 +9157,6 @@ Section
 SectionActivityPeek
 SectionActivityPeekContent
 SectionBlock
-SectionButton
 SectionChannelRow
 SectionContainer
 SectionContainerHeaderButton
@@ -9326,7 +9346,6 @@ SessionTypeFilterMenu
 SetGuestExpiration
 SetGuestExpirationContainer
 SetPill
-SettingCheckbox
 Settings
 SettingsCard
 SettingsColumn
@@ -9604,6 +9623,12 @@ SingerCatchupFooter
 SingerCatchupHeader
 SingerCatchupOverview
 SingerCatchupPreview
+SingerCharacterArtwork
+SingerCharacterBrows
+SingerCharacterEye
+SingerCharacterMouths
+SingerClientActivity
+SingerCodeCap
 SingerCodingTarget
 SingerContent
 SingerControl
@@ -9616,6 +9641,7 @@ SingerDestinationPanel
 SingerDestinationPanelForDestination
 SingerFace
 SingerIcon
+SingerLaptop
 SingerLiveVoiceButton
 SingerLiveVoiceDetails
 SingerMeetingPanel
@@ -9624,10 +9650,15 @@ SingerMessageActions
 SingerMotionPreview
 SingerOutfitArtwork
 SingerPocket
+SingerPocketFrame
+SingerRecipientAvatar
 SingerReopenHint
+SingerScreenGlow
 SingerSettings
 SingerTaskBubble
 SingerTaskBubbles
+SingerTaskRecipient
+SingerTaskStack
 SingerUnreadBadge
 SingerVoiceIsland
 SingerVoiceWaveform
@@ -9702,6 +9733,8 @@ SkillSetCanvasToggleCoachmark
 SkillSetDescription
 SkillSetDetailView
 SkillSetItemRow
+SkillSetListItem
+SkillSetMenuTriggerButton
 SkillSetSources
 SkillSetTitle
 SkillSetToggleCoachmarkView
@@ -9724,7 +9757,6 @@ SkipForeverModal
 SkippedAppsList
 SlackActionButton
 SlackAi
-SlackAiAutoThreadSummaryIconCoachmark
 SlackAiAwarenessFooterBanner
 SlackAiChannelSummariesCoachmark
 SlackAiChannelSummariesNuxCoachmark
@@ -10252,6 +10284,9 @@ SourceTab
 Speaker
 SpecialChannelsForeword
 SpecificMembersMultiSelect
+SpeckEye
+SpeckFace
+SpeckSkin
 SpeechBubble
 SpeechBubbleTail
 SpeedBumpDescription
@@ -10390,7 +10425,6 @@ Submenu
 SubmitButton
 SubPrefCheckbox
 SubSectionSeparator
-SubtaskContextMenu
 SubtaskLimitBanner
 SubtasksProgressSummary
 SubtaskSubtitle
@@ -10842,7 +10876,6 @@ TimeRangeMenu
 TimeSeriesByOrganization
 TimeSeriesByOrganizationContainer
 TimeSeriesRangeOptionsContainer
-TimeSlotSelector
 Timestamp
 TimestampToken
 TimestampTooltip
@@ -10935,7 +10968,6 @@ TodosPage
 ToggleBar
 ToggleMute
 TogglePlayButton
-Toggletip
 Token
 TokenComponentContext
 TokenizedArray
@@ -10990,6 +11022,7 @@ TrackTimeSpent
 TractorChannelCoachmark
 TractorChannelOfferModal
 TractorChannelSetupCard
+TractorChannelSetupTourAddResourcesCoachmark
 TractorSendMessageCoachmark
 TranscriptFeedbackModal
 TranscriptMenuItemInner
@@ -11103,7 +11136,6 @@ UnavailableChannelReloadChannel
 UnavailableChannelReloadSlack
 UnblockConfirmationModal
 UnconnectedSearchSource
-UncontrolledMultiSelectV2Example
 UndeleteFileDialog
 UnderlineLinksPref
 UndoableClearToast
@@ -11161,6 +11193,7 @@ UnifiedViewContents
 UnifiedViewFeedbackLink
 UnifiedViewHeader
 UnifiedViewHeaderTitle
+UnitFrame
 UnknownElement
 UnknownListItem
 UnknownRecordError
@@ -11736,6 +11769,7 @@ WidgetBlock
 WidgetFooterLink
 WidgetTabView
 WikiEmpty
+WikiOrgNavigator
 WikiPage
 WindowContext
 WindowContextProvider
@@ -12012,7 +12046,6 @@ WorkspaceAdminNavigationMenu
 WorkspaceAdminNavigationPrimary
 WorkspaceBanner
 WorkspaceBootFailure
-WorkspaceBootRetrying
 WorkspaceCellContent
 WorkspaceColumn
 WorkspaceCreationLoader

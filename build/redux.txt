@@ -295,6 +295,7 @@ action:clearDraftError
 action:clearDraftExpansion
 action:clearDraftFilePermissionsByFileId
 action:clearDraftPendingFileIds
+action:clearDraftQuotes
 action:clearDraftSending
 action:clearEchoedSlackbotPendingThreadMarks
 action:clearedFilteredList
@@ -573,6 +574,7 @@ action:hideStreamingUnreadsSpinner
 action:hideThreadBroadcast
 action:huddleAloneTimeoutPromptMounted
 action:huddleAloneTimeoutPromptUnmounted
+action:hydrateActivityFeedItems
 action:hydrateFilters
 action:hydrateUiStateForSearchView
 action:hydrateUnreadsFilterState
@@ -722,6 +724,7 @@ action:megaphoneNotificationBootDataFetched
 action:mergeMcpServerChanges
 action:mergePinnedViewIdsFromOpen
 action:mountBrowseThreads
+action:moveQuoteToDraftId
 action:moveWorkflowStepBegin
 action:moveWorkflowStepFailure
 action:moveWorkflowStepSuccess
@@ -1608,6 +1611,7 @@ action:setDraftExpansion
 action:setDraftFilePermission
 action:setDraftIdForInvites
 action:setDraftPendingDestinations
+action:setDraftQuote
 action:setDraftSending
 action:setDraftSent
 action:setDwaStatuses
@@ -3980,6 +3984,7 @@ thunk:adminAppResolutionFetcher
 thunk:adminMenuSamlSsoPaywallNonPurchasersMaybeLogExposure
 thunk:advancedSecurityActivityBannerMaybeLogExposure
 thunk:advancedSecurityLaunchModalMaybeLogExposure
+thunk:advanceTractorChannelSimplificationSetupTourState
 thunk:aiFeedbackDialog
 thunk:aiSlackbotSamplingFreeMaybeLogExposure
 thunk:allowSlackbotModeSwitchHintRequest
@@ -5582,6 +5587,7 @@ thunk:listCopyPermissions
 thunk:listenForMessagesFromCallWindow
 thunk:listTriggerPermissions
 thunk:loadAdminAdvisorData
+thunk:loadAgentforceChecksForSearch
 thunk:loadAppInformation
 thunk:loadAppsData
 thunk:loadAppsDataForTimeRange
@@ -5989,7 +5995,6 @@ thunk:maybeSetReachedAllDMsDisclosure
 thunk:maybeSetReleaseChannelOverrideHandler
 thunk:maybeSetSolutionsGalleryPref
 thunk:maybeSetTombstone
-thunk:maybeShowAutoThreadSummaryCoachmark
 thunk:maybeShowCannotDeleteCkaFolder
 thunk:maybeShowChannelJoinBanner
 thunk:maybeShowChannelJoinBannerOnFirstView
@@ -6986,6 +6991,7 @@ thunk:refreshClientData
 thunk:refreshFile
 thunk:refreshFilteredUnreadChannelCounts
 thunk:refreshFormInteractivityPointerIfRequired
+thunk:refreshHistoryMenuVisits
 thunk:refreshLoadedSfdcRecordActivities
 thunk:refreshMutedChannel
 thunk:refreshRecap
@@ -7179,6 +7185,7 @@ thunk:restoreAiResponse
 thunk:restoreCancelledPendingClears
 thunk:restoreChannelNotificationOverrideOnClient
 thunk:restoreClosedWindowRestorationData
+thunk:restoreDraftQuoteFromServer
 thunk:restoreEditorWorkflowFromVersionSuccessHandler
 thunk:restoreLimitAndWelcomeBanner
 thunk:restoreLimitBanner
