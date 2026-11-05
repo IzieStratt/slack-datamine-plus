@@ -3005,6 +3005,7 @@ Available apps
 Available at your first renewal after June 17, 2026
 Available for purchases made via sales rep only.
 Available in bulk action mode
+Available in this channel ({count})
 Available on Paid Plans
 Available skills
 Available times
@@ -3057,6 +3058,7 @@ Back to conversations
 Back to grid
 Back to main
 Back to matched app
+Back to members
 Back to region selection
 Back to server URL
 Back to top
@@ -4283,6 +4285,7 @@ Choose if all huddles in this channel will be transcribed by default. {whoCanMan
 Choose if the caution message in conversations with external people has default or high visibility:
 Choose limited group
 Choose location for each download
+Choose markdown files to upload
 Choose member access
 Choose one
 Choose one option
@@ -6774,6 +6777,7 @@ Dredging pipes\u2026
 Drop
 Drop a file, share a link or take notes
 Drop here to replace
+Drop more .md files here, or click to browse
 Drop to upload
 Drop your CSV file here.
 Dropdown
@@ -8047,6 +8051,7 @@ Files over 25MB aren\u2019t supported on your account. Remove them to send, or s
 Files results
 Files shared
 Files shared across multiple channels you\u2019re in
+Files to import
 Files uploaded
 Files will be shared in thread
 Files you access that have new activity
@@ -11383,7 +11388,6 @@ Magenta70
 Magic Wand Icon
 Magnifying glass
 Main Services Agreement
-Main content could not be located.
 Main selector
 Maine
 Maintain access to the data you have authorized
@@ -11551,6 +11555,7 @@ Manage external permissions
 Manage flagged content
 Manage guest permissions
 Manage highlight sources
+Manage in Slackbot
 Manage incidents
 Manage integrations
 Manage invitations
@@ -13301,6 +13306,7 @@ Not at all, I didn\u2019t find anything useful
 Not attending
 Not authenticated
 Not available
+Not available ({count})
 Not available agents
 Not available for this organization.
 Not available in Slack
@@ -13713,6 +13719,7 @@ Only admins can post
 Only admins can see this setting
 Only alphanumeric, period (.), understore (_), and dashes (-) can be used
 Only applies to people who haven\u2019t set their own default view.
+Only available in your personal Slackbot ({count})
 Only badge the channel when someone @mentions you
 Only certain people can invite this agent to channels at this time.
 Only certain people can turn on proactive replies.
@@ -14416,6 +14423,7 @@ Pending apps
 Pending change on {numOfChanges, plural, =1 {# field} other {# fields}}
 Pending conversation
 Pending invitations
+Pending requests to join
 Pending review
 Pennsylvania
 People
@@ -16378,6 +16386,7 @@ Review your channel resources
 Review your mentions
 Review your message in Slack to finish sending.
 Review your notifications
+Review your overview
 Review your {entity} audit logs
 Review {appName}
 Review {name}
@@ -18653,6 +18662,7 @@ Slackbot can only create records for the objects you select
 Slackbot can only delete records for the objects you select
 Slackbot can only do {totalRuns} task runs per day. Consider adjusting how many times your tasks run.
 Slackbot can only update records for the objects you select
+Slackbot can only use read-only tools in channels. You can still use these when you message Slackbot directly.
 Slackbot can read the items in each list when they\u2019re relevant to your question.
 Slackbot can review your pipeline each week, update records from recent Slack conversations, and suggest next steps.
 Slackbot can search the web.
@@ -18808,6 +18818,7 @@ Some files exceed the 25MB limit
 Some files unsupported
 Some formatting can\u2019t be saved
 Some items couldn\u2019t be loaded.
+Some messages aren\u2019t shown
 Some messages can\u2019t be accessed
 Some of the channels for this app no longer exist or aren\u2019t in your organization. Deny the request and ask for a new one with different channel limits.
 Some of the list views you\u2019ve added aren\u2019t shared with all users in your Salesforce environment.
@@ -20316,6 +20327,7 @@ The people and groups Read records allows couldn\u2019t be loaded. Close and try
 The people and groups in the People setting couldn\u2019t be loaded. Close and try again.
 The people and groups this server allows couldn\u2019t be loaded. Close and try again.
 The people and groups you selected will be removed. Do you want to continue?
+The people and resources you just added to this channel are right here in a canvas, ready to reference anytime.
 The people who can edit this automation will also have access to any files shared here
 The people you choose will be asked to review this pull request on GitHub, added to this channel, and mentioned here.
 The person using the workflow
@@ -21983,6 +21995,7 @@ Turn regular tasks into reusable skills
 Turn user mapping off
 Turn user mapping on
 Turn visual context back on
+Turned off ({count})
 Turning off DND
 Turning off auto mapping will require admins to manually manage connected user accounts and members will need to individually authenticate their accounts.
 Turning on DND
@@ -22410,6 +22423,7 @@ Up next
 Up to 1 year
 Up to {discountPercent}% off paid plans
 Up to {limit} rows will be returned.
+Up to {maxCount} files at a time
 Upcoming
 Upcoming and Overdue
 Upcoming and overdue
@@ -23925,6 +23939,8 @@ Whoops! Template names cannot have emojis.
 Whoops! That name is reserved.
 Whoops! Workflow names cannot have emojis.
 Why are you flagging this?
+Why these tools are turned off
+Why these tools only work in your personal Slackbot
 Why we\u2019re moving to Slack
 Why? (optional)
 Widely shared
@@ -24734,6 +24750,7 @@ You talk with these people often.
 You talk with this person often.
 You tell 'em
 You tried it all!
+You turned off {count} of these tools.
 You updated your sidebar!
 You use this channel often.
 You were in the huddle by yourself for {duration}. A nice, meditative session.
@@ -32156,6 +32173,7 @@ zzz
 {author} at {time}
 {author} on {location}: {comment}
 {available_groups, number} {available_groups, plural, =1 {group} other {groups}}
+{available} of {total, plural, =1 {# tool} other {# tools}} available
 {available} out of {total} Salesforce user licenses remaining
 {background_color_name} color callout
 {badgeCounts, plural, =1 {# notification} other {# notifications}}
@@ -32361,7 +32379,6 @@ zzz
 {count, plural, =1 {# reaction} other {# reactions}}
 {count, plural, =1 {# reaction} other {# reactions}}, 
 {count, plural, =1 {# reaction} other {# reactions}}.
-{count, plural, =1 {# read-only tool} other {# read-only tools}}
 {count, plural, =1 {# recent agent} other {# recent agents}}
 {count, plural, =1 {# recent workflow} other {# recent workflows}}
 {count, plural, =1 {# reply} other {# replies}}
@@ -32388,6 +32405,7 @@ zzz
 {count, plural, =1 {# thing left to try} other {# things left to try}}
 {count, plural, =1 {# thread} other {# threads}}
 {count, plural, =1 {# token} other {# tokens}} left
+{count, plural, =1 {# tool available} other {# tools available}}
 {count, plural, =1 {# tool} other {# tools}}
 {count, plural, =1 {# unread DM} other {# unread DMs}}
 {count, plural, =1 {# unread app message} other {# unread app messages}}
@@ -32426,6 +32444,7 @@ zzz
 {count, plural, =1 {A teammate is waiting in {channelName}} other {# teammates are waiting in {channelName}}}
 {count, plural, =1 {Add as Channel Visitor} other {Add as Channel Visitors}}
 {count, plural, =1 {Adding as a channel visitor\u2026} other {Adding as channel visitors\u2026}}
+{count, plural, =1 {An admin turned off # of these tools. Ask an admin to turn it back on.} other {An admin turned off # of these tools. Ask an admin to turn them back on.}}
 {count, plural, =1 {Cancel # request} other {Cancel all # requests}}
 {count, plural, =1 {Direct} other {# messages from a direct}} message with {conversationName} on {date}:
 {count, plural, =1 {Ends in # day} other {Ends in # days}}
@@ -32488,12 +32507,14 @@ zzz
 {count, plural, one {# needs you} other {# need you}}
 {count, plural, one {# new commit} other {# new commits}}
 {count, plural, one {# other} other {# others}}
+{count, plural, one {# pending request to join} other {# pending requests to join}}
 {count, plural, one {# person or group excluded from Read records is} other {# people and groups excluded from Read records are}} also excluded here.
 {count, plural, one {# person or group excluded in the People setting above is} other {# people and groups excluded in the People setting above are}} also excluded here.
 {count, plural, one {# person or group here can\u2019t} other {# people and groups here can\u2019t}} read records. Remove them to save.
 {count, plural, one {# person or group here isn\u2019t} other {# people and groups here aren\u2019t}} in the People setting above. Remove them to save.
 {count, plural, one {# person or group here is} other {# people and groups here are}} excluded from Read records. Remove them to save.
 {count, plural, one {# person or group here is} other {# people and groups here are}} excluded in the People setting above. Remove them to save.
+{count, plural, one {# request to join} other {# requests to join}}
 {count, plural, one {# result found} other {# results found}}
 {count, plural, one {# result} other {# results}}
 {count, plural, one {# run} other {{formattedCount} runs}}
@@ -32524,6 +32545,7 @@ zzz
 {count, plural, one {Files Changed, # file} other {Files Changed, # files}}
 {count, plural, one {First # commit} other {First # commits}}
 {count, plural, one {Group meeting} other {Group meetings}}
+{count, plural, one {Import # skill} other {Import # skills}}
 {count, plural, one {Inserted 1 column} other {Inserted {count} columns}}
 {count, plural, one {Inserted 1 row} other {Inserted {count} rows}}
 {count, plural, one {List created} other {Lists created}}
@@ -32762,6 +32784,7 @@ zzz
 {fileName}, {fileType}.
 {fileName}, {owner}{fileType}
 {fileName}{fileType}
+{fileSize} \xb7 Markdown
 {fileTitle} preview
 {fileType, select, quip {Canvases} other {Lists}} are undergoing ownership transfer.
 {fileType}
@@ -32823,6 +32846,7 @@ zzz
 {icon} icon
 {id} in Slack, {count, plural, =0 {no results found} one {# result found} other {# results found}}
 {imageScale}%
+{importedCount, plural, one {# skill imported} other {# skills imported}}
 {invalidApprovalsCount, plural, =1 {# request not {invalidApprovalsText}} other {# requests not {invalidApprovalsText}}}
 {inviteeName} is already in {maxChannels} channels, the limit for Frontline members.
 {inviteesCount, plural, =1 {That doesn\u2019t} other {These don\u2019t}} look like a valid email {inviteesCount, plural, =1 {address} other {addresses}}!
@@ -33669,6 +33693,7 @@ zzz
 {totalApprovalCount, plural, =1 {# invitation} other {# invitations}}
 {totalCount, plural, =0 {No channels} =1 {# channel} other {# channels}}
 {totalCount, plural, =1 {{totalCount} teammate has requested Business+} other {{totalCount} teammates have requested Business+}}
+{totalCount, plural, one {Imported {importedCount} of # skill. Please try the rest again.} other {Imported {importedCount} of # skills. Please try the rest again.}}
 {totalCount} marked read
 {totalCount} marked unread
 {totalCount} recommended {totalCount, plural, =1 {result} other {results}}

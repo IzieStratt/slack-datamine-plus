@@ -638,6 +638,7 @@ action:internalUpdateMiniPanelVisibility
 action:internalUpdateStore
 action:internalWorkspacesRemoved
 action:invalidateAllItems
+action:invalidateChannelJoinRequestsList
 action:invalidateClientCounts
 action:invalidateDeletedFiles
 action:isRequestingCalendarPrefs
@@ -1103,6 +1104,10 @@ action:resetBrowserInstance
 action:resetCanvasStore
 action:resetChannelCanvases
 action:resetChannelConfigObjectData
+action:resetChannelJoinRequestsListState
+action:resetChannelJoinRequestsPagination
+action:resetChannelJoinRequestsScopeState
+action:resetChannelJoinRequestsState
 action:resetChannelSearchUi
 action:resetChannelSectionChannels
 action:resetChannelSectionsFromListApiResponse
@@ -1255,7 +1260,6 @@ action:setAgentExchangeFilters
 action:setAgentExchangeIsLoading
 action:setAgentExchangeResults
 action:setAgentExchangeTotalAgentsCount
-action:setAgentforceListAccessibleStatus
 action:setAgentHomeActiveConversation
 action:setAgentHomeActiveThread
 action:setAgentHomeMessageContextByChannelId
@@ -1430,6 +1434,8 @@ action:setChannelJoinInviterId
 action:setChannelJoinReasonData
 action:setChannelJoinReasonError
 action:setChannelJoinReasonLoading
+action:setChannelJoinRequestsError
+action:setChannelJoinRequestsPage
 action:setChannelJoinWelcomeMessageIndex
 action:setChannelLastRead
 action:setChannelLatest
@@ -2073,6 +2079,7 @@ action:setLoading
 action:setLoadingAclFeatures
 action:setLoadingAssignedMembers
 action:setLoadingAssignedUsergroups
+action:setLoadingChannelJoinRequests
 action:setLoadingChannels
 action:setLoadingMembers
 action:setLoadingModule
@@ -4781,7 +4788,6 @@ thunk:externalGuestAutoKnock
 thunk:failover
 thunk:failProvisionalConnection
 thunk:feedbackCommand
-thunk:fetchAccessibleAgentforceApps
 thunk:fetchActionableApprovalsCount
 thunk:fetchActionLayout
 thunk:fetchActionLibraryApps
@@ -7193,6 +7199,7 @@ thunk:resolveMeeting
 thunk:resolveMeetingForEvent
 thunk:resolvePendingHuddle
 thunk:resolveScreenShareThumbnails
+thunk:resolveSingerDestination
 thunk:resolveSlackbotAiPermissionOnce
 thunk:respondToHuddleInvite
 thunk:respondToHuddleKnockUser
