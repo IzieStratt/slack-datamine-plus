@@ -233,7 +233,6 @@ $ {amount} USD
 +{filtersAppliedCount, plural, =1 {# filter} other {# filters}}
 +{numPrivateChannels, plural, =1 {# other private channel} other {# other private channels}}
 +{remainingTeamsCount}
-+{userCount}
 , 
 ,  
 , & 
@@ -677,7 +676,6 @@ A status with this name already exists.
 A step that has been added to a workflow from a 3rd party connector.
 A task was completed
 A teammate is already scanning Slack \u2014 hang tight!
-A teammate just said hello :wave:
 A to Z
 A valid 6 character hex code is required, like `FF0000`.
 A valid channel name is required.
@@ -1664,6 +1662,7 @@ Adding people to a user group
 Adding project context
 Adding skill
 Adding the meeting to a channel will show everyone a shortcut to join, meeting updates, and post-meeting artifacts.
+Adding to your message\u2026
 Adding to your review
 Adding your name and profile photo can encourage your teammates to join in the conversation.
 Adding your name and profile photo helps recognize and connect with you more easily.
@@ -2031,8 +2030,6 @@ All your messages, decisions, and updates at your fingertips
 All your outgoing messages
 All your outgoing messages. Everything you send, draft, and schedule can now be found here.
 All {fileType}
-All {numDigestedChannels} of your recap channels had new messages from {dateRange}
-All {numDigestedChannels} of your recap channels had new messages on {dateRange}
 All {numberOfWorkspaces} workspaces
 All {workspaceName} workspaces
 All-Time Usage
@@ -2723,7 +2720,6 @@ Ask a manager to update the workflow permissions if you\u2019d like all channel 
 Ask a question
 Ask a question like \u201CWhat did I accomplish this week?\u201D
 Ask a question or get help with a task
-Ask a question or tell me what to change.
 Ask about this group conversation \u2014 or anything
 Ask about this meeting
 Ask about this record, prep for a customer meeting, or make quick updates.
@@ -4108,6 +4104,7 @@ Channels with external people will soon be disconnected
 Channels with notifications set to \u201CAll new posts\u201D
 Channels you message most:
 Channels you\u2019ve joined
+Channels you\u2019ve joined and haven\u2019t muted show up here.
 Channels, DMs and threads you visit in Slack will appear here.
 Channels, apps, and notifications tailored to you
 Character
@@ -4128,6 +4125,7 @@ Chats
 Chatwork
 Check Again
 Check It Out
+Check Older Threads
 Check Status
 Check Tasks
 Check a list item
@@ -4944,7 +4942,6 @@ Connection failed
 Connection failed. Please try again.
 Connection interrupted
 Connection lost
-Connection lost. Reconnecting\u2026
 Connection managed by your admin
 Connection pending
 Connection permissions & visibility
@@ -5407,7 +5404,6 @@ Couldn\u2019t load records.
 Couldn\u2019t load related fields.
 Couldn\u2019t load requests
 Couldn\u2019t load scope ratings
-Couldn\u2019t load sent messages.
 Couldn\u2019t load the Slackbot record settings. Refresh the page to try again.
 Couldn\u2019t load the access requested for this app.
 Couldn\u2019t load the changes in these commits.
@@ -5456,7 +5452,6 @@ Couldn\u2019t restore this response. Only the person who removed it, a channel m
 Couldn\u2019t save changes
 Couldn\u2019t save changes. Please try again.
 Couldn\u2019t save that memory. Please try again.
-Couldn\u2019t save the edit status to Slack.
 Couldn\u2019t save the recording. Please try again.
 Couldn\u2019t save this setting. Try again.
 Couldn\u2019t save to {providerName}. Try again.
@@ -6783,6 +6778,7 @@ Drop
 Drop a file, share a link or take notes
 Drop here to replace
 Drop more .md files here, or click to browse
+Drop to attach
 Drop to upload
 Drop your CSV file here.
 Dropdown
@@ -6801,6 +6797,7 @@ Due to your custom file retention policy, this file will be deleted after {durat
 Due today
 Due tomorrow
 Due {dateString}
+Due: {date}
 Dummy journey
 Dummy journey nudge, day {day}
 Dummy journey tip, day {day}
@@ -9188,6 +9185,7 @@ Has new comment
 Has new messages
 Has new replies
 Has pin
+Has unread messages
 Has unread replies
 Has your Tableau Next password been updated?
 Has your Tableau Next user been configured?
@@ -9307,7 +9305,6 @@ Help people find and use workflows relevant to this channel.
 Help requests
 Help requests, opens in new window
 Help teammates automatically join all the necessary channels by setting up a workflow.
-Help teammates put a face to a name and make future conversations easier.
 Help you create a new {appName} account, if you don\u2019t already have one.
 Help your new teammate feel welcome. Share a channel where they can get to know the rest of the team.
 Help your teammates know they\u2019re talking to the right person.
@@ -9343,8 +9340,6 @@ Here\u2019s what will happen:
 Here\u2019s what you need to know
 Here\u2019s what your team will miss if you don\u2019t upgrade.
 Here\u2019s where you can get back to creating and managing custom notifications.
-Hey folks! I just joined. Happy to be here.
-Hey folks! I just joined. Happy to be here. :grin:
 Hey there! I\u2019m Slackbot.
 Hey {firstName}, I\u2019m Slackbot!
 Hey {firstName}, what\u2019s next on the list?
@@ -9361,7 +9356,6 @@ Hi {inviterName}! \u{1F44B} I\u2019m waiting on the channel to be connected, but
 Hi {teamName}
 Hi! I\u2019m Slackbot, here to help with all things sales.
 Hi! I\u2019m excited to work with you in Slack.
-Hi! I\u2019m new here :{plaintextWaveEmoji}:. Excited to be part of the team.
 Hi! \u{1F44B} I\u2019m waiting on the channel to be connected, but I\u2019m excited to work together in channel soon.
 Hi, I just saw a notice that there\u2019s no default payment method for our workspace. Can you please add one on the 
 Hi, I\u2019m Slackbot!
@@ -9628,7 +9622,6 @@ I couldn\u2019t check Accessibility for Slack. Allow it in System Settings, then
 I couldn\u2019t confirm the change. Check the window before trying again.
 I couldn\u2019t find a channel named \u201C{channel_name}\u201D, sorry!
 I couldn\u2019t find any sales-related conversations to create records from.
-I couldn\u2019t finish that request. Your window hasn\u2019t been changed.
 I couldn\u2019t hear others
 I don\u2019t like how the feature works
 I don\u2019t use another CRM tool
@@ -11309,7 +11302,6 @@ Look up any recent discussions between me and the participants to provide contex
 Look up my current sidebar display rules and suggest ways I could customize my Focused sidebar view.
 Look up objects like people, channels, or custom records
 Look who\u2019s  here! Yay.
-Looking at your window\u2026
 Looking at {label}
 Looking for Slackbot?
 Looking for Workflow Builder?
@@ -11393,7 +11385,6 @@ Magenta70
 Magic Wand Icon
 Magnifying glass
 Main Services Agreement
-Main content could not be located.
 Main selector
 Maine
 Maintain access to the data you have authorized
@@ -12961,6 +12952,7 @@ No channels
 No channels added yet. Choose \u201CEdit channels\u201D to add channels this person can send to.
 No channels are connected to this group
 No channels found
+No channels yet
 No code
 No code channels yet
 No coding agent is available in this workspace. Your task is saved in the input.
@@ -13175,7 +13167,6 @@ No saved topics yet
 No secondary action available for this content
 No selection
 No sent invitations at the moment
-No sent messages
 No servers available
 No servers connected
 No session channels yet
@@ -13222,6 +13213,7 @@ No unread comments
 No unread conversations in recent history
 No unread conversations in this view.
 No unread messages
+No unread replies in your recent threads
 No unread {filter}. Carry on.
 No unread {filter}. Here\u2019s a pony.
 No unread {filter}. Isn\u2019t that nice?
@@ -13484,7 +13476,6 @@ Notify Owner
 Notify and log users out every {duration} {units}
 Notify anyway?
 Notify every online member in this channel.
-Notify everyone
 Notify everyone in this channel.
 Notify everyone in your workspace.
 Notify for @here and @channel
@@ -16677,7 +16668,6 @@ Save Notification
 Save Permission
 Save Preferences
 Save Slackbot write settings
-Save Status to Slack
 Save Template
 Save View
 Save a message to keep it here.
@@ -16755,7 +16745,6 @@ Saving failed
 Saving project
 Saving project memory
 Saving recording\u2026
-Saving the edit status to Slack\u2026
 Saving this step will remove all structured output fields you have defined. This cannot be undone.
 Saving to Salesforce
 Saving to {orgName}
@@ -16764,8 +16753,6 @@ Saving {numRecords} records to Salesforce
 Saving {recordLabelLowercase} to Salesforce
 Saving\u2026
 Say Hi \u{1F44B}
-Say Thanks
-Say a quick hello
 Say goodbye to content creation, summaries, and your AI teammate, Slackbot.
 Say hello to everyone in the {linkText} channel
 Say hello to someone
@@ -17179,7 +17166,6 @@ See all people who can collaborate on this workflow
 See all people, channels, and workspaces who can run this workflow
 See all permissions
 See all photos and videos
-See all sent messages
 See all statuses
 See all the docs, photos and videos that have been shared or added to this channel.
 See all to-dos
@@ -17662,7 +17648,6 @@ Send to {agentName}
 Send to {destinationStr} under these opportunity conditions: {conditionsStr}
 Send to {destinationStr} under these opportunity conditions: {conditionsStr} in {salesforceOrgName}
 Send to {recipient}
-Send your other attachments in Slackbot, or remove them before asking about this window.
 Send {count, plural, =1 {Invitation} other {Invitations}}
 Sender
 Sending a channel start message
@@ -18713,6 +18698,7 @@ Slackbot has some cool new skills.
 Slackbot in this channel
 Slackbot is AI and can make mistakes.
 Slackbot is an AI agent available to everyone in this channel. When someone mentions @Slackbot, it can read this channel\u2019s messages and files to reply in the thread.
+Slackbot is finishing your answer\u2026
 Slackbot is here to research {recordTypePlural}, prep for meetings and more
 Slackbot is hidden
 Slackbot is in your navigation bar
@@ -18822,6 +18808,7 @@ Some content failed to load
 Some content in this list was generated by AI and may contain errors.
 Some content wasn\u2019t pasted because this table reached its cell limit.
 Some conversations you selected are already organized in other sections. Are you sure you want to move them here?
+Some files couldn\u2019t be attached. Check the message and try again.
 Some files exceed the 25MB limit
 Some files unsupported
 Some formatting can\u2019t be saved
@@ -19531,7 +19518,6 @@ Stop {agentName}
 Stop {appName}
 Stopped
 Stopped tracking agent work. Its fields and their values stay on this list.
-Stopped. Nothing was changed.
 Stopping the recording\u2026
 Stopping {agentName}\u2019s response
 Stopping {appName}\u2026
@@ -22936,6 +22922,7 @@ View Activity in Singer
 View Agent in Slack
 View All Files ({total})
 View All Invitations
+View Answer
 View Audit Logs
 View Browser
 View Channel
@@ -23258,7 +23245,7 @@ Visitors
 Voice
 Voice and video calls
 Voice and video conversations with your team
-Voice call failed. Click to retry.
+Voice call failed. Try again.
 Voice calls
 Voice calls are unavailable for this workspace
 Voice calls aren\u2019t supported in this browser.
@@ -25045,6 +25032,8 @@ You\u2019ve reached your Slackbot limit.
 You\u2019ve reached your workspace limit for Single-Channel Guests. You must invite more paid members first.
 You\u2019ve read all the unreads. Here\u2019s a pony.
 You\u2019ve read every direct message.
+You\u2019ve read every reply in your threads.
+You\u2019ve read everything in your channels.
 You\u2019ve removed your custom color for {user}.
 You\u2019ve selected a large number workspaces. Please make sure you want to make this change.
 You\u2019ve selected all workspaces that match this search
@@ -25182,6 +25171,7 @@ Your agent sessions
 Your alert is now live
 Your anniversary
 Your anniversary celebration is loading\u2026
+Your answer is ready in chat.
 Your app and operating system versions are no longer supported. Ask your admins for help getting up to date so you can get back to Slack.
 Your app and operating system versions are no longer supported. Update to the latest versions so you can get back to Slack.
 Your app and operating system versions won\u2019t be supported starting {date}. Ask your admins for help getting up to date.
@@ -25419,7 +25409,6 @@ Your team hasn\u2019t installed any apps from this category yet. Some of the mos
 Your team hasn\u2019t installed any apps from this category yet. Your admin can install apps on Slack for you to use.
 Your team is already using these features on its current plan
 Your team is back on the free version of Slack. You can upgrade anytime to access paid features like unlimited message history with AI summaries, Slack Connect channels, unlimited apps and workflows, group huddles with AI, and more.
-Your team is happy you\u2019re here!
 Your team is on a {planName} trial
 Your team is on the {planName} plan
 Your team is previewing Slackbot\u2019s AI abilities. Upgrade today for full access.
@@ -32391,7 +32380,6 @@ zzz
 {count, plural, =1 {# reaction} other {# reactions}}
 {count, plural, =1 {# reaction} other {# reactions}}, 
 {count, plural, =1 {# reaction} other {# reactions}}.
-{count, plural, =1 {# read-only tool} other {# read-only tools}}
 {count, plural, =1 {# recent agent} other {# recent agents}}
 {count, plural, =1 {# recent workflow} other {# recent workflows}}
 {count, plural, =1 {# reply} other {# replies}}
@@ -32905,7 +32893,6 @@ zzz
 {itemCount, plural, =1 {# item} other {# items}}
 {jitterMs}ms
 {joinText}, opens in new window
-{joinerName}, return the greeting by reacting with a ':wave:' emoji.
 {keyUpdates, plural, =1 {# key update} other {# key updates}}
 {key} isn\u2019t supported. Try a different key.
 {kickedName} was removed by {actorName}.

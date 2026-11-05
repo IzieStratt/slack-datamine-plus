@@ -143,6 +143,7 @@ action:animateDeleteMessage
 action:appConnectionsReceived
 action:appendAgentExchangeMarketplaceApps
 action:appendExternalResponse
+action:appendLatestReplyThreads
 action:appendMembersToGroup
 action:appendRecordFiles
 action:appendResponse
@@ -158,6 +159,7 @@ action:attachStashedDraft
 action:awaitEmptyQueue
 action:badgeEmojiCollection
 action:beginExternalGuestMediaAccess
+action:beginLatestReplyThreadsRefresh
 action:beginPinnedViewIdsRead
 action:beginPinWrite
 action:beginThreadsPageRequest
@@ -377,6 +379,7 @@ action:clearRecordOptionsForOrg
 action:clearRedoStack
 action:clearRegistrationResult
 action:clearRelatedChannelsForRecord
+action:clearRequestedAgendaTabId
 action:clearResponse
 action:clearRewrittenQuery
 action:clearSalesforceSessions
@@ -1260,7 +1263,6 @@ action:setAgentExchangeFilters
 action:setAgentExchangeIsLoading
 action:setAgentExchangeResults
 action:setAgentExchangeTotalAgentsCount
-action:setAgentforceListAccessibleStatus
 action:setAgentHomeActiveConversation
 action:setAgentHomeActiveThread
 action:setAgentHomeMessageContextByChannelId
@@ -1699,6 +1701,7 @@ action:setFetchStatus
 action:setFetchUserGroupsError
 action:setFieldToResumeEditing
 action:setFileBrowserData
+action:setFileChannelIdsBeingFetched
 action:setFileIdForTempId
 action:setFilePermissionsRequest
 action:setFilesTabState
@@ -2062,6 +2065,7 @@ action:setLastSubmittedFilters
 action:setLastSubmittedSources
 action:setLastTabVisitAt
 action:setLastUsedSlashCommand
+action:setLatestReplyThreads
 action:setLaunchpadRecommendedChannels
 action:setLaunchpadRecommendedChannelsMetadata
 action:setLaunchpadRecommendedRecentChannelSummaries
@@ -2398,6 +2402,7 @@ action:setRemotePeerIsConnected
 action:setRemotePeerScreenshareDoNotDispatch
 action:setRemovingAdminUserGroupChannels
 action:setRemovingDigestChannel
+action:setRequestedAgendaTabId
 action:setRequestFromEditableRequestInternal
 action:setRequestId
 action:setRequestingToJoinKnockToEnterHuddle
@@ -2828,7 +2833,6 @@ action:setWebSearchActive
 action:setWelcomeCardSentToJoinerClientMsgId
 action:setWelcomeDmSentToChannel
 action:setWelcomeMatSource
-action:setWelcomePartyObjectState
 action:setWhatsNewFetchFailed
 action:setWhatsNewLoading
 action:setWhatsNewUpdates
@@ -4197,7 +4201,6 @@ thunk:clearPossibleAudioAlerts
 thunk:clearPossibleVideoAlerts
 thunk:clearPresence
 thunk:clearPrevTeamAnnouncement
-thunk:clearReactionAnimation
 thunk:clearSavedItemWithUndo
 thunk:clearSearchInChannelSessionData
 thunk:clearSearchInput
@@ -4694,7 +4697,6 @@ thunk:emailBridgeLedInvitesMaybeLogExposure
 thunk:emailConnectorNewteamsMaybeLogExposure
 thunk:enableAndUpdateUserGroup
 thunk:enableAndUpsert2FA
-thunk:enableAskSlackbotForFreeMaybeLogExposure
 thunk:enableFullscreen
 thunk:enableNativeChannelExpert
 thunk:enableRestrictedSharingSetting
@@ -4789,7 +4791,6 @@ thunk:externalGuestAutoKnock
 thunk:failover
 thunk:failProvisionalConnection
 thunk:feedbackCommand
-thunk:fetchAccessibleAgentforceApps
 thunk:fetchActionableApprovalsCount
 thunk:fetchActionLayout
 thunk:fetchActionLibraryApps
@@ -4949,6 +4950,7 @@ thunk:fetchChannelManagementPermissions
 thunk:fetchChannelManagersAndUpsertCount
 thunk:fetchChannelRetentionSettings
 thunk:fetchChannels
+thunk:fetchChannelsAddedToCustomSection
 thunk:fetchChannelsDataAvailableDateRange
 thunk:fetchChannelSectionSuggestions
 thunk:fetchChannelsInOrg
@@ -5124,6 +5126,7 @@ thunk:fetchSlackiversaryData
 thunk:fetchSmartInvitesChannelSuggestions
 thunk:fetchSolutionTemplateInfo
 thunk:fetchSortedUserGroupTeamsByName
+thunk:fetchStarredChannel
 thunk:fetchStarsList
 thunk:fetchStepFunctionVariables
 thunk:fetchSuggestedChannelsFromGoogleFilesState
@@ -5567,7 +5570,7 @@ thunk:joinChannelFromSearch
 thunk:joinCodeChannel
 thunk:joinConversationApi
 thunk:joinerMobileTaskFixV2MaybeLogExposure
-thunk:joinerWelcomePartyMaybeLogExposure
+thunk:jpCreatorPocketGuideV2MaybeLogExposure
 thunk:jpSegmentationQuestionsMaybeLogExposure
 thunk:jumpToDraft
 thunk:jumpToEdit
@@ -7368,7 +7371,6 @@ thunk:sendCatchUpPrompt
 thunk:sendComposerMessage
 thunk:sendCrmSignalToSlackbot
 thunk:sendDraftFiles
-thunk:sendDraftFromTriage
 thunk:sendDraftMessage
 thunk:sendDraftMessageById
 thunk:sendEmail
@@ -7751,7 +7753,6 @@ thunk:showUninstallFailedToast
 thunk:showUninstallingToast
 thunk:showUserGroupDetails
 thunk:showUserRoleChangedDialog
-thunk:showWelcomePartyWebPushNotification
 thunk:showWorkflowApprovalFailedToast
 thunk:sidebarAppNuxMaybeLogExposure
 thunk:sidebarCtaSimplificationMaybeLogExposure
@@ -7989,7 +7990,6 @@ thunk:toggleSavedMessageArchived
 thunk:toggleSavedMessageComplete
 thunk:toggleSavedViews
 thunk:toggleScreenShare
-thunk:toggleSelectedDraftId
 thunk:toggleSelfMicrophone
 thunk:toggleSidebar
 thunk:toggleSidebarInverted
@@ -8330,7 +8330,6 @@ thunk:waitForAllWindowsBlurred
 thunk:waitForApiConnectionAndUpsertServiceStatus
 thunk:waitForNetworkConnectionAndUpsertClientStatus
 thunk:wake
-thunk:welcomePartyMegaphoneChannelOpenEvent
 thunk:workflowsTriggersTrip
 thunk:workspaceModalSharedInviteLinkTenuredTeamsMaybeLogExposure
 thunk:workspacesChangedSinceLastBoot

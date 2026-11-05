@@ -405,6 +405,7 @@ AgendaMarkTaskCompleteToast
 AgendaNavCount
 AgendaNavMeetingBubble
 AgendaNotAuthed
+AgendaPeekDrafts
 AgendaPeekMeetings
 AgendaPeekTodos
 AgendaPeekView
@@ -473,6 +474,7 @@ AgenticBrowseAndFindPage
 AgenticBrowseAndFindViewComponent
 AgenticClient
 AgenticCreateMenu
+AgenticHelpButton
 AgenticIANav
 AgenticIANavContent
 AgentIcon
@@ -790,7 +792,6 @@ AppHelpButton
 AppHistoryTabView
 AppHomeBlocks
 AppHomeError
-AppHomeRestricted
 AppHomeTabView
 AppHomeTabViewBase
 AppHoverCard
@@ -879,7 +880,6 @@ AppSpaceProfileDescription
 AppSpaceProfileInfo
 AppSpaceProfileSideAvatar
 AppSpaceScreenshots
-AppSpaceSlashCommands
 AppSpaceView
 AppSpaceWrapper
 AppsSection
@@ -1215,7 +1215,6 @@ BaseButton
 BaseButtonInternal
 BaseCalendarAuthLauncher
 BaseCatchupList
-BaseCatchupView
 BaseChannelInfo
 BaseChannelInviteModalComponent
 BaseChannelName
@@ -1344,7 +1343,6 @@ BaseFlexpaneRecordTextInput
 BaseFontIcon
 BaseFooter
 BaseForeword
-BaseForYouEmptyState
 BaseFullLengthList
 BaseGenerateInsightsCoachmark
 BaseGoogleDriveErrorModals
@@ -1384,6 +1382,7 @@ BaseListEditAvatar
 BaseListEditPostfix
 BaseListEntity
 BaseListErrorState
+BaseListExplorerNUXHeader
 BaseListIcon
 BaseListRecordDetailAddCommentButton
 BaseListRecordDetailCopyLinkButton
@@ -1608,8 +1607,6 @@ BaseVisuallyHiddenMessageText
 BaseVisuallyHiddenSender
 BaseVisuallyHiddenStates
 BaseVisuallyHiddenTimestamp
-BaseWelcomePartyChannelJoinModal
-BaseWelcomePartyChannelJoinReplyNudge
 BaseWelcomeToProModal
 BaseWorkflowPreview
 BaseWorkflowsSection
@@ -2905,10 +2902,12 @@ ConversationListItem
 ConversationResultRow
 ConversationRow
 ConversationsFilterRow
+ConversationsPeekUnreadsToggle
 ConversationsSelectElementInner
 ConversationsSkeleton
 ConversationsTabActions
 ConversationsTypePill
+ConversationsTypeRow
 ConvertChannelToLimitedModal
 ConvertChannelToLimitedModalContents
 ConvertChannelToPrivateModal
@@ -3139,7 +3138,6 @@ DataVisualizationFullscreenModal
 DataVizFields
 DateColumnEditor
 DateCommand
-DateDividerPill
 DateDueMenuItem
 DateDuePill
 DateDuePillContent
@@ -3272,7 +3270,6 @@ DesktopContextPill
 desktopMenuItemClicked
 DesktopPref
 DesktopUpdateBanner
-DestinationAvatar
 DestinationFilter
 DestinationFilters
 DestinationIcon
@@ -3286,6 +3283,7 @@ DetailsTabContent
 DetailValue
 DetermineComponentFrameRoot
 DetermineContextMenu
+DevBuildLinkPopover
 DevBuildPopoverContent
 DevBuildTopNavButton
 DeveloperIdentityWorkspaceModal
@@ -3462,8 +3460,6 @@ DraftManagementButton
 DraftManagementButtonCoachmark
 DraftPreview
 DraftRichTextPreview
-DraftsPage
-DraftsPageRow
 DraftsTabActions
 DraftsTabPage
 DraftStageRow
@@ -5014,6 +5010,7 @@ Hovercard
 HoverCard
 HovercardContainer
 HoverCardContext
+HovercardImpl
 HovercardLastEditedFooter
 HovercardTrigger
 HoverCardTrigger
@@ -5694,6 +5691,7 @@ LaterTabButtonNudge
 LaterTabInMoreCoachmark
 LaterTimePicker
 LaterTodoErrorToast
+LaterTodoFilterBar
 LaterTodosCoachmark
 LaterTodoSettingsMenu
 LaterTodosSavedCoachmark
@@ -5833,7 +5831,6 @@ listEntityButton
 ListEntityButton
 ListEntityMoreActionsMenu
 ListExplorerFreemiumHero
-ListExplorerNUXHeader
 ListField
 ListFieldRichTextRenderer
 ListFieldUpdate
@@ -6010,7 +6007,6 @@ Location
 LocationHuddleChannelRow
 LocationHuddlePickerInput
 LocationHuddlePickerRenderable
-LocationLabel
 LogActivityCTA
 LogActivityFlexpane
 LogActivityFormContent
@@ -7228,10 +7224,6 @@ OutdatedSystemsModal
 OutgoingErrorState
 OutgoingInviteActionItemWrapper
 OutgoingPage
-OutgoingRowLayout
-OutgoingScheduledRow
-OutgoingScheduledRowActions
-OutgoingSentRow
 OutlineNavigation
 OutOfOffice
 OutOfOfficeMessage
@@ -7248,7 +7240,6 @@ overflowItem
 OverflowMenu
 OverflowTabGlow
 OverflowTabsItem
-OverflowUsersTile
 OverlayContent
 OverrideAlert
 OverviewCallouts
@@ -7812,11 +7803,8 @@ Reaction
 ReactionAddButton
 ReactionAddedSummary
 ReactionAddedTab
-ReactionAnimation
 ReactionAvatar
 ReactionBar
-ReactionCaption
-ReactionCaptionMemberSlug
 ReactionCollapseButton
 ReactionContent
 ReactionEditContent
@@ -7891,7 +7879,6 @@ RecentPostsBadge
 RecentPromptAgent
 RecentPromptItem
 RecentsConversationRow
-RecipientName
 RecipientsSelect
 RecommendationPromptRow
 RecommendationsSlide
@@ -8423,6 +8410,7 @@ renderOverridesSection
 renderOwnerAndAdminRadioButtons
 renderPageContent
 renderPaidBenefitsCards
+renderPanel
 renderPauseToggle
 renderPDFViewer
 renderPendingFile
@@ -8801,11 +8789,7 @@ RouterContext
 RouteToChannelSection
 Row
 RowActions
-RowBody
 RowCheckbox
-RowContainer
-RowFooter
-RowHeader
 RowIcon
 RowImpl
 RowItem
@@ -9604,6 +9588,7 @@ SidebarSweeperChannelList
 SidebarSweeperLeaveChannelsBanner
 SidebarSweeperMultiPaneModal
 SidebarSweeperWizard
+SidebarTextFilterActiveContext
 SidebarTextFilterContext
 SidebarTextFilterInput
 SidebarTextFilterProvider
@@ -9666,6 +9651,7 @@ SingerDestinationMessages
 SingerDestinationPanel
 SingerDestinationPanelForDestination
 SingerFace
+SingerFileDropFeedback
 SingerIcon
 SingerLaptop
 SingerLiveVoiceButton
@@ -10373,7 +10359,6 @@ StartMigrationAlert
 StartTrialCoachmark
 StartTrialModalSpeedBump
 StartTrialStartedModalSpeedBump
-stateFromProps
 StatefulElement
 StaticAgentTray
 StaticFile
@@ -10733,6 +10718,7 @@ TemplateOptionCard
 TemplatePermissionsModal
 TemplatePreview
 TemplatePreviewModal
+TemplateRowButton
 TemplatesCreateModals
 TemplateSelection
 TemplateSettingsModal
@@ -10861,6 +10847,7 @@ ThreadRootHuddles
 ThreadRootHuddlesEmpty
 ThreadRootLists
 ThreadRootListsEmpty
+ThreadRowActivityPeek
 Threads
 ThreadSearchBar
 ThreadSearchButton
@@ -11027,6 +11014,7 @@ Tooltip
 tooltipGetLabel
 TooltipMemberName
 TooltipMemberNames
+TooltipSubtitle
 TooltipTip
 TooltipWrapper
 ToolTypeAccessCard
@@ -11789,10 +11777,7 @@ WelcomeCardFile
 WelcomeModalContent
 WelcomeNewTeammates
 WelcomePane
-WelcomePartyChannelJoinReplyNudge
-WelcomePartyMessage
 WelcomePartyMessageText
-WelcomePartyReplyButtons
 WelcomePartySubtype
 WelcomeToProModal
 WfbAiStepToolsBadge
