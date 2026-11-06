@@ -436,6 +436,7 @@ action:closeNoteComment
 action:closeSystemMessage
 action:codeChannelAiSummaryFailed
 action:codeChannelAiSummaryRequested
+action:codeChannelAiSummaryRetryRequested
 action:codeChannelAiSummaryTaskStarted
 action:codeChannelStreamCompleted
 action:collapseAllCollections
@@ -517,6 +518,7 @@ action:disableFullscreen
 action:disableRestrictedSharingForFile
 action:discardEditAction
 action:discardRecordUpdateError
+action:discardUnsavedActions
 action:disconnected
 action:disconnectHuddlesFromMediaServer
 action:disconnectOrgExternalMember
@@ -1179,6 +1181,7 @@ action:resetWorkflowEditorState
 action:resetWorkflowsStore
 action:resolveExternalGuestMediaAccess
 action:restart
+action:restoreDraftQuote
 action:restoreInstalledSkillSet
 action:restoreItems
 action:restoreSfdcRecordActivities
@@ -1398,6 +1401,7 @@ action:setCampaign
 action:setCannedTemplatesCollapsed
 action:setCanRenderActiveInviteCardInSidebar
 action:setCanShowBanner
+action:setCanUseEmailBridge
 action:setCanvasContentDraftDiff
 action:setCanvasContentDraftDiffFailed
 action:setCanvasCreating
@@ -1723,6 +1727,7 @@ action:setFilterSuggestionsLoading
 action:setFilterSuggestionsResolved
 action:setFilterUnreads
 action:setFilterVisibility
+action:setFinishSetupSectionCollapsed
 action:setFlexpaneCustomViewInCompactMode
 action:setFloatingView
 action:setFocus
@@ -2061,7 +2066,6 @@ action:setLastSeenCanvasAnimationTimestamp
 action:setLastSelectedBulkKey
 action:setLastSelectedViewForWindow
 action:setLastSortValue
-action:setLastSubmittedFilters
 action:setLastSubmittedSources
 action:setLastTabVisitAt
 action:setLastUsedSlashCommand
@@ -4258,7 +4262,7 @@ thunk:clogDraftSend
 thunk:clogDraftsSidebarItem
 thunk:clogDurationSelected
 thunk:clogDwaNudgeCtaStatus
-thunk:clogEditFolder
+thunk:clogDwaStart
 thunk:clogEmojiClick
 thunk:clogEmptySrpSlackbotImpression
 thunk:clogEmptySrpSlackbotRoute
@@ -4412,6 +4416,7 @@ thunk:completeSegmentationForGoldenGateSizzleReel
 thunk:completeSetupFlow
 thunk:completeSlackCrmOnboardingRunResearchSkill
 thunk:completeSlackCrmOnboardingSplash
+thunk:completeSlackCrmOnboardingZeroStateCard
 thunk:configureCreatedChannel
 thunk:confirmFileDownloadAllowed
 thunk:connectedSideEffect
@@ -4818,7 +4823,6 @@ thunk:fetchAgentSunroof
 thunk:fetchAiExplainResponse
 thunk:fetchAiWorkflowsStepsResponse
 thunk:fetchAllAiApps
-thunk:fetchAllDaysForWeek
 thunk:fetchAllEmojiCollections
 thunk:fetchAllowedLogActivityObjects
 thunk:fetchAllSearchResults
@@ -5120,6 +5124,7 @@ thunk:fetchSlackCrmBuildFromUserInputState
 thunk:fetchSlackCrmOnboardingActiveExperienceState
 thunk:fetchSlackCrmOnboardingSplashState
 thunk:fetchSlackCrmOnboardingStateMachines
+thunk:fetchSlackCrmOnboardingZeroStateMachines
 thunk:fetchSlackCrmSalesTrackerPreviewState
 thunk:fetchSlackDocLastReadTimestamps
 thunk:fetchSlackiversaryData
@@ -5400,7 +5405,6 @@ thunk:handleActiveMigrationThunk
 thunk:handleAddOrInviteProfileAction
 thunk:handleAppCardClick
 thunk:handleAttachmentFooterNavigateClick
-thunk:handleBackToToday
 thunk:handleCallsRequestError
 thunk:handleCancelKnockToEnterRequest
 thunk:handleCanvasAiContentCancel
@@ -5431,8 +5435,6 @@ thunk:handleMeetingEvents
 thunk:handleMessageImmediatelyWithoutPreprocessing
 thunk:handleMessagesForTest
 thunk:handleModNShortcut
-thunk:handleMoveToNextDay
-thunk:handleMoveToPreviousDay
 thunk:handleNotificationAction
 thunk:handleOnClickActivityItem
 thunk:handleOnClickActivityRow
@@ -5501,7 +5503,6 @@ thunk:hydrateWorkflowHandoff
 thunk:ignoreChannel
 thunk:ignoreFilePermissionRequest
 thunk:importWorkflow
-thunk:incrementPeopleSearchSeenCount
 thunk:incrementScrollerSearchInProductEducationDismissalCount
 thunk:incrementUserInteractionCount
 thunk:indexAdditionalBootedTeamChannels
@@ -5741,7 +5742,6 @@ thunk:markMembersDndAsStaleCircularHandler
 thunk:markMessageByEmailDraftForAutoSend
 thunk:markMostRecentMsgRead
 thunk:markObjectsAsStale
-thunk:markPeopleSearchSeen
 thunk:markPermissionsAsStale
 thunk:markPermissionsAsStaleForChannel
 thunk:markPicklistValuesAsStaleBySalesforceOrgId
@@ -5799,7 +5799,6 @@ thunk:maybeDecayNewTeamLaunchpad
 thunk:maybeDecayResurrectedUserWelcome
 thunk:maybeDisableDebugger
 thunk:maybeDisableDmCanvasPreview
-thunk:maybeDismissBannerForInproductTeamCreation
 thunk:maybeDismissErrorToast
 thunk:maybeDismissSlackConnectStraightToPaidModal
 thunk:maybeDismissSuccessToast
@@ -5870,6 +5869,7 @@ thunk:maybeLogEmailConnectorNewteamsExposure
 thunk:maybeLogExperimentExposureAndNavigateToInitialChannel
 thunk:maybeLogGoldenGateBizPlusTrialExposure
 thunk:maybeLogSlackbotBigModeGaExposure
+thunk:maybeLogTractorChannelSimplificationExposure
 thunk:maybeMarkChannelFromThread
 thunk:maybeMarkDay1OnboardingComplete
 thunk:maybeMarkMeetSlackbotAsClicked
@@ -6607,7 +6607,6 @@ thunk:openNewBrowseDm
 thunk:openNonDismissibleWelcomeModal
 thunk:openNoPaymentMethodNotifyOwnerModal
 thunk:openNotifications
-thunk:openNuxCalendarDetails
 thunk:openOnboardingCompletionModal
 thunk:openOnboardingProfileModal
 thunk:openOnboardingProfileModalCircularHandler
@@ -6881,6 +6880,8 @@ thunk:postChannelCanvasViewOpen
 thunk:postCloudFileToComposer
 thunk:postQuipActivityHistoryRouting
 thunk:prefetchCallInfo
+thunk:prefetchCodeChannelPeek
+thunk:prefetchCodeChannelPreviewHistory
 thunk:prefetchNavigationHistory
 thunk:prefetchPointerdownHistory
 thunk:preFetchSlackConnectDmEligibility
@@ -6972,7 +6973,6 @@ thunk:recordEmojiFrecencyEvent
 thunk:recordExperimentGroupsAsTrace
 thunk:recordFastSocketOpened
 thunk:recordFrecencyEvent
-thunk:recordLastDismissedScrollSearchTooltipTimestamp
 thunk:recordManualSidebarToggle
 thunk:recordMeetSlackbotImpression
 thunk:recordMessageActionFrecencyEvent
@@ -7143,7 +7143,6 @@ thunk:renameTeam
 thunk:renderFileLimitToast
 thunk:renderRateLimitedToast
 thunk:reorderDraftFileIds
-thunk:reorderFolderItem
 thunk:reorderRecord
 thunk:reorderTeamProfileFields
 thunk:replaceCurrentHistoryEntryForWindow
@@ -7237,6 +7236,7 @@ thunk:resyncExistingDataSource
 thunk:retireGlowIfShowing
 thunk:retryCalendarWindowFetch
 thunk:retryDesktopDownloadHandler
+thunk:retryFailedCodeChannelAiSummary
 thunk:retryFailedUploads
 thunk:retryNetworkConnection
 thunk:retryServiceConnection
@@ -7573,7 +7573,6 @@ thunk:setRemotePeerIsConnectedSideEffectHandler
 thunk:setRemoteScreenshare
 thunk:setRequestFromEditableRequest
 thunk:setRestorableState
-thunk:setResultCountToggle
 thunk:setSearchOnlyMyChannelsChanged
 thunk:setSecondaryColumn
 thunk:setSecondaryColumnForActivity

@@ -90,6 +90,7 @@
  {recentPostCount, plural, =1 {# recent post} other {# recent posts}}.
 !!
 !?
+# proj-aurora
 #General
 #a-channel, @somebody, or somebody@example.com
 #account-acme
@@ -394,6 +395,7 @@ $ {amount} USD
 4 hours
 4. Prompt
 4. Prompt (optional)
+4.7\u2605 and dimmable, the best pick under $60.
 45 days
 45 minutes
 4:00
@@ -523,7 +525,6 @@ $ {amount} USD
 @here
 @mention
 @reallyhelpfulagent
-@somebody or Natalie
 @user
 @user ID
 @user-group
@@ -590,6 +591,7 @@ A flat illustration showing a digital board with three task cards, one of which 
 A fresh channel
 A fresh start
 A huddle happened
+A huddle is already scheduled here around that time.
 A huddle is happening
 A huddle link has been shared
 A lead status and an opportunity stage can\u2019t share a name. Rename one to save.
@@ -602,6 +604,8 @@ A list item you saved was deleted. Remove it from Saved?
 A list item you saved was not found. Remove it from Saved?
 A list of your priorities from across Slack, email and calendar sent every morning.
 A list that\u2019s waiting for you to dive in.
+A little hello
+A little more you.
 A little room to breathe.
 A matching account was found and pre-selected.
 A matching contact or account already exists. Please select an existing record.
@@ -652,6 +656,7 @@ A preview of the file\u2019s AI summary will no longer appear when the file is s
 A profile is required when approving a license request.
 A profile picture can help team members recognize you
 A question is required.
+A quick answer. A little catch-up. A head start on whatever\u2019s next.
 A quick note about analytics
 A quick way to make your new teammate feel included and connected.
 A quiet heads-up in the island. Today is always a click away.
@@ -834,8 +839,11 @@ A\u2013Z
 About
 About Fair Billing
 About Page
+About apps
 About building workflows with AI
 About notifications
+About the description
+About the example prompt
 About this agent
 About this app
 About this content
@@ -1008,6 +1016,7 @@ Activity tabs
 Activity type
 Activity type ({count})
 Activity type, {count, plural, =1 {1 filter} other {# filters}} applied
+Activity updates are paused.
 Acts as an MCP server
 Actual prompt
 Add
@@ -1221,7 +1230,6 @@ Add a title to the {label} placeholder to distinctly identify your {pluralLabel}
 Add a to-do
 Add a to-do from any message, or write your own.
 Add a topic
-Add a topic (optional)
 Add a user profile
 Add a value\u2026
 Add a workflow
@@ -1337,12 +1345,12 @@ Add custom MCP
 Add custom emoji
 Add custom integration
 Add custom role
+Add data from outside Slack
 Add date
 Add date and time
 Add default for future workspaces
 Add description
 Add details
-Add details about this meeting
 Add details like tone, style and topics to avoid
 Add display column
 Add domain
@@ -1802,7 +1810,6 @@ Agent scopes have been updated to enable various Slack Actions. Please reinstall
 Agent selection
 Agent session
 Agent sessions
-Agent sessions started in this conversation will show up here.
 Agent stopped
 Agent suggestion dismissed
 Agent thread \xb7 {ago}
@@ -1974,6 +1981,7 @@ All organizations
 All other tools access
 All overdue to-do items will be marked as completed. This can\u2019t be undone.
 All overdue to-dos marked complete
+All pending requests to join
 All people
 All photos and videos
 All pull requests
@@ -2483,6 +2491,7 @@ Approvals never required for channel invitations
 Approve
 Approve & Continue
 Approve & continue
+Approve All {count}
 Approve an app
 Approve an app for anyone to install
 Approve invitation request?
@@ -2532,6 +2541,8 @@ Apps your admins turned on for Slackbot in this channel. Slackbot uses them with
 Apr
 April
 Arabic
+Arc Lamp, $54
+Arc \xb7 $54 \xb7 4.7\u2605
 Archive
 Archive Channel
 Archive Channels
@@ -2736,6 +2747,7 @@ Ask anything
 Ask anything, as often as you want. No limits through {date}.
 Ask before actions
 Ask before editing
+Ask each time
 Ask for meeting items and update a canvas
 Ask if I want to toggle my away status when I log in after having set myself away
 Ask in DM
@@ -2794,7 +2806,7 @@ Astro
 At [Company Name], we recognize the importance of time away from the office to recharge, spend quality time with loved ones, and pursue personal interests. That\u2019s why we offer a range of time-off benefits designed to help you \u2026
 At least one person is not in the workspace so this channel can\u2019t be shared.
 At least one person is not in the {workspaceName} workspace so this channel can\u2019t be shared.
-At least {count, plural, one {# member has} other {# members have}} older Chrome or Edge browser sessions. Any of those sessions that aren\u2019t device bound will be signed out.
+At least {count, plural, one {# member has} other {# members have}} Chrome or Edge sessions from before {startDate, date, long} at {startTime}. Any that aren\u2019t device bound will be signed out.
 At no extra cost
 At the request of your administrator, file uploads have been disabled on this workspace.
 At the request of your administrator, message editing is limited to text only.
@@ -3126,6 +3138,7 @@ Bermuda
 Best Value
 Best value
 Beta
+Beta freeze moved to next Thursday.
 Bhutan
 Bi-weekly
 Big heading
@@ -3327,14 +3340,15 @@ Browse {numWorkspaces, plural, =1 {# workspace} other {# workspaces}}
 Browser
 Browser on {host}. You\u2019re in control. Shift+Escape returns to Singer.
 Browser session protection
-Browser sessions started before this date stay signed in without device binding until they end.
 Browser settings couldn\u2019t be updated. Try again.
 Browser sign-ins forgotten.
 Browser task
 Browser tasks
 Browser tasks aren\u2019t set up for this workspace yet.
+Browsing isn\u2019t available for you yet. This is a sample.
 Brunei
 Brunei Darussalam
+Budget \u2014 $4,000
 Buffering
 Buffering dreams\u2026
 Bug bounty program URL
@@ -3578,6 +3592,7 @@ Can\u2019t add {name} to {channels}. {name} isn\u2019t allowed in {count, plural
 Can\u2019t ask Slackbot. Try again.
 Can\u2019t be accepted. Try any public channels individually, or ask for a new invite.
 Can\u2019t be invited to channel
+Can\u2019t change DM access. Try again.
 Can\u2019t change channel name, description, and topic
 Can\u2019t change privacy
 Can\u2019t connect to {serverName}
@@ -4174,6 +4189,7 @@ Checkbox unchecked
 Checkboxes
 Checked
 Checking file\u2026
+Checking if browsing is available for you\u2026
 Checking status\u2026
 Checking who\u2019s in the huddle\u2026
 Checking your code\u2026
@@ -4434,6 +4450,7 @@ Click to copy the test result to your clipboard.
 Click to disable Lite mode
 Click to disable audio only mode
 Click to expand
+Click to get started
 Click to hide
 Click to interact
 Click to open in {appName}
@@ -4507,6 +4524,7 @@ Close summary of channel
 Close summary of thread
 Close survey
 Close thread
+Close transcript
 Close trial tasks
 Close troubleshooting panel
 Close window
@@ -4696,6 +4714,7 @@ Compare plans and features
 Compare with Pro
 Compare with {previousPlanName}
 Compares members who posted in the selected month to the previous month.
+Comparing 3 lamps\u2026
 Comparison of free vs. paid Slack Video for users on free teams
 Comparison operator
 Compile a weekly project summary
@@ -4792,6 +4811,7 @@ Connect Your Support Email
 Connect a Salesforce Org
 Connect a Salesforce org to add conditions
 Connect a calendar
+Connect a calendar to Slack to schedule a huddle.
 Connect a calendar to Slack to schedule an external huddle.
 Connect a calendar to continue.
 Connect a support address to respond to a case
@@ -4929,7 +4949,6 @@ Connecting to {appName}\u2026
 Connecting to {providerName}\u2026
 Connecting your account will let you see {appName} here in search.
 Connecting your account will let you see {appName} results here in search.
-Connecting your calendar
 Connecting your calendar\u2026
 Connecting\u2026
 Connection
@@ -5323,6 +5342,7 @@ Couldn\u2019t cancel this request. Try again in a moment.
 Couldn\u2019t capture your computer\u2019s audio. Please try again.
 Couldn\u2019t change how the agents reply. Try again.
 Couldn\u2019t change how {agentName} replies. Try again.
+Couldn\u2019t check if browsing is available. This is a sample.
 Couldn\u2019t check verification status. Try again.
 Couldn\u2019t clear the saved item. The item couldn\u2019t be found.
 Couldn\u2019t clear the saved item. Try again?
@@ -5365,6 +5385,8 @@ Couldn\u2019t leave {channelName}
 Couldn\u2019t load activities
 Couldn\u2019t load activity
 Couldn\u2019t load activity.
+Couldn\u2019t load agent sessions.
+Couldn\u2019t load agent threads.
 Couldn\u2019t load agents. Close this and try again.
 Couldn\u2019t load apps
 Couldn\u2019t load apps.
@@ -5388,6 +5410,7 @@ Couldn\u2019t load more agents. Please try again.
 Couldn\u2019t load more channels.
 Couldn\u2019t load more comments.
 Couldn\u2019t load more results. Try again later.
+Couldn\u2019t load more threads.
 Couldn\u2019t load objects.
 Couldn\u2019t load older comments.
 Couldn\u2019t load older replies.
@@ -5411,6 +5434,7 @@ Couldn\u2019t load the currency from Salesforce.
 Couldn\u2019t load the domains this app has configured.
 Couldn\u2019t load the latest commits
 Couldn\u2019t load the report.
+Couldn\u2019t load this channel\u2019s threads.
 Couldn\u2019t load this right now.
 Couldn\u2019t load this server
 Couldn\u2019t load this skill. The link may have expired.
@@ -5494,6 +5518,7 @@ Counted when a person clicks to generate a message or file summary translation.
 Counted when a person clicks to view a file summary.
 Counted when a person submits a prompt using canvas AI.
 Counted when a person uses the natural language input or suggested prompts in Workflow Builder to generate a workflow draft.
+Counting affected members\u2026
 Country
 Country code
 Cover
@@ -5887,6 +5912,7 @@ DHTML Duck
 DJ\u2019ing
 DKIM key (recommended)
 DM
+DM access
 DM invitations can only be sent to one person at a time.
 DM muted
 DM notifications have changed
@@ -5955,6 +5981,7 @@ Data hosting details
 Data is available from {firstDate}.
 Data isn\u2019t available yet
 Data location
+Data loss prevention
 Data management
 Data migration
 Data regions
@@ -6003,6 +6030,7 @@ Date requested
 Date the app was created
 Date the app was installed
 Date to snooze notifications until
+Dates \u2014 Oct 14\u201315
 Day
 Day of week
 Day offset range
@@ -6501,7 +6529,6 @@ Dismiss message limit announcement
 Dismiss message suggestions
 Dismiss notification
 Dismiss projects intro
-Dismiss suggested messages
 Dismiss suggestion
 Dismiss summary
 Dismiss themes banner
@@ -6665,6 +6692,7 @@ Done downloading? Next:
 Done downloading? Next\u2026
 Done loading
 Done!
+Dot \xb7 $39 \xb7 4.1\u2605
 Double check that this is not a personal account. Slack enterprise search only supports accounts associated with your organization.
 Double check that you are a premium Asana user. Slack enterprise search only supports accounts that are Starter or above.
 Double-check this link
@@ -6730,11 +6758,13 @@ Draft emails in your own voice
 Draft it quick with AI
 Draft meeting agenda for {channelName}
 Draft messages to send when you\u2019re ready
+Draft needs attention
 Draft project update
 Draft ready for review
 Draft replies in my tone
 Draft replies to my VIP messages
 Draft reply
+Draft saved
 Draft saved {date} at {time}
 Draft to private channel {channelName} saved {date} at {time}
 Draft to public channel {channelName} saved {date} at {time}
@@ -6756,6 +6786,8 @@ Drafts clear and concise answers to common questions based on provided context o
 Drafts in this channel
 Drafts in this conversation
 Drafts sub-view type
+Drag Singer onto a window to ask about it.
+Drag Singer onto the window.
 Drag and drop CSV file here or click to upload
 Drag and drop a .md file here
 Drag and drop here to pin
@@ -6775,6 +6807,7 @@ Draw on your own screen
 Drawing is not available for content shared from the Slack Mobile app
 Dredging pipes\u2026
 Drop
+Drop Singer right on the window.
 Drop a file, share a link or take notes
 Drop here to replace
 Drop more .md files here, or click to browse
@@ -6784,6 +6817,7 @@ Drop your CSV file here.
 Dropdown
 Dropdown options
 Dropdown options must be unique.
+Dropping Singer on a window isn\u2019t available here yet. This is a sample.
 Dual icons on hover
 Duck
 Due Date
@@ -6894,6 +6928,7 @@ Edit Selections
 Edit Settings
 Edit Sidebar
 Edit Sidekick
+Edit Skill
 Edit Tabs
 Edit Tag
 Edit Task
@@ -7277,6 +7312,8 @@ End date
 End date (ex. {dateExample})
 End date and time
 End huddle for all
+End of suggested deletion
+End of suggested insertion
 End time
 End time cannot be earlier than start time.
 End time must be in the future.
@@ -7293,13 +7330,13 @@ Ended at {endTime} - Lasted {minutes, plural, =1 {# minute} other {# minutes}}
 Ended at {endTime} - Lasted {weeks, plural, =1 {# week} other {# weeks}}
 Ending
 Ends
+Enforce
 Enforce and Sign Out
-Enforce device bound sessions on all browsers?
-Enforce on All Browser Sessions
+Enforce on Older Sessions
+Enforce on older Chrome and Edge sessions
 Enforce security policies such as blocking jailbroken devices, blocking file downloads on desktop, and blocking file downloads and message copying on mobile.
-Enforced on all browser sessions
-Enforced on new browser sessions from {startDate, date, long}
-Enforced on new browser sessions since {startDate, date, long}
+Enforced on all Chrome and Edge sessions
+Enforced on new Chrome and Edge sessions
 Engineering
 English
 English (U.K.)
@@ -7518,6 +7555,7 @@ Everyone in the channel will be able to view the transcript.
 Everyone in the channel will be able to view this file once it\u2019s added as a tab.
 Everyone in the org sees the same currency, and all records use the same currency.
 Everyone in the organization
+Everyone in this conversation will get an invite.
 Everyone in this direct message will have access to what you add here.
 Everyone in this huddle will see the same theme.
 Everyone in your org will be able to add this to their Slackbot, so an admin must approve it first.
@@ -7646,7 +7684,6 @@ Existing contact
 Existing emoji
 Existing sales notifications will stop sending to channels not in those workspaces. The people who created the notifications won\u2019t be notified.
 Existing sales notifications will stop sending to those channels. The people who created the notifications won\u2019t be notified.
-Existing sessions
 Exit
 Exit Preview
 Exit Setup
@@ -7917,10 +7954,12 @@ Feature Workflow
 Feature a workflow
 Feature access
 Feature access details
+Feature an automation
 Feature available
 Feature request
 Feature this workflow in channel
 Feature unavailable
+Feature up to 15 automations, so people can use them instead of sending a message.
 Feature up to 15 workflows, so people can use them instead of sending a message.
 Feature workflow
 Featured
@@ -8044,6 +8083,7 @@ Files and Organization
 Files and Snippets
 Files and links
 Files are disabled by your admin
+Files can\u2019t be added to this conversation.
 Files can\u2019t be bigger than {limit}. To change that limit, or remove it entirely, you\u2019ll need to talk to admin.
 Files from huddles
 Files larger than {size}MB cannot be uploaded.
@@ -8175,6 +8215,7 @@ Find a DM
 Find a DM\u2026
 Find a conversation
 Find a conversation\u2026
+Find a desk lamp under $60 with good reviews
 Find a field type
 Find a person or channel to huddle with
 Find a time to meet with {name}
@@ -8267,6 +8308,7 @@ Finish logging in
 Finish recording before starting a voice call
 Finish sending your {count, plural, =1 {invitation} other {invitations}}
 Finish setting up
+Finish setting up Slack CRM
 Finish setup so you can make the most of Slack.
 Finish signing in from your browser
 Finish signing into {teamName}
@@ -8350,6 +8392,7 @@ Focused sidebar
 Focused sidebar on.
 Focused sidebar options
 Focusing figments\u2026
+Fold \xb7 $72 \xb7 4.8\u2605
 Fold the input when idle
 Folder
 Folder Name
@@ -8982,6 +9025,7 @@ Good news, {firstName}!
 Good profile picture
 Good response
 Good summary
+Good to go
 Good translation
 Google Calendar
 Google Calendar sync required
@@ -9013,6 +9057,7 @@ Got it!
 Got it! You\u2019ll still get notifications as usual.
 Got it. We won\u2019t ask again.
 Got questions? Ask an Admin to add a Channel Manager to help things run smoothly.
+Got repetitive tasks? Try automations.
 Got repetitive tasks? Try workflows.
 GovSlack
 Grant Access
@@ -9142,6 +9187,7 @@ Haiti
 Halfway there
 Halloween
 Halloween themes banner dismissed
+Hand off the legwork. Singer browses for you.
 Handed off
 Handing off\u2026
 Handle
@@ -9160,7 +9206,6 @@ Hang tight! There\u2019s more to search than expected\u2026
 Hang tight! There\u2019s more to summarize than expected\u2026
 Hangout Meeting
 Happening now
-Happening now: your calendar in Slack
 Happy Bass
 Happy Friday, {firstName}. Finish line\u2019s in sight!
 Happy New Year
@@ -9199,7 +9244,6 @@ Have group discussions you\u2019d have in the office right in Slack.
 Have the CRM features in Slack changed how you use other CRM tools?
 Having a gander\u2026
 Having audio or video issues? Try these tips:
-Having trouble?
 Having trouble? 
 Hawaii
 Haxe
@@ -9277,8 +9321,10 @@ Help me customize my lead statuses using the {skillName} skill \u2014 research h
 Help me customize my opportunity stages using the {skillName} skill \u2014 research how my team sells in Slack and recommend Sales Tracker opportunity stages.
 Help me customize my sales stages using the {skillName} skill \u2014 research how my team sells in Slack and recommend Sales Tracker lead statuses and opportunity stages.
 Help me draft a meeting invite
+Help me draft a reply.
 Help me find a file
 Help me find popular channels I\u2019m not a member of, so I can stay on top of the most important conversations going on in my workspace.
+Help me find the right person for a question.
 Help me import records into my Sales Tracker using the {skillName} skill
 Help me organize my sidebar
 Help me prep for my meeting: 
@@ -9292,6 +9338,7 @@ Help me prepare for my remaining meetings today. Summarize the agenda, recent re
 Help me respond
 Help me respond to this thread: {permalink}
 Help me set up a new task.
+Help me set up a task for this channel.
 Help me set up an automation
 Help me set up {channelName}
 Help me update a customer\u2019s details in Salesforce.
@@ -9354,6 +9401,7 @@ Hi everyone. Here\u2019s a space for our {channelName} conversations!
 Hi {firstName}, I\u2019m Slackbot, your AI assistant.
 Hi {inviterName}! \u{1F44B} I\u2019m waiting on the channel to be connected, but I\u2019m excited to work together in channel soon.
 Hi {teamName}
+Hi! Good to meet you.
 Hi! I\u2019m Slackbot, here to help with all things sales.
 Hi! I\u2019m excited to work with you in Slack.
 Hi! \u{1F44B} I\u2019m waiting on the channel to be connected, but I\u2019m excited to work together in channel soon.
@@ -9474,6 +9522,7 @@ Hold activity until the meeting\u2019s scheduled end. You can still open Singer.
 Hold the shortcut to record, or double-tap it for hands-free mode.
 Hold to speak. Release to listen. The voice button works with the shortcut off.
 Hold to talk
+Hold to try a hello. Just a preview\u2014your mic stays off.
 Hold {fn} + left {command} to talk
 Hold {fn} + right {command} to talk
 Home
@@ -9515,9 +9564,9 @@ How does {name} work?
 How does {teamName} use Slack?
 How familiar are you with Slack?
 How filter groups are combined
-How is the transcript?
 How is the transcript? Tell us about your experience.
 How it works:
+How long the island\u2019s mute button pauses activity updates.
 How many files should they upload?
 How satisfied are you with the customer relationship management (CRM) features in Slack so far?
 How should I use Slackbot for my role?
@@ -9538,10 +9587,12 @@ How would you describe the results you\u2019re seeing?
 How would you describe the search results you\u2019re seeing?
 How you and your team are using Pro features
 How you want Slackbot to respond in this channel
+How your team uses {agent}
 Howdy!
 Huddle
 Huddle AI Notes
 Huddle Language
+Huddle controls
 Huddle data is available from {firstDate}.
 Huddle feedback section
 Huddle files
@@ -9572,6 +9623,7 @@ Huddle primary actions
 Huddle reactions and effects menu
 Huddle request approved
 Huddle requests expire after {minutes, plural, =1 {# minute} other {# minutes}}.
+Huddle scheduled
 Huddle secondary content
 Huddle theme {themeName}
 Huddle thread
@@ -9592,6 +9644,7 @@ Huddles
 Huddles Summary Settings
 Huddles actions
 Huddles are the quickest way to meet with your team. Start a voice or video huddle from any conversation
+Huddles are turned off for this channel.
 Huddles initiated
 Huddles notes
 Huddles where at least 2 people joined at the same time for at least 5 seconds.
@@ -9803,6 +9856,7 @@ If your password is compromised or stolen, you\u2019ll have peace of mind knowin
 If your provider didn\u2019t send a confirmation, you\u2019re all set! Send a test email to your support address to make sure it comes into Slack as a case.
 If your team uses a custom opportunity object or custom opportunity fields, you can select them here. This ensures notifications will send when you expect them to.
 Ignore
+Ignore All
 Ignore Invitation
 Ignore this invitation
 Ignore {name}
@@ -9861,6 +9915,7 @@ Import from CSV
 Import from Google
 Import leads with Slackbot
 Import memory from other AI tools
+Import records from a spreadsheet or another tool with Slackbot\u2019s help.
 Import theme
 Import workflow
 Import your contacts and track follow-ups.
@@ -9895,8 +9950,6 @@ In < 1m
 In Activity
 In Progress
 In Slack, channels keep your work focused by giving each topic, project or team its own space.
-In a Channel
-In a DM
 In a huddle
 In a meeting
 In a thread
@@ -10221,6 +10274,7 @@ Invite client
 Invite coworkers
 Invite every member in this channel
 Invite every online member in this channel
+Invite everyone in {channelName}
 Invite external people
 Invite from Google Workspace
 Invite has been resent
@@ -10250,6 +10304,7 @@ Invite someone to your huddle
 Invite team members
 Invite teammates
 Invite teammates tip
+Invite teammates to collaborate in your Sales Tracker.
 Invite teammates who are also working on the project.
 Invite the team, there\u2019s lots of room.
 Invite them by email instead
@@ -10309,6 +10364,7 @@ Is there anything that could have made navigation better? We\u2019re all ears \u
 Is there anything that could have made your search better? We\u2019re all ears \u2014 responses are kept confidential.
 Is your team already on Slack?
 Is your team already using Slack?
+Island activity muted for {minutes, plural, one {# minute} other {# minutes}}. Messages stay unread.
 Isle of Man
 Isn\u2019t that nice?
 Isn\u2019t the channel owner
@@ -10555,6 +10611,7 @@ Just now
 Just synced from {appName}
 Just synced from {orgName}
 Just tell Slackbot what you need it to do. Then set a schedule and Slackbot takes it from there.
+Just the venue. Dates and budget are set.
 Just type and press Enter
 Just want to make sure someone sees this?
 Just you
@@ -10925,10 +10982,12 @@ Leave us feedback\u2026
 Leave your huddle?
 Leave your less active channels
 Lebanon
+Left \u2318
 Left skin tone modifier
 Legacy workflows are no longer available.
 Legal holds
 Leo Hao
+Leo shared the final pricing doc.
 Lesotho
 Less
 Less detail
@@ -10936,6 +10995,7 @@ Less than
 Less than a minute
 Less than {maxFileSize} MB
 Let Slack AI send daily recaps of channels you can\u2019t always make time for, and mute them in your sidebar for better focus.
+Let Slackbot find leads and opportunities mentioned in your conversations.
 Let Slackbot help you tackle your day
 Let Slackbot organize your wins and updates
 Let Slackbot search the web
@@ -10943,6 +11003,7 @@ Let Slackbot take actions in {name}
 Let Slackbot take on your regular tasks, like meeting prep or project updates. Create skills for yourself, or the whole team.
 Let a Coworker Set It Up
 Let additional organizations join this channel.
+Let go to choose it.
 Let me help you prioritize
 Let me know how I can help with this list.
 Let me know if you have any questions!
@@ -11207,6 +11268,8 @@ Loading messages for conversation with {memberName}\u2026
 Loading messages for {channelName}\u2026
 Loading messages\u2026
 Loading more activity
+Loading more agent sessions
+Loading more agent threads
 Loading more channels\u2026
 Loading more code channels
 Loading more comments
@@ -11317,6 +11380,7 @@ Looking through your recent Slack activity.
 Looking up a Salesforce channel record
 Looking up who can be invited
 Looks good
+Looks like me
 Looks like the meeting ended
 Looks like there aren\u2019t any lists that can be added.
 Looks like there might be an issue with your notifications
@@ -11413,6 +11477,7 @@ Make it a task
 Make it easier to send notifications and communicate with entire teams, departments, or groups by adding multiple people to a single user group @mention.
 Make it easier to send notifications and communicate with entire teams, departments, or groups.
 Make it easy to see what everyone\u2019s working on
+Make it yours
 Make longer
 Make panel larger
 Make panel smaller
@@ -11734,6 +11799,7 @@ Maximum of {max} columns allowed.
 May
 May you avoid all distractions
 May your day be pleasant and productive
+Maya needs your sign-off on designs.
 Maybe
 Maybe Later
 Maybe attending
@@ -11912,7 +11978,7 @@ Members will not see any previews for URLs
 Members will only be able to download files on Slack desktop apps when connected to specific ranges.
 Members will only see compact previews for URLs from apps that support rich previews
 Members will receive daily mobile in-app prompts to update their app before they are blocked.
-Members with Chrome or Edge browser sessions that aren\u2019t device bound will be signed out of those sessions.
+Members with Chrome or Edge sessions from before {startDate, date, long} at {startTime} that aren\u2019t device bound will be signed out of those sessions.
 Members with automations
 Membership
 Membership - All time
@@ -12230,6 +12296,7 @@ More actions for {channelName}
 More actions for {label}
 More actions for {listName}
 More actions for {metricName}
+More actions for {name}
 More actions for {skillName}
 More actions for {skillSetName}
 More actions for {title}
@@ -12373,6 +12440,7 @@ Move to top
 Move to top right
 Move to-dos to Saved
 Move to\u2026
+Move unread items to top of sections
 Move up
 Move view down
 Move view up
@@ -12461,6 +12529,8 @@ Mute channel
 Mute channels
 Mute channels for a quieter sidebar
 Mute conversation
+Mute duration
+Mute island activity for {minutes, plural, one {# minute} other {# minutes}}
 Mute mic
 Mute microphone
 Mute my microphone
@@ -12737,7 +12807,6 @@ New messages
 New messages from {name1} and {name2}
 New messages in {channelList}
 New messages in {channelList} and {numberOfOtherChannels, plural, =1 {# more channel} other {# more channels}}
-New messages show a DM, channel or thread marked New. Several updates show counts and Catch Up, which opens a private summary.
 New messages shown here. You choose what to mark as read.
 New opportunity
 New org available
@@ -12760,6 +12829,7 @@ New slide
 New stage name
 New status name
 New surface
+New task
 New thread message in {channel}
 New to Slack
 New to Slack?
@@ -12904,7 +12974,9 @@ No additional channels
 No additional content safety filters applied. Other safety measures as part of the Slack AI Guardrails remain unchanged.
 No advanced AI
 No agent conversations yet
+No agent sessions in this conversation yet
 No agent sessions match these filters
+No agent threads in this conversation yet
 No agents
 No agents are available for your search
 No agents available
@@ -12916,6 +12988,7 @@ No agents, apps or conversations are available in this workspace.
 No alt text
 No app data
 No app notifications\u2026yet
+No approval needed for new DMs
 No apps are enabled for Slackbot in this channel yet.
 No apps are turned on for Slackbot in this channel yet.
 No apps available for your organization.
@@ -13074,7 +13147,8 @@ No meetings
 No meetings are coming up right now.
 No meetings today
 No meetings tomorrow
-No members are signed in to Chrome or Edge with an older browser session, so nobody will be signed out right now.
+No members are signed in to Chrome or Edge right now.
+No members are signed in to Chrome or Edge with a session from before {startDate, date, long} at {startTime}, so nobody will be signed out.
 No members found
 No members to assign to this permission
 No members yet
@@ -13123,6 +13197,8 @@ No open requests at the moment
 No options available
 No other agents yet
 No other branch rules are met
+No other threads in this channel.
+No other threads you follow in this channel.
 No outputs defined.
 No people found
 No people have been selected
@@ -13171,6 +13247,10 @@ No servers available
 No servers connected
 No session channels yet
 No sessions yet.
+No shared working hours. Best time to reach them: on {date} at {time}
+No shared working hours. Best time to reach them: today at {time}
+No shared working hours. Best time to reach them: tomorrow at {time}
+No shared working hours. They\u2019re working now.
 No shortcuts found
 No shortcuts found. Try searching for something else.
 No sidekicks
@@ -13192,10 +13272,14 @@ No summary available for this file yet.
 No surfaces in {sectionName}
 No tasks assigned to you
 No tasks found
+No tasks in this channel yet.
+No tasks yet
 No templates found
 No thanks
 No thanks, take me to basic Slackbot
 No thread replies\u2026yet
+No threads in this channel yet.
+No threads you follow in this channel yet.
 No time limit
 No time slots are available
 No to-dos at the moment.
@@ -13236,6 +13320,7 @@ No views match \u201C{query}\u201D
 No visible sheets
 No vote from you
 No workflows found.
+No workflows in this channel yet.
 No workflows or apps are available in this workspace.
 No workflows or tasks are available in this workspace.
 No workflows yet
@@ -13337,6 +13422,7 @@ Not in conversation
 Not in list
 Not in this channel
 Not in this workspace
+Not in {channelName}
 Not included
 Not installed in #{channelName}
 Not looking
@@ -13575,6 +13661,7 @@ Offer valid for {remainingDays, plural, =1 {# day} other {# days}}
 Offers end in {daysLeft, plural, =1 {# day} other {# days}}.
 Office
 Offline
+Offsite plan
 Oh heck yeah
 Oh no!
 Oh no! I couldn\u2019t import your newly created file
@@ -13587,7 +13674,6 @@ Okay
 Oklahoma
 Old:
 Older
-Older Chrome and Edge sessions that aren\u2019t device bound are signed out the next time they\u2019re used.
 Older drafts
 Older result
 Older than {count} days
@@ -13670,6 +13756,7 @@ One or more attachments could not be loaded. The file may have been deleted.
 One or more email addresses are invalid.
 One or more email addresses are too long.
 One or more email addresses belong to existing members in this workspace.
+One or more entries are invalid. Choose people from your organization.
 One or more entries are invalid. Enter valid people or email addresses.
 One or more files could not be uploaded. You can attach up to {maxEmailAttachments} files per email.
 One or more of the IP ranges are invalid. Please check your entries and try again.
@@ -13755,6 +13842,7 @@ Only messages will be included in AI steps.
 Only messages will be included in Slackbot search results.
 Only messages will be included in search results.
 Only my channels
+Only my threads
 Only overdue
 Only overdue by 30+ days
 Only owners can share
@@ -13776,6 +13864,7 @@ Only people in this list can find this workflow.
 Only people in your org
 Only people in your organization can be added by name. Invite anyone else by email.
 Only people who already have access will be able to open it.
+Only people who can post in this channel can schedule a huddle in it.
 Only people with Audit Logs Admin system role can view anomalies.
 Only people with Flagged Content Admin system role can view flagged content.
 Only people with access can use or edit. The skill doesn\u2019t appear in the directory.
@@ -13868,6 +13957,7 @@ Oops, there was an error loading this workflow.
 Open
 Open AI menu
 Open App
+Open Automations
 Open Browser
 Open Comments
 Open Contact
@@ -14035,6 +14125,7 @@ Open the {view} view in a new window
 Open this link in your browser?
 Open this record in Salesforce
 Open thread
+Open thread: {title}
 Open to-do item
 Open troubleshooting panel
 Open unread options
@@ -14065,6 +14156,7 @@ OpenAI logo
 Opened setup guide
 Opening Slackbot
 Opening in {countdown}\u2026
+Opening lamps.example\u2026
 Opening skills library
 Opening the channel\u2026
 Opening the manage connection dialog
@@ -14089,6 +14181,7 @@ Opportunities that roll up to you
 Opportunities you own
 Opportunity
 Opportunity field mapping updated. Please reconfigure the deal won celebration.
+Opportunity for improvement
 Opportunity in {account_name}
 Opportunity name (required)
 Opportunity name is required.
@@ -14261,6 +14354,7 @@ Output format mode
 Output saved. Add another output.
 Outside work hours
 Outside your organization
+Over $60
 Overall status
 Overall, how satisfied were you with navigating in Slack?
 Overall, how satisfied were you with this search?
@@ -14561,6 +14655,7 @@ Pick a channel before inviting Single-Channel Guests.
 Pick a color
 Pick a custom time
 Pick a different default avatar.
+Pick a look and watch it come to life. Your questions still go to Slackbot.
 Pick a random default avatar. The current avatar will be replaced.
 Pick a second, different name to use as a backup.
 Pick a start time
@@ -14878,6 +14973,7 @@ Press R
 Press Right Arrow to ask in thread
 Press \u2318\u21E7O to reopen Singer
 Press again to also select items
+Press again to open on GitHub
 Press alt + shift + up/down arrow to navigate between unread items.
 Press delete to remove a direct message from the sidebar
 Press delete to remove messages from an app from the sidebar
@@ -15120,6 +15216,7 @@ Propagated
 Proposed Content
 Proposed Refinement
 Proposed document text
+Protect Chrome and Edge sessions from stolen session cookies.
 Protect your account with a passkey
 Protect your organization and data
 Protect your organization data
@@ -15501,6 +15598,7 @@ Recording your mic and computer audio.
 Recording your microphone. Computer audio is unavailable.
 Recording {screenName}
 Records
+Records created
 Recurrence
 Recurring meetings aren\u2019t available for your account.
 Red
@@ -15701,6 +15799,7 @@ Remove and Block
 Remove app from your top bar
 Remove as default view
 Remove as tab
+Remove attached files
 Remove attached window
 Remove audio clip
 Remove background image
@@ -15991,6 +16090,7 @@ Replace the impromptu meetings from your office, with live, voice-first conversa
 Replace with a new link
 Replace with a new or existing workflow.
 Replace your saved message with this draft?
+Replay
 Replied
 Replies
 Replies and reactions have been turned off for this thread.
@@ -16137,6 +16237,7 @@ Require Org Primary Owner to disconnect
 Require admin approval
 Require approval
 Require approval for channel invitations
+Require approval for each new DM
 Require approvals
 Require approvals for invitations
 Require members to have 2FA set up
@@ -16278,6 +16379,7 @@ Resume AI notes & transcription
 Resume AI notes and transcription?
 Resume all your notifications
 Resume notifications
+Resume now
 Resume taking notes with AI?
 Resume task
 Resume this workflow
@@ -16303,6 +16405,7 @@ Retrying\u2026
 Return to Managed by you
 Returns the full text that AI generates
 Returns the full text that AI generates, plus visual elements like tables and graphs
+Reusable flows people can run instead of sending a message.
 Reveal DMs, Activity and other views
 Reveal Views
 Revert template to a canvas
@@ -16416,6 +16519,7 @@ Rich previews when you share a file link
 Rich text
 Rich text composer
 Rich text variables used inline will have block-level formatting converted to inline equivalents
+Right \u2318
 Right click to add to your organization
 Right click to edit, rename or delete this view. Drag and drop to reorder.
 Right click to open menu
@@ -16646,6 +16750,11 @@ Same as desktop
 Same as messages sound
 Samoa
 Sample
+Sample browser
+Sample desktop
+Sample done: Arc Lamp, $54.
+Sample resumed.
+Sample taken over.
 San Marino
 Sandbox
 Sao Tome and Principe
@@ -16795,6 +16904,7 @@ Scheduled message
 Scheduled message actions
 Scheduled messages
 Scheduled on {dateStr} from {startTimeStr} to {endTimeStr}
+Scheduled prompts Slackbot runs for this channel.
 Scheduled status duration
 Scheduled status removed.
 Scheduled status updated.
@@ -16932,11 +17042,11 @@ Search folders
 Search for Salesforce info
 Search for a Salesforce record
 Search for a channel or person
-Search for a channel\u2026
 Search for a contact
 Search for a coworker
 Search for a list by name
 Search for a member\u2026
+Search for a person
 Search for a person to add as a delegate
 Search for a record
 Search for a related list by name
@@ -17088,6 +17198,7 @@ Searching Slack\u2026
 Searching all suggested records
 Searching for context\u2026
 Searching for existing records
+Searching for sales context\u2026
 Searching in this conversation
 Searching {appNames}, and more\u2026
 Searching {appNames}\u2026
@@ -17173,6 +17284,7 @@ See all variables
 See all your records
 See all your unreads in one place
 See all {count, plural, =1 {# attendee} other {# attendees}}
+See all {count, plural, =1 {# automation} other {# automations}}
 See all {section}
 See all {slackActionsCount} related actions
 See all {total}
@@ -17243,6 +17355,7 @@ See what\u2019s been going on since you joined.
 See what\u2019s next and get help preparing for meetings, right from Slackbot.
 See yesterday
 See your daily schedule from Slack
+See your meetings on Sales Home and get help preparing for each one.
 See your personal info, including any personal info you\u2019ve made publicly available
 See your primary Google Account email address
 See your summaries in a predictable order or just focus on the newest.
@@ -17748,6 +17861,7 @@ Session duration disabled
 Session duration enabled
 Session duration updated
 Session ended
+Session type
 Sessions
 Set Background
 Set Email Notifications
@@ -18000,6 +18114,7 @@ Share with
 Share with thread
 Share with:
 Share workflow
+Share your Sales Tracker
 Share your Slack personality
 Share your anniversary?
 Share your canvas with others.
@@ -18083,6 +18198,7 @@ Shortcut suggestions collapsed
 Shortcuts
 Shorten external links
 Shorten link
+Shorten the example prompt to save your changes.
 Should channels default to public or private? Invitations to private channels will always be private.
 Should this channel be public or private?
 Shout out to {ownerName} for closing the deal! :tada:
@@ -18099,6 +18215,7 @@ Show All Open Tasks
 Show All Types
 Show All Unreads
 Show Call
+Show DMs, mentions, VIP activity, and other important updates from Activity as they arrive. Reactions aren\u2019t included.
 Show Me
 Show Me Around
 Show Me How
@@ -18254,6 +18371,7 @@ Show up prepared for every meeting
 Show up prepared to every meeting
 Show upcoming reminders
 Show voice call controls
+Show welcome again
 Show workspace switcher
 Show {count, plural, =1 {# company} other {# companies}}
 Show {count} more
@@ -18376,8 +18494,10 @@ Since you only have permission to manage public channels, private channels are h
 Since you\u2019re the last one here, you\u2019ll need to invite an admin and ask them to archive the channel.
 Singapore
 Singer
+Singer chose Offsite plan. Sample answer: Just the venue.
 Singer island
 Singer isn\u2019t available in this desktop session yet. You can keep using Slackbot Mini.
+Singer sees only the window you choose. macOS may ask for permission first.
 Singer settings
 Single
 Single Sign-On
@@ -18681,6 +18801,7 @@ Slackbot cannot search the web.
 Slackbot conversations
 Slackbot conversations will notify in Activity and Threads
 Slackbot couldn\u2019t respond. Give it another try.
+Slackbot created lead and opportunity records for you. Open the Sales Tracker to check them out.
 Slackbot data is available from {firstDate}.
 Slackbot does the work for you
 Slackbot doesn\u2019t have a good answer for that right now
@@ -18746,6 +18867,7 @@ Slackbot will look in these channels first when answering questions about this p
 Slackbot will make a report from conversations in this project.
 Slackbot will no longer use your view as context
 Slackbot will notify you once your request has been reviewed.
+Slackbot will search in Slack and connected accounts for people and companies that might have been mentioned in a sales context. It will create new leads or opportunities based on that info.
 Slackbot will see each canvas\u2019s section headings, and can read a section when it\u2019s relevant to your question.
 Slackbot will use these skills to respond to relevant prompts.
 Slackbot will use this skill to respond to relevant prompts.
@@ -18828,6 +18950,7 @@ Some people post a lot of little messages. Others try to get it all in one. This
 Some people will use AI more than others. This data is best used for understanding trends in your whole organization\u2019s use of AI and not for evaluating an individual\u2019s productivity.
 Some people won\u2019t be able to view this canvas
 Some people won\u2019t be able to view this list
+Some people you added aren\u2019t in {channelName}. They\u2019ll need to request to join when the huddle starts.
 Some permissions are locked by your workspace or organization.
 Some pull requests may be out of date
 Some required fields are empty \u2014 please take another look?
@@ -18988,6 +19111,7 @@ Something\u2019s gone wrong\u2026
 Something\u2019s missing
 Something\u2026
 Sometime helper, sometime messenger, always bot.
+Sometimes, it\u2019s easier to say it.
 Somewhat dissatisfied
 Somewhat satisfied
 Soon after each huddle ends, it\u2019ll be available in the huddle thread.
@@ -19048,6 +19172,7 @@ Sorry, you\u2019ve hit the rate limit. You\u2019ll be able to try again soon.
 Sorry, your message is too long. Please shorten it and try again.
 Sort
 Sort ({sortCount} applied)
+Sort agent sessions
 Sort and layout
 Sort and limit
 Sort ascending
@@ -19077,6 +19202,7 @@ Sort work objects
 Sort: 
 Sort: {count}
 Sort: {sortOrder}
+Sort: {sort}
 Sort\u2026
 Sorted alphabetically
 Sorted by
@@ -19094,6 +19220,7 @@ Source capacity
 Source content may be used in the AI response and shared with people using the workflow.
 Source message from {sender} in {channel}
 Source {sourceNumber}, {label}
+Source: lamps.example
 Sources
 Sources for agent responses
 Sources for {title}
@@ -19296,6 +19423,7 @@ Start transcription automatically for every huddle in {channelDisplayName}?
 Start trial
 Start typing a message anywhere, then find it here. Re-read, revise, and send whenever you\u2019d like.
 Start typing a name or email address\u2026
+Start typing a name\u2026
 Start typing to see results\u2026
 Start using Slack with your team
 Start with Business+
@@ -19338,6 +19466,8 @@ Starting now
 Starting on {day}, {date} at {time}
 Starting today, your workspace is part of an organization. That means you can now message and share files with anyone in the organization \u2014 even if you\u2019re not on the same workspace. Continue to your workspace, and we\u2019ll show you what\u2019s new.
 Starting your costume suggestion\u2026
+Starting {startDate, date, long} at {startTime}, Chrome and Edge sessions started before then that aren\u2019t device bound are signed out the next time they\u2019re used.
+Starting {startDate, date, long} at {startTime}, they\u2019re signed out the next time they use Slack in that browser, then sign in again on a device bound session.
 Starting\u2026
 Starts from a button
 Starts from a link in Slack
@@ -19428,7 +19558,6 @@ Stay on the same page
 Stay on top of sales tasks
 Stay on top of your Sales info
 Stay on top of your calendar
-Stay on top of your schedule without leaving Slack. Connect your calendar to get started.
 Stay protected with SAML SSO, SCIM, and security controls your team needs
 Stay tuned
 Steer
@@ -19596,8 +19725,10 @@ Suggested changes from Slackbot
 Suggested changes from Slackbot. The canvas is read only until they\u2019re accepted or rejected.
 Suggested channel sections
 Suggested channels
+Suggested deletion
 Suggested draft:
 Suggested from your recent prompts
+Suggested insertion
 Suggested objects
 Suggested prompts
 Suggested prompts for agent
@@ -19836,7 +19967,6 @@ Syncing description from Agentforce Builder. This usually takes a few minutes.
 Syncing from {orgName}\u2026
 Syncing latest\u2026
 Syncing with {appName}
-Syncing your calendar
 Syncing\u2026
 Syrian Arab Republic
 System
@@ -19909,6 +20039,7 @@ Take meeting notes
 Take meeting notes?
 Take notes in canvas
 Take notes with AI
+Take over anytime. Singer picks up where you left off.
 Take over editing
 Take the work out of work with Slackbot
 Take these steps to restore access for the users who weren\u2019t migrated.
@@ -19919,6 +20050,8 @@ Taking control\u2026
 Taking it all in\u2026
 Taking you there in {countdown}\u2026
 Taking you to the Sales Tracker now\u2026
+Talk
+Talk isn\u2019t available in this workspace yet. You can still type a question.
 Talk it out in a huddle
 Talk it out in real time on a huddle, with screen-sharing, expressive reactions and a message thread that automatically saves for later reference.
 Talk one-on-one
@@ -19944,6 +20077,7 @@ Task enqueued! You will receive a response soon.
 Task lists include Assignee and Due Date fields. You can use existing people and date fields, or add new ones. You can change a list back to a standard list at any time.
 Task marked complete.
 Task names can\u2019t support special characters (i.e. !#$%&).
+Task not sent. Your files are saved here.
 Task paused
 Task restarted
 Task saved successfully.
@@ -20528,6 +20662,7 @@ There was a problem saving this record to Salesforce
 There was a problem saving this record to Salesforce.
 There was a problem saving to Salesforce.
 There was a problem searching Salesforce. Try again in a few minutes, or contact your administrator.
+There was a problem searching for sales records. Give it another try.
 There was a problem setting up customer management. Please contact your admin for help.
 There was a problem setting up your email connection. Give it a moment and try again.
 There was a problem sharing this record
@@ -20652,7 +20787,7 @@ They\u2019ll receive a notification to join.
 They\u2019ll still be able to rejoin, or be added to the conversation.
 They\u2019re from an external organization
 They\u2019re not on Slack yet, but you can still message them (they\u2019ll be able to see all direct messages sent to them once they\u2019ve joined).
-They\u2019re signed out the next time they use Slack in that browser. They\u2019ll need to sign in again, and their new session will be tied to their device.
+They\u2019re signed out the next time they use Slack in that browser, then sign in again on a device bound session.
 Things that are not you
 Things you visit will show up here
 Think of me as your personal AI assistant. I\u2019m all set up with context from your docs and channels and ready to jump in with you.
@@ -20698,6 +20833,7 @@ This action can\u2019t be undone.
 This action can\u2019t be undone. All of your saved items will be permanently removed.
 This action cannot be undone. Previous requests that were resolved by this rule will not be changed, but this rule will no longer be executed or available in the future.
 This action is blocked by your connector preferences.
+This action isn\u2019t available
 This address will be permanently deleted
 This adds it as a button to the message composer
 This adds seven fields to this list to track agent work: Work status, Agent, Agent status, Needs from, Waiting on, Summary and Link. They stay on the list if you stop tracking.
@@ -20784,6 +20920,7 @@ This channel doesn\u2019t allow guests
 This channel doesn\u2019t have any Channel Managers yet.
 This channel has already been shared with the maximum number of organizations. You may want to reach out to the person who sent you this link for help.
 This channel has been disconnected. You\u2019ll need to ask someone at {teamName} to invite you again.
+This channel has more people than a huddle can hold ({max}).
 This channel has reached capacity, so you can\u2019t add more people right now.
 This channel is a perfect fit
 This channel is inactive. Archive it for everyone \u2014 the contents will still be available in search, and you can always unarchive it in the future.
@@ -20878,6 +21015,7 @@ This field can\u2019t be updated
 This field can\u2019t contain spaces
 This field can\u2019t have less than {minlength, plural, =1{# value}other{# values}}
 This field can\u2019t have more than {maxlength, plural, =1{# value}other{# values}}
+This field cannot be edited
 This field contains invalid characters
 This field dynamically populates additional fields based on your choice, so variables are not available.
 This field has formatting that can\u2019t be saved here. Edit it in Salesforce instead.
@@ -21086,6 +21224,7 @@ This message will appear within the Slackbot notification that each member will 
 This method confirms you own the domain but doesn\u2019t provide email signing.
 This metric has already been configured. Please choose another metric.
 This metric\u2019s taking a little longer to load. Try coming back later.
+This might be a moment \u2014 feel free to continue using Slack and we\u2019ll bring you back here.
 This might take a few minutes. Refresh the page in a bit to view any updates.
 This might take a minute
 This might take a minute, but an organized list is worth it.
@@ -21394,6 +21533,7 @@ Thread:
 Thread: {thread_title}
 Threads
 Threads and attachments require JSON download
+Threads couldn\u2019t be loaded for this channel.
 Threads in archived items are view only.
 Threads older than {days} days
 Threads only
@@ -21409,7 +21549,6 @@ Tidy Up
 Tidy up your sidebar
 Tier
 Tier thresholds
-Ties each Chrome and Edge browser session to the device it was started on, so a stolen session cookie can\u2019t be used on another device. The Slack desktop and mobile apps, and other browsers, aren\u2019t affected.
 Time
 Time Magazine logo
 Time Unit
@@ -21643,6 +21782,7 @@ Too many external guests. The maximum is {max}.
 Too many items match your filters. Add more filters to narrow your results.
 Too many messages selected
 Too many participants. The maximum is {max} invitees.
+Too many people to invite to one huddle. Remove some and try again.
 Too many previews were loaded at the same time. Give it a minute, and try again.
 Too many requests. Please try again in a moment.
 Too many results. Please add more keywords.
@@ -21845,6 +21985,7 @@ Try \u201C
 Try a Different Email
 Try a Different Image
 Try a clear, team-based name so others can find it.
+Try a clear, team-based name so others can find it. Names must be lowercase, without spaces or periods.
 Try a different Google account
 Try a different authentication status filter to see users.
 Try a different email
@@ -22031,6 +22172,7 @@ Type {skill} where the skill\u2019s name should appear.
 Type {trigger} to {insert}
 Type: {itemType}
 Type: {sessionType}
+Type: {type}
 TypeScript
 Types
 Typing\u2026
@@ -22424,6 +22566,7 @@ Upcoming
 Upcoming and Overdue
 Upcoming and overdue
 Upcoming and overdue, {count} task{count, plural, one {} other {s}}
+Upcoming meeting
 Upcoming reminders
 Upcoming: {date} at {time}
 Update
@@ -22838,6 +22981,7 @@ Variance or fluctuation in latency
 Vatican City
 Velocity
 Venezuela
+Venue \u2014 To be decided
 Verification
 Verification Required
 Verification code sent
@@ -22984,15 +23128,12 @@ View all in Salesforce
 View all in Slackbot history
 View all in To-dos
 View all media
-View all of {folder}
 View all people
-View all pins
 View all results
 View all results by doing a full search
 View all templates
 View all threads
 View all variables
-View all workflows
 View all workspaces
 View all workspaces (opens in a new tab)
 View all workspaces at {orgName}
@@ -23267,6 +23408,7 @@ Wait \u2018til you try it with more people. Get even more done together in a gro
 Wait \u2018til you try it with more people. Upgrade to a paid plan to get even more done together in group huddles \u2014 whether at your desk or on the go.
 Wait during scheduled meetings
 Wait for Salesforce org admin approval
+Wait for the reply to finish, then try again.
 Wait until the message editor is ready to quote a message.
 Waiting Room
 Waiting for Upload\u2026
@@ -23591,7 +23733,6 @@ Welcome your new teammate! Let them know what you\u2019re working on and share s
 Welcome your team
 Welcome {linkText}! Here are some tips for getting started with Slack:
 Welcome {name}!
-Welcome! Check out our Project brief\u2026
 Welcome! Get up to speed by checking out this canvas: 
 Welcome! Get up to speed by\u2026
 Welcome! Here are some tips for getting started with Slack:
@@ -23605,6 +23746,7 @@ Wellness Benefits
 West Virginia
 Western Sahara
 What I do\u2026
+What Singer can do
 What Slackbot has learned
 What Slackbot has learned here
 What accounts or opportunities should I focus on today?
@@ -23630,7 +23772,9 @@ What can {appName} do?
 What channels was {name} active in?
 What current and potential features would be most valuable to you if they were added to CRM in Slack?
 What decisions have been made?
+What did I miss in #proj-aurora?
 What did I miss in the last few minutes?
+What did I miss today?
 What did Slack AI do well? Select all that apply.
 What did the last speaker say?
 What did you like about this article?
@@ -23722,6 +23866,7 @@ What\u2019s on the playlist for today?
 What\u2019s on your mind?
 What\u2019s on your to-do list?
 What\u2019s private stays private
+What\u2019s still undecided?
 What\u2019s the difference?
 What\u2019s the vibe?
 What\u2019s this channel about?
@@ -23848,7 +23993,6 @@ When\u2026
 Whenever they close the application
 Whenever you visit your Sales Tracker, call on Slackbot to jump into action, or to see what else you can do with Slack CRM.
 Whenever you\u2019re new to a channel or feeling behind, an AI summary is just a click away.
-Where
 Where are requests sent for approval
 Where are you assigning this role?
 Where can new channels live when MPDMs are changed to a private channel?
@@ -24404,6 +24548,7 @@ You can only include up to 100 messages. Select another option or create a priva
 You can only invite people from approved external organizations. Please try again.
 You can only save up to {maxTabCount} tabs. Delete one to save a new tab.
 You can only save up to {maxTabCount} views
+You can only schedule a huddle in a channel you\u2019re a member of.
 You can only upload up to 10 files
 You can only upload {count, plural, =1 {# file} other {# files}} at a time.
 You can post & reply to messages
@@ -24477,6 +24622,8 @@ You can\u2019t post in this channel, so remove your message and try again.
 You can\u2019t remove anyone from *{channel}* while it is archived.
 You can\u2019t remove someone from a direct message.
 You can\u2019t remove {member_name} from this channel, because they\u2019re from another organization.
+You can\u2019t schedule a huddle in this conversation.
+You can\u2019t schedule huddles in channels shared with other organizations yet.
 You can\u2019t see the canvas because you\u2019re not in the channel
 You can\u2019t see the thread because the huddle was started from a private conversation
 You can\u2019t see the thread because you\u2019re not in the channel
@@ -24615,7 +24762,6 @@ You have left this huddle
 You have more steps to complete before we can generate the form.
 You have multiple errors to review.
 You have no archived items at this time.
-You have no more meetings today
 You have no tasks.
 You have not created any sidekicks yet.
 You have reached the maximum of {max_delegates} delegates.
@@ -24792,6 +24938,7 @@ You\u2019ll always have access to the latest here, and in Salesforce.
 You\u2019ll always see mentions, reactions, and thread replies.
 You\u2019ll be able to add another group after you\u2019re done with the current group
 You\u2019ll be able to join as soon as one starts.
+You\u2019ll be asked before {agent} joins your DMs.
 You\u2019ll be asked to provide inputs for any variables in your instructions.
 You\u2019ll be compensated for your time.
 You\u2019ll be directed to browser to authenticate
@@ -24889,6 +25036,7 @@ You\u2019re all caught up. Nice work!
 You\u2019re all set \u{1F389}
 You\u2019re all set to start working with teams at other companies in channels. Want to do this later? Just go to Slack Connect in your sidebar to get started.
 You\u2019re all set to track tasks. Your list now has fields for Assignee, Due Date, and completion.
+You\u2019re all set. Start with something small.
 You\u2019re almost done \u2014 a less cluttered sidebar awaits.
 You\u2019re almost done\u2026
 You\u2019re almost ready
@@ -24920,6 +25068,7 @@ You\u2019re human! AI can keep you informed with daily channel recaps, and save 
 You\u2019re in
 You\u2019re in a huddle. Starting a voice call with Slackbot will make you leave it.
 You\u2019re in control
+You\u2019re in control. Singer\u2019s waiting.
 You\u2019re in focus mode
 You\u2019re in more than 500 channels! Let\u2019s remove some channels from your sidebar that have been collecting dust.
 You\u2019re in the huddle
@@ -25107,6 +25256,7 @@ Your Slack onboarding checklist
 Your Slack persona
 Your Slack personality
 Your Slack workspace know it all
+Your Slack. A little closer.
 Your Slackbot history lives here
 Your Slackbot preview ended.
 Your Slackbot preview has ended.
@@ -25115,6 +25265,7 @@ Your TIN ID should have 10 digits.
 Your TIN should have maximum 10 characters: 7 or 8 numbers, a dash, and then one more number or the letter K.
 Your TIN/NPWP should have 15 digits separated by dots and a dash in the following format: XX.XXX.XXX.X-XXX.XXX
 Your TRN should have 15 digits.
+Your Talk shortcut is off. You can change it in Settings.
 Your Tax ID can\u2019t contain special characters.
 Your UBN should have 8 digits.
 Your VAT Account Number should have 15 digits.
@@ -25217,6 +25368,7 @@ Your contact info was shared
 Your contacts list is ready to go.
 Your conversation will appear here.
 Your conversation with Slackbot moves to a private channel where invited people can see the full history and participate.
+Your conversation with {agentName} moves to a private code channel where invited people can see the full history and participate.
 Your conversations
 Your conversations with Slackbot will appear here.
 Your coworker isn\u2019t on Slack yet, but you can still message them (they\u2019ll reply by email).
@@ -25330,6 +25482,7 @@ Your organization can\u2019t limit where apps can be used. Choose All channels a
 Your organization currently blocks Feedback due to special preferences for HIPAA at your org
 Your organization currently blocks Feedback due to special preferences for Machine Learning and HIPAA at your org
 Your organization currently blocks Feedback due to special preferences for Machine Learning at your org
+Your organization doesn\u2019t allow everyone in this channel to join the same huddle.
 Your organization doesn\u2019t allow some of these people to meet together. Remove someone and try again.
 Your organization doesn\u2019t have access to add skills from share links yet.
 Your organization has been updated
@@ -25461,6 +25614,10 @@ Your workflow templates
 Your workflow will present people with a form that asks them to enter information for all the variables in your template.
 Your workflows have moved to this channel\u2019s Workflows tab.
 Your workflows will soon be unpublished
+Your working hours overlap {start}\u2013{end}. Best time to reach them: on {date} at {time}
+Your working hours overlap {start}\u2013{end}. Best time to reach them: today at {time}
+Your working hours overlap {start}\u2013{end}. Best time to reach them: tomorrow at {time}
+Your working hours overlap {start}\u2013{end}. They\u2019re working now.
 Your workspace
 Your workspace URL can only contain lowercase letters, numbers and dashes.
 Your workspace URL can only contain lowercase letters, numbers and dashes. It must contain at least one letter. It may not start or end with a dash.
@@ -28350,7 +28507,6 @@ has unread messages, starred, has a draft message
 has unreads
 has unsent messages
 has {countNotifications, plural, =1 {# notification} other {# notifications}}
-has {countNotifications, plural, =1 {# notification} other {# notifications}} notifications, muted, has a draft message
 has {countNotifications, plural, =1 {# notification} other {# notifications}}, has a draft message
 has {countNotifications, plural, =1 {# notification} other {# notifications}}, muted
 has {countNotifications, plural, =1 {# notification} other {# notifications}}, muted, has a draft message
@@ -28856,6 +29012,7 @@ lake
 lamb
 lambchop
 lamp
+lamps.example
 landing
 landscape
 lantern
@@ -32093,6 +32250,7 @@ zzz
 {agentName} will only reply when @-mentioned
 {agentName} will reply automatically
 {agent_name} isn\u2019t installed. It\u2019s required to perform Slack actions.
+{agent} can now join your DMs when you mention it.
 {agent} is no longer available
 {ago} \xb7 {count, plural, =1 {# member} other {# members}}
 {alt_text} (AI generated)
@@ -32230,6 +32388,7 @@ zzz
 {channelName} (private)
 {channelName} ({context})
 {channelName} canvas
+{channelName} huddle
 {channelName} is connected to {numOrgs} organizations
 {channelName} is in {numTeams} workspaces
 {channelName} isn\u2019t available because it was archived or deleted
@@ -32498,9 +32657,10 @@ zzz
 {count, plural, one {# earlier commit isn\u2019t included because it comes before a merge commit.} other {# earlier commits aren\u2019t included because they come before a merge commit.}}
 {count, plural, one {# earlier commit isn\u2019t included because it comes before a merge from {base}.} other {# earlier commits aren\u2019t included because they come before a merge from {base}.}}
 {count, plural, one {# file changed} other {# files changed}}
+{count, plural, one {# file} other {# files}}
 {count, plural, one {# group} other {# groups}}
 {count, plural, one {# meeting left} other {# meetings left}} \xb7 {duration} booked
-{count, plural, one {# member has} other {# members have}} older Chrome or Edge browser sessions. Any of those sessions that aren\u2019t device bound will be signed out.
+{count, plural, one {# member has} other {# members have}} Chrome or Edge sessions from before {startDate, date, long} at {startTime}. Any that aren\u2019t device bound will be signed out.
 {count, plural, one {# member} other {# members}}
 {count, plural, one {# message needs} other {# messages need}} your reply
 {count, plural, one {# min} other {# min}}
@@ -32615,7 +32775,6 @@ zzz
 {count} more
 {count} more in Tasks
 {count} more {count, plural, =1 {channel} other {channels}}:
-{count} more, view all media
 {count} most recent
 {count} most recent (Default)
 {count} new
@@ -33009,10 +33168,9 @@ zzz
 {minimumIconWidth} x {minimumIconHeight} pixels minimum
 {mins, plural, =1 {# minute} other {# minutes}}
 {minutes, plural, =1 {{minutes} minute} other {{minutes} minutes}}
-{minutes} Min
+{minutes, plural, one {# minute} other {# minutes}}
 {minutes} min
 {minutes} mins ago
-{minutes} minutes
 {minutes} minutes ago
 {minutes} {minutes, plural, =1 {minute} other {minutes}}, {seconds} {seconds, plural, =1 {second} other {seconds}}
 {minutes}m
@@ -33035,6 +33193,7 @@ zzz
 {names} and {remaining, plural, one {# other} other {# others}} were invited to a {provider}.
 {names} and {remaining, plural, one {# other} other {# others}} were invited.
 {name}
+{name} & {count, plural, one {# other} other {# others}}
 {name} (Deactivated)
 {name} (deactivated)
 {name} (deactivated, { memberCount, plural, =1 {# member} other {# members}})
@@ -33062,7 +33221,9 @@ zzz
 {name} account used for this connection
 {name} actions
 {name} and {count, plural, =1 {# other} other {# others}}
+{name} and {count, plural, one {# other} other {# others}} this week
 {name} and {otherName} reacted with {emoji}
+{name} and {otherName} this week
 {name} and {otherReactionersCount, plural, =1 {# other} other {# others}} in {channelName} reacted with {reaction} and other reactions to: {message}
 {name} and {otherReactionersCount, plural, =1 {# other} other {# others}} in {channelName} reacted with {reaction} and other reactions to: {message} At {time}.
 {name} and {otherReactionersCount, plural, =1 {# other} other {# others}} in {channelName} reacted with {reaction} and other reactions to: {message} {date} at {time}.
@@ -33180,6 +33341,7 @@ zzz
 {name} pinned, moved to top
 {name} reacted with {emoji}
 {name} template features:
+{name} this week
 {name} unpinned
 {name} was invited using Slack Connect.
 {name} will be automatically added to the selected {isMultiChannelGuest, plural, =1 {channels} other {channel}} once they join.
@@ -33209,6 +33371,7 @@ zzz
 {name}, status: {status} ({context})
 {name}, view details
 {name}, {date} at {time}: {message}
+{name}, {otherName} and {count, plural, one {# other} other {# others}} this week
 {name}, {presence}
 {name}, {purpose}
 {name}, {purpose} (deactivated)
