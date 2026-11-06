@@ -168,6 +168,7 @@ ActivityListView
 ActivityLoading
 ActivityLogDetails
 ActivityLogPaginationBar
+ActivityLogRefreshButton
 ActivityLogTable
 ActivityMention
 ActivityMentionBadge
@@ -402,12 +403,14 @@ AdvancedSecurityOfferModal
 AgendaContent
 AgendaError
 AgendaEventItem
+AgendaEventListItem
 AgendaMarkTaskCompleteToast
 AgendaNavCount
 AgendaNavMeetingBubble
 AgendaNotAuthed
 AgendaPeekDrafts
 AgendaPeekMeetings
+AgendaPeekOpenInSplitView
 AgendaPeekTodos
 AgendaPeekView
 AgendaSections
@@ -445,8 +448,11 @@ AgentDmPeekTrigger
 AgentDmPeekView
 AgentDmSessionsIndicator
 AgentDmSessionsIndicatorBody
+AgentDmSessionsLocationFilter
 AgentDmSessionsSection
 AgentDmSessionsSectionRow
+AgentDmTasksButton
+AgentDmTasksPeek
 AgentDmTeamUsage
 AgentDmWelcomeHeader
 AgentElement
@@ -561,6 +567,7 @@ AgentSunroofMenu
 AgentSunroofMenuItem
 AgentSunroofMenuItemActionMenu
 AgentSunroofReorderableMenuItem
+AgentsWithAccessSection
 AgentTabContent
 AgentTaskItem
 AgentTaskMoreActionsMenu
@@ -582,6 +589,7 @@ AgentTrayToolbar
 AgentUninstallModal
 AgentViewTabPeek
 AgentViewTabView
+AgentWithAccessRow
 AgentWorkingNugget
 AgentWorkspacesAlert
 AggregateMediaPlaybackInProgress
@@ -1018,6 +1026,7 @@ AttachmentSkeletonCompact
 AttachmentSkeletonFileExpanded
 AttachmentSkeletonFull
 AttachmentSkeletonMediaEmbed
+AttachmentSkeletonMetaText
 AttachmentSkeletonQuote
 AttachmentSkeletonTextEmbed
 AttachmentSkeletonTypeIcon
@@ -1395,6 +1404,7 @@ BaseLegacyDisconnectedChannelWarning
 BaseLink
 BaseList
 BaseListArchivedRecordOverflowMenuTrigger
+BaseListDescriptionField
 BaseListDetail
 BaseListEditAvatar
 BaseListEditPostfix
@@ -1408,6 +1418,7 @@ BaseListRecordDetailCopyLinkButton
 BaseListRecordDetailUnarchiveButton
 BaseListRecordOverflowMenuTrigger
 BaseListRecordStaticEntity
+BaseListsAboutModal
 BaseListThreadZeroState
 BaseLoadingModal
 BaseLogActivityView
@@ -1617,6 +1628,7 @@ BaseUnfurledJoinersForeword
 BaseUnfurledJoinersViewMembersCard
 BaseUpgradeButton
 BaseUpgradeButtonInner
+BaseUsageCoachmarkUpsell
 BaseUserGroupView
 BaseVisuallyHiddenBroadcastThreadRootMessage
 BaseVisuallyHiddenCounts
@@ -2366,6 +2378,7 @@ ChartOverview
 ChartSection
 ChartSectionContainer
 ChartSectionEmpty
+ChartSectionExploreButton
 ChartSectionFilterDropdown
 ChartSectionIntervalPicker
 ChartTimeseries
@@ -2491,6 +2504,7 @@ CodeChannelAgentInput
 CodeChannelCardBody
 CodeChannelCardFooter
 CodeChannelCardHeader
+CodeChannelCardPrTags
 CodeChannelConversationListItem
 CodeChannelConversationListItemInner
 CodeChannelCreatorFilter
@@ -2720,6 +2734,7 @@ ConnectedChannel
 ConnectedChannels
 ConnectedChannelTabsSolutionsGallerySuccessCoachmark
 ConnectedCheckoutRescueBanner
+ConnectedCodeChannelsShowMoreRow
 ConnectedCreateCanvasTreatment
 ConnectedDisplayRuleShowMoreRow
 ConnectedDocumentRow
@@ -2927,13 +2942,10 @@ ConversationListEntity
 ConversationListItem
 ConversationResultRow
 ConversationRow
-ConversationsFilterRow
 ConversationsPeekUnreadsToggle
 ConversationsSelectElementInner
 ConversationsSkeleton
 ConversationsTabActions
-ConversationsTypePill
-ConversationsTypeRow
 ConvertChannelToLimitedModal
 ConvertChannelToLimitedModalContents
 ConvertChannelToPrivateModal
@@ -3156,7 +3168,6 @@ DataTableFullscreenVirtualized
 DataTableHeader
 DataTableHeaderAction
 DataTableHeaderCount
-DataTableHeaderEditColumnsAction
 DataTableHeaderEditColumnsModal
 DataTableHeaderFilter
 DataTableHeaderMultiFilter
@@ -3207,8 +3218,10 @@ DayPickerSection
 DaysOfWeek
 DbscEnforceAllSessionsModal
 DbscEnforcementSetting
+DeactivatedNotice
 DeactivateMemberModal
 DeactivateMemberModalError
+DeactivateSkillModal
 DeadEndLinkDialog
 DealWonFlowHeader
 DealWonFlowPage
@@ -3423,6 +3436,7 @@ DocumentEntry
 DocumentLink
 DocumentMatchRow
 DocumentOverlaysViewInner
+DocumentSectionMoveToMenu
 DocumentThumbnail
 DocumentTitle
 DocxPopout
@@ -3801,6 +3815,7 @@ EmbeddedSlackListEmbed
 EmbeddedSlackListEmbedHeader
 EmbeddedSlackListStatic
 EmbeddedSlidesUnfurl
+EmbeddedSurface
 EmbeddedTableauEntity
 EmbeddedUiPlaceholderImpl
 EmbeddedVideoPlaceholder
@@ -4171,6 +4186,7 @@ FileCardFolderItems
 FileCardPreview
 FileCardSkeleton
 FileChangeIcon
+FileChannelRowMenu
 FileCitation
 FileCitationHoverCard
 FileCollectionHeaderRow
@@ -4895,6 +4911,7 @@ GoToTooltip
 GovSlackIconOverlay
 GptLiveApprovalCard
 GptLiveAuthCard
+GptLiveBlockKitCard
 GptLiveButton
 GptLiveButtonInner
 GptLiveCall
@@ -5396,6 +5413,7 @@ IaDetailsPopoverMembers
 IaDetailsPopoverMpimFullConvertContent
 IAMemberProfileStatus
 IaPins
+IaPinsPopover
 Icon
 IconButtonBase
 IconCompletePane
@@ -5858,7 +5876,6 @@ ListCountsCell
 ListCreateRecordView
 ListDeletedToast
 ListDescription
-ListDescriptionField
 ListDetailHeaderComponent
 ListDiff
 ListDueDateFilterTab
@@ -5870,7 +5887,6 @@ ListEntityActionsBar
 listEntityButton
 ListEntityButton
 ListEntityMoreActionsMenu
-ListExplorerFreemiumHero
 ListField
 ListFieldRichTextRenderer
 ListFieldUpdate
@@ -5931,7 +5947,6 @@ ListRestoredToast
 ListRowActions
 ListRowOnBadge
 ListRowSwitchTooltip
-ListsAboutModal
 ListsAccessIndicator
 ListsAddConditionMenu
 ListsArchiveCompletedItemsNudge
@@ -6389,6 +6404,7 @@ MeetingDetailsCta
 MeetingDetailsCtaJoin
 MeetingDetailsCtaRsvp
 MeetingDetailsCtaSlackbot
+MeetingDetailsCtaSlackbotPostMeeting
 MeetingDetailsCtaThreads
 MeetingDetailsFilesSection
 MeetingDetailsFlexpane
@@ -6960,6 +6976,7 @@ NeedsReviewCancelAllModal
 NeedsReviewEmptyState
 NeedsReviewErrorAlert
 NeedsReviewModal
+NeedsReviewNoMatchesState
 NeedsReviewPage
 NestedBlocks
 NestedBranchesAwarenessBanner
@@ -7417,6 +7434,7 @@ PersonCard
 PersonName
 PhotoLayout
 PhotoUploadButton
+PickerOption
 Pile
 Pill
 PillContents
@@ -7515,6 +7533,7 @@ PollMessageFile
 PolymorphicTriggerFilterField
 Popover
 PopoverRowActions
+PopoverTriggerImpl
 PopoverTriggerWithKeyboardFocus
 PopoverWithWindow
 PopoverWrapper
@@ -7632,6 +7651,7 @@ PrivacyModeRevealContext
 PrivacyModeRevealProvider
 PrivacyModeStatusLine
 PrivacyPolicyStatement
+PrivacyRevealScope
 PrivateChannelMembershipLimitEditModal
 PrivateConversation
 PrivateMessageForwardingSpeedbump
@@ -7853,7 +7873,9 @@ ReactionFirstOnlyToggle
 ReactionGutter
 ReactionHeader
 ReactionItem
+ReactionPicker
 ReactionPickerDisplay
+ReactionPill
 ReactionsEmojiPicker
 ReactionSender
 ReactionsList
@@ -8068,6 +8090,7 @@ RemoteCaretRangesViewInner
 RemotePersonFrame
 RemountOnLocaleChange
 RemoveAccessModal
+RemoveAgentAccessModal
 RemoveAgentFromWorkspacesModal
 RemoveAutoStarterMemberModal
 RemoveButton
@@ -8352,6 +8375,7 @@ renderIconAndNameMaybe
 renderIconMaybe
 renderIconOrBadge
 renderIconWrapper
+renderIdentityOverrideOptional
 renderIgnoredInvitation
 renderIgnoreInviteView
 renderImage
@@ -8501,6 +8525,7 @@ renderRecaptchaLink
 renderRecipientSection
 renderRecordDeltaValue
 renderRedesignedMetadataChangeText
+renderReferenceLink
 renderRemindMenu
 renderRequestedBy
 renderRequestItem
@@ -8528,6 +8553,7 @@ renderSearchBar
 renderSearchSelectOption
 renderSecondaryButton
 renderSection
+renderSectionIcon
 renderSelectedOption
 renderSelectedPage
 renderSelectedTemplate
@@ -8590,7 +8616,6 @@ renderTabbedContent
 renderTabContents
 renderTable
 renderTabPage
-renderTag
 renderTask
 renderTeamIcon
 renderTeamOption
@@ -8804,8 +8829,10 @@ RimetoProfileSharedWorkspacesChannelsField
 RimetoProfileTrailheadSection
 RingedProfilePicture
 RoleChangeRefreshDialog
+RoleDescriptionCell
 RoleMemberActionMenuButton
 RoleMgmt
+RoleNameCell
 RolesActionMenu
 RoleSelection
 RolesMemberActionMenu
@@ -9768,6 +9795,8 @@ SkillCategoryPickerModal
 SkillCategorySection
 SkillCommandAutocompleteMenu
 SkillCompleterInputContainer
+SkillDeactivatedNotice
+SkillDeactivatedTag
 SkillDetailsViewInner
 SkillEditDraftProvider
 SkillEditForm
@@ -10880,6 +10909,7 @@ ThreadBannerButtonsGeneric
 ThreadBannerContainerGeneric
 ThreadBroadcastFooter
 ThreadBroadcastPreamble
+ThreadCardTitle
 ThreadCompactGutterGeneric
 ThreadConnector
 ThreadContextMenu
@@ -10973,6 +11003,7 @@ TitleCardSegment
 TitleSuffix
 TitleWord
 Toast
+ToastAction
 ToastConfigContext
 ToastConfigProvider
 ToastContainer
@@ -11107,6 +11138,7 @@ TrackTimeSpent
 TractorChannelCoachmark
 TractorChannelOfferModal
 TractorChannelSetupCard
+TractorChannelSetupCelebration
 TractorChannelSetupTourAddResourcesCoachmark
 TractorSendMessageCoachmark
 TranscriptFeedbackModal
@@ -11351,7 +11383,6 @@ UrlHoverCard
 UrlHoverCardTrigger
 UrlInputElement
 UsageCallouts
-UsageCoachmarkUpsell
 UsageStatCard
 UsageStatCards
 UsageStatIllustration
@@ -11424,6 +11455,7 @@ useDisplayCelebrationStatusToast
 useDisplayRulesContextMenu
 useDisplayWorkflowSaveFailToast
 useDocumentContextMenuTemplate
+useDocumentMoveToSectionMenuItems
 useDownloadMobileAppTask
 useDraftEditMode
 useDuplicateWorkflowMenuItemTemplate
@@ -11629,6 +11661,7 @@ useShowNoiseSuppressionMenuItem
 useSidebarSearchConversationItem
 useSidePanel
 useSidePanelData
+useSkillDeactivationActions
 useSkillEditLeaveGuard
 useSkillExternalSharing
 useSkillMarkdownUpload
@@ -11665,6 +11698,7 @@ UseTemplateButton
 useTemplateEditing
 useTemplateSettingsModal
 useTestSpeakerMenuItem
+useThreadRootPreview
 useTimeRangeFilter
 useTodaySettingsMenu
 useTriggerDisplayContent

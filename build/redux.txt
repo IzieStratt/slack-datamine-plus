@@ -152,6 +152,7 @@ action:appendSearchResultUsers
 action:appendThreads
 action:appendThreadToManuallyMarkedUnread
 action:appendToViewList
+action:applyAgentSessionsFetch
 action:applyEditAction
 action:applyServerCounts
 action:archiveRecord
@@ -655,6 +656,7 @@ action:journeyReceived
 action:journeyReplaced
 action:jumpToReply
 action:jumpToTimestampInternal
+action:keepAgentSessionChangesInFlight
 action:kickOffDndTimerCircular
 action:lastStarredTimestamp
 action:latchCompanionLaunchContext
@@ -739,6 +741,7 @@ action:moveWorkflowStepSuccess
 action:navigateBackActionLibraryNavigation
 action:nextToastInternal
 action:noopAction
+action:noteAgentSessionRootChangedInFlight
 action:onLaunchModalMegaphoneDataLoadedCircular
 action:openAboutChannelModalCircular
 action:openAddSolutionToChannelModalCircular
@@ -1181,6 +1184,7 @@ action:resetWorkflowEditorState
 action:resetWorkflowsStore
 action:resolveExternalGuestMediaAccess
 action:restart
+action:restoreAgentSession
 action:restoreDraftQuote
 action:restoreInstalledSkillSet
 action:restoreItems
@@ -1507,6 +1511,7 @@ action:setCodeChannelPullRequestCommentsLoading
 action:setCodeChannelPullRequestDescription
 action:setCodeChannelPullRequestError
 action:setCodeChannelPullRequestLoading
+action:setCodeChannelPullRequestReactions
 action:setCodeChannelPullRequestThreadResolved
 action:setCodeChannelReopenedAt
 action:setCollections
@@ -3312,7 +3317,6 @@ action:upsertFetchedWorkflowAppsList
 action:upsertField
 action:upsertFileDownloadAllowed
 action:upsertFilePreviewRTMEvent
-action:upsertFiles
 action:upsertFileShares
 action:upsertFileViewerCount
 action:upsertFunction
@@ -3335,7 +3339,6 @@ action:upsertListViewIdSearchResultsMap
 action:upsertListViewSearchResults
 action:upsertMaybeUnknownSavedItems
 action:upsertMcpServer
-action:upsertMedia
 action:upsertMeeting
 action:upsertMeetingInList
 action:upsertMeetings
@@ -4003,7 +4006,9 @@ thunk:addWorkflowBookmarkForChannel
 thunk:addWorkflowCollaborators
 thunk:addWorkflowStep
 thunk:adminAppResolutionFetcher
+thunk:adminDeactivateSkill
 thunk:adminMenuSamlSsoPaywallNonPurchasersMaybeLogExposure
+thunk:adminReactivateSkill
 thunk:advancedSecurityActivityBannerMaybeLogExposure
 thunk:advancedSecurityLaunchModalMaybeLogExposure
 thunk:advanceTractorChannelSimplificationSetupTourState
@@ -4240,6 +4245,7 @@ thunk:clogBrowserPagePrev
 thunk:clogBrowserQueryExecuted
 thunk:clogBrowserQueryRemoved
 thunk:clogBrowserSort
+thunk:clogBrowseSearchOpen
 thunk:clogCalendarInstallClick
 thunk:clogCalendarSync
 thunk:clogCalendarSyncExp
@@ -5889,6 +5895,7 @@ thunk:maybeNavigateToPaidBenefits
 thunk:maybeNavigateToPeopleBrowser
 thunk:maybeNavigateToResurrectedUserWelcome
 thunk:maybeNavigateToSolutionTemplatesBrowser
+thunk:maybeNoteAgentSessionRootChanged
 thunk:maybeNotifySubscribers
 thunk:maybeOpenActivityFlexpane
 thunk:maybeOpenActivityPage
@@ -6660,6 +6667,7 @@ thunk:openRecordInSplitView
 thunk:openRecordTeamModal
 thunk:openRemoteFilePicker
 thunk:openRemoveAccessModal
+thunk:openRemoveAgentAccessModal
 thunk:openRemoveAutoStarterMember
 thunk:openRemoveConfigsModal
 thunk:openRemovedFromWorkspaceRefreshDialog
@@ -6996,6 +7004,7 @@ thunk:recordTrialProBannerInteraction
 thunk:recordUserInteraction
 thunk:recordVisitsByApi
 thunk:recordWssRailVisibility
+thunk:recountChannelUnreads
 thunk:recoverEmptyCalendarWindow
 thunk:recoverSalesforceFieldNamesForMessage
 thunk:redactAiResponse
@@ -7342,6 +7351,7 @@ thunk:searchRecords
 thunk:searchRecordsForFullPageSearch
 thunk:searchRecordTypes
 thunk:searchShortcut
+thunk:searchSuggestedRecipients
 thunk:searchSummaryFeedbackDialog
 thunk:searchTeamMembers
 thunk:searchTopResults
@@ -7409,6 +7419,7 @@ thunk:setAccountTypes
 thunk:setAccountTypesForUser
 thunk:setActiveCanvasThread
 thunk:setActiveTab
+thunk:setActiveTabClaimingVisit
 thunk:setAdvancedFilterStateAndSendRequest
 thunk:setAiAgentsPromoDismissedPref
 thunk:setAllCollectionsCollapsedAndSave
@@ -7566,6 +7577,7 @@ thunk:setPocketGuideV3AnimationSeen
 thunk:setPresenceActive
 thunk:setPresenceAway
 thunk:setPreviewedChannel
+thunk:setPrivacyModeActiveEverywhere
 thunk:setProjectThreadIfUnchanged
 thunk:setRecentsByApi
 thunk:setRecordChannelLimitedAccess
@@ -7914,6 +7926,7 @@ thunk:syncFloatingSlackbotComposer
 thunk:synchronizeArchiveStateForThreadId
 thunk:syncMemberPerms
 thunk:syncPlaceholderWithUploads
+thunk:syncPrivacyModeOnConnect
 thunk:syncReorderBookmarkForChannel
 thunk:syncSlackbotZeroStateComposer
 thunk:syncThreadRootLastRead
@@ -7934,6 +7947,7 @@ thunk:toggleActivityRemindersInActivity
 thunk:toggleActivityViews
 thunk:toggleAudioOnlyMode
 thunk:toggleCaretBrowsing
+thunk:toggleCodeChannelPullRequestReaction
 thunk:toggleCollectionCollapsedAndSave
 thunk:toggleDailyDigestForChannel
 thunk:toggleDarkModeShortcut

@@ -242,6 +242,8 @@ ai.alpha.slackbot.skillSets.listEnabled
 ai.alpha.slackbot.skillSets.removeFromLibrary
 ai.alpha.slackbot.skills.activate
 ai.alpha.slackbot.skills.addToLibrary
+ai.alpha.slackbot.skills.adminDeactivate
+ai.alpha.slackbot.skills.adminReactivate
 ai.alpha.slackbot.skills.browse
 ai.alpha.slackbot.skills.canGrantAdminEditAccess
 ai.alpha.slackbot.skills.createShareLink
@@ -249,6 +251,7 @@ ai.alpha.slackbot.skills.deactivate
 ai.alpha.slackbot.skills.getAggregateMetrics
 ai.alpha.slackbot.skills.getBuiltinInfo
 ai.alpha.slackbot.skills.getBuiltinUsageCounts
+ai.alpha.slackbot.skills.getDeactivationReason
 ai.alpha.slackbot.skills.grantAdminEditAccess
 ai.alpha.slackbot.skills.listDiscoverable
 ai.alpha.slackbot.skills.listEnabled
@@ -313,8 +316,11 @@ aiApps.list
 aiApps.setPhoto
 analytics.clogData
 api.benchmark
+api.call
+api.callExpedited
 api.features
 api.getFlannelHttpUrl
+api.q
 api.statusSite
 api.test
 app.app_id
@@ -336,6 +342,8 @@ apps.auth.external.start
 apps.auth.external.userAuths.get
 apps.certified.install
 apps.certified.list
+apps.channelGrants.list
+apps.channelGrants.remove
 apps.context.changed
 apps.datasources.external.add
 apps.datasources.external.delete
