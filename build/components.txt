@@ -430,13 +430,17 @@ AgentChannelStatusDot
 AgentCheckingDetailsLoader
 AgentConversationSectionHeader
 AgentConvertThreadButton
+AgentCopyThreadLinkButton
 AgentCountButton
 AgentCreatedBy
 AgentDescription
 AgentDmDetailsAbout
+AgentDmDetailsActiveChannels
 AgentDmDetailsActivity
 AgentDmDetailsContent
 AgentDmDetailsHeader
+AgentDmDetailsProfile
+AgentDmDetailsProfileActions
 AgentDmDetailsSections
 AgentDmDetailsSettings
 AgentDmForeword
@@ -798,6 +802,7 @@ AppDisclaimer
 AppErrorActivityMessage
 AppExternalHuddleGuestBanner
 AppExternalTeamBanner
+AppFilterChipButton
 AppFunctions
 AppHelpButton
 AppHistoryTabView
@@ -1461,6 +1466,7 @@ BaseNewTeamLaunchpadSidebarSetupSpaceHeader
 BaseNotConnectedSection
 BaseOnboardingTasksSidebarMenuLink
 BaseOnedriveErrorModals
+BasePasskeyPromoBanner
 BasePerformanceMonitor
 BasePinnedItem
 BasePinnedItemFileComment
@@ -1557,7 +1563,6 @@ BaseSearchSummaryQuery
 BaseSectionHeadingConfirmationModal
 BaseSegmentPreview
 BaseSelectField
-BaseSelectSalesforceOrg
 BaseSelectUserGroupsTable
 BaseSharedChannelNoteScreen
 BaseSharedChannelOrgList
@@ -1864,6 +1869,7 @@ BulkWorkflowApprovalFailedToast
 BulkWorkspaceSelect
 BulletItem
 BulletRow
+BusinessPlusAdminEntryPointBanner
 BusinessPlusEntryPointBanner
 BusinessPlusEntryPointBannerContainer
 BusinessPlusOfferModal
@@ -2942,10 +2948,13 @@ ConversationListEntity
 ConversationListItem
 ConversationResultRow
 ConversationRow
+ConversationsFilterRow
 ConversationsPeekUnreadsToggle
 ConversationsSelectElementInner
 ConversationsSkeleton
 ConversationsTabActions
+ConversationsTypePill
+ConversationsTypeRow
 ConvertChannelToLimitedModal
 ConvertChannelToLimitedModalContents
 ConvertChannelToPrivateModal
@@ -2960,6 +2969,8 @@ ConvertLeadErrorAlert
 ConvertLeadModal
 ConvertLeadRecordBanner
 ConvertLeadRecordCard
+ConvertMpimToPrivateChannelModal
+ConvertMpimToPrivateChannelModalContents
 ConvertToLimitedModal
 ConvertToLimitedModalContents
 ConvertToPrivateModal
@@ -3168,6 +3179,7 @@ DataTableFullscreenVirtualized
 DataTableHeader
 DataTableHeaderAction
 DataTableHeaderCount
+DataTableHeaderEditColumnsAction
 DataTableHeaderEditColumnsModal
 DataTableHeaderFilter
 DataTableHeaderMultiFilter
@@ -3645,6 +3657,7 @@ EditorEmbeds
 EditorIdOverlayLinksImpl
 EditPersonElementForm
 EditProfileCropPane
+EditProfileExternalPhotoSection
 EditProfileFormPane
 EditProfileModal
 EditProfilePhotoDragOverlay
@@ -3682,6 +3695,7 @@ EditViewMenuComponent
 EditWorkspaceInfoModal
 EditWorkspacesModal
 EditWorkspacesSelect
+EducationBanner
 EducationBannerBase
 EducationCard
 EducationCoachmark
@@ -3869,6 +3883,7 @@ EmojiSkinTonePrefsSection
 EmojiSlotMachine
 EmojiSlotReel
 EmojiText
+EmojiToolbarButton
 EmojiTooltipEmoji
 EmptyChannelsState
 EmptyDisplayRuleSectionRowElement
@@ -3991,8 +4006,6 @@ ExpiredBespokeSidebarPeekContent
 ExplainErrorButton
 ExplainUpgradeOptionsButton
 ExplainUpgradeOptionsLink
-ExplorePaidFeaturesModalView
-ExplorePaidFeaturesSubpage
 Explorer
 ExplorerAccordion
 ExplorerActions
@@ -4046,6 +4059,7 @@ ExternalCitation
 ExternalConnectionsConnectableContactNotOnSlack
 ExternalConnectionsContactAdminLink
 ExternalConnectionsCta
+ExternalConnectionsHeaderActions
 ExternalConnectorDateFilter
 ExternalConnectorsButton
 ExternalDirectoryEmptyState
@@ -4063,6 +4077,7 @@ ExternalGuestIcon
 ExternalHuddleGuestCanvasState
 ExternalHuddleGuestQuipView
 ExternalHuddleIllustration
+ExternalHuddleMenuItem
 ExternalHuddlesGuestClient
 ExternalHuddlesGuestInviteButton
 ExternalHuddlesNewMeetingMenuNewTag
@@ -4082,6 +4097,7 @@ ExternalOrgsColumn
 ExternalOrgsTable
 ExternalPeopleManagementPermissionsAlert
 ExternalPeopleTeamSite
+ExternalPhotoConversation
 ExternalProviderConnectState
 ExternalProviderReadinessModal
 ExternalRecordLink
@@ -4543,6 +4559,7 @@ GalleryPhotoLayout
 GalleryScroller
 GalleryScrollerArrow
 GantryNavigationMenu
+GcalMeetingMenuItem
 GdriveCreateModal
 GeneralFolderDetailItem
 GeneralNetworkWarning
@@ -4611,6 +4628,7 @@ getCommenterNames
 getCommentSpeedBumpDescription
 getComposerIconElement
 getConfigurationWarning
+getConnectedTeamNames
 getConnectedTeamsCount
 getConnectionOptionData
 getConnectionStatusAction
@@ -5103,11 +5121,14 @@ HuddleBaseEvent
 HuddleBottomBar
 HuddleBottomBarContent
 HuddleBroadcastMsgText
+HuddleButtonMenu
 HuddleButtonMenuItem
 HuddleCameraButton
 HuddleCameraPreviewMenu
 HuddleCameraPreviewMenuItem
 HuddleCanvasFooter
+HuddleChannelHeaderButton
+HuddleChannelHeaderButtonWrapper
 HuddleChannelName
 HuddleChannelTooltip
 HuddleClientContainer
@@ -5770,7 +5791,7 @@ LayoutsItemsMenu
 LayoutsMenuItem
 LayoutsSubmenuComponent
 LayoutStyle
-LazyDevGeoSwitcher
+LazyDevDebugMenu
 LazyDevToolsPanel
 LazyDevToolsTriggerButton
 LazyMessageAttachmentMCPUI
@@ -5876,6 +5897,7 @@ ListCountsCell
 ListCreateRecordView
 ListDeletedToast
 ListDescription
+ListDescriptionField
 ListDetailHeaderComponent
 ListDiff
 ListDueDateFilterTab
@@ -5947,6 +5969,7 @@ ListRestoredToast
 ListRowActions
 ListRowOnBadge
 ListRowSwitchTooltip
+ListsAboutModal
 ListsAccessIndicator
 ListsAddConditionMenu
 ListsArchiveCompletedItemsNudge
@@ -6189,6 +6212,7 @@ maybeRenderCalendarSyncPicture
 maybeRenderChannelInviteManageInvitations
 maybeRenderCheckbox
 maybeRenderChildren
+maybeRenderCoachmarkAnchor
 maybeRenderConnectInviteCoachmark
 maybeRenderContactSharingPrefContent
 maybeRenderCustomizeMenu
@@ -6227,6 +6251,7 @@ maybeRenderSaveButton
 maybeRenderSCG
 maybeRenderSettingsButton
 maybeRenderShowMoreButton
+maybeRenderSingleChannelGuestAlert
 maybeRenderSlackConnectSection
 maybeRenderSubForm
 maybeRenderUpgradeState
@@ -6703,6 +6728,7 @@ MessageRetentionModalContents
 MessagesCountCallout
 MessageSender
 MessageSendErrorToast
+MessagesFilterButton
 MessagesList
 MessageSlugRichTextLabel
 MessageSnippet
@@ -7014,6 +7040,8 @@ NextMeetingCard
 NextMeetingTimeBadge
 NextSteps
 NFXSteps
+NlQuickMessageRow
+NlSenderAndConversation
 NoAudioWarning
 NoCameraWarning
 NoClickWrapper
@@ -7340,6 +7368,7 @@ ParticipantModal
 ParticipantsModalView
 PartyEmojiAnimation
 PasskeyErrorAlert
+PasskeyPromoBanner
 PasskeySignInButton
 PassThrough
 PasswordElement
@@ -7370,6 +7399,7 @@ PeekSectionBody
 PeekTrigger
 PeekTriggerContext
 PeekTriggerContextProvider
+PeekTriggerContextProviderIfAbsent
 PeekView
 PeerTile
 PeerTileList
@@ -7602,12 +7632,14 @@ PresencePromptDialog
 presentConversationBody
 PresentedItemsPane
 PreviewBlockText
+PreviewBody
 PreviewButton
 PreviewChannel
 PreviewContainer
 PreviewIcon
 PreviewMenu
 PreviewMessage
+PreviewMessageRow
 PreviewModeContext
 PreviewPane
 PreviewRemoveButton
@@ -7615,6 +7647,7 @@ PreviewSalesforceAccountMappingDialog
 PreviewScheduledTriggerSummary
 PreviewTabTitle
 PreviewText
+PreviewTitle
 PreviewTypeOption
 PreviewUserEntry
 PreviewWebhookTriggerSummary
@@ -7639,6 +7672,7 @@ PrioritiesSlide
 PriorityCard
 PriorityChannelsEmptyState
 PriorityErrorToast
+PriorityModalPeopleEntity
 PriorityScoringModal
 PriorityToast
 PriorityVipBadge
@@ -7781,6 +7815,7 @@ QuickFilterButton
 QuickFilterDateButton
 QuickFilterMenu
 QuickFilterRow
+QuickMessageThreadPreview
 QuickReactionsCustomizationSlots
 QuickReactionsCustomizationTooltip
 QuickReactionsLoadingState
@@ -8616,6 +8651,7 @@ renderTabbedContent
 renderTabContents
 renderTable
 renderTabPage
+renderTag
 renderTask
 renderTeamIcon
 renderTeamOption
@@ -9074,6 +9110,7 @@ SavedTabActions
 SaveForEveryone
 SaveNewStepErrorMessage
 SaveNewWorkflowErrorMessage
+saveOrUndo
 SaveToExternalProviderFailedToast
 SaveToExternalProviderFooter
 SaveToExternalProviderFooterConnector
@@ -9337,7 +9374,6 @@ SelectOptionColorMenuTrigger
 SelectOptionSkeleton
 SelectOptionsList
 SelectPopoverOptionsList
-SelectSalesforceOrgModal
 SelectSalesforceOrgStep
 SelectSchemaInput
 SelectSheetRowsPane
@@ -9686,8 +9722,6 @@ SidePanel
 SignedInWorkspaces
 SignInMethod
 SigninSettings
-SignInSuccess
-SignIntoSalesforceOrgDialog
 SilentSidebarTrigger
 SilentSidebarTriggerButton
 SimpleContactCard
@@ -9698,6 +9732,7 @@ SimpleRichTextPreview
 Singer
 SingerActivityControl
 SingerAgendaContent
+SingerAgendaJoinButton
 SingerAgendaMeeting
 SingerAgendaPanel
 SingerAgendaReminder
@@ -9894,6 +9929,8 @@ SlackbotAiAppDetail
 SlackbotAiAppDetailContent
 SlackbotAiAppDetailsViewInner
 SlackbotAiAppEnableSwitch
+SlackbotAiAppsTabView
+SlackbotAiAppsView
 SlackbotAiBackToHomeButton
 SlackbotAiBuiltinSkillDetailView
 SlackbotAiBuiltinSkillInstructions
@@ -9919,12 +9956,14 @@ SlackbotAiHistorySortMenu
 SlackbotAiHistoryTabViewContent
 SlackbotAiHistoryTaskChatFilterMenu
 SlackbotAiNewChatButton
+SlackbotAiNotInstalledPanel
 SlackbotAiNux
 SlackbotAiNuxCloseCoachmark
 SlackbotAiNuxSplash
 SlackbotAiOnboardingCards
 SlackbotAiOrgSkillDetailView
 SlackbotAiPaywallWarning
+SlackbotAiPendingPanel
 SlackbotAiPref
 SlackbotAiPreviewBadge
 SlackbotAiProjectCanvasModal
@@ -9963,6 +10002,7 @@ SlackbotAiStreamConnectionInterruptedError
 SlackbotAiThreadZeroState
 SlackbotAiThreadZeroStatePromptCards
 SlackbotAiTurnedOffBanner
+SlackbotAiUpgradePaywall
 SlackbotAiUseToggleRow
 SlackbotAiViewButtons
 SlackbotAiWelcomeMatAnimation
@@ -10138,6 +10178,7 @@ SlackConnectDMBannerContainer
 SlackConnectDmEmailModalV2
 SlackConnectDmInternalEmailSpeedbump
 SlackConnectDmInviteSuccessModal
+SlackConnectDmTrialAdminCoachmark
 SlackConnectDMTrialBanner
 SlackConnectDMTrialBaseBanner
 SlackConnectDMTrialIneligibleBanner
@@ -10161,6 +10202,7 @@ SlackConnectInviteFormInput
 SlackConnectInviterButtons
 SlackConnectInviteSteps
 SlackConnectInviteSwitchRow
+SlackConnectManageMenu
 SlackConnectMemberInfo
 SlackConnectMultiAvatar
 SlackConnectPage
@@ -10581,6 +10623,7 @@ SuggestionSidebarEntity
 SuggestionSlackbotAvatar
 SuggestionSlackbotStarterPrompt
 SuggestionTeam
+SuggestionThread
 SuggestionUser
 SuggestionUserGroup
 SuggestionUserProfile
@@ -11375,6 +11418,7 @@ UpgradeCtaWithSegmentedOffer
 UpgradeEmailFeatureAccessRevokedBanner
 UpgradeMessageHistoryBanner
 UpgradesBadge
+UpgradesCoachmark
 UpgradesIcon
 UploadButton
 UploadProfileButtonWithPreview

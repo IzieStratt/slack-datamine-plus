@@ -697,6 +697,8 @@ action:markAppInstalling
 action:markAppRecommendationVisited
 action:markAsFetching
 action:markAsSaving
+action:markAssistiveSummaryInlineOpened
+action:markAssistiveSummaryInlineSeen
 action:markBootStoreHydrated
 action:markCanvasContentDraftResolved
 action:markChannelSectionsHydrated
@@ -973,7 +975,6 @@ action:removeLeaver
 action:removeList
 action:removeListMentions
 action:removeMcpServerByKey
-action:removeMcpServers
 action:removeMeeting
 action:removeMeetingFromList
 action:removeMember
@@ -4236,6 +4237,7 @@ thunk:clogAutocompleteSearchOpen
 thunk:clogBizplusUpgradeDmEngagement
 thunk:clogBookmarkLinkAdded
 thunk:clogBookmarkLinkDeleted
+thunk:clogBrowseDmClick
 thunk:clogBrowserAutocompleteAccept
 thunk:clogBrowserFiltersResetClicked
 thunk:clogBrowserFiltersToggled
@@ -4305,6 +4307,7 @@ thunk:clogMessageSent
 thunk:clogMoreModalClick
 thunk:clogMsgPlayButtonClick
 thunk:clogOmniswitcherOpen
+thunk:clogOmniswitcherQueryClear
 thunk:clogOmniswitcherSecondaryActionClick
 thunk:clogOmniswitcherSlackbotModeToggle
 thunk:clogOmniswitcherUnreadsExpand
@@ -4905,6 +4908,7 @@ thunk:fetchAndUpsertRecentEntities
 thunk:fetchAndUpsertRecentlyRunTriggers
 thunk:fetchAndUpsertRecentWorkflows
 thunk:fetchAndUpsertRecommendedChannelsForJoinerLaunchpad
+thunk:fetchAndUpsertRecommendedPriorityUsers
 thunk:fetchAndUpsertRecordListTabViewData
 thunk:fetchAndUpsertRecordsCircularHandler
 thunk:fetchAndUpsertRecordsForList
@@ -5193,6 +5197,7 @@ thunk:finalizeDoc
 thunk:finalizeProvisionalConnection
 thunk:findExistingWorkObjectSummary
 thunk:findSidebarSearchInConversation
+thunk:findTaskForSkill
 thunk:firstLoginLoaderCopyMaybeLogExposure
 thunk:flagChannelContentDetails
 thunk:flagMemberProfile
@@ -5254,6 +5259,7 @@ thunk:getChannelIdForSharing
 thunk:getChannelMembershipInfoForUsers
 thunk:getChannelMembershipInfoFromOptions
 thunk:getChannelPrefByAPIAndUpdateStore
+thunk:getChannelRowContextMenuTemplate
 thunk:getChannelSectionName
 thunk:getChannelsForFilter
 thunk:getChannelSidebarCanDrop
@@ -5261,6 +5267,7 @@ thunk:getChannelSidebarFilter
 thunk:getChannelSpaceFileIdThunk
 thunk:getChannelsThatCannotBeLeft
 thunk:getChannelTabAddCanvasOrListSpeedbump
+thunk:getClientMsgId
 thunk:getCompleteUnfurlsInDraftOpsForDraftSync
 thunk:getComposerSuggestions
 thunk:getConnectedTeamDetails
@@ -6407,6 +6414,7 @@ thunk:openCreateRecordCircularHandler
 thunk:openCreateRecordModal
 thunk:openCreateSidekickModal
 thunk:openCreateTaskModal
+thunk:openCreateTaskModalForSkill
 thunk:openCreateTaskModalFromMessage
 thunk:openCsvImportModal
 thunk:openCustomizedRequestAccessModal
@@ -6788,6 +6796,7 @@ thunk:openTableauFullSizePreviewModal
 thunk:openTableauFullSizePreviewModalCircularHandler
 thunk:openTableInNewWindow
 thunk:openTableInNewWindowHandler
+thunk:openTaskModalForSkill
 thunk:openTemplatePermissionsModal
 thunk:openTextyEditLinkModal
 thunk:openTextyLinkFormBasedOnSelection
@@ -7178,6 +7187,7 @@ thunk:requestReplies
 thunk:requestSlackbotModeSwitchHint
 thunk:requestToJoinWorkspace
 thunk:requestToPurchaseV2UpvoteMaybeLogExposure
+thunk:requestUndoSendPermissionForChannel
 thunk:reResolveMentionAndSlugOps
 thunk:resendMessageAfterDlpWarningOrError
 thunk:resendMessageAfterDlpWarningOrErrorCircularHandler
