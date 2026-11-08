@@ -168,8 +168,8 @@
    "XS6H:c9d52ee2"
   ],
   "component:BaseMessageAttachmentSlackMessage": [
-   "26v2:99b66112",
-   "AK+H:1d56220a"
+   "26v2:ea784cba",
+   "AK+H:48003feb"
   ],
   "component:BaseMessageSender": [
    "/OeL:00c86b8c",
@@ -196,9 +196,9 @@
    "jgU4:20497ed3"
   ],
   "component:EmojiPicker": [
-   "Zu56:27a2538d",
-   "sBT0:7bc33412",
-   "sBT0:d652cda3"
+   "Zu56:04834fd3",
+   "sBT0:584afe2a",
+   "sBT0:96dee58d"
   ],
   "component:EmojiPickerPopover": [
    "Pult:eb169905",
@@ -206,7 +206,7 @@
    "fz7n:9e6a70a7"
   ],
   "component:HelpButton": [
-   "26v2:99b66112"
+   "26v2:ea784cba"
   ],
   "component:HuddleBaseEvent": [
    "XGqh:75901c43",
@@ -253,8 +253,8 @@
    "L2dv:a2cb1c31"
   ],
   "component:MessageAttachmentHuddleLink": [
-   "26v2:99b66112",
-   "AK+H:1d56220a"
+   "26v2:ea784cba",
+   "AK+H:48003feb"
   ],
   "component:MessageBackground": [
    "3yuj:2e0d5446",
@@ -320,8 +320,8 @@
    "rIMg:5953d184"
   ],
   "component:ShortcutsMenuTriggerButton": [
-   "26v2:99b66112",
-   "AK+H:1d56220a"
+   "26v2:ea784cba",
+   "AK+H:48003feb"
   ],
   "component:TextyButtonOverflow": [
    "Ozua:a00e9f74",
@@ -356,8 +356,8 @@
    "+hV1:0b9ff7bf"
   ],
   "rtm:view_opened": [
-   "26v2:99b66112",
-   "AK+H:1d56220a"
+   "26v2:ea784cba",
+   "AK+H:48003feb"
   ],
   "thunk:addAndUploadPendingFile": [
    "twhp:9d5fd203",
@@ -444,8 +444,8 @@
    "VYkZ:3e027291"
   ],
   "thunk:getContextMenuTemplate": [
-   "26v2:99b66112",
-   "AK+H:1d56220a",
+   "26v2:ea784cba",
+   "AK+H:48003feb",
    "vNaE:1ef1b6e9"
   ],
   "thunk:getMemberContextMenuTemplate": [
@@ -459,7 +459,7 @@
    "as/3:c080272d"
   ],
   "thunk:initializeUserPrefs": [
-   "26v2:99b66112",
+   "26v2:ea784cba",
    "KyM2:4808c497"
   ],
   "thunk:joinChannel": [
@@ -619,6 +619,68 @@
  },
  "reported": [],
  "events": [
+  {
+   "build": "a84662d2d135",
+   "date": "2026-11-08",
+   "names": [
+    "buildMarkdownChangeDelta",
+    "canDeleteMessageHelper",
+    "convertBlocksToMarkdown",
+    "convertBlocksToMrkdwnDelta",
+    "createStore",
+    "exposeSelectorForDebug",
+    "getDeltaForMessageObject",
+    "getInputProxy",
+    "getStoreInstanceByTeamId",
+    "isInputRegistered",
+    "legacy_createStore",
+    "x",
+    "BaseContextBarV2",
+    "BaseMessageAttachmentSlackMessage",
+    "BaseMrkdwnChannel",
+    "Blocks",
+    "EmojiPicker",
+    "EmojiPickerPopover",
+    "HelpButton",
+    "ListChannelEntity",
+    "MessageActionButtonReaction",
+    "MessageActions",
+    "MessageAttachmentHuddleLink",
+    "MessageBackground",
+    "MessageBlocks",
+    "MessageSender",
+    "Reaction",
+    "ReactionAddButton",
+    "ReactionBar",
+    "ShortcutsMenuTriggerButton",
+    "TextyButtonOverflow",
+    "TextyButtons",
+    "WysiwygContainer",
+    "view_opened",
+    "addAndUploadPendingFile",
+    "autocompleteChannels",
+    "autocompleteMembers",
+    "blocksFormatFetcher",
+    "changeReactionFromUserAction",
+    "chatDeleteFetcher",
+    "commitMessageEdit",
+    "enqueueHuddleToast",
+    "executeAppAction",
+    "getContextMenuTemplate",
+    "handleMessageImmediatelyWithoutPreprocessing",
+    "initializeUserPrefs",
+    "logExperimentExposure",
+    "openPrefsModal",
+    "prepareAndSendMessage",
+    "saveMessageEdit",
+    "showNotification",
+    "startEventLog",
+    "stopEventLog",
+    "stopHuddle",
+    "submitAddOrRemoveReaction",
+    "uploadFiles"
+   ]
+  },
   {
    "build": "6692af6ae2e8",
    "date": "2026-11-07",
@@ -2013,104 +2075,6 @@
     "saveMessageEdit",
     "sendMessage",
     "setUserPrefByApi",
-    "showNotification",
-    "startEventLog",
-    "stopEventLog",
-    "stopHuddle",
-    "submitAddOrRemoveReaction",
-    "uploadFiles"
-   ]
-  },
-  {
-   "build": "55e2a0e44b54",
-   "date": "2026-10-30",
-   "names": [
-    "disableEventLog",
-    "enableEventLog",
-    "getActiveHuddleCallId",
-    "getActiveHuddleChannelId",
-    "jumpToReply",
-    "sendReactionMessage",
-    "setLocalDraft",
-    "AudioVideoFacadeSubscriber",
-    "buildMarkdownChangeDelta",
-    "canDeleteMessageHelper",
-    "convertBlocksToDelta",
-    "convertBlocksToMarkdown",
-    "convertBlocksToMrkdwnDelta",
-    "convertBlocksToPlainText",
-    "convertDeltaToBlocks",
-    "createStore",
-    "exposeSelectorForDebug",
-    "getDeltaForMessageObject",
-    "getInputProxy",
-    "getLastMessageByMember",
-    "I18n",
-    "isInputRegistered",
-    "legacy_createStore",
-    "x",
-    "ActivityItem",
-    "ActivityPrivacyBlurredName",
-    "ActivityRowContentSenderAvatarLayout",
-    "BaseMessageAttachmentSlackMessage",
-    "BaseMessageSender",
-    "BaseMrkdwnChannel",
-    "Blocks",
-    "ConnectedBaseAvatar",
-    "EmojiPicker",
-    "EmojiPickerPopover",
-    "HelpButton",
-    "HuddlesAlertBannerBase",
-    "InputContainer",
-    "ListChannelEntity",
-    "MemberProfileHoverCard",
-    "MessageActionButtonReaction",
-    "MessageActions",
-    "MessageAttachmentHuddleLink",
-    "MessageBackground",
-    "MessageBlocks",
-    "MessageInput",
-    "MessageSender",
-    "Reaction",
-    "ReactionAddButton",
-    "ReactionAnimation",
-    "ReactionBar",
-    "RimetoMemberProfileOverflowMenu",
-    "RimetoProfilePresence",
-    "Serialized(ThreadsFlexpane)",
-    "ShortcutsMenuTriggerButton",
-    "TextyButtonOverflow",
-    "TextyButtons",
-    "ThreadFlexpaneAdminTools",
-    "ThreadSearchButton",
-    "ThreadTypingIndicator",
-    "ViewBlocks",
-    "WysiwygContainer",
-    "message",
-    "view_opened",
-    "addAndUploadPendingFile",
-    "autocompleteChannels",
-    "autocompleteMembers",
-    "blocksFormatFetcher",
-    "changeReactionFromUserAction",
-    "chatDeleteFetcher",
-    "clearDrafts",
-    "commitMessageEdit",
-    "displayAlertMessage",
-    "enqueueHuddleToast",
-    "executeAppAction",
-    "fetchAndUpsertChannelsById",
-    "fetchRawChannelsById",
-    "getContextMenuTemplate",
-    "getMemberContextMenuTemplate",
-    "handleMessageImmediatelyWithoutPreprocessing",
-    "initializeUserPrefs",
-    "markLastRead",
-    "openPrefsModal",
-    "prepareAndSendMessage",
-    "processAwsTranscription",
-    "saveMessageEdit",
-    "sendMessage",
     "showNotification",
     "startEventLog",
     "stopEventLog",
