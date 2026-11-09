@@ -16,6 +16,7 @@ import { emptyFrontend, finishFrontend, scanFrontend } from './frontend.mjs';
 import { emptyPresence, finishPresence, scanWatched } from './watch.mjs';
 import { diffSources, pageAssets, sourceIds } from './sources.mjs';
 import { buildInfo, chunkFiles, chunkMapFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
+import { createUpstream, loadTranslations, readLines } from './upstream.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
 const has = (n) => process.argv.includes(`--${n}`);
@@ -156,7 +157,8 @@ async function main() {
   const watchFile = process.env.TAUT_WATCH || arg('watch');
   const watch = watchFile && fs.existsSync(watchFile) ? [...new Map(JSON.parse(fs.readFileSync(watchFile, 'utf8')).uses.map((u) => [`${u.kind}:${u.name}`, { kind: u.kind, name: u.name }])).values()] : [];
   const presence = emptyPresence();
-  const collect = (js) => { extractExtras(js, extras); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); scanFrontend(js, frontend); if (watch.length) scanWatched(js, watch, presence); };
+  const upstream = createUpstream();
+  const collect = (js) => { extractExtras(js, extras); upstream.collect(js); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); scanFrontend(js, frontend); if (watch.length) scanWatched(js, watch, presence); };
 
   if (arg('from-dir')) {
     buildNumber = arg('build') || 'local';
@@ -220,6 +222,9 @@ async function main() {
     for (const f of [...chunkMapFiles(html), ...asyncNames, ...extraAsync]) if (!inQueue.has(f)) { inQueue.add(f); queue.push(f); }
     log(`gantry async chunks from the pages' inline map: ${inQueue.size - queue.length + [...chunkMapFiles(html), ...asyncNames, ...extraAsync].length}`);
     pageHtmls.push(html, ...extraHtmls, ...entryHtmls);
+    // the en-US string table the i18n extractors match against; without it those files keep their old contents
+    try { if (!(await loadTranslations(pageHtmls, info.cdn, get))) console.error('upstream: no en-US translation table on the pages'); }
+    catch (e) { console.error(`upstream: translation table not loaded (${e.message})`); }
     const seen = new Set(queue), ok = [], phantom = [], missing = [];
     await pool(queue, 12, async function visit(file) {
       if (isPhantom(file)) { phantom.push(file); return; }
@@ -259,10 +264,13 @@ async function main() {
   writeParams(params, buildNumber, date);
   const exp = finishExperiments(expParts);
   const counts = {};
-  for (const [cat, set] of Object.entries(extras)) {
-    counts[cat] = set.size;
-    if (set.size) fs.writeFileSync(`${OUT}/${cat}.txt`, [...set].sort().join('\n') + '\n');
-  }
+  // this miner's categories, then the ported upstream extractors (src/upstream.mjs); a file both write is the union, so nothing mined is dropped
+  const outFiles = new Map();
+  for (const [cat, set] of Object.entries(extras)) { counts[cat] = set.size; outFiles.set(`${cat}.txt`, [...set]); }
+  const up = upstream.finish(readLines(OUT));
+  for (const note of up.notes) console.error(`upstream: ${note}`);
+  for (const [file, lines] of up.files) { outFiles.set(file, [...(outFiles.get(file) ?? []), ...lines]); counts[file.replace(/\.txt$/, '')] = lines.length; }
+  for (const [file, lines] of outFiles) { const u = [...new Set(lines)].sort(); if (u.length) fs.writeFileSync(`${OUT}/${file}`, u.join('\n') + '\n'); }
   // the glyph set behind the icon names (build/icons.json drives the icons PDF; it comes from modern.vendor); keep the old one if this build's chunk was missing
   if (iconSet) fs.writeFileSync(`${OUT}/icons.json`, JSON.stringify(iconSet) + '\n');
   else console.error('icons: glyph set not found, keeping previous build/icons.json');
