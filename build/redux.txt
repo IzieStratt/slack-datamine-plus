@@ -362,6 +362,7 @@ action:clearPendingAutoInitThreadTarget
 action:clearPendingDraftInsert
 action:clearPendingHuddleEmbeddedOpen
 action:clearPendingInvites
+action:clearPendingSkillAddition
 action:clearPendingSurvey
 action:clearPinnedItems
 action:clearPrepBlocks
@@ -404,7 +405,6 @@ action:clearSlackbotThreadsUnread
 action:clearSlackbotThreadUnread
 action:clearSlackbotWritePermissionsConfig
 action:clearSmartInvitesChannelSuggestionCreatedChannel
-action:clearSmsPhoneNumbers
 action:clearStartTs
 action:clearStash
 action:clearStoryFlexpaneConfig
@@ -2217,7 +2217,6 @@ action:setNuxCarouselRecommendationsLoading
 action:setNuxSplashActive
 action:setNuxZeroStatePending
 action:setOauthState
-action:setObjectStoreDatabaseShardId
 action:setOcalAuthUrl
 action:setOmniswitcherMode
 action:setOmniswitcherSlackbotMode
@@ -2654,7 +2653,6 @@ action:setSmartInvitesChannelSuggestionCollaborators
 action:setSmartInvitesChannelSuggestionCollaboratorsError
 action:setSmartInvitesChannelSuggestionCreatedChannel
 action:setSmartInvitesChannelSuggestions
-action:setSmsPhoneNumbers
 action:setSolutionGuideAppDetails
 action:setSolutionTemplateChannelProvisionId
 action:setSolutionTemplateDetailedInfo
@@ -2742,6 +2740,7 @@ action:setTodayAdminOptInDismissed
 action:setTodayItems
 action:setTodayPeekSelectedTab
 action:setTodaySplitViewSource
+action:setTodoFilterPick
 action:setTodoSectionCollapsed
 action:setTodoSortOrder
 action:setTokenizedInvites
@@ -4067,6 +4066,7 @@ thunk:autoPromoteFilesTabOnUpload
 thunk:awaitNetworkReconnection
 thunk:awaitServiceReconnection
 thunk:beginChannelHistoryIntent
+thunk:beginEnabledSkillsMutation
 thunk:bizPlusUpgradePocketGuideV2MaybeLogExposure
 thunk:boostBusPlusAwarenessAndUpgradesMaybeLogExposure
 thunk:bringMainWindowToTop
@@ -4129,8 +4129,6 @@ thunk:canGrantSkillAdminEditAccess
 thunk:canLeaveChannelWithReason
 thunk:canMemberJoinChannelWithReason
 thunk:canMentionAgent
-thunk:canvasInviteEntryPointNewTeamsMaybeLogExposure
-thunk:canvasInviteEntryPointTenuredTeamsMaybeLogExposure
 thunk:canvasTemplatesSearchThunkWithPagination
 thunk:captureDraftFileStateCleanup
 thunk:captureSlackbotCompanionContextForFirstSend
@@ -4215,6 +4213,7 @@ thunk:clogBizplusUpgradeDmEngagement
 thunk:clogBookmarkLinkAdded
 thunk:clogBookmarkLinkDeleted
 thunk:clogBrowseDmClick
+thunk:clogBrowseFilterChange
 thunk:clogBrowserAutocompleteAccept
 thunk:clogBrowserFiltersResetClicked
 thunk:clogBrowserFiltersToggled
@@ -4360,6 +4359,7 @@ thunk:closeAndReportNotificationReadSpanThunk
 thunk:closeBanner
 thunk:closeChannelApi
 thunk:closeChannelSpace
+thunk:closeChildWindowsForRemovedWorkspaces
 thunk:closeDeletedTaskDetails
 thunk:closeDesktopIncomingInviteWindow
 thunk:closeFile
@@ -4661,6 +4661,7 @@ thunk:downloadTableAsTsv
 thunk:draftEmailWithAi
 thunk:draftSingerResponse
 thunk:dragLinksToComposer
+thunk:dropIntoFocusedSection
 thunk:duplicateCanvas
 thunk:duplicateSkill
 thunk:duplicateView
@@ -4775,6 +4776,7 @@ thunk:externalConnectorFilterChanged
 thunk:externalGuestAutoKnock
 thunk:failover
 thunk:failProvisionalConnection
+thunk:featInvoiceReferralVisitorMaybeLogExposure
 thunk:feedbackCommand
 thunk:fetchActionableApprovalsCount
 thunk:fetchActionLayout
@@ -5518,7 +5520,6 @@ thunk:insertIncomingInvite
 thunk:installAuthHandler
 thunk:internalRemoveWorkspaceClientTearDownHandler
 thunk:internalWorkspacesRemovedClientTearDownHandler
-thunk:internalWorkspacesRemovedTypeHandler
 thunk:invalidateAndRefetchActivity
 thunk:invalidateResyncedTopics
 thunk:invalidAuth
@@ -6835,6 +6836,7 @@ thunk:playHuddleNewRequestExpiredSound
 thunk:playHuddleRecordingOffSound
 thunk:playHuddleRecordingOnSound
 thunk:playJustInTimeSound
+thunk:playLiveCallCue
 thunk:playSoundOnMicMute
 thunk:playSoundOnMicUnmute
 thunk:playSoundOnReaction
@@ -7126,6 +7128,7 @@ thunk:reportMessage
 thunk:reportPinnedItemsChange
 thunk:requestAccessModalThunk
 thunk:requestAgentSunroofApps
+thunk:requestCatchUpExpandOnArrival
 thunk:requestDownmarketCrmLicense
 thunk:requestExternalGuestMediaAccess
 thunk:requestHistoryInDegradedMode
@@ -7759,7 +7762,6 @@ thunk:slackTraceCommand
 thunk:slackVersionCommand
 thunk:sleep
 thunk:smartInvitesV3MaybeLogExposure
-thunk:smsInvitesMaybeLogExposure
 thunk:socketErrorMessageReceivedHandler
 thunk:sortChannels
 thunk:start

@@ -3,7 +3,6 @@ _default
 _FormDialog
 _st
 A11yListStructure
-A11yObjectSectionWrapper
 A11yPrefsContext
 A11yPrefsProvider
 AboutPage
@@ -133,6 +132,7 @@ ActivityHeader
 ActivityHeaderDefaultSecondary
 ActivityHeaderPrimary
 ActivityHeaderSecondary
+ActivityHeading
 ActivityHideViewConfirmationModal
 ActivityInboxDmsCoachmark
 ActivityInboxDmsViewNudgeBanner
@@ -169,9 +169,9 @@ ActivityLogPaginationBar
 ActivityLogRefreshButton
 ActivityLogTable
 ActivityMention
-ActivityMentionBadge
 ActivityMentionWrapped
 ActivityMessage
+ActivityMessagePreview
 ActivityMoreViewContent
 ActivityMPDMName
 ActivityNavCounts
@@ -285,7 +285,6 @@ AddGroupingOptionButton
 AddIndividualModal
 AddInsights
 AddIntegrationModal
-AddItemAtLimitConfirmationModal
 AdditionalFilterRow
 AdditionalOptionsPref
 addJoinLeaveKeyboardShortcuts
@@ -834,6 +833,8 @@ AppMemoriesTabView
 AppMemoriesTabViewBase
 AppMentionCreateChannelModal
 AppMentionEphemeralImpression
+AppMentionHoverCard
+AppMentionHoverCardRoute
 AppMenuButton
 AppNameCell
 AppNotFound
@@ -1057,6 +1058,7 @@ AudioWaveform
 AudioWaveformContained
 AudioWaveformRecorder
 AudioWithPip
+AuthenticatedWorkspace
 AuthFailureTooltipContent
 AuthStrategyRadioGroup
 AutoAcceptCore
@@ -1118,7 +1120,6 @@ AvatarPaneContent
 AvatarStack
 AvatarUploadPane
 Await
-AwarenessIcon
 AwayChannelPermissionsColumn
 AwayTeamScInvitePermissionsConnectionWrapper
 AwayTeamScInvitePermissionsContentWrapper
@@ -1150,7 +1151,9 @@ BaseAboutChannelModal
 BaseAccessLimitedToast
 BaseActionCard
 BaseActionLibraryModal
+BaseActivityMentionBadge
 BaseActivityRowContentInviteActions
+BaseAddItemAtLimitConfirmationModal
 BaseAdminInviteSettings
 BaseAdminInviteSettingsContainer
 BaseAdministrationPage
@@ -1198,6 +1201,7 @@ BaseAriaLiveRegion
 BaseAutoClog
 BaseAutoSlackLaunchpadEditProfileModal
 BaseAvatar
+BaseAwarenessIcon
 BaseBanner
 BaseBannerDownload
 BaseBannerEnablePopups
@@ -1212,6 +1216,7 @@ BaseBrowsePageUserGroupEntity
 BaseButton
 BaseButtonInternal
 BaseCalendarAuthLauncher
+BaseCanvasFieldCard
 BaseCatchupList
 BaseChannelInfo
 BaseChannelInviteModalComponent
@@ -1325,6 +1330,7 @@ BaseFieldReferenceSelect
 BaseFieldRendererFactory
 BaseFileEntityUserMention
 BaseFilePublicUrlDialog
+BaseFilesTimeseries
 BaseFileViewer
 BaseFileViewerContainer
 BaseFlexpaneRecordTextInput
@@ -1337,6 +1343,7 @@ BaseGoogleDriveErrorModals
 BaseGoogleLoginButton
 BaseGovSlackModal
 BaseGridRowDraggingClone
+BaseGroupedFileListSkeleton
 BaseHelpChannelEmailAddressModal
 BaseHuddleInThreadSpeedBumpModalBase
 BaseHuddleInviteButton
@@ -1369,6 +1376,7 @@ BaseListErrorState
 BaseListExplorerFreemiumHero
 BaseListExplorerNUXHeader
 BaseListIcon
+BaseListNameField
 BaseListRecordDetailAddCommentButton
 BaseListRecordDetailCopyLinkButton
 BaseListRecordDetailUnarchiveButton
@@ -1876,6 +1884,7 @@ CanvasBlocksEditor
 CanvasBlocksInput
 CanvasBlocksLazy
 CanvasChart
+CanvasContent
 CanvasCountsCell
 CanvasDiff
 CanvasDisplayNameLink
@@ -1884,7 +1893,6 @@ CanvasEducationBanner
 CanvasEmptyStateCards
 CanvasEntity
 CanvasesCreateMenuItemInner
-CanvasFieldCard
 CanvasFieldEntity
 CanvasFileName
 CanvasFloatingActions
@@ -1897,6 +1905,7 @@ CanvasLimitedBlocksEditor
 CanvasLimitedBlocksInput
 CanvasLinkContextMenu
 CanvasLinkUrlInput
+CanvasMemberHovercard
 CanvasMention
 CanvasMermaid
 CanvasMermaidPreview
@@ -2481,6 +2490,7 @@ CommentActions
 CommentAvatar
 CommentBody
 CommentComposerFrame
+CommentDraftGutter
 CommentGutter
 CommentGutterTip
 CommentListToggle
@@ -2504,7 +2514,6 @@ CompletionAnimation
 CompletionFadeIn
 Composer
 ComposerAppHoverCard
-ComposerAppHoverCardRoute
 ComposerAttachments
 ComposerButton
 ComposerCanvasAiMenuTrigger
@@ -2674,6 +2683,7 @@ ConnectedRecordEntityExpandedPreview
 ConnectedRequestToPurchaseCta
 ConnectedRolesNewChannelPermissionsCoachmark
 ConnectedSearchRow
+ConnectedSectionShowMoreRow
 ConnectedSlackbotSessionArtifactRow
 ConnectedSlackConnectDmTrialBanner
 ConnectedSlackConnectHubInTrialLearnMoreBanner
@@ -2751,6 +2761,7 @@ ContentForDisconnectSlackcrm
 ContentForRemove
 ContentsEntry
 ContentText
+ContentUnavailable
 Context
 ContextActions
 ContextBar
@@ -3247,6 +3258,7 @@ DmsChannelDragPreview
 DmsChannelDragWrapper
 DmsChannelTypingMeta
 DmsChannelVipBadge
+DmsFilterMenu
 DmsList
 DmsListAll
 DmsListItem
@@ -3934,6 +3946,8 @@ Face
 Facepile
 Faces
 FaceStack
+FactRow
+FactsUsed
 FadeInRichText
 FailedMessagePreview
 FakeExternalPreviewPresence
@@ -4050,6 +4064,7 @@ FileMenuButton
 FileMetadataAvatarStack
 FileName
 FileNameHeader
+FileNavigationContent
 FileNavigationController
 FileOrganizeModeMenu
 FilePermissionsSelect
@@ -4099,7 +4114,6 @@ FilesOwnershipTransferModal
 FilesOwnershipTransferSpeedBump
 FilesSizeCallout
 FilesTabPeek
-FilesTimeseries
 FileStorageWarning
 FileSubscription
 FileSummaryDetails
@@ -4188,6 +4202,7 @@ FlagChannelDetailsDialog
 FlagDialogFormSubmitted
 FlagDialogModal
 FlagDialogMultiSelect
+FlagFactBox
 FlaggedCanvasTombstoneBody
 FlaggedMessageTombstoneBody
 FlagMessageDialog
@@ -4221,6 +4236,7 @@ FocusModeMusicPlayer
 FocusModePopoverContent
 FocusTransitionContextValue
 FocusTransitionManager
+FocusTrap
 FocusWithin
 FocusWithinContext
 FolderCreateMenu
@@ -4749,7 +4765,6 @@ GroupBackgroundColorContainer
 GroupByDropdownComponent
 GroupByHeaderName
 GroupByOptionsMenuComponent
-GroupedFileListSkeleton
 GroupHovercard
 GroupMembersTooltip
 GroupOptionsMenuItem
@@ -5674,7 +5689,6 @@ ListItemColumnUpdate
 ListItemError
 ListItemName
 ListLimitsArchiveBanner
-ListNameField
 ListNameInput
 ListPageContext
 ListPicker
@@ -5774,6 +5788,7 @@ ListTitleHeader
 ListUndoToast
 ListUserAvatar
 ListUserEntity
+ListView
 ListViewBrowser
 ListViewBrowserFooter
 ListViewBrowserIcon
@@ -6026,6 +6041,7 @@ McpAppOpenLinkBlocked
 McpAppOpenLinkConfirm
 McpAppToolCallBlocked
 McpAppToolCallSpeedbump
+McpBadge
 McpCatalogueModal
 McpCataloguePane
 McpCatalogueTablePane
@@ -6082,6 +6098,7 @@ McpToolsTable
 McpToolTypeDefaultRow
 McUserInput
 MeasureContainer
+MediaContent
 MediaFileSearchJustification
 MediaFileThumbnail
 MediaGridSkeleton
@@ -6569,6 +6586,11 @@ ModalTip
 ModalTitleBar
 ModalUtil
 ModeCell
+ModelBrowser
+ModelBrowserIdLink
+ModelBrowserIndexImpl
+ModelBrowserListeners
+ModelBrowserObjectImpl
 ModelComparisonControls
 ModelComparisonTable
 ModelInfoAppImTabs
@@ -7087,11 +7109,13 @@ PastCloseDateFlowHeader
 PastCloseDateFlowPage
 PastCloseDateForm
 PastCloseDateNotificationPreview
-PasteConfirmDialog
 PasteItemsMenuItem
 PasteLimitDialog
 PastHuddleSectionTitle
 PauseToggle
+PbMessage
+PbMessageField
+PbMessageFieldValue
 PDFPopout
 PDFViewer
 PeekAgendaContent
@@ -7301,6 +7325,7 @@ PostingPreferences
 PrefColumn
 PrefColumnValue
 PreferenceItem
+PreferenceRow
 Prefix
 PrefOverrideCore
 PrefOverrideSettingsRow
@@ -7470,6 +7495,10 @@ PullRequestDescriptionEditor
 PullRequestOpenedBy
 PullRequestReviewerName
 PullRequestReviewers
+PullRequestRow
+PullRequestRowMenu
+PullRequestsList
+PullRequestsSortMenu
 PullRequestStatuses
 PurposeButton
 PushedDownInviterSubText
@@ -7513,6 +7542,8 @@ QuipAppNotification
 QuipAppNotificationsModal
 QuipAutocomplete
 QuipCommentRoot
+QuipCommentThreadView
+QuipCommentThreadViewWithErrorBoundary
 QuipCreatedBy
 QuipCuddleTitle
 QuipDateSuggestionRow
@@ -7878,6 +7909,7 @@ renderBadgeElement
 renderBadgeMaybe
 renderBadgeOrPresence
 renderBanner
+renderBaseRequestCta
 renderBefore
 renderBizPlusCta
 renderBlock
@@ -7934,7 +7966,9 @@ renderCodeChannelDetails
 renderCol
 renderCollapsedContent
 renderCollapsedEmailList
+renderCommentContent
 renderCommentRows
+renderComparePlansCta
 renderComparison
 renderComponent
 renderComprehensibleChannelInvite
@@ -8073,6 +8107,7 @@ renderHelperLink
 renderHero
 renderHeroAsset
 renderHiddenUserRow
+renderHostDrawButton
 renderHoverActions
 renderHoverCard
 renderHuddlePageRow
@@ -8148,6 +8183,7 @@ renderMenuPlaceholderItem
 renderMessage
 renderMessageAttachment
 renderMessageBlock
+renderMessageContent
 renderMetric
 renderMicSettingsMenu
 renderMinusForMissingData
@@ -8234,7 +8270,9 @@ renderRecordDeltaValue
 renderRedesignedMetadataChangeText
 renderReferenceLink
 renderRemindMenu
+renderRequestCta
 renderRequestedBy
+renderRequestedCta
 renderRequestItem
 renderRequestType
 renderRequire2faCheckbox
@@ -8379,6 +8417,7 @@ renderWorkspaceConfigurationRadioGroup
 renderWorkspaceFilter
 renderWorkspaceOwnerRadioButton
 renderWorkspaceRow
+renderYoursContent
 renderYoutubeViewer
 renderZoomOptions
 ReorderModal
@@ -8459,6 +8498,7 @@ ResurrectedUserPersonalActivity
 ResurrectedUserWelcome
 ResurrectedUserWelcomeCarousel
 ResurrectedUserWelcomeCarouselArrow
+RetainedPanel
 RetryButton
 RevealedControls
 RevealStoreContext
@@ -9020,6 +9060,7 @@ SelectOneSearchable
 SelectOptionColorMenuTrigger
 SelectOptionSkeleton
 SelectOptionsList
+SelectOptionsListWithAnnouncerAPI
 SelectPopoverOptionsList
 SelectSalesforceOrgStep
 SelectSchemaInput
@@ -9149,6 +9190,7 @@ SetupSidebar
 SetupSidebarChannel
 SetupSidebarDirectMessageEmail
 SetupSidebarDirectMessageMember
+SetupSidebarItemMotion
 SetupSidebarSeeMoreItem
 SetupStepButton
 SetupStepContainer
@@ -9278,6 +9320,7 @@ showError
 showFailureToast
 showMembersContent
 showMenuWithCommandSource
+ShowMoreLink
 ShowMutedItemsOutsideSidebarMenusPref
 ShowNewerButton
 showSelectedUsers
@@ -9343,6 +9386,8 @@ SideBarTrialBadgeWrapper
 SidebarTrialPeekTrigger
 SidebarTrialPeekView
 SidebarViewContents
+SidebarViewHeading
+SidebarViewHeadingSlot
 SideGroup
 SidekickAvatarCropModal
 SidekickAvatarUpload
@@ -9367,6 +9412,7 @@ SingerActivityControl
 SingerAgendaContent
 SingerAgendaJoinButton
 SingerAgendaMeeting
+SingerAgendaMeetingAction
 SingerAgendaPanel
 SingerAgendaReminder
 SingerAgendaSettings
@@ -9397,6 +9443,24 @@ SingerDestinationMessages
 SingerDestinationPanel
 SingerDestinationPanelForDestination
 SingerDestinationTyping
+SingerDls
+SingerDlsActionReceipt
+SingerDlsActivity
+SingerDlsActivityTaskButton
+SingerDlsActivityTaskProvider
+SingerDlsAgentFace
+SingerDlsContentNavigation
+SingerDlsContentViewer
+SingerDlsGlance
+SingerDlsMessageBody
+SingerDlsQuietButton
+SingerDlsResize
+SingerDlsSettings
+SingerDlsSummaryGlance
+SingerDlsSupplementalGlance
+SingerDlsTasks
+SingerDlsWorkspaceDestination
+SingerDlsWorkspaceScope
 SingerFace
 SingerFileAttachmentChip
 SingerFileDropFeedback
@@ -9421,6 +9485,7 @@ SingerRecipientAvatar
 SingerReopenHint
 SingerScreenGlow
 SingerSettings
+SingerShimmerPill
 SingerSkills
 SingerTaskBubble
 SingerTaskBubbles
@@ -9994,7 +10059,6 @@ SmartInvitesChannelSuggestionViewBody
 SmartInvitesChannelSuggestionViewComponent
 SmartInviteSetupBanner
 SmartInviteSuggestionMoreActions
-SmsInviteInput
 SnapshotConditionSection
 SocialProofAvatarStack
 SocialTemplatesForeword
@@ -10233,6 +10297,7 @@ SummarizeButton
 SummarizeChannelSummary
 SummaryCard
 SummaryCardSettingsModal
+SummaryContent
 SummaryFeedbackCheckbox
 SummaryFeedbackModal
 SupportChannelForeword
@@ -10347,12 +10412,14 @@ Tag
 TagBlock
 TalkPreview
 TaskCard
+TaskContent
 TaskDetailsPane
 TaskIcon
 TaskItem
 TaskList
 TaskModal
 TaskModalSpeedBump
+TaskPill
 TaskRow
 TaskSkillPills
 TasksPage
@@ -11051,6 +11118,7 @@ useDeleteTemplateModal
 useDetermineTroubleshootingIcon
 useDisplayCelebrationStatusToast
 useDisplayRulesContextMenu
+useDisplayRulesMenuTemplate
 useDisplayWorkflowSaveFailToast
 useDocumentContextMenuTemplate
 useDocumentMoveToSectionMenuItems
@@ -11254,6 +11322,7 @@ useShowNoiseSuppressionMenuItem
 useSidebarSearchConversationItem
 useSidePanel
 useSidePanelData
+useSingerDlsActionSwipe
 useSkillDeactivationActions
 useSkillEditLeaveGuard
 useSkillExternalSharing
@@ -11704,6 +11773,7 @@ WorkObjectEmail
 WorkObjectEntity
 WorkObjectExternalUser
 WorkObjectFile
+WorkObjectFilePreviewView
 WorkObjectFileViewer
 WorkObjectFileViewerFlexpane
 WorkObjectFileViewerFooter
@@ -11760,6 +11830,7 @@ WorkspaceBootFailure
 WorkspaceCellContent
 WorkspaceColumn
 WorkspaceCreationLoader
+WorkspaceDestination
 WorkspaceDirectoryBanner
 WorkspaceDirectoryButton
 WorkspaceDirectoryCard
@@ -11789,6 +11860,7 @@ WorkspaceRestrictionsSettings
 WorkspaceRestrictionsSettingsModal
 WorkspaceRowItem
 WorkspaceRowMenu
+WorkspaceScopeContent
 WorkspaceSearch
 WorkspaceSearchOptionsListItem
 WorkspaceSearchSelect
@@ -11807,6 +11879,7 @@ WorkspacesView
 WorkspaceSwitcherMenu
 WorkspaceSwitcherToggleButton
 WorkspaceTable
+WorkspaceUnavailable
 WorkspaceWeaverDropdown
 WorkspaceWorkflowExportSettings
 WorkStateTag
