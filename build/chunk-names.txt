@@ -4,6 +4,7 @@ about-usergroup-view
 activity-later-reminder-details-view
 activity-system-notification-view
 admin-passkeys-reauth-relogin-modal
+agenda-todos-tab-page
 agentic-browse-agents-and-apps-toolbar
 agentic-browse-ai-and-agents
 agentic-browse-automations
@@ -285,7 +286,6 @@ client-task-approval-view
 client-thread-view
 client-threads-view
 client-today-view
-client-todos-page
 client-tractor-channel-setup-tour-channel-tab-coachmarks
 client-tractor-channel-setup-tour-invite-people-coachmark
 client-tractor-channel-setup-tour-name-channel-coachmark
@@ -395,9 +395,10 @@ js_modern_components_WIP_tabbed-channels_tabbed-channel_tsx
 js_modern_components_WIP_tabbed-channels_thunks_handle-tab-change_ts-js_modern_components_WIP-a0cd50
 js_modern_components_WIP_tabbed-channels_views_agent-view-tab-view_agent-view-tab-view_tsx-js-bdb49d
 js_modern_components_WIP_tabbed-channels_views_external-files-tab-view_external-file-tab-full-82fbd7
-js_modern_components_WIP_todos-split-view_use-todos-list_ts-js_modern_components_WIP_todos-sp-3c1db5
+js_modern_components_WIP_todos-split-view_use-todos-list_ts-js_modern_components_WIP_todos-sp-f12b9f
 js_modern_components_WIP_unified-global-triage_drafts-tab-page_tsx
 js_modern_components_WIP_unified-global-triage_todos-page-filter-bar_tsx
+js_modern_components_WIP_unified-global-triage_todos-page_tsx
 js_modern_components_WIP_unified-global-triage_unified-global-triage-tab-content_tsx
 js_modern_components_WIP_work-objects_hooks_use-embed-preview-url_ts-js_modern_components_WIP-cfc310
 js_modern_components_agent-browser_my-agents_my-agents_tsx
@@ -415,6 +416,7 @@ js_modern_components_channel-details-modals_manage-channel-tabs_manage-channel-t
 js_modern_components_channel-details-modals_slackbot-integrations-tab_add-custom-mcp-pane_tsx
 js_modern_components_channel-sidebar__pillar_channel_sidebar_source_less-js_modern_components-d9b3f2
 js_modern_components_channel-sidebar_row-components_channel_channel-suffix_unread-threads-pop-b7e4b3
+js_modern_components_channel-sidebar_row-components_section-heading-context-menu-visual-updat-a7c774
 js_modern_components_channel-sidebar_row-modules_channel-row_on-channel-select_ts-js_modern_c-d8b7a1
 js_modern_components_code-channel-details_code-channel-view-renderer_tsx
 js_modern_components_code-channels-browser_use-code-channel-thread-sessions_ts-js_modern_comp-8140b5
@@ -449,7 +451,6 @@ js_modern_components_message-list_day-divider_tsx-js_modern_components_message-p
 js_modern_components_message-pane-input_message-pane-input-disabled_tsx
 js_modern_components_new-year-promo-27_open-new-year-promo-27-modal_tsx
 js_modern_components_saved-for-later_later-todos-ui_row-renderers_renderers_canvas-section-re-730bc0
-js_modern_components_saved-for-later_later-todos-ui_todos-page_tsx
 js_modern_components_saved-for-later_nux_assets_bookmark-icon_svg-js_modern_components_megaph-ff20f5
 js_modern_components_saved-for-later_nux_later-todos-coachmark_module_less-js_modern_componen-5d140c
 js_modern_components_saved-for-later_saved-for-later-page_tsx
@@ -2072,10 +2073,10 @@ shared-js_modern_components_WIP_tabbed-channels_tabbed-channel_tsx
 shared-js_modern_components_WIP_tabbed-channels_thunks_handle-tab-change_ts-js_modern_compone-fe5881
 shared-js_modern_components_WIP_tabbed-channels_views_agent-view-tab-view_agent-view-tab-view-df3aef
 shared-js_modern_components_WIP_tabbed-channels_views_external-files-tab-view_external-file-t-e7d75a
-shared-js_modern_components_WIP_todos-split-view_use-todos-list_ts-js_modern_components_WIP_t-223930
+shared-js_modern_components_WIP_todos-split-view_use-todos-list_ts-js_modern_components_WIP_t-a459f4
 shared-js_modern_components_WIP_unified-directory-view_use-invitations-explorer_tsx
 shared-js_modern_components_WIP_unified-global-triage_drafts-tab-page_tsx
-shared-js_modern_components_WIP_unified-global-triage_todos-page-filter-bar_tsx
+shared-js_modern_components_WIP_unified-global-triage_todos-page_tsx
 shared-js_modern_components_WIP_unified-global-triage_unified-global-triage-tab-content_tsx
 shared-js_modern_components_WIP_work-objects_components_full-size-preview_work-object-full-si-79c25f
 shared-js_modern_components_WIP_work-objects_hooks_use-embed-preview-url_ts-js_modern_compone-c2a4d1
@@ -2119,7 +2120,7 @@ shared-js_modern_components_lists_subcomponents_import-modal_lists-import-modal_
 shared-js_modern_components_lists_subcomponents_views_grid-view_todos_todos-date-column_tsx-j-352da8
 shared-js_modern_components_media_stream-manager_canvas-utils_ts-js_modern_components_slackbo-a6fdda
 shared-js_modern_components_megaphone_dispatcher_dispatcher-modal_tsx
-shared-js_modern_components_megaphone_space-configs_todos-top-page-header-desktop_ts-js_moder-4b79e0
+shared-js_modern_components_megaphone_space-configs_todos-top-page-header-desktop_ts-js_moder-2cab3a
 shared-js_modern_components_message-attachment_custom-attachments_mcp-app_mcp-app-tool-result-18cdda
 shared-js_modern_components_message-pane-input_message-pane-input-channel-join-banner_channel-6b39ef
 shared-js_modern_components_mobile-download_mobile-download-modal_tsx-js_modern_components_qr-6d56cb
@@ -2128,7 +2129,6 @@ shared-js_modern_components_portable_quip-popout_quip-comment-stream-view_tsx
 shared-js_modern_components_saved-for-later_bookmarks_bookmarks-page_tsx
 shared-js_modern_components_saved-for-later_later-todos-ui_row-renderers_later-todo-row_tsx-j-323db6
 shared-js_modern_components_saved-for-later_later-todos-ui_row-renderers_renderers_canvas-sec-b1ca76
-shared-js_modern_components_saved-for-later_later-todos-ui_todos-page_tsx
 shared-js_modern_components_saved-for-later_saved-for-later-page_tsx
 shared-js_modern_components_search_filters_search-filter-in_tsx-js_modern_components_search_f-f319c7
 shared-js_modern_components_search_search-filter-sort_tsx-js_modern_components_search_search--fb6957
