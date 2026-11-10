@@ -397,14 +397,19 @@ AgendaError
 AgendaEventItem
 AgendaEventListItem
 AgendaMarkTaskCompleteToast
+AgendaMoreMenu
 AgendaNavCount
-AgendaNavMeetingBubble
+AgendaNavStatus
 AgendaNotAuthed
+AgendaOpenInSplitViewButton
 AgendaPeekDrafts
-AgendaPeekMeetings
-AgendaPeekOpenInSplitView
+AgendaPeekMyDay
+AgendaPeekProfileButton
+AgendaPeekProfileControls
+AgendaPeekSectionHeader
 AgendaPeekTodos
 AgendaPeekView
+AgendaProfileWidget
 AgendaSections
 AgendaSidebarPeekWrapper
 AgentAvatar
@@ -435,6 +440,7 @@ AgentDmDetailsProfile
 AgentDmDetailsProfileActions
 AgentDmDetailsSections
 AgentDmDetailsSettings
+AgentDmDetailsTooltip
 AgentDmForeword
 AgentDmHistoryButton
 AgentDmPeekChannelSessionRow
@@ -480,6 +486,7 @@ AgenticBrowseAndFindPage
 AgenticBrowseAndFindViewComponent
 AgenticClient
 AgenticCreateMenu
+AgenticFeedbackButton
 AgenticHelpButton
 AgenticIANav
 AgenticIANavContent
@@ -522,6 +529,8 @@ AgentProfileActions
 AgentProfileAgentPermissions
 AgentProfileCardButtons
 AgentProfileFormPane
+AgentProfileRedirectGate
+AgentProfileRedirectLoading
 AgentProfileSharedWorkspaces
 AgentProfileSuggestedPromptButton
 AgentPromptButton
@@ -789,7 +798,6 @@ AppDisclaimer
 AppErrorActivityMessage
 AppExternalHuddleGuestBanner
 AppExternalTeamBanner
-AppFilterChipButton
 AppFunctions
 AppHelpButton
 AppHistoryTabView
@@ -1685,8 +1693,6 @@ BrowsePageControls
 BrowsePageLayout
 BrowsePageResults
 BrowsePageUserGroup
-BrowsePane
-BrowsePaneHeaderActions
 BrowsePaneTabs
 BrowsePeekMenu
 BrowsePeekMenuItemContainer
@@ -1851,7 +1857,6 @@ callButtonFunctionComponent
 CallMenu
 Callout
 CallSection
-CallsRegionLockOptions
 CallsUpgradeContent
 CallsUpgradeModal
 CallsWorkspaceSettings
@@ -1932,6 +1937,7 @@ CanvasSalesforceRichTextPreview
 CanvasSearchInput
 CanvasSection
 CanvasSectionReminderContent
+CanvasSectionRow
 CanvasSelection
 CanvasSelfLockoutSpeedBump
 CanvasShareDialog
@@ -2224,6 +2230,7 @@ ChannelRestrictionsSettingsForm
 ChannelRestrictionsSettingsModal
 ChannelResults
 ChannelRow
+ChannelRowMenu
 ChannelRowShimmerLoaders
 ChannelRowWithAriaLabel
 ChannelSection
@@ -2417,6 +2424,7 @@ CodeChannelCardPrTags
 CodeChannelConversationListItem
 CodeChannelConversationListItemInner
 CodeChannelCreatorFilter
+CodeChannelEarlierResponseModeChanges
 CodeChannelEntityCard
 CodeChannelForewordDescription
 CodeChannelLifecycleAvatar
@@ -2445,6 +2453,7 @@ CodeChannelReviewComment
 CodeChannelReviewMessage
 CodeChannelReviewRequestMessage
 CodeChannelReviewRequestSummary
+CodeChannelsBrowserViewComponent
 CodeChannelSessionCard
 CodeChannelSessionDetails
 CodeChannelShowMoreRow
@@ -2465,6 +2474,7 @@ CodeViewsCollapsedButtons
 Collaborator
 Collaborators
 CollaboratorsDialog
+CollapsesResponseModeChangesContext
 CollapsibleCard
 CollapsibleCommentBody
 CollapsibleDebugCard
@@ -2797,6 +2807,7 @@ ContextualFile
 ContextualHelpForSectionNavigationModal
 ContextualHelpModal
 ContinuedInThreadLink
+ContinueWithoutButton
 ControlContent
 ControlledBasicSelect
 ControlledClick
@@ -3041,6 +3052,7 @@ DataVisualizationFullscreenModal
 DataVizFields
 DateColumnEditor
 DateCommand
+DateDividerPill
 DateDueMenuItem
 DateDuePill
 DateDuePillContent
@@ -3070,6 +3082,7 @@ DayDividerLabel
 DayGlanceBody
 DayGlanceCalendarIcon
 DayGlanceCard
+DayGlanceFirstMeeting
 DayGlanceHeader
 DayNavButtons
 DayPickerSection
@@ -3171,6 +3184,7 @@ DesktopContextPill
 desktopMenuItemClicked
 DesktopPref
 DesktopUpdateBanner
+DestinationAvatar
 DestinationFilter
 DestinationFilters
 DestinationIcon
@@ -3347,6 +3361,8 @@ DraftManagementButton
 DraftManagementButtonCoachmark
 DraftPreview
 DraftRichTextPreview
+DraftsPage
+DraftsPageRow
 DraftsTabActions
 DraftsTabPage
 DraftStageRow
@@ -3401,6 +3417,7 @@ DualActivityBadge
 DualActivityPeek
 DuckFace
 DuckSkin
+DueDate
 DunningNoticeBanner
 DunningNoticeContainer
 DunningNoticeDay14AdminBillingBanner
@@ -4082,6 +4099,7 @@ FileRemoveButton
 FileRemoveContext
 FileRequestAccessButton
 FileResults
+FileRow
 Files
 FileSampleContent
 FilesAndLinksRow
@@ -4435,7 +4453,6 @@ getControlText
 getConversationPreview
 getCopyForError
 getCopyLinkToSectionMenuItemTemplate
-getCopySubmenuTemplate
 getCreateCodeChannelMenuItem
 getCreateHuddleLinkErrorMessage
 getCTA
@@ -4843,6 +4860,7 @@ HighlightRowMenuItemComponent
 Hint
 HistoryArrow
 HistoryButtons
+HistoryMenuPrivacyLabel
 HistoryMenuThreadLabel
 HistoryOptionsModalHeader
 HistoryOptionsPane
@@ -5557,6 +5575,7 @@ LayoutStyle
 LazyDevDebugMenu
 LazyDevToolsPanel
 LazyDevToolsTriggerButton
+LazyJpPocketGuideV2FlowHost
 LazyMessageAttachmentMCPUI
 LazyModal
 LazySnippetEditor
@@ -5717,6 +5736,7 @@ ListRecordField
 ListRecordOverflowMenuTrigger
 ListRecordReference
 ListRecordRemindMenu
+ListRecordRow
 ListRecordSubtasks
 ListRecordUnfurl
 ListRecordUpdatedFilter
@@ -5841,6 +5861,7 @@ Location
 LocationHuddleChannelRow
 LocationHuddlePickerInput
 LocationHuddlePickerRenderable
+LocationLabel
 LogActivityCTA
 LogActivityFlexpane
 LogActivityFormContent
@@ -6476,6 +6497,7 @@ MessageResend
 MessageResults
 MessageRetentionModal
 MessageRetentionModalContents
+MessageRow
 MessagesCountCallout
 MessageSender
 MessageSendErrorToast
@@ -6600,8 +6622,6 @@ ModelOverrideButton
 ModeratedIcon
 ModeratedMessageTombstoneBody
 ModeSwitchSpeedBumpContent
-MonitorFilters
-MonitorList
 Month
 MoreActionsMenu
 MoreFiltersDropdown
@@ -6827,6 +6847,7 @@ NotificationsFilterMenu
 NotificationsGlobalPlatformSelect
 NotificationsGlobalPrefCheckbox
 NotificationsKeywordsInput
+NotificationsMenuButton
 NotificationsMobilePushIdleWaitSelect
 NotificationsPanel
 NotificationsUserPrefCheckbox
@@ -7042,6 +7063,10 @@ OutdatedSystemsModal
 OutgoingErrorState
 OutgoingInviteActionItemWrapper
 OutgoingPage
+OutgoingRowLayout
+OutgoingScheduledRow
+OutgoingScheduledRowActions
+OutgoingSentRow
 OutlineNavigation
 OutOfOffice
 OutOfOfficeMessage
@@ -7236,6 +7261,7 @@ PlaceholderInput
 PlaceholderInsertionModal
 PlaceholderLinkUnfurl
 PlaceholderVariablePopover
+PlainRow
 PlainText
 PlainTextCanvasInput
 PlainTextInputElement
@@ -7349,6 +7375,7 @@ PrejoinDmWelcomePartyNotificationSubtype
 PreparationContent
 PrepWithAiButton
 PresencePromptDialog
+PresenceToggle
 presentConversationBody
 PresentedItemsPane
 PreviewBlockText
@@ -7422,6 +7449,7 @@ ProfileCardTrigger
 ProfileCelebrationTags
 ProfileHoverCard
 ProfileHoverTrigger
+ProfileIdentityButton
 ProfileImage
 ProfileLinkElement
 ProfileLongTextElement
@@ -7625,6 +7653,7 @@ ReactionItem
 ReactionPicker
 ReactionPickerDisplay
 ReactionPill
+ReactionPopover
 ReactionsEmojiPicker
 ReactionSender
 ReactionsList
@@ -7689,11 +7718,14 @@ RecentPostsBadge
 RecentPromptAgent
 RecentPromptItem
 RecentsConversationRow
+RecipientName
 RecipientsSelect
 RecommendationPromptRow
 RecommendationsSlide
 Recommended
+RecommendedSlackbotTasks
 RecommendedTaskCard
+RecommendedTaskRow
 RecommendedTasks
 ReconnectToast
 RecordActionsMenu
@@ -7821,6 +7853,7 @@ ReminderAvatarStack
 ReminderCustomModal
 ReminderMessage
 ReminderOptions
+ReminderRow
 RemindersPreferences
 ReminderText
 ReminderTimeMenu
@@ -8025,6 +8058,7 @@ renderDynamicContent
 renderEditCustomSolutionModal
 renderEditFileGallery
 renderEditor
+RenderedRow
 RenderedViewContents
 renderEllipsisButton
 renderEmailIcon
@@ -8195,6 +8229,7 @@ renderMoreMenu
 renderMoveToFolderSubmenu
 renderName
 renderNameMaybe
+renderNavItem
 renderNewBadge
 renderNewConversation
 renderNewEmails
@@ -8224,7 +8259,6 @@ renderOverridesSection
 renderOwnerAndAdminRadioButtons
 renderPageContent
 renderPaidBenefitsCards
-renderPanel
 renderPauseToggle
 renderPDFViewer
 renderPendingFile
@@ -8601,13 +8635,18 @@ RouterContext
 RouteToChannelSection
 Row
 RowActions
+RowBody
 RowCheckbox
+RowContainer
+RowFooter
+RowHeader
 RowIcon
 RowImpl
 RowItem
 RowPrimary
 rowRenderer
 RowSecondary
+RowShell
 RowTertiary
 RsvpStatusIcon
 runInModalDialog
@@ -8728,6 +8767,7 @@ SalesforceStringDisplay
 SalesforceStyleSandbox
 SalesforceTask
 SalesforceTaskReminderContent
+SalesforceTaskRow
 SalesforceTeamMemberBase
 SalesforceTextArea
 SalesforceTextAreaDisplay
@@ -9134,20 +9174,16 @@ ServicesChannelPickerComponent
 ServicesChannelPickerSharedAlertComponent
 ServicesCountCallout
 ServiceTriggerSummary
-SessionChannelRow
 SessionDurationInfo
 SessionEntity
 SessionListFilterBar
 SessionListFilterMenu
-SessionListRow
-SessionListView
 SessionLocationIcon
 SessionResetModal
 SessionRow
 SessionRowView
 SessionsListFrame
 SessionStatusPrefixIcon
-SessionThreadRow
 SessionTypeFilterMenu
 SetGuestExpiration
 SetGuestExpirationContainer
@@ -9373,6 +9409,7 @@ SidebarSimplificationIcon
 SidebarSweeperArchiveRecommendations
 SidebarSweeperChannelCheckbox
 SidebarSweeperChannelList
+SidebarSweeperFinishSpeedBump
 SidebarSweeperMultiPaneModal
 SidebarSweeperWizard
 SidebarTextFilterActiveContext
@@ -9454,6 +9491,7 @@ SingerDlsContentViewer
 SingerDlsGlance
 SingerDlsMessageBody
 SingerDlsQuietButton
+SingerDlsReactionPicker
 SingerDlsResize
 SingerDlsSettings
 SingerDlsSummaryGlance
@@ -9624,8 +9662,6 @@ SlackbotAiAppDetail
 SlackbotAiAppDetailContent
 SlackbotAiAppDetailsViewInner
 SlackbotAiAppEnableSwitch
-SlackbotAiAppsTabView
-SlackbotAiAppsView
 SlackbotAiBackToHomeButton
 SlackbotAiBuiltinSkillDetailView
 SlackbotAiBuiltinSkillInstructions
@@ -9647,14 +9683,12 @@ SlackbotAiHistorySortMenu
 SlackbotAiHistoryTabViewContent
 SlackbotAiHistoryTaskChatFilterMenu
 SlackbotAiNewChatButton
-SlackbotAiNotInstalledPanel
 SlackbotAiNux
 SlackbotAiNuxCloseCoachmark
 SlackbotAiNuxSplash
 SlackbotAiOnboardingCards
 SlackbotAiOrgSkillDetailView
 SlackbotAiPaywallWarning
-SlackbotAiPendingPanel
 SlackbotAiPref
 SlackbotAiPreviewBadge
 SlackbotAiProjectCanvasModal
@@ -9819,6 +9853,7 @@ SlackbotTabEducationCoachmark
 SlackbotTabIntroAnimation
 SlackbotTabRailIcon
 SlackbotTaskCard
+SlackbotTasksEmptyState
 SlackbotTeaser
 SlackbotThinkingAvatar
 SlackbotThreadFooter
@@ -10110,6 +10145,7 @@ SpeedBumpHeading
 SpellcheckPrefs
 SpicySparrowLottieAnimation
 Spinner
+SplitButtonElement
 SplitDragContext
 SplitDragContextProvider
 SplitDropTarget
@@ -10164,6 +10200,7 @@ StatusColumn
 StatusColumnValue
 StatusContainer
 StatusEntity
+StatusField
 StatusGlyph
 StatusLabel
 StatusLink
@@ -10762,6 +10799,7 @@ TodoHittingLimitBanner
 TodoInlineComposer
 TodoInput
 TodosEmptyState
+TodosList
 TodosPage
 ToggleBar
 ToggleMute
@@ -11060,6 +11098,8 @@ useAdditionalMenuItems
 useAddRemoveWorkspacesFetcher
 useAdminNavigation
 useAdminToast
+useAgendaNotificationsMenu
+useAgenticHelpButton
 useAgentInputRoadblock
 useAgentSessionMenuTemplate
 useAgentTasksExplorer
@@ -11136,6 +11176,7 @@ useExportCsv
 useExternalFileModalExplorer
 useExternalOrganizationsButton
 useExternalOrganizationsExplorer
+useFeedbackButton
 useFeedbackMenuItems
 useFileCollectionMenuTemplate
 useFileDeleteSuccessHandler
