@@ -75,8 +75,6 @@
  \u2014 expires today
  \u2014 never expires
  about sending email to Slack.
- also gives your team room to grow.
- also keeps your team protected with advanced security.
  and {numOthers, plural, =1 {# other organization} other {# other organizations}}
  are already in the huddle.
  are turned off.
@@ -3663,6 +3661,7 @@ Ask me anything
 Ask members of [[channel_id]] for [[message]] every [[schedule]]
 Ask questions, catch up on conversations, and get a head start on your work.
 Ask the Writing coach skill to polish my draft into a clear, on-voice version and summarize what changed.
+Ask the admin who deactivated a skill to reactivate it
 Ask the agent or leave feedback on GitHub\u2026
 Ask the user to try authenticating again. If the issue persists, verify the Salesforce connection settings.
 Ask them to unshare and archive the channel.
@@ -6288,6 +6287,7 @@ Clear metadata for a thread in a window
 Clear no audio output
 Clear no media input from microphone or camera
 Clear no or low input audio level
+Clear oauth token
 Clear out all selected draft ids
 Clear out root messages
 Clear pending draft insert
@@ -8019,6 +8019,7 @@ Couldn\u2019t send request
 Couldn\u2019t send that to the agent. Try again.
 Couldn\u2019t send this request. The draft is saved here. Try again.
 Couldn\u2019t send to {channel}
+Couldn\u2019t send your request. Please try again.
 Couldn\u2019t send. Your draft is saved here.
 Couldn\u2019t send. Your message is still here. Try again when you\u2019re connected.
 Couldn\u2019t start connecting to GitHub Enterprise. Try again later.
@@ -8993,11 +8994,13 @@ Delete drafts without text or files
 Delete email address
 Delete email address for {channelDisplayName}?
 Delete field
+Delete field from Salesforce?
 Delete file
 Delete file summary
 Delete filter
 Delete folder
 Delete from
+Delete from Salesforce
 Delete given team id from e-p (pending auth) cookie
 Delete group
 Delete group by
@@ -9895,6 +9898,7 @@ Drafts sub-view type
 DraftsSent Outlines
 Drag Singer onto a window to ask about it.
 Drag Singer onto the window.
+Drag and drop .md files here
 Drag and drop CSV file here or click to upload
 Drag and drop a .md file here
 Drag and drop here to pin
@@ -9930,6 +9934,7 @@ Drop messages from before a given timestamp
 Drop more .md files here, or click to browse
 Drop old messages if there are too many
 Drop result must either be an object or undefined.
+Drop to add more files
 Drop to attach
 Drop to upload
 Drop your CSV file here.
@@ -11520,6 +11525,7 @@ Failed to capture screenshot. Please try again.
 Failed to change who can manage agent.
 Failed to check IP
 Failed to check Slackbot DM history for existing summary
+Failed to check Slackbot Mini for menu bar icon
 Failed to check accessibility permissions
 Failed to check accessibility permissions for modifier capture
 Failed to clean up meeting audio after recording
@@ -15229,6 +15235,7 @@ Import from Google
 Import leads with Slackbot
 Import memory from other AI tools
 Import records from a spreadsheet or another tool with Slackbot\u2019s help.
+Import skills
 Import theme
 Import workflow
 Import workflow and triggers
@@ -16294,7 +16301,6 @@ Keep files for {policyDurationValue} days
 Keep files including deleted files
 Keep files including deleted files, but only for a set number of days
 Keep files, but only for a set number of days
-Keep going with 
 Keep in mind that invitations expire in 30 days. You can always extend that deadline.
 Keep in mind that some people may still have access if it\u2019s been shared in another channel they\u2019re in.
 Keep in mind that:
@@ -18404,6 +18410,7 @@ Mark the user as no longer viewing the file
 Mark the user as viewing the file
 Mark the window as unloading
 Mark this group as important
+Mark token expired
 Mark unread
 Mark user as having sent an invite during team creation
 Mark when a summary has been triggered
@@ -20225,6 +20232,7 @@ No Slack Connect invitations yet
 No Slack file id returned
 No Slack file returned
 No Slackbot DM to reset; it may reopen on its last chat
+No Slackbot Mini
 No TS.model.user
 No Thanks
 No VFConfig provided during setupDevice
@@ -21903,6 +21911,7 @@ Open the modal to set solution template permissions
 Open the new to-do composer
 Open the new to-do composer from the Business+ trial task list
 Open the pro pocket guide checklist panel
+Open the profile of an app the user has requested
 Open the reasoning trace for a Slackbot AI message
 Open the recap mute education modal
 Open the remove external huddle guest confirmation modal
@@ -23709,6 +23718,7 @@ Provide some details or suggest improvements (300 chars max)
 Provide the below inputs to test run this step
 Provided effect config is invalid, not updating VideoFxProcessor
 Provision a given solution for a given channel
+Provision the Slack CRM org once setup completion has had its chance to redeem a Business+ trial
 Provisionally connected
 Provisionally connected timeout
 Provisioning and auth
@@ -23976,6 +23986,7 @@ Reactivate skill
 Reactivate thread
 Reactivates a deactivated member
 Reactivating skill
+Reactivation Requested
 Read
 Read Article
 Read Instructions
@@ -24283,6 +24294,7 @@ Record the channel a smart-invites-v3 channel suggestion was resolved into
 Record the first survey trigger to fire (segment + query session + search session + query)
 Record the last search accept for re-search-after-nav metrics
 Record the live voice transcript thread announced by switchboard
+Record the menu bar icon visibility decided for Slackbot Mini at boot
 Record the omniswitcher Slackbot mode NUX answer
 Record the result of a passkey registration attempt
 Record the result of the mini survey we first display the user after a huddle ends.
@@ -24598,6 +24610,7 @@ Refresh interactivity pointer for a Form step, if needed
 Refresh is_interactable for an Agentforce agent via the Salesforce ACL cache
 Refresh is_interactable for an app
 Refresh list
+Refresh oauth token
 Refresh programmable sidebar recommend scores
 Refresh recap
 Refresh results in every browser for an entity after a mutation
@@ -25375,6 +25388,8 @@ Rename folder
 Rename section
 Rename session
 Rename tab
+Rename the dashboard only
+Rename the report only
 Rename this channel
 Rename this channel for your workspace
 Rename this code channel
@@ -25555,6 +25570,7 @@ Request Connection
 Request Customer Management
 Request Edit Access
 Request Org Admin Approval
+Request Reactivation
 Request Review
 Request Salesforce sync permissions for this org
 Request Sent
@@ -25649,6 +25665,7 @@ Requested access on {requestDate}
 Requested apps received
 Requested by
 Requested index 
+Requested unknown style:
 Requested {name}, opens in your browser
 Requester
 Requesting calendar prefs
@@ -26346,6 +26363,7 @@ Sales Elevate Users Table
 Sales Elevate records
 Sales Elevate users have been migrated to the Salesforce permission set, but not all users were migrated and some need attention.
 Sales Home
+Sales Home is no longer available. The Salesforce org was disconnected.
 Sales Lists
 Sales Outlines
 Sales Pipeline Assistant
@@ -26551,6 +26569,7 @@ Save as default for future use
 Save as draft
 Save as new view
 Save as private to test with collaborators before sharing widely
+Save as {gdriveFileLabel}?
 Save canceled
 Save changes
 Save changes before changing record owner
@@ -27748,6 +27767,7 @@ Sending invitations with permission to post, invite, and more.
 Sending messages to this app has been turned off
 Sending messages to this app has been turned off.
 Sending messages, collecting info in a form, and creating or updating channels and canvases.
+Sending request
 Sending scheduled notifications to channels is not supported right now.
 Sending summary to My Sales Home
 Sending summary to My Salesforce App
@@ -29888,7 +29908,7 @@ Show a desktop notification for generic_system_alert
 Show a desktop notification for user alerts
 Show a previously hidden unfurl
 Show a thread broadcast
-Show a toast explaining that Sales Tracker closed because its Salesforce org was disconnected
+Show a toast explaining that the CRM surface closed because its Salesforce org was disconnected
 Show a toast for new summaries
 Show a toast that allows undoing a bulk file organize action
 Show a toast that allows users to undo the automatic creation of a table block
@@ -30193,6 +30213,7 @@ Sign In to the Mobile App
 Sign Out
 Sign Out & Reset Password
 Sign Up
+Sign back in to continue
 Sign in
 Sign in Settings
 Sign in With Email
@@ -30931,6 +30952,7 @@ Something went wrong creating the session channel. Please try again.
 Something went wrong creating this prompt.
 Something went wrong creating this workflow. Try again in a bit, and here\u2019s a tip: get specific on how the workflow starts, like on a schedule or on click.
 Something went wrong deleting that memory. Please try again.
+Something went wrong deleting the field. Please try again.
 Something went wrong drafting the email
 Something went wrong fetching insights
 Something went wrong fetching the diff. Please try again later.
@@ -32454,6 +32476,7 @@ Team Public Channels Table
 Team channels and direct messages
 Team data unavailable
 Team governance
+Team has neither Business+ nor a redeemable trial; not provisioning
 Team id is undefined for the 
 Team is not eligible for trial redemption per API check
 Team management
@@ -32706,6 +32729,7 @@ The Slack user account field you choose will be used for mapping Slack and Sales
 The URL will be created after you save this information.
 The access requested for this app can\u2019t be applied. It might include someone or a user group you can\u2019t give access to. Try again. If the problem continues, deny the request and ask for a new one.
 The admin approval request couldn\u2019t be submitted. Try again.
+The admin who turned this skill off isn\u2019t available. Ask another admin or Skill Manager to turn it back on.
 The agent may have been uninstalled or you do not have permission to view it.
 The agent will automatically respond to all messages it thinks need a reply.
 The agent will forward messages to this channel when people request more help.
@@ -32757,6 +32781,7 @@ The base score comes from this model, refreshed when Slack starts or reconnects.
 The best memories are sometimes created in the calmest moments
 The blocks do not contain any mentions
 The branch name can\u2019t have more than 100 characters
+The browser blocked the data source sign-in window
 The browser has blocked getUserMedia for cameras
 The browser has blocked getUserMedia for microphones
 The browser has blocked getUserMedia for screen recording
@@ -33252,6 +33277,7 @@ These settings change how the Focused sidebar ranks conversations on this device
 These teammates may be waiting for your reply.
 These tools will be shared with anyone who reviews this app.
 These updates are marked read.
+These updates are still unread.
 These updates couldn\u2019t be fully summarized and are still unread.
 These workflows are connected to this list.
 These workflows post updates about this channel\u2019s Salesforce record.
@@ -33541,6 +33567,7 @@ This field is required.
 This field must be lowercase only
 This field name is already in use. Please choose a different name.
 This field type cannot be changed
+This field was already deleted.
 This file can\u2019t be added as a tab because it can\u2019t be previewed in Slack.
 This file can\u2019t be added as a tab right now. Please try again later.
 This file can\u2019t be previewed in Slack.
@@ -33861,6 +33888,7 @@ This sheet will be automatically generated from the values below.
 This shortcut is reserved by the system. Try a different one.
 This should not happen: Alias anchor was not resolved?
 This should only take a moment.
+This skill is already back on.
 This skill is built by Slack.
 This skill is deactivated
 This skill is enabled for your workspace. To make it private, an admin must first remove it from the workspace skill settings.
@@ -34037,6 +34065,7 @@ This {display_type} is too big to preview
 This {objectLabel} has already been deleted.
 This {objectName} has just been updated by someone else and {ownerName} is now the owner. Do you want to continue?
 This {objectName} has just been updated by someone else, but the owner wasn\u2019t changed. Do you want to continue?
+This {officeFileLabel} file will be converted to {gdriveFileLabel}, and may lose some formatting.
 This {providerName} file wasn\u2019t found, or you may not have access to it. If you know the name of the file, try searching in {providerName}.
 Thomas Boettcher
 Those instructions can\u2019t be used. Try editing them.
@@ -37477,7 +37506,6 @@ We provide users with a mechanism to request to delete, access, and transfer an 
 We ran into a problem loading its tools.
 We ran into some trouble fetching {memberName}\u2019s workspaces
 We recommend channels you like to keep tabs on, but aren\u2019t active in. They\u2019ll be muted when you add them, but you can unmute anytime.
-We recommend the 
 We removed your weekly message limit
 We removed your weekly message limit. Ask anything, as often as you want, through {date}.
 We set things up so you can easily jump right back in.
@@ -39079,6 +39107,7 @@ You\u2019ll need to join this channel\u2019s workspace
 You\u2019ll need to re-map opportunity object fields for the new integration.
 You\u2019ll need to receive an invite to {numChannels, plural, =1 {this private channel} other {these private channels}}.
 You\u2019ll need to remove the {agentName} agent first
+You\u2019ll need to upgrade your plan to access Sales Home.
 You\u2019ll need to upgrade your plan to be able to access the Sales Tracker.
 You\u2019ll need to upgrade your plan to be able to access this list.
 You\u2019ll no longer be a member of this workspace. To rejoin, you\u2019ll need a fresh invitation.
@@ -46942,6 +46971,7 @@ zzz
 {count, plural, =1 {# workspace} other {# workspaces}}
 {count, plural, =1 {# year} other {# years}}
 {count, plural, =1 {# year} other {# years}} and counting!
+{count, plural, =1 {#+ item} other {#+ items}}
 {count, plural, =1 {#{certainty} new message} other {#{certainty} new messages}}
 {count, plural, =1 {+ # more attachment} other {+ # more attachments}}
 {count, plural, =1 {1 pending comment will be submitted with this review.} other {# pending comments will be submitted with this review.}}
