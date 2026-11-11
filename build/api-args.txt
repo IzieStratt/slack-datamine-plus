@@ -78,7 +78,6 @@ ai.alpha.audio.transcribe: audio_base64, audio_format, context
 ai.alpha.audio.transcribeChunk: action, client_session_id
 ai.alpha.canvas.computeDraftDiff: canvas_id, operations, title
 ai.alpha.canvas.createContent: agent_id, canvas_id, client_req_id, current_tabbed_channel_id, focused_section_id, goal, prompt_data, source_channels, source_content_data, source_files
-ai.alpha.canvas.getTopicSuggestions: channel_ids, in_channel_tab
 ai.alpha.canvas.refineContent: canvas_id, client_req_id, content_data, prompt_data, session_prompt_history
 ai.alpha.canvas.resolveDraft: canvas_id, decision, dm_channel_id, invocation_id, message_ts
 ai.alpha.canvas.reviseContentWithSources: canvas_id, client_req_id, focused_section_id, prompt_data, session_prompt_history, sources

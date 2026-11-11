@@ -1419,7 +1419,6 @@ action:setCanvasesToSuppress
 action:setCanvasFileId
 action:setCanvasSystemTextSettings
 action:setCanvasTabState
-action:setCanvasTopicSuggestions
 action:setCanvasUpdateStep
 action:setCatchUpExpandOnArrival
 action:setCatchUpStatus
@@ -3003,7 +3002,6 @@ action:updateCalendarEventLocation
 action:updateCameraResolutionFeedback
 action:updateCanvasContentSession
 action:updateCanvasTemplateModeForFile
-action:updateCanvasTopicSuggestionsFromApi
 action:updateChannel
 action:updateChannelAiIngestion
 action:updateChannelBadgesCounts
@@ -4936,7 +4934,6 @@ thunk:fetchCalendarEventsList
 thunk:fetchCalendarUserStatus
 thunk:fetchCalendarWindow
 thunk:fetchCanvasTemplatesByNames
-thunk:fetchCanvasTopicSuggestions
 thunk:fetchCellEdit
 thunk:fetchChannelAgents
 thunk:fetchChannelById
@@ -6204,6 +6201,7 @@ thunk:navigateToWorkObject
 thunk:navigateWithDetailView
 thunk:neverSuggestTranslatingLocale
 thunk:newMessageShortcut
+thunk:newTeamLaunchpadV2MaybeLogExposure
 thunk:normalizeAPIFailures
 thunk:normalizeAPIFailuresUG
 thunk:noteAnnouncedSessionThread
@@ -6465,6 +6463,7 @@ thunk:openEmbeddedCanvasInNewWindow
 thunk:openEndDmDialog
 thunk:openExploreMyTrialFeature
 thunk:openExploreMyTrialFeatureCircularHandler
+thunk:openExploreMyTrialInSlackbot
 thunk:openExplorerInChildWindow
 thunk:openExpressTemplateModal
 thunk:openExpressTemplateModalCircularHandler
@@ -6722,6 +6721,7 @@ thunk:openSidebarSweeper
 thunk:openSidebarThread
 thunk:openSidekickAvatarCropModal
 thunk:openSignIntoSalesforceOrgModal
+thunk:openSingerViewInSlack
 thunk:openSkillCatalogModalCircularHandler
 thunk:openSkillPermalink
 thunk:openSkillSetAddSkillsPicker

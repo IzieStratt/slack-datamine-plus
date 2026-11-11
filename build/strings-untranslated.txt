@@ -44,6 +44,7 @@ Accept Slack Connect invites
 Accept an invitation
 Accepting Slack Connect invites
 Access
+Access AI Assistant
 Access Type
 Access type
 Access {appName}’s AI Assistant with one click
@@ -116,6 +117,7 @@ After 1 hour
 After 15 minutes
 After 30 minutes
 After 5 minutes
+Agent URLs
 Agent avatar
 Agent avatar connector
 Agent disabled for Slackbot
@@ -127,8 +129,6 @@ Agentforce agent
 Agentforce tabs
 Agents required for Slack actions
 Agree to continue
-Align with message retention
-Align with message retention, keep deleted files
 All AI Usage
 All admins, via Slackbot
 All available workspaces
@@ -209,8 +209,8 @@ Any translation
 Anyone who requested this app will get a Slackbot message with this information.
 Anyone will be able to add replies to messages posted in this channel.
 Anyone with @{emailDomain} can join
-Anyone with view or edit access to a canvas can print it.
 App ID
+App Install
 App Managers via Slackbot message
 App access
 App activity metrics (aggregated only)
@@ -230,6 +230,7 @@ AppleScript
 Approval required
 Approvals are not required for invitations less than 24 hours old.
 Approvals never required for channel invitations
+Approve an app
 Approve an app for anyone to install
 Approve invitation request?
 Approve request
@@ -328,9 +329,9 @@ Canvas and List Retention
 Can’t connect to {serverName}
 Can’t have spaces
 Can’t have special characters (e.g. @, $, %, =) or emojis
+Can’t load scope descriptions. Refresh to try again.
 Can’t reach the MCP server to check its tools. Try again in a few minutes.
 Can’t remove member
-Certain people and groups
 Change access?
 Change account type
 Change email?
@@ -345,7 +346,6 @@ Channel Expert added to {teamName}
 Channel Expert unavailable
 Channel Management Table
 Channel Owner
-Channel Retention
 Channel analytics
 Channel archived
 Channel configs
@@ -496,8 +496,6 @@ Default tool access
 Default tool permissions
 Default workspaces
 Delete Profile
-Delete messages & revisions after set number of days (History still accessible via Corporate Export)
-Delete messages and their revisions after a set number of days
 Delete profile
 Delete records
 Delete selected servers?
@@ -527,7 +525,6 @@ Device bound sessions
 Didn’t use Slack enough
 Didn’t use the paid features
 Diff
-Direct Message Retention
 Directly to everyone who can manage Slack Connect
 Disable 2FA
 Disable canvas update messages
@@ -538,7 +535,6 @@ Disallowed objects
 Discard entered ranges?
 Disclaimer: Generative AI can produce inaccurate or harmful responses. Make sure people review the output for accuracy and safety. They assume responsibility for how the outcomes of this agent are applied.
 Disconnecting
-Distributed
 Django Template
 Docker
 Domain Validation
@@ -599,7 +595,6 @@ Enable domain allowlist for channel email addresses and personal forwarding emai
 Enable enterprise search
 Enable enterprise search for the entire organization
 Enable external file thumbnail previews for:
-Enable sharing and viewing canvases with external organizations.
 Enable sharing and viewing lists with external organizations.
 Enforce on Older Sessions
 Enforced on all Chrome and Edge sessions
@@ -683,6 +678,7 @@ Files uploaded
 Filter by app name
 Filter by app or server name
 Filter by channel owner
+Filter by channel privacy
 Filter by name
 Filter by name or ID…
 Filter by name or email…
@@ -712,7 +708,6 @@ Frontline members
 Generate CSV
 Generate a different password
 Generate a temporary password
-Generating CSV…
 Get a quick view of people from external orgs
 Get notified about new servers
 Get started on Slack
@@ -780,6 +775,7 @@ In workspace
 Include a link to your organization’s alt text policy
 Includes external people, guests, and your coworkers
 Includes title, status, local time and pronouns
+Install an app
 Installation
 Installed Agents
 Installed on
@@ -825,19 +821,6 @@ Joining external workspaces
 Julia
 Keep Request
 Keep Requests
-Keep all messages, but don’t track revisions (i.e. edits and deletions)
-Keep all messages, including revision history
-Keep files
-Keep files for {policyDurationValue} days
-Keep files including deleted files
-Keep files including deleted files, but only for a set number of days
-Keep files, but only for a set number of days
-Keep {category, select, lists {lists} canvases {canvases} other {canvases and lists}}
-Keep {category, select, lists {lists} canvases {canvases} other {canvases and lists}} including deleted {category, select, lists {lists} canvases {canvases} other {canvases and lists}}
-Keep {category, select, lists {lists} canvases {canvases} other {canvases and lists}} including deleted {category, select, lists {lists} canvases {canvases} other {canvases and lists}}, but only for a set number of days
-Keep {category, select, lists {lists} canvases {canvases} other {canvases and lists}}, but only for a set number of days
-Keep {salesHomePluralPrefs}
-Keep {salesHomePluralPrefs}, but only for a set number of days
 Keeping apps when deactivating members
 Keyword search
 Kick things off by creating a workspace for your team.
@@ -870,13 +853,13 @@ Let’s get you set up
 Limit of {limit} addresses exceeded
 Limit of {limit} addresses exceeeded
 Limit sharing so only canvas owners can share their canvases with other people and channels.
-Limit sharing so only list owners can share their lists with other people and channels.
 Limited access group updated
 Line
 Lisp
 List Retention
 Literate Haskell
 Loading channels…
+Loading scopes
 Log in with the app
 Looking for something?
 Looks like you belong to a few workspaces. To sign into one of these, you’ll need to download the app.
@@ -1100,10 +1083,13 @@ Number of accepted invites
 Number of people using AI
 Number of people using feature
 OAuth Scopes
+OAuth Speedbump Complete
+OAuth Speedbump Installing
 OCaml
 OK 2
 OR continue to existing workspaces
 OTHER OPTIONS
+Oauth Speedbump Start
 Oauth redirect URLs should not contain a fragment component (#)
 Objective-C
 On a call
@@ -1228,7 +1214,6 @@ Previous resolution
 Previously denied{newPermissions, plural, =0 {} =1 { · # new permission} other { · # new permissions}}{fewerPermissions, plural, =0 {} =1 { · # fewer permission} other { · # fewer permissions}}{newDomains, plural, =0 {} =1 { · # new domain} other { · # new domains}}{fewerDomains, plural, =0 {} =1 { · # fewer domain} other { · # fewer domains}}{newMcpDomains, plural, =0 {} =1 { · # new MCP domain} other { · # new MCP domains}}{fewerMcpDomains, plural, =0 {} =1 { · # fewer MCP domain} other { · # fewer MCP domains}}
 Primary Workspace Owner
 Primary organization
-Private Channel Retention
 Private Channels
 Private channels
 Prompt {number}
@@ -1331,6 +1316,7 @@ Restore Connection
 Restrict AI use of this channel’s content 
 Restrict Access
 Restrict Slackbot edits to assigned layouts
+Restrict an app
 Restrict an app to block installation
 Restricted only
 Retry Passkey
@@ -1367,8 +1353,6 @@ SSO + Two-Factor (2FA)
 SSO login is required for your account, so you can’t sign in with a passkey.
 SSO required by your admins
 SSO with any provider and SCIM user management
-Sales Elevate Retention
-Sales Elevate records
 Salesforce MCP servers
 Salesforce Organization
 Salesforce Organizations | Slack Admin
@@ -1389,6 +1373,7 @@ Scopes requested
 Scopes resolved
 Search Confluence
 Search MCP servers by name
+Search Workspace
 Search any organization
 Search any workspace
 Search by channel name, etc.
@@ -1396,11 +1381,9 @@ Search by name or app ID
 Search by name or keyword
 Search by name, URL or organization
 Search by name, description, URL or organization
-Search for a member…
 Search for an app to approve
 Search for an app to restrict
 Search for an app…
-Search for members or groups
 Search for someone to add…
 Search for workspaces
 Search summaries
@@ -1450,6 +1433,7 @@ Select the workspaces that can access this server.
 Select up to {selectAllLimit} invitations at a time.
 Select up to {selectAllLimit} requests at a time.
 Select workspace
+Select workspaces…
 Select {channelName}
 Select {ssoProviderName} groups
 Select {teamName} workspace
@@ -1680,6 +1664,7 @@ There was a problem loading these Channel Managers. Give it another try in a few
 There was a problem updating Slackbot access for #{channelName}. Give it another try in a few minutes.
 There was a system error that prevented us from creating your account. Please try again.
 There was an issue connecting. Please try again.
+These are the default scopes the developer configured for {appName}. Installed scopes may differ by workspace.
 These are the default scopes the developer configured for {appName}. The scopes installed on this workspace may differ.
 These minimum permissions are needed to let people use this agent in Slack. Channel Expert is built by Slack, so rest assured that we’ll keep your data safe and never share it with third parties.
 These requests are being cancelled. You’ll get a Slackbot message with details.
@@ -1807,7 +1792,6 @@ Unable to remove {count, plural, =1 {# member} other {# members}}
 Unable to revoke passkeys. Try again later.
 Unable to save changes to role.
 Unable to save setting. Try again later
-Unable to save setting. Try again later.
 Unable to sign {memberName} out of Slack.
 Unable to verify MCP server status. Please try again later.
 Unapprove
@@ -1962,7 +1946,6 @@ Who can use {permissionLocalizedDisplayName}?
 Who is uploading files
 Will be added
 Will not be added
-Workflow Managers can export workflows
 Workflow steps & triggers
 Workflow steps, triggers, & integrations
 Workflows with steps that use {title} will stop working immediately. Are you sure you want to delete this integration?
@@ -2016,8 +1999,8 @@ You don’t have permission to add domains.
 You don’t have permission to revoke passkeys.
 You haven’t added any domains yet
 You might want to try adjusting your filters.
+You only have access to public channels
 Your Analytics Export is processing…
-Your Full Name
 Your Meetings
 Your changes weren’t saved. Try again.
 Your current IP isn’t in the allowed ranges. Add your IP address to avoid being locked out.
@@ -2065,10 +2048,8 @@ includes only those in
 is a connector step
 joined the huddle.
 left the huddle.
-locked to the org setting
 members
 name@{example_com}
-not locked to the org setting
 of the following conditions are met:
 org
 received by
@@ -2085,7 +2066,6 @@ submitted for approval
 team
 test@example.com
 unresolved
-uses
 workflows
 you@{example_com}
 {actionableApprovalsCount, plural, =1 {# request to review} other {# requests to review}}
@@ -2110,9 +2090,7 @@ you@{example_com}
 {appName} is not set as a default {appType} for new workspaces.
 {appName} is set as a default {appType} for new workspaces.
 {appName} steps will be removed from all workflows and will not be available in Workflow Builder. 
-{appTypeCount} categories
 {appsCount, plural, =1 {# app} other {# apps}}
-{basePolicy}, {lockedText}
 {browserName} icon
 {browserName} is now mandatory for unmanaged devices
 {channelCount, plural, =1 {# channel} other {# channels}} ({privateChannelCount} private)
@@ -2129,6 +2107,7 @@ you@{example_com}
 {count, plural, =0 {No canvases} =1 {# canvas} other {# canvases}}
 {count, plural, =0 {No direct messages} =1 {# direct message} other {# direct messages}}
 {count, plural, =0 {No lists} =1 {# list} other {# lists}}
+{count, plural, =0 {No new scopes} =1 {# new scope} other {# new scopes}}
 {count, plural, =0 {No private channels} =1 {# private channel} other {# private channels}}
 {count, plural, =0 {No public channels} =1 {# public channel} other {# public channels}}
 {count, plural, =0 {No workspaces selected} one {# workspace selected} other {# workspaces selected}}
@@ -2142,19 +2121,16 @@ you@{example_com}
 {count, plural, =1 {# person} other {# people}} used keyword search
 {count, plural, =1 {# person} other {# people}} used message translation
 {count, plural, =1 {# person} other {# people}} used natural language search
-{count, plural, =1 {# person} other {# people}} used {columnName}
 {count, plural, =1 {# request} other {# requests}}
 {count, plural, =1 {# rule} other {# rules}}
 {count, plural, =1 {# scope} other {# scopes}}
 {count, plural, =1 {# server is not available to connect and will be skipped.} other {# servers are not available to connect and will be skipped.}}
-{count, plural, =1 {# use} other {# uses}}
 {count, plural, =1 {# use} other {# uses}} of all search
 {count, plural, =1 {# use} other {# uses}} of any translation
 {count, plural, =1 {# use} other {# uses}} of file summary translation
 {count, plural, =1 {# use} other {# uses}} of keyword search
 {count, plural, =1 {# use} other {# uses}} of message translation
 {count, plural, =1 {# use} other {# uses}} of natural language search
-{count, plural, =1 {# use} other {# uses}} of {columnName}
 {count, plural, =1 {# viewer} other {# viewers}} in {departmentName}
 {count, plural, =1 {# workspace} other {# workspaces}}
 {count, plural, =1 {1 workspace removed from {serverName}} other {# workspaces removed from {serverName}}}
@@ -2251,20 +2227,6 @@ you@{example_com}
 {targetDomain}.slack.com doesn’t appear to be in use.
 {targetMemberName} has been changed too many times in the last 5 minutes. Please try again later.
 {teamCount} workspaces
-{teamName} Analytics Prior 28 Days - {formattedDate}.csv
-{teamName} Analytics {formattedStartDate} to {formattedEndDate} - {formattedDate}.csv
-{teamName} Channel Analytics All Time - {formattedDate}.csv
-{teamName} Channel Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Enterprise Analytics All Time - {formattedDate}.csv
-{teamName} Enterprise Analytics Prior 28 Days - {formattedDate}.csv
-{teamName} Enterprise Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Enterprise Analytics {formattedStartDate} to {formattedEndDate} - {formattedDate}.csv
-{teamName} Enterprise Channel Analytics All Time - {formattedDate}.csv
-{teamName} Enterprise Channel Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Enterprise Member Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Enterprise Workspace Analytics All Time - {formattedDate}.csv
-{teamName} Enterprise Workspace Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Member Analytics Prior 30 Days - {formattedDate}.csv
 {teamName} — passkey authentication failed.
 {teamName} — passkey challenge expired, please try again.
 {title}. {description}
