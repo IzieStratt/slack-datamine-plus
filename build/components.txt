@@ -419,6 +419,7 @@ AgentAvatar
 AgentAvatarIcon
 AgentBrowserTabRailCoachmark
 AgentButton
+AgentCanvasPeekRow
 AgentCanvasPeekSection
 AgentCanvasShelfBody
 AgentCanvasShelfComponent
@@ -609,6 +610,7 @@ AiAndAgentsPane
 AiAnswerSpeedBump
 AiAppHistoryItem
 AiAppHistoryList
+AiAppPermissionDetailsModal
 AIAppsCoachmark
 AiAppsContext
 AiAppsOptInModalShell
@@ -696,6 +698,8 @@ AllowedEntitiesConfigurationInput
 AllowedObjectSection
 AllowedRelatedObjectsSection
 AllowedWorkspacesTooltip
+AllowMcpActionsContentWrapper
+AllowMcpActionsPrefOverrideSettingsRow
 AllowMutingNotificationCheckbox
 AllThreadsHeader
 AllThreadsRowElement
@@ -726,10 +730,12 @@ AnalyticsSlackAiNoDataYetHero
 AnalyticsSlackAiTimeSeriesChart
 AnalyticsTeamOverviewHeader
 AnalyticsTeamOverviewHeaderWrapper
+AnalyticsTimeseriesChart
 AnalyticsWorkObjectPreview
 AnchoredGitHubPrComments
 AnchorLink
 Animate
+AnimatedEditorAvatar
 AnimatedImageTransition
 AnimationPref
 AnnotationCanvasReactionBar
@@ -934,7 +940,9 @@ ArtifactItem
 ArtifactMetadata
 ArtifactsFolder
 ArtifactsFolderRow
+ArtifactsList
 ArtifactsListContent
+ArtifactsListSkeleton
 AsanaAppDisclaimer
 AsAnnouncerAPIMessage
 AskAgentButton
@@ -1212,6 +1220,7 @@ BaseAriaLiveRegion
 BaseAutoClog
 BaseAutoSlackLaunchpadEditProfileModal
 BaseAvatar
+BaseAvatarStack
 BaseAwarenessIcon
 BaseBanner
 BaseBannerDownload
@@ -1388,6 +1397,7 @@ BaseListExplorerFreemiumHero
 BaseListExplorerNUXHeader
 BaseListIcon
 BaseListNameField
+BaseListPage
 BaseListRecordDetailAddCommentButton
 BaseListRecordDetailCopyLinkButton
 BaseListRecordDetailUnarchiveButton
@@ -1395,6 +1405,7 @@ BaseListRecordOverflowMenuTrigger
 BaseListRecordStaticEntity
 BaseListsAboutModal
 BaseListThreadZeroState
+BaseListViewerFacepile
 BaseLoadingModal
 BaseLogActivityView
 BaseMatchingDomainWorkspaceSuggestion
@@ -1762,8 +1773,11 @@ BulkDenyInvitationModal
 BulkErrorModal
 BulkFileActionUndoToast
 BulkFileSectionMoveMenu
+BulkGridAccountsEmptyState
 BulkGridCellLockIndicator
 BulkGridColumnHeader
+BulkGridCompleteImportState
+BulkGridContactsEmptyState
 BulkGridContactsReadyToast
 BulkGridContainer
 BulkGridEditingBanner
@@ -1773,11 +1787,14 @@ BulkGridErrorToast
 BulkGridGoToSalesforceError
 BulkGridKanbanBoardView
 BulkGridKanbanBoardViewUpdateRecordFailedToast
+BulkGridListView
 BulkGridListViewHeader
 BulkGridMoreActionsMenu
 BulkGridNeedsUpgradeEmptyState
 BulkGridNuxCoachmark
+BulkGridOpportunitiesEmptyState
 BulkGridRefreshCTA
+BulkGridRequestUpgradeEmptyState
 BulkGridSyncIndicator
 BulkGridTimeFieldEditor
 BulkMoveToBookmarksSubmenu
@@ -1847,6 +1864,7 @@ CalendarJitItem
 CalendarJitOverflowMenu
 CalendarJitOverflowMenuContent
 CalendarJitSidebarOffToast
+CalendarJitSidebarTop
 CalendarJitTimingChangedToast
 CalendarJitWorkspace
 CalendarLinkAttachments
@@ -1856,6 +1874,7 @@ CalendarLinkNotConnected
 CalendarNotificationsPref
 CalendarPrefsDialog
 Call
+CallButton
 callButtonFunctionComponent
 CallMenu
 Callout
@@ -2279,6 +2298,7 @@ ChannelTabAddedMessage
 ChannelTabAddedMessageAvatar
 ChannelTabBarBase
 ChannelTabFullView
+ChannelTabLabelBaseComponent
 ChannelTabLabelWithPeek
 ChannelTabListRow
 ChannelTabPanelBase
@@ -2809,6 +2829,7 @@ ContextBarWorkflowHandoffContent
 ContextLabel
 ContextMenu
 ContextMenuTrigger
+ContextMenuTriggerWithKeyboardFocus
 ContextualFile
 ContextualHelpForSectionNavigationModal
 ContextualHelpModal
@@ -3389,6 +3410,7 @@ DragChannelSidebarChannels
 DragChannelSidebarDocument
 DragChannelSidebarEntity
 DragChannelSidebarSectionHeading
+DragChannelSidebarThread
 DragFileCollectionHeading
 DraggableDroppable
 DraggableDroppableTabItem
@@ -3538,6 +3560,7 @@ EditTemplateDetailsModal
 EditTextElementForm
 EditThumbnailButton
 EditUserGroupMembers
+EditUserRelevantWorkspacesModal
 EditView
 EditViewMenuComponent
 EditWorkspaceInfoModal
@@ -3891,6 +3914,7 @@ ExternalAttachmentButton
 ExternalAwarenessContextBar
 ExternalAwarenessVisibilityConnectionWrapper
 ExternalAwarenessVisibilityContentWrapper
+ExternalCalloutItem
 ExternalCitation
 ExternalConnectionsConnectableContactNotOnSlack
 ExternalConnectionsContactAdminLink
@@ -3901,7 +3925,9 @@ ExternalConnectorsButton
 ExternalDirectoryEmptyState
 ExternalDirectoryUser
 ExternalFilesTabView
+ExternalFileTabContextMenu
 ExternalFileTabFailureToast
+ExternalFileTabFullsizePreview
 ExternalFileTabPendingToast
 ExternalFileTabPermissionWarningToast
 ExternalFileTabSuccessToast
@@ -4744,8 +4770,11 @@ GoogleSheetsSummary
 GoToSalesforceButton
 GoToTooltip
 GovSlackIconOverlay
+GptLiveApprovalAnswerRow
 GptLiveApprovalCard
 GptLiveAuthCard
+GptLiveBlockKitApprovalCard
+GptLiveBlockKitAuthCard
 GptLiveBlockKitCard
 GptLiveButton
 GptLiveButtonInner
@@ -4756,6 +4785,10 @@ GptLiveCallPipLayer
 GptLiveCallPipSession
 GptLiveCallPipShell
 GptLiveCallTiles
+GptLiveDetailsDisclosure
+GptLivePendingPromptBody
+GptLivePromptCard
+GptLivePromptHeading
 GptLiveSessionHost
 GptLiveSlackbotTileArt
 GptLiveThreadPanel
@@ -5460,6 +5493,7 @@ ItemTypeSelect
 JanuaryCardMediaPanel
 JiraCloudAppDisclaimer
 JitAllDayEventsEnabled
+JitCardWithDayGlance
 JitItemButtons
 JitMeetingAssistantOpener
 JitNotificationTiming
@@ -5472,6 +5506,7 @@ JoinChannelPaneCodeChannelSummary
 JoinChannelsCompleteState
 JoinChannelsModal
 JoinChannelsResultToast
+joinChannelWithRetryToast
 JoinerAvatarPartyHat
 JoinerFollowUpPrompts
 JoinerLaunchpadDismissedCoachmark
@@ -5481,6 +5516,7 @@ JoinerLaunchpadPeopleCarousel
 JoinerNotificationSubtype
 JoinerReplyButtons
 JoinerReplyNudge
+JoinErrorToast
 JoinerSlackbotSidebarTooltip
 JoinerWelcomeCardAnimationModal
 JoinerWelcomeCardMessageModal
@@ -5671,6 +5707,8 @@ LinkUnfurlPreview
 LinkWithSystemSettings
 List
 ListA11yStructuresViewInner
+ListAiModifiedToast
+ListAskSlackbotButton
 ListBanner
 ListBannersContainer
 ListCellsCopiedToast
@@ -5689,6 +5727,7 @@ ListDescription
 ListDetailHeaderComponent
 ListDiff
 ListDueDateFilterTab
+ListEditedTime
 ListEditUnfurl
 ListEditUnfurlChannelField
 ListEditUnfurlUserField
@@ -5705,6 +5744,7 @@ ListFloatingActions
 ListFreemiumAccessIndicator
 ListFreemiumBanners
 ListFullRestoreConfirmationModal
+ListHeader
 ListHeaderTitle
 ListHost
 ListHovercard
@@ -5765,6 +5805,7 @@ ListsCheckboxFilterMenuItemComponent
 ListsDateFilter
 ListsDisabledDialog
 ListSection
+ListsFileActions
 ListsFilterGroup
 ListsFilterGroupsBuilder
 ListsFilterMatchSelect
@@ -5808,6 +5849,8 @@ ListSuggestedWorkflows
 ListSupervisorConfirmationModal
 ListsUserFilter
 ListTaskCompletionStateTab
+ListTemplateAdminButtons
+ListTemplateBadge
 ListTemplateBrowseModal
 ListTemplateConvertSpeedbump
 ListTemplateExplorerItem
@@ -5819,6 +5862,7 @@ ListTitleHeader
 ListUndoToast
 ListUserAvatar
 ListUserEntity
+ListUseTemplateButton
 ListView
 ListViewBrowser
 ListViewBrowserFooter
@@ -5834,6 +5878,7 @@ ListViewRowItem
 ListViewSharingSettingsBanner
 ListViewSharingSettingSubtitle
 ListViewToastText
+ListWorkflowsButton
 ListWorkflowsModal
 LiveAudioSpeedBumpModal
 LiveHuddleButton
@@ -6465,6 +6510,7 @@ MessageLimitTrialEntryPointModal
 MessageLimitWarningText
 MessageListEmptyLoader
 MessageListInlineLoader
+MessageListItem
 MessageListPreview
 MessageMention
 MessageNamesPref
@@ -7073,7 +7119,9 @@ OutdatedFieldsLookbackSection
 OutdatedFieldsNotificationPreview
 OutdatedSystemsBlockingModal
 OutdatedSystemsModal
+OutgoingErrorState
 OutgoingInviteActionItemWrapper
+OutgoingPage
 OutgoingRowLayout
 OutgoingScheduledRow
 OutgoingScheduledRowActions
@@ -7160,6 +7208,7 @@ PeekArtifact
 PeekBody
 PeekContext
 PeekHeaderLink
+PeekItemClickContext
 PeekMessageRow
 PeekMessageRowContent
 PeekSection
@@ -7289,6 +7338,7 @@ PlanPriceDisplay
 PlanRecommendationComparePlansModal
 PlanRecommendationSlackbotActions
 PlanRecommendationSlackbotCard
+PlanRecommendationSlackbotPlanCard
 PlanRecommendationSlackbotPlansComparison
 PlanRecommendationSlackbotResponse
 PlanRecommendationSlackbotResponseInner
@@ -7735,6 +7785,10 @@ RecipientsSelect
 RecommendationPromptRow
 RecommendationsSlide
 Recommended
+RecommendedSkillCard
+RecommendedSkillCardSkeleton
+RecommendedSkillsCarousel
+RecommendedSkillsLoadingSkeleton
 RecommendedSlackbotTasks
 RecommendedTaskCard
 RecommendedTaskRow
@@ -7757,6 +7811,8 @@ RecordChannelIntroRelatedConversations
 RecordChannelIntroTabCoachmark
 RecordChannelIntroTourStep
 RecordChannelNameTooltipContentBase
+RecordChannelNewBadge
+RecordChannelNewBadgeWrapper
 RecordChannelNoAccessModal
 RecordChannelPeekEmptyState
 RecordChannelRelatedRecordListTabBanner
@@ -8404,6 +8460,7 @@ renderTabActions
 renderTabbedContent
 renderTabContents
 renderTable
+renderTabPage
 renderTask
 renderTeamIcon
 renderTeamOption
@@ -8657,6 +8714,7 @@ RowHeader
 RowIcon
 RowImpl
 RowItem
+RowMergeButton
 RowPrimary
 rowRenderer
 RowSecondary
@@ -9189,16 +9247,20 @@ ServicesChannelPickerComponent
 ServicesChannelPickerSharedAlertComponent
 ServicesCountCallout
 ServiceTriggerSummary
+SessionChannelRow
 SessionDurationInfo
 SessionEntity
 SessionListFilterBar
 SessionListFilterMenu
+SessionListRow
+SessionListView
 SessionLocationIcon
 SessionResetModal
 SessionRow
 SessionRowView
 SessionsListFrame
 SessionStatusPrefixIcon
+SessionThreadRow
 SessionTypeFilterMenu
 SetGuestExpiration
 SetGuestExpirationContainer
@@ -9487,6 +9549,7 @@ SingerCodeCap
 SingerCodingTarget
 SingerContent
 SingerControl
+SingerConversationResize
 SingerCustomize
 SingerDesktopFallback
 SingerDestinationComposer
@@ -9495,6 +9558,7 @@ SingerDestinationMessages
 SingerDestinationPanel
 SingerDestinationPanelForDestination
 SingerDestinationTyping
+SingerDestinationView
 SingerDls
 SingerDlsActionReceipt
 SingerDlsActivity
@@ -9504,6 +9568,7 @@ SingerDlsAgentFace
 SingerDlsContentNavigation
 SingerDlsContentViewer
 SingerDlsGlance
+SingerDlsGlancePeek
 SingerDlsMessageBody
 SingerDlsQuietButton
 SingerDlsReactionPicker
@@ -9525,6 +9590,7 @@ SingerMeetingPanel
 SingerMeetingSurface
 SingerMessageActions
 SingerMotionPreview
+SingerNativeDestination
 SingerNativeNavigation
 SingerNavigation
 SingerNewMessage
@@ -9532,6 +9598,7 @@ SingerOnboarding
 SingerOnboardingBrowser
 SingerOnboardingWindow
 SingerOutfitArtwork
+SingerPanelTransition
 SingerPocket
 SingerPocketFrame
 SingerRecipientAvatar
@@ -9954,7 +10021,6 @@ SlackConnectTrialOfferModal
 SlackConnectUpgradeModal
 SlackConnectVerifyEmailToAcceptAction
 SlackConnectVisibilityMessage
-SlackConnectWorkspaceInviteTermsOfService
 SlackEventFilterStatementBuilder
 SlackEventTriggerForm
 SlackEventTriggerSummary
@@ -10275,6 +10341,7 @@ StreamlinePlansModal
 StreamManager
 StringSchemaInput
 StyledChannelTabBar
+StyledChannelTabLabel
 StyledChannelTabPanel
 SubcomponentPosition
 SubcomponentPositionProvider
@@ -10546,6 +10613,7 @@ TemplateEditSwitch
 TemplateEditTriggerCoachmark
 TemplateEditTriggerPreview
 TemplateEntityExpanded
+TemplateHeader
 TemplateItem
 TemplateItemDependencyContext
 TemplateItemDependencyContextProvider
@@ -11012,6 +11080,7 @@ UnifiedFilesPeekView
 UnifiedFilesSidebarToggle
 UnifiedFilesSidebarView
 UnifiedFilesTabContent
+UnifiedGlobalTriageTabContent
 UnifiedGlobalTriageTabPanel
 UnifiedGlobalTriageTabRow
 UnifiedSearchFeedbackConfirmationModal
@@ -11249,6 +11318,7 @@ useMeetingAssistantMenuItem
 useMemberFilterSearch
 useMemoryAttribution
 useMenuButtonProps
+useMessageContextMenuForInteractiveList
 useMicSettingsMenuItems
 useMonitorHuddleLanguageChange
 useMultiViewWindowTitle
@@ -11544,6 +11614,8 @@ ViewHeaderIconButton
 ViewHeaderMore
 ViewHeaderPrimaryButton
 ViewHeaderPrimaryDropdownButton
+ViewHeaderRecordType
+ViewHeaderSearch
 ViewHeaderStar
 ViewHeaderStarButton
 ViewHeaderTopic
@@ -11577,6 +11649,7 @@ VisuallyHiddenMessageContext
 VisuallyHiddenPinnedStateIndicator
 VisuallyHiddenReactionCount
 VisuallyHiddenReplyCount
+VoiceActions
 VoiceControls
 VoteColumnEditor
 VoteComponent
