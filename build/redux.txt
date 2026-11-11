@@ -138,6 +138,8 @@ action:addWorkflowStepBegin
 action:addWorkflowStepSuccess
 action:addWorkspace
 action:adjustTodoListFetchInFlight
+action:agentSocialProofFailed
+action:agentSocialProofRequested
 action:animateDeleteMessage
 action:appConnectionsReceived
 action:appendAgentExchangeMarketplaceApps
@@ -285,6 +287,7 @@ action:clearChannelOverviewSuccessCoachmarkTabId
 action:clearChannels
 action:clearChannelSearchJoinsandLeaves
 action:clearChannelSpacesMegaphoneNotifications
+action:clearCodeChannelPullRequestOptimisticState
 action:clearCodeChannelReopenedAt
 action:clearCommonAppInfoById
 action:clearCompanionLaunchContext
@@ -1203,7 +1206,6 @@ action:saveScrollmark
 action:scheduleJoinDismissJitEvent
 action:scopeChangePersisted
 action:searchInProductEducationAppearedInternal
-action:searchInProductEducationDismissInternal
 action:searchInProductEducationIncrementInternal
 action:searchInProductEducationResetInternal
 action:searchSessionComplete
@@ -1287,6 +1289,7 @@ action:setAgentSessions
 action:setAgentSessionsAppliedFetchSeq
 action:setAgentSessionsIsFetched
 action:setAgentSessionsIsLoading
+action:setAgentSocialProof
 action:setAgentSplitViewChannelId
 action:setAgentSunroofApps
 action:setAgentSunroofMenuOpen
@@ -1514,6 +1517,7 @@ action:setCodeChannelPullRequestCommentsLoading
 action:setCodeChannelPullRequestDescription
 action:setCodeChannelPullRequestError
 action:setCodeChannelPullRequestLoading
+action:setCodeChannelPullRequestOptimisticState
 action:setCodeChannelPullRequestReactions
 action:setCodeChannelPullRequestThreadResolved
 action:setCodeChannelReopenedAt
@@ -3439,6 +3443,7 @@ fetcher:callReorderBookmarkForChannelId
 fetcher:callReorderBookmarkIntoFolderForChannelId
 fetcher:callRequestToJoinWorkspace
 fetcher:callSendEmailToPending
+fetcher:callThreadsShareThread
 fetcher:callUpdateChannelEmailWithChannelId
 fetcher:chatBulkDeleteApi
 fetcher:chatCommandApi
@@ -4077,6 +4082,7 @@ thunk:beginEnabledSkillsMutation
 thunk:bizPlusUpgradePocketGuideV2MaybeLogExposure
 thunk:boostBusPlusAwarenessAndUpgradesMaybeLogExposure
 thunk:bringMainWindowToTop
+thunk:broadcastExternalHuddleKick
 thunk:broadcastMessage
 thunk:browseApps
 thunk:browseAppsShortcut
@@ -4287,6 +4293,7 @@ thunk:clogMessagePaneThreadOpen
 thunk:clogMessageSent
 thunk:clogMoreModalClick
 thunk:clogMsgPlayButtonClick
+thunk:clogOmniswitcherDismiss
 thunk:clogOmniswitcherOpen
 thunk:clogOmniswitcherQueryClear
 thunk:clogOmniswitcherSecondaryActionClick
@@ -4917,6 +4924,7 @@ thunk:fetchAppInstall
 thunk:fetchAppPermissionsByServiceId
 thunk:fetchAppProfiles
 thunk:fetchAppRecommendations
+thunk:fetchAppRequestById
 thunk:fetchAppRevokeUserAndUpdateAppPermissions
 thunk:fetchAppsByIdsParamConverter
 thunk:fetchAppsDataAvailableDateRange
@@ -4925,6 +4933,7 @@ thunk:fetchAssignedItems
 thunk:fetchAsyncRecordDigest
 thunk:fetchAuthAndSetFocusedWorkspace
 thunk:fetchAutoStarterLicenses
+thunk:fetchAvailableHuddleAgents
 thunk:fetchBookmarkSlugs
 thunk:fetchBrowserSearchAutocompleteSuggestions
 thunk:fetchBuiltinSkillMetadata
@@ -5030,6 +5039,7 @@ thunk:fetchMembersDataAvailableDateRange
 thunk:fetchMembersForPermission
 thunk:fetchMetricsForInsights
 thunk:fetchMetricsMetadataForInsights
+thunk:fetchMissingSlackbotArtifactFiles
 thunk:fetchMoreCodeChannelPullRequestComments
 thunk:fetchMoreUsers
 thunk:fetchMpimList
@@ -5535,6 +5545,7 @@ thunk:internalWorkspacesRemovedClientTearDownHandler
 thunk:invalidateAndRefetchActivity
 thunk:invalidateResyncedTopics
 thunk:invalidAuth
+thunk:inviteAgentToHuddle
 thunk:inviteCommand
 thunk:inviteConnectableContactToScdm
 thunk:invitedUserGlowUpMaybeLogExposure
@@ -5575,6 +5586,7 @@ thunk:jumpToThreadReply
 thunk:jumpToTimestamp
 thunk:jumpViaRoutes
 thunk:keyboardShortcutsShortcut
+thunk:kickExternalHuddleGuest
 thunk:kickOffDndTimer
 thunk:kickOffDndTimerCircularHandler
 thunk:kickoffMiniIntroThread
@@ -5632,6 +5644,7 @@ thunk:loadMegaphoneNotificationData
 thunk:loadMembersDataForTimeRange
 thunk:loadMoreApps
 thunk:loadMoreThreads
+thunk:loadNamedMembers
 thunk:loadOmniswitcherSearchHistoryModePref
 thunk:loadOverviewDataForTimeRange
 thunk:loadOverviewServicesLimit
@@ -5802,6 +5815,7 @@ thunk:maybeEnqueueLaterTodoErrorToast
 thunk:maybeEnqueueLaterTodoGenericErrorToast
 thunk:maybeEnqueueLaterTodoToast
 thunk:maybeFetchActiveWorkspaceDashboardPermissions
+thunk:maybeFetchAgentSocialProof
 thunk:maybeFetchAllRecordOptions
 thunk:mayBeFetchAndReturnIsGreetingCardOpened
 thunk:maybeFetchAndUpsertAllCanvasTemplates
@@ -6840,6 +6854,8 @@ thunk:persistSlackCrmPreviewThread
 thunk:persistUnreadThreads
 thunk:persistViewStateNavigateListener
 thunk:pickClickNavigationVisit
+thunk:pickFileContainerClickVisit
+thunk:pickLookupResultVisit
 thunk:pinAgentSession
 thunk:pingFile
 thunk:pinItemsInSidebar
@@ -6947,6 +6963,7 @@ thunk:quickQuoteReplyAction
 thunk:quipTriggerAttachmentAction
 thunk:randomDelayedLoadMegaphoneNotificationData
 thunk:reactivateMember
+thunk:readActiveViewState
 thunk:readGitHubAuthBackoffState
 thunk:readSfdcActivityParentCompositeIds
 thunk:receiveMoreApps
@@ -7021,6 +7038,7 @@ thunk:refreshRecapChannel
 thunk:refreshRemovedChannels
 thunk:refreshSidebarRecommendScores
 thunk:refreshSingerNotificationCursors
+thunk:refreshSlackbotPermissionAfterTrial
 thunk:refreshStraightToPaidTimeLimitOnReconnect
 thunk:refreshUserContextInputIfRequired
 thunk:refreshVisitsListAfterReconnect
@@ -7039,6 +7057,7 @@ thunk:reloadSources
 thunk:reloadView
 thunk:reloadWorkObjects
 thunk:removeActivityItemAndMaybeClosePrimary
+thunk:removeAgentFromHuddle
 thunk:removeAllCompletedItems
 thunk:removeAllDraftFiles
 thunk:removeAllEditPendingFiles
@@ -7728,6 +7747,7 @@ thunk:showSalesTrackerStageSettingsSavedToast
 thunk:showSalesTrackerStageSettingsSaveFailedToast
 thunk:showSalesTrackerUnavailableToast
 thunk:showSavedItemNotification
+thunk:showSaveSuccess
 thunk:showSeasonalJanuaryDelightWebPushNotification
 thunk:showSendTableAsSnippetToast
 thunk:showSkillMcpRecommendations
