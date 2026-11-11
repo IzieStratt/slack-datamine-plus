@@ -107,6 +107,7 @@ ai.alpha.slackbot.channelSkills.removeSkill: channel_id, skill_file_id
 ai.alpha.slackbot.channelSkills.setCustomInstructions: channel_id, custom_instructions
 ai.alpha.slackbot.createSlackbotInitiatedThread: onboarding_next, variant
 ai.alpha.slackbot.resolveVoiceToolApproval: approval_id, client_session_id, decision
+ai.alpha.slackbot.skillCategories.list: include_skill_counts
 ai.alpha.slackbot.skillSets.addToLibrary: skill_set_id
 ai.alpha.slackbot.skillSets.removeFromLibrary: skill_set_id
 ai.alpha.slackbot.skills.activate: skill_id
@@ -140,11 +141,10 @@ ai.alpha.summarize.thread: channel, initiated_by, latest_ts, thread_ts, variant
 ai.alpha.surfaces.deleteVersion: file_id, version_id
 ai.alpha.surfaces.getContent: file_id, version_id
 ai.alpha.surfaces.getData: file_id, source
-ai.alpha.surfaces.getSourcesShared: file_id
 ai.alpha.surfaces.listVersions: file_id
 ai.alpha.surfaces.openCardComment: card_id, card_title, file_id
+ai.alpha.surfaces.rename: file_id, title
 ai.alpha.surfaces.restoreVersion: file_id, version_id
-ai.alpha.surfaces.setSourcesShared: file_id, is_sources_shared
 ai.alpha.translate.fileSummary: file_id, summary_id, target_language
 ai.alpha.translate.promptSummary: summary, target_language
 ai.alpha.widgets.info: widget_id
@@ -262,11 +262,11 @@ client.codeChannels.editComment: channel_id, comment_node_id, pr_url, text
 client.codeChannels.editPullRequestDescription: channel_id, expected_body_source, pr_url, text
 client.codeChannels.getDiff: channel_id
 client.codeChannels.getFileLines: channel_id, path, pr_url, ranges, revision
-client.codeChannels.getPullRequest: channel_id, pr_url
+client.codeChannels.getPullRequest: pr_url
 client.codeChannels.getPullRequestCommits: base_sha, channel_id, head_sha, pr_url
 client.codeChannels.getSummary: channel_id
 client.codeChannels.join: channel_id, origin_channel_id
-client.codeChannels.listPullRequestComments: channel_id, comment_kinds, cursor, pr_url
+client.codeChannels.listPullRequestComments: comment_kinds, cursor, pr_url
 client.codeChannels.mergePullRequest: channel_id, head_sha, pr_url
 client.codeChannels.requestReviewers: channel_id, invite_to_channel, note_blocks, post_mention, pr_url, user_ids
 client.codeChannels.setReviewThreadResolved: channel_id, is_resolved, pr_url, thread_node_id
@@ -298,9 +298,9 @@ conversations.createChild: channel, migrate_history_end_ts, migrate_history_star
 conversations.createFromDmMpdm: is_private, migrate_history_start_ts, name, source_channel_id, team_id, user_ids
 conversations.delete: channel
 conversations.emailaddresses.create: conversation_id
-conversations.emailaddresses.delete: address, app_user, channel, conversation_id, did_confirm, invite_message_ts, send_ephemeral_error_message
-conversations.emailaddresses.info: conversation_id, did_confirm, scopes, trigger_id
-conversations.emailaddresses.update: address, avatar_id, conversation_id, emoji, name, use_default_icon
+conversations.emailaddresses.delete: address, conversation_id
+conversations.emailaddresses.info: app_user, channel, conversation_id, did_confirm, invite_message_ts, send_ephemeral_error_message
+conversations.emailaddresses.update: address, avatar_id, conversation_id, did_confirm, emoji, name, scopes, trigger_id, use_default_icon
 conversations.export: channel
 conversations.genericInfo: channels, updated_channels
 conversations.getRetention: channel
@@ -337,7 +337,7 @@ conversations.sharedInviteInfo: context, sig
 conversations.sharedInviteLinkCopied: invite_id
 conversations.teamConnections: channel
 conversations.unarchive: channel
-conversations.updateDefaultState: channel_id, name, set_as_default
+conversations.updateDefaultState: channel_id, set_as_default
 conversations.updateTab: channel_id, data, id, label
 conversations.validateName: name, team_id
 conversations.view: channel
@@ -413,12 +413,11 @@ files.collections.bulkUpdate: updates
 files.collections.create: emoji, name
 files.collections.delete: collection
 files.collections.update: collection, emoji, is_collapsed, name, sort
-files.completeUpload: review_channel_id, review_message_ts
+files.completeUpload: app, channel, content_channel_id, content_message_ts, review_channel_id, review_message_ts
 files.createCanvas: loosen_validation, markdown, title
 files.createExternal: create_slack_file, filename, mime_type, open_edit, service_stub
 files.createSkillCanvas: markdown, title
 files.delete: file, is_draft
-files.disableRestrictedSharing: file_id
 files.docs.create: title
 files.docs.fetchAccessLevelForUsers: file_id, users
 files.docs.setEditor: file
@@ -426,7 +425,6 @@ files.docs.setNonOwnerEditability: file, non_owner_editability
 files.docs.unsetEditor: file
 files.edit: file, title
 files.embedWithPermissions: access_level, channel_id, embedded_canvas_id, parent_canvas_id
-files.enableRestrictedSharing: file_id
 files.external.checkPermission: app_id, channel_id, file_id, trigger_id
 files.external.getOrCreate: app_id, external_url, target_team_id
 files.external.getProviders: query_source
@@ -440,10 +438,9 @@ files.generateAltText: file_id
 files.generateThumbnails: id, offset_ms
 files.getContentHtml: file_id
 files.getMetadata: file_id, limit, offset, type
-files.getOverview: file_id
 files.getProviderPreviewUrlForFileStore: file_url, provider_token
 files.getShares: file_id
-files.getUploadURL: alt_txt, client_context_team_id, filename, length, snippet_type, subtype
+files.getUploadURL: alt_txt, client_context_team_id, filename, length, review_channel_id, review_message_ts, snippet_type, subtype
 files.getUploadURLForFileStore: files, filestore
 files.getViewerCounts: file_id
 files.hasShares: channel_id, exclude_channel_tab_shares, file_id
@@ -459,20 +456,14 @@ files.recentlyDeleted: file_type
 files.refresh: file
 files.requestPermission: file_id, request_type
 files.retranscribe: file_id, locale
-files.revokePermission: channel_id, file_id, revoke_nonmember_private_channel, team_id, user_id
 files.revokePublicURL: file
-files.setExcludeFromSlackAi: exclude_from_slack_ai, file_id
 files.sharedPublicURL: file
 files.undelete: file_id
 files.unlock: file_id
 files.unshare: channel, file
-files.updatePermission: file_id, team_id
 files.uploadExternal: blocks, broadcast, channels, initial_comment, link, thread_ts, title
 folders.create: description, folder_type, title
 folders.items.add: file_ids, folder_id
-folders.items.remove: file_ids, folder_id
-folders.items.reorder: center, folder_id, left, right
-folders.update: description, folder_id
 functions.get: function_ids
 functions.list: cursor, function_type, limit
 functions.shortcuts.copy: title, trigger_id, workflow_id
@@ -592,8 +583,6 @@ pins.add: channel
 pins.list: channel
 pins.remove: channel
 platform.requests.create: entity_id, request_type
-polls.create: allow_multiple_choice, choices, question
-polls.vote: choices, file_id
 presence.set: presence
 profiling.addJSTrace: trace, type
 promo.campaigns.eligibilityInfo: campaign_sub_type, campaign_type, context
@@ -607,7 +596,6 @@ quip.history.restoreVersion: file_id, sequence, version_id
 quip.lookupFileId: quip_thread_id
 quip.lookupThreadIds: file_ids
 quip.thread.archive: channel_id, thread_ts
-quip.thread.archiveAll: channel_id
 quip.thread.mark: channel_id, mark_unread, thread_ts, ts
 quip.thread.synchronize: channel_id, thread_ts
 quip.thread.unarchive: channel_id, thread_ts
@@ -627,7 +615,6 @@ recordChannels.unlink: channel, new_name
 records.getTeamMembers: record_id
 records.previewShare: ignore_unfurls_settings, record
 records.share: channel_id, record
-reminders.addFromMessage: action_id, app_id, client_token, context, team_id
 rooms.getLink: channel_id
 rooms.inviteResponse: channel_id, response, room_id
 rooms.join: multidevice, regions
@@ -842,7 +829,7 @@ today.unignoreChannels: channel_ids
 transcripts.feedback: additional_feedback, file_id, rating, reasons
 unread.collapse: channel
 unread.expand: channel
-unread.markRead: hash, markers, terms, type
+unread.markRead: markers, name
 userAlerts.ack: alert_type
 usergroups.create: name, team_id
 usergroups.search: count, cursor_mark, include_disabled, include_hidden, keyword, search_only_team, sort, sort_dir
@@ -887,7 +874,6 @@ users.priority.add: user
 users.priority.remove: user
 users.profile.get: token, user
 users.profile.getExtras: keys, target_team, user
-users.profile.getTrailheadRank: id
 users.profile.set: profile, user
 users.profile.setSections: elements, section, user
 users.recommend: limit, query, source, token
@@ -900,17 +886,16 @@ users.upgradeGuests.request: channels, reason_for_upgrade, users
 views.get: view_id
 visits.list: checksum, limit
 visits.record: client_now_ms, visits
-workObjects.editComment: comment, comment_id, entity_id, entity_url, thread_root_id
 workObjects.editEntity: channel_id, entity_id, entity_url, message_ts
 workObjects.getComments: cursor, entity_id, entity_url, thread_root_id
 workObjects.getEntity: appearance, channel_id, client_req_id, entity_id, entity_url, force_refetch, lookup_function, message_ts
-workObjects.postComment: comment, entity_id, entity_url
 workObjects.publishEntity: channel_id, entity_id, message_ts, state
 workflows.activity.export: filters, workflow_id
 workflows.activity.get: workflow_execution_id, workflow_id
 workflows.activity.list: filters, workflow_id
 workflows.ai.feedback: additional_feedback, rating, source, user_prompt, workflow_generation_id
 workflows.ai.generate: prompt
+workflows.ai.generateDetails: workflow_id
 workflows.channelOptIn.list: channel_id
 workflows.channelOptIn.set: channel_id, opted_in, workflow_id
 workflows.channels.add: channel_id, workflow_id

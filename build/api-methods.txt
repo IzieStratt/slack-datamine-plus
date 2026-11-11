@@ -237,6 +237,7 @@ ai.alpha.slackbot.channelSkills.setCustomInstructions
 ai.alpha.slackbot.createSlackbotInitiatedThread
 ai.alpha.slackbot.resolveVoiceToolApproval
 ai.alpha.slackbot.searchAnswerThreads.create
+ai.alpha.slackbot.skillCategories.list
 ai.alpha.slackbot.skillSets.addToLibrary
 ai.alpha.slackbot.skillSets.listEnabled
 ai.alpha.slackbot.skillSets.removeFromLibrary
@@ -290,6 +291,7 @@ ai.alpha.surfaces.getData
 ai.alpha.surfaces.getSourcesShared
 ai.alpha.surfaces.listVersions
 ai.alpha.surfaces.openCardComment
+ai.alpha.surfaces.rename
 ai.alpha.surfaces.restoreVersion
 ai.alpha.surfaces.setSourcesShared
 ai.alpha.translate.fileSummary
@@ -770,8 +772,6 @@ entity.team_id
 experiments.exposureAttributes.snapshot
 experiments.getByUser
 experiments.getConfigById
-externalWorkspaces.invites.accept
-externalWorkspaces.invites.info
 feature.usage.info
 featureEligibility.check
 features.access.policies.list
@@ -1046,8 +1046,6 @@ pins.add
 pins.list
 pins.remove
 platform.requests.create
-polls.create
-polls.vote
 presence.set
 profiling.addJSTrace
 promo.campaigns.eligibilityInfo
@@ -1566,7 +1564,6 @@ users.priority.remove
 users.profile.get
 users.profile.getExtras
 users.profile.getSections
-users.profile.getTrailheadRank
 users.profile.relationships.getOrgChart
 users.profile.set
 users.profile.setSections
@@ -1596,6 +1593,7 @@ workflows.activity.list
 workflows.ai.create
 workflows.ai.feedback
 workflows.ai.generate
+workflows.ai.generateDetails
 workflows.channelOptIn.list
 workflows.channelOptIn.set
 workflows.channels.add

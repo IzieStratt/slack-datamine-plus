@@ -316,6 +316,11 @@ span: survey
 span: ufm:cleanup
 span: ufm:finally
 span: ufm:upsert
+span: work_objects:file_preview_error
+span: work_objects:file_preview_file_downloaded_client_side
+span: work_objects:file_preview_file_view_ready_rtm_event_received
+span: work_objects:file_preview_init
+span: work_objects:file_preview_skip_file_view_ready_rtm_event
 span: workspaces:booted
 story_upload:perceived
 story_upload:upload
@@ -335,7 +340,9 @@ trace: cache_manager:evict
 trace: calls:free-willy:prefetch_call_info
 trace: calls:start_call
 trace: canvas:autocomplete-bubble-render
+trace: canvas:create-and-load-canvas
 trace: canvas:create-collab-api
+trace: canvas:load_template_gallery
 trace: canvas:print
 trace: canvas:start-editor
 trace: channel_history_intent
@@ -343,6 +350,10 @@ trace: channel_history_nomination
 trace: channel_join
 trace: child_window:perf-metrics
 trace: clips_stop_video_recording
+trace: composer:emoji_render
+trace: composer:instantiation
+trace: composer:send_message_render
+trace: composer:type_ahead_speed:render
 trace: composer_unfurl
 trace: cse-message-send
 trace: desktop_channel_versioning_fetch:duration
@@ -374,6 +385,8 @@ trace: rtm_dispatch
 trace: rtm_incoming
 trace: rtm_queue
 trace: rtm_state_modified
+trace: simplified_layout_mode:session_duration
+trace: slackbot_ai:streaming_session
 trace: ssb-memory-stats
 trace: story_upload
 trace: subscription_manager:cycle
@@ -384,6 +397,7 @@ trace: time-spent:feature
 trace: ufm:fetch-unknowns-for-team
 trace: virtual-list
 trace: web_vitals
+trace: work_objects:file_preview
 trace: workspace
 ufm:cleanup
 ufm:finally
