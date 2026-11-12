@@ -462,6 +462,7 @@ files.refresh: file
 files.requestPermission: file_id, request_type
 files.retranscribe: file_id, locale
 files.revokePublicURL: file
+files.setSensitivityLabel: file_id, sensitivity_label_id
 files.sharedPublicURL: file
 files.undelete: file_id
 files.unlock: file_id
@@ -809,7 +810,7 @@ solutions.get: solution_template_id
 solutions.list: permission, status
 solutions.update: skip_simple_array_serialization_in_get_form_data, solution_template_id
 stars.list: count, cursor, exclude, limit, org_wide_aware, page
-subscriptions.thread.getTimestamps: cursor, fetch_threads_state, limit, mode, order_by, priority_mode
+subscriptions.thread.getTimestamps: cursor, fetch_threads_state, limit, mode, priority_mode
 subteams.info: usergroups
 subteams.validateHandle: handle, target_team
 subteams.validateName: name, target_team
@@ -871,9 +872,7 @@ users.customStatus.schedule: custom_status_id, date_expire, date_scheduled, dura
 users.delegates.list: role
 users.info: custom_fields_mode, self, team, users
 users.inviteRequests.create: channels, requests, restricted, source, team_id, ultra_restricted
-users.invites.resend: user_id
 users.list: limit
-users.listOutgoingInvites: cursor, invitee, limit, mode
 users.markAllRead: undo_ts
 users.prefs.get: prefs
 users.prefs.set: name, prefs, value

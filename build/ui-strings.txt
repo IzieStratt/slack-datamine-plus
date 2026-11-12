@@ -347,7 +347,6 @@ $ {amount} USD
 , Unstar
 , deactivated
 , has new edits
-, invitation pending
 , opens in a new tab
 , or there is other JavaScript running during this interaction that took up the majority of the time.
 , other JavaScript not part of React, or work the browser has to do to update the DOM and draw the next frame.
@@ -374,7 +373,6 @@ $ {amount} USD
 . Build with -sASSERTIONS for more info.
 . Permissions will be applied automatically on this date.
 . Skipping it!
-. This offer can only be redeemed via the desktop Slack app or a desktop web browser.
 . This offer can only be redeemed via the desktop Slack app or desktop web browser.
 . Use the Call summary skill.
 . Use your existing links to free up space for new ones.
@@ -567,10 +565,10 @@ $ {amount} USD
 9:30
 : Rebooting...
 :(L?(0,C.SR)(t,!1):void 0)??
-:(O?(0,b.SR)(t,D):void 0)??
+:(O?(0,b.SR)(t,F):void 0)??
 :(P?(0,C.SR)(t,!1):void 0)??
 :(P?(0,b.SR)(i,L):void 0)??
-:(R?(0,v.SR)(a,P):void 0)??
+:(R?(0,b.SR)(a,P):void 0)??
 :(ac?(0,eP.SR)(ek,ao):void 0)??
 :(ac?(0,eP.SR)(ew,ao):void 0)??
 :(eH?(0,eE.SR)(J,eU):void 0)??
@@ -610,7 +608,7 @@ $ {amount} USD
 :void 0,credentialless:eb?
 :void 0,credentialless:ec?
 :void 0,credentialless:ep?
-:void 0,credentialless:o?
+:void 0,credentialless:l?
 :void 0,credentialless:p?
 :void 0,skipDoneDialog:!0,buttonClassName:q?
 :void 0,skipDoneDialog:!0,buttonClassName:t?
@@ -1401,6 +1399,7 @@ ActivityIA4: Hydrates independent feed items
 ActivityIA4: Mark whether the latest client.counts batch has been fully applied
 ActivityIA4: Remove activity item
 ActivityIA4: Remove bulk items
+ActivityIA4: Remove channel activity item
 ActivityIA4: Remove invite activity item
 ActivityIA4: Remove list mentions
 ActivityIA4: Remove unjoined channel mentions
@@ -4101,7 +4100,6 @@ Awaiting admin approval to add this app to your workspace.
 Awaiting admin approval to add this app to {workspaceName}.
 Awaiting admin approval to join
 Awaiting approval
-Awaiting invite acceptance
 Awaiting user action
 Away
 Away team permissions
@@ -5876,7 +5874,6 @@ Chats
 Chatwork
 Check Again
 Check It Out
-Check Older Threads
 Check Status
 Check Tasks
 Check a list item
@@ -6018,6 +6015,7 @@ Choose a canvas that has been added as a tab in the channel, or add a canvas as 
 Choose a category
 Choose a category\u2026
 Choose a channel
+Choose a channel name
 Choose a channel\u2026
 Choose a color below. Come back to your profile anytime you want to customize your Slack or update your preferences. {currentStep} of {totalSteps}
 Choose a column to use for item titles
@@ -7003,6 +7001,7 @@ Comparison operator
 Compile a weekly project summary
 Complete
 Complete Migration
+Complete a pocket guide task
 Complete all
 Complete all overdue to-dos?
 Complete all to-dos?
@@ -7846,6 +7845,8 @@ Could not locate trigger event timestamp
 Could not measure the persistence write
 Could not open Mini after Singer was unavailable
 Could not open Slack from the menu bar icon
+Could not open an agent DM from the agent edge tab
+Could not open an agent from the agent edge tab
 Could not open composer page
 Could not open the agent DM for its profile
 Could not open the not-available notice
@@ -7901,6 +7902,7 @@ Couldn\u2019t add skill. Please try again.
 Couldn\u2019t add to your to-dos. The description is too long.
 Couldn\u2019t add to your to-dos. The item couldn\u2019t be found.
 Couldn\u2019t add to your to-dos. Try again?
+Couldn\u2019t add {erroredCount, plural, =1 {# person} other {# people}} to the channel. Please try again.
 Couldn\u2019t apply changes. Check Slackbot for details.
 Couldn\u2019t ask Slackbot. Try again.
 Couldn\u2019t ask Slackbot. Your message is still here.
@@ -8486,6 +8488,7 @@ Creating subgraph rect for
 Creating the link failed
 Creating window with features
 Creating your Google Drive file
+Creating your channel
 Creating your workspace\u2026
 Creation date
 Creative feedback requested in #ext-agency-tyconet
@@ -12211,9 +12214,7 @@ Fetch more users from a given directory
 Fetch multiple app profiles by combined IDs
 Fetch object data for a list view recommendations
 Fetch org-level retention settings
-Fetch outgoing invite for member
 Fetch page 1 of all search results for a given query and filters
-Fetch pending outgoing invites
 Fetch permission summary data for a particular app
 Fetch pinned items list for channel
 Fetch pinned items list for channel if not already fetched
@@ -13547,6 +13548,7 @@ Get App Collaborators
 Get App Collaborators Failure
 Get App Collaborators Success
 Get Business+ for {discountPercent}% off
+Get Business+ {discountPercent}% Off
 Get Channel Pref
 Get Draft with draftId
 Get Edit Access
@@ -13791,6 +13793,7 @@ Get {discountOfferPercent}% off your first three months of Slack Pro.
 Get {discountPercent}% Off Slack Pro
 Get {discountPercent}% Off Slack {plan}
 Get {discountPercent}% off 3 months
+Get {discountPercent}% off Business+
 Get {discountPercent}% off Pro
 Get {discountPercent}% off Slack Pro
 Get {discountPercent}% off Slack {plan} on your first {discountDuration, plural, =1 {month} other {# months}}.
@@ -14226,7 +14229,6 @@ Group by: {group}
 Group calls image
 Group channels into sections
 Group external messages
-Group field type not supported in readAny()
 Group has been updated.
 Group huddles
 Group huddles are a premium feature
@@ -14872,6 +14874,7 @@ How you and your team are using Pro features
 How you want Slackbot to respond in this channel
 How your team uses {agent}
 Howdy!
+HtmlSurfaceIframe: surface action rate limit exceeded, dropping
 Hubble link
 Huddle
 Huddle AI Notes
@@ -15829,7 +15832,6 @@ Invalid entity id
 Invalid entry
 Invalid existing canvas ID format
 Invalid extension access syntax
-Invalid field type in readAny()
 Invalid file
 Invalid file argument provided to getPendingFileData
 Invalid file type. Please upload a CSV file.
@@ -19086,7 +19088,6 @@ Message editing failed
 Message explanations viewed
 Message failed to send
 Message field in Slack with the Shortcuts menu open, showing example shortcuts.
-Message field type not supported in readAny()
 Message flagged by data loss prevention rules.
 Message from today.
 Message from yesterday.
@@ -20577,6 +20578,7 @@ No items in this list
 No items matched {query}
 No items selected
 No items to display
+No label
 No limit
 No link results for 
 No links found for this channel.
@@ -20847,7 +20849,6 @@ No unread comments
 No unread conversations in recent history
 No unread conversations in this view.
 No unread messages
-No unread replies in your recent threads
 No unread {filter}. Carry on.
 No unread {filter}. Here\u2019s a pony.
 No unread {filter}. Isn\u2019t that nice?
@@ -21095,6 +21096,7 @@ Note: this setting is for this computer only. You may need to restart Slack to r
 Notes
 Notes a change to an agent session thread root while a fetch is in flight
 Notes and files shared in your huddles will show up here.
+Notes aren\u2019t ready
 Notes by Gemini
 Notes go to a new Slack canvas.
 Notes or voiceover script for this slide
@@ -21366,6 +21368,7 @@ Offer available through {formattedDate}
 Offer ends in {daysRemaining, plural, =1 {# day} other {# days}}
 Offer ends {offerEndDate}
 Offer valid for {daysRemaining, plural, =1 {# day} other {# days}}
+Offer valid for {promoDaysRemaining, plural, =1 {# day} other {# days}}
 Offer valid for {remainingDays, plural, =1 {# day} other {# days}}
 Offers SlackCRM email activity capture once Gmail sign-in finishes
 Offers end in {daysLeft, plural, =1 {# day} other {# days}}.
@@ -21499,7 +21502,7 @@ One or more selected members could not be found. Update your selection and try a
 One or more selected sources have restricted sharing. Choose a different source to continue or ask the owner for sharing permissions.
 One or more workflows failed to load, this list may be incomplete
 One or more workflows failed to save, please try again later
-One per line. A domain, such as example.com, also covers its subdomains. For a host that other companies share, use a URL prefix that starts with https://.
+One per line, covering both the agent\u2019s card and its endpoint. A domain, such as example.com, also covers its subdomains. For a host that other companies share, use a URL prefix that starts with https://.
 One pick-me-up, as ordered
 One quick and easy reference point for your daily to-dos, calendars, summaries of important unreads.
 One week before
@@ -21603,6 +21606,7 @@ Only people in this list can find and use this workflow.
 Only people in this list can find this workflow.
 Only people in your org
 Only people in your organization can be added by name. Invite anyone else by email.
+Only people invited can join or see messages
 Only people who already have access will be able to open it.
 Only people who can post in this channel can schedule a huddle in it.
 Only people with Audit Logs Admin system role can view anomalies.
@@ -22197,6 +22201,7 @@ Opens a view in a new child window
 Opens a work object file in full-size preview
 Opens ai message translations settings modal
 Opens an Agent thread in the Agent view
+Opens an agent
 Opens an ai feedback dialog
 Opens an artifact produced by a Slackbot conversation from the sidebar
 Opens an existing Slackbot thread, or starts a new one
@@ -22633,6 +22638,7 @@ Overdue \u2022 {dateString}
 Overdue \xb7 {timeAgo}
 Overdue by {dateString}
 Overdue to-dos
+Overdue: {date}
 Overflow: input needs wider integers to process
 Overlay clickable dots on instrumented UI to inspect clog payloads.
 Overlay not created: no display under cursor
@@ -23578,6 +23584,7 @@ Preview and dispatch in-product megaphone notifications.
 Preview click preference saved
 Preview collapsed
 Preview contains static sample data
+Preview ended
 Preview form
 Preview image
 Preview in Slack
@@ -23906,6 +23913,7 @@ Public Channel
 Public Sector
 Public \u2014 anyone in the workspace
 Public \u2014 anyone in {team_name}
+Public \u2014 anyone in {workspaceName}
 Public channel
 Public channel, {channelName} {sharedChannelDisplay}, {memberCount} {memberCount, plural, =1 {member} other {members}}. {channelPurpose}
 Public channels
@@ -24969,6 +24977,7 @@ Reminder in
 Reminder overdue since {date}
 Reminder set for {dueDate}
 Reminder: Update your opportunities
+Reminder: {date}
 Reminders
 Reminders & To-Do
 Reminders and notification schedule
@@ -25937,7 +25946,6 @@ Resend Code
 Resend Code to Backup Phone
 Resend Invitation
 Resend invitation
-Resend invite
 Resend link
 Reserved by core.metrics.record
 Reset
@@ -28006,6 +28014,7 @@ Sends the single sign-on binding email to a target member
 Senegal
 Senior Director
 Senior Director, Marketing
+Sensitivity label
 Sent
 Sent by
 Sent diagnostics report.
@@ -28261,9 +28270,6 @@ Set auth:ok for a Salesforce org
 Set big button mode specific settings
 Set blocked action to show banner notification
 Set bulk channel notification override, and call API
-Set bulk error state for invited user invites
-Set bulk invite data for invited users
-Set bulk loading state for invited user invites
 Set by the workflow creator
 Set by workspace
 Set calendar contact import step
@@ -28359,7 +28365,6 @@ Set error state for Slackbot NUX carousel recommendations fetch
 Set error state for Slackiversary fetch
 Set error state for a draft
 Set error state for channel join reason
-Set error state for invited user invite
 Set external file providers loading state
 Set feature trial info data
 Set fetched team segmentation answers
@@ -28416,7 +28421,6 @@ Set init data in Redux stores based on response from client.init
 Set initial state (and rehydrating cached data during a warm boot)
 Set insight list for displaying what insights and the column that should appear in banner
 Set interop calendar prefs
-Set invite data for invited user
 Set invite emails
 Set inviter ID for channel join
 Set inviterUserId value
@@ -28460,7 +28464,6 @@ Set loading state for Slackbot NUX carousel recommendations fetch
 Set loading state for Slackiversary fetch
 Set loading state for channel join reason
 Set loading state for huddle event log
-Set loading state for invited user invite
 Set loading state for roles list
 Set loading states for app profile info
 Set loading states for connector apps info
@@ -28501,6 +28504,7 @@ Set object data for a list view recommendation
 Set onboarding state pref from push event
 Set one or multiple onboarding data
 Set optimistic topic
+Set or remove the sensitivity label on a canvas or list
 Set or unset a single user as hidden
 Set or unset the tombstone prop for a saved item
 Set org members fetch error
@@ -30731,6 +30735,7 @@ Slack channel ID
 Slack collects and uses these categories of personal information to operate our Services and business, including:
 Slack conducts a brief review of apps in Slack Marketplace and does not endorse or certify these apps. If you encounter inappropriate content or behavior please report it.
 Slack connect channel
+Slack connects to this agent at these URLs:
 Slack couldn\u2019t find anything by that name. You might try\u2026
 Slack couldn\u2019t send this message
 Slack event trigger description
@@ -30822,6 +30827,7 @@ SlackOpaqueBlock: failed to parse block source attribute
 Slack\u2019s User Terms of Service
 Slack\u2019s built-in notifications
 Slackbot
+Slackbot (personal AI agent)
 Slackbot (personal AI companion)
 Slackbot AI
 Slackbot AI permission not granted after provisioning; falling back to legacy
@@ -31352,6 +31358,7 @@ Sort files
 Sort messages
 Sort option default:
 Sort people
+Sort rule applicability check threw
 Sort rule enable check threw
 Sort rule threw
 Sort search results: {currentSort}
@@ -31607,6 +31614,7 @@ Start an external file providers request
 Start auth against an external data source
 Start big button mode
 Start building workflows with AI directly from the Create button.
+Start by creating a channel. Channels are where you chat about a project, share resources, and work together in a single organized space. It\u2019s like a virtual office combined with a group chat.
 Start by creating a new workspace for your organization. 
 Start by migrating existing Sales Elevate users to the Salesforce permission set.
 Start by selecting a channel. We\u2019ll help you add everyone included in the email to it, even people outside {teamName}
@@ -31897,6 +31905,7 @@ Step {displayStep} of {totalSteps}
 Step {displayStep} of {totalSteps}, {title}
 Step {stepIndex}
 Step {stepNumber}
+Step {stepNumber} of {stepCount}
 Step {stepNumber} of {totalStepsCount}
 Step {stepNumber} of {totalSteps}
 Step {step} of 4
@@ -33380,7 +33389,6 @@ There was a problem removing your email connection. Give it a moment and try aga
 There was a problem requesting this review. Give it another try.
 There was a problem requesting your Salesforce connection
 There was a problem requesting your Salesforce connection.
-There was a problem resending the invite. Please try again later.
 There was a problem resolving this conversation. Give it another try.
 There was a problem reverting the template to canvas. Try again in a few minutes.
 There was a problem reverting the template to list.
@@ -34442,6 +34450,7 @@ To add this file, you\u2019ll need to connect to {provider_name} again.
 To add this file, you\u2019ll need to connect to {provider_name}.
 To add this guest to more channels, send a request to your Workspace Admin to upgrade them to a Multi-Channel Guest.
 To add this guest to more channels, upgrade them to a Multi-Channel Guest.
+To approve A2A agents, this rule also needs an Agent URLs condition.
 To change org, please create a new notification.
 To change the sender name or address that\u2019s connected, remove the current email and set up a new connection.
 To comply with our legal obligations;
@@ -37702,6 +37711,7 @@ We couldn\u2019t add this file as a tab. Please try again.
 We couldn\u2019t check whether this workspace is ready. Try again.
 We couldn\u2019t confirm your changes were saved. Close and check the current settings before trying again.
 We couldn\u2019t connect to Agentforce Builder to get the description. Try saving again. 
+We couldn\u2019t create your channel. Try again.
 We couldn\u2019t disable two-factor authentication for {memberName}.
 We couldn\u2019t find exactly what you were looking for, but we found some related matches below.
 We couldn\u2019t find that emoji
@@ -38013,6 +38023,7 @@ What do they need?
 What do we have in common?
 What do you know, it works?
 What do you want to call your Slack workspace?
+What do you want to call your team\u2019s chat?
 What does anyone in this group conversation need from me?
 What does my calendar say about me?
 What does this mean
@@ -38317,6 +38328,7 @@ Who can join your calendar huddles
 Who can post in this channel?
 Who can read
 Who can read records using Slackbot
+Who can see 
 Who can send and accept DM invitations?
 Who can send invitations with these permissions?
 Who can share feedback details and AI-generated content:
@@ -38936,8 +38948,6 @@ You can select up to {maxSelectedItems} channels.
 You can select up to {maxSelectedItems} conversations.
 You can select up to {maxSelectedItems} items.
 You can select up to {maxSelectedItems} people.
-You can send one invite every 24 hours.
-You can send one invite every 5 minutes.
 You can send the owner a reminder.
 You can still build a form manually and connect it to this step later.
 You can still build a form manually connect it to this step later.
@@ -39125,7 +39135,6 @@ You have an approval request.
 You have an open task
 You have an unsaved output field. Switching tabs will discard your changes.
 You have an upcoming event
-You have exhausted maximum invite resends
 You have left this huddle
 You have more steps to complete before we can generate the form.
 You have multiple errors to review.
@@ -39134,7 +39143,6 @@ You have no tasks.
 You have not created any sidekicks yet.
 You have reached the maximum of {max_delegates} delegates.
 You have reached the maximum of {max} items
-You have resent an invite to {name}.
 You have selected too many channels, you can only go up to {maxSelectedItems}.
 You have selected too many conversations, you can only go up to {maxSelectedItems}.
 You have selected too many files. The limit is {number}.
@@ -39751,6 +39759,7 @@ Your changes will be lost.
 Your changes will not be saved.
 Your channel is set up!
 Your channels
+Your chats can be public or private. You can make this one private to test things out or public so your team can find it.
 Your city name can\u2019t contain special characters.
 Your closest collab
 Your closest collabs
@@ -39883,6 +39892,7 @@ Your network settings are blocking huddles. Contact your IT team or check out th
 Your new canvas will copy your existing canvas or template.
 Your note asking Sara to restart bond counsel, the resolution and the opinion letter is saved in the chat.
 Your note to Barry on the meeting, Louise and the $10,000 scheduling fee is saved as a doc.
+Your notes are ready
 Your notes are saved in a Slack canvas.
 Your one-on-one and group conversations show up here.
 Your org approval status
@@ -40001,6 +40011,7 @@ Your templates (internal)
 Your thread summary is ready.
 Your threads
 Your top MCP connectors
+Your transcript is saved
 Your trial
 Your trial ends in 1 day
 Your trial ends in {daysRemaining, plural, one {# day} other {# days}}
@@ -45981,6 +45992,7 @@ teacher
 teacup
 teal
 team
+team-chat
 teams
 teapot
 tear
@@ -48241,7 +48253,6 @@ zzz
 {realName} has invited you to work with them in Slack
 {realName} invited you to work together in Slack
 {realName}, Profile
-{realName}{maybeApp}{maybeTeam}, Direct Message{maybeUnreads}{maybeDeactivated}{maybeInvited}{maybePresence}
 {realName}{maybeApp}{maybeTeam}, Direct Message{maybeUnreads}{maybeDeactivated}{maybePresence}
 {recapChannelCount, plural, =1 {# recap channel} other {# recap channels}} have summaries ready to roll.  Refresh to see the latest from {channelCount} more.
 {recordCount, plural, =1 {# item} other {# items}}

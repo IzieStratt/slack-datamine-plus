@@ -909,6 +909,7 @@ action:removeCanvasSectionRichText
 action:removeCanvasSectionRichTextForFile
 action:removeCanvasTemplateModeFromFile
 action:removeChannelActionsForChannelId
+action:removeChannelActivityItem
 action:removeChannelFromRecents
 action:removeChannelJoinRequest
 action:removeChannelManagers
@@ -1390,9 +1391,6 @@ action:setBrowsers
 action:setBrowserSessionId
 action:setBuiltinSkillCategoryActive
 action:setBulkActionMode
-action:setBulkError
-action:setBulkInviteData
-action:setBulkLoading
 action:setCalendarContactImportStep
 action:setCalendarEvent
 action:setCalendarEvents
@@ -1898,9 +1896,6 @@ action:setInvertedSidebarInternal
 action:setInviteAPIError
 action:setInviteAPIResponse
 action:setInviteAPIStatus
-action:setInviteData
-action:setInviteError
-action:setInviteLoading
 action:setInviterJoinerFirstDmClientMsgId
 action:setInviterUserId
 action:setInviteType
@@ -5062,7 +5057,6 @@ thunk:fetchOrgMembers
 thunk:fetchOrgRetention
 thunk:fetchOrgsAndSignInSilentlyV2
 thunk:fetchOrgUserGroups
-thunk:fetchOutgoingInviteForMember
 thunk:fetchParameterDynamicOptions
 thunk:fetchPermissionsList
 thunk:fetchPersonalDefaultView
@@ -6320,6 +6314,7 @@ thunk:openAddSolutionToChannelModalCircularHandler
 thunk:openAdminDwaNudgeSetup
 thunk:openAdvancedSecurityOfferModal
 thunk:openAdvancedSecurityPaywallModalCircularHandler
+thunk:openAgentDmInSplitView
 thunk:openAgentFromMention
 thunk:openAgentMcpServerFromDeepLink
 thunk:openAgentMessageFeedbackModal
@@ -7521,6 +7516,7 @@ thunk:setExperimentAutoTracesOnBootShared
 thunk:setExternalConnectorHidden
 thunk:setExternalConnectorsVisible
 thunk:setFileSearchSort
+thunk:setFileSensitivityLabel
 thunk:setFocusedWorkspace
 thunk:setFocusedWorkspaceInClientV2
 thunk:setFrecencyByApi
