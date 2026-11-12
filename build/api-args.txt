@@ -106,7 +106,11 @@ ai.alpha.slackbot.channelSkills.removeSkill: channel_id, skill_file_id
 ai.alpha.slackbot.channelSkills.setCustomInstructions: channel_id, custom_instructions
 ai.alpha.slackbot.createSlackbotInitiatedThread: onboarding_next, variant
 ai.alpha.slackbot.resolveVoiceToolApproval: approval_id, client_session_id, decision
+ai.alpha.slackbot.skillCategories.create: name
+ai.alpha.slackbot.skillCategories.delete: category_id, move_to
 ai.alpha.slackbot.skillCategories.list: include_skill_counts
+ai.alpha.slackbot.skillCategories.setBuiltinActive: category, is_active
+ai.alpha.slackbot.skillCategories.update: category_id, name
 ai.alpha.slackbot.skillSets.addToLibrary: skill_set_id
 ai.alpha.slackbot.skillSets.removeFromLibrary: skill_set_id
 ai.alpha.slackbot.skills.activate: skill_id
@@ -310,6 +314,7 @@ conversations.inviteShared: channel, external_limited, tracking_id
 conversations.join: channel, request_in_background
 conversations.joinConnectedShared: invite_id, sig
 conversations.joinPendingShared: invite_id, sig
+conversations.joinRequests.approve: channel_id, request_id
 conversations.joinRequests.list: channel_id, cursor
 conversations.kick: channel, user
 conversations.leave.recommendations: max_ts
@@ -712,7 +717,6 @@ sfdc.fields.listEligible: object_api_name, salesforce_org_id
 sfdc.fields.updateVisibility: field_api_names, listview_id, object_api_name, salesforce_org_id
 sfdc.files.list: cursor, file_type_categories, limit, parent_record_id, salesforce_org_id
 sfdc.files.upload: file, salesforce_org_id
-sfdc.getContactDetails: record
 sfdc.getContactListInfo: salesforce_org_id
 sfdc.getFrontdoorUrl: url
 sfdc.getImportObjectAvailableFields: object_type, salesforce_org_id

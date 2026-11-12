@@ -396,6 +396,8 @@ AgendaContent
 AgendaError
 AgendaEventItem
 AgendaEventListItem
+AgendaFeedbackButton
+AgendaHelpButton
 AgendaMarkTaskCompleteToast
 AgendaMoreMenu
 AgendaNavCount
@@ -403,6 +405,7 @@ AgendaNavPrivacyModeIndicator
 AgendaNavStatus
 AgendaNotAuthed
 AgendaOpenInSplitViewButton
+AgendaPage
 AgendaPeekDrafts
 AgendaPeekMyDay
 AgendaPeekProfileButton
@@ -410,7 +413,6 @@ AgendaPeekProfileControls
 AgendaPeekSectionFooter
 AgendaPeekSectionHeader
 AgendaPeekTodos
-AgendaPeekView
 AgendaPrivacyModeNotice
 AgendaProfileWidget
 AgendaSections
@@ -710,6 +712,7 @@ AmountChangedFlowHeader
 AmountChangedFlowPage
 AmountDirectionSelect
 AmountInput
+AnalyticsChartLegend
 AnalyticsExportButton
 AnalyticsMembers
 AnalyticsMembersBase
@@ -2157,7 +2160,6 @@ ChannelJoinBannerActionButtons
 ChannelJoinButton
 ChannelJoinInvitedBanner
 ChannelJoinReasonBanner
-ChannelJoinRequestRow
 ChannelJoinRequestsEntryPoint
 ChannelJoinRequestsList
 ChannelJoinSummaryBanner
@@ -2483,6 +2485,7 @@ CodeChannelsBrowserViewComponent
 CodeChannelSessionCard
 CodeChannelSessionDetails
 CodeChannelShowMoreRow
+CodeChannelStatusIcon
 CodeChannelStatusPrefixIcon
 CodeChannelSummarySkeleton
 CodeChannelUnfurlPeekContent
@@ -2719,6 +2722,7 @@ ConnectedRecordEntityExpandedPreview
 ConnectedRequestToPurchaseCta
 ConnectedSearchRow
 ConnectedSectionShowMoreRow
+ConnectedSessionStatusIcon
 ConnectedSlackbotSessionArtifactRow
 ConnectedSlackConnectDmTrialBanner
 ConnectedSlackConnectHubInTrialLearnMoreBanner
@@ -2854,6 +2858,8 @@ ConversationsPeekUnreadsToggle
 ConversationsSelectElementInner
 ConversationsSkeleton
 ConversationsTabActions
+ConversationTimeline
+ConversationTimelinePreview
 ConvertChannelToLimitedModal
 ConvertChannelToLimitedModalContents
 ConvertChannelToPrivateModal
@@ -2880,6 +2886,7 @@ CopyButton
 CopyCodeBlockButton
 CopyItemsMenuItem
 CopyLinkToItemMenuItem
+CopyMeetingLinkButton
 CopyMembers
 CopyShareLinkModal
 CopyShareLinkModalContent
@@ -3076,7 +3083,6 @@ DataVisualizationFullscreenModal
 DataVizFields
 DateColumnEditor
 DateCommand
-DateDividerPill
 DateDueMenuItem
 DateDuePill
 DateDuePillContent
@@ -3103,6 +3109,12 @@ DateToken
 DayDivider
 DayDividerJumper
 DayDividerLabel
+DayGlanceBody
+DayGlanceCalendarIcon
+DayGlanceCard
+DayGlanceFirstMeeting
+DayGlanceHeader
+DayNavButtons
 DayPickerSection
 DaysOfWeek
 DbscEnforceAllSessionsModal
@@ -3159,6 +3171,7 @@ DeleteMcpServerListModal
 DeleteMemoryConfirmationModal
 DeleteMetricModal
 DeleteOlderDraftsModal
+DeletePanel
 DeleteRecordModal
 DeleteRecordToast
 DeleteRoleModal
@@ -3202,7 +3215,6 @@ DesktopContextPill
 desktopMenuItemClicked
 DesktopPref
 DesktopUpdateBanner
-DestinationAvatar
 DestinationFilter
 DestinationFilters
 DestinationIcon
@@ -3381,10 +3393,7 @@ DraftPreview
 DraftRichTextPreview
 DraftRow
 DraftsList
-DraftsPage
-DraftsPageRow
 DraftsTabActions
-DraftsTabPage
 DraftStageRow
 DraftUnfurlModal
 DraftUnfurls
@@ -3684,7 +3693,6 @@ EmbeddedSlackListEmbedHeader
 EmbeddedSlackListStatic
 EmbeddedSlidesUnfurl
 EmbeddedSurface
-EmbeddedTableauEntity
 EmbeddedUiPlaceholderImpl
 EmbeddedVideoPlaceholder
 EmbeddedVideoUnfurl
@@ -4002,6 +4010,7 @@ Featured
 FeaturedAppRow
 FeaturedAppsSection
 FeaturedContactCard
+FeaturedMeeting
 FeaturedSection
 FeaturedSkillCard
 FeatureExample
@@ -4611,6 +4620,7 @@ getPlaceholderElement
 getPlaceholderText
 getPlansPageCtaComponent
 getPlansPageCtaComponentV2
+getPrefixIcon
 getPrimaryContent
 getProjectMenuItem
 getProviderIcon
@@ -4711,6 +4721,7 @@ getUnsupportedContent
 getUpdatedText
 getUpgradeLink
 getUpsellParagraph
+getUsedByTip
 getUserLabel
 getUserMentions
 getVariableMenuItemLabel
@@ -5869,6 +5880,7 @@ LoadedSegmentPreview
 LoadedStepPreview
 LoaderBar
 Loading
+LoadingBody
 LoadingBox
 LoadingBoxWithAnimation
 LoadingButton
@@ -5897,7 +5909,6 @@ Location
 LocationHuddleChannelRow
 LocationHuddlePickerInput
 LocationHuddlePickerRenderable
-LocationLabel
 LogActivityCTA
 LogActivityFlexpane
 LogActivityFormContent
@@ -5973,6 +5984,7 @@ ManagePostingPermissionsRadiogroup
 ManagePrivateChannelMembershipLimitModal
 ManagePromptModal
 ManageRetentionSettingsModal
+ManageSkillCategoriesModal
 ManageSkillsModal
 ManageUserGroupLink
 ManualDenyRequestModal
@@ -6662,6 +6674,7 @@ ModeSwitchSpeedBumpContent
 Month
 MoreActionsMenu
 MoreFiltersDropdown
+MoreInfoButton
 MoreMessageActionsSubmenu
 MoreOptionsSubmenu
 MoreRepliesLink
@@ -6788,6 +6801,13 @@ MuteFolderTabUpdatesModal
 MuteRecapEducationModal
 MutuallyExclusiveButtonConfig
 MyAgentsListItem
+MyStuffOverviewPeekView
+MyStuffPeekDraftsTab
+MyStuffPeekMyDayTab
+MyStuffPeekSentTab
+MyStuffPeekTabContent
+MyStuffPeekTodosTab
+MyStuffPeekView
 MyStuffViewSidebar
 MyTasksRowMenu
 MyTasksRowMenuTrigger
@@ -6836,6 +6856,7 @@ NewOpportunityFlowHeader
 NewOpportunityFlowPage
 NewRecordBoardLaneButton
 NewRecordButton
+NewTabViewSourceLink
 NewTeamLaunchpad
 NewViewModal
 NextBestAction
@@ -7047,6 +7068,7 @@ OptimalLineLengthPref
 Option
 OptionalScopeItem
 OptionalTooltipWrapper
+OptionIndicator
 OptionItem
 OptionLabel
 OptionsMenu
@@ -7101,10 +7123,6 @@ OutdatedFieldsNotificationPreview
 OutdatedSystemsBlockingModal
 OutdatedSystemsModal
 OutgoingInviteActionItemWrapper
-OutgoingRowLayout
-OutgoingScheduledRow
-OutgoingScheduledRowActions
-OutgoingSentRow
 OutlineNavigation
 OutOfOffice
 OutOfOfficeMessage
@@ -7261,6 +7279,8 @@ PersonName
 PhotoLayout
 PhotoUploadButton
 PickerOption
+PickMeUpBubble
+PickMeUpBurst
 Pile
 Pill
 PillContents
@@ -7339,6 +7359,7 @@ PlayPauseAnimations
 PlusBadge
 PlusSlackIcon
 PnpTrialSidebarHeaderBanner
+PocketAgentAction
 PocketGuideCard
 PocketGuidePeek
 PocketGuidePeekTrigger
@@ -7429,7 +7450,6 @@ PreviewMenu
 PreviewMessage
 PreviewMessageRow
 PreviewModeContext
-PreviewPane
 PreviewRemoveButton
 PreviewSalesforceAccountMappingDialog
 PreviewScheduledTriggerSummary
@@ -7759,7 +7779,6 @@ RecentPostsBadge
 RecentPromptAgent
 RecentPromptItem
 RecentsConversationRow
-RecipientName
 RecipientsSelect
 RecipientWhisper
 RecommendationPromptRow
@@ -7773,7 +7792,6 @@ ReconnectToast
 RecordActionsMenu
 RecordBreadcrumb
 RecordBreadcrumbsLayout
-RecordCalendarEvents
 RecordChannelCreateCoachmarkBase
 RecordChannelCreationRadioCard
 RecordChannelDetails
@@ -8683,11 +8701,7 @@ RouterContext
 RouteToChannelSection
 Row
 RowActions
-RowBody
 RowCheckbox
-RowContainer
-RowFooter
-RowHeader
 RowIcon
 RowImpl
 RowItem
@@ -8874,6 +8888,7 @@ SalesTrackerUndoToast
 SalesUserSetup
 SamplePills
 SampleSource
+SampleTag
 SamplingPromptRow
 SaveAndUpdatePermissionToast
 SaveAsDefaultCheckbox
@@ -9237,11 +9252,12 @@ SessionRow
 SessionRowView
 SessionsListFrame
 SessionsLoadingSkeleton
-SessionStatusPrefixIcon
+SessionStatusIcon
 SessionThreadRow
 SetGuestExpiration
 SetGuestExpirationContainer
 SetPill
+setTaskPublished
 Settings
 SettingsCard
 SettingsColumn
@@ -9523,6 +9539,7 @@ SingerCharacterMouths
 SingerClientActivity
 SingerCodeCap
 SingerCodingTarget
+SingerCompactInputShell
 SingerContent
 SingerControl
 SingerConversationResize
@@ -9540,6 +9557,7 @@ SingerDlsActivity
 SingerDlsActivityTaskButton
 SingerDlsActivityTaskProvider
 SingerDlsAgentFace
+SingerDlsAstroBlaster
 SingerDlsCaughtUp
 SingerDlsContent
 SingerDlsContentNavigation
@@ -9548,6 +9566,9 @@ SingerDlsGlance
 SingerDlsGlancePeek
 SingerDlsMessageBody
 SingerDlsMessageReactionPicker
+SingerDlsPetPickMeUp
+SingerDlsQuickSwitcher
+SingerDlsQuickSwitcherInput
 SingerDlsQuietButton
 SingerDlsReactionPicker
 SingerDlsResize
@@ -9579,8 +9600,12 @@ SingerOnboardingBrowser
 SingerOnboardingWindow
 SingerOutfitArtwork
 SingerPanelTransition
+SingerPeekInput
+SingerPeekPopover
 SingerPocket
 SingerPocketFrame
+SingerPocketIcon
+SingerRailCharacter
 SingerRecipientAvatar
 SingerReopenHint
 SingerScreenGlow
@@ -9604,6 +9629,7 @@ SingerVoiceWorkList
 SingerWindowAttachmentChip
 SingerWindowConversation
 SingerWindowHighlight
+SingerWindowOffer
 SingleAttachment
 SingleChannelGuest
 SingleChannelGuestGrid
@@ -9630,10 +9656,12 @@ SkillAutoEnableUsergroupsPane
 SkillAutoEnableVisibilityPane
 SkillCard
 SkillCardTask
+SkillCategoryManageLink
 SkillCategoryPickerModal
 SkillCategorySection
 SkillCommandAutocompleteMenu
 SkillCompleterInputContainer
+SkillCount
 SkillDeactivatedNotice
 SkillDeactivatedTag
 SkillDetailsViewInner
@@ -9826,6 +9854,7 @@ SlackbotConversationSectionHeader
 SlackbotConversationSortControl
 SlackbotConversationSummary
 SlackbotConversationThinkingIndicator
+SlackbotConversationTimeline
 SlackbotConversationTypeIcon
 SlackbotConvertFailedInviteesToast
 SlackbotConvertThreadButton
@@ -10773,6 +10802,7 @@ TimelinePointAndSteps
 TimelinePointSteps
 TimelineSourcesBody
 TimelineSourcesModal
+TimelineTick
 TimePeriodChangeSchemaInput
 TimePeriodDirectionSelect
 TimePeriodFrameSelect
@@ -10858,6 +10888,7 @@ TodayTabIcon
 TodayV2Content
 TodayViewBetaBanner
 TodayViewHeader
+TodoAddInput
 TodoApproachingLimitBanner
 TodoHittingLimitBanner
 TodoInlineComposer
@@ -11120,6 +11151,7 @@ UnverifiedGuestEmailWarning
 UnverifiedInviterEmailSpeedBump
 UnwrappableParametersAlert
 UpArrowShortcut
+UpcomingDayBody
 UpcomingHuddleItem
 UpcomingHuddleOverflowMenuComponent
 UpcomingHuddleParticipantsModal
@@ -11605,6 +11637,7 @@ ViewProvider
 ViewSidebarHeader
 ViewSidebarHeaderButtons
 ViewSidebarHeaderTitle
+ViewSourceLink
 ViewSuspense
 ViewSwitcherButton
 ViewSwitcherComponent
@@ -11653,6 +11686,10 @@ WelcomeToProModal
 WfbPreviewBlocks
 WhoCanManageRadio
 WidgetBlock
+WidgetFooterLink
+WidgetFrame
+WidgetHeader
+WidgetSplitViewButton
 WidgetTabView
 WikiEmpty
 WikiOrgNavigator
@@ -12026,6 +12063,7 @@ XWSHuddleMiniPanelMounter
 XWSHuddleSidebarFooter
 XWSHuddleTrigger
 XWSHuddleWindowMounter
+YouPagePeekView
 YourWorkflowTemplateDeleteModal
 YourWorkflowTemplateItem
 YourWorkflowTemplateItemActionsMenu

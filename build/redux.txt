@@ -781,6 +781,7 @@ action:openExpressTemplateModalCircular
 action:openFileViewerCircular
 action:openGreetingInviteModalCircular
 action:openHuddleInviteWithPreviewUsingSideEffect
+action:openHuddleLinkModalUsingSideEffect
 action:openHuddleMultiDeviceModalUsingSideEffect
 action:openHuddleScheduleModalUsingSideEffect
 action:openHuddleWindowUsingSideEffect
@@ -909,6 +910,7 @@ action:removeCanvasSectionRichTextForFile
 action:removeCanvasTemplateModeFromFile
 action:removeChannelActionsForChannelId
 action:removeChannelFromRecents
+action:removeChannelJoinRequest
 action:removeChannelManagers
 action:removeChannelPrefix
 action:removeChannels
@@ -4038,6 +4040,7 @@ thunk:applySingerResponseDraft
 thunk:applyTaskTrackingBundleToList
 thunk:applyTodoFilterPrefChange
 thunk:applyUpcomingRemindersPrefChange
+thunk:approveChannelJoinRequest
 thunk:approveLicenseRequest
 thunk:archiveAgentSession
 thunk:archiveChannel
@@ -4397,6 +4400,7 @@ thunk:closeTileOrFlexpane
 thunk:collapseAndEnsureInView
 thunk:collapseCommand
 thunk:collapseSecondaryView
+thunk:collectStuckThreadsDiagnostics
 thunk:colorCommand
 thunk:combinedSearchFeedbackSubmit
 thunk:commitNavigationVisitNavigateListener
@@ -4784,7 +4788,6 @@ thunk:executeCommandAutocompleteItem
 thunk:executeStep
 thunk:exitWorkObjectEditMode
 thunk:expandCommand
-thunk:expandInviteSidebarEntryMaybeLogExposure
 thunk:expandSecondaryView
 thunk:exportChannels
 thunk:exportEditorWorkflow
@@ -5840,6 +5843,7 @@ thunk:maybeFetchMegaphoneOnBootEvent
 thunk:maybeFetchMyTasksList
 thunk:maybeFetchPinsList
 thunk:maybeFetchRelevantRecordOptions
+thunk:maybeFetchSfEmbedRequestToPurchasePref
 thunk:maybeFetchSlackbotAiUsageOnPermissions
 thunk:maybeFetchSlackbotMcpServers
 thunk:maybeFetchStarredUnifiedFiles
@@ -5901,6 +5905,7 @@ thunk:maybeOpenActivityFlexpane
 thunk:maybeOpenActivityPage
 thunk:maybeOpenActivityWindow
 thunk:maybeOpenAgentConfigModalAfterAdd
+thunk:maybeOpenAgentDmDetails
 thunk:maybeOpenAiMessageInThread
 thunk:maybeOpenAltTextRemindersModal
 thunk:maybeOpenAtMentionInviteWarningDialog
@@ -6531,6 +6536,7 @@ thunk:openHuddleInviteWindow
 thunk:openHuddleInviteWindowWithPreview
 thunk:openHuddleInviteWindowWithPreviewMva
 thunk:openHuddleInviteWindowWithPreviewThunk
+thunk:openHuddleLinkModalThunk
 thunk:openHuddleMultiDeviceModalThunk
 thunk:openHuddlePrimaryPopoutWindowMva
 thunk:openHuddleRecordingDeleteModal
@@ -6954,6 +6960,7 @@ thunk:purgeInactiveDrafts
 thunk:pushActivityItemToStore
 thunk:pushHistoryEntryForWindow
 thunk:pushRecentFiles
+thunk:putAppSuggestedPromptInComposer
 thunk:queryDirectoryAffiliation
 thunk:queryExternalDirectory
 thunk:queryGoogleDirectory
@@ -7385,7 +7392,6 @@ thunk:sendCatchUpPrompt
 thunk:sendComposerMessage
 thunk:sendCrmSignalToSlackbot
 thunk:sendDraftFiles
-thunk:sendDraftFromTriage
 thunk:sendDraftMessage
 thunk:sendDraftMessageById
 thunk:sendEmail
@@ -7997,7 +8003,6 @@ thunk:toggleSavedListRecordFieldComplete
 thunk:toggleSavedMessageArchived
 thunk:toggleSavedMessageComplete
 thunk:toggleScreenShare
-thunk:toggleSelectedDraftId
 thunk:toggleSelfMicrophone
 thunk:toggleSidebar
 thunk:toggleSidebarInverted
