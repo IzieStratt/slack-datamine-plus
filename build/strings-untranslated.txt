@@ -127,8 +127,6 @@ Agentforce agent
 Agentforce tabs
 Agents required for Slack actions
 Agree to continue
-Align with message retention
-Align with message retention, keep deleted files
 All AI Usage
 All available workspaces
 All channel owners
@@ -321,8 +319,6 @@ Cancel all requests?
 Cancel all {count, number} requests?
 Cancel this app request?
 Cannot remove yourself from the workspace.
-Canvas Retention
-Canvas and List Retention
 Can’t connect to {serverName}
 Can’t have spaces
 Can’t have special characters (e.g. @, $, %, =) or emojis
@@ -343,7 +339,6 @@ Channel Expert added to {teamName}
 Channel Expert unavailable
 Channel Management Table
 Channel Owner
-Channel Retention
 Channel analytics
 Channel archived
 Channel configs
@@ -494,8 +489,6 @@ Default tool access
 Default tool permissions
 Default workspaces
 Delete Profile
-Delete messages & revisions after set number of days (History still accessible via Corporate Export)
-Delete messages and their revisions after a set number of days
 Delete profile
 Delete records
 Delete selected servers?
@@ -525,7 +518,6 @@ Device bound sessions
 Didn’t use Slack enough
 Didn’t use the paid features
 Diff
-Direct Message Retention
 Disable 2FA
 Disable two-factor authentication
 Disable two-factor authentication?
@@ -660,7 +652,6 @@ Failed to save settings. Please try again later.
 Failed to update Slackbot setting. Please try again.
 Failed to update integration. Before changing Salesforce organizations, a Sales Admin needs to disconnect this integration in Sales settings.
 Failed to update setting. Please try again later.
-File Retention
 File Storage Used
 File download settings updated
 File downloads
@@ -816,19 +807,6 @@ Joining external workspaces
 Julia
 Keep Request
 Keep Requests
-Keep all messages, but don’t track revisions (i.e. edits and deletions)
-Keep all messages, including revision history
-Keep files
-Keep files for {policyDurationValue} days
-Keep files including deleted files
-Keep files including deleted files, but only for a set number of days
-Keep files, but only for a set number of days
-Keep {category, select, lists {lists} canvases {canvases} other {canvases and lists}}
-Keep {category, select, lists {lists} canvases {canvases} other {canvases and lists}} including deleted {category, select, lists {lists} canvases {canvases} other {canvases and lists}}
-Keep {category, select, lists {lists} canvases {canvases} other {canvases and lists}} including deleted {category, select, lists {lists} canvases {canvases} other {canvases and lists}}, but only for a set number of days
-Keep {category, select, lists {lists} canvases {canvases} other {canvases and lists}}, but only for a set number of days
-Keep {salesHomePluralPrefs}
-Keep {salesHomePluralPrefs}, but only for a set number of days
 Keeping apps when deactivating members
 Keyword search
 Kick things off by creating a workspace for your team.
@@ -864,7 +842,6 @@ Limit of {limit} addresses exceeded
 Limit of {limit} addresses exceeeded
 Limited access group updated
 Lisp
-List Retention
 Literate Haskell
 Loading channels…
 Loading scopes
@@ -1217,7 +1194,6 @@ Previous resolution
 Previously denied{newPermissions, plural, =0 {} =1 { · # new permission} other { · # new permissions}}{fewerPermissions, plural, =0 {} =1 { · # fewer permission} other { · # fewer permissions}}{newDomains, plural, =0 {} =1 { · # new domain} other { · # new domains}}{fewerDomains, plural, =0 {} =1 { · # fewer domain} other { · # fewer domains}}{newMcpDomains, plural, =0 {} =1 { · # new MCP domain} other { · # new MCP domains}}{fewerMcpDomains, plural, =0 {} =1 { · # fewer MCP domain} other { · # fewer MCP domains}}
 Primary Workspace Owner
 Primary organization
-Private Channel Retention
 Private channels
 Prompt {number}
 Protect Chrome and Edge sessions from stolen session cookies.
@@ -1351,8 +1327,6 @@ SSO + Two-Factor (2FA)
 SSO login is required for your account, so you can’t sign in with a passkey.
 SSO required by your admins
 SSO with any provider and SCIM user management
-Sales Elevate Retention
-Sales Elevate records
 Salesforce MCP servers
 Salesforce Organization
 Salesforce Organizations | Slack Admin
@@ -1484,6 +1458,7 @@ Sign back in to continue
 Sign in to GovSlack
 Sign in to Slack
 Sign in to an existing workspace
+Sign in to another workspace…
 Sign in to the Slack Developer Program
 Sign in to the Slack Developer sandbox
 Sign in with Passkey
@@ -1978,7 +1953,6 @@ You don’t have permission to revoke passkeys.
 You haven’t added any domains yet
 You might want to try adjusting your filters.
 Your Analytics Export is processing…
-Your Full Name
 Your changes weren’t saved. Try again.
 Your current IP isn’t in the allowed ranges. Add your IP address to avoid being locked out.
 Your current IP {ip_address} isn’t in the allowed ranges. Add your IP address to avoid being locked out.
@@ -2026,10 +2000,8 @@ includes only those in
 is a connector step
 joined the huddle.
 left the huddle.
-locked to the org setting
 members
 name@{example_com}
-not locked to the org setting
 of the following conditions are met:
 org
 out of {total} messages
@@ -2072,7 +2044,6 @@ you@{example_com}
 {appName} is set as a default {appType} for new workspaces.
 {appName} steps will be removed from all workflows and will not be available in Workflow Builder. 
 {appsCount, plural, =1 {# app} other {# apps}}
-{basePolicy}, {lockedText}
 {browserName} icon
 {browserName} is now mandatory for unmanaged devices
 {channelCount, plural, =1 {# channel} other {# channels}} ({privateChannelCount} private)

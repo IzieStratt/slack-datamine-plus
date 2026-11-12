@@ -567,10 +567,10 @@ $ {amount} USD
 9:30
 : Rebooting...
 :(L?(0,C.SR)(t,!1):void 0)??
-:(O?(0,b.SR)(t,F):void 0)??
+:(O?(0,b.SR)(t,D):void 0)??
 :(P?(0,C.SR)(t,!1):void 0)??
 :(P?(0,b.SR)(i,L):void 0)??
-:(R?(0,b.SR)(a,P):void 0)??
+:(R?(0,v.SR)(a,P):void 0)??
 :(ac?(0,eP.SR)(ek,ao):void 0)??
 :(ac?(0,eP.SR)(ew,ao):void 0)??
 :(eH?(0,eE.SR)(J,eU):void 0)??
@@ -5200,6 +5200,7 @@ Cannot fire onDragEnd when there is no matching onDragStart
 Cannot fire onDragMove when onDragStart has not been called
 Cannot fluid scroll if not dragging
 Cannot focus a closed window
+Cannot get bounds for node
 Cannot get clipped area from droppable
 Cannot get close time for this span because it has not closed.
 Cannot get dimension when no ref is set
@@ -14493,7 +14494,7 @@ Heads up! We\u2019re testing a new design for Slack, so what you see here may no
 Heads up, It looks like you\u2019re choosing to keep messages in this channel longer than the rest of this workspace.
 Heads up, this workflow has {remaining_step_count, plural, one {# step} other {# steps}} remaining before reaching the {max_number_of_steps}-step limit
 Heads up: to rejoin, you\u2019ll need to be invited back.
-Heads up: today is the last day to get {discountOfferPercent}% off your first {discountOfferDuration} months of Slack Pro. Upgrade now to get all the goodness of Slack Pro for less.
+Heads up: today is the last day to get {discountOfferPercent}% off your first {discountOfferDuration, plural, =1 {month} other {# months}} of Slack Pro. Upgrade now to get all the goodness of Slack Pro for less.
 Heads up\u2014the text may cause the workflow to fail if variables put it over the {maxLength}-character limit.
 Heads up\u2014the {title} may cause the workflow to fail if variables put it over the {maxLength}-character limit.
 Heads up\u2014this step will soon be changing. Want to get a head start? Replace this step with these two: \u201CCreate a canvas\u201D and \u201CAdd a canvas tab to a channel.\u201D
@@ -17287,6 +17288,7 @@ Load custom emoji
 Load custom status presets in the users local
 Load data for thumbnails
 Load emoji translations
+Load failed
 Load instance steps for activity tab
 Load megaphone notification data
 Load megaphone notification data after a random delay
@@ -30364,7 +30366,7 @@ Side effect handler to open multi device modal
 Side effect handler to open the create-a-huddle-link modal
 Side effect handler to open the huddle window
 Side effect handler to stop huddle
-Side effect to auto-open a channel canvas when navigating to a channel
+Side effect to auto-open the prefilled canvas when navigating to an eligible DM
 Side effect to maybe show an educational lists peek when navigating away from lists
 Side effect to maybe show the coachmarks from #feat-creator-guided-setup
 Side effect to maybe show the inviter-joiner first DM welcome card animation and modal
@@ -33154,6 +33156,7 @@ The person who last interacted with the workflow
 The person who sent this invitation hasn\u2019t verified their email address. Ask them to verify it, then try again.
 The person you\u2019re sharing this item with will have view access to the full list.
 The previous day
+The productivity features your team has been using are included on Pro, at a lower price.
 The query is only visible to the author
 The query returned no rows.
 The question input will be prefilled with this for users.
