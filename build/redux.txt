@@ -1845,6 +1845,7 @@ action:setHighlightId
 action:setHighlightInputForScdmEducation
 action:setHighlightsBackButtonVisible
 action:setHighlightsSelectedTab
+action:setHistoryUnreadsFilterActive
 action:setHostIdForCalendarHuddle
 action:setHoveredQuickReactionsSlot
 action:setHuddleActionForCalendarHuddle
@@ -2293,6 +2294,7 @@ action:setPendingCompanionContextForSurface
 action:setPendingDeepLinkSource
 action:setPendingDraftInsert
 action:setPendingExternalAuth
+action:setPendingFeedFetchTrigger
 action:setPendingHandoff
 action:setPendingHuddleEmbeddedOpen
 action:setPendingNewUserGroup
@@ -2437,6 +2439,7 @@ action:setSalesTrackerLoading
 action:setSalesTrackerNuxStep
 action:setSalesTrackerSchema
 action:setSamlAuthnSigningCerts
+action:setSavedThreadTsForTab
 action:setScdmInviteErrorCode
 action:setScheduledOrDlpThreadDraftForEdit
 action:setScreenReaderEnabled
@@ -2472,7 +2475,6 @@ action:setSearchResultMembers
 action:setSearchResults
 action:setSearchSessionId
 action:setSearchSessionIdForNavigationImpression
-action:setSearchSessionIdForNlTypeaheadImpression
 action:setSearchSessionLastQuery
 action:setSearchSharedTeamsLoading
 action:setSearchSharedTeamsResolved
@@ -4333,7 +4335,6 @@ thunk:clogSearchMessageClick
 thunk:clogSearchMessageResultClick
 thunk:clogSearchNavigation
 thunk:clogSearchNavigationSuggestionImpression
-thunk:clogSearchNlTypeaheadSuggestionImpression
 thunk:clogSearchOpen
 thunk:clogSearchOpenSlackbot
 thunk:clogSearchPeopleClick
@@ -4388,6 +4389,7 @@ thunk:closeModal
 thunk:closeModalsForWindow
 thunk:closePinsPopover
 thunk:closePrimaryViewIfNeeded
+thunk:closePrimaryViewWorkflow
 thunk:closeRecord
 thunk:closeSearchOverlay
 thunk:closeSegmentation
@@ -4475,6 +4477,7 @@ thunk:countOpenAppClick
 thunk:countsNotYetApplied
 thunk:createActivityViewsByApi
 thunk:createAndConfigureChannel
+thunk:createAndOpenCanvasTemplate
 thunk:createAndOpenDoc
 thunk:createAndOpenDocInNewWindow
 thunk:createAndOpenList
@@ -4653,6 +4656,7 @@ thunk:dismissSuggestedChannel
 thunk:dismissSyntheticViewFullPageNUXBanner
 thunk:dismissThreadFromRecents
 thunk:dismissTodayItemBlock
+thunk:dismissWorkflowFromRecents
 thunk:dismissXWSEducation
 thunk:dispatchAppHomeOpenEvent
 thunk:dispatchContextBarActionThunk
@@ -5605,6 +5609,7 @@ thunk:lazyLoadFilesTab
 thunk:leaveChannel
 thunk:leaveChannelFromSearch
 thunk:leaveChannelsInBulk
+thunk:leaveCodeChannelIfAllowed
 thunk:leaveCommand
 thunk:leaveConversationApi
 thunk:leaveConversationShortcut
@@ -5780,12 +5785,10 @@ thunk:maybeAutoOpenSlackbotFile
 thunk:maybeClearActiveSlackbotThread
 thunk:maybeClearAssistantStatusOnNewMessage
 thunk:maybeClearCanvasHistoryView
-thunk:maybeClearGmailOutlookNotificationEvents
 thunk:maybeClearSalesTrackerSlackbotThread
 thunk:maybeClearSimplifiedOnboardingEnrollment
 thunk:maybeClearSolutionTemplatePref
 thunk:maybeClogNavigationImpression
-thunk:maybeClogNlTypeaheadImpression
 thunk:maybeClogSearchEngagementClick
 thunk:maybeClogSearchResultDwellTime
 thunk:maybeCloseFlexpane
@@ -5873,6 +5876,7 @@ thunk:maybeLoadSuggestedChannels
 thunk:maybeLogEmailConnectorNewteamsExposure
 thunk:maybeLogExperimentExposureAndNavigateToInitialChannel
 thunk:maybeLogGoldenGateBizPlusTrialExposure
+thunk:maybeLogReorderStpExposure
 thunk:maybeLogSlackbotBigModeGaExposure
 thunk:maybeLogTractorChannelSimplificationExposure
 thunk:maybeMarkChannelFromThread
@@ -6764,6 +6768,7 @@ thunk:openSlackbotFromMention
 thunk:openSlackbotPeekMeetingDetails
 thunk:openSlackbotSessionArtifact
 thunk:openSlackbotSidebarArtifact
+thunk:openSlackbotTabInNewWindow
 thunk:openSlackConnectDmInviteModal
 thunk:openSlackConnectDmInviteSuccessModal
 thunk:openSlackConnectTrialEntryPointModal
@@ -6984,7 +6989,6 @@ thunk:recordAndClearNewBadge
 thunk:recordAndClearNotification
 thunk:recordAndReloadNotification
 thunk:recordEmojiFrecencyEvent
-thunk:recordExperimentGroupsAsTrace
 thunk:recordFastSocketOpened
 thunk:recordFrecencyEvent
 thunk:recordManualSidebarToggle
@@ -7162,6 +7166,7 @@ thunk:renderFileLimitToast
 thunk:renderRateLimitedToast
 thunk:reorderDraftFileIds
 thunk:reorderRecord
+thunk:reorderStpMaybeLogExposure
 thunk:reorderTeamProfileFields
 thunk:replaceCurrentHistoryEntryForWindow
 thunk:replaceCurrentToast

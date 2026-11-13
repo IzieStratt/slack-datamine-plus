@@ -559,6 +559,7 @@ lists.records.infoBatch: exclude_deprecated_values, ids, include_is_subscribed, 
 lists.records.list: archived, exclude_deprecated_values, include_subtasks, include_suggested, list_id
 lists.records.open: id, list_id
 lists.records.subscriptions.add: id, list_id
+lists.records.subscriptions.get: id, list_id
 lists.records.subscriptions.remove: id, list_id
 lists.records.updateDeletion: deleted, id, list_id
 lists.setDefaultView: list_id, view_id
@@ -668,7 +669,6 @@ screenhero.rooms.join: regions, room, use_room_scoped_token
 screenhero.rooms.proxyLogs: attachments, blocks, client_last_updated_ts, date_scheduled, date_stashed, destinations, draft_id, file_ids, file_permissions, is_from_composer, unfurl
 screenhero.rooms.rename: room, room_name
 search.autocomplete.files: include_shares, query
-search.autocomplete.nlTypeahead: limit_per_tier, query, team
 search.autocomplete.tags: element_id, query
 search.autocomplete.topEmojis: count
 search.autocomplete.triggers: current_channel_id, query, strict_exposure_rules, trigger_types

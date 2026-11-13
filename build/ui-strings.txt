@@ -268,6 +268,7 @@ $ {amount} USD
 (message still being sent)
 (no content)
 (no subject)
+(opens in a new tab)
 (opens in new tab)
 (optional)
 (required)
@@ -284,7 +285,7 @@ $ {amount} USD
 ) is not a string.
 ) is not supported yet.
 ) that performed expensive computation.
-)&&(eN(!1),aU(void 0),eT(a0?
+)&&(eN(!1),aX(void 0),eT(a8?
 ))),H((0,ef.R3)(ey)),H((0,ef.p4)(ey?G:void 0)),eb(ey?
 ))),e((0,d.R3)(h)),e((0,d.p4)(h?a:void 0)),p(h?
 ). If you meant to render a collection of children, use an array instead.
@@ -971,7 +972,6 @@ AGENT
 AGENTFORCE
 AI
 AI & Agents
-AI & Agents types
 AI Answer
 AI Apps and Assistants
 AI Button
@@ -1353,7 +1353,6 @@ Activity Drafts tab send failed
 Activity Log
 Activity Outgoing tab scheduled send failed
 Activity Outlines
-Activity badge mismatch
 Activity chart lines
 Activity count type
 Activity dismissed. Messages stay unread.
@@ -1399,6 +1398,7 @@ ActivityIA4: Hide default view
 ActivityIA4: Hydrate unreads filter state from localStorage without clearing lists
 ActivityIA4: Hydrates independent feed items
 ActivityIA4: Mark whether the latest client.counts batch has been fully applied
+ActivityIA4: Name the trigger of the next first-page feed fetch
 ActivityIA4: Remove activity item
 ActivityIA4: Remove bulk items
 ActivityIA4: Remove channel activity item
@@ -2946,6 +2946,7 @@ Already using Slack?
 Also block previews from this website in the future
 Also delete this file summary everywhere
 Also include connected, external organizations to find and run. 
+Also leave the channel after submitting
 Also notify you about:
 Also remove access to this canvas?
 Also remove access to this list?
@@ -3038,6 +3039,8 @@ An admin may need to approve this.
 An admin may need to review this invitation to {name}.
 An admin may need to review this invitation.
 An admin or source owner has restricted one or more of the selected sources for use with AI steps. Remove restricted sources.
+An admin turned off transcription for this workspace, so Slackbot can\u2019t take meeting notes.
+An admin turned off transcription for {workspace}, so Slackbot can\u2019t take meeting notes.
 An agent has updated your help request
 An alias node must not specify any properties
 An allowed workspace is required
@@ -3364,8 +3367,6 @@ Applying fixes
 Applying recorded pace\u2026
 Approval 
 Approval Work Item
-Approval applies to the {orgName} organization
-Approval applies to the {workspaceName} workspace
 Approval denied by your admin.
 Approval desktop notification shown
 Approval details
@@ -3380,6 +3381,7 @@ Approve
 Approve & Continue
 Approve & continue
 Approve All {count}
+Approve Install
 Approve a license approval request
 Approve a pending channel join request
 Approve an app
@@ -3397,7 +3399,6 @@ Approve who can use or request {appName} in workflows. Your choice will apply to
 Approve { accessibilityLabel }
 Approve {connectorName} for workflows
 Approved
-Approved by admin
 Approved by automation
 Approved by your admin
 Approved to send
@@ -3424,6 +3425,7 @@ Apps installed in this channel will be disabled
 Apps installed successfully!
 Apps request failed
 Apps this skill needs
+Apps to connect
 Apps to install
 Apps turned on
 Apps with org-wide deployment can be installed at the org level in an Enterprise Grid org, then deployed across workspaces by an Org Owner or Admin \u2014 no need to install the app on each workspace.
@@ -4033,7 +4035,6 @@ Automation
 Automation Groups
 Automation Rules
 Automation tools
-Automation types
 Automation usage
 Automation will also show record details.
 Automation will only display the record\u2019s name and object.
@@ -4105,6 +4106,7 @@ Awaiting admin approval to add this app to your workspace.
 Awaiting admin approval to add this app to {workspaceName}.
 Awaiting admin approval to join
 Awaiting approval
+Awaiting review
 Awaiting user action
 Away
 Away team permissions
@@ -4132,6 +4134,7 @@ Back to Input
 Back to Message
 Back to Messages
 Back to Projects
+Back to Review
 Back to Skills
 Back to Slack
 Back to Slackbot
@@ -5107,14 +5110,13 @@ Cancel huddle summary, delete transcript after prompt
 Cancel inline edit settings
 Cancel pending invalidation for topics
 Cancel recording
-Cancel request
 Cancel request to focus the given thread
 Cancel schedule and save to drafts
 Cancel the deferred clear of an item that is being re-added
 Cancel the provisional connection timeout while optional reconnect data loads
-Cancel this app request
 Cancel this app request?
 Cancel this connection request?
+Cancel this request?
 Cancel upload
 Canceled
 Canceled by user
@@ -6563,7 +6565,6 @@ Clog accepted channels from recommender modal or digest preview
 Clog an Explore my trial card click
 Clog an explorer open event using data from redux
 Clog an impression of the unified files 
-Clog an omni_typeahead suggestion impression if this is the first one in the search session
 Clog and handle app card click
 Clog app launcher visit with referring context
 Clog autocomplete accept in browser pages
@@ -6634,7 +6635,6 @@ Clog the creation of a doc
 Clog the creation of a list
 Clog the editing of a folder
 Clog the first navigation suggestion in a search session
-Clog the first omni_typeahead suggestion impression in a search session
 Clog the opening of a doc
 Clog the opening of a folder
 Clog the opening of a list
@@ -6745,6 +6745,7 @@ Close the promo modal
 Close the search overlay when the channel changes
 Close the segmentation questionnaire
 Close the task details panel for a deleted task
+Close the workflow open in the primary view from the channel sidebar
 Close this pull request?
 Close thread
 Close transcript
@@ -6753,6 +6754,7 @@ Close troubleshooting panel
 Close view
 Close window
 Close without adding anyone to this channel?
+Close workflow
 Closed
 Closed a deal!
 Closed captions
@@ -6831,7 +6833,6 @@ Collaborate on this dashboard
 Collaborate on this list
 Collaborate on this page
 Collaborate on this surface
-Collaborate on your sales pipeline and close deals faster by maintaining your contacts list in Slack.
 Collaborate seamlessly and securely with vendors, customers and other organizations using Slack Connect channels or guest accounts.
 Collaborate seamlessly and securely with vendors, customers, and other organizations using Slack Connect.
 Collaborate seamlessly with customers, partners, and vendors
@@ -7133,6 +7134,7 @@ Connect Google Calendar
 Connect Google Drive
 Connect Google Drive (opens in a new tab)
 Connect Google Mail
+Connect Google Workspace
 Connect Outlook
 Connect Outlook (opens in a new tab)
 Connect Salesforce Org
@@ -7170,7 +7172,6 @@ Connect calendar
 Connect cloud app
 Connect email provider
 Connect live to unblock work faster
-Connect now
 Connect organization
 Connect over 2,600 apps and keep everything in one place
 Connect the tools and services you use every day right into Slack
@@ -7371,7 +7372,6 @@ Contact import failed
 Contact import partially complete
 Contact information
 Contact information;
-Contact management in Slack
 Contact name or email
 Contact sales
 Contact us in #feedback-channel-agent.
@@ -8659,6 +8659,7 @@ Customize tabs
 Customize user roles and secure your data.
 Customize workspace
 Customize your Slack Connect invitation
+Customize your focused view
 Customize your sales stages with Slackbot
 Customize your screen reader experience
 Customize {teamDisplayName}
@@ -9583,6 +9584,7 @@ Dismiss a search from the programmable sidebar recents
 Dismiss a single smart-invites-v3 channel suggestion by id
 Dismiss a smart-invites-v3 channel suggestion and remove it from the setupCreation store
 Dismiss a thread from the programmable sidebar recents
+Dismiss a workflow from the programmable sidebar recents
 Dismiss activity
 Dismiss and continue running workflow
 Dismiss banner
@@ -12880,7 +12882,6 @@ Find files that match a search query
 Find form settings and your code snippet by clicking on the channel name and opening the Integrations tab.
 Find gaps in my calendar for focus time.
 Find help anytime
-Find important emails, decisions and context all in one place.
 Find in DMs
 Find in channel
 Find in channel ({shortcut})
@@ -14669,6 +14670,7 @@ Hi! Good to meet you.
 Hi! I\u2019m Slackbot, here to help with all things sales.
 Hi! \u{1F44B} I\u2019m waiting on the channel to be connected, but I\u2019m excited to work together in channel soon.
 Hi, I just saw a notice that there\u2019s no default payment method for our workspace. Can you please add one on the 
+Hi, I\u2019m Slackbot
 Hi, I\u2019m Slackbot!
 Hi, I\u2019m Slackbot, your AI teammate.
 Hi, Slackbot here!
@@ -16162,6 +16164,8 @@ It\u2019s possible that you don\u2019t have access to this record, or the record
 It\u2019s quiet.
 It\u2019s quiet. Enjoy the peace\u2026
 It\u2019s quiet. Too quiet\u2026
+It\u2019s removed without changing {appName}\u2019s approval or installs.
+It\u2019s removed without changing {appName}\u2019s approval or installs. {requesterName} will be notified.
 It\u2019s that time of the week! Recognize people who went above and beyond this week and deserve some kudos
 It\u2019s the last day of your Pro trial
 It\u2019s the last day of your trial
@@ -16750,6 +16754,7 @@ Last updated {ago}.
 Last updated {date}
 Last updated {lastSyncTimeFormatted}
 Last updated {lastSyncTimeFormatted} in {productName}
+Last updated {timeAgo}
 Last updated {timeAgo}\u2026 Press Cmd + F6 to navigate to the status banner and click load new messages
 Last updated {timeAgo}\u2026 Press Ctrl + F6 to navigate to the status banner and click load new messages
 Last updated {timeAgo}\u2026 Press F6 to navigate to the status banner and click load new messages
@@ -16977,6 +16982,7 @@ Leave On
 Leave This Workspace
 Leave User Group
 Leave a channel
+Leave a code channel after approving its PR, if still allowed
 Leave a comment
 Leave all temporary channels
 Leave and Finish
@@ -17018,6 +17024,7 @@ Left Eye Fire Matte
 Left Eye Socket
 Left Leg
 Left \u2318
+Left review comments
 Left skin tone modifier
 Legacy workflows are no longer available.
 Legal Department
@@ -17194,6 +17201,7 @@ Link name can\u2019t be longer than 257 characters.
 Link options
 Link preview
 Link preview loaded for {domain}
+Link previews turned off for {domain}
 Link set to expire after\u2026
 Link to a web page
 Link to message
@@ -17610,6 +17618,7 @@ Log exposure for the prefill_dm_canvas_removal experiment if it is exposed
 Log exposure for the pricing_checkout_reorder experiment if it is exposed
 Log exposure for the pricing_paid_plan_escape_hatch experiment if it is exposed
 Log exposure for the pro_upgrade_ny_promo experiment if it is exposed
+Log exposure for the reorder_stp experiment if it is exposed
 Log exposure for the request_to_purchase_v2_upvote experiment if it is exposed
 Log exposure for the rtp_banner experiment if it is exposed
 Log exposure for the rtp_modal experiment if it is exposed
@@ -17647,6 +17656,7 @@ Log in with the app
 Log out for all orgs complete
 Log out of Slack
 Log out of Tableau Next
+Log reorder_stp exposure if the creator resolved to a flow it decides between
 Log reporter already started.
 Log sidebar noise metrics from first and last user sessions
 Log that an external huddle guest has joined the huddle
@@ -18708,7 +18718,6 @@ Maybe automatically redeem a trial for solutions gallery
 Maybe automatically redeem an experiment trial
 Maybe automatically redeem the golden gate Biz+ reverse trial for creator guided setup
 Maybe bring the main window to the top when clicking on something from a child window
-Maybe clear Gmail or Outlook notification events
 Maybe clear ai app assistant status on new message
 Maybe clear the solution_template pref
 Maybe clog search engagement clickthrough
@@ -18848,6 +18857,7 @@ Meeting microphone
 Meeting notes
 Meeting notes are a breeze with AI recordings and notes.
 Meeting notes are busy in another workspace.
+Meeting notes are off
 Meeting notes are ready
 Meeting notes are still getting ready. Try again in a moment.
 Meeting notes aren\u2019t available in external huddles
@@ -20453,7 +20463,6 @@ No agent sessions match these filters
 No agent threads in this conversation yet
 No agents
 No agents are available for your search
-No agents are available in this workspace.
 No agents available
 No agents available.
 No agents found. Try a different search query.
@@ -20941,7 +20950,6 @@ No window token available after meeting detected window creation
 No windowId for active call
 No workflows found.
 No workflows in this channel yet.
-No workflows or apps are available in this workspace.
 No workflows or tasks are available in this workspace.
 No workflows yet
 No workspace found
@@ -22098,6 +22106,7 @@ Open the Native Gif Picker from a slash command
 Open the New Year promo modal
 Open the PiP mini player, stopping any clip it displaces
 Open the Reaction Error dialog component
+Open the Slackbot tab conversation in a new window
 Open the Transcript feedback modal
 Open the Transcript rating modal
 Open the about information for a given app
@@ -22198,6 +22207,7 @@ OpenSignalingConnectionTask got canceled while waiting to open signaling connect
 Opened message-by-email invite modal for draft, skip inline invite
 Opened setup guide
 Opening Slackbot
+Opening Slackbot in a Simplified-layout child window failed
 Opening in {countdown}\u2026
 Opening lamps.example\u2026
 Opening permalink in new tab
@@ -23708,6 +23718,7 @@ Previous workspace
 Previous year
 Previous {fieldLabel}
 Previous {label}
+Previously connected to {domain}
 Price the 2002 collar before anything else with TEP; the ISDA follows credit.
 Pricing
 Primary (green)
@@ -23736,6 +23747,7 @@ Primary organization
 Primary phone
 Primary view actions
 Primary view header
+Primer page props decode failed
 Prince Edward Island
 Print
 Print canvas
@@ -24467,7 +24479,6 @@ Recommended based on {basis}
 Recommended for you
 Recommended integrations for skill
 Recommended order
-Recommended skills
 Recommended skills for you
 Recommended tasks
 Recompute the new-record highlight of a list
@@ -24606,6 +24617,7 @@ Records that a conversation left one specific project
 Records that a page could not be read from the brain
 Records that a plans comparison choice opened checkout
 Records that the Upcoming row played a scheduled external huddle highlight
+Records the Slackbot thread a tab showed when it was left; undefined forgets it
 Records the calendar-first onboarding kickoff thread for this session
 Records the last time the connected-calendars data was fetched
 Records the launch context a popped-out companion window inherited from its opener
@@ -25947,6 +25959,7 @@ Requested a reinstall of {name}, opens in your browser
 Requested access on {requestDate}
 Requested apps received
 Requested by
+Requested changes
 Requested index 
 Requested unknown style:
 Requested {name}, opens in your browser
@@ -25984,6 +25997,7 @@ Required columns
 Required data not provided for incoming entity PB
 Required permissions
 Required tests failing
+Required tests passing
 Required using SMS or authenticator apps
 Required using authenticator apps only
 Required: you must choose a {appName} domain in order to use enterprise search.
@@ -27261,7 +27275,6 @@ Search is missing a feature
 Search is opening and session is already active: Clearing timer
 Search is opening in the empty state: Starting new search session
 Search isn\u2019t available in this view. Use Filters to browse templates.
-Search isn\u2019t available in this view. Use the filters below to browse templates.
 Search keyboard shortcuts
 Search list
 Search list views by query
@@ -29317,7 +29330,6 @@ Sets record files for a record
 Sets related channels for a record
 Sets remaining AI search samples for testing
 Sets search id for first navigation impression in the search session
-Sets search id for first nl-typeahead impression in the search session
 Sets selected daily digest
 Sets selected datasource to an org
 Sets selected tab for automations peek view
@@ -34014,8 +34026,6 @@ This is the list\u2019s primary field. It cannot be hidden or moved.
 This is the only available workspace for all members.
 This is the place to send email, log activity, or invite a contact to message with you in Slack.
 This is the start of your message
-This is you right now: :selfie:
-This is you taking a selfie
 This is your current Slack theme
 This is your last AI search preview
 This is your space. Draft messages, list your to-dos, or keep links and files handy.
@@ -38692,7 +38702,6 @@ Workflow templates results
 Workflow title
 Workflow title save failed
 Workflow version restored.
-Workflow view
 Workflow with risky scopes
 Workflows
 Workflows & Tasks
@@ -39830,6 +39839,7 @@ Your admins have limited who can rename multi-workspace channels.
 Your admins have not enabled your organization to change this permission.
 Your admins have not shared the permission required to manage this setting.
 Your admins have turned off previews for this domain.
+Your admins have turned off previews for this link, so it won\u2019t unfurl.
 Your admins have turned off previews for this link.
 Your admins haven\u2019t shared the permission required to invite external people to this channel. Read their instructions for details.
 Your admins haven\u2019t shared the permissions required to accept Slack Connect invitations. Read the instructions they created for details.
@@ -41346,7 +41356,6 @@ construction
 construction_worker
 contact
 contact us
-contacts
 container
 contains
 contains all of
@@ -48800,7 +48809,6 @@ zzz
 {workspaceCount, plural, =1 {workspace} other {workspaces}}
 {workspaceCount} workspaces
 {workspaceName} More
-{workspaceName} \xb7 {timeAgo}
 {workspaceName}, has new messages
 {workspaceName}, tab panel.
 {workspace} (Agent unavailable)
