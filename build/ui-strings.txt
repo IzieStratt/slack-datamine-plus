@@ -609,7 +609,7 @@ $ {amount} USD
 :void 0,credentialless:eb?
 :void 0,credentialless:ec?
 :void 0,credentialless:ep?
-:void 0,credentialless:l?
+:void 0,credentialless:o?
 :void 0,credentialless:p?
 :void 0,skipDoneDialog:!0,buttonClassName:q?
 :void 0,skipDoneDialog:!0,buttonClassName:t?
@@ -2837,6 +2837,8 @@ Allow animations
 Allow automatic AI alt text
 Allow automatic AI notes
 Allow automation unfurls to show record details too
+Allow email capture
+Allow email capture in this org
 Allow external people to run workflows with third-party connector steps
 Allow for all objects
 Allow for all objects except excluded ones
@@ -3393,8 +3395,6 @@ Approve this app for installation?
 Approve this approval work item
 Approve who can use or request {appName} in workflows. Your choice will apply to the listed workflow options, and it will be the default setting for future {appName} additions.
 Approve { accessibilityLabel }
-Approve {appName} for all workspaces in {orgName}
-Approve {appName} for {workspaceName}
 Approve {connectorName} for workflows
 Approved
 Approved by admin
@@ -4461,6 +4461,7 @@ Britannic Bold
 British Columbia
 British Indian Ocean Territory
 British Virgin Islands
+Broadcast a thread reply to its channel after its edit is saved
 Broadcast accessibility persistent state to other stores
 Broadcast accessibility state to other stores
 Broadcast an external-guest kick to other huddle participants
@@ -5388,7 +5389,9 @@ Captions not available for this video
 Captions processing
 Captions unavailable in region
 Capture anything, from quick notes to onboarding docs
+Capture is turned off by admin
 Capture leads from your website to Slack
+Capture stops for everyone in this org. People who opted in stay opted in, and capture resumes for them if you turn it back on.
 Capture the draft file state to clean up after a send
 Capture the knowledge from this swarm for the knowledge base?
 Captures companion context immediately before the first send
@@ -7548,7 +7551,6 @@ Convert to new opportunity
 Convert to private channel
 Convert to public channel
 Convert to table
-Convert {prUrl} to a draft
 Convert {real_name} to a Guest?
 Converted muxed init segment to video-only for I-Frame playback
 Converted or created by you
@@ -7990,6 +7992,7 @@ Couldn\u2019t load coding agents. Your task is saved in the input.
 Couldn\u2019t load comments.
 Couldn\u2019t load conversations
 Couldn\u2019t load details.
+Couldn\u2019t load email activity capture settings.
 Couldn\u2019t load fields.
 Couldn\u2019t load file
 Couldn\u2019t load files
@@ -10251,6 +10254,7 @@ Edit details
 Edit dictionary entry {entryNumber}
 Edit draft
 Edit draft email
+Edit email capture setting
 Edit email draft
 Edit example prompt
 Edit expiration date
@@ -10579,6 +10583,7 @@ Emoji
 Emoji Deluxe
 Emoji and GIF picker
 Emoji and GIFs
+Emoji boot timed out
 Emoji can\u2019t be part of a channel name, so we removed them for you.
 Emoji code
 Emoji display
@@ -11291,11 +11296,11 @@ Example: https://your-team.{rootDomain}/archives/C012345CBPG/p17120
 Example: https://your-team.{rootDomain}/archives/C012345CBPG/p1712089732749219
 Examples on record
 Excel file icon
-Exception asking for the document fixers
 Exception during decorator
 Exception during error handler
 Exception during hook
 Exception during transient decorator
+Exception recording a paste
 Exceptions
 Exceptions to the defaults
 Excessive alias count indicates a resource exhaustion attack
@@ -16386,7 +16391,6 @@ Jump to {time}
 Jump to: next unread @mention
 Jump to: next unread thread
 Jump to\u2026
-Jumps to a message and opens the welcome card modal immediately
 Jumps to a message in another workspace via navigateToRoute
 Jumps to a message in the client
 Jun
@@ -17616,7 +17620,6 @@ Log exposure for the sidebar_cta_simplification experiment if it is exposed
 Log exposure for the slack_crm_sidebar_variants experiment if it is exposed
 Log exposure for the slackbot_admin_enablement experiment if it is exposed
 Log exposure for the slackbot_free_teams_segmented_offer experiment if it is exposed
-Log exposure for the slackbot_growth_nux_reengagement_sparkle experiment if it is exposed
 Log exposure for the slackbot_onboarding experiment if it is exposed
 Log exposure for the slackbot_skills_announcement experiment if it is exposed
 Log exposure for the slackiversary experiment if it is exposed
@@ -17661,6 +17664,7 @@ Logins from this IP range can\u2019t perform certain actions. Your Salesforce ad
 Logout of Tableau Next
 Logs Slackbot AI DM open and unmount events
 Logs helpful messages to the console if you do something incorrect
+Logs people\u2019s emails with contacts and leads to Salesforce for those who turn it on.
 Logs user interaction with call window
 London office for three years
 Long absence detected on cold boot, navigating to Today
@@ -18545,7 +18549,6 @@ Mark most recent message read
 Mark plan payment status data as not loaded
 Mark plans and cost data as not loaded
 Mark productivity reacji notification as seen and update local state
-Mark re-engagement sparkles complete
 Mark read
 Mark record read to unhighlight it
 Mark saved items as completed by filter
@@ -18559,7 +18562,6 @@ Mark that the user needs to accept their org
 Mark that the workspace needs 2fa to be setup
 Mark the captured Singer activity as read
 Mark the draft as sent
-Mark the draft pull request {prUrl} as ready for review.
 Mark the file as read
 Mark the free-team Slack Connect validation fetch as settled
 Mark the loaded agent sunroof dropdown apps stale, keeping them until the next fetch for them
@@ -18716,7 +18718,6 @@ Maybe dispatch megaphone event to load the success coachmark once solutions have
 Maybe fetches my task list
 Maybe handle onboarding tasks source from URL query parameter
 Maybe hide the green screenshare border on SSB
-Maybe initialize sparkle NUX start timestamp
 Maybe initiate AI thunks when top level permissions boot data is fetched
 Maybe join huddle from omniswitcher
 Maybe launch Meet Slackbot modal
@@ -22824,7 +22825,6 @@ Participants
 Partner Portal Launch Plan
 Partner Portal Launch Plan 2
 Partners accept your invite
-Party hat on avatar celebrating that {user} joined this workspace
 Pascal
 Pass
 Pass at least one tensor to concat
@@ -26040,7 +26040,6 @@ Reset app actions in store
 Reset app auths
 Reset apps search state
 Reset big button mode specific settings
-Reset browser session timeout ID for entity
 Reset canvas AI content in session
 Reset channel canvas store
 Reset channel histories
@@ -26102,7 +26101,6 @@ Resets all states for a specified entity and refetches by default
 Resets priority user ids with data from vip_users pref
 Resets record files state for a record view to initial
 Resets roles store to initial state
-Resets shared teams state
 Resets stars to initial state
 Resets state in preparation for new request with new query or filters
 Resets state to initialState
@@ -31055,6 +31053,7 @@ Slackbot suggested changes to this canvas, which is read only until they\u2019re
 Slackbot summarizes these conversations. Nothing is marked read.
 Slackbot task started
 Slackbot teaser
+Slackbot uses AI and can make mistakes.
 Slackbot uses this context across conversations in the project and may update it automatically each week.
 Slackbot uses this description to determine when to run this skill.
 Slackbot view
@@ -31758,6 +31757,8 @@ Start new chat
 Start new conversation
 Start of unread messages.
 Start off simple with templates
+Start or end a Slackbot voice call
+Start or end a Slackbot voice call from the keyboard shortcut
 Start or join huddle
 Start or stop loading the next comments page of a code channel pull request
 Start or stop screen share for current user with given mediaSourceId
@@ -31800,7 +31801,6 @@ Start with a template
 Start with the Limited Free Version
 Start with your MCP server URL
 Start workflow
-Start workflow \u2013 {title}
 Start working with external people
 Start writing, or choose an option to get you going:
 Start your to-do list
@@ -32445,6 +32445,7 @@ Sure!
 Sure, I can schedule 30 minutes with Lisa Dawson. Outlines
 Surface
 Surface actions
+Surface embed
 Surface has no content
 Surface is not available in this environment. Try opening the link in a web browser.
 Surface not found
@@ -33162,6 +33163,7 @@ The file type you attempted to upload is not supported
 The finish line: deals you\u2019ve signed and won with your team.
 The first row of your .csv file should be the name of each column.
 The first row of your file should be column names. Be sure to include 
+The flagged fact and its message go to Albert\u2019s test set.
 The floor is yours, {firstName}.
 The following actions will be performed:
 The following categories of customer data will be stored at rest in a data center within the customer\u2019s selected region as of the date data residency is enabled:
@@ -34602,6 +34604,7 @@ To prevent this, please pass a
 To provide, update, maintain and protect our Services, Websites and business;
 To provide, update, maintain, and protect our Services and business;
 To reconnect this org, a Slack admin will need to request approval from Salesforce and re-configure Elevate. People on your team will need to recreate their Slack Elevate notifications.
+To reconnect this org, a Slack admin will need to request approval from Salesforce, re-configure Elevate and set up Slackbot record settings again. People on your team will need to recreate their Slack Elevate notifications.
 To rejoin, you\u2019ll need to be invited back.
 To respond to this email, your team must have a support email address connected to Slack
 To restore this connection, click the button and follow the prompts.
@@ -35599,6 +35602,7 @@ Unable to sync record.
 Unable to sync related conversations.
 Unable to update AI settings. Please try again later.
 Unable to update currency. Please try again.
+Unable to update email activity capture. Please try again.
 Unable to update guest access. Please try again later.
 Unable to update sharing restriction. Please try again later.
 Unable to update your notification preferences. Please try again later.
@@ -36212,9 +36216,7 @@ Update part or all of the call
 Update part or all of the canvas content session
 Update pending
 Update profile fields in a team and its members if necessary
-Update profile fields object to a loading state
 Update profile fields object to a resolved state
-Update profile fields object to reflect an error occurred
 Update pull request type filter pref
 Update quip presence info
 Update record details
@@ -36250,9 +36252,6 @@ Update stable metrics state
 Update stable warnings state
 Update staged click preference coachmark state
 Update status
-Update suggested filters object to a resolved state
-Update suggested filters state to reflect an error occurred
-Update suggested filters to a loading state
 Update team profile fields
 Update the 
 Update the Auto Slack Launchpad state machine
@@ -36268,8 +36267,6 @@ Update the app logs filters
 Update the approval status for a given request by uniqueCompoundId
 Update the archive state of a comment
 Update the array of highlighted sections
-Update the boolean for knowing if a Lists search has been applied
-Update the boolean for knowing if a Quip search has been applied
 Update the cached preview data
 Update the canvas content view of self or a peer
 Update the canvas template mode for a file
@@ -36403,6 +36400,7 @@ Update your password
 Update your status
 Update your status shortcut - opens Custon Status dialog
 Update your {linkText}
+Update {appName} (opens in a new window)
 Update {fieldName1} and {fieldName2} values.
 Update {fieldName} and {remainingCount} more values.
 Update {fieldName} value.
@@ -36945,7 +36943,6 @@ User account mapping
 User canceled upload after error
 User clicked button: {buttonName}
 User created a channel (used for side-effects tied to current user creating a channel)
-User entered more text
 User group
 User group ID is required for editing
 User group channels and sections
@@ -39059,6 +39056,7 @@ You can send the owner a reminder.
 You can still build a form manually and connect it to this step later.
 You can still build a form manually connect it to this step later.
 You can still find any item you had previously cleared.
+You can still read your past chats in the sidebar.
 You can still upgrade to try out these features:
 You can stop logging your emails in Preferences.
 You can turn your camera and microphone off anytime once you\u2019re in the huddle.
@@ -39916,6 +39914,7 @@ Your delegates
 Your draft
 Your draft is safe. Give it another try.
 Your draft is saved. Wait for this request to finish before sending another.
+Your edit was saved in the thread, but it couldn\u2019t be sent to the conversation.
 Your email account needs to be reconnected
 Your email address is verified. Send {inviteesCount, plural, =1 {this invitation} other {these invitations}} to finish.
 Your email address isn\u2019t verified. Verify it, then try sending the invites again.
@@ -47529,7 +47528,6 @@ zzz
 {count} Salesforce list views
 {count} Salesforce records
 {count} agents
-{count} automations
 {count} cell {count, plural, one {value} other {values}} will be changed
 {count} cell {count, plural, one {value} other {values}} will be cleared
 {count} channels \u2192 sections

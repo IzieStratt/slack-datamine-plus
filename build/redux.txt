@@ -1183,8 +1183,6 @@ action:resetSearchModules
 action:resetSearchPageState
 action:resetSearchSession
 action:resetSentMessagesToStore
-action:resetSessionTimeoutId
-action:resetSharedTeams
 action:resetShareMetadataForFile
 action:resetShareMetadataPrivateCountForFile
 action:resetSlackConnectExternalTeamsList
@@ -1742,10 +1740,7 @@ action:setFilterResultChannels
 action:setFiltersForNextInstance
 action:setFilterSharedBy
 action:setFilterSuggestions
-action:setFilterSuggestionsError
 action:setFilterSuggestionsForFiles
-action:setFilterSuggestionsLoading
-action:setFilterSuggestionsResolved
 action:setFilterUnreads
 action:setFilterVisibility
 action:setFinishSetupSectionCollapsed
@@ -1963,7 +1958,6 @@ action:setIsInitialActivityFeedPending
 action:setIsInitialApiError
 action:setIsInproductTeamCreationStateMachineLoaded
 action:setIsJoinerOnboardingNuxSession
-action:setIsListsSearchApplied
 action:setIsLoaded
 action:setIsLoading
 action:setIsLoadingAdminWorkflowView
@@ -1990,7 +1984,6 @@ action:setIsNewQuerySessionOnEmpty
 action:setIsNotesOpen
 action:setIsNoteTakingEnabled
 action:setIsParticipantMenuOpen
-action:setIsQuipFileSearchApplied
 action:setIsRecapDeepLinkPending
 action:setIsRecapOnboardingBannerClosed
 action:setIsRecapPausedForInactivity
@@ -2347,8 +2340,6 @@ action:setProductivityEmojiFromConversationView
 action:setProductivityEmojiHighlight
 action:setProductivityEmojiOpenedViaModifiedTooltip
 action:setProductReleaseCards
-action:setProfileFieldsError
-action:setProfileFieldsLoading
 action:setProfileFieldsResolved
 action:setProfileStepFullNameValue
 action:setProjects
@@ -4090,6 +4081,7 @@ thunk:beginEnabledSkillsMutation
 thunk:bizPlusUpgradePocketGuideV2MaybeLogExposure
 thunk:boostBusPlusAwarenessAndUpgradesMaybeLogExposure
 thunk:bringMainWindowToTop
+thunk:broadcastAfterEdit
 thunk:broadcastExternalHuddleKick
 thunk:broadcastMessage
 thunk:browseApps
@@ -5589,7 +5581,6 @@ thunk:jpSegmentationQuestionsMaybeLogExposure
 thunk:jumpToDraft
 thunk:jumpToEdit
 thunk:jumpToMessage
-thunk:jumpToMessageAndMaybeOpenWelcomeCardModal
 thunk:jumpToSavedMessage
 thunk:jumpToThreadReply
 thunk:jumpToTimestamp
@@ -5762,7 +5753,6 @@ thunk:markPicklistValuesAsStaleBySalesforceOrgId
 thunk:markProductivityReacjiAsSeen
 thunk:markQuickswitcherShortcutUsed
 thunk:markRecordDetailsAsStaleBySalesforceOrgId
-thunk:markReEngagementSparklesComplete
 thunk:markSalesSidebarSuggestedListsAsStale
 thunk:markSecondaryOpenAnimating
 thunk:markSectionChannelsAsRead
@@ -5865,7 +5855,6 @@ thunk:maybeGetNuxRedirectChannel
 thunk:maybeHandleOnboardingTasksSourceFromUrl
 thunk:maybeHandleWindowFocusEvent
 thunk:maybeHideChannelJoinBanner
-thunk:maybeInitializeSparkleNuxStart
 thunk:maybeInitiatePermissionDependentThunks
 thunk:maybeJoinHuddleFromOmniswitcher
 thunk:maybeKickOffDndTimer
@@ -7796,7 +7785,6 @@ thunk:signOutOfSalesforceUserOrg
 thunk:signOutOfWorkspaceOrOrg
 thunk:slackAccessibilityCommand
 thunk:slackbotAdminEnablementMaybeLogExposure
-thunk:slackbotGrowthNuxReengagementSparkleMaybeLogExposure
 thunk:slackbotOnboardingMaybeLogExposure
 thunk:slackbotSkillsAnnouncementMaybeLogExposure
 thunk:slackDebugCanvasCommand
@@ -7997,6 +7985,7 @@ thunk:toggleIdentityLinks
 thunk:toggleIsThreadOpen
 thunk:toggleItemPinnedInSidebar
 thunk:toggleKeyboardShortcuts
+thunk:toggleLiveVoiceFromShortcut
 thunk:toggleOnline
 thunk:toggleOooStatusSyncAndUpdate
 thunk:togglePause
