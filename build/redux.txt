@@ -160,6 +160,7 @@ action:archiveRecord
 action:attachStashedDraft
 action:awaitEmptyQueue
 action:badgeEmojiCollection
+action:beginChannelMgmtQuery
 action:beginExternalGuestMediaAccess
 action:beginLatestReplyThreadsRefresh
 action:beginPinnedViewIdsRead
@@ -1920,7 +1921,6 @@ action:setIsDownloadAllowed
 action:setIsEditingDraftPage
 action:setIsEditModeInternal
 action:setIsEligibleForJoinerOnboardingBigMode
-action:setIsEligibleInvitedUserGlowUp
 action:setIsEligibleToConvertConversationsMpdm
 action:setIsEligibleToConvertSlackConnectMpdm
 action:setIsEligibleToSlackConnectDm
@@ -6939,6 +6939,7 @@ thunk:promiseToGetSubscribed
 thunk:promoteToMcg
 thunk:promptForPermission
 thunk:promptForPermissionAndSetPref
+thunk:proUpgradeNyPromoMaybeLogExposure
 thunk:provisionallyConnectedSideEffect
 thunk:provisionallyConnectedSideEffectHandler
 thunk:provisionSlackFirstCrmAfterTrial
@@ -7327,6 +7328,7 @@ thunk:searchApps
 thunk:searchAppsIfNeeded
 thunk:searchAutocompleteSuggestionAccept
 thunk:searchChannelManagers
+thunk:searchChannelMgmtExternalOrgs
 thunk:searchChannels
 thunk:searchChannelsForService
 thunk:searchChannelVisitors
@@ -7825,6 +7827,7 @@ thunk:startCallByMemberId
 thunk:startCallShortcut
 thunk:startChannelInviteModal
 thunk:startChannelInviteModalCircularHandler
+thunk:startChannelMgmtQuery
 thunk:startCreateNewDatasource
 thunk:startDataSourceAuth
 thunk:startEventLog

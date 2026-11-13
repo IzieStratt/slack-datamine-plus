@@ -5718,7 +5718,6 @@ channel_sidebar.4f32719: Canvas options
 channel_sidebar.501e012: Latest activity, unreads first
 channel_sidebar.525df57: Move left
 channel_sidebar.53543e7: Notifications set to just mentions
-channel_sidebar.53ff6d0: Daily tools
 channel_sidebar.5490ce9: Unpin from your sidebar
 channel_sidebar.5616c87: Search options
 channel_sidebar.56e3bad: Refresh
@@ -14941,6 +14940,7 @@ enterprise_dashboard.042c862: Try again
 enterprise_dashboard.07ec473: This app requires permission to access the following resources:
 enterprise_dashboard.07fd81c: Agent URLs
 enterprise_dashboard.081ae3f: Custom
+enterprise_dashboard.081cdcc: The rule “{ruleTitle}” didn’t approve this agent because it has no Agent URLs condition.
 enterprise_dashboard.0901720: Some workflow apps weren’t approved.
 enterprise_dashboard.0940563: Filter by channel name
 enterprise_dashboard.0960b20: Once removed, this person will no longer have access to the channel, {channel}.
@@ -14978,6 +14978,7 @@ enterprise_dashboard.285f98e: Note that:
 enterprise_dashboard.2a17b82: IDP
 enterprise_dashboard.2a5c6a3: Learn more.
 enterprise_dashboard.2ab4535: {appName} is now connected to Slack for all members.
+enterprise_dashboard.2bb224b: The rule “{ruleTitle}” didn’t approve this agent because its Agent URLs condition doesn’t cover all of the agent’s URLs.
 enterprise_dashboard.2bd9eec: Installing {appName}… Done in the other tab? Refresh to continue.
 enterprise_dashboard.2d750dd: Specific people
 enterprise_dashboard.2e02623: Continue
@@ -15142,6 +15143,7 @@ enterprise_dashboard.dbad49d: All time
 enterprise_dashboard.dc5eb70: Public
 enterprise_dashboard.dda6ac2: Verify
 enterprise_dashboard.ddf19c4: {count, plural, =1 {# filtered result} other {# filtered results}}
+enterprise_dashboard.df2093c: The rule “{ruleTitle}” can’t approve A2A agents. To approve agents like this one, add an approve rule with an Agent URLs condition.
 enterprise_dashboard.df3d114: Automatically checks and updates permissions
 enterprise_dashboard.df833fe: Last 7 days
 enterprise_dashboard.e0c2148: Calendar events in Slack
@@ -15164,6 +15166,7 @@ enterprise_dashboard.edb77ac: You’ll need <b>super admin</b> access to your Go
 enterprise_dashboard.eec2a83: You signed into an account not associated with Google Apps for Work. Please choose a different account.
 enterprise_dashboard.ef287d0: Teams Calls installed. To sign into your account, go to the app’s home in Slack.
 enterprise_dashboard.ef32a11: 1 or more enterprise search apps need setup. Select Configure to finish.
+enterprise_dashboard.ef54792: The rule “{ruleTitle}” didn’t approve this agent because its Agent URLs condition doesn’t cover {url}.
 enterprise_dashboard.efc007a: Save
 enterprise_dashboard.efc73b8: Verify your domain
 enterprise_dashboard.f052edb: Ways to start
@@ -15175,6 +15178,7 @@ enterprise_dashboard.f45cf16: Get more info
 enterprise_dashboard.f5171c9: Sidebar
 enterprise_dashboard.f6b3ab9: Create and update pages from Workflow Builder
 enterprise_dashboard.f6c846a: Daily schedule overview
+enterprise_dashboard.f78df1e: The rule “{ruleTitle}” didn’t approve this agent because its Agent URLs condition couldn’t be read.
 enterprise_dashboard.f83a383: 500
 enterprise_dashboard.f8c8cda: Step {current} of {total}
 enterprise_dashboard.fbbf307: No email verification required. This app is now ready to use.
@@ -20440,7 +20444,6 @@ mentions.f5daa9c: Filter by unread messages; {n} unread
 mentions.fe1db26: {emoji} {title}
 menu.02fc0cf: View agents & apps
 menu.03a322d: Open in split view
-menu.057d9b3: By most recent
 menu.06b8375: Private channels won’t be visible to people who aren’t already in them
 menu.079c316: Create a code channel
 menu.081ae3f: Custom
@@ -20597,7 +20600,6 @@ menu.cfa444b: Remove from all sections
 menu.d160e09: L
 menu.d261547: Mute conversation
 menu.d291165: Other options
-menu.d3a672b: By most recent (Default)
 menu.d3f4cb8: Rename
 menu.d4dc4ab: Copy huddle link
 menu.d6cfda9: Add app to your top bar
@@ -24053,7 +24055,6 @@ prefs.0050de5: You’ve reached the maximum number of workspaces that can be sho
 prefs.025dce7: Use this setting to choose whether you want light or dark sidebars.
 prefs.037001a: Slack Dictation (aka Steno)
 prefs.042c862: Try again
-prefs.057d9b3: By most recent
 prefs.063ebf7: {font} (System)
 prefs.06e24bc: Pick a color
 prefs.07c9c3a: Date and time
@@ -24613,6 +24614,7 @@ private_message_forwarding.b0a9821: Ok
 private_message_forwarding.bda6078: This link opens a message or conversation that you don’t have access to, or that’s been deleted.
 private_message_forwarding.dff6215: This link opens a template that you don’t have access to, or that’s been deleted.
 pro_upgrade_ny_promo.05a4e85: Upgrade Plan
+pro_upgrade_ny_promo.1b6c64e: <b>{discountedPrice} per person/month</b> at {promoDiscountPercent}% off for {promoDuration, plural, =1 {# month} other {# months}}
 pro_upgrade_ny_promo.36ef7d2: Limited offer
 pro_upgrade_ny_promo.3b31cd9: Everything in Pro, and:
 pro_upgrade_ny_promo.40b07ed: Get Business+ {discountPercent}% Off
@@ -24621,6 +24623,7 @@ pro_upgrade_ny_promo.5b7f7f2: Slackbot (personal AI agent)
 pro_upgrade_ny_promo.754843b: SAML-based single sign-on
 pro_upgrade_ny_promo.9dff620: SCIM user management
 pro_upgrade_ny_promo.a152353: Offer ends {offerEndDate}
+pro_upgrade_ny_promo.ae84869: Get the premium features of the Business+ plan and start to work at scale
 productivity_emojis.06dca1d: Say good job to someone with "{emoji}"
 productivity_emojis.0723758: Celebrate success or strong performance with "{emoji}"
 productivity_emojis.13cf34e: Cool
@@ -25779,6 +25782,9 @@ quip_collab.fe06eb6: Tab
 quip_collab.fe59a37: <1m
 quip_collab.fea438b: Replace mode enabled
 quip_collab.ffe4a60: Link to a web page
+quip_delegate.0973946: File sharing has been disabled in canvases using Slack Connect
+quip_delegate.c914ca1: This table has reached the maximum number of cells allowed in a canvas.
+quip_delegate.f0ad3c2: Some content wasn’t pasted because this table reached its cell limit.
 quip_embedded_ui.206911c: Write with AI
 quip_embedded_ui.3fae218: Based on this content
 quip_embedded_ui.776db20: Edit with AI
@@ -29889,7 +29895,6 @@ slack-connect.095133f: Securely DM people outside your company. Just enter someo
 slack-connect.28de16a: Start a direct message using Slack Connect.
 slack-connect.3d9ff4d: Message people outside {currentTeamName}, right in Slack
 slack-connect.6861dee: Invite them to your team.
-slack-docs.004145b: File uploads and embedded files have been disabled in Slack Connect canvases
 slack-docs.00b2cfe: This template will be available in the <strong>"Created by {teamName}"</strong> section of the template gallery for everyone in {teamName}.
 slack-docs.0140c1e: Other members are in here
 slack-docs.030012e: Add form responses to <2>a new canvas</2>
@@ -29998,6 +30003,7 @@ slack-docs.5656400: Publish
 slack-docs.56611eb: Unable to load the image
 slack-docs.5663e1f: Hide manage automations
 slack-docs.56b8cb4: Search all templates
+slack-docs.56d3696: Insertion options
 slack-docs.571bc67: Couldn’t load history
 slack-docs.5889a57: Active Discussions
 slack-docs.5892154: Object not supported
@@ -30120,7 +30126,6 @@ slack-docs.aea819e: Edit settings
 slack-docs.aefb3c5: People on your team can fill out a form that populates a copy of your canvas, quickly gathering and standardizing information with less work.
 slack-docs.aff2018: Skill removed from catalog.
 slack-docs.b0270dd: Related field
-slack-docs.b089b75: Your admins have disabled file uploads in this Slack Connect Canvas
 slack-docs.b13c6cc: Data field error
 slack-docs.b1645b5: This canvas was deleted.
 slack-docs.b16d626: Ctrl R
@@ -31599,6 +31604,7 @@ slackbot-ai.d9a3685: Apps
 slackbot-ai.d9c9a5e: {title}, responding
 slackbot-ai.da05b77: This will remove all {name} tools from Slackbot. You can reconnect anytime.
 slackbot-ai.da5fa11: Make it
+slackbot-ai.db0f9db: Request upgrade
 slackbot-ai.db95a29: Prompt is required.
 slackbot-ai.db9f077: Task details
 slackbot-ai.dc2d311: Choose your account and review access in your browser. Then come back here.
@@ -35740,7 +35746,6 @@ workflow_builder.0e2b8f4: Select a channel
 workflow_builder.0e2d9b0: URL
 workflow_builder.0e37539: "Only visible to you" Message
 workflow_builder.0e3b728: Add a message step with a "Continue Workflow" button before this one so you can send this form to people.
-workflow_builder.0e56e58: Your spreadsheets
 workflow_builder.0e9c746: Define Summary
 workflow_builder.0ebe23e: Agent response
 workflow_builder.0f01446: Show all input names
@@ -36862,7 +36867,6 @@ workflow_builder.9c6d505: Select channels
 workflow_builder.9cae388: Select a date at least {repeatsEvery} {repeatsEvery, plural, =1 {day} other {days}} after your start
 workflow_builder.9cbb1c3: Update {fieldName} value.
 workflow_builder.9ccdc98: Variables containing multiple items must not be mixed with other items of the same type
-workflow_builder.9cd1f2f: Create a spreadsheet from a form
 workflow_builder.9ce3bd4: OK
 workflow_builder.9ce8a7f: Generating list activity feed
 workflow_builder.9d11997: Day offset range
@@ -37564,7 +37568,6 @@ workflow_builder.f88acb2: Account used for this step
 workflow_builder.f90f556: <strong>Needs attention.</strong> This step cannot be used in workflows with a Generate AI response step.
 workflow_builder.f912f8f: Select a Salesforce organization and object to start configuring.
 workflow_builder.f92c0c0: To use this workflow, you’ll need to approve or request approval for the following connectors.
-workflow_builder.f944bb5: <{googleSheetUrl}|Open in Google Sheets>
 workflow_builder.f953f63: Do not run workflow for
 workflow_builder.f96d3d8: Channel names need at least one letter, number, or emoji.
 workflow_builder.f977cff: Please add a title for this form.
