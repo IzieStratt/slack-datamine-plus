@@ -218,6 +218,7 @@ canvas_ask_slackbot_button: on
 canvas_autocomplete_document: on
 canvas_autoopen_in_dm_huddle: on
 canvas_blockquote_layout: on
+canvas_comment_gutter_hovercard: on
 canvas_comment_only_comment_history: on
 canvas_comment_only_mode: on
 canvas_composer_in_search: on
@@ -326,6 +327,7 @@ code_channels_sidebar_peeks: on
 code_channels_sidebar_polish: on
 code_diff_comments: on
 code_interpreter: on
+code_review_request_unlinked_reviewers: on
 code_review_requested_in_activity: on
 cold_channel_history_prefetch
 composer_control_simplification_expansion: on
@@ -357,6 +359,7 @@ custom_file_sections_collapsed_persist: on
 custom_file_sections_recents_limit_ab: treatment
 data_residency_downplan_germany: control, treatment
 data_visualization_copy_image: on
+day_glance_calendar_jit: on
 de_segmentation_questions: control, treatment
 deactivate_account_desktop: on
 debounced_render_lane_channel_sidebar: treatment
@@ -432,7 +435,6 @@ exclude_joiner_setup_flow: on
 external_connections_already_member_copy: on
 external_huddles: on
 external_huddles_new_badge_expired: off
-fail_prov_connect_on_error: treatment
 fe_block_sharing_file_types: on
 fe_enhance_remind_menu_hover_action: on
 fe_long_threads_jump_to_latest: on
@@ -448,6 +450,7 @@ fe_system_messages_redesign_m2: on
 feat_agent_sessions: on
 feat_agents_dms: on
 feat_flag_message_hide_replies: on
+feat_gx_jp_competitor_invites: control, treatment
 feat_invoice_referral: on
 feat_invoice_referral_visitor: control
 feat_partner_builder_toolkit_bundle: on
@@ -598,10 +601,8 @@ inproduct_team_creation_blurred_overlay: on
 internal_ai_sampling_channel_unreads_summary_contextual_nudge: on
 internal_spaces: on
 invite_email_input_smart_tokens: control
-invite_sidebar_entry_messaging_changes: control
 invite_slash_command_in_threads: on
 invite_slash_command_multi: on
-invited_user_glow_up: control, treatment
 inviter_joiner_first_dm_v2: control, treatment
 jit_meeting_details_view: on
 joiner_mobile_task_fix_translations: on
@@ -640,12 +641,11 @@ lists_file_backed_templates: on
 lists_filter_groups: on
 lists_friends_of: on
 lists_friends_of_teams: on
+lists_full_restore_v2: on
 lists_grid_todos: on
 lists_in_later: on
 lists_monster_step: on
 lists_no_virtualized_list_component: on
-lists_pilot: on
-lists_pilot_teams: on
 lists_pin_to_sidebar: on
 lists_pinned_views: on
 lists_playground: on
@@ -830,6 +830,7 @@ salesforce_channels_x_out_channel: on
 salesforce_data_fields_in_canvas_team_toggle: on
 salesforce_data_fields_related_object_support: on
 salesforce_field_name_render_time_recovery: on
+salesforce_slackbot_rules: on
 salesforce_wo_refresh: on
 salestracker_stage_management_replaceapi: on
 sb_welcome_mat_next: on
@@ -1008,6 +1009,7 @@ slackbot_ai_grace_period_admin: on
 slackbot_ai_model_override_button: on
 slackbot_ai_projects: on
 slackbot_ai_queued_messages: on
+slackbot_ai_session_until_eod: on
 slackbot_ai_sidebar_education: treatment_carousel, treatment_modal, treatment_pocket_guide
 slackbot_ai_simple_skills: on
 slackbot_ai_skill_categories: on
@@ -1090,7 +1092,6 @@ slackbot_singer_cloud_browser: on
 slackbot_singer_window_attachment: on
 slackbot_skill_deactivation: on
 slackbot_skill_details_v2: on
-slackbot_skill_mcp_suggest: on
 slackbot_skill_share_dialog_v2: on
 slackbot_skills_admin_edit_access: on
 slackbot_skills_admin_page: on
@@ -1200,7 +1201,6 @@ tableau_workobject_ga: on
 tableau_workobject_live_dashboard_preview: on
 tableau_workobject_live_visualization_preview: on
 tableau_workobject_sdk_extended_timeout: on
-tableau_workobjects_enhanced_error_messages: on
 team_creation_holdout: control
 team_creation_invite_optimizations_v2: control, treatment
 team_creation_segmentation: control, treatment_segmentation_mandatory
@@ -1254,6 +1254,7 @@ troops_wfb_send_summary_to_my_sales_home: on
 truncated_url_hover_card: on
 tsf_snitch: on
 uad_workspace_user_groups: on
+uam_admin_advisor: on
 unarchive_channel_banner_polish: on
 unfurl_skeletons: on
 unified_file_picker: on

@@ -449,12 +449,14 @@ AgentDmDetailsSections
 AgentDmDetailsSettings
 AgentDmDetailsTooltip
 AgentDmForeword
+AgentDmHeaderIconForDm
 AgentDmHistoryButton
 AgentDmPeekChannelSessionRow
 AgentDmPeekSection
 AgentDmPeekSessionRowContent
 AgentDmPeekTrigger
 AgentDmPeekView
+AgentDmSessionsEmptyState
 AgentDmSessionsIndicator
 AgentDmSessionsIndicatorBody
 AgentDmSessionsLocationFilter
@@ -869,6 +871,7 @@ AppPermissionRequestDialog
 AppPreviews
 AppProfile
 AppProfileCard
+AppRequestDetails
 AppRequestReviewAlert
 AppRequestReviewFooter
 AppRequestReviewModal
@@ -1151,6 +1154,7 @@ AvailabilitySection
 Avatar
 AvatarCropPane
 AvatarCropPreview
+AvatarLabelRow
 AvatarMasks
 AvatarPaneContent
 AvatarStack
@@ -1254,6 +1258,7 @@ BaseButton
 BaseButtonInternal
 BaseCalendarAuthLauncher
 BaseCanvasFieldCard
+BaseCanvasSearchInputWithAutocomplete
 BaseCatchupList
 BaseChannelInfo
 BaseChannelInviteModalComponent
@@ -1283,6 +1288,7 @@ BaseChannelSuffixHuddleIcon
 BaseChannelSuffixPendingIcon
 BaseChannelWorkflowNoticeList
 BaseClickPreferenceCoachmark
+BaseColumnEditorLabel
 BaseConferenceAppSelector
 BaseConnectedSection
 BaseConnectInviteCoachmark
@@ -2486,6 +2492,7 @@ CodeChannelResponseModeMessage
 CodeChannelResultRow
 CodeChannelReviewComment
 CodeChannelReviewMessage
+CodeChannelReviewRequestConnectFooter
 CodeChannelReviewRequestMessage
 CodeChannelReviewRequestSummary
 CodeChannelsBrowserViewComponent
@@ -2521,7 +2528,6 @@ CollectionCardSection
 Color
 ColorPicker
 ColumnEditor
-ColumnEditorLabel
 ColumnGuides
 ColumnGuidesViewInner
 ColumnLayoutContext
@@ -2539,6 +2545,7 @@ CommentComposerFrame
 CommentDraftGutter
 CommentGutter
 CommentGutterTip
+CommentHighlightHovercard
 CommentListToggle
 CommentMessage
 CommentReactionGutter
@@ -3203,7 +3210,6 @@ DeprecatedCoachmarkCloseButton
 DeprecatedConversationsSelect
 DeprecatedDialog
 DeprecatedEducationalButton
-DeprecatedEducationalContextBar
 DeprecatedEnhancedSelect
 DeprecatedHuddleName
 DeprecatedMembersSelect
@@ -4395,6 +4401,7 @@ FrontlineMemberGrid
 FrontlineMemberTeamsite
 FrozenTableHeader
 FullPageList
+FullRestoreSummary
 FullScopesModal
 FullscreenButton
 FullscreenContainer
@@ -5286,6 +5293,7 @@ iconElement
 IconForFormat
 IconImg
 IconIntroModal
+IconOnlyTooltip
 IconRecommendations
 IconStack
 IconThumbnail
@@ -5454,7 +5462,6 @@ InvitationTypeColumn
 InviteAlert
 InviteAvatar
 InviteContent
-InvitedUserGlowUpButtons
 InvitedWorkspaces
 InviteEscapeHatchLabel
 InviteeTooltip
@@ -5467,7 +5474,6 @@ InviteListEntity
 InviteModalSpeedBump
 InviteModalTabs
 InviteQrCodeModal
-InviterJoinerFirstDmWelcomeCard
 InvitesCountColumn
 InviteSenderName
 InvitesSummaryList
@@ -5519,11 +5525,8 @@ JoinerFollowUpPrompts
 JoinerLaunchpadDismissedCoachmark
 JoinerLaunchpadPeopleCarousel
 JoinerNotificationSubtype
-JoinerReplyButtons
-JoinerReplyNudge
 JoinErrorToast
 JoinerSlackbotSidebarTooltip
-JoinerWelcomeCardAnimationModal
 JoinerWelcomeCardMessageModal
 JoiningExternalWorkspacesOption
 JoinLaunchpadChannelsModal
@@ -5664,6 +5667,7 @@ LegacyContainerIdProvider
 LegacyDayDivider
 LegacyDayDividerLabel
 LegacyDictationButton
+LegacyFullRestoreSummary
 LegacyOrgConnectionWarning
 LegacyUserGroupBrowserListItem
 LegacyUserGroupEmptyState
@@ -5879,6 +5883,7 @@ ListViewSharingSettingSubtitle
 ListViewToastText
 ListWorkflowsModal
 LiveAudioSpeedBumpModal
+LiveCallMessagesViewContainer
 LiveHuddleButton
 LlmLinkWarning
 load
@@ -6269,6 +6274,7 @@ MeetingDetailsThreadTab
 MeetingDetailsView
 MeetingFilePill
 MeetingLiveTooltipContent
+MeetingRecordingLight
 MeetingReminderContent
 MeetingRow
 MeetingSilenceDialog
@@ -6889,6 +6895,7 @@ NonExistentRecord
 NonExistentRecordEmptyState
 NonExistentWorkflowCard
 NonGradientText
+NonLatinDigitsCurrencyDisplay
 NonStreamingBlocks
 NoOneCanHearMePage
 NoResults
@@ -7200,6 +7207,7 @@ PastCloseDateNotificationPreview
 PasteItemsMenuItem
 PasteLimitDialog
 PastHuddleSectionTitle
+PauseFrontlineMemberAccessModal
 PauseToggle
 PbMessage
 PbMessageField
@@ -8261,6 +8269,7 @@ renderLegacySharedChannelAwayContent
 renderLegacySharedChannelHostContent
 renderLegalTextLink
 renderLightGutter
+renderLineTokens
 renderLink
 renderLinkBtn
 renderLinkElement
@@ -8482,9 +8491,9 @@ renderTitle
 renderTitleBlocks
 renderTitleFilter
 renderTokenAvatar
+renderTokenSlice
 renderTooltip
 renderTooltipValue
-renderToSvg
 renderToValue
 renderTranscript
 renderTrialProBadge
@@ -8597,6 +8606,7 @@ RestoreConfirmationModal
 RestoreFailedToast
 RestoreRestrictedToast
 RestrictedWorkspacePermalinkDialog
+ResumeFrontlineMemberAccessModal
 ResurrectedChannelSection
 ResurrectedUserActivityItem
 ResurrectedUserChannelAvatar
@@ -9519,23 +9529,34 @@ SimpleMessagePreview
 SimpleRichTextPreview
 Singer
 SingerActivityControl
+SingerAgendaClear
 SingerAgendaContent
+SingerAgendaFace
+SingerAgendaFaces
+SingerAgendaHero
 SingerAgendaJoinButton
-SingerAgendaMeeting
 SingerAgendaMeetingAction
 SingerAgendaPanel
+SingerAgendaPrepButton
 SingerAgendaReminder
+SingerAgendaRow
 SingerAgendaSettings
+SingerAgendaSkeleton
 SingerAgendaTimeline
+SingerAgendaTimelineMeeting
+SingerAgendaTomorrow
+SingerAgendaTomorrowHeading
 SingerAttachmentChip
 SingerBrowserSettings
 SingerBrowserTaskView
 SingerBrowserViewer
 SingerCapabilities
-SingerCatchupFooter
+SingerCatchupBriefing
 SingerCatchupHeader
+SingerCatchupInvite
 SingerCatchupOverview
 SingerCatchupPreview
+SingerCatchupSource
 SingerCharacterArtwork
 SingerCharacterBrows
 SingerCharacterEye
@@ -9551,6 +9572,7 @@ SingerCustomize
 SingerDesktopFallback
 SingerDestinationComposer
 SingerDestinationComposerForDraft
+SingerDestinationHeaderAction
 SingerDestinationPanel
 SingerDestinationPanelForDestination
 SingerDestinationTyping
@@ -9566,6 +9588,8 @@ SingerDlsCaughtUp
 SingerDlsContent
 SingerDlsContentNavigation
 SingerDlsContentViewer
+SingerDlsConversationFileDrop
+SingerDlsConversationFileDropScope
 SingerDlsGlance
 SingerDlsGlancePeek
 SingerDlsMessageBody
@@ -9587,6 +9611,8 @@ SingerFace
 SingerFileAttachmentChip
 SingerFileDropFeedback
 SingerIcon
+SingerInvitePill
+SingerJoinChannel
 SingerLaptop
 SingerLiveVoiceButton
 SingerLiveVoiceDetails
@@ -9606,6 +9632,7 @@ SingerOnboardingWindow
 SingerOutfitArtwork
 SingerPanelTransition
 SingerPeekInput
+SingerPeekLiquidSurface
 SingerPeekPopover
 SingerPocket
 SingerPocketFrame
@@ -9616,7 +9643,6 @@ SingerReopenHint
 SingerScreenGlow
 SingerSendFeedback
 SingerSettings
-SingerShimmerPill
 SingerSkills
 SingerTaskBubble
 SingerTaskBubbles
@@ -9692,6 +9718,7 @@ SkillMetadataSection
 skillNameWithEmoji
 SkillOnlyAutocompleteMenu
 SkillPill
+SkillPreviewAutomaticUse
 SkillRow
 SkillsAnnouncementRecommendation
 SkillsBrowserControls
@@ -10598,6 +10625,7 @@ TeamSwitcherMenu
 TeamSwitcherPeekTrigger
 TeamSwitcherTeamRow
 TeamUsageRow
+TeamUsageSkeleton
 TemplateAdvancedDetailsPane
 TemplateBasicDetailsPane
 TemplateBrowser
@@ -10772,6 +10800,7 @@ ThreadRootHuddlesEmpty
 ThreadRootLists
 ThreadRootListsEmpty
 ThreadRowActivityPeek
+ThreadRowFileLabel
 Threads
 ThreadSearchBar
 ThreadSearchButton
@@ -11316,7 +11345,6 @@ useGgBizPlusEndOfTrialUpgrade
 useGuidelinesHelper
 useHandleReinstallAgent
 useHideSelfMenuItem
-useHighlighter
 useHuddleArtifactActions
 useHuddleInviteProps
 useHuddleRecordingButtonTip

@@ -148,6 +148,8 @@ admin.slackbot.channelExclusions.remove
 admin.usergroups.addChannels
 admin.usergroups.listChannels
 admin.usergroups.removeChannels
+admin.users.access.pause
+admin.users.access.resume
 admin.users.conversations.counts
 admin.users.conversations.search
 admin.users.externalUsers.disconnect
@@ -507,7 +509,6 @@ client.codeChannels.getBlockKitView
 client.codeChannels.getDiff
 client.codeChannels.getFileLines
 client.codeChannels.getMergeStatus
-client.codeChannels.getPrWorkObject
 client.codeChannels.getPullRequest
 client.codeChannels.getPullRequestCommits
 client.codeChannels.getPullRequestConnection
@@ -1000,6 +1001,7 @@ lists.updateApproval
 lists.views.create
 lists.views.delete
 lists.views.pins.add
+lists.views.pins.list
 lists.views.pins.remove
 lists.views.update
 mc.enterprise.migrations.addHold
@@ -1025,6 +1027,8 @@ megaphone.executeEvent
 megaphone.journeys.dismiss
 megaphone.notifications.list
 megaphone.setNotificationAsSeen
+megaphone.visualizer.journeys.get
+megaphone.visualizer.journeys.list
 megaphone.visualizer.notifications.get
 megaphone.visualizer.spaces.get
 messages.list
@@ -1593,6 +1597,7 @@ workObjects.editComment
 workObjects.editEntity
 workObjects.getComments
 workObjects.getEntity
+workObjects.performDraftAction
 workObjects.postComment
 workObjects.publishEntity
 workflows.activity.export

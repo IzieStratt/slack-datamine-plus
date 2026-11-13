@@ -121,7 +121,6 @@ client-channel-threads-prototype-view
 client-channel-user-group-view
 client-channel-view
 client-code-channel-details-view
-client-code-channel-pr-view
 client-code-channel-view-renderer
 client-code-channels-browser-view
 client-creator-guided-setup-canvas-banner
@@ -230,6 +229,7 @@ client-huddle-thread-view-router
 client-huddle-transcript-details-view
 client-huddle-view
 client-huddles-view
+client-journey-tester-view
 client-jp-pocket-guide-v2-sidebar-menu-link
 client-keyboard-shortcuts-view
 client-later-list-view
@@ -269,6 +269,7 @@ client-search-empty-view
 client-search-in-channel-view
 client-search-view
 client-setup-view
+client-sidebar-sweeper-archive-banner
 client-sidekicks-view
 client-skill-details-view
 client-skill-set-details-view
@@ -345,7 +346,6 @@ find-slackbot-skills
 find-slackbot-tasks
 find-workflow-views
 footer
-gantry-v2-default-boot-apis
 gantry-v2-default-boot-deferred
 gantry-v2-default-boot-render
 gantry-v2-default-boot-shared
@@ -364,13 +364,14 @@ jp-pocket-guide-v2-flow-view
 js_lib_ms-office_src_shared_chart_chartEx_ts-js_lib_ms-office_src_shared_chart_chartHit_ts-js-143c1a
 js_lib_ms-office_src_shared_drawingml_color_ts-js_lib_ms-office_src_shared_drawingml_theme_ts-126b4a
 js_lib_slack-kit_src_components_form_fields_field-textarea-input_tsx-js_lib_slack-kit_src_com-67a278
-js_lib_slack-kit_src_components_form_fields_find-option_ts-js_modern_components_slack-app-ico-7e1853
+js_lib_slack-kit_src_components_form_fields_find-option_ts-js_modern_components_slack-app-ico-4aeea0
 js_lib_slack-kit_src_components_select_multi-select-v2_tsx
 js_lib_slack-kit_src_components_table_index_tsx
 js_modern_components_block-kit_blocks_data-visualization_data-visualization-block_tsx
 js_modern_components_channel-details-modals_archive-channel-modal_tsx
 js_modern_components_comms-impact_message-stats_use-c3-chart_use-c3-chart_ts
 js_modern_components_composer-page_utility_is-empty-ops_ts-js_modern_components_private-messa-6183b9
+js_modern_components_fullscreen-modal_fullscreen-modal_tsx
 js_modern_components_growth-kit_business-plus-admin-entry-point-banner_crmImg_png-js_modern_c-ad7027
 js_modern_components_growth-kit_hooks_use-get-features_features_ai-assistant-apps_de-DE_png-j-d66891
 js_modern_components_growth-kit_hooks_use-get-features_features_ai-language-translations_de-D-1212c9
@@ -391,6 +392,7 @@ js_modern_redux_stores_workflows-store_thunks_slackbot-tasks_prompt-blocks_ts-js
 js_modern_rules_channel-sections_is-channel-able-to-be-organized_ts-js_modern_components_view-dc28af
 js_modern_utility_snippet-file-types_ts
 js_projects_salesforce-records_components_record-activities_hooks_use-is-file-download-blocke-a76177
+js_quip-src_collab_common_docs_ts-js_quip-src_editing_host-key-events_ts-js_quip-src_editor_b-497fe7
 js_quip-src_collab_controller_embedded-ui_embedded-ui-provider_ts-js_modern_components_canvas-30b76e
 layout-debug-overlay
 lead-form-codemirror
@@ -761,8 +763,6 @@ lottie-inline-modern-components-message-pane-foreword-ai-workspace-animations-re
 lottie-inline-modern-components-message-pane-foreword-ai-workspace-animations-settings-animations
 lottie-inline-modern-components-message-pane-foreword-expansion-onboarding-files
 lottie-inline-modern-components-message-pane-foreword-expansion-onboarding-smiley
-lottie-inline-modern-components-message-pane-foreword-inviter-joiner-first-dm-animations-joiner-welcome-card-lottie
-lottie-inline-modern-components-message-pane-foreword-inviter-joiner-first-dm-animations-send-welcome-card-lottie
 lottie-inline-modern-components-message-pane-foreword-slack-crm-lead-form-card-lottie-dark
 lottie-inline-modern-components-message-pane-foreword-slack-crm-lead-form-card-lottie-light
 lottie-inline-modern-components-message-pane-foreword-slack-crm-support-channel-card-lottie-dark
@@ -969,7 +969,6 @@ lottie-inline-projects-sales-home-components-nux-animations-downmarket-crm-conta
 lottie-inline-projects-sales-home-components-nux-animations-downmarket-crm-slackbot-contact-flexpane-nux
 lottie-inline-projects-sales-home-components-nux-nux-rocket-dark
 lottie-inline-projects-sales-home-components-nux-nux-rocket-light
-lottie-inviter-joiner-first-dm-welcome-card.json
 lottie-invites-animations.json
 lottie-invites-gallery-animations.json
 lottie-jp-pocket-guide-invite-your-team
@@ -1402,7 +1401,10 @@ megaphone-inproduct-team-creation-sidebar-banner
 megaphone-internal-infra-dummy-coachmark
 megaphone-invite-teammates-banner
 megaphone-joiner-onboarding-preview-banner
-megaphone-journeys-internal-dummy
+megaphone-journeys-internal-dummy-banner
+megaphone-journeys-internal-dummy-countdown
+megaphone-journeys-internal-dummy-modal
+megaphone-journeys-internal-dummy-tip
 megaphone-jp-pocket-guide-sidebar-menu-link
 megaphone-just-reached-msg-limit-banner
 megaphone-later-todos-page-nux-banner
@@ -1458,6 +1460,7 @@ megaphone-promotional-discount-team-menu
 megaphone-recap-mute-education-banner
 megaphone-record-channel-new-badge
 megaphone-record-channel-related-conversations-tab-banner
+megaphone-referral-welcome-modal
 megaphone-related-conversations-secondary-tab-banner
 megaphone-repackaging-announcement-banner
 megaphone-request-biz-plus-admin-billing-page-banner
@@ -1953,7 +1956,6 @@ shared-js_modern_components_WIP_unified-global-triage_todos-page_tsx
 shared-js_modern_components_WIP_unified-global-triage_unified-global-triage-tab-content_tsx
 shared-js_modern_components_WIP_work-objects_components_full-size-preview_work-object-full-si-79c25f
 shared-js_modern_components_WIP_work-objects_hooks_use-embed-preview-url_ts-js_modern_compone-c2a4d1
-shared-js_modern_components_WIP_work-objects_work-object-flexpane-body_tsx
 shared-js_modern_components_agent-browser_my-agents_my-agents_tsx
 shared-js_modern_components_agents_session-list_session-list-filters_tsx-js_modern_components-1656e7
 shared-js_modern_components_app-space_app-space-permissions_tsx
@@ -2021,6 +2023,7 @@ shared-js_modern_components_slack-ai_summaries_ai-summary-details_ai-summary-det
 shared-js_modern_components_slack-connect-hub_components_slack-connect-manage-menu_can-user-s-ebd54b
 shared-js_modern_components_slack-connect-hub_invites_slack-connect-page_tsx-js_projects_clie-9d4bf0
 shared-js_modern_components_slack-connect-hub_invites_slack-connect-received-channel-invite_t-7a0e7f
+shared-js_modern_components_slackbot-ai_completers_use-draft-safe-skill-completer_ts-js_proje-21c311
 shared-js_modern_components_slackbot-ai_components_paywall_slackbot-ai-upgrade-paywall_module-955fc2
 shared-js_modern_components_slackbot-ai_components_paywall_slackbot-ai-upgrade-paywall_tsx
 shared-js_modern_components_slackbot-ai_components_skill-sets_skill-set-item-row_tsx
@@ -2039,6 +2042,7 @@ shared-js_modern_components_view-header_view-header_tsx
 shared-js_modern_generated_types_api_methods_ai_alpha_slackbot_skillCategories_list_ts-js_mod-e69c42
 shared-js_modern_generated_types_api_methods_apps_datasources_external_fieldreferences_list_t-8bef12
 shared-js_modern_generated_types_api_methods_usergroups_create_ts-js_projects_client-v2_compo-c98f65
+shared-js_modern_generated_types_api_schemas_calendar_event-status_ts-js_projects_client-v2_c-7760d3
 shared-js_modern_redux_actions_help-actions_ts-js_modern_components_flexpane_help-article_hel-5f77c4
 shared-js_modern_redux_actions_open-apps-browser-modal_ts
 shared-js_modern_redux_actions_universal-search_search-prefs-changed_ts
@@ -2071,13 +2075,14 @@ shared-js_projects_salesforce-connections_salesforce-sign-in_sign-into-salesforc
 shared-js_projects_salesforce-records_components_record-view_record-view-contents_tsx-js_proj-843d04
 shared-js_projects_shared-sales-home-workflow-builder_components_feed_feed-item_feed-item-sch-429da8
 shared-js_projects_workflow-builder_segments_triggers_external_form_components_datasource_tsx-1897d3
-shared-js_projects_workflow-builder_segments_triggers_scheduled_model_reducer_ts-js_projects_-a74f01
 shared-node_modules_mediapipe_tasks-vision_lazy_recursive-js_modern_utility_video-effects_mas-7807b9
 shortcuts-local-actions
 signals
 singer-dls
 singer-meeting-host
 singer-native-glance-message
+singer-rail-launcher
+singer-speck-work
 singer-web-companion
 skill-share-consent-modal
 slack-kit-debug

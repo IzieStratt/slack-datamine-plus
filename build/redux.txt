@@ -429,6 +429,7 @@ action:clearUserGroupMembership
 action:clearUserSetUnreadPointIfActive
 action:clearUserWorkflowForms
 action:clearVideoAlerts
+action:clearWikiBrain
 action:clearWithheldDraftIds
 action:clearWorkspaceAccessPaused
 action:clearWorkspaceBootRetrying
@@ -558,6 +559,7 @@ action:exportWorkflowSuccess
 action:externalAuthCompleted
 action:failExternalFileProvidersFetch
 action:failLoadingCustomSkillCategories
+action:failWikiPage
 action:fetchAndOpenChannelSectionLinkInfoCircular
 action:fetchAndUpsertRecordsCircular
 action:fetchLocalesFailure
@@ -571,6 +573,7 @@ action:finishAgentSunroofFetch
 action:finishAutomationGroupsRequest
 action:finishLoadingStaleSkillCategories
 action:finishResume
+action:finishWikiIndex
 action:flashSearchResult
 action:forgetPersonalDefaultViewById
 action:forwardMessageToAnnouncerAPI
@@ -726,7 +729,9 @@ action:markSlackbotThreadsUnread
 action:markSlackbotThreadUnread
 action:markStreamingAnimationFinished
 action:markTriggerUnfurlsAsStaleForSession
+action:markWikiFactFlagged
 action:markWorkflowHandoffContinued
+action:markWorkflowHandoffNotContinuable
 action:maybeCheckSystemMediaAccess
 action:maybeDisableScreenshareOfSelf
 action:maybeReassignMaxApiRequests
@@ -1101,6 +1106,7 @@ action:requestJukeboxStop
 action:requestNavigationHistoryPrefetch
 action:requestRecordTeamRefresh
 action:requestScheduledExternalHuddleHighlight
+action:requestWikiPage
 action:resendMessageAfterDlpWarningOrErrorCircular
 action:reset
 action:resetActions
@@ -2836,6 +2842,7 @@ action:setWhatsNewFetchFailed
 action:setWhatsNewLoading
 action:setWhatsNewUpdates
 action:setWikiDocuments
+action:setWikiPage
 action:setWildcardAndClearPublicChannels
 action:setWindow
 action:setWindowIdToRender
@@ -2894,6 +2901,7 @@ action:startSearchSession
 action:startSession
 action:startSessionTimeoutCheck
 action:startVideoPreview
+action:startWikiIndex
 action:stashAttachedDraft
 action:stashComposerDraft
 action:stateChanged
@@ -3699,6 +3707,7 @@ fetcher:notifyCancelDialog
 fetcher:notifyMember
 fetcher:openConversationBetweenMembers
 fetcher:optOutPromoCampaign
+fetcher:pauseFrontlineMemberAccess
 fetcher:pinsAdd
 fetcher:pinsList
 fetcher:pinsRemove
@@ -3733,6 +3742,7 @@ fetcher:requestRoom
 fetcher:requestTeamOfflineExport
 fetcher:resendInvitationEmail
 fetcher:resetUserSessions
+fetcher:resumeFrontlineMemberAccess
 fetcher:revokeGroupRoleAssignment
 fetcher:revokePublicUrl
 fetcher:revokeRoleAssignment
@@ -4212,6 +4222,7 @@ thunk:clearSyncedSlackbotZeroStateDraft
 thunk:clearToastQueue
 thunk:clearToastQueueForWindow
 thunk:clearTodayFocusItem
+thunk:clearUnreadOnRootDeleted
 thunk:clearUnreadOnThreadOpen
 thunk:clearUserStatus
 thunk:clogAndDismissJoinerLaunchpad
@@ -4792,6 +4803,7 @@ thunk:externalConnectorFilterChanged
 thunk:externalGuestAutoKnock
 thunk:failover
 thunk:failProvisionalConnection
+thunk:featGxJpCompetitorInvitesMaybeLogExposure
 thunk:featInvoiceReferralVisitorMaybeLogExposure
 thunk:feedbackCommand
 thunk:fetchActionableApprovalsCount
@@ -5060,6 +5072,7 @@ thunk:fetchOrgUserGroups
 thunk:fetchParameterDynamicOptions
 thunk:fetchPermissionsList
 thunk:fetchPersonalDefaultView
+thunk:fetchPinnedViewIdsIfUnknown
 thunk:fetchPinsList
 thunk:fetchPlusTrialEligibility
 thunk:fetchPopularSkills
@@ -5196,6 +5209,7 @@ thunk:flagMpdmTopic
 thunk:flashProductivityEmojiHighlight
 thunk:flushBufferedRecentEvents
 thunk:focusCanTransitionThunk
+thunk:focusDirectoryPaneSearch
 thunk:focusModeMusicMaybeLogExposure
 thunk:focusNextWorkspace
 thunk:focusOpenListRecordThread
@@ -5545,13 +5559,11 @@ thunk:invalidAuth
 thunk:inviteAgentToHuddle
 thunk:inviteCommand
 thunk:inviteConnectableContactToScdm
-thunk:invitedUserGlowUpMaybeLogExposure
 thunk:inviteEmailInputSmartTokensMaybeLogExposure
 thunk:inviteMembers
 thunk:inviteMemberToChannel
 thunk:invitePeopleCommand
 thunk:inviterJoinerFirstDmV2MaybeLogExposure
-thunk:inviteSidebarEntryMessagingChangesMaybeLogExposure
 thunk:inviteToChannel
 thunk:inviteToConversationShortcut
 thunk:inviteToWorkspaceShortcut
@@ -6042,8 +6054,6 @@ thunk:maybeShowDefaultChannelsClipsCoachmark
 thunk:maybeShowDeprecationWarning
 thunk:maybeShowEarlyChannelReveal
 thunk:maybeShowInitialChannel
-thunk:maybeShowInviterJoinerFirstDmWelcomeCard
-thunk:maybeShowInviterWelcomeCardModalOnFirstDmOpen
 thunk:maybeShowListsWelcomePeek
 thunk:maybeShowNfxContextualCoachmarks
 thunk:maybeShowOmniSwitcher
@@ -6219,7 +6229,9 @@ thunk:normalizeAPIFailures
 thunk:normalizeAPIFailuresUG
 thunk:noteAnnouncedSessionThread
 thunk:notificationClicked
+thunk:notificationClickedInVisitOrigin
 thunk:notifyAccessLimited
+thunk:notifyCanvasContentDraftDiffNotShown
 thunk:notifyServerLeave
 thunk:observeChannelNominationNavigation
 thunk:offerCaptureAfterGmailSignIn
@@ -6736,6 +6748,7 @@ thunk:openSidebarSweeper
 thunk:openSidebarThread
 thunk:openSidekickAvatarCropModal
 thunk:openSignIntoSalesforceOrgModal
+thunk:openSingerAgentConversation
 thunk:openSingerViewInSlack
 thunk:openSkillCatalogModalCircularHandler
 thunk:openSkillPermalink
@@ -6996,6 +7009,7 @@ thunk:recordNuxAnswer
 thunk:recordOpenDocMetrics
 thunk:recordRecentNavigationEventOnNavigate
 thunk:recordSalesforceEchoFrecencyEvent
+thunk:recordSalesforceRecordViewEngagement
 thunk:recordSalesforceSearchResultEngagement
 thunk:recordSearchAccept
 thunk:recordSingerThreadMessage
@@ -7167,6 +7181,7 @@ thunk:replaceTemporaryIdAndPersist
 thunk:replaceViewSet
 thunk:reportMessage
 thunk:reportPinnedItemsChange
+thunk:reportThreadOpenStaleActivityThunk
 thunk:requestAccessModalThunk
 thunk:requestAgentSunroofApps
 thunk:requestCatchUpExpandOnArrival
@@ -7411,6 +7426,8 @@ thunk:sendShareMessage
 thunk:sendSingerDestinationMessage
 thunk:sendSingerMessage
 thunk:sendSingerMessageInternal
+thunk:sendSingerPrivateAgentMessage
+thunk:sendSingerPrivateAgentRequest
 thunk:sendSlackbotAiMessage
 thunk:sendSsoBindEmailToMember
 thunk:sendSurveyResult

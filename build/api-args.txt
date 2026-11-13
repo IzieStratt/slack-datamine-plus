@@ -21,7 +21,7 @@ admin.apps.lookup: app_ids, enterprise_id, include_configured_domains, include_n
 admin.apps.permissions.list: app_id
 admin.apps.permissions.set: app_id, channel_restriction_mode, permission_type
 admin.apps.productivity.list: suite, token
-admin.apps.requests.list: app_ids, cursor, enterprise_id, limit, team_id
+admin.apps.requests.list: app_ids, certified, cursor, enterprise_id, limit, team_id
 admin.apps.restrict: app_id, enterprise_id, team_id
 admin.apps.restricted.list: legacy_integrations, limit
 admin.canvases.publishTemplate: file_id, publish_sales_template
@@ -198,7 +198,7 @@ apps.index.list: category, cursor, filter, is_app_launcher, limit, team_id
 apps.index.search: category, cursor, filter, is_app_launcher, limit, query, team_id
 apps.onboarding.list: source
 apps.profile.check: bot_user_ids
-apps.profile.get: app, bot, bot_home_team
+apps.profile.get: app, bot, bot_home_team, skip_salesforce_cache
 apps.scopes.info: app_id
 apps.team.variables.delete: names, team
 apps.team.variables.get: names, team
@@ -271,7 +271,7 @@ client.codeChannels.getSummary: channel_id
 client.codeChannels.join: channel_id, origin_channel_id
 client.codeChannels.listPullRequestComments: comment_kinds, cursor, pr_url
 client.codeChannels.mergePullRequest: channel_id, head_sha, pr_url
-client.codeChannels.requestReviewers: channel_id, invite_to_channel, note_blocks, post_mention, pr_url, user_ids
+client.codeChannels.requestReviewers: channel_id, invite_to_channel, note_blocks, notify_unlinked, post_mention, pr_url, user_ids
 client.codeChannels.setPullRequestState: channel_id, comment, pr_url, state
 client.codeChannels.setReviewThreadResolved: channel_id, is_resolved, pr_url, thread_node_id
 client.codeChannels.submitReview: channel_id, event, pr_url, revision, text
@@ -567,6 +567,7 @@ lists.templates: template_ids
 lists.update: id, template_type
 lists.views.create: list_id, name, type
 lists.views.delete: id, list_id
+lists.views.pins.list: list_id
 lists.views.update: id, list_id, skip_simple_array_serialization_in_get_form_data
 media.progress.update: duration_ms, file, offset_ms
 media.reactions.add: channel, file, message_timestamp, name, offset_ms
@@ -729,7 +730,7 @@ sfdc.getObjectsOfType: object_type, salesforce_org_id
 sfdc.getOpportunity: id, salesforce_org_id
 sfdc.getOwnerChangeOptions: current_owner_id, record_id, salesforce_org_id, sobject_api_name
 sfdc.getPicklistValuesV2: object_api_name, record_type_ids, salesforce_org_id
-sfdc.getRecordLayoutDetails: child_relationships, fallback_layout_type, include_off_layout_fields, layout_type, mode, record
+sfdc.getRecordLayoutDetails: child_relationships, fallback_layout_type, include_off_layout_fields, is_slackbot_draft, layout_type, mode, record
 sfdc.getRelatedListRecords: page_size, parent_record_id, related_list_id, salesforce_org_id
 sfdc.getRelatedLists: parent_object_api_name, record_type_id, salesforce_org_id
 sfdc.getReportAggregatesMetadata: report_ids, salesforce_org_id
@@ -897,6 +898,7 @@ visits.record: client_now_ms, visits
 workObjects.editEntity: channel_id, entity_id, entity_url, message_ts
 workObjects.getComments: cursor, entity_id, entity_url, thread_root_id
 workObjects.getEntity: appearance, channel_id, client_req_id, entity_id, entity_url, force_refetch, lookup_function, message_ts
+workObjects.performDraftAction: action_id, channel_id, entity_id, message_ts, state
 workObjects.publishEntity: channel_id, entity_id, message_ts, state
 workflows.activity.export: filters, workflow_id
 workflows.activity.get: workflow_execution_id, workflow_id
