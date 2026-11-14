@@ -48,3 +48,19 @@ test('icons: diff, header links in the PDF, searchable gallery, and markup is sa
   const noted = renderIconsHtml(a, null, { notes: { 'a-one': 'A "note" <b>' } });
   assert.ok(noted.includes('data-note="A &quot;note&quot; &lt;b&gt;"') && noted.includes('toLowerCase()'));
 });
+
+test('icon pages: tiles link to them, pages escape and show usage', async () => {
+  const { renderIconsHtml, renderIconPage, renderIconSvg, validName } = await import('../src/icons.mjs');
+  const set = { width: 20, height: 20, icons: { 'ai-sparkle': { body: '<path d="M1 1h2"/>' }, 'ai-sparkle-filled': { body: '<path d="M1 1h3" onclick="x"/>' }, 'bad name"<': { body: '' } } };
+  const descs = { 'ai-sparkle': { where: 'AI menu <b>', purpose: 'Marks AI features', confidence: 'high' } };
+  const usage = { 'ai-sparkle': { count: 2, labels: ['Write with AI'], snippets: ['name:"ai-sparkle"</script>'] } };
+  const g = renderIconsHtml(set, null, { descs });
+  assert.ok(g.includes('href="icons/ai-sparkle.html"') && g.includes('data-find="Marks AI features AI menu &lt;b&gt;"') && !g.includes('bad name'));
+  const p = renderIconPage(set, 'ai-sparkle', { descs, usage, labels: { 'ai-sparkle': 'AI features' }, next: 'ai-sparkle-filled' });
+  assert.ok(p.includes('Marks AI features') && p.includes('AI menu &lt;b&gt;') && p.includes('fairly sure') && p.includes('Referenced by name 2 times'));
+  assert.ok(p.includes('<li>Write with AI</li>') && p.includes('&lt;/script&gt;') && !p.includes('"ai-sparkle"</script>'));
+  assert.ok(p.includes('href="ai-sparkle-filled.html"') && p.includes('download="ai-sparkle.svg"') && p.includes('<h2>Variants</h2>'));
+  assert.ok(renderIconSvg(set, 'ai-sparkle-filled').startsWith('<svg xmlns="http://www.w3.org/2000/svg"') && !renderIconSvg(set, 'ai-sparkle-filled').includes('onclick'));
+  assert.ok(validName('a-b_1') && !validName('../x') && !validName('bad name"<'));
+  assert.ok(renderIconPage(set, 'ai-sparkle-filled').includes('Not described yet'));
+});

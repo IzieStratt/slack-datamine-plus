@@ -8,9 +8,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { diffIconSets, hasChanges, renderDiffPdf, renderIconsHtml, renderIconsPdf, renderIconsSprite } from './icons.mjs';
+import { diffIconSets, hasChanges, renderDiffPdf, renderIconPage, renderIconSvg, renderIconsHtml, renderIconsPdf, renderIconsSprite, validName } from './icons.mjs';
 
-const FORMAT = 'v4'; // bump when the output formats change so every file is rebuilt once
+const FORMAT = 'v5'; // bump when the output formats change so every file is rebuilt once
 const site = process.argv[2];
 if (!site) { console.error('usage: icons-pdf.mjs <site-dir> [--icons file] [--host name]'); process.exit(1); }
 const arg = (n, d) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : d; };
@@ -19,9 +19,14 @@ const host = arg('host', 'sdmp.izie.top');
 if (!fs.existsSync(iconsFile)) { console.log('no icon set mined yet'); process.exit(0); }
 const raw = fs.readFileSync(iconsFile, 'utf8');
 const notes = JSON.parse(fs.readFileSync(new URL('./icon-notes.json', import.meta.url), 'utf8')); // hand-written facts about single icons
-const tag = `${crypto.createHash('sha256').update(raw + JSON.stringify(notes)).digest('hex')} ${FORMAT}`; // notes are part of the page, so editing one rebuilds it
 const at = (f) => path.join(site, f);
-const outputs = ['icons.pdf', 'icons.html', 'icons.svg', 'icons.json'];
+const readJson = (f) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {});
+const descs = readJson(new URL('./icon-descriptions.json', import.meta.url)); // where each icon is used and what we think it is for
+const labels = readJson(at('icons-desc-overrides.json')); // hand-checked short labels (personal-site)
+const usage = readJson(at('icons-usage.json')); // usage counts, nearby UI strings and code (personal-site scripts/slack-icon-usage.py)
+// everything shown on the pages is part of the tag, so editing a note or description rebuilds them
+const tag = `${crypto.createHash('sha256').update(raw + JSON.stringify([notes, descs, labels, usage])).digest('hex')} ${FORMAT}`;
+const outputs = ['icons.pdf', 'icons.html', 'icons.svg', 'icons.json', 'icons'];
 if (fs.existsSync(at('icons.sha256')) && fs.readFileSync(at('icons.sha256'), 'utf8').trim() === tag && outputs.every((f) => fs.existsSync(at(f)))) { console.log('icons unchanged'); process.exit(0); }
 
 fs.mkdirSync(site, { recursive: true });
@@ -40,6 +45,16 @@ fs.writeFileSync(at('icons.pdf'), renderIconsPdf(set, { title: 'Slack icons', he
 if (diffPdf) fs.writeFileSync(at('icons-diff.pdf'), renderDiffPdf(prev, set, diff, { header: [{ text: `${host}/icons-diff.pdf`, url: url('icons-diff.pdf') }, { text: `All icons: ${host}/icons.pdf`, url: url('icons.pdf') }] }));
 else fs.rmSync(at('icons-diff.pdf'), { force: true });
 fs.writeFileSync(at('icons.svg'), renderIconsSprite(set));
-fs.writeFileSync(at('icons.html'), renderIconsHtml(set, diff, { notes, links: [['/', 'Changes feed'], ['icons.pdf', 'PDF'], ...(diffPdf ? [['icons-diff.pdf', 'Changes (PDF)']] : []), ['icons.svg', 'SVG sprite'], ['icons.json', 'JSON']] }));
+fs.writeFileSync(at('icons.html'), renderIconsHtml(set, diff, { notes, descs, labels, links: [['/', 'Changes feed'], ['icons.pdf', 'PDF'], ...(diffPdf ? [['icons-diff.pdf', 'Changes (PDF)']] : []), ['icons.svg', 'SVG sprite'], ['icons.json', 'JSON']] }));
+// one page and one standalone SVG per icon; pages of icons that are gone are removed
+const names = Object.keys(set.icons).filter(validName);
+const flags = new Map([...(diff?.added ?? []).map((n) => [n, 'new']), ...(diff?.changed ?? []).map((n) => [n, 'redrawn'])]);
+fs.mkdirSync(at('icons'), { recursive: true });
+const keep = new Set(names.flatMap((n) => [`${n}.html`, `${n}.svg`]));
+for (const f of fs.readdirSync(at('icons'))) if (!keep.has(f)) fs.rmSync(at(`icons/${f}`));
+names.forEach((n, i) => {
+  fs.writeFileSync(at(`icons/${n}.svg`), renderIconSvg(set, n));
+  fs.writeFileSync(at(`icons/${n}.html`), renderIconPage(set, n, { notes, descs, labels, usage, flag: flags.get(n), prev: names[i - 1], next: names[i + 1], host }));
+});
 fs.writeFileSync(at('icons.sha256'), tag + '\n');
 console.log(`wrote ${Object.keys(set.icons).length} icons${diffPdf ? `; changes: +${diff.added.length} ~${diff.changed.length} -${diff.removed.length}` : ''}`);
