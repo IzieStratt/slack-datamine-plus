@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       only:
-        description: Targets (comma separated: desktop,android,ios,notes)
+        description: "Targets, comma separated (desktop,android,ios,notes)"
         type: string
         default: desktop,android,ios,notes
       force:
