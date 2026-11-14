@@ -74,4 +74,8 @@ test('splitItem keeps every row, and the page version leaves the long lists to t
   assert.ok(!site.includes('<code>V</code>'));
   assert.match(site, /<details open data-k="0">.*<details class="more"><summary>…and 5 more<\/summary><ul><\/ul><\/details><\/details>/);
   assert.equal(siteItemHtml(splitItem(html)).includes('data-k="4"'), true);
+  assert.match(siteItemHtml(p, 25, 'days/d'), /<ul><\/ul><noscript><p><a href="days\/d#c0">See all 30 on this day's page<\/a><\/p><\/noscript>/);
+  const day = fullItemHtml(p, Infinity, { ids: true });
+  assert.match(day, /^<p>[^]*<details open id="c0">/);
+  assert.ok(day.includes('<code>V</code>') && !day.includes('…and'), 'the day page lists every row in one list');
 });

@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { SEARCH_CSS, pills, searchHtml } from './ui.mjs';
-import { esc, itemSlug, renderRss, siteItemHtml, splitItem } from './feed-lib.mjs';
+import { esc, fullItemHtml, itemSlug, renderRss, siteItemHtml, splitItem } from './feed-lib.mjs';
 
 const [site, url] = process.argv.slice(2, 4);
 if (!site || !url) { console.error('usage: feed.mjs <site-dir> <site-url> [--since ref]'); process.exit(1); }
@@ -117,9 +117,33 @@ fs.writeFileSync(path.join(site, 'feed.xml'), rss);
 const daysDir = path.join(site, 'days');
 fs.mkdirSync(daysDir, { recursive: true });
 const parts = kept.map((i) => splitItem(i.html));
-const slugs = new Set(kept.map((i) => `${itemSlug(i)}.json`));
+const slugs = new Set(kept.flatMap((i) => [`${itemSlug(i)}.json`, `${itemSlug(i)}.html`]));
 for (const f of fs.readdirSync(daysDir)) if (!slugs.has(f)) fs.rmSync(path.join(daysDir, f));
 kept.forEach((i, n) => fs.writeFileSync(path.join(daysDir, `${itemSlug(i)}.json`), JSON.stringify({ cats: parts[n].cats.map(({ t, s, v }) => ({ t, s, v })) })));
+// and one plain page per day with every row, for readers without JavaScript (the site serves days/<slug>.html as days/<slug>)
+const dayPage = (i, p) => `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${esc(i.title)}</title>
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="${esc(linkBase)}/#${esc(itemSlug(i))}">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/cdn/theme.js"></script>
+    <style>main > details { content-visibility: auto; contain-intrinsic-size: auto 600px; }</style>
+  </head>
+  <body>
+    <main>
+      <h1>${esc(i.title)}</h1>
+      <nav aria-label="Links"><ul><li><a href="../#${esc(itemSlug(i))}">All changes</a></li><li><a href="../feed.xml">RSS feed</a></li></ul></nav>
+      ${fullItemHtml(p, Infinity, { ids: true })}
+    </main>
+  </body>
+</html>
+`;
+kept.forEach((i, n) => fs.writeFileSync(path.join(daysDir, `${itemSlug(i)}.html`), dayPage(i, parts[n])));
 const client = fs.readFileSync(new URL('./feed-client.js', import.meta.url), 'utf8');
 const has = (f) => fs.existsSync(path.join(site, f));
 const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons', 'Slack icons']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
@@ -153,14 +177,16 @@ fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
       #results small { opacity: .7; }
       mark { background: color-mix(in srgb, var(--focus) 35%, transparent); color: inherit; border-radius: 2px; }
     </style>
+    <noscript><style>.search { display: none; } #fresh button { pointer-events: none; }</style></noscript>
   </head>
   <body>
     <main>
       <h1>slack-datamine-plus changes</h1>
       ${pills(links)}
       ${searchHtml('Search every change: a name, a category, a day (press /)', 'Search changes')}
+      <noscript><p>Search needs JavaScript. Each list's "…and N more" links to that day's page with every row.</p></noscript>
       ${freshPanel(kept[0])}
-${kept.map((i, n) => `      <section class="item" id="${esc(itemSlug(i))}"><h2>${esc(i.title)}</h2>\n${siteItemHtml(parts[n], CAP)}</section>`).join('\n')}
+${kept.map((i, n) => `      <section class="item" id="${esc(itemSlug(i))}"><h2>${esc(i.title)}</h2>\n${siteItemHtml(parts[n], CAP, `days/${itemSlug(i)}`)}</section>`).join('\n')}
       <div id="results"></div>
     </main>
     <script>const CAP = ${CAP};

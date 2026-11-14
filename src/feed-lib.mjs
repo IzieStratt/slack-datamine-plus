@@ -71,7 +71,9 @@ export function splitItem(html) {
   }) };
 }
 const rowsHtml = (v, s) => v.map((x) => `<li>${esc(s)}<code>${esc(x)}</code></li>`).join('');
-// the page's version of an item: lists past `cap` rows become an empty "…and N more" expander the page fills from days/<slug>.json
-export const siteItemHtml = ({ intro, cats }, cap = 25) => intro + cats.map((c, k) => `<details open data-k="${k}"><summary><strong>${esc(c.t)}</strong></summary><ul>${rowsHtml(c.v.slice(0, cap), c.s)}</ul>${c.v.length > cap ? `<details class="more"><summary>…and ${c.v.length - cap} more</summary><ul></ul></details>` : ''}</details>`).join('');
+// the page's version of an item: lists past `cap` rows become an empty "…and N more" expander the page fills from days/<slug>.json;
+// without JavaScript it links to `href` (the day's own page, every row listed) at that category instead
+export const siteItemHtml = ({ intro, cats }, cap = 25, href = '') => intro + cats.map((c, k) => `<details open data-k="${k}"><summary><strong>${esc(c.t)}</strong></summary><ul>${rowsHtml(c.v.slice(0, cap), c.s)}</ul>${c.v.length > cap ? `<details class="more"><summary>…and ${c.v.length - cap} more</summary><ul></ul>${href ? `<noscript><p><a href="${esc(href)}#c${k}">See all ${c.v.length} on this day's page</a></p></noscript>` : ''}</details>` : ''}</details>`).join('');
 // the full version (what items.json stores), for checking splitItem loses nothing
-export const fullItemHtml = ({ intro, cats }, cap = 25) => intro + cats.map((c) => `<details open><summary><strong>${esc(c.t)}</strong></summary><ul>${rowsHtml(c.v.slice(0, cap), c.s)}</ul>${c.v.length > cap ? `<details><summary>…and ${c.v.length - cap} more</summary><ul>${rowsHtml(c.v.slice(cap), c.s)}</ul></details>` : ''}</details>`).join('');
+// with `ids`, each category gets id="c<k>" so the page's no-JavaScript links can point at it
+export const fullItemHtml = ({ intro, cats }, cap = 25, { ids = false } = {}) => intro + cats.map((c, k) => `<details open${ids ? ` id="c${k}"` : ''}><summary><strong>${esc(c.t)}</strong></summary><ul>${rowsHtml(c.v.slice(0, cap), c.s)}</ul>${c.v.length > cap ? `<details><summary>…and ${c.v.length - cap} more</summary><ul>${rowsHtml(c.v.slice(cap), c.s)}</ul></details>` : ''}</details>`).join('');
