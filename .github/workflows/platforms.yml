@@ -1,0 +1,65 @@
+name: platforms
+
+# The native clients: desktop (macOS, Windows, Linux), Android, iOS/watchOS App Store metadata, and every platform's release notes.
+# Writes build/platforms/ and state/platforms.json (src/platforms.mjs). Cheap when nothing changed: it only downloads a client when
+# its version moved. The daily feed picks the changes up as "<target>/<category>".
+on:
+  schedule:
+    - cron: '17 */3 * * *' # every 3 hours
+  workflow_dispatch:
+    inputs:
+      only:
+        description: Targets (comma separated: desktop,android,ios,notes)
+        type: string
+        default: desktop,android,ios,notes
+      force:
+        description: Re-mine even if versions are unchanged
+        type: boolean
+        default: false
+
+concurrency:
+  group: platforms
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  platforms:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Install apkeep (pinned)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download 1.1.0 -R EFForg/apkeep -p 'apkeep-x86_64-unknown-linux-gnu' -O "$RUNNER_TEMP/apkeep"
+          echo "badd7ad9fa7d2f32abe01eaf33b7ff086361a95bbc000a33bf44b630d4bf2140  $RUNNER_TEMP/apkeep" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/apkeep"
+      - name: Mine the native clients
+        id: mine
+        continue-on-error: true # commit what succeeded, fail the run afterwards
+        env:
+          APKEEP: ${{ runner.temp }}/apkeep
+        run: node src/platforms.mjs --only "${{ inputs.only || 'desktop,android,ios,notes' }}" --cache "$RUNNER_TEMP/dl" ${{ inputs.force && '--force' || '' }}
+      - name: Commit
+        run: |
+          git add build/platforms state/platforms.json
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git config user.name "Izie"
+          git config user.email "238573415+IzieStratt@users.noreply.github.com"
+          what=$(git diff --cached --name-only -- build/platforms | cut -d/ -f3 | sort -u | paste -sd, -)
+          git commit -q -m "platforms: $what" -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
+          for i in 1 2 3; do
+            git push origin HEAD && exit 0
+            git pull --rebase origin main
+          done
+          echo "push failed"; exit 1
+      - name: Fail if a target failed
+        if: steps.mine.outcome == 'failure'
+        run: exit 1

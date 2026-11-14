@@ -48,12 +48,13 @@ const SKIP = new Set(['chunks', 'experiments.txt']); // experiments.json covers 
 // it and re-reports the same changes. A category file that did not exist at `base` is reported as a new category, never dropped.
 function buildItem(base, head) {
   if (!base || base === head) return null;
-  const files = git('ls-tree', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => /\.(txt|json)$/.test(f) && !/(meta|icons|health|components|redux|taut-presence)\.json$/.test(f));
+  // build/*.txt (web client) and build/platforms/<target>/*.txt (desktop, android, ios, release-notes; named "<target>/<category>")
+  const files = git('ls-tree', '-r', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => (!f.slice(6).includes('/') || f.startsWith('build/platforms/')) && /\.(txt|json)$/.test(f) && !/(meta|icons|health|components|redux|taut-presence)\.json$/.test(f));
   let html = '', total = 0;
   const hits = []; // values matching src/watch-keywords.txt in any category, so a themed rollout is not buried in a long list
   const build = (JSON.parse(show('HEAD', 'build/meta.json') ?? '{}')).buildNumber;
   for (const f of files) {
-    const name = path.basename(f).replace(/\.(txt|json)$/, '');
+    const name = f.replace(/^build\/(platforms\/)?/, '').replace(/\.(txt|json)$/, '');
     if (SKIP.has(name) || SKIP.has(path.basename(f))) continue;
     const before = show(base, f);
     const fresh = before === null; // category file first appeared since the last report: reported in full, labelled as such
@@ -64,6 +65,11 @@ function buildItem(base, head) {
     } else {
       ({ added, removed } = diffSets(lines(before), lines(show('HEAD', f))));
       if (added.length) { const seen = everAdded(base, f); added = added.filter((x) => !seen.has(x)); }
+    }
+    if (fresh && f.startsWith('build/platforms/')) { // a new native-client category: thousands of values on day one, so just the count
+      total += added.length;
+      html += `<details open><summary><strong>${esc(name)}: new category (${added.length})</strong></summary><p>First mined today; the full list is in <code>${esc(f)}</code>.</p></details>`;
+      continue;
     }
     total += added.length + removed.length + extra.length;
     for (const [list, sign] of [[added, '+ '], [removed, '− '], [extra, '']]) for (const x of list) if (WATCH.test(x)) hits.push(`${sign}${name}: ${x}`);

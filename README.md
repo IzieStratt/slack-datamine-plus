@@ -18,6 +18,17 @@ The rspack-era extractors ported from [3kh0/slack-datamine](https://github.com/3
 
 Experiments are found like [taut](https://github.com/jeremy46231/taut)'s Experiments plugin does it (`plugins/Experiments.tsx`, `scanCode`): locate the module exporting `getGroupForUser`, map its minified export keys, then regex every `(0,x.key)(state,"name")` call and the group strings it is compared to. Result: `build/experiments.json` (`name -> groups`) and `experiments.txt`. Lists are regex heuristics, so expect some noise (mainly `errors`).
 
+## Native clients (desktop, Android, iOS)
+
+`src/platforms.mjs` (workflow `platforms`, every 3 hours) mines Slack's other clients into `build/platforms/<target>/`. It only downloads a client when its version changed (`state/platforms.json`), and nothing it downloads is run.
+
+- `desktop/`: macOS (arm64 zip), Windows (msix) and Linux (deb) builds from `slack.com/api/desktop.latestRelease`, read straight out of each `app.asar`: `api-methods`, `redux-actions` (the desktop store's action types), `enums` (client types, IPC codes, ...), `env-vars`, `cli-switches`, `deep-links`, `accelerators`, `ipc-channels`, `window-globals` (what the preloads expose to the web client), `hosts`/`urls`, `strings-en` (the desktop locale files), `dependencies`, `bundle-files`, and `platform-only` (values only some of the three builds ship). `info.txt` has the versions, commit and Electron version.
+- `android/`: the base APK of the latest release from APKPure via [`apkeep`](https://github.com/EFForg/apkeep). APKPure is a mirror, so the APK's v2/v3 signer has to be Slack's Play signing key (`ANDROID_CERT` in `src/platforms.mjs`) or nothing is written. From the DEX string pools, `resources.arsc` and the manifest: `api-methods`, `feature-flags` (`android_*`), `shared-flags` (web experiment/flag names the app also reads), `strings-en` (every string resource), `permissions`, `hardware-features`, `libraries` (AndroidX and other `META-INF/*.version`), `native-libs`, `deep-links`, `hosts`/`urls`.
+- `ios/`: App Store metadata for the iPhone/iPad app and the Mac App Store listing (version, minimum OS, size, languages, and whether an Apple Watch or Vision Pro app is listed; there is no watchOS app today). App Store binaries are FairPlay-encrypted, so code-level lists (methods, flags) can't be read. With [`ipatool`](https://github.com/majd/ipatool) signed in and `IPATOOL=1`, a local run also reads the IPA's unencrypted resources: `url-schemes`, `permission-prompts`, `background-modes`, `activity-types`, `extensions`, `frameworks`, `watch-app` and `strings-en`. Metadata-only runs keep what an IPA run found.
+- `release-notes/`: one line per bullet of slack.com's release notes RSS for mac, windows, linux, android and ios, accumulated.
+
+The feed reports these as `<target>/<category>` (e.g. `android/feature-flags`); a category's first appearance only shows its count.
+
 ## What is authenticated
 
 Not everything here comes from public files. The webpack manifest (and with it the ~1,800 async chunks) is read from the signed-in Hack Club enterprise-grid client page (`SLACK_CLIENT_URL`, default `https://app.slack.com/client/E09V59WQY1E`) with the `SLACK_D_COOKIE` secret. The entry scripts (`modern.vendor`, `application`, ...) come from a public client page. Debug output is redacted and never includes the page itself. `src/icon-notes.json` holds hand-written notes about single icons shown in the icons gallery.
