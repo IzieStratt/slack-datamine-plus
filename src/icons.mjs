@@ -424,7 +424,7 @@ export function renderIconPage(set, n, { notes = {}, descs = {}, labels = {}, us
       <section>
         <h2>Where it's used</h2>
         ${d.where ? `<p>${esc(d.where)}</p>` : ''}
-        <p>${u ? (u.count ? `Referenced by name ${u.count} time${u.count === 1 ? '' : 's'} in the mined client code.` : 'Not referenced by name in the mined client code (it may be picked dynamically).') : 'No usage data for this icon yet.'}</p>
+        <p>${u ? (u.count ? `Referenced by name ${u.count} time${u.count === 1 ? '' : 's'} in the mined client code.` : 'Not referenced by its literal name in the mined client code. It can still be used: some components derive the icon from another name (e.g. formatting toolbar buttons use the format name, like bold).') : 'No usage data for this icon yet.'}</p>
         ${ui.length ? `<p>UI text next to those uses:</p><ul class="labels">${ui.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>` : ''}
         ${snippets.length ? `<details><summary>Code around the uses (minified)</summary>${snippets.map((s) => `<pre>${esc(s)}</pre>`).join('')}</details>` : ''}
       </section>
