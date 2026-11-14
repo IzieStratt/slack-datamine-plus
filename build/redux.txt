@@ -796,8 +796,6 @@ action:openHuddleWindowUsingSideEffect
 action:openImageInNewChildWindowCircular
 action:openInNewWindowCircular
 action:openInviteModalForSoloChannelNudgeCircular
-action:openInviterWelcomeCardModalCircular
-action:openJoinerWelcomeCardMessageModalCircular
 action:openMediaViewerModalCircular
 action:openMessageByEmailInviteModalCircular
 action:openOnboardingProfileModalCircular
@@ -1901,7 +1899,6 @@ action:setInvertedSidebarInternal
 action:setInviteAPIError
 action:setInviteAPIResponse
 action:setInviteAPIStatus
-action:setInviterJoinerFirstDmClientMsgId
 action:setInviterUserId
 action:setInviteType
 action:setIpAllowlistInfo
@@ -2477,7 +2474,6 @@ action:setSearchResultMembers
 action:setSearchResults
 action:setSearchSessionId
 action:setSearchSessionIdForNavigationImpression
-action:setSearchSessionIdForNlTypeaheadImpression
 action:setSearchSessionLastQuery
 action:setSearchSharedTeamsLoading
 action:setSearchSharedTeamsResolved
@@ -4343,7 +4339,6 @@ thunk:clogSearchMessageClick
 thunk:clogSearchMessageResultClick
 thunk:clogSearchNavigation
 thunk:clogSearchNavigationSuggestionImpression
-thunk:clogSearchNlTypeaheadSuggestionImpression
 thunk:clogSearchOpen
 thunk:clogSearchOpenSlackbot
 thunk:clogSearchPeopleClick
@@ -5570,7 +5565,6 @@ thunk:inviteEmailInputSmartTokensMaybeLogExposure
 thunk:inviteMembers
 thunk:inviteMemberToChannel
 thunk:invitePeopleCommand
-thunk:inviterJoinerFirstDmV2MaybeLogExposure
 thunk:inviteToChannel
 thunk:inviteToConversationShortcut
 thunk:inviteToWorkspaceShortcut
@@ -5797,12 +5791,10 @@ thunk:maybeAutoOpenSlackbotFile
 thunk:maybeClearActiveSlackbotThread
 thunk:maybeClearAssistantStatusOnNewMessage
 thunk:maybeClearCanvasHistoryView
-thunk:maybeClearGmailOutlookNotificationEvents
 thunk:maybeClearSalesTrackerSlackbotThread
 thunk:maybeClearSimplifiedOnboardingEnrollment
 thunk:maybeClearSolutionTemplatePref
 thunk:maybeClogNavigationImpression
-thunk:maybeClogNlTypeaheadImpression
 thunk:maybeClogSearchEngagementClick
 thunk:maybeClogSearchResultDwellTime
 thunk:maybeCloseFlexpane
@@ -6584,8 +6576,6 @@ thunk:openInviteModalForSoloChannelNudgeHandler
 thunk:openInviteModalFromExternalLink
 thunk:openInviteModalWithChannels
 thunk:openInviteReminderResendModal
-thunk:openInviterWelcomeCardModalCircularHandler
-thunk:openJoinerWelcomeCardMessageModalCircularHandler
 thunk:openJoinWorkspacePermalinkDialog
 thunk:openJourneyLaunchModalHandler
 thunk:openJpPocketGuideEmailTemplateModal
@@ -7008,7 +6998,6 @@ thunk:recordAndClearNewBadge
 thunk:recordAndClearNotification
 thunk:recordAndReloadNotification
 thunk:recordEmojiFrecencyEvent
-thunk:recordExperimentGroupsAsTrace
 thunk:recordFastSocketOpened
 thunk:recordFrecencyEvent
 thunk:recordManualSidebarToggle
@@ -7491,9 +7480,6 @@ thunk:setChannelPropertiesCanvasFileId
 thunk:setChannelPropertiesMuteCanvasTabUpdates
 thunk:setChannelPropertiesMuteCanvasUpdates
 thunk:setChannelPropertiesMuteFolderUpdates
-thunk:setChannelPropertiesNudgeIsDismissed
-thunk:setChannelPropertiesWelcomeMessageSeen
-thunk:setChannelPropertiesWelcomeMessageTs
 thunk:setChannelPurpose
 thunk:setChannelSearchHideMemberChannels
 thunk:setChannelSearchSort
@@ -8169,7 +8155,6 @@ thunk:updateFullscreenContainer
 thunk:updateFunctionAuth
 thunk:updateGuestExpiration
 thunk:updateInproductTeamCreationStateMachine
-thunk:updateInviterJoinerChannelProperty
 thunk:updateJoinerSelectedMembers
 thunk:updateKnockingUsers
 thunk:updateLastActiveItem

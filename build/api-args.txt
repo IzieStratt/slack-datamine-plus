@@ -336,7 +336,6 @@ conversations.rename: channel, name, skip_rename_message, validate
 conversations.replies: channel, include_tombstones, limit, oldest, ts
 conversations.requestSharedInvite.deny: invite_id, message
 conversations.revokeSharedInvite: invite_id
-conversations.setInviterJoinerProperties: channel_id, props
 conversations.setProperties: channel_id, props
 conversations.setPurpose: channel, name_tagging, purpose
 conversations.setTeams: channel, internal_team_ids, upgrade_to_org_wide
@@ -673,7 +672,6 @@ screenhero.rooms.join: regions, room, use_room_scoped_token
 screenhero.rooms.proxyLogs: attachments, blocks, client_last_updated_ts, date_scheduled, date_stashed, destinations, draft_id, file_ids, file_permissions, is_from_composer, unfurl
 screenhero.rooms.rename: room, room_name
 search.autocomplete.files: include_shares, query
-search.autocomplete.nlTypeahead: limit_per_tier, query, team
 search.autocomplete.tags: element_id, query
 search.autocomplete.topEmojis: count
 search.autocomplete.triggers: current_channel_id, query, strict_exposure_rules, trigger_types
@@ -868,7 +866,6 @@ users.channelSections.channels.bulkUpdate: insert, remove
 users.channelSections.channels.remove: channel_id, channel_section_id
 users.channelSections.createLink: channels, emoji, section_name
 users.channelSections.delete: channel_section_id
-users.channelSections.entities.update: insert, remove
 users.channelSections.linkInfo: id
 users.channelSuggestions.dismiss: channel_suggestion_id
 users.consent.add: app_id, scopes
