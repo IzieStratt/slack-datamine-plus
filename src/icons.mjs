@@ -268,10 +268,12 @@ export function renderDiffPdf(prev, cur, diff, { title = 'Slack icon changes', h
 
 // ---- the gallery page: searchable, click a glyph to copy its name (shift-click copies the SVG) ----
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-export function renderIconsHtml(set, diff, { links = [], notes = {} } = {}) {
+export function renderIconsHtml(set, diff, { links = [], notes = {}, descs = {}, labels = {} } = {}) {
   const flag = new Map([...(diff?.added ?? []).map((n) => [n, 'new']), ...(diff?.changed ?? []).map((n) => [n, 'redrawn'])]);
-  const tile = (n) => `<button class="ico" type="button" data-n="${esc(n)}"${flag.has(n) ? ` data-flag="${flag.get(n)}"` : ''}${notes[n] ? ` data-note="${esc(notes[n])}"` : ''} title="${esc(notes[n] ? `${n}: ${notes[n]}` : n)}"><svg viewBox="0 0 ${set.width} ${set.height}" width="40" height="40" fill="currentColor" aria-hidden="true">${safeBody(set.icons[n].body)}</svg><span>${esc(n)}</span></button>`;
-  const names = Object.keys(set.icons);
+  // tiles link to icons/<name>.html; search also matches the note and what we think the icon is for
+  const find = (n) => [notes[n], descs[n]?.purpose, descs[n]?.where, labels[n]].filter(Boolean).join(' ');
+  const tile = (n) => `<a class="ico" href="${pageHref(n)}" data-n="${esc(n)}"${flag.has(n) ? ` data-flag="${flag.get(n)}"` : ''}${notes[n] ? ` data-note="${esc(notes[n])}"` : ''}${find(n) ? ` data-find="${esc(find(n))}"` : ''} title="${esc(descs[n]?.purpose ? `${n}: ${descs[n].purpose}` : notes[n] ? `${n}: ${notes[n]}` : n)}"><svg viewBox="0 0 ${set.width} ${set.height}" width="40" height="40" fill="currentColor" aria-hidden="true">${safeBody(set.icons[n].body)}</svg><span>${esc(n)}</span></a>`;
+  const names = Object.keys(set.icons).filter(validName);
   const changes = hasChanges(diff) ? `<details class="changes"><summary>What changed since the previous icon set: ${diff.added.length} added, ${diff.changed.length} redrawn, ${diff.removed.length} removed</summary>${[['Added', diff.added], ['Redrawn', diff.changed], ['Removed', diff.removed]].filter(([, l]) => l.length).map(([t, l]) => `<p><strong>${t}</strong>: ${l.map((n) => `<code>${esc(n)}</code>`).join(' ')}</p>`).join('')}</details>` : '';
   return `<!doctype html>
 <html lang="en">
@@ -284,7 +286,7 @@ export function renderIconsHtml(set, diff, { links = [], notes = {} } = {}) {
     <script src="/cdn/theme.js"></script>
     <style>${SEARCH_CSS}
       .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: .4rem; }
-      .ico { position: relative; display: flex; flex-direction: column; align-items: center; gap: .35rem; padding: .7rem .3rem .5rem; border: 1px solid transparent; border-radius: .6rem; background: none; color: var(--fg); font: inherit; cursor: pointer; content-visibility: auto; contain-intrinsic-size: 6.5rem 5.6rem; }
+      .ico { position: relative; display: flex; text-decoration: none; flex-direction: column; align-items: center; gap: .35rem; padding: .7rem .3rem .5rem; border: 1px solid transparent; border-radius: .6rem; background: none; color: var(--fg); font: inherit; cursor: pointer; content-visibility: auto; contain-intrinsic-size: 6.5rem 5.6rem; }
       .ico[hidden] { display: none; }
       .ico:hover, .ico:focus-visible { border-color: var(--fg); outline: none; }
       .ico span { font-size: .72rem; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
@@ -299,7 +301,7 @@ export function renderIconsHtml(set, diff, { links = [], notes = {} } = {}) {
   <body>
     <main>
       <h1>Slack icons</h1>
-      <p>${names.length} glyphs from Slack's web client. Click one to copy its name; shift-click copies the SVG.</p>
+      <p>${names.length} glyphs from Slack's web client. Click one for its page (name, SVG and PNG, where it's used); shift-click copies the SVG.</p>
       ${pills(links)}
       ${searchHtml('Search icons (e.g. sparkle, brand, arrow)', 'Search icons')}
       ${changes}
@@ -308,7 +310,7 @@ export function renderIconsHtml(set, diff, { links = [], notes = {} } = {}) {
     </main>
     <script>
       const q = document.getElementById('q'), count = document.getElementById('count'), toast = document.getElementById('toast');
-      const tiles = [...document.querySelectorAll('.ico')], names = tiles.map((t) => (t.dataset.n + ' ' + (t.dataset.note || '')).toLowerCase()); // notes are searchable too
+      const tiles = [...document.querySelectorAll('.ico')], names = tiles.map((t) => (t.dataset.n + ' ' + (t.dataset.find || '')).toLowerCase()); // notes and descriptions are searchable too
       let last = null, timer;
       function run() {
         const terms = q.value.toLowerCase().split(/\\s+/).filter(Boolean);
@@ -327,11 +329,133 @@ export function renderIconsHtml(set, diff, { links = [], notes = {} } = {}) {
       let hide;
       document.getElementById('grid').addEventListener('click', (e) => {
         const b = e.target.closest('.ico');
-        if (!b) return;
+        if (!b || !e.shiftKey) return; // a plain click follows the link to the icon's page
+        e.preventDefault();
         const svg = b.querySelector('svg').outerHTML;
-        const value = e.shiftKey ? svg : b.dataset.n;
-        (navigator.clipboard ? navigator.clipboard.writeText(value) : Promise.reject()).then(() => { toast.textContent = (e.shiftKey ? 'Copied SVG of ' : 'Copied ') + b.dataset.n; }, () => { toast.textContent = b.dataset.n; });
+        (navigator.clipboard ? navigator.clipboard.writeText(svg) : Promise.reject()).then(() => { toast.textContent = 'Copied SVG of ' + b.dataset.n; }, () => { toast.textContent = b.dataset.n; });
         toast.classList.add('on'); clearTimeout(hide); hide = setTimeout(() => toast.classList.remove('on'), 1400);
+      });
+    </script>
+  </body>
+</html>
+`;
+}
+
+// ---- one page per icon: icons/<name>.html (+ icons/<name>.svg) ----
+// Names come from Slack's bundle; only plain ones become file names.
+export const validName = (n) => /^[a-z0-9][a-z0-9_-]*$/i.test(n);
+const pageHref = (n) => `icons/${encodeURIComponent(n)}.html`;
+const svgDoc = (set, n, size) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${Number(set.width) || 20} ${Number(set.height) || 20}" width="${size}" height="${size}" fill="currentColor">${safeBody(set.icons[n].body)}</svg>`;
+export const renderIconSvg = (set, n) => svgDoc(set, n, Number(set.width) || 20) + '\n';
+
+// Icons that share a base name (foo, foo-filled, foo-alt, foo-off...) are listed as variants.
+const baseName = (n) => n.replace(/(-(filled|alt|off|outline|small|large|inverse|active|\d+))+$/, '');
+
+export function renderIconPage(set, n, { notes = {}, descs = {}, labels = {}, usage = {}, flag = null, prev = null, next = null, host = 'sdmp.izie.top' } = {}) {
+  const d = descs[n] ?? {}, u = usage[n] ?? null;
+  const variants = Object.keys(set.icons).filter((m) => m !== n && validName(m) && baseName(m) === baseName(n));
+  const big = svgDoc(set, n, 160).replace('<svg ', '<svg id="art" aria-hidden="true" ');
+  const conf = { high: 'fairly sure', medium: 'inferred', low: 'a guess' }[d.confidence];
+  const ui = [...new Set(u?.labels ?? [])].slice(0, 12);
+  const snippets = (u?.snippets ?? []).slice(0, 4).map((s) => s.length > 400 ? s.slice(0, 400) + '…' : s);
+  const rel = (m) => `${encodeURIComponent(m)}.html`;
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${esc(n)} · Slack icons</title>
+    <meta name="description" content="${esc(d.purpose ? `Slack's ${n} icon: ${d.purpose}` : `Slack's ${n} icon`)}">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/cdn/theme.js"></script>
+    <style>
+      .icon-head { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; margin: 0 0 1.5rem; }
+      .art { display: grid; place-items: center; width: 12rem; height: 12rem; border: 1px solid color-mix(in srgb, var(--fg) 25%, transparent); border-radius: 1rem; color: var(--fg); }
+      .art svg { width: 8rem; height: 8rem; }
+      .icon-head > div:last-child { flex: 1 1 16rem; min-width: 0; }
+      .icon-head h1 { margin: 0 0 .4rem; overflow-wrap: anywhere; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1.6rem; }
+      .icon-head .label { margin: 0 0 .8rem; opacity: .8; }
+      .actions { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+      .actions button, .actions a.btn, .actions select, .actions input { padding: .4rem .85rem; border: 2px solid var(--fg); border-radius: 999px; background: var(--bg); color: var(--fg); font: inherit; font-size: .95rem; cursor: pointer; text-decoration: none; }
+      .actions input[type=color] { width: 2.6rem; height: 2.2rem; padding: .15rem; }
+      .actions button:hover, .actions a.btn:hover { background: var(--fg); color: var(--bg); }
+      .actions .sep { width: 100%; height: 0; }
+      section { margin: 0 0 1.5rem; }
+      section h2 { font-size: 1.35rem; margin: 0 0 .5rem; }
+      .tag { display: inline-block; margin-left: .4rem; padding: 0 .45rem; border: 1px solid currentColor; border-radius: 999px; font-size: .75rem; opacity: .75; vertical-align: middle; }
+      ul.labels { display: flex; flex-wrap: wrap; gap: .35rem; padding: 0; list-style: none; }
+      ul.labels li { padding: .1rem .55rem; border-radius: 999px; background: color-mix(in srgb, var(--fg) 10%, transparent); }
+      pre { overflow-x: auto; padding: .7rem; border-radius: .5rem; background: color-mix(in srgb, var(--fg) 7%, transparent); font-size: .78rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+      .variants { display: flex; flex-wrap: wrap; gap: .5rem; }
+      .variants a { display: flex; flex-direction: column; align-items: center; gap: .25rem; padding: .5rem; border: 1px solid transparent; border-radius: .6rem; color: var(--fg); text-decoration: none; font-size: .75rem; }
+      .variants a:hover { border-color: var(--fg); }
+      .pager { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; margin-top: 2rem; }
+      .pager a { overflow-wrap: anywhere; }
+      #toast { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); padding: .4rem .9rem; border-radius: 999px; background: var(--fg); color: var(--bg); opacity: 0; pointer-events: none; transition: opacity 150ms ease; }
+      #toast.on { opacity: 1; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p><a href="../icons.html">← All icons</a></p>
+      <div class="icon-head">
+        <div class="art">${big}</div>
+        <div>
+          <h1>${esc(n)}${flag ? `<span class="tag">${esc(flag)}</span>` : ''}</h1>
+          ${labels[n] ? `<p class="label">${esc(labels[n])}</p>` : ''}
+          <div class="actions">
+            <button type="button" data-copy="name">Copy name</button>
+            <button type="button" data-copy="svg">Copy SVG</button>
+            <a class="btn" href="${encodeURIComponent(n)}.svg" download="${esc(n)}.svg">Download SVG</a>
+            <span class="sep"></span>
+            <label>PNG <select id="size" aria-label="PNG size">${[20, 40, 64, 128, 256, 512, 1024].map((s) => `<option${s === 256 ? ' selected' : ''}>${s}</option>`).join('')}</select></label>
+            <input id="color" type="color" value="#1d1c1d" aria-label="PNG colour">
+            <button type="button" data-png="download">Download PNG</button>
+            <button type="button" data-png="copy">Copy PNG</button>
+          </div>
+        </div>
+      </div>
+      <section>
+        <h2>What we think it's for${conf ? `<span class="tag">${conf}</span>` : ''}</h2>
+        <p>${d.purpose ? esc(d.purpose) : 'Not described yet.'}</p>
+        ${notes[n] ? `<p><strong>Note:</strong> ${esc(notes[n])}</p>` : ''}
+      </section>
+      <section>
+        <h2>Where it's used</h2>
+        ${d.where ? `<p>${esc(d.where)}</p>` : ''}
+        <p>${u ? (u.count ? `Referenced by name ${u.count} time${u.count === 1 ? '' : 's'} in the mined client code.` : 'Not referenced by its literal name in the mined client code. It can still be used: some components derive the icon from another name (e.g. formatting toolbar buttons use the format name, like bold).') : 'No usage data for this icon yet.'}</p>
+        ${ui.length ? `<p>UI text next to those uses:</p><ul class="labels">${ui.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>` : ''}
+        ${snippets.length ? `<details><summary>Code around the uses (minified)</summary>${snippets.map((s) => `<pre>${esc(s)}</pre>`).join('')}</details>` : ''}
+      </section>
+      ${variants.length ? `<section><h2>Variants</h2><div class="variants">${variants.map((m) => `<a href="${rel(m)}">${svgDoc(set, m, 32).replace('<svg ', '<svg aria-hidden="true" ')}<span>${esc(m)}</span></a>`).join('')}</div></section>` : ''}
+      <nav class="pager" aria-label="Other icons">${prev ? `<a href="${rel(prev)}">← ${esc(prev)}</a>` : '<span></span>'}${next ? `<a href="${rel(next)}">${esc(next)} →</a>` : ''}</nav>
+      <div id="toast" role="status"></div>
+    </main>
+    <script>
+      const NAME = ${JSON.stringify(n).replace(/</g, '\\u003c')};
+      const art = document.getElementById('art'), toast = document.getElementById('toast');
+      let hide;
+      try { const m = getComputedStyle(art).color.match(/\d+/g); if (m) document.getElementById('color').value = '#' + m.slice(0, 3).map((x) => Number(x).toString(16).padStart(2, '0')).join(''); } catch {}
+      const say = (t) => { toast.textContent = t; toast.classList.add('on'); clearTimeout(hide); hide = setTimeout(() => toast.classList.remove('on'), 1400); };
+      const svgText = (size, color) => { const s = art.cloneNode(true); s.removeAttribute('id'); s.removeAttribute('aria-hidden'); s.setAttribute('width', size); s.setAttribute('height', size); if (color) s.setAttribute('fill', color); return s.outerHTML; };
+      function png() {
+        const size = Number(document.getElementById('size').value), color = document.getElementById('color').value;
+        return new Promise((ok, fail) => {
+          const img = new Image();
+          img.onload = () => { const c = document.createElement('canvas'); c.width = c.height = size; c.getContext('2d').drawImage(img, 0, 0, size, size); c.toBlob((b) => (b ? ok(b) : fail()), 'image/png'); };
+          img.onerror = fail;
+          img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgText(size, color));
+        });
+      }
+      document.querySelector('.actions').addEventListener('click', async (e) => {
+        const b = e.target.closest('button');
+        if (!b) return;
+        try {
+          if (b.dataset.copy) { await navigator.clipboard.writeText(b.dataset.copy === 'name' ? NAME : svgText(20)); say(b.dataset.copy === 'name' ? 'Copied ' + NAME : 'Copied SVG'); }
+          else if (b.dataset.png === 'download') { const a = document.createElement('a'); a.href = URL.createObjectURL(await png()); a.download = NAME + '-' + document.getElementById('size').value + '.png'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); }
+          else if (b.dataset.png === 'copy') { await navigator.clipboard.write([new ClipboardItem({ 'image/png': png() })]); say('Copied PNG'); }
+        } catch { say('Your browser blocked that'); }
       });
     </script>
   </body>
