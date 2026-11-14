@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 // SPDX-License-Identifier: AGPL-3.0-only
-// Daily changelog feed.  node src/feed.mjs <site-dir> <site-url> [--since <git-ref>]
+// Daily changelog feed.  node src/feed.mjs <site-dir> <site-url> [--since <git-ref>] [--render-only]
+// --render-only rewrites feed.xml, index.html and days/ from the stored items.json without diffing or moving state.json (for page changes).
 // Compares build/*.txt and build/experiments.json at HEAD with the last commit older than 24h (or --since), prepends one item
 // for today to <site-dir>/items.json (kept: 90 days) and rewrites feed.xml + index.html. A day with no changes adds no item.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { SEARCH_CSS, pills, searchHtml } from './ui.mjs';
-import { esc, itemSlug, renderRss } from './feed-lib.mjs';
+import { esc, itemSlug, renderRss, siteItemHtml, splitItem } from './feed-lib.mjs';
 
 const [site, url] = process.argv.slice(2, 4);
 if (!site || !url) { console.error('usage: feed.mjs <site-dir> <site-url> [--since ref]'); process.exit(1); }
@@ -92,17 +93,18 @@ const itemsFile = path.join(site, 'items.json');
 const items = fs.existsSync(itemsFile) ? JSON.parse(fs.readFileSync(itemsFile, 'utf8')) : [];
 const stateFile = path.join(site, 'state.json');
 const state = fs.existsSync(stateFile) ? JSON.parse(fs.readFileSync(stateFile, 'utf8')) : {};
-const head = git('rev-parse', 'HEAD');
+const renderOnly = process.argv.includes('--render-only');
+const head = renderOnly ? null : git('rev-parse', 'HEAD');
 const today = `${url}/#${new Date().toISOString().slice(0, 10)}`;
 // a second run on the same day extends today's item from the same starting point instead of reporting only its own slice
 const base = items.find((i) => i.id === today)?.base || state.lastCommit || sinceArg;
 let item = null;
-try { item = buildItem(base && git('rev-parse', base), head); } catch (e) { console.error(`feed: could not diff from ${base}: ${e.message}`); process.exit(1); } // fail before state.json moves, so nothing is skipped
+if (!renderOnly) try { item = buildItem(base && git('rev-parse', base), head); } catch (e) { console.error(`feed: could not diff from ${base}: ${e.message}`); process.exit(1); } // fail before state.json moves, so nothing is skipped
 // a rerun that now finds nothing must not leave today's earlier item up
-if (!item) { const at = items.findIndex((i) => i.id === today); if (at > -1) items.splice(at, 1); }
+if (!item && !renderOnly) { const at = items.findIndex((i) => i.id === today); if (at > -1) items.splice(at, 1); }
 if (item) { const at = items.findIndex((i) => i.id === item.id); if (at > -1) items[at] = item; else items.unshift(item); }
 fs.mkdirSync(site, { recursive: true });
-fs.writeFileSync(stateFile, JSON.stringify({ lastCommit: head }, null, 1) + '\n');
+if (!renderOnly) fs.writeFileSync(stateFile, JSON.stringify({ lastCommit: head }, null, 1) + '\n');
 const cutoff = new Date(Date.now() - 90 * 864e5).toISOString().slice(0, 10);
 const kept = items.filter((i) => i.date >= cutoff);
 fs.mkdirSync(site, { recursive: true });
@@ -111,6 +113,14 @@ const rss = renderRss(kept, { linkBase });
 fs.writeFileSync(path.join(site, 'feed.xml'), rss);
 // uses the site's own stylesheet and theme script (dark mode toggle) from the root of *.izie.top; links reuse its pill `nav a` style.
 // icons.html is linked as /icons: the site serves .html files without the extension and 307s the long form
+// full lists per day for the page's "…and N more" expanders and search; the page itself only carries the first CAP rows of each
+const daysDir = path.join(site, 'days');
+fs.mkdirSync(daysDir, { recursive: true });
+const parts = kept.map((i) => splitItem(i.html));
+const slugs = new Set(kept.map((i) => `${itemSlug(i)}.json`));
+for (const f of fs.readdirSync(daysDir)) if (!slugs.has(f)) fs.rmSync(path.join(daysDir, f));
+kept.forEach((i, n) => fs.writeFileSync(path.join(daysDir, `${itemSlug(i)}.json`), JSON.stringify({ cats: parts[n].cats.map(({ t, s, v }) => ({ t, s, v })) })));
+const client = fs.readFileSync(new URL('./feed-client.js', import.meta.url), 'utf8');
 const has = (f) => fs.existsSync(path.join(site, f));
 const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons', 'Slack icons']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
 fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
@@ -139,6 +149,8 @@ fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
       #fresh .chip { font-family: monospace; }
       #fresh button:hover, #fresh button:focus-visible { border-color: var(--focus); outline: none; }
       #fresh .more { opacity: .65; font-size: .9rem; }
+      #results details > ul + .all, #results .all { font: inherit; font-size: .9rem; color: var(--fg); background: transparent; border: 1px solid var(--fg); border-radius: 999px; padding: .1rem .6rem; cursor: pointer; margin: 0 0 .5rem; }
+      #results small { opacity: .7; }
       mark { background: color-mix(in srgb, var(--focus) 35%, transparent); color: inherit; border-radius: 2px; }
     </style>
   </head>
@@ -148,74 +160,12 @@ fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
       ${pills(links)}
       ${searchHtml('Search every change: a name, a category, a day (press /)', 'Search changes')}
       ${freshPanel(kept[0])}
-${kept.map((i) => `      <section class="item" id="${esc(itemSlug(i))}"><h2>${esc(i.title)}</h2>\n${i.html}</section>`).join('\n')}
+${kept.map((i, n) => `      <section class="item" id="${esc(itemSlug(i))}"><h2>${esc(i.title)}</h2>\n${siteItemHtml(parts[n], CAP)}</section>`).join('\n')}
+      <div id="results"></div>
     </main>
-    <script>
-      // Search over every listed value, built to stay quick on a page with tens of thousands of rows:
-      // the text index is built on the first search, input is debounced, typing more only re-checks rows that still matched,
-      // and a row is only touched when its state changes. Categories and days with no match hide; matching categories open.
-      const q = document.getElementById('q'), count = document.getElementById('count');
-      const items = [...document.querySelectorAll('.item')];
-      let idx = null, last = '', timer;
-      function build() {
-        idx = items.map((el) => ({ el, cats: [...el.querySelectorAll(':scope > details')].map((d) => {
-          const lis = [...d.querySelectorAll('li')];
-          // a row also matches on its category and day, so "scope" lists every new scope and "10-28" lists that day
-          const ctx = ' ' + d.querySelector('summary').textContent.toLowerCase() + ' ' + el.querySelector('h2').textContent.toLowerCase();
-          return { d, lis, t: lis.map((l) => l.textContent.toLowerCase() + ctx), on: new Uint8Array(lis.length).fill(1), open: d.open, nested: [...d.querySelectorAll('details')] };
-        }) }));
-      }
-      function run() {
-        let term = q.value.trim().toLowerCase().replace(/\\s+/g, ' ');
-        const short = term.length > 0 && term.length < 2; // one character matches nearly everything
-        if (short) term = '';
-        if (term === last && !short) return;
-        const narrower = last !== '' && term.startsWith(last); // appending only removes matches
-        last = term;
-        if (!idx) build();
-        const terms = term ? term.split(' ') : [];
-        let hits = 0;
-        for (const it of idx) {
-          let any = !term;
-          for (const c of it.cats) {
-            let n = 0;
-            for (let i = 0; i < c.lis.length; i++) {
-              if (!(narrower && !c.on[i])) {
-                const v = terms.every((t) => c.t[i].includes(t)) ? 1 : 0;
-                if (c.on[i] !== v) { c.on[i] = v; c.lis[i].hidden = !v; }
-              }
-              n += c.on[i];
-            }
-            c.d.hidden = !!term && !n; c.d.open = term ? n > 0 : c.open; any = any || n > 0; hits += term ? n : 0;
-            for (const x of c.nested) { x.open = !!term; x.hidden = !!term && !x.querySelector('li:not([hidden])'); }
-          }
-          it.el.hidden = !!term && !any;
-        }
-        fresh.hidden = !!term;
-        mark(terms);
-        history.replaceState(null, '', term ? '?q=' + encodeURIComponent(term) : location.pathname);
-        count.textContent = short ? 'type at least 2 characters' : term ? hits + ' match' + (hits === 1 ? '' : 'es') : '';
-      }
-      const fresh = document.getElementById('fresh') || { hidden: false };
-      // wrap matched text in <mark>; only the visible rows of open categories are touched
-      function mark(terms) {
-        for (const m of document.querySelectorAll('mark')) m.replaceWith(m.textContent);
-        document.querySelectorAll('.item code').forEach((c) => c.normalize());
-        if (!terms.length) return;
-        const re = new RegExp('(' + terms.map((t) => t.replace(/[.*+?^$()|{}[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
-        for (const c of document.querySelectorAll('.item li:not([hidden]) code')) if (re.test(c.textContent)) { re.lastIndex = 0; c.innerHTML = c.innerHTML.replace(re, (m) => '<mark>' + m + '</mark>'); }
-      }
-      const setQ = (v) => { q.value = v; clearTimeout(timer); run(); q.focus(); };
-      document.getElementById('fresh')?.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setQ(b.dataset.q); });
-      addEventListener('keydown', (e) => {
-        if (e.key === '/' && document.activeElement !== q && !e.metaKey && !e.ctrlKey) { e.preventDefault(); q.focus(); q.select(); }
-        else if (e.key === 'Escape' && q.value) { q.value = ''; run(); }
-      });
-      const init = new URLSearchParams(location.search).get('q');
-      if (init) setQ(init);
-      q.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(run, 80); });
-    </script>
+    <script>const CAP = ${CAP};
+${client}    </script>
   </body>
 </html>
 `);
-console.log(item ? `added ${item.title}` : 'no changes today');
+console.log(renderOnly ? 'rendered' : item ? `added ${item.title}` : 'no changes today');

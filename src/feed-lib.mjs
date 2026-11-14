@@ -60,3 +60,18 @@ ${shown.map((i) => {
 </channel></rss>
 `;
 }
+
+// An item's html as data for the site: the intro line and each top-level category with its title (count included), the row sign and
+// every value. The page inlines the first rows of each list and loads the rest (and search) from this, per day, as JSON.
+export function splitItem(html) {
+  const [intro, ...chunks] = html.split('<details open>');
+  return { intro, cats: chunks.map((c) => {
+    const rows = [...c.matchAll(/<li>(.*?)<code>(.*?)<\/code><\/li>/g)];
+    return { t: unesc(c.match(/^<summary><strong>(.*?)<\/strong>/)?.[1] ?? ''), s: unesc(rows[0]?.[1] ?? ''), v: rows.map((r) => unesc(r[2])) };
+  }) };
+}
+const rowsHtml = (v, s) => v.map((x) => `<li>${esc(s)}<code>${esc(x)}</code></li>`).join('');
+// the page's version of an item: lists past `cap` rows become an empty "…and N more" expander the page fills from days/<slug>.json
+export const siteItemHtml = ({ intro, cats }, cap = 25) => intro + cats.map((c, k) => `<details open data-k="${k}"><summary><strong>${esc(c.t)}</strong></summary><ul>${rowsHtml(c.v.slice(0, cap), c.s)}</ul>${c.v.length > cap ? `<details class="more"><summary>…and ${c.v.length - cap} more</summary><ul></ul></details>` : ''}</details>`).join('');
+// the full version (what items.json stores), for checking splitItem loses nothing
+export const fullItemHtml = ({ intro, cats }, cap = 25) => intro + cats.map((c) => `<details open><summary><strong>${esc(c.t)}</strong></summary><ul>${rowsHtml(c.v.slice(0, cap), c.s)}</ul>${c.v.length > cap ? `<details><summary>…and ${c.v.length - cap} more</summary><ul>${rowsHtml(c.v.slice(cap), c.s)}</ul></details>` : ''}</details>`).join('');

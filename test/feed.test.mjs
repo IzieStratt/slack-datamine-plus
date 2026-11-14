@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { feedHtml, itemSlug, parseItem, plainSummary, renderRss } from '../src/feed-lib.mjs';
+import { feedHtml, fullItemHtml, itemSlug, parseItem, plainSummary, renderRss, siteItemHtml, splitItem } from '../src/feed-lib.mjs';
 
 const li = (xs, sign = '+ ') => xs.map((x) => `<li>${sign}<code>${x}</code></li>`).join('');
 const html = '<p>893 changes since 0808ace.</p>'
@@ -60,4 +60,18 @@ test('renderRss: limits the items, and a "]]>" in the html cannot end the CDATA 
   assert.equal(renderRss(many, { linkBase: 'https://s' }).match(/<item>/g).length, 14);
   const evil = { ...item, html: `${html}<p>a ]]> b</p>` };
   assert.ok(renderRss([evil], { linkBase: 'https://s' }).includes('a ]]]]><![CDATA[> b'));
+});
+
+test('splitItem keeps every row, and the page version leaves the long lists to the day JSON', () => {
+  const full = '<p>30 changes since abc.</p>' + `<details open><summary><strong>components: new (30)</strong></summary><ul>${li(Array.from({ length: 25 }, (_, i) => `C${i} &amp; &lt;x&gt;`))}</ul><details><summary>…and 5 more</summary><ul>${li(['V', 'W', 'X', 'Y', 'Z'])}</ul></details></details>`
+    + `<details open><summary><strong>watch: keyword matches (1)</strong></summary><ul>${li(['+ a: b'], '')}</ul></details>`;
+  const p = splitItem(full);
+  assert.equal(fullItemHtml(p), full, 'round-trips the stored html exactly');
+  assert.equal(p.cats[0].v.length, 30);
+  assert.equal(p.cats[0].v[0], 'C0 & <x>');
+  assert.deepEqual([p.cats[0].s, p.cats[1].s], ['+ ', '']);
+  const site = siteItemHtml(p);
+  assert.ok(!site.includes('<code>V</code>'));
+  assert.match(site, /<details open data-k="0">.*<details class="more"><summary>…and 5 more<\/summary><ul><\/ul><\/details><\/details>/);
+  assert.equal(siteItemHtml(splitItem(html)).includes('data-k="4"'), true);
 });
