@@ -285,6 +285,7 @@ export function renderIconsHtml(set, diff, { links = [], notes = {} } = {}) {
     <style>${SEARCH_CSS}
       .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: .4rem; }
       .ico { position: relative; display: flex; flex-direction: column; align-items: center; gap: .35rem; padding: .7rem .3rem .5rem; border: 1px solid transparent; border-radius: .6rem; background: none; color: var(--fg); font: inherit; cursor: pointer; content-visibility: auto; contain-intrinsic-size: 6.5rem 5.6rem; }
+      .ico[hidden] { display: none; }
       .ico:hover, .ico:focus-visible { border-color: var(--fg); outline: none; }
       .ico span { font-size: .72rem; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
       .ico[data-flag]::after { content: attr(data-flag); position: absolute; top: .25rem; right: .3rem; padding: 0 .35rem; border-radius: 999px; background: var(--fg); color: var(--bg); font-size: .6rem; }
