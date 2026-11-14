@@ -435,6 +435,7 @@ action:clearWithheldDraftIds
 action:clearWorkspaceAccessPaused
 action:clearWorkspaceBootRetrying
 action:clobberDevices
+action:closeFindInChannelPopover
 action:closeMiniPlayer
 action:closeNoteComment
 action:closeSystemMessage
@@ -785,6 +786,7 @@ action:openEditThumbnailDialogCircular
 action:openExploreMyTrialFeatureCircular
 action:openExpressTemplateModalCircular
 action:openFileViewerCircular
+action:openFindInChannelPopover
 action:openGreetingInviteModalCircular
 action:openHuddleInviteWithPreviewUsingSideEffect
 action:openHuddleLinkModalUsingSideEffect
@@ -794,8 +796,6 @@ action:openHuddleWindowUsingSideEffect
 action:openImageInNewChildWindowCircular
 action:openInNewWindowCircular
 action:openInviteModalForSoloChannelNudgeCircular
-action:openInviterWelcomeCardModalCircular
-action:openJoinerWelcomeCardMessageModalCircular
 action:openMediaViewerModalCircular
 action:openMessageByEmailInviteModalCircular
 action:openOnboardingProfileModalCircular
@@ -1899,7 +1899,6 @@ action:setInvertedSidebarInternal
 action:setInviteAPIError
 action:setInviteAPIResponse
 action:setInviteAPIStatus
-action:setInviterJoinerFirstDmClientMsgId
 action:setInviterUserId
 action:setInviteType
 action:setIpAllowlistInfo
@@ -2880,6 +2879,7 @@ action:snoozeJitEvent
 action:socketErrorMessageReceived
 action:sonicResynced
 action:sortSelectedScopes
+action:splitWikiPages
 action:startAgentOrAssistantThreadCircular
 action:startAgentSunroofFetch
 action:startAutomationGroupsRequest
@@ -3989,6 +3989,7 @@ thunk:addToList
 thunk:addToListSideEffectHandler
 thunk:addToNewList
 thunk:addToOpenWorkflowsAndLocalStorage
+thunk:addTractorChannelSetupTourResources
 thunk:addUpdateRecordErrorToast
 thunk:addUsersAndGroupsToChannel
 thunk:addUserToWorkspace
@@ -4158,6 +4159,7 @@ thunk:channelOpenedWithSlackConnectInvitesCreatedEvent
 thunk:channelsOnboardingTasksV3LargeMaybeLogExposure
 thunk:channelViewedWithoutRecentActivityEvent
 thunk:checkAuth
+thunk:checkCreatorHasSentInvite
 thunk:checkEkmOnConnected
 thunk:checkForChangesInDndStatus
 thunk:checkForOldChannelsToClose
@@ -4219,6 +4221,7 @@ thunk:clearTodayFocusItem
 thunk:clearUnreadOnRootDeleted
 thunk:clearUnreadOnThreadOpen
 thunk:clearUserStatus
+thunk:clogAgentOpened
 thunk:clogAndDismissJoinerLaunchpad
 thunk:clogAndRemoveRecommendedDm
 thunk:clogAppLauncherOpen
@@ -4245,6 +4248,7 @@ thunk:clogCalendarSync
 thunk:clogCalendarSyncExp
 thunk:clogCalendarSyncImpression
 thunk:clogChannelClick
+thunk:clogChannelVisitorFileOpen
 thunk:clogCodeChannelsBrowserOpen
 thunk:clogComposerDictationMessageSend
 thunk:clogComposerUnmount
@@ -4417,6 +4421,7 @@ thunk:completeSetupFlow
 thunk:completeSlackCrmOnboardingRunResearchSkill
 thunk:completeSlackCrmOnboardingSplash
 thunk:completeSlackCrmOnboardingZeroStateCard
+thunk:completeTractorChannelSimplificationSetupTour
 thunk:configureCreatedChannel
 thunk:confirmFileDownloadAllowed
 thunk:connectedSideEffect
@@ -5161,6 +5166,7 @@ thunk:fetchTractorChannelSimplificationSetupTourState
 thunk:fetchTrialInfo
 thunk:fetchTrialUsage
 thunk:fetchUnjoinedChannelMentions
+thunk:fetchUnknownInvitePermissions
 thunk:fetchUnknownListFiles
 thunk:fetchUnreadAgentCanvases
 thunk:fetchUserAuth
@@ -5559,7 +5565,6 @@ thunk:inviteEmailInputSmartTokensMaybeLogExposure
 thunk:inviteMembers
 thunk:inviteMemberToChannel
 thunk:invitePeopleCommand
-thunk:inviterJoinerFirstDmV2MaybeLogExposure
 thunk:inviteToChannel
 thunk:inviteToConversationShortcut
 thunk:inviteToWorkspaceShortcut
@@ -5679,6 +5684,7 @@ thunk:logExthuddleSidebarRowClick
 thunk:logMemoryNuxButtonClick
 thunk:logMessage
 thunk:logOmniSlackbotModeExposure
+thunk:logOmniTrailingDebounceExposure
 thunk:logPermissions
 thunk:logSidebarNoiseMetrics
 thunk:logSidebarStats
@@ -6503,6 +6509,8 @@ thunk:openFileUploadErrorDialog
 thunk:openFileViewer
 thunk:openFileViewerCircularHandler
 thunk:openFileViewerErrorModal
+thunk:openFindInChannelPopoverForTarget
+thunk:openFindInChannelPopoverFromView
 thunk:openFindMoreWorkspacesModal
 thunk:openFirstConnectionApprovalModal
 thunk:openFlexpaneInDetachedWindow
@@ -6568,8 +6576,6 @@ thunk:openInviteModalForSoloChannelNudgeHandler
 thunk:openInviteModalFromExternalLink
 thunk:openInviteModalWithChannels
 thunk:openInviteReminderResendModal
-thunk:openInviterWelcomeCardModalCircularHandler
-thunk:openJoinerWelcomeCardMessageModalCircularHandler
 thunk:openJoinWorkspacePermalinkDialog
 thunk:openJourneyLaunchModalHandler
 thunk:openJpPocketGuideEmailTemplateModal
@@ -6824,6 +6830,7 @@ thunk:openVersionHistory
 thunk:openVideoInNewChildWindow
 thunk:openVideoRecorder
 thunk:openViewInChildWindow
+thunk:openWebhookLeadSetupDialog
 thunk:openWithSalesforceTip
 thunk:openWorkflowBuilderShortcut
 thunk:openWorkflowDetailsModalCircularHandler
@@ -6851,6 +6858,7 @@ thunk:performBulkMuteUnmuteChannels
 thunk:performChannelSectionCreate
 thunk:performChannelSectionDelete
 thunk:performChannelSectionRename
+thunk:performMoveChannelToStarred
 thunk:performMoveManyChannelsToNewSection
 thunk:performMoveManyChannelsToSection
 thunk:performMoveManyEntitiesToNewSection
@@ -6864,6 +6872,7 @@ thunk:persistViewStateNavigateListener
 thunk:pickClickNavigationVisit
 thunk:pickFileContainerClickVisit
 thunk:pickLookupResultVisit
+thunk:pickTractorChannelSetupTourGdriveFiles
 thunk:pinAgentSession
 thunk:pingFile
 thunk:pinItemsInSidebar
@@ -7471,9 +7480,6 @@ thunk:setChannelPropertiesCanvasFileId
 thunk:setChannelPropertiesMuteCanvasTabUpdates
 thunk:setChannelPropertiesMuteCanvasUpdates
 thunk:setChannelPropertiesMuteFolderUpdates
-thunk:setChannelPropertiesNudgeIsDismissed
-thunk:setChannelPropertiesWelcomeMessageSeen
-thunk:setChannelPropertiesWelcomeMessageTs
 thunk:setChannelPurpose
 thunk:setChannelSearchHideMemberChannels
 thunk:setChannelSearchSort
@@ -8149,7 +8155,6 @@ thunk:updateFullscreenContainer
 thunk:updateFunctionAuth
 thunk:updateGuestExpiration
 thunk:updateInproductTeamCreationStateMachine
-thunk:updateInviterJoinerChannelProperty
 thunk:updateJoinerSelectedMembers
 thunk:updateKnockingUsers
 thunk:updateLastActiveItem

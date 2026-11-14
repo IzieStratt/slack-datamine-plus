@@ -77,6 +77,7 @@ ActionsOverflowMenu
 ActivateSalesforceOrg
 ActivateSalesforceOrgDialog
 ActivateSolutionGalleryForeword
+ActiveChannels
 ActiveDiscussionCard
 ActiveDiscussionsCard
 ActiveDiscussionsCardSettingsModal
@@ -311,7 +312,6 @@ AddTabMenuTrigger
 AddTeamLabel
 AddTeamModal
 AddToChannelInitialScreen
-AddToChannelsStep
 AddToListDialog
 AddToMpdmOnboardingCoachmark
 AddToWorkspaceErrorModal
@@ -570,6 +570,7 @@ AgentShareBackButton
 AgentSlackbotAccordion
 AgentSlackbotStatus
 AgentsList
+AgentSocialProof
 AgentSocialProofFacepile
 AgentsPeekList
 AgentsRowMenu
@@ -902,7 +903,15 @@ AppsBrowserFilter
 AppsBrowserHeaderLinks
 AppsBrowserModal
 AppsBrowserResults
+AppScopeRiskTag
 AppScopes
+AppScopesAccordion
+AppScopesAccordionPreview
+AppScopesAccordionRow
+AppScopesAccordionSection
+AppScopesFilterBar
+AppScopesFilterChip
+AppScopesFilteredSection
 AppSecurityComplianceList
 AppSessionOpenThreadReplyNugget
 AppSessionReplyNugget
@@ -3951,7 +3960,6 @@ ExternalFileThumbnailPreviewSettingForm
 ExternalFilterSearchableMultiSelect
 ExternalFiltersRenderer
 ExternalGuestHuddleWindow
-ExternalGuestIcon
 ExternalHuddleGuestCanvasState
 ExternalHuddleGuestQuipView
 ExternalHuddleIllustration
@@ -4161,11 +4169,13 @@ FileSectionMoveToMenu
 FileSectionName
 FileSectionStarredSelected
 FileShareContext
+FileShareConversationsSection
 FileShareDetailsEntity
 FileShareDetailsFileEntity
 FileShareDetailsFolderShares
 FileShareDetailsMessageEntity
 FileShareDetailsTabShare
+FileShareTabsSection
 FileSidebarContextMenu
 FileSize
 FilesList
@@ -4256,6 +4266,7 @@ FilterWorkspaceTable
 FinalSlideComponent
 FindBar
 FindBarNotificationBubble
+FindInChannelPopover
 FindInputRow
 FindPeekView
 FindSidebarPeekWrapper
@@ -4443,6 +4454,7 @@ getActiveUsersTimeseriesSubheader
 getActivityIcon
 getAddToChannelTemplate
 getAdminDashboardCanvasOwnershipText
+getAgentDmPanelsTemplate
 getAiMenuItems
 getAiTemplate
 getAppAggregationTooltip
@@ -4685,6 +4697,7 @@ getSolutionsSettingsTemplate
 getSolutionTemplateItemTitle
 getSpeedBumpDescription
 getSpeedBumpProps
+getStarItem
 GetStarted
 GetStartedCheckEmailCard
 GetStartedLandingView
@@ -4782,6 +4795,7 @@ GlobalCreateCoachmark
 GlobalCreateMenuPopover
 glueChildren
 gluePunctuation
+Glyph
 GoldenGatePlusTrialBadge
 GoogleContactImport
 GoogleDocIcon
@@ -5532,13 +5546,13 @@ JoinChannelsCompleteState
 JoinChannelsModal
 JoinChannelsResultToast
 joinChannelWithRetryToast
+JoinedLine
 JoinerFollowUpPrompts
 JoinerLaunchpadDismissedCoachmark
 JoinerLaunchpadPeopleCarousel
 JoinerNotificationSubtype
 JoinErrorToast
 JoinerSlackbotSidebarTooltip
-JoinerWelcomeCardMessageModal
 JoiningExternalWorkspacesOption
 JoinLaunchpadChannelsModal
 JoinLiveHuddlesModal
@@ -7343,7 +7357,6 @@ PlaceholderAddLinkModal
 PlaceholderInput
 PlaceholderInsertionModal
 PlaceholderLinkUnfurl
-PlaceholderRows
 PlaceholderVariablePopover
 PlainRow
 PlainText
@@ -7593,6 +7606,7 @@ ProviderIcon
 PrStatusTag
 PrudentPigeonDark
 PrudentPigeonLight
+PsciEmailMismatchNotice
 PsciTeamNotice
 PtdLink
 PublishAccessErrors
@@ -8448,6 +8462,7 @@ renderSkillUnfurlPreview
 renderSkipButton
 renderSlackConnectLoggedOutStep
 renderSlideContent
+renderSlot
 renderSlug
 renderSmallAiSummaryButton
 renderSmallContent
@@ -8968,6 +8983,7 @@ ScopeLabel
 ScopeOfRole
 ScopeRatings
 ScopeRatingsTable
+ScopeRows
 ScopesAcknowledgementsSection
 ScopeSelect
 ScopeSelector
@@ -9252,7 +9268,6 @@ SendToSalesHomeTreatment
 SendToSelect
 SendToSlackbotPreview
 SendWelcomeCardSuccess
-SendWelcomeStep
 SentByColumn
 SentByMenu
 SentPage
@@ -9631,9 +9646,12 @@ SingerJoinChannel
 SingerLaptop
 SingerLiveVoiceButton
 SingerLiveVoiceDetails
+SingerMeetingCapsule
 SingerMeetingCommandError
+SingerMeetingDetails
 SingerMeetingPanel
 SingerMeetingResult
+SingerMeetingRibbon
 SingerMeetingSurface
 SingerMessageActions
 SingerMotionPreview
@@ -9669,7 +9687,6 @@ SingerThreadTitle
 SingerUnreadBadge
 SingerUnreadFilter
 SingerVoiceIsland
-SingerVoiceWaveform
 SingerVoiceWorkItem
 SingerVoiceWorkList
 SingerWindowAttachmentChip
@@ -9762,6 +9779,7 @@ SkillShareConsentCard
 SkillShareConsentModal
 SkillShareLinkFooterButton
 SkillShareLinkModal
+SkillShareSuggestionActions
 SkillsHeroBanner
 SkillsListItem
 SkillsMyLibraryEmptyState
@@ -9796,7 +9814,6 @@ SlackAiSearchAnswersNfxBanner
 SlackAiSearchNuxBanner
 SlackAiSearchNuxBannerQuestion
 SlackbotActionCardsBlock
-SlackbotAgendaCard
 SlackbotAgentItem
 SlackbotAgentsList
 SlackbotAgentsSearchResults
@@ -10236,6 +10253,7 @@ SmallViewEntity
 SmartInvitesChannelSuggestionRowElement
 SnapshotConditionSection
 SocialProofAvatarStack
+SocialProofSkeleton
 SocialTemplatesForeword
 SoftwareEmulationBanner
 SolutionCard
@@ -10384,6 +10402,7 @@ StepTestModalContent
 StepText
 StepWelcome
 StopButton
+StopMark
 StoppedLabel
 StpBizplusProEscapeHatchModal
 STPModal
@@ -10435,11 +10454,9 @@ SuggestionChannelAction
 SuggestionChip
 SuggestionCreateChannel
 SuggestionCreateMpdm
-SuggestionCurrentChannelRefinement
 SuggestionCurrentDMsRefinement
 SuggestionCurrentSavedRefinement
 SuggestionCurrentSentRefinement
-SuggestionCurrentThreadsRefinement
 SuggestionFile
 SuggestionFromRefinement
 SuggestionHelpArticle
@@ -11493,6 +11510,7 @@ UserProfileUnfurl
 UserRelevantWorkspacesPicker
 UserRemovedFromTeamAlertDialog
 UserRequestersDetail
+UserScopeToken
 UsersSelect
 useRunTaskNow
 useSalesforceNotificationsMenuItemTemplate
@@ -11515,6 +11533,7 @@ useSidebarSearchConversationItem
 useSidePanel
 useSidePanelData
 useSingerDlsActionSwipe
+useSingerMeetingLive
 useSkillDeactivationActions
 useSkillEditLeaveGuard
 useSkillExternalSharing
@@ -11719,6 +11738,7 @@ VisuallyHiddenReactionCount
 VisuallyHiddenReplyCount
 VoiceActions
 VoiceControls
+VoiceWaveform
 VoteColumnEditor
 VoteComponent
 VoteValue
@@ -11729,12 +11749,19 @@ WarnSwitchSourceStep
 WaveformBars
 WaveformVisualizer
 WebCitation
+WebhookLeadMessagePreview
+WebhookLeadPreviewPanel
+WebhookLeadSetupMappingPane
+WebhookLeadSetupMessagePane
+WebhookLeadSetupModal
+WebhookLeadSetupPane
+WebhookLeadsForewordBanner
 WebhookTriggerSummary
+WebhookVariableRow
 WebSearchHoverCard
 WebSearchPref
 WebSourceItem
 WeekdaysPicker
-WelcomeCardFile
 WelcomeModalContent
 WelcomeNewTeammates
 WelcomePane

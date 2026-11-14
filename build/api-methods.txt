@@ -142,7 +142,6 @@ admin.roles.listUsergroups
 admin.roles.permissions.list
 admin.roles.removeMembers
 admin.roles.removeUsergroup
-admin.sessions.dbsc.countAffectedUsers
 admin.sessions.dbsc.enforceAllSessions
 admin.slackbot.channelExclusions.add
 admin.slackbot.channelExclusions.list
@@ -518,6 +517,7 @@ client.codeChannels.getPullRequestConnection
 client.codeChannels.getPullRequestSummary
 client.codeChannels.getSummary
 client.codeChannels.getView
+client.codeChannels.getViewedFiles
 client.codeChannels.join
 client.codeChannels.listPullRequestComments
 client.codeChannels.listPullRequests
@@ -538,6 +538,7 @@ client.shouldReload
 client.tbd.codeChannels.open
 client.tbd.facts.flag
 client.tbd.facts.list
+client.tbd.wiki.unjoin
 connectInvites.list
 connectableContacts.lookup
 contacts.add
@@ -613,7 +614,6 @@ conversations.requestSharedInvite.deny
 conversations.revokeSharedInvite
 conversations.revokeSharedInvitesBulk
 conversations.searchLinks
-conversations.setInviterJoinerProperties
 conversations.setProperties
 conversations.setPurpose
 conversations.setRetention
