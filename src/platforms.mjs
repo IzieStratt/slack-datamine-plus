@@ -29,7 +29,9 @@ const OUT = 'build/platforms', STATE = 'state/platforms.json';
 const ANDROID_CERT = process.env.ANDROID_CERT || '33533619756e8701a82e7887565b152dc348188711ebb5c48d073b2c942f7e41';
 const UA = { 'user-agent': 'slack-datamine-plus (+https://github.com/IzieStratt/slack-datamine-plus)' };
 
+// versions only (no timestamps), so a run that finds nothing new leaves the file untouched and makes no commit
 const state = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, 'utf8')) : {};
+for (const v of Object.values(state)) delete v.date;
 const log = (...a) => console.error(...a);
 fs.mkdirSync(CACHE, { recursive: true });
 
@@ -128,7 +130,7 @@ async function desktop() {
   }
   all.set('platform-only', only);
   writeTarget('desktop', all, info);
-  state.desktop = { versions: key, date: new Date().toISOString() };
+  state.desktop = { versions: key };
 }
 
 // ---------- android ----------
@@ -172,7 +174,7 @@ async function android() {
   if (native.size) cats.set('native-libs', native);
   const vc = [...strings].length; // DEX string count as a sanity number
   writeTarget('android', cats, { version: latest, 'signer-sha256': ANDROID_CERT, 'dex-strings': vc, source: 'APKPure (signature checked)' });
-  state.android = { version: latest, date: new Date().toISOString() };
+  state.android = { version: latest };
 }
 
 // ---------- iOS / watchOS ----------
@@ -206,7 +208,7 @@ async function ios() {
     for (const k of ['ipa-build', 'ipa-version']) { const m = prev.match(new RegExp(`^${k}: (.+)$`, 'm')); if (m) info[k] = m[1]; }
   }
   writeTarget('ios', cats, info);
-  state.ios = { ...state.ios, version: ph.version, date: new Date().toISOString() };
+  state.ios = { ...state.ios, version: ph.version };
 }
 
 // ---------- release notes ----------

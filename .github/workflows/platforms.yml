@@ -54,6 +54,7 @@ jobs:
           git config user.name "Izie"
           git config user.email "238573415+IzieStratt@users.noreply.github.com"
           what=$(git diff --cached --name-only -- build/platforms | cut -d/ -f3 | sort -u | paste -sd, -)
+          [ -n "$what" ] || what=state
           git commit -q -m "platforms: $what" -m "Co-Authored-By: GitHub Actions <automated-tools@izie.top>"
           for i in 1 2 3; do
             git push origin HEAD && exit 0
