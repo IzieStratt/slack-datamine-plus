@@ -4,10 +4,9 @@ name: taut-watch
 # Keeps one issue on the Taut repo up to date (authored by the account behind the TAUT_ISSUES_TOKEN secret): opened when a name goes missing
 # or the code behind one changed recently, commented when new names go missing, closed when all is well. No AI. Without the secret it
 # files nothing and only writes the job summary.
+# Turned off 2026-11-15: TAUT_ISSUES_TOKEN can't create issues on the Taut repo. Manual runs only; restore the workflow_run trigger
+# (workflows: [mine], types: [completed]) to turn it back on.
 on:
-  workflow_run:
-    workflows: [mine]
-    types: [completed]
   workflow_dispatch:
 
 concurrency:
