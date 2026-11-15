@@ -79,3 +79,14 @@ test('splitItem keeps every row, and the page version leaves the long lists to t
   assert.match(day, /^<p>[^]*<details open id="c0">/);
   assert.ok(day.includes('<code>V</code>') && !day.includes('…and'), 'the day page lists every row in one list');
 });
+
+test('a category with a note instead of rows keeps the note on the site and day pages', async () => {
+  const { splitItem, siteItemHtml, fullItemHtml } = await import('../src/feed-lib.mjs');
+  const html = '<p>3 changes since abc.</p><details open><summary><strong>android/feature-flags: new category (568)</strong></summary><p>First mined today: <a href="https://x/platforms/android/feature-flags.txt">the full list (568)</a>.</p></details><details open><summary><strong>api-methods: new (1)</strong></summary><ul><li>+ <code>chat.x</code></li></ul></details>';
+  const p = splitItem(html);
+  assert.ok(p.cats[0].n.includes('feature-flags.txt') && !p.cats[1].n);
+  for (const out of [siteItemHtml(p, 25, 'days/x'), fullItemHtml(p)]) {
+    assert.ok(out.includes('href="https://x/platforms/android/feature-flags.txt"'));
+    assert.ok(out.includes('<li>+ <code>chat.x</code></li>'));
+  }
+});

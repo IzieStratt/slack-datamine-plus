@@ -15,6 +15,9 @@ if (!site || !url) { console.error('usage: feed.mjs <site-dir> <site-url> [--sin
 const sinceArg = process.argv.indexOf('--since') > -1 ? process.argv[process.argv.indexOf('--since') + 1] : null;
 // `url` is the base of the item ids (guids) and must not change, or readers show every item twice; `--link` is where the feed points readers now
 const linkBase = process.argv.indexOf('--link') > -1 ? process.argv[process.argv.indexOf('--link') + 1] : url;
+// build/platforms/<target>/<category>.txt is published at <site>/platforms/<target>/<category>.txt; a new category links there instead of
+// listing thousands of values in the item
+const platformNote = (rel, n) => `<p>First mined today: <a href="${esc(linkBase)}/platforms/${esc(rel)}.txt">the full list (${n})</a>, or <a href="${esc(linkBase)}/platforms">every native-client list</a>.</p>`;
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] }).trim();
 const show = (ref, f) => { try { return git('show', `${ref}:${f}`); } catch { return null; } };
 const WATCH = new RegExp(fs.readFileSync(new URL('./watch-keywords.txt', import.meta.url), 'utf8').split('\n').filter((l) => l && !l.startsWith('#')).join('|'), 'i');
@@ -68,7 +71,7 @@ function buildItem(base, head) {
     }
     if (fresh && f.startsWith('build/platforms/')) { // a new native-client category: thousands of values on day one, so just the count
       total += added.length;
-      html += `<details open><summary><strong>${esc(name)}: new category (${added.length})</strong></summary><p>First mined today; the full list is in <code>${esc(f)}</code>.</p></details>`;
+      html += `<details open><summary><strong>${esc(name)}: new category (${added.length})</strong></summary>${platformNote(f.replace(/^build\/platforms\//, '').replace(/\.txt$/, ''), added.length)}</details>`;
       continue;
     }
     total += added.length + removed.length + extra.length;
@@ -113,6 +116,12 @@ fs.mkdirSync(site, { recursive: true });
 if (!renderOnly) fs.writeFileSync(stateFile, JSON.stringify({ lastCommit: head }, null, 1) + '\n');
 const cutoff = new Date(Date.now() - 90 * 864e5).toISOString().slice(0, 10);
 const kept = items.filter((i) => i.date >= cutoff);
+// items stored before the lists were published pointed at the repo path; link them to the site copy instead
+for (const i of kept) i.html = i.html.replace(/<p>First mined today; the full list is in <code>build\/platforms\/([\w/-]+)\.txt<\/code>\.<\/p>/g, (_, rel) => {
+  const f = `build/platforms/${rel}.txt`;
+  return platformNote(rel, fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).length : 0);
+});
+publishPlatforms();
 fs.mkdirSync(site, { recursive: true });
 fs.writeFileSync(itemsFile, JSON.stringify(kept, null, 1) + '\n');
 const rss = renderRss(kept, { linkBase });
@@ -152,7 +161,7 @@ const dayPage = (i, p) => `<!doctype html>
 kept.forEach((i, n) => fs.writeFileSync(path.join(daysDir, `${itemSlug(i)}.html`), dayPage(i, parts[n])));
 const client = fs.readFileSync(new URL('./feed-client.js', import.meta.url), 'utf8');
 const has = (f) => fs.existsSync(path.join(site, f));
-const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons', 'Slack icons']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
+const links = [['feed.xml', 'RSS feed'], ...(has('icons.html') ? [['icons', 'Slack icons']] : []), ...(has('platforms/index.html') ? [['platforms', 'Native clients']] : []), ['https://vs.izie.top/redocumented', 'ReDocumented'], ['https://github.com/IzieStratt/slack-datamine-plus', 'Source']];
 fs.writeFileSync(path.join(site, 'index.html'), `<!doctype html>
 <html lang="en">
   <head>
@@ -201,3 +210,46 @@ ${client}    </script>
 </html>
 `);
 console.log(renderOnly ? 'rendered' : item ? `added ${item.title}` : 'no changes today');
+
+// <site>/platforms/: a copy of build/platforms/ (the native clients' lists) and an index page linking every list
+function publishPlatforms() {
+  const src = 'build/platforms', out = path.join(site, 'platforms');
+  if (!fs.existsSync(src)) return;
+  fs.rmSync(out, { recursive: true, force: true });
+  fs.mkdirSync(out, { recursive: true });
+  const targets = fs.readdirSync(src, { withFileTypes: true }).filter((d) => d.isDirectory() && /^[\w-]+$/.test(d.name)).map((d) => d.name).sort();
+  let body = '';
+  for (const t of targets) {
+    fs.mkdirSync(path.join(out, t));
+    const files = fs.readdirSync(path.join(src, t)).filter((f) => /^[\w-]+\.txt$/.test(f)).sort();
+    for (const f of files) fs.copyFileSync(path.join(src, t, f), path.join(out, t, f));
+    const info = files.includes('info.txt') ? fs.readFileSync(path.join(src, t, 'info.txt'), 'utf8').trim() : '';
+    const rows = files.filter((f) => f !== 'info.txt').map((f) => {
+      const n = fs.readFileSync(path.join(src, t, f), 'utf8').split('\n').filter(Boolean).length;
+      return `<li><a href="${t}/${f}">${esc(f.replace(/\.txt$/, ''))}</a> <small>(${n})</small></li>`;
+    }).join('');
+    body += `<section><h2>${esc(t)}</h2>${info ? `<pre>${esc(info)}</pre>` : ''}<ul>${rows}</ul></section>`;
+  }
+  fs.writeFileSync(path.join(out, 'index.html'), `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slack native clients</title>
+    <meta name="description" content="Lists mined from Slack's desktop (macOS, Windows, Linux) and Android apps, App Store metadata and every platform's release notes.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/cdn/theme.js"></script>
+    <style>pre { overflow-x: auto; padding: .7rem; border-radius: .5rem; background: color-mix(in srgb, var(--fg) 7%, transparent); font-size: .85rem; white-space: pre-wrap; } section ul { columns: 2 12rem; } small { opacity: .7; }</style>
+  </head>
+  <body>
+    <main>
+      <h1>Slack native clients</h1>
+      <p>What slack-datamine-plus mines from Slack's desktop and Android apps, the App Store, and the release notes. Each list is plain text, one value per line; changes show up in the <a href="../">daily feed</a> as <code>&lt;target&gt;/&lt;category&gt;</code>.</p>
+      ${pills([['../', 'Changes feed'], ['../icons', 'Slack icons'], ['https://github.com/IzieStratt/slack-datamine-plus/tree/main/build/platforms', 'Source']])}
+      ${body}
+    </main>
+  </body>
+</html>
+`);
+}
