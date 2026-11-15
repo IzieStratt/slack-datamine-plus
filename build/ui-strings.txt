@@ -285,7 +285,7 @@ $ {amount} USD
 ) is not a string.
 ) is not supported yet.
 ) that performed expensive computation.
-)&&(eI(!1),aG(void 0),ej(a5?
+)&&(eT(!1),aG(void 0),eS(a9?
 ))),H((0,ef.R3)(ey)),H((0,ef.p4)(ey?G:void 0)),eb(ey?
 ))),e((0,d.R3)(h)),e((0,d.p4)(h?a:void 0)),p(h?
 ). If you meant to render a collection of children, use an array instead.
@@ -6052,7 +6052,6 @@ Choose a frightful theme
 Choose a huddle theme
 Choose a limit for how many people are allowed in this specific channel. You can update limits for all private channels from the Channel Management settings.
 Choose a markdown file to upload
-Choose a microphone.
 Choose a new limit
 Choose a new owner
 Choose a plan
@@ -8172,7 +8171,7 @@ Counts the number of times the Open App team menu item is selected
 Cover
 Cover image
 Covered this update.
-Covered {summarized, number} of {total, number} updates. The rest aren\u2019t confirmed, so they stay unread.
+Covered {summarized, number} of {total, number} updates. The rest aren\u2019t confirmed.
 Coworkers
 Cozy Knit
 Cozy up
@@ -11862,6 +11861,7 @@ Failed to publish draft work object
 Failed to publish skill to catalog
 Failed to publish skill. Please try again.
 Failed to purge stored model and clear object store
+Failed to re-acquire meeting audio on resume
 Failed to re-connect to Huddle
 Failed to read IA history from storage
 Failed to read app name in getStoredStateFromIDB
@@ -11886,6 +11886,7 @@ Failed to register modifier capture combos
 Failed to register rsvp
 Failed to register slackbot mini shortcut
 Failed to register the talk keys
+Failed to release meeting audio while paused
 Failed to remove Enterprise Search members
 Failed to remove file. Please try again.
 Failed to remove one or more Enterprise Search user groups
@@ -12976,6 +12977,7 @@ Finish a pin read
 Finish a pin write for a view
 Finish dictating
 Finish dictating before leaving this message.
+Finish dictation first.
 Finish fetching the agent sunroof, clearing any queued fetch
 Finish logging in
 Finish recording before starting a voice call
@@ -14718,6 +14720,7 @@ Hide Muted Channels
 Hide Page
 Hide Sidebar
 Hide Singer
+Hide Singer?
 Hide Slackbot
 Hide Slackbot in the navigation bar
 Hide This Person
@@ -15500,7 +15503,7 @@ In the huddle
 In the next 7 days
 In the sidebar
 In the summary.
-In the summary. There\u2019s more to read here, so it stays unread.
+In the summary. Older unread messages aren\u2019t included.
 In this DM
 In this channel
 In this conversation
@@ -16174,6 +16177,7 @@ It\u2019s a beautiful day for skimming
 It\u2019s a good day for getting things done
 It\u2019s a new way to communicate with everyone you work with. It\u2019s\xa0faster, better organized, and more secure than email \u2014\xa0and it\u2019s free to try.
 It\u2019s been deleted by the owner.
+It\u2019s been quiet for 5 minutes. Still in the meeting?
 It\u2019s been quiet for a while. Still in the meeting?
 It\u2019s harder to use Slack now
 It\u2019s kind of a big deal \u2014 but not as big as your next one! You\u2019re on your way to using Slack to power your deals.
@@ -18638,7 +18642,6 @@ Mark when a summary has been viewed
 Mark whether an authorized-IP check has resolved this session
 Mark whether an authorized-IP check is currently in flight
 Mark your to-dos or save something for another time. Only you can see your saved items, so use them however you\u2019d like.
-Mark {count, number} as Read
 Mark {name} as read
 Markdown
 Markdown (raw)
@@ -18692,6 +18695,7 @@ Marks the channel as a default channel on creation.
 Marks the current pending external auth to skip auto-opening the manage modal
 Marks the lines of a fact the viewer flagged, or leaves them to a fresh read on Undo
 Marks the org
+Marks these conversations and threads through the updates in this catch-up, including older unread messages. Newer messages stay unread.
 Marks today item for delete to allow animation
 Marks today item(s) as read using today.items.markRead API and updates the store
 Marks today item(s) as unread using today.items.markUnread API and updates the store
@@ -21105,7 +21109,7 @@ Not checking persistence storage method version because localStorage doesn
 Not complete
 Not completed
 Not configured
-Not confirmed in the summary, so it stays unread.
+Not confirmed in the summary.
 Not connected
 Not custom files
 Not defined
@@ -21229,6 +21233,7 @@ Nothing here yet
 Nothing here yet. Use the star on any file to add it to this section.
 Nothing here. That shortcut might not exist\u2026yet.
 Nothing in Activity right now.
+Nothing is being recorded. Your mic and computer audio are off until you resume.
 Nothing left for you here.
 Nothing left here.
 Nothing left in Activity.
@@ -21895,6 +21900,7 @@ Open Singer
 Open Singer content in the main Slack client
 Open Singer for the authorized focused workspace after Slack boots
 Open Singer in its desktop build to use your Mac.
+Open Slack
 Open Slack CRM from an Explore my trial card
 Open Slack Connect trial entry point modal
 Open Slack on your mobile device. From the home tab, select your team icon at the top to see available workspaces.
@@ -22971,6 +22977,7 @@ Pause task
 Pause the thread to lock it and prevent additional replies and reactions. Members can still view the thread, and you can unlock it later if you want.
 Pause this workflow
 Paused
+Paused \xb7 {time}
 Paused sections
 Paused this workflow for you.
 Paused until tomorrow at {time}
@@ -24556,6 +24563,7 @@ Reconnect to mark these as read.
 Reconnect to show the browser.
 Reconnect without waiting for its rate limit
 Reconnect your Salesforce account, then try again.
+Reconnect your Slack workspace.
 Reconnect your account to continue.
 Reconnect your external channels
 Reconnect your {host} account to see its pull requests
@@ -24662,8 +24670,12 @@ Recording in progress
 Recording is not supported in this browser.
 Recording is open, but no audio is coming through. Meeting controls
 Recording meeting audio.
+Recording paused.
+Recording paused. Meeting controls
+Recording resumed.
 Recording started. Narrate and advance slides at your pace.
 Recording stopped
+Recording stops at the 2-hour limit. {minutes, plural, one {# minute left.} other {# minutes left.}}
 Recording your mic and computer audio.
 Recording your mic only. Notes won\u2019t include people on the call.
 Recording your microphone. Computer audio is unavailable.
@@ -26338,6 +26350,7 @@ Resume access
 Resume all your notifications
 Resume notifications
 Resume now
+Resume recording
 Resume taking notes with AI?
 Resume task
 Resume this workflow
@@ -32112,6 +32125,7 @@ Steven P. South
 Stickers
 Stickers stay on until you remove them.
 Still get notified when VIPs send messages.
+Still listening. Your thread is one tap away.
 Still loading\u2026 sorry for the long wait!
 Still not working. Check back in a few minutes.
 Still recording
@@ -32131,6 +32145,8 @@ Stop a 3P agent session
 Stop agent
 Stop agent \u2014 {agentName}
 Stop and discard recording?
+Stop and hide
+Stop and make notes
 Stop big button mode
 Stop changing dictation shortcut
 Stop drawing on your own screen
@@ -32144,7 +32160,6 @@ Stop peer joining timeout check
 Stop receiving recaps
 Stop receiving recaps?
 Stop recording
-Stop recording before you switch microphones.
 Stop response
 Stop screen share for current user
 Stop screen share, waiting for content share start to resolve
@@ -32178,10 +32193,15 @@ Stop using {label} as context
 Stop {agentName}
 Stop {appName}
 Stopped
+Stopped at the 2-hour limit. Making notes.
+Stopped listening. Writing your recap
+Stopped listening. Writing your recap.
+Stopped recording. Making notes.
 Stopped tracking a Workflow Builder window to stay under the per-team cap.
 Stopped tracking agent work. Its fields and their values stay on this list.
 Stopped updating
 Stopped while a native edit was in progress.
+Stopped. Writing your recap\u2026
 Stopping StatsCollector
 Stopping audio track for Web Audio graph
 Stopping devicechange listener.
@@ -34174,6 +34194,7 @@ This may take a few minutes. The channel will be unavailable during conversion.
 This may take some time, but you\u2019ll get a message from Slackbot when it\u2019s done.
 This may take up to 15 minutes.
 This media file type can\u2019t support transcriptions. It may be too large, too small or a file type that we don\u2019t support.
+This meeting belongs to a different Slack account.
 This meeting transcript is no longer available.
 This member is assigned to this workspace via {ssoProviderName} groups, and they cannot be individually managed here.
 This member is assigned to this workspace via {userGroupName} and cannot be individually managed here.
@@ -39719,6 +39740,7 @@ You\u2019re previewing Slackbot
 You\u2019re previewing Slackbot\u2019s AI abilities on your plan.
 You\u2019re previewing Slackbot\u2019s AI abilities. Upgrade to Business+ to give your whole team access.
 You\u2019re ready to invite your team
+You\u2019re recording {title}. Hiding Singer stops the recording.
 You\u2019re seeing this because you asked a question or used at least four words in your search.
 You\u2019re set to active
 You\u2019re set to away
@@ -40086,7 +40108,6 @@ Your manager
 Your manager\u2019s manager
 Your meeting notes for 
 Your meeting recording was deleted before notes could be generated.
-Your meeting recording was too short to generate notes.
 Your meeting was too long to generate notes.
 Your meetings will appear here when the connection is ready.
 Your member
@@ -47609,7 +47630,7 @@ zzz
 {count, plural, one {Asked # time} other {Asked # times}}
 {count, plural, one {Canvas created} other {Canvases created}}
 {count, plural, one {Catching you up on # update\u2026} other {Catching you up on # updates\u2026}}
-{count, plural, one {Couldn\u2019t mark # update as read.} other {Couldn\u2019t mark # updates as read.}}
+{count, plural, one {Couldn\u2019t mark # update as read. Open the conversation or try again.} other {Couldn\u2019t mark # updates as read. Open those conversations or try again.}}
 {count, plural, one {Edit access for # tool} other {Edit access for # tools}}
 {count, plural, one {Files Changed, # file} other {Files Changed, # files}}
 {count, plural, one {Filter converted to text} other {# filters converted to text}}
@@ -48750,7 +48771,9 @@ zzz
 {title} \xb7 {date}
 {title} \xb7 {date} at {time}
 {title} \xb7 {detail}
+{title} probably ended. Stopping in {countdown} unless you keep recording.
 {title} value
+{title} was scheduled to end at {time}. Stopping in {countdown} unless you keep recording.
 {title} {description}
 {title} {subtitle} {viewReportLabel} link available.
 {title}, Folder
@@ -48798,11 +48821,9 @@ zzz
 {tooltipEmailList} and {lastEmail}
 {tooltipEmailList} {tooltipOverflowEmailsCount, plural, =0 {} =1 {and # other} other {and # others}}
 {total, plural, =1 {Shortcuts menu, {resultDescription}, 1 of # suggestion} other {Shortcuts menu, {resultDescription}, 1 of # suggestions}}
-{total, plural, =2 {Covered both updates.} other {Covered all # updates.}} Only {eligible, number} can be marked read here.
-{total, plural, one {Covered this update. There\u2019s more to read, so it stays unread.} =2 {Covered both updates. There\u2019s more to read, so they stay unread.} other {Covered all # updates. There\u2019s more to read, so they stay unread.}}
 {total, plural, one {Covered this update.} =2 {Covered both updates.} other {Covered all # updates.}}
 {total, plural, one {Done and done. This update is read.} =2 {Done and done. Both updates are read.} other {Done and done. All # updates are read.}}
-{total, plural, one {Slackbot didn\u2019t confirm it covered this update, so it stays unread.} other {Slackbot didn\u2019t confirm what it covered, so these stay unread.}}
+{total, plural, one {Slackbot didn\u2019t confirm it covered this update.} other {Slackbot didn\u2019t confirm what it covered.}}
 {totalApprovalCount, plural, =1 {# invitation} other {# invitations}}
 {totalCount, plural, =0 {No channels} =1 {# channel} other {# channels}}
 {totalCount, plural, =1 {{totalCount} teammate has requested Business+} other {{totalCount} teammates have requested Business+}}
