@@ -153,6 +153,7 @@ action:appendSearchResultUsers
 action:appendThreads
 action:appendThreadToManuallyMarkedUnread
 action:appendToViewList
+action:appendWikiIndex
 action:applyAgentSessionsFetch
 action:applyEditAction
 action:applyServerCounts
@@ -562,6 +563,7 @@ action:exportWorkflowSuccess
 action:externalAuthCompleted
 action:failExternalFileProvidersFetch
 action:failLoadingCustomSkillCategories
+action:failWikiIndexMore
 action:failWikiPage
 action:fetchAndOpenChannelSectionLinkInfoCircular
 action:fetchAndUpsertRecordsCircular
@@ -728,6 +730,7 @@ action:markProjectContentChanged
 action:markProjectThreadsChanged
 action:markScheduledExternalHuddleHighlightPlayed
 action:markSfdcActivityComplete
+action:markSingerHandoffDraftApplied
 action:markSlackbotThreadsUnread
 action:markSlackbotThreadUnread
 action:markStreamingAnimationFinished
@@ -2897,6 +2900,7 @@ action:startSessionTimeoutCheck
 action:startVideoPreview
 action:startWikiFactFlag
 action:startWikiIndex
+action:startWikiIndexMore
 action:stashAttachedDraft
 action:stashComposerDraft
 action:stateChanged
@@ -3445,6 +3449,7 @@ fetcher:callRequestToJoinWorkspace
 fetcher:callSendEmailToPending
 fetcher:callThreadsShareThread
 fetcher:callUpdateChannelEmailWithChannelId
+fetcher:cancelAppSubmission
 fetcher:chatBulkDeleteApi
 fetcher:chatCommandApi
 fetcher:chatDeleteApi
@@ -3533,6 +3538,7 @@ fetcher:fetchAppPermissionsUser
 fetcher:fetchAppRevokeUser
 fetcher:fetchAppsByIds
 fetcher:fetchAppSearchUsers
+fetcher:fetchAppSubmissionInfoByAppId
 fetcher:fetchAppUninstall
 fetcher:fetchAppWildcardDisable
 fetcher:fetchAppWildcardEnable
@@ -4037,6 +4043,7 @@ thunk:applyRawDetailViewToViewSet
 thunk:applySidebarAutoCollapsedForSecondary
 thunk:applySidebarAutoCollapseOverridden
 thunk:applySidebarCollapsedForBigModeTab
+thunk:applySingerHandoffDraft
 thunk:applySingerResponseDraft
 thunk:applyTaskTrackingBundleToList
 thunk:applyTodoFilterPrefChange
@@ -4418,7 +4425,9 @@ thunk:completeAllTodos
 thunk:completeAskSlackbotNux
 thunk:completedMessageAction
 thunk:completeJoinerFlow
+thunk:completePocketGuideTask
 thunk:completeSegmentationForGoldenGateSizzleReel
+thunk:completeSegmentationLoadingForReorderStp
 thunk:completeSetupFlow
 thunk:completeSlackCrmOnboardingRunResearchSkill
 thunk:completeSlackCrmOnboardingSplash
@@ -4596,7 +4605,6 @@ thunk:deleteChannelEmailAddress
 thunk:deleteChannelSection
 thunk:deleteColumn
 thunk:deleteCurrentChannelTab
-thunk:deleteCustomPromptWithUndo
 thunk:deleteDatasource
 thunk:deleteDomainVerification
 thunk:deleteDraftFile
@@ -4717,6 +4725,7 @@ thunk:enableFullscreen
 thunk:enableNativeChannelExpert
 thunk:enableRestrictedSharingSetting
 thunk:endExternalHuddleForAll
+thunk:endJpPocketGuideV2Flow
 thunk:endQuerySession
 thunk:endSearchSession
 thunk:enqueueAiStepWorkflowStartedToast
@@ -4869,6 +4878,7 @@ thunk:fetchAndUpsertAgentThreads
 thunk:fetchAndUpsertAllBlockedEmails
 thunk:fetchAndUpsertAppInfoById
 thunk:fetchAndUpsertApps
+thunk:fetchAndUpsertAppSubmissionInfoById
 thunk:fetchAndUpsertBetaAppInfoById
 thunk:fetchAndUpsertCalendarPrefs
 thunk:fetchAndUpsertCanHuddleChannelPref
@@ -5413,6 +5423,7 @@ thunk:goForwardInWindow
 thunk:goForwardInWindowHistory
 thunk:goldenGateBizPlusTrialMaybeLogExposure
 thunk:goToAiApp
+thunk:goToNextJpPocketGuideV2FlowStep
 thunk:goToNextPage
 thunk:goToNextSetupPageStep
 thunk:goToPage
@@ -6239,6 +6250,7 @@ thunk:observeChannelNominationNavigation
 thunk:offerCaptureAfterGmailSignIn
 thunk:onAddMessages
 thunk:onBadgeCountsUpdated
+thunk:onboardingAppsAiBelowCalendarMaybeLogExposure
 thunk:onboardJoinersWithSlackbotBigmodeMaybeLogExposure
 thunk:onboardJoinersWithSlackbotMaybeLogExposure
 thunk:onBootCompleteAfterReconnect
@@ -6584,6 +6596,7 @@ thunk:openJourneyLaunchModalHandler
 thunk:openJpPocketGuideEmailTemplateModal
 thunk:openJpPocketGuideInviteTeamModal
 thunk:openJpPocketGuidePopover
+thunk:openJpPocketGuideV2FlowView
 thunk:openLaterCustomModal
 thunk:openLaterRemoveModal
 thunk:openLazyModal
@@ -7072,6 +7085,7 @@ thunk:refreshWritableCalendarSignal
 thunk:regenerateSearchSummary
 thunk:registerSlackbotMiniShortcutHandler
 thunk:relatchCompanionLaunchContextOnReuse
+thunk:releaseFlowHold
 thunk:releaseSlackbotModeSwitchHint
 thunk:reloadIfSessionIsExpiring
 thunk:reloadSlackConnectMessageInputInviterBannerOnInviteeJoin
@@ -7194,6 +7208,7 @@ thunk:requestAgentSunroofApps
 thunk:requestCatchUpExpandOnArrival
 thunk:requestDownmarketCrmLicense
 thunk:requestExternalGuestMediaAccess
+thunk:requestFlowNotification
 thunk:requestHistoryInDegradedMode
 thunk:requestNavigationHistoryPrefetchOnNavigate
 thunk:requestOfflineCounts
@@ -7720,6 +7735,7 @@ thunk:showContentPastedToast
 thunk:showContextualHelpForSectionNavigation
 thunk:showCreateEditRoleSuccessToast
 thunk:showCreateWorkflowFromTemplate
+thunk:showCurrentFlowStep
 thunk:showCustomToast
 thunk:showDesktopDownloadHandler
 thunk:showDesktopNotificationForSlackSystemAlert
@@ -7857,6 +7873,7 @@ thunk:startHuddleWithConfirmation
 thunk:startHuddleWithShoutyRooster
 thunk:startImByMemberId
 thunk:startInternalFeedbackWorkflow
+thunk:startJpPocketGuideV2Flow
 thunk:startLiveVoiceWithSpeedBump
 thunk:startLoading
 thunk:startManualElevateMigration
