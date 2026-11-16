@@ -157,6 +157,7 @@
  to keep working with external organizations.
  to learn exactly which functions took the longest to execute.
  to see exactly what functions took the longest to execute.
+ to share files from here, or copy the link to your file to share it in Slack.
  to unmute your microphone.
  turned off automatic AI huddle notes in this channel. Manage this setting in Channel Settings.
  turned on automatic AI huddle notes in this channel. Manage this setting in Channel Settings.
@@ -867,6 +868,8 @@ A step that has been added to a workflow from a 3rd party connector.
 A style must have a core reference
 A task was completed
 A teammate is already scanning Slack \u2014 hang tight!
+A thumbs-down on a wiki line was answered or failed
+A thumbs-down on a wiki line was sent: a read begun before it lands nothing until its answer
 A to Z
 A valid 6 character hex code is required, like `FF0000`.
 A valid channel name is required.
@@ -1928,6 +1931,7 @@ Add files and tools
 Add files as link in draft
 Add files for the AI to reference. Links in added files will not be crawled.
 Add files from your workspace and any connected sources for AI to reference.
+Add files from {connector_name}
 Add files, lists, channels, or canvases Slackbot can reference in this project.
 Add filter
 Add filters to be used in next rendered browser instance
@@ -3708,6 +3712,7 @@ Ask whoever shared this huddle with you for a new link.
 Ask whoever shared this huddle with you for another way to join.
 Ask why the user left the agentic IA in the IA4 client footer of this workspace ID (set by Switch back to IA4)
 Ask your Salesforce admin to assign this user the Slack Access permission set.
+Ask your admin to enable 
 Ask your owner to renew
 Ask your team to upgrade your plan
 Ask your workspace owner to enable AI search
@@ -13863,6 +13868,7 @@ Get {discountPercent}% Off Slack {plan}
 Get {discountPercent}% off 3 months
 Get {discountPercent}% off Business+
 Get {discountPercent}% off Pro
+Get {discountPercent}% off Slack Business+ on your first {discountDuration, plural, =1 {month} other {# months}}.
 Get {discountPercent}% off Slack Pro
 Get {discountPercent}% off Slack {plan} on your first {discountDuration, plural, =1 {month} other {# months}}.
 Get {discountPercent}% off all plans
@@ -30073,6 +30079,7 @@ Share file with channel?
 Share file: {fileTitle}
 Share file\u2026
 Share files
+Share files from {connector_name}
 Share folder
 Share in a message
 Share in huddle
@@ -33451,6 +33458,7 @@ The template can\u2019t be used because templates are not yet available for this
 The template still works, though, so click the button if you want to use it!
 The template you selected will be used to create a channel. Give it a name your teammates will recognize.
 The text formatting toolbar won\u2019t show in the composer.
+The text of this page is being written. The lines below are already here.
 The thread will still be visible
 The timestamp of the last time something was starred
 The tools couldn\u2019t be loaded from this server. Check that it\u2019s reachable.
@@ -34346,6 +34354,7 @@ This setting isn\u2019t available to you.
 This setting only changes the island. Slack notifications, sounds, badges and unread counts stay the same.
 This sheet is too large to preview.
 This sheet will be automatically generated from the values below.
+This shortcut is no longer available. To share files from {connector_name}, copy the link to the file, then paste it into your message in Slack.
 This shortcut is reserved by the system. Try a different one.
 This should not happen: Alias anchor was not resolved?
 This should only take a moment.
@@ -34748,6 +34757,7 @@ To send marketing emails and other communications; and
 To send service emails and other communications;
 To send this invite with Slack Connect and start working securely with external people, upgrade to Slack Pro. You\u2019ll be able to invite people with Slack Connect right away.
 To set your notifications for this channel, you\u2019ll need to enable desktop notifications first.
+To share files from {connector_name}, copy the link to the file, then paste it into your message in Slack.
 To share information with others including law enforcement and to respond to legal requests;
 To share this prompt, add a space before the slash \u201C/\u201D.
 To show your contacts, we need access to all group and user info from your Google account. Please try again.
@@ -38993,6 +39003,7 @@ Writing device selection history to local storage
 Writing stuff\u2026
 Writing two answers. You can choose once both are done.
 Writing\u2026
+Written text is paused for today. The lines are still here.
 Wyoming
 X Outlines
 XML
@@ -48439,6 +48450,7 @@ zzz
 {numberUnreads} new replies
 {numberUnreads} new {numberUnreads, plural, =1 {reply} other {replies}}
 {numberUnreads} new {numberUnreads, plural, =1 {reply} other {replies}}, show thread
+{number}, line: {line}
 {num} characters maximum
 {objectLabel} configuration was added
 {objectLabel} is outside the Objects setting above.
@@ -48517,6 +48529,7 @@ zzz
 {productName} previews will open in Slack. You can always change this setting in this menu.
 {productName} previews will open in your browser. You can always change this setting in this menu.
 {productName} renews in {numDays, plural, =1 {# day} other {# days}}
+{promoDaysRemaining, plural, =1 {# day} other {# days}} left on your Business+ offer
 {prompt} \u2014 Connect to try
 {providerName} account used
 {providerName} account used for this step
