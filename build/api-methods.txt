@@ -479,6 +479,7 @@ chat.command
 chat.delete
 chat.deleteAttachment
 chat.deleteBulkJoinLeave
+chat.moveMessageToThread
 chat.postMessage
 chat.refreshUnfurl
 chat.removeFile
@@ -594,6 +595,7 @@ conversations.join
 conversations.joinConnectedShared
 conversations.joinPendingShared
 conversations.joinRequests.approve
+conversations.joinRequests.deny
 conversations.joinRequests.list
 conversations.kick
 conversations.leave
@@ -601,7 +603,9 @@ conversations.leave.recommendations
 conversations.list
 conversations.listPrefs
 conversations.mark
+conversations.mark.cursor_out_of_date
 conversations.meetingnotes.getLock
+conversations.meetingnotes.unlock
 conversations.members
 conversations.moveTab
 conversations.open
@@ -1040,8 +1044,12 @@ megaphone.executeEvent
 megaphone.journeys.dismiss
 megaphone.notifications.list
 megaphone.setNotificationAsSeen
+megaphone.visualizer.journeys.enroll
+megaphone.visualizer.journeys.exit
 megaphone.visualizer.journeys.get
+megaphone.visualizer.journeys.jump
 megaphone.visualizer.journeys.list
+megaphone.visualizer.journeys.status
 megaphone.visualizer.notifications.get
 megaphone.visualizer.spaces.get
 messages.list

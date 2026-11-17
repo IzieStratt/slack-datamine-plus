@@ -247,6 +247,7 @@ channels.prefs.set: channel_id, prefs
 chat.action: bot, payload
 chat.attachmentSuggestion: app_id, payload, service_id
 chat.deleteBulkJoinLeave: channel_id, first_message_ts, last_message_ts
+chat.moveMessageToThread: channel, thread_ts, ts
 chat.postMessage: blocks, channel, text
 chat.refreshUnfurl: channel, entity_id, ts
 chat.removeFile: channel, file, ts
@@ -279,7 +280,6 @@ client.codeChannels.setPullRequestState: channel_id, comment, pr_url, state
 client.codeChannels.setReviewThreadResolved: channel_id, is_resolved, pr_url, thread_node_id
 client.codeChannels.submitReview: channel_id, event, pr_url, revision, text
 client.counts: _x_reason, channel_ids, include_all_unreads, include_file_channels, org_wide_aware, thread_counts_by_channel
-client.init: _x_reason, include_relevant_onboarding
 client.tbd.codeChannels.open: purpose
 client.tbd.facts.flag: action, fact_id, note
 client.tbd.facts.forMarking: cursor, limit
@@ -322,7 +322,6 @@ conversations.inviteShared: channel, external_limited, tracking_id
 conversations.join: channel, request_in_background
 conversations.joinConnectedShared: invite_id, sig
 conversations.joinPendingShared: invite_id, sig
-conversations.joinRequests.approve: channel_id, request_id
 conversations.joinRequests.list: channel_id, cursor
 conversations.kick: channel, user
 conversations.leave.recommendations: max_ts
@@ -331,6 +330,7 @@ conversations.list: exclude_archived, limit, types
 conversations.listPrefs: channel
 conversations.mark: channel, reason, ts
 conversations.meetingnotes.getLock: channel
+conversations.meetingnotes.unlock: channel
 conversations.members: channel, limit
 conversations.permissions.accountTypes.list: channel_id, permissions
 conversations.permissions.accountTypes.set: account_type, channel_id, permissions
@@ -348,8 +348,8 @@ conversations.sharedInviteAcceptanceEligibility: team_id
 conversations.sharedInviteInfo: context, sig
 conversations.sharedInviteLinkCopied: invite_id
 conversations.teamConnections: channel
-conversations.unarchive: channel
-conversations.updateDefaultState: channel_id, set_as_default
+conversations.unarchive: channel, name
+conversations.updateDefaultState: channel_id, hash, set_as_default, terms, type
 conversations.updateTab: channel_id, data, id, label
 conversations.validateName: name, team_id
 conversations.view: channel
@@ -614,10 +614,8 @@ quip.history.getVersions: file_id, limit, newest_created_usec, oldest_created_us
 quip.history.restoreVersion: file_id, sequence, version_id
 quip.lookupFileId: quip_thread_id
 quip.lookupThreadIds: file_ids
-quip.thread.archive: channel_id, thread_ts
 quip.thread.mark: channel_id, mark_unread, thread_ts, ts
 quip.thread.synchronize: channel_id, thread_ts
-quip.thread.unarchive: channel_id, thread_ts
 quip.unfurl: acknowledged_private_share, file_id, url
 quip.updateRootComment: content_snippet, file_id, is_source_deleted, thread_id
 reactions.get: full
@@ -742,6 +740,7 @@ sfdc.getRelatedListRecords: page_size, parent_record_id, related_list_id, salesf
 sfdc.getRelatedLists: parent_object_api_name, record_type_id, salesforce_org_id
 sfdc.getReportAggregatesMetadata: report_ids, salesforce_org_id
 sfdc.integration.admin.listMembers: auth_status, cursor, salesforce_org_id
+sfdc.integration.admin.syncConnectionUpdate: request_id, request_type, salesforce_org_id, status
 sfdc.integration.auth.loginUrl: salesforce_org_id
 sfdc.integration.authUser: force_reauth, salesforce_org_id
 sfdc.integration.disconnectUser: salesforce_org_id
@@ -848,7 +847,7 @@ tractorChannelSetupTour.addResources: channel_id, file_ids
 transcripts.feedback: additional_feedback, file_id, rating, reasons
 unread.collapse: channel
 unread.expand: channel
-unread.markRead: markers, name
+unread.markRead: markers
 userAlerts.ack: alert_type
 usergroups.create: name, team_id
 usergroups.search: count, cursor_mark, include_disabled, include_hidden, keyword, search_only_team, sort, sort_dir

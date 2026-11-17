@@ -24,7 +24,6 @@ add_builtin_by_reference: on
 add_emoji_name_space_to_dash: on
 admin_advisor_non_grid: on
 admin_browser_deprecation_warning_october_2026_second_refresh: on
-admin_email_verification_v0: on
 admin_menu_saml_sso_paywall_non_purchasers: control, treatment
 admin_needs_review_redesign: on
 admin_slack_dm_nudge: on
@@ -36,7 +35,6 @@ af_slackbot_connector: on
 agent_about_page: on
 agent_auto_thread_opening: on
 agent_badge: on
-agent_browser_recent_agents: on
 agent_channel_header: on
 agent_channel_thread_naming: on
 agent_channel_welcome: on
@@ -56,7 +54,7 @@ agent_peek_view: on
 agent_prevent_fake_thread_roots: on
 agent_private_mention: on
 agent_profiles: on
-agent_sessions_in_home: on
+agent_sessions_pr_synth: on
 agent_sessions_synth_view: on
 agent_status_in_activity: on
 agent_streaming_slimmer_task_cards: on
@@ -92,9 +90,11 @@ agentic_ia_sidebar_filter: bottom_synth, top_list
 agentic_ia_slackbot_jellyfish: on
 agentic_ia_slackbot_rev2: on
 agentic_ia_slackbot_sessions_in_slackbot: on
+agentic_ia_slackbot_split_label: on
 agentic_ia_todos_split_view: on
 agentic_ia_todos_split_view_overview_tab: on
 agentic_ia_translations: on
+agentic_ia_visual_refresh: on
 agentic_ia_you_page: on
 agents_dms_header_status: on
 agents_in_canvas_interaction: on
@@ -151,6 +151,7 @@ app_update_button_mcp_connect: on
 appapprovals_activation_metrics_logging: on
 approvals_in_todos: on
 apps_connection_status: on
+apps_connection_status_unfinished_connect_translations: on
 apps_store_isolate_other_org_installs: on
 aria_application_usage: on
 ask_agentforce_i18n: on
@@ -173,6 +174,7 @@ beacon_timing_client_sampling: on
 biz_plus_trial_pocket_guide_slackcrm: on
 biz_plus_upgrade_pocket_guide_v2: control, treatment
 biz_trial_translations: on
+bk_disable_undispatchable_elements: on
 bk_page_block: on
 bk_prototype_next: on
 bk_refresh_checkbox_parent: on
@@ -292,6 +294,7 @@ channel_join_banner_new_strings: on
 channel_join_experience_with_agents: on
 channel_knowledge_canvas: on
 channel_resources_remove_tabs: on
+channel_retention_changed_rtm: on
 channel_retention_warning_banner: on
 channel_tab_overflow_right_click: treatment
 channel_tabs_peek_open_clog: on
@@ -328,12 +331,8 @@ code_channels_pr_comment_mentions: on
 code_channels_pr_files_viewed: on
 code_channels_pr_link_tabs: on
 code_channels_pr_state_picker: on
-code_channels_required_checks_status: on
-code_channels_sidebar_peeks: on
-code_channels_sidebar_polish: on
 code_diff_comments: on
 code_interpreter: on
-code_review_request_unlinked_reviewers: on
 code_review_requested_in_activity: on
 cold_channel_history_prefetch
 composer_control_simplification_expansion: on
@@ -450,6 +449,7 @@ fe_nav_first_apply_post_processing_rules: treatment
 fe_noise_metrics_logging: on
 fe_notification_clogging: on
 fe_notifications_read_state: on
+fe_offline_persistence_marking: on
 fe_private_public_channel_management: on
 fe_private_to_public_slack_connect_and_visual_updates: on
 fe_read_mark_integrity: on
@@ -457,6 +457,7 @@ fe_recover_missing_exact_jump_target: on
 fe_salesforce_echo_frecency_rank: treatment
 fe_salesforce_echo_hide_inactive: treatment
 fe_system_messages_redesign_m2: on
+fe_unread_counts_recount_fixes: on
 feat_agent_sessions: on
 feat_agents_dms: on
 feat_flag_message_hide_replies: on
@@ -505,6 +506,7 @@ gantry_manage_quip_organizations_v2: on
 gantry_manage_salesforce_mcp_servers: on
 gantry_manage_salesforce_organizations: on
 gantry_manage_security_settings: on
+gantry_manage_sso_authentication: on
 gcal_shared_dwa: on
 gdrive_legacy_picker_to_unipicker: on
 generic_system_user_alert: on
@@ -584,6 +586,7 @@ huddles_screen_picker_app_groups: on
 huddles_screenshare_permission_refresh: on
 huddles_screenshare_popout: on
 huddles_screenshare_share_audio: on
+huddles_self_view_hidden_announcement: on
 huddles_sending_audio_recovery: on
 huddles_serial_guard_settle_superseded: on
 huddles_share_button_glow: on
@@ -623,12 +626,13 @@ joiner_mobile_task_fix_v2_translation: on
 jp_creator_pocket_guide_v2: control, treatment
 jp_pocket_guide_copy_template: on
 jp_pocket_guide_megaphone_loop_fix: on
-jp_segmentation_questions: control
 keyboard_shortcuts_search: on
 knock_to_enter: on
 language_cycler: on
 later_todos: on
 later_todos_translations: on
+lato_v3_hinted_fonts: treatment
+legal_holds_standalone_workspace: on
 leverage_channel_creation_for_paid_plan_activation: control, treatment
 leverage_channel_creation_for_paid_plan_activation_translations: on
 light_read_who_can_dm_anyone_pref_migration: on
@@ -714,6 +718,7 @@ ml_autocomplete_top_users_by_name: treatment
 mobile_awareness_team_menu_entrypoint_link_update: control, treatment
 mobile_browser_file_links_bug_fix: on
 move_channel_tabs_settings: on
+move_message_to_thread: on
 mpdm_bring_custom_name_to_private_modal: on
 mpdm_default_exclude_history_clients_webapp: on
 mpdm_naming: on
@@ -726,7 +731,6 @@ native_html_rendering: on
 native_markdown_rendering: on
 native_sensitivity_labels: on
 native_workspace_icon: on
-ncea_allow_channel_managers_to_lock_configuration: on
 ncea_allow_external_channels: on
 ncea_allow_only_external_channel_usage: on
 ncea_custom_prompt_instructions: on
@@ -806,6 +810,7 @@ programmable_sidebar_dm_history: on
 programmable_sidebar_focused_everything: on
 programmable_sidebar_prio_tuning: on
 programmable_sidebar_quick_read: on
+programmable_sidebar_recents_rollup: on
 programmable_sidebar_strings: on
 programmable_sidebar_switcher_heading: on
 programmable_sidebar_thread_cc_peeks: on
@@ -831,6 +836,7 @@ request_to_purchase_v2_upvote: control, treatment
 require_verified_email_for_invites: on
 resources_channel_tab: on
 respect_member_workspace_huddle_prefs: on
+restrict_canvas_list_creation_admin_setting: on
 restructure_ai_feedback_modal: on
 revamp_agent_app_hover_card: on
 revamp_agent_app_profile: on
@@ -915,7 +921,6 @@ session_channels_summary: on
 session_channels_unfurls_redesign: on
 setup_slackbot_task_joiners: control
 sfdc_activity_timeline_date_filter: on
-sfdc_activity_timeline_glowup: on
 sfdc_record_slackbot_ai_deeplink: on
 sfdc_sales_home_user_config_workflow_support: on
 sfdc_seamless_auth_govcloud: on
@@ -958,6 +963,7 @@ slack6_cmdk_thread_recents: on
 slack6_search_find_in_channel_popover: on
 slack6_search_input_footer: on
 slack6_search_split_results: on
+slack6_search_srp_polish: on
 slack6_search_switcher_over_sidebar: on
 slack6_todo_badging: on
 slack_ai_file_summaries: on
@@ -1122,6 +1128,7 @@ slackbot_surface_share_dialog: on
 slackbot_surface_sources: on
 slackbot_thread_conversion: on
 slackbot_transcribe_chunking: on
+slackbot_unread_i18n: on
 slackbot_unread_v2: on
 slackbot_zero_state_next: on
 slackcrm_onboarding_translations: on
@@ -1270,11 +1277,12 @@ trial_improvements: on
 troops_wfb_send_summary_to_my_sales_home: on
 truncated_url_hover_card: on
 tsf_snitch: on
-uad_workspace_user_groups: on
 uam_admin_advisor: on
 unarchive_channel_banner_polish: on
 unfurl_skeletons: on
+unfurl_skeletons_grow: on
 unified_file_picker: on
+unified_file_picker_media: on
 unified_files_3p_primary_custom_sections: on
 unified_files_badge_tab: on
 unified_files_photo_video_gallery: treatment
@@ -1297,7 +1305,6 @@ views_submit_increased_timeout: on
 vip_section_pref: on
 visits_changed_client: on
 visits_lazy_refetch: on
-web_conversations_mark_reason_arg: on
 web_identity_links: treatment
 wfb2_activitylogs_expired_notice: on
 wfb2_activitylogs_in_product_feedback_link_to_feedback_channel: on
@@ -1318,6 +1325,7 @@ wfb_agent_tasks_recent_prompts: on
 wfb_agents_can_create_simple_automations_improved_tab: on
 wfb_agents_can_create_simple_automations_tab_ms3: on
 wfb_agents_can_create_simple_event_triggered_automations: on
+wfb_ai_answer_fail_on_unavailable_mcp: on
 wfb_ai_disable_trigger_variables: on
 wfb_ai_enable_webhook_triggers: on
 wfb_ai_mcp_tools_knowledge_source: on
@@ -1331,6 +1339,7 @@ wfb_ai_step_nux: on
 wfb_ai_step_private_channel_access_on_off: on
 wfb_ai_step_prompt_writer: on
 wfb_ai_step_translations: on
+wfb_ai_test_run_mcp_tester_creds: on
 wfb_ambient_agent: on
 wfb_ambient_agent_cost_optimizations: on
 wfb_auto_hitl: on
@@ -1369,6 +1378,7 @@ wfb_scheduled_trigger_time_buckets: on
 wfb_segment_explain_error_button: on
 wfb_send_slackbot_prompt_handback: on
 wfb_sf_channel_data_warning: on
+wfb_sf_channel_restriction_hint: on
 wfb_sf_event_trigger_undo_unpublished_changes: on
 wfb_single_fire_emoji_reaction_trigger: on
 wfb_start_huddle_step: on
