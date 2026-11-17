@@ -174,7 +174,6 @@ apps.actions.run: action_id, app_id, channel, client_token, message_ts, type
 apps.actions.v2.execute: action_id, app_id, client_token, context, team_id
 apps.actions.v2.list: action_type, resource_id, resource_type
 apps.activities.list: app_id, component_id, trace_id
-apps.approvals.requestedApps.list: stages
 apps.approvals.requests.create: reason
 apps.auth.external.authMapping.update: app_id, external_token_id, mapping_owner_type, provider_key, workflow_id
 apps.auth.external.delete: external_token_id
@@ -246,6 +245,7 @@ channels.prefs.get: channel_id, pref_name
 channels.prefs.set: channel_id, prefs
 chat.action: bot, payload
 chat.attachmentSuggestion: app_id, payload, service_id
+chat.delete: channel, ts
 chat.deleteBulkJoinLeave: channel_id, first_message_ts, last_message_ts
 chat.moveMessageToThread: channel, thread_ts, ts
 chat.postMessage: blocks, channel, text
@@ -285,7 +285,8 @@ client.tbd.facts.flag: action, fact_id, note
 client.tbd.facts.forMarking: cursor, limit
 client.tbd.facts.list: channel_id, message_ts, with_links
 client.tbd.facts.mark: fact_id, mark, note, source_id
-client.tbd.wiki.list: cursor, limit
+client.tbd.wiki.find: limit, name
+client.tbd.wiki.list: cursor, kind, limit, per_kind
 client.tbd.wiki.read: page_id
 client.tbd.wiki.unjoin: other_id, page_id
 connectInvites.list: channel, direction, include_invite_requests, invite_ids, invite_types, limit, only_pending_invites
@@ -877,7 +878,7 @@ users.consent.remove: app_id, scopes
 users.customStatus.deleteScheduled: custom_status_id
 users.customStatus.schedule: custom_status_id, date_expire, date_scheduled, duration, emoji, is_dnd, ooo_message, text, text_canonical
 users.delegates.list: role
-users.info: custom_fields_mode, self, team, users
+users.info: custom_fields_mode, self, team, user, users
 users.inviteRequests.create: channels, requests, restricted, source, team_id, ultra_restricted
 users.list: limit
 users.listOutgoingInvites: limit
