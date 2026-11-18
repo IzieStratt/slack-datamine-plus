@@ -45,6 +45,7 @@ Accept Slack Connect invites
 Accept an invitation
 Accepting Slack Connect invites
 Access
+Access AI Assistant
 Access Type
 Access type
 Access {appName}’s AI Assistant with one click
@@ -53,11 +54,11 @@ Account Types
 Account type permission table
 Actions for {channelName}
 Actions taken
-Activate
 Activate account
 Activate as a Frontline Member
 Activate as a Multi-Channel Guest
 Activate as a Single-Channel Guest
+Activate rule
 Activation requested
 Active people in your organization
 Active people in your workspace
@@ -192,6 +193,7 @@ Anyone who requested this app will get a Slackbot message with this information.
 Anyone will be able to add replies to messages posted in this channel.
 Anyone with @{emailDomain} can join
 App ID
+App Install
 App Managers via Slackbot message
 App access
 App activity metrics (aggregated only)
@@ -211,8 +213,11 @@ AppleScript
 Approval required
 Approvals are not required for invitations less than 24 hours old.
 Approvals never required for channel invitations
+Approve Connector
 Approve Install
+Approve Update
 Approve an app for anyone to install
+Approve installing {appName}?
 Approve invitation request?
 Approve request
 Approve request?
@@ -220,6 +225,7 @@ Approved by automation
 Approved by your admin
 Approved to send
 Approving invitation requests
+Approving…
 Apps Analytics Table
 Apps built on the next-gen platform.
 Apps can’t have more than {num} actions
@@ -347,7 +353,6 @@ Choose a server
 Choose a workspace
 Choose access
 Choose account type
-Choose how work object previews will appear for members.
 Choose member access
 Choose servers
 Choose specific channels
@@ -458,7 +463,6 @@ Deactivate your account and disable <b>{app_count, plural, =1 {# app} other {# a
 Deactivate {memberCount, plural, =1 {Member} other {Members}}
 Deactivate {real_name}'s account?
 Deactivation requested
-Default channels: {channels}
 Default for future workspaces
 Default member access
 Default tool access
@@ -476,6 +480,7 @@ Denied, not sent
 Deny invitation request?
 Deny request
 Deny request?
+Deny {appName}
 Depending on the number of invitation requests, approvals may take some time.
 Depending on the number of invitation requests, denying may take some time.
 Depending on the number of invitations, revoking may take some time.
@@ -654,6 +659,7 @@ From {orgName} only
 Frontline members
 Generate a different password
 Generate a temporary password
+Generating CSV…
 Get a quick view of people from external orgs
 Get notified about new servers
 Get started on Slack
@@ -662,6 +668,7 @@ Get started with your Slack template
 Get the simplicity of Slack with the power of Salesforce. Enter the email you use for work to sign up for Slack CRM.
 Gherkin
 Give people a quick start to chatting with the agent. Keep them short and sweet.
+Give your rule a name
 Go
 Good to go
 Graph showing viewers by department
@@ -779,7 +786,6 @@ Last automation on
 Last message sent on
 Last used
 Last used on
-Launch Slack
 Launch {workspaceName}
 Learn how information is shared in your organization.
 Learn how information is shared in your workspace.
@@ -791,12 +797,14 @@ Learn more about managing apps
 Learn more about permissions
 Learn more about unfurl settings
 Let’s find your team
+Let’s get you set up
 Limit of {limit} addresses exceeded
 Limit of {limit} addresses exceeeded
 Limited access group updated
 Lisp
 Literate Haskell
 Loading channels…
+Loading permissions
 Log in with the app
 Looking for something?
 Looks like you belong to a few workspaces. To sign into one of these, you’ll need to download the app.
@@ -999,11 +1007,14 @@ Number of accepted invites
 Number of people using AI
 Number of people using feature
 OAuth Scopes
+OAuth Speedbump Complete
+OAuth Speedbump Installing
 OCaml
 OK 2
 OR SIGN IN WITH
 OR continue to existing workspaces
 OTHER OPTIONS
+Oauth Speedbump Start
 Oauth redirect URLs should not contain a fragment component (#)
 Objective-C
 On a paid plan, you can explore data on all public channels and members. You can also learn how your members are using apps, files, message reactions, and more.
@@ -1079,6 +1090,7 @@ Password
 Password reset forced
 Pause Access
 Pause access
+Pause rule
 Pay Balance Now
 Pending app requests
 People and groups
@@ -1161,6 +1173,7 @@ Remove Agent From Workspaces
 Remove Agent From {workspaceCount} Workspaces
 Remove All Domains
 Remove App
+Remove Automation Rule?
 Remove Policy
 Remove Slackbot access
 Remove default for future workspaces
@@ -1271,6 +1284,7 @@ Scopes requested
 Scopes resolved
 Search Confluence
 Search MCP servers by name
+Search Workspace
 Search any organization
 Search any workspace
 Search by channel name, etc.
@@ -1567,6 +1581,7 @@ They’ll need the new username to sign in next time. Make sure they know before
 This Salesforce connection doesn’t have permission to install this agent. Contact your Salesforce Admin to request additional permissions for your connection.
 This URL is not a valid MCP server endpoint.
 This URL is not available. Sorry!
+This action cannot be undone. Previous requests that were resolved by this rule will not be changed, but this rule will no longer be executed or available in the future.
 This agent is not found in Salesforce. Contact your Salesforce Admin to resolve the issue.
 This can’t be undone. Everyone who sent a request will be notified, but they can send new requests anytime.
 This can’t be undone. Ownership can only be transferred again if the new owner’s account has been deactivated.
@@ -1593,6 +1608,7 @@ This invitation may have been canceled. You may want to ask the person who sent 
 This is a shared channel.
 This is how people refer to this agent in Slack.
 This is just a preview — you haven’t been charged yet. When you move to Enterprise+, select apps already installed across your organization will automatically enable unless you take action below.
+This is just an example — no real data here!
 This is locked by the org and cannot be changed.
 This is required — you’ll need to enter an email.
 This is the agent name synced from Agentforce.
@@ -1673,6 +1689,7 @@ Unable to remove {count, plural, =1 {# member} other {# members}}
 Unable to revoke passkeys. Try again later.
 Unable to save changes to role.
 Unable to save setting. Try again later
+Unable to save setting. Try again later.
 Unable to send SSO binding email.
 Unable to sign {memberName} out of Slack.
 Unable to verify MCP server status. Please try again later.
@@ -1916,8 +1933,6 @@ in the last 7 days
 includes any of those in
 includes only those in
 is a connector step
-joined the huddle.
-left the huddle.
 members
 name@{example_com}
 of the following conditions are met:
@@ -1929,8 +1944,6 @@ rows
 scope_ratings
 sent by
 slack marketplace approved
-started screen sharing.
-stopped screen sharing.
 submenu
 submitted for approval
 team
@@ -1956,7 +1969,6 @@ you@{example_com}
 {appName} Organizations: {domain}
 {appName} Subdomain: {subdomain}
 {appName} has been removed from {count, plural, =1 {# workspace} other {# workspaces}}
-{appName} is approved for {targetName}
 {appName} is installing on {workspacesCount, plural, =1 {# workspace} other {# workspaces}}
 {appName} is not set as a default {appType} for new workspaces.
 {appName} is set as a default {appType} for new workspaces.

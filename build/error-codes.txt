@@ -12,6 +12,7 @@ additional_fields_error
 admin_oauth_not_complete
 admin_unavailable
 agent_actions_not_found
+agent_already_in_huddle
 agent_app_not_found
 agent_disabled
 agent_is_not_cka
@@ -42,10 +43,12 @@ app_edit_disabled
 app_error
 app_install_failure
 app_management_app_not_installed_on_org
+app_missing_scope
 app_not_available_in_channel
 app_not_eligible_for_auto_install
 app_not_found
 app_not_installed
+app_not_subscribed
 app_not_supported
 app_restricted_by_admin
 app_restricted_org_wide
@@ -134,6 +137,7 @@ channel_not_eligible
 channel_not_enabled
 channel_not_found
 channel_not_org_wide_shared
+channel_not_supported
 channel_posting_permissions_failed
 channel_shared_with_nonapproved_team
 channel_skill_limit_reached
@@ -143,6 +147,7 @@ channels_not_from_same_external_workspace
 checklist_add_items_disabled
 checklist_invalid_item_text
 checklist_item_limit_reached
+checklist_remove_items_disabled
 cka_agent_app_cleanup_error
 cka_already_exists
 cka_install_failure
@@ -266,6 +271,7 @@ error_bad_name_i18n
 error_bad_upload
 error_bad_wide
 error_connecting_to_salesforce
+error_fetching_activities
 error_fetching_permissions
 error_fetching_tasks
 error_invalid_alias
@@ -392,6 +398,7 @@ generic
 giphy_no_match
 github_api_error
 github_connector_not_available
+github_installation_not_approved
 github_insufficient_scope
 github_not_authenticated
 github_rate_limited
@@ -418,7 +425,9 @@ has_already_connected_to_org
 head_changed
 hidden_by_limit
 host_unresolvable
+huddle_at_max_participants
 huddle_channels_not_enabled
+huddle_ended
 huddle_not_found
 identity_config_not_allowed
 identity_links_disabled
@@ -584,6 +593,7 @@ invalid_view_metadata
 invalid_workflow
 invalid_workflow_auth_strategy
 invalid_workflow_id
+invite_already_pending
 invite_already_used
 invite_failed
 invite_from_same_org
@@ -761,6 +771,7 @@ not_enabled
 not_found
 not_implemented
 not_in_channel
+not_in_huddle
 not_in_team
 not_in_workspace
 not_opted_into_overages
@@ -910,6 +921,7 @@ salesforce_organization_name_not_found
 salesforce_rate_limited
 salesforce_timeout
 save_email_to_record_failed
+saved_not_found
 schedule_hudding_in_past
 scheduled_draft_cannot_be_attached
 scheduled_draft_cannot_have_quote
@@ -1001,6 +1013,7 @@ today_focus_rate_limited
 token_delegated_error
 token_not_found
 too_large
+too_many_agents
 too_many_attachments
 too_many_bookmarks
 too_many_channels
