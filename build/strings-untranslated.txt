@@ -188,7 +188,6 @@ Allowed workspaces
 Allows an app to read 1 on 1 or group chat threads, on behalf of the signed-in user
 Allows an app to read a channel’s messages in Microsoft Teams, on behalf of the signed-in user
 Allows the app to read the profile of signed-in users. It also allows the app to read basic company information of signed-in users
-Already approved
 Already assigned
 Already using Slack?
 Also reset password
@@ -203,6 +202,7 @@ Any translation
 Anyone who requested this app will get a Slackbot message with this information.
 Anyone will be able to add replies to messages posted in this channel.
 Anyone with @{emailDomain} can join
+Anyone with view or edit access to a canvas can print it.
 App ID
 App Install
 App Managers via Slackbot message
@@ -224,7 +224,6 @@ AppleScript
 Approval required
 Approvals are not required for invitations less than 24 hours old.
 Approvals never required for channel invitations
-Approve an app
 Approve an app for anyone to install
 Approve invitation request?
 Approve request
@@ -253,9 +252,7 @@ Assign Organizations Wide Role
 Assign role
 Audio clip plays
 Audio clips created
-Authenticate
 Authenticate another way
-Authenticate {teamName}
 Authorization
 Auto
 Automatic acceptance
@@ -423,6 +420,7 @@ Continue With Email
 Continue With Google
 Continue With Microsoft
 Continue to new workspace
+Continue with Apple
 Continue your installation from the Slack Marketplace
 Control which IP addresses or ranges can access your organization in Slack. Only approved IPs will be able to connect.
 Convert account to a Guest and disable <b>{app_count, plural, =1 {# app} other {# apps and integrations}}.</b>
@@ -460,6 +458,7 @@ Counted when a person uses the natural language input or suggested prompts in Wo
 Create Another Workspace
 Create New Salesforce Org
 Create Workspace
+Create a User Group
 Create a Workspace
 Create a new Slack workspace
 Create a rule
@@ -537,7 +536,6 @@ Didn’t use the paid features
 Diff
 Directly to everyone who can manage Slack Connect
 Disable 2FA
-Disable canvas update messages
 Disable two-factor authentication
 Disable two-factor authentication?
 Disabling Member Overrides will remove all overrides currently in place on DMs, MPDMs and channels. When disabled they will default to the Org wide policy (or Workspace policy). Verify the customer has been informed and the appropriate actions have been taken. The customer can run a channel audit export to review all current member overrides.
@@ -582,6 +580,7 @@ Edit update records
 Edit who can use this server
 Edit workspaces
 Email Domains
+Email address (Sign in with Apple)
 Email address created by
 Email address to send instructions
 Email domain verification
@@ -649,7 +648,6 @@ External People
 External access blocked 
 External approval status
 External domains apply when rendering HTML in emails. By default, external content can be loaded from all domains.
-External people can use workflows created by your organization
 External people using workflows created by {orgName}
 External person
 F#
@@ -779,7 +777,6 @@ In workspace
 Included in bill
 Includes external people, guests, and your coworkers
 Information {appName} can view
-Install an app
 Installation
 Installed Agents
 Installed on
@@ -861,7 +858,6 @@ Learn more about unfurl settings
 Let’s find your team
 Limit of {limit} addresses exceeded
 Limit of {limit} addresses exceeeded
-Limit sharing so only canvas owners can share their canvases with other people and channels.
 Limited access group updated
 Lisp
 List Retention
@@ -942,7 +938,6 @@ Member profile
 Members can only view lists. They can not create new lists.
 Members couldn’t be added.
 Members filter
-Members from your organization can use workflows created by external organizations
 Members of selected workspaces will no longer have access to this server.
 Members of these workspaces will no longer have access to this {appType}. Org admins and owners will be notified that this {appType} will be removed.
 Members that could not be removed
@@ -1049,7 +1044,6 @@ No groups have been selected
 No groups or people are selected
 No items matched {query}
 No longer need Slack
-No longer requested
 No matching requests
 No matching requests found.
 No members yet
@@ -1064,6 +1058,7 @@ No requests at the moment
 No sent invitations at the moment
 No servers available
 No servers connected
+No user groups yet
 No workspaces
 No workspaces added
 No workspaces matching {query} were found
@@ -1158,6 +1153,7 @@ Org-wide channel data not available yet
 Org-wide channels
 Organization search
 Organizations Table
+Organize your team
 Other Notes
 Other apps in enterprise search
 Other organizations in channel
@@ -1321,7 +1317,6 @@ Resolution
 Restrict AI use of this channel’s content 
 Restrict Access
 Restrict Slackbot edits to assigned layouts
-Restrict an app
 Restrict an app to block installation
 Restricted only
 Resume Access
@@ -1840,6 +1835,7 @@ Use a different email instead of
 Use description from Agentforce Builder
 User Avatar
 User Type
+User groups make it easy to get the attention of many members at once.
 Username
 Username is set by the organization and can’t be changed.
 Usernames cannot be longer than 21 characters.
@@ -1896,6 +1892,7 @@ We found the verification record on {bareDomain}, but for a wildcard domain it n
 We had trouble verifying that email domain. Please try again later.
 We provide users with a mechanism to request to delete, access, and transfer an individual’s data
 We ran into a problem loading its tools.
+We suggest sharing your email
 We weren’t able to save changes.
 Weekly active people
 We’ll add the workspaces you choose to your desktop app.
@@ -2056,8 +2053,6 @@ in the last 7 days
 includes any of those in
 includes only those in
 is a connector step
-joined the huddle.
-left the huddle.
 members
 name@{example_com}
 of the following conditions are met:
@@ -2069,8 +2064,6 @@ rows
 scope_ratings
 sent by
 slack marketplace approved
-started screen sharing.
-stopped screen sharing.
 submenu
 submitted for approval
 team

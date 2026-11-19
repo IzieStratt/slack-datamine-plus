@@ -176,6 +176,7 @@ apps.actions.v2.execute: action_id, app_id, client_token, context, team_id
 apps.actions.v2.list: action_type, resource_id, resource_type
 apps.activities.list: app_id, component_id, trace_id
 apps.approvals.requestedApps.list: app_ids, cursor
+apps.approvals.requests.cancel: request_id, team_id
 apps.approvals.requests.create: reason
 apps.auth.external.authMapping.update: app_id, external_token_id, mapping_owner_type, provider_key, workflow_id
 apps.auth.external.delete: external_token_id
@@ -323,13 +324,13 @@ conversations.getRetention: channel
 conversations.history: channel, ignore_replies_and_broadcasts, inclusive, limit, oldest, slackbot_filter
 conversations.info: channel, display_counts, no_members, return_app_home, timezone_count
 conversations.inviteShared: channel, external_limited, tracking_id
-conversations.join: channel, request_in_background
+conversations.join: channel, hash, request_in_background, terms, type
 conversations.joinConnectedShared: invite_id, sig
 conversations.joinPendingShared: invite_id, sig
 conversations.joinRequests.list: channel_id, cursor
-conversations.kick: channel, user
+conversations.kick: channel, name, user
 conversations.leave.recommendations: max_ts
-conversations.leave: channel
+conversations.leave: channel, slackbot_thread_ts, terms, type
 conversations.list: exclude_archived, limit, types
 conversations.listPrefs: channel
 conversations.mark: channel, reason, ts
@@ -354,7 +355,7 @@ conversations.sharedInviteInfo: context, sig
 conversations.sharedInviteLinkCopied: invite_id
 conversations.teamConnections: channel
 conversations.unarchive: channel
-conversations.updateDefaultState: channel_id, hash, set_as_default, terms, type
+conversations.updateDefaultState: channel_id, set_as_default
 conversations.updateTab: channel_id, data, id, is_pinned, label
 conversations.validateName: name, team_id
 conversations.view: channel
@@ -451,7 +452,6 @@ files.external.getReadiness: provider_key, query_source, target_team_id
 files.external.preview: app_id, file_id
 files.external.searchConnector: app_id, query, search_app_args
 files.favorites.add: collection_id, file_id
-files.favorites.list: type
 files.favorites.remove: collection_id, file_id
 files.generateAltText: file_id
 files.generateThumbnails: id, offset_ms
@@ -635,7 +635,6 @@ recordChannels.link: channel, record_id
 recordChannels.objectTypes.list: datasource_id
 recordChannels.open: channel
 recordChannels.relatedConversations.list: record_id, skip_cache
-recordChannels.requestAccess: record_id
 recordChannels.unlink: channel, new_name
 records.getTeamMembers: record_id
 records.previewShare: ignore_unfurls_settings, record
@@ -854,7 +853,7 @@ tractorChannelSetupTour.addResources: channel_id, file_ids
 transcripts.feedback: additional_feedback, file_id, rating, reasons
 unread.collapse: channel
 unread.expand: channel
-unread.markRead: markers, name
+unread.markRead: markers
 userAlerts.ack: alert_type
 usergroups.create: name, team_id
 usergroups.search: count, cursor_mark, include_disabled, include_hidden, keyword, search_only_team, sort, sort_dir

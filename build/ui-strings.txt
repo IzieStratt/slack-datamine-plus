@@ -282,8 +282,8 @@ $ {amount} USD
 ) is not a string.
 ) is not supported yet.
 ) that performed expensive computation.
-)&&(eO(!1),aB(void 0),eW(aX?
-)&&(eq(!1),aU(void 0),ez(a3?
+)&&(eO(!1),aY(void 0),eW(a6?
+)&&(eV(!1),aU(void 0),eH(a3?
 ))),H((0,e_.R3)(eb)),H((0,e_.p4)(eb?q:void 0)),ev(eb?
 ))),e((0,c.R3)(h)),e((0,c.p4)(h?a:void 0)),p(h?
 ). If you meant to render a collection of children, use an array instead.
@@ -348,7 +348,6 @@ $ {amount} USD
 + Add bullet
 + Add link
 + {additionalDescriptionsCount} more
-+ {count, plural, =1 {# other} other {# others}}
 + {count}
 + {count} More
 + {count} attachments
@@ -369,7 +368,6 @@ $ {amount} USD
 , Remove from {collection}
 , Shift tab to manage items
 , Unread notification
-, Unstar
 , deactivated
 , has new edits
 , opens in a new tab
@@ -586,16 +584,15 @@ $ {amount} USD
 9:00
 9:30
 : Rebooting...
-:(F?(0,v.SR)(t,O):void 0)??
 :(L?(0,v.SR)(i,P):void 0)??
 :(M?(0,I.SR)(t,P):void 0)??
 :(O?(0,v.SR)(t,D):void 0)??
 :(P?(0,C.SR)(t,!1):void 0)??
 :(P?(0,b.SR)(a,R):void 0)??
 :(R?(0,k.SR)(t,!1):void 0)??
+:(ac?(0,eO.SR)(eA,ao):void 0)??
 :(ac?(0,eO.SR)(ew,ao):void 0)??
 :(ac?(0,eP.SR)(ew,ao):void 0)??
-:(ao?(0,eP.SR)(ew,ar):void 0)??
 :(eB?(0,eT.SR)(z,!1):void 0)??
 :(eU?(0,ew.SR)(Z,eB):void 0)??
 :(ez?(0,ew.SR)(z,eV):void 0)??
@@ -1818,10 +1815,8 @@ Add or remove the people you want to see DMs, group messages and mentions from a
 Add or update the last ephemeral message of a certain type
 Add other apps
 Add overlay text
-Add pack
 Add people
 Add people by CSV file
-Add people by email
 Add people by name
 Add people directly
 Add people individually
@@ -1878,7 +1873,6 @@ Add team logo
 Add team members to help your sales team stay in the know with less effort.
 Add teammate by email
 Add teammates
-Add teammates by email
 Add teammates to huddle 1:1
 Add tech specs
 Add template to #{channelName}
@@ -1929,7 +1923,6 @@ Add to project
 Add to recap
 Add to right
 Add to saved
-Add to saved items
 Add to section
 Add to sidebar
 Add to skill catalog
@@ -1994,7 +1987,6 @@ Add {data_element_label}
 Add {emailCount, plural, =1 {Member} other {Members}}
 Add {emailCount, plural, =1 {a member} other {members}} to your workspace
 Add {guestName} to additional channels, or remove them from channels they don\u2019t need to access anymore.
-Add {listName} to starred
 Add {memberName}
 Add {memberName} to this group DM
 Add {memberName} to {channelName}
@@ -2095,7 +2087,6 @@ Adds a list of salesforce orgs to the store
 Adds a reminder for a message via API call
 Adds a single related channel to a record
 Adds a step to a workflow
-Adds a workspace to the removed workspaces slice
 Adds an array of slash commands from the server
 Adds an item to your list from a [[column_ids_to_add_to_form]]
 Adds an item to your list when from a form
@@ -2160,7 +2151,6 @@ Advanced AI features
 Advanced AI features and automation
 Advanced AI summaries, recaps and search
 Advanced Settings
-Advanced calculations
 Advanced channel agent settings
 Advanced channel permissions
 Advanced conditions
@@ -2636,7 +2626,6 @@ Alphabetizes teams by name when given an array of team ids
 Already accepted
 Already added
 Already answered
-Already approved
 Already assigned
 Already channel manager
 Already configured object
@@ -2849,7 +2838,6 @@ Angular HTML
 Angular TypeScript
 Animals & Nature
 Animation effect
-Animation of an empty Slack workspace
 Announce when a view is closed
 Announcement
 Announcements
@@ -2926,7 +2914,6 @@ Anyone in {teamName} can use
 Anyone in {teamName} can use or edit. The skill appears in the directory.
 Anyone in {teamName} can use. The skill appears in the directory.
 Anyone in {teamName} can view
-Anyone on your team who can see those contacts and leads can read the saved emails.
 Anyone who can see a contact or lead can read the emails logged to it.
 Anyone who can view record
 Anyone who doesn\u2019t already use 2FA will:
@@ -4262,6 +4249,7 @@ Bulk clear all to-do items, in-progress and completed
 Bulk clear draft
 Bulk clear in-progress to-do items
 Bulk deletes drafts
+Bulk fetches and upserts members by query
 Bulk loads:
 Bulk manage conversations
 Bulk manage files
@@ -4665,6 +4653,8 @@ Cancel connection request
 Cancel huddle summary, delete transcript after prompt
 Cancel inline edit settings
 Cancel recording
+Cancel request for {appName}
+Cancel request?
 Cancel schedule and save to drafts
 Cancel this app request?
 Cancel this connection request?
@@ -5665,7 +5655,6 @@ Clean message text
 Clean state expected
 Clean sweep.
 Clean up
-Clean up my sidebar
 Clean up old persisted data for expired teams
 Clean up opportunity details
 Clean up your channel list
@@ -6346,7 +6335,6 @@ Connect Your Support Email
 Connect a Calendar
 Connect a Salesforce Org
 Connect a Salesforce org to add conditions
-Connect a calendar
 Connect a calendar to Slack to schedule a huddle.
 Connect a calendar to Slack to schedule an external huddle.
 Connect a calendar to continue.
@@ -6911,7 +6899,6 @@ Copy thread link
 Copy to My Slackbot
 Copy to Your Calendar
 Copy to clipboard
-Copy to your calendar
 Copy user group id
 Copy value
 Copy value for {domain}
@@ -8607,6 +8594,7 @@ Dismiss Sign In Reminder
 Dismiss Slack AI NFX tour
 Dismiss Suggested Message
 Dismiss XWS education banner
+Dismiss a Megaphone journey notification
 Dismiss a detected meeting prompt
 Dismiss a flagged message report
 Dismiss activity
@@ -8781,6 +8769,7 @@ Domain name
 Domain search
 Domain verification for {orgName}
 Domains
+Domains of {appName}\u2019s MCP servers
 Dominica
 Dominican Republic
 Don\u2019t Allow
@@ -8918,7 +8907,6 @@ Draft a reply to this thread for me
 Draft a reply to {name}
 Draft a reply to {vipName}
 Draft a reply with Slackbot
-Draft a thank-you to {name}
 Draft a weekly status report with Slackbot
 Draft accepted
 Draft actions
@@ -8979,7 +8967,6 @@ Drag to take a screenshot
 Drag your photo here, or\u2026
 Dragon Touch
 Draw message must be correctly formed
-Draw my week as a little scene
 Draw on your own screen
 Drawing is not available for content shared from the Slack Mobile app
 Dream Maker
@@ -10900,6 +10887,7 @@ Fetch Workflow Failure
 Fetch Workflow Success
 Fetch a code channel pull request
 Fetch a discoverable channel preview when stale
+Fetch a page of the apps the user has requested, or only the requests for one app
 Fetch a record channel given a record id
 Fetch a record channel given a record id and navigate
 Fetch a single daily digest by id
@@ -13137,7 +13125,6 @@ How is the transcript? Tell us about your experience.
 How it works:
 How long the island\u2019s mute button pauses activity updates.
 How many files should they upload?
-How much focus time do I have this week?
 How satisfied are you with the customer relationship management (CRM) features in Slack so far?
 How she works
 How should I use Slackbot for my role?
@@ -13370,7 +13357,6 @@ I\u2019d offer you coffee, but the last time I tried that it was just a GIF.
 I\u2019ll Do This Later
 I\u2019ll also send Slack notifications from time to time. You can see those in History.
 I\u2019ll keep this updated as your work changes. If something\u2019s missing, add it in the chat.
-I\u2019ll keep you all posted on the research progress. If you need anything specific, just let me know.
 I\u2019ll look through your recent conversations again for sales-related activity.
 I\u2019ll remind you {time}
 I\u2019m Ready to Upgrade
@@ -13476,6 +13462,7 @@ If you change this channel\u2019s access, your access will change to \u201CCan v
 If you change this setting, you won\u2019t be able to view or edit it.
 If you change this setting, your access will change to \u201CCan comment\u201D.
 If you change this setting, your access will change to \u201CCan view\u201D.
+If you change your mind, you can request {appName} again later.
 If you choose not to upgrade by {trialEndDate}, any created canvases outside of conversations will be made view only. We recommend {planName} to create and share unlimited canvases.
 If you close this window, this domain won\u2019t be verified.
 If you close without saving, you\u2019ll lose all the changes you\u2019ve made.
@@ -13885,6 +13872,7 @@ Insert a list
 Insert a new or existing canvas.
 Insert a new or existing list.
 Insert a new or existing workflow.
+Insert a newly created call once we have a room id, copying from pending state
 Insert a variable
 Insert all data
 Insert all form responses
@@ -13925,6 +13913,7 @@ Install app
 Install apps for user
 Install it from the Slack Marketplace.
 Install {appName}
+Install {appName}, opens in new window
 Install {name}
 Install {name}, opens in your browser
 Install {providerName}
@@ -14130,7 +14119,6 @@ Invite
 Invite Declined
 Invite More
 Invite More People
-Invite Now
 Invite Pending
 Invite People
 Invite Teammates
@@ -14147,7 +14135,6 @@ Invite external people
 Invite from Google Workspace
 Invite has been resent
 Invite link
-Invite link copied to clipboard
 Invite link ready
 Invite links can be shared with up to 400 people. To safeguard the privacy of your workspace, only share this link with people who are part of your organization.
 Invite me to events with a huddle link
@@ -14174,7 +14161,6 @@ Invite someone to this conversation
 Invite someone to your huddle
 Invite team members
 Invite teammates
-Invite teammates tip
 Invite teammates who are also working on the project.
 Invite the team, there\u2019s lots of room.
 Invite them to your team.
@@ -14349,6 +14335,7 @@ Item limit
 Item must be an object.
 Item not found
 Item options
+Item removed
 Item unavailable
 Item view
 Items
@@ -14554,7 +14541,6 @@ Jump to message
 Jump to new activity
 Jump to next unread mention
 Jump to next unread thread
-Jump to step
 Jump to the bottom of the list
 Jump to unread messages
 Jump to {time}
@@ -14569,6 +14555,7 @@ Jun 4
 June
 Just a bit more digging\u2026 the summary is on its way!
 Just a new look. Every character answers in Ask Singer cards.
+Just a new look. Every character gives you the same answers.
 Just a preview here, friend!
 Just a quick restart and your Slack app will be all up to date. Curious what\u2019s new? 
 Just a reminder \u2014 they\u2019ll be able to see any conversation history you include. 
@@ -15243,6 +15230,7 @@ List Retention
 List Tabs
 List Trigger Run Permissions
 List access updated
+List action items in the {title} canvas
 List archive
 List content
 List description
@@ -15830,6 +15818,7 @@ M245.966 90.377a63.809 63.809 0 0 1-6.248 3.118l10.304-5.69-4.056 2.572Z
 M249.909 98.804a36.853 36.853 0 0 1-4.167 2.572c5.596-.134 7.639 2.991.987 7.896 11.239-6.288 9.63-10.573 3.18-10.468Z
 M250.022 87.805c-2.492 1.495-4.056 2.572-4.056 2.572 11.785.95 8.231 5.234 4.258 8.225 2.581-1.428 16.745-9.407-.202-10.797Z
 M258.575 36.68H112.106v112.33h146.469z
+M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0ZM12 11v5m0-8v.01
 M3 4h18v13H3ZM12 17v4m-4 0h8
 M3 6.25a.75.75 0 0 1 1.23-.576l4.5 3.75a.75.75 0 0 1 0 1.152l-4.5 3.75A.75.75 0 0 1 3 13.75zm8 0a.75.75 0 0 1 1.23-.576l4.5 3.75a.75.75 0 0 1 0 1.152l-4.5 3.75A.75.75 0 0 1 11 13.75z
 M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7
@@ -15848,6 +15837,7 @@ M39.027 97.386a4.788 4.788 0 014.789-4.788h36.326a4.788 4.788 0 014.788 4.788v53
 M4 12.5V9.75a.75.75 0 0 1 1.5 0v2.75a4.5 4.5 0 1 0 9 0V6a3 3 0 1 0-6 0v6.5a1.5 1.5 0 0 0 3 0V6.75a.75.75 0 0 1 1.5 0v5.75a3 3 0 1 1-6 0V6a4.5 4.5 0 0 1 9 0v6.5a6 6 0 0 1-12 0
 M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2
 M4 4h6v6H4ZM14 4h6v6h-6ZM4 14h6v6H4ZM14 14h6v6h-6Z
+M4 5h16v14H4ZM4 16l5-5 4 4 2-2 5 5M15 9.5a1.5 1.5 0 1 0 0-.01
 M4 7h5m4 0h7M4 17h9m4 0h3M9 4v6m4 4v6
 M4.25 3a2 2 0 0 1 2-2h7.5a2 2 0 0 1 2 2v.5H4.25zm0 2h11.5v9.5H4.25zm0 11v1a2 2 0 0 0 2 2h7.5a2 2 0 0 0 2-2v-1z
 M42 147h68
@@ -17246,8 +17236,6 @@ More pinned resources
 More reactions
 More record actions
 More replies
-More requested apps load started
-More requested apps load stopped
 More results by type
 More results loaded
 More room to work
@@ -17271,7 +17259,6 @@ Most JS is disabled
 Most Popular
 Most active for you
 Most members
-Most people start by inviting 1-2 teammates
 Most popular
 Most recent
 Most recent messages
@@ -17673,7 +17660,6 @@ Need Help With Something Else?
 Need To Request Access
 Need at least 3 vertices
 Need audio tracks to run analyser
-Need help with something else?
 Need help with this step?
 Need more permissions
 Need permission to view
@@ -17720,6 +17706,7 @@ Nevada
 Nevalida enigo
 Neveljaven vnos
 Never
+Never Mind
 Never Published
 Never expires
 Never miss a message from your VIPs
@@ -17794,7 +17781,6 @@ New dictionary entry
 New edit by {user_name}, from {timestamp}
 New edits
 New emails and calendar events with your work contacts will be saved in Slack, and will be visible to others on your team. To get you started, the past 30 days of email and events will also be synced.
-New emails with your work contacts and leads are saved in Slack.
 New external invitation, at {time}: {message}
 New external invitation, {date} at {time}: {message}
 New external invitation: {message}
@@ -18613,7 +18599,6 @@ No, Keep It
 No, Thanks
 No, Try Next Microphone
 No, Wait
-No, keep it
 No, members can\u2019t start or join huddles
 No, thanks
 No, use a 72-hour grace period
@@ -19435,7 +19420,6 @@ Open Greeting
 Open Guide
 Open Help
 Open Huddle in new window
-Open Journey Lab in the side pane to browse a Megaphone journey
 Open Later
 Open Link
 Open Link in Browser
@@ -20311,7 +20295,6 @@ People you\u2019ve hidden
 People, apps, and agents
 Percent of total
 Perfect moment for a quick win \u2014 or a long rabbit hole.
-Perfect! Let\u2019s stay on track and keep this channel our main hub for Project Gizmo updates. Thanks, team!
 Perform a search
 Performance APIs not available. Update your Slack app!
 Performs deep link handling for arguments parsed from a slack: URI
@@ -20489,7 +20472,6 @@ Plain Text
 Plain text
 Plan an effective meeting
 Plan approved
-Plan my day
 Plan my {time} with {name}
 Plan my {time}: {title}
 Plan next steps for {name}
@@ -20756,7 +20738,6 @@ Prep for meeting with {recordName} using the Meeting Prep Skill
 Prep for tomorrow
 Prep for your next meeting
 Prep for {meetingTitle}
-Prep for {time} with {name}
 Prep for {title}
 Prep me for my meeting with {name} in {duration}
 Prep me for my meeting with {name} starting now
@@ -21216,7 +21197,6 @@ Put DMs first
 Put a face to the name
 Put a face to your name
 Put agents to work in Slack
-Put app suggested prompt in the composer
 Put away
 Put away all
 Put back deferred clears cancelled by a re-add whose save failed
@@ -22084,7 +22064,6 @@ Remove from project
 Remove from recap
 Remove from recent viewed list
 Remove from recently viewed
-Remove from saved items
 Remove from skill catalog
 Remove from skill set
 Remove from starred
@@ -22117,7 +22096,6 @@ Remove my organization
 Remove object
 Remove org
 Remove organization policy
-Remove pack
 Remove photo for people outside your organization
 Remove pin
 Remove pinned item
@@ -22481,6 +22459,7 @@ Request access
 Request access to Elevate
 Request access to customer management in Slack
 Request access to see this task
+Request already closed
 Request already sent
 Request an Upgrade
 Request an upgrade to Business+
@@ -22536,7 +22515,6 @@ Requested
 Requested By
 Requested a reinstall of {name}, opens in your browser
 Requested access on {requestDate}
-Requested apps received
 Requested by
 Requested changes
 Requested index 
@@ -22575,8 +22553,6 @@ Required columns
 Required data not provided for incoming entity PB
 Required parameter 
 Required permissions
-Required tests failing
-Required tests passing
 Required using SMS or authenticator apps
 Required using authenticator apps only
 Required: you must choose a {appName} domain in order to use enterprise search.
@@ -22906,7 +22882,6 @@ Revoke external links
 Revoke external links?
 Revoke individual assignment
 Revoke invitation
-Revoke it
 Revoke passkeys and end all sessions?
 Revoke public file link
 Revoke role
@@ -24251,7 +24226,6 @@ Select {name}
 Select {objectType}
 Select {ssoProviderName} groups
 Select {teamName} workspace
-Select {totalSelectedContacts, plural, =1 {# Person} other {# People}}
 Select {totalSelectedContacts, plural, =1 {# Teammate} other {# Teammates}}
 Select {workspaceName}
 Select {workspaceName} ({memberCount, plural, =1 {# member} other {# members}})
@@ -25802,7 +25776,6 @@ Slack file suggestions collapsed
 Slack for EMM only
 Slack for EMM or Slack for Intune
 Slack for Intune only
-Slack gets more useful once teammates join. Invite a few people you work with to get started faster.
 Slack gives your team a home \u2013 a place where they can talk and work together. To create a new workspace, review and agree to terms below.
 Slack gives your team a home \u2014 a place where they can talk and work together. To create a new workspace, click the button below.
 Slack had a problem loading requests. If it keeps happening, contact Slack support.
@@ -26552,7 +26525,6 @@ Spellcheck
 Spellcheck languages
 Spiced Cider (out of season)
 Spider
-Spin up a huddle with {name}
 Spinning up spinners\u2026
 Splash state machine fetch timed out
 Split
@@ -26705,7 +26677,6 @@ Start by migrating existing Sales Elevate users to the Salesforce permission set
 Start by selecting a channel. We\u2019ll help you add everyone included in the email to it, even people outside {teamName}
 Start call with {appName}?
 Start collaborating
-Start command
 Start conversation with {agentName}
 Start daily briefing
 Start date
@@ -26774,7 +26745,6 @@ Start with Limited Slack
 Start with Pro
 Start with Slack Pro
 Start with a Free 30-Day Trial of Slack Pro
-Start with a few people you work with most.
 Start with a template
 Start with the Limited Free Version
 Start with your MCP server URL
@@ -27238,7 +27208,9 @@ Summarize in seconds
 Summarize last 7 days
 Summarize latest messages
 Summarize message
+Summarize my Jira issues by status
 Summarize my mentions in {channelName1} and {channelName2}
+Summarize my pipeline by stage
 Summarize my recent activity
 Summarize my recent conversations with {name}
 Summarize my unread messages each morning
@@ -27246,6 +27218,7 @@ Summarize my {count, plural, one {# unread thread} other {# unread threads}}
 Summarize my {count} new notifications
 Summarize need-to-know info for your team.
 Summarize new messages
+Summarize open issues in #{channel}
 Summarize past meetings
 Summarize the AI notes from the huddle I missed
 Summarize the AI notes from the huddle I missed in {channelName}
@@ -27253,6 +27226,7 @@ Summarize the discussion so far
 Summarize the discussion up to now
 Summarize the file 
 Summarize the recent messages from {vipName} in our shared channels
+Summarize the status of #{channel}
 Summarize the thread in {channelName} that\u2019s waiting on me and draft a response
 Summarize this
 Summarize this approval
@@ -27268,6 +27242,7 @@ Summarize this thread
 Summarize this thread: {permalink}
 Summarize this {recordName}
 Summarize thread
+Summarize today\u2019s deploys in #{channel}
 Summarize unread messages
 Summarize unreads
 Summarize what I missed in {channelName}
@@ -27420,6 +27395,7 @@ Switch workspace, other workspaces have new messages
 Switch workspaces\u2026 ({currentWorkSpace}) {description}
 Switched from previous VideoTransformDevice
 Switched to Ask Singer
+Switched to Slackbot
 Switched to another messaging app
 Switched to choosing an existing account
 Switched to choosing an existing contact
@@ -27690,6 +27666,7 @@ Tell me about what you can do.
 Tell me if anyone mentions 
 Tell me what connecting {app} lets Slackbot do
 Tell me what needs my attention today
+Tell someone a Slackbot canvas edit preview closed because the canvas changed under it
 Tell the agent what to produce
 Tell the rule what to look for
 Tell us about your experience
@@ -27765,9 +27742,6 @@ Testing Plan
 Testing user permission
 Testing, testing\u2026 is this thing on?
 Testing: 60% complete
-Tests failing
-Tests passing
-Tests running
 Texas
 Text
 Text Block
@@ -27816,6 +27790,7 @@ That confirmation is waiting in your Slackbot DM.
 That content can\u2019t be saved. Please edit it and try again.
 That didn\u2019t go through. Try again.
 That didn\u2019t work
+That didn\u2019t work. Try again in a moment.
 That didn\u2019t work. Try again.
 That draft isn\u2019t ready to use. Check your connection and access.
 That file is too large and cannot be uploaded. Please contact your Box admin for file size limit.
@@ -29651,6 +29626,7 @@ Tomorrow, {schedule}
 Tomorrow\u2019s calendar events
 Tonga
 Too expensive
+Too late to undo. Your notes are on the way.
 Too long since we received a pong
 Too many IDs for subscribe
 Too many IDs for unsubscribe
@@ -30125,7 +30101,6 @@ Turn conversations into insights and actions with AI-powered efficiency
 Turn conversations into insights and actions with AI-powered efficiency.
 Turn email logging on or off at any time
 Turn it off anytime
-Turn it off at any time
 Turn off
 Turn off Automatic AI Notes
 Turn off Privacy Mode
@@ -30743,11 +30718,8 @@ Unsetting the huddle notes canvas will remove it as the default canvas for the c
 Unspooling yarn\u2026
 Unstar agent
 Unstar app
-Unstar canvas
 Unstar channel
 Unstar conversation
-Unstar list
-Unstar {listName}
 Unsubscribe from thread
 Unsubscribed from huddle perf metric updates
 Unsubscribes a list of channels from recap
@@ -31940,7 +31912,6 @@ Visibility of external organizations
 Visibility of external organizations in conversations
 Visibility of external orgs
 Visible to everyone in your organization, including guests, but not to Slack Connect users.
-Visible to your team
 Vision assistive
 Visit Agent Builder
 Visit Help Center
@@ -31969,6 +31940,7 @@ Voice calls aren\u2019t supported in this browser.
 Voice chat with Slackbot
 Voice connected
 Voice conversation failed
+Voice details
 Voice focus device transformer not initialized, triggering full setup for swap
 Voice focus started after the swap timed out
 Voice focus swap did not land, restarting the previous device
@@ -32485,7 +32457,6 @@ What kind of feedback do you have?
 What made you switch out of Slack 6?
 What made you switch plans?
 What needs my attention today?
-What needs my reply?
 What other CRM tool(s) do you use? (optional)
 What other feature would be valuable?
 What profile content are you flagging?
@@ -32539,7 +32510,6 @@ What\u2019s been decided?
 What\u2019s brought you joy lately?
 What\u2019s everyone working on today?
 What\u2019s for lunch?
-What\u2019s happening in #{channel}?
 What\u2019s in my sidebar?
 What\u2019s included in {planName}
 What\u2019s included:
@@ -32722,6 +32692,7 @@ Which objects Slackbot can create records for
 Which objects Slackbot can delete records for
 Which objects Slackbot can read records for
 Which objects Slackbot can update records for
+Which of my open PRs have waited longest for review?
 Which of the following did you experience? Select all that apply.
 Which pilot?
 Which workspace should this channel live in?
@@ -32897,8 +32868,6 @@ Work faster in Slack
 Work happens faster when everyone\u2019s here.
 Work in channels with external people
 Work in this project that needs you, or that your agent finishes, shows up here.
-Work moves faster with others in Slack. Start by adding the people you work with the most.
-Work moves faster with teammates in Slack. Start by adding the people you work with the most.
 Work object embed iframe failed to load before the timeout
 Work object embed preview failed in the full-size viewer
 Work object embed preview timed out in split view
@@ -33120,7 +33089,6 @@ Wow! Congrats on {count, plural, =1 {# year} other {# years}}.
 Wrap
 Wrap field
 Wrap text
-Wrap up my day
 Wrap-ups
 Wrapper for handleOnClickActivityItem that fills in the message object
 Write
@@ -33200,7 +33168,6 @@ Yes, Reload
 Yes, Remove Photo
 Yes, Thanks!
 Yes, Turn On Camera and Mic
-Yes, discard the changes
 Yes, members can start and join huddles
 Yes, try again
 Yesterday
@@ -33375,7 +33342,6 @@ You can still build a form manually connect it to this step later.
 You can still find any item you had previously cleared.
 You can still read your past chats in the sidebar.
 You can still upgrade to try out these features:
-You can stop logging your emails in Preferences.
 You can turn your camera and microphone off anytime once you\u2019re in the huddle.
 You can undo this later in preferences.
 You can update this anytime
@@ -33782,7 +33748,6 @@ You\u2019ll find record details and related lists in tabs at the top. Access to 
 You\u2019ll get a chance to review everyone else\u2019s permissions after they accept their invitations.
 You\u2019ll get a notification when you\u2019re added to {channelName}. Until then, its messages stay hidden.
 You\u2019ll get its messages from now on.
-You\u2019ll get more out of Slack with your team beside you.
 You\u2019ll get newly generated ones bright and early tomorrow.
 You\u2019ll have access to Slackbot soon
 You\u2019ll have to sign in again to join conversations in this workspace. You\u2019re still a member, and will appear in directories.
@@ -37766,11 +37731,11 @@ in e.insert?
 in e?!!(a&&((0,t4.A)(e.url)||(0,tO.VH)(e?.url??
 in e?!!(i&&((0,P.A)(e.url)||(0,h.VH)(e?.url??
 in ev&&ev.is_shared?
+in m?c.includes(m.errorCode)?
 in n?n.layouts?.compact?.title?.text:void 0)??
 in office
 in p&&p.is_shared?
 in q?q.layouts?.compact?.title?.text:void 0)??
-in r?evu.includes(r.errorCode)?
 in t?t.msg??
 in t?t.skill_ref:t.skillRef,fallbackLabel:t.fallback?.text??
 in t?t.value??
@@ -41660,6 +41625,7 @@ zzz
 {count, plural, =1 {# comment} other {# comments}}
 {count, plural, =1 {# conversation} other {# conversations}}
 {count, plural, =1 {# conversation} other {# conversations}} selected
+{count, plural, =1 {# domain} other {# domains}} already approved
 {count, plural, =1 {# draft selected} other {# drafts selected}}
 {count, plural, =1 {# duplicate email} other {# duplicate emails}}.
 {count, plural, =1 {# entry has} other {# entries have}} multiple matches. Select entry to resolve.
@@ -41720,6 +41686,8 @@ zzz
 {count, plural, =1 {# overdue} other {# overdue}}
 {count, plural, =1 {# page matches} other {# pages match}}
 {count, plural, =1 {# pending approval} other {# pending approvals}}
+{count, plural, =1 {# permission} other {# permissions}} already approved
+{count, plural, =1 {# permission} other {# permissions}} no longer requested
 {count, plural, =1 {# person in the huddle} other {# people in the huddle}}
 {count, plural, =1 {# person is already a member. Only new people will be invited.} other {# people are already members. Only new people will be invited.}}
 {count, plural, =1 {# person is a} other {# people are}} Single-Channel {count, plural, =1 {guest} other {guests}}, and can\u2019t be added to this channel.
@@ -41948,7 +41916,6 @@ zzz
 {count, plural, one {Board of my code task} other {Board of my # code tasks}}
 {count, plural, one {Brought back # card.} other {Brought back # cards.}}
 {count, plural, one {Canvas created} other {Canvases created}}
-{count, plural, one {Catch me up on # unread} other {Catch me up on # unreads}}
 {count, plural, one {Catching you up on # update\u2026} other {Catching you up on # updates\u2026}}
 {count, plural, one {Checklist of # DM waiting on me} other {Checklist of # DMs waiting on me}}
 {count, plural, one {Closed # card.} other {Closed # cards.}}
@@ -41985,11 +41952,12 @@ zzz
 {count, plural, one {Showing # skill} other {Showing # skills}}
 {count, plural, one {Skill used} other {Skills used}}
 {count, plural, one {Slackbot prompt} other {Slackbot prompts}}
+{count, plural, one {Status of my code task} other {Status of my # code tasks}}
+{count, plural, one {Summary of # unread update} other {Summary of # unread updates}} in #{channel}
 {count, plural, one {Timeline of my # meeting left today} other {Timeline of my # meetings left today}}
 {count, plural, one {Total run} other {Total runs}}
 {count, plural, one {Turn my # unread into a checklist} other {Turn my # unreads into a checklist}}
 {count, plural, one {View # more draft} other {View # more drafts}}
-{count, plural, one {What\u2019s my overdue to-do?} other {What are my # overdue to-dos?}}
 {count, plural, one {You have a draft review comment on this PR. Finish your review in the Code tab.} other {You have # draft review comments on this PR. Finish your review in the Code tab.}}
 {count, plural, one {{names} is invited.} other {{names} are invited.}}
 {count, plural, one {{names} was invited to a {provider}.} other {{names} were invited to a {provider}.}}
@@ -42845,6 +42813,7 @@ zzz
 {periodNum, plural, one {Fiscal year} other {Fiscal years}}
 {periodNum, plural, one {Month} other {Months}}
 {permissionCount, plural, =1 {# filtered result} other {# filtered results}}
+{permissionCount, plural, =1 {# permission} other {# permissions}} and {domainCount, plural, =1 {# domain} other {# domains}} already approved
 {permissionCount} permissions
 {permissions, plural, =1 {# new permission} other {# new permissions}}
 {permissions, plural, =1 {# new permission} other {# new permissions}} \xb7 {domains, plural, =1 {# new domain} other {# new domains}}
