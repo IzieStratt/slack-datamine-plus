@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { extractExtras, finishExperiments, scanExperiments } from '../src/extras.mjs';
+import { extractExtras, finishBlockRegistry, finishExperiments, scanExperiments } from '../src/extras.mjs';
 
 const selectors = 'QSkg(e,t,n){"use strict";var i=n("WDEk");let u=(0,i.Ay)((e,t)=>t);u.meta={name:"getGroupForUser",key:"k"};let m=(0,i.Ay)((e,t)=>t);m.meta={name:"getGroupForUserWithoutExposure",key:"k"};n.d(t,{},{_Z:u,ze:m})}';
 const user = 'T(e,t,n){"use strict";var c=n("QSkg"),d=n("BN6C");let u="on"===(0,c._Z)(e,"desktop_ui_simplification");let s=(0,c.ze)(e,"two_groups");return["a","b"].includes((0,c._Z)(e,"listed"))||"x"===s||(0,c._Z)(e,"after")==="y"||(0,d._Z)(e,"not_an_experiment")}';
@@ -45,4 +45,16 @@ test('block registry: registered types, component fields and gated prototype can
     + 'PrototypeImpl=({renderBlocks:e,...c})=>{let m=(0,o.d4)(e=>"on"===(0,N._Z)(e,"bk_next"));switch(c.candidateType){case"chart":if(!m)return null;return 1;case"form_card":return 2}}';
   const out = [...extractExtras(js)['block-registry']].sort();
   assert.deepEqual(out, ['fields: tag_block: text, tag_style', 'prototype: chart (experiment bk_next)', 'prototype: form_card', 'registered: lazy', 'registered: tag_block']);
+});
+
+test('block registry: lazy blocks and prototype candidates get fields from a component in another chunk', () => {
+  const reg = 'let o=r.lazy(async()=>({default:(await n.e("page-block").then(n.bind(n,"zKAH"))).PageBlock})),PageBlockLazy=e=>null,c=(0,n("9WPe").R)()({type:"page",component:()=>PageBlockLazy});'
+    + 'tE=a.lazy(()=>Promise.all([n.e("chart")]).then(e=>({default:e.ChartBlock})));'
+    + 'PrototypeImpl=({renderBlocks:e,...c})=>{let h=(0,o.d4)(e=>"on"===(0,N._Z)(e,"bk_next"));switch(c.candidateType){case"chart":if(!h)return null;return(0,s.jsx)(a.Suspense,{fallback:null,children:(0,s.jsx)(tE,{...c})});'
+    + 'case"checklist":{if(!h)return null;let{blockId:n,title:a,showProgress:d}=c;return 1}default:return null}}';
+  const lazy = ';function PageBlock({fileId:e,appId:t}){return null};let ChartBlock=({chartType:e,title:t})=>null;';
+  const x = extractExtras(reg); extractExtras(lazy, x);
+  assert.deepEqual(finishBlockRegistry([...x['block-registry']]).sort(), [
+    'fields: page: file_id, app_id', 'fields: prototype/chart: chart_type, title', 'fields: prototype/checklist: title, show_progress',
+    'prototype: chart (experiment bk_next)', 'prototype: checklist (experiment bk_next)', 'registered: page']);
 });

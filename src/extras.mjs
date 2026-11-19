@@ -119,24 +119,71 @@ export function destructuredKeys(body) {
   out.push(cur);
   return out.map((x) => x.trim().match(/^([A-Za-z_$][\w$]+)/)?.[1]).filter((k) => k && !NOT_FIELDS.has(k));
 }
+const COMPONENT_DEF = (name) => new RegExp(`(?:function ${name}|[ ,;]${name}=(?:\\(0,[\\w$.]+\\)\\()?(?:function(?: \\w+)?)?)\\(\\{|[ ,;]${name}=([a-z])=>\\{(?:let\\{)?`);
+// Fields a component reads: its destructured props, or for `X=e=>{...}` the `e.prop` reads in its first lines.
 function componentProps(js, name) {
   if (!/^[A-Z]\w+$/.test(name)) return null;
-  const m = js.match(new RegExp(`(?:function ${name}|[ ,;]${name}=(?:\\(0,[\\w$.]+\\)\\()?(?:function(?: \\w+)?)?)\\(\\{|[ ,;]${name}=[a-z]=>\\{let\\{`));
+  const m = js.match(COMPONENT_DEF(name));
   if (!m) return null;
+  if (m[1] && !m[0].endsWith('let{')) {
+    const body = js.slice(m.index, m.index + 1500), seen = new Set();
+    for (const r of body.matchAll(new RegExp(`(?<![\\w$.])${m[1]}\\.([a-z][A-Za-z0-9]+)\\b`, 'g'))) if (!NOT_FIELDS.has(r[1])) seen.add(snake(r[1]));
+    return [...seen];
+  }
   const body = balanced(js, m.index + m[0].length - 1);
   return body == null ? null : destructuredKeys(body).map(snake);
 }
+// Components that render blocks but are usually in another chunk than their registration (lazy blocks, prototype candidates).
+const COMPONENT_NAME = /^[A-Z]\w*(?:Block|Card|Button|Diff|Prototype|Picker|Impl|Embed|Results|Decorator)$/;
 export function scanBlockRegistry(js, add) {
   for (const m of js.matchAll(/\{type:"([a-z_]+)",component:\(\)=>([\w$.]+)/g)) {
     add(`registered: ${m[1]}`);
     const props = componentProps(js, m[2]);
     if (props?.length) add(`fields: ${m[1]}: ${props.join(', ')}`);
+    else if (m[2].endsWith('Lazy')) {
+      // r.lazy(async()=>({default:(await n.e("page-block")...).PageBlock})) or .then(e=>({default:e.McpAppBlock}))
+      const head = js.slice(Math.max(0, js.indexOf(`${m[2]}=`) - 700), js.indexOf(`${m[2]}=`));
+      const target = [...head.matchAll(/(?:default:[\w$]+\.|\)\)\.)([A-Z]\w+)/g)].pop()?.[1];
+      if (target) add(`~lazy: ${m[1]}: ${target}`);
+    }
+  }
+  for (const m of js.matchAll(/(?:function |[ ,;])([A-Z]\w+)(?==|\()/g)) {
+    if (!COMPONENT_NAME.test(m[1])) continue;
+    const props = componentProps(js, m[1]);
+    if (props?.length) add(`~component: ${m[1]}: ${props.join(', ')}`);
   }
   const i = js.indexOf('PrototypeImpl=');
   if (i < 0) return;
   const impl = js.slice(i, i + 6000), gates = {};
   for (const g of impl.matchAll(/(?:let |,)([\w$]+)=\(0,[\w$.]+\)\([a-z]=>"on"===\(0,[\w$.]+\)\([a-z],"([a-z0-9_]+)"\)\)/g)) gates[g[1]] = g[2];
-  for (const c of impl.matchAll(/case"([a-z0-9_]+)":(?:if\(!([\w$]+)\))?/g)) add(`prototype: ${c[1]}${gates[c[2]] ? ` (experiment ${gates[c[2]]})` : ''}`);
+  // case"x":if(!gate)return null;return(0,s.jsx)(Comp,...)   case"x":...children:(0,s.jsx)(lazyVar,...)   case"x":{if(!gate)return null;let{a:n,b:t}=c;...
+  for (const c of impl.matchAll(/case"([a-z0-9_]+)":(\{)?(?:if\(!([\w$]+)\)return null;)?((?:(?!case")[\s\S]){0,200})/g)) {
+    const [, name, braced, gate, rest] = c;
+    add(`prototype: ${name}${gates[gate] ? ` (experiment ${gates[gate]})` : ''}`);
+    const key = `prototype/${name}`;
+    const inline = braced && rest.match(/^let(\{)/);
+    if (inline) { const b = balanced(rest, 3); if (b) { const f = destructuredKeys(b).map(snake); if (f.length) add(`fields: ${key}: ${f.join(', ')}`); } continue; }
+    let comp = rest.match(/^return\(0,[\w$.]+\)\((?:[\w$.]+\.Suspense,\{fallback:[^,]+,children:\(0,[\w$.]+\)\()?([\w$.]+)/)?.[1];
+    if (!comp) continue;
+    if (!/^[A-Z]/.test(comp)) {
+      // a lazy component held in a minified variable: v=(0,a.lazy)(...({default:x.ChartBlock}))
+      const at = js.search(new RegExp(`[ ,;]${comp.replace(/\$/g, '\\$')}=(?:\\(0,)?[\\w$.]*lazy\\)?\\(`));
+      comp = at < 0 ? null : js.slice(at, at + 600).match(/default:[^}]{0,120}?\.([A-Z]\w+)\}/)?.[1];
+    }
+    if (comp && /^[A-Z]\w+$/.test(comp)) add(`~lazy: ${key}: ${comp}`);
+  }
+}
+// After every chunk: give lazy blocks and prototype candidates the fields of the component they load, and drop the join keys.
+export function finishBlockRegistry(lines) {
+  const comps = new Map(), have = new Set(), out = [];
+  for (const l of lines) { const m = l.match(/^~component: (\w+): (.*)$/); if (m) comps.set(m[1], m[2]); }
+  for (const l of lines) { const m = l.match(/^fields: ([\w/]+):/); if (m) have.add(m[1]); }
+  for (const l of lines) {
+    const m = l.match(/^~lazy: ([\w/]+): (\w+)$/);
+    if (m && !have.has(m[1]) && comps.has(m[2])) { out.push(`fields: ${m[1]}: ${comps.get(m[2])}`); have.add(m[1]); }
+    else if (!l.startsWith('~')) out.push(l);
+  }
+  return out;
 }
 
 export const emptyExtras = () => Object.fromEntries(CATEGORIES.map((c) => [c, new Set()]));

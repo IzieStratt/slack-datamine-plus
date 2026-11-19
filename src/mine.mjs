@@ -9,7 +9,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
 import { extractParams, mergeParams, serializeParams } from './params.mjs';
-import { emptyExtras, extractExtras, finishExperiments, scanExperiments } from './extras.mjs';
+import { emptyExtras, extractExtras, finishBlockRegistry, finishExperiments, scanExperiments } from './extras.mjs';
 import { extractIconSet } from './icons.mjs';
 import { checkHealth } from './health.mjs';
 import { emptyFrontend, finishFrontend, scanFrontend } from './frontend.mjs';
@@ -266,6 +266,7 @@ async function main() {
   const counts = {};
   // this miner's categories, then the ported upstream extractors (src/upstream.mjs); a file both write is the union, so nothing mined is dropped
   const outFiles = new Map();
+  extras['block-registry'] = new Set(finishBlockRegistry([...extras['block-registry']]));
   for (const [cat, set] of Object.entries(extras)) { counts[cat] = set.size; outFiles.set(`${cat}.txt`, [...set]); }
   const up = upstream.finish(readLines(OUT));
   for (const note of up.notes) console.error(`upstream: ${note}`);
