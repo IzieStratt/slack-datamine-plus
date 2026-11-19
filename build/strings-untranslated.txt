@@ -252,7 +252,9 @@ Assign Organizations Wide Role
 Assign role
 Audio clip plays
 Audio clips created
+Authenticate
 Authenticate another way
+Authenticate {teamName}
 Authorization
 Auto
 Automatic acceptance
@@ -362,6 +364,7 @@ Channel searcher
 Channel summaries
 Channel summaries viewed
 Channel unarchived
+Check again
 Check back in 24 hours to see additional metrics and details about your organization’s channels
 Check back in 24 hours to see additional metrics and details about your workspace’s channels.
 Check back in 24 hours to see additional metrics and details.
@@ -376,6 +379,7 @@ Choose a workspace
 Choose access
 Choose account type
 Choose member access
+Choose one…
 Choose servers
 Choose specific channels
 Choose the workspaces where you want access to {appName}—and its AI capabilities—available in Slack’s top bar by default for members.
@@ -594,7 +598,9 @@ Enable domain allowlist for channel email addresses and personal forwarding emai
 Enable enterprise search
 Enable enterprise search for the entire organization
 Enable external file thumbnail previews for:
+Enable sharing and viewing canvases with external organizations.
 Enable sharing and viewing lists with external organizations.
+Ending
 Enforce on Older Sessions
 Enforced on all Chrome and Edge sessions
 Enforced on new Chrome and Edge sessions
@@ -604,7 +610,6 @@ Enter IP ranges in CIDR notation, separated by commas
 Enter a display name
 Enter a display name for this MCP server
 Enter agent description
-Enter custom expiration days
 Enter domain name
 Enter valid domains
 Enter your Tenant ID and click ‘Save’. Follow the on-screen link to grant consent
@@ -620,6 +625,7 @@ Enterprise search is disabled upon renewal
 Enterprise search is enabled
 Enterprise search lets you connect your organization’s data across apps, so people can find what they’re looking in one place, and quickly synthesize it with AI. Slack may use existing tokens, email, or user names to map users between Slack and the third party in order to serve person search filters.
 Enterprise search will be enabled upon renewal
+Entire history
 Environment
 Erlang
 Error report:
@@ -705,6 +711,7 @@ Free plan
 From {orgName} only
 Frontline Members
 Frontline members
+Generate CSV
 Generate a different password
 Generate a temporary password
 Get a quick view of people from external orgs
@@ -724,7 +731,6 @@ Graph showing viewers by department
 Graph showing viewers over time
 Groovy
 Guest accounts must be converted to full members before they can be changed to an admin or owner.
-Guests need to stick around for at least {minimumDays} day.
 HTML rendering
 Handlebars
 Haskell
@@ -851,11 +857,13 @@ Learn how information is shared in your workspace.
 Learn how information is shared, and whether it’s bots or members doing the talking.
 Learn how to get started
 Learn how to set up Agentforce
+Learn how your team is using Slack
 Learn how your team is using channels
 Learn more about managing apps
 Learn more about permissions
 Learn more about unfurl settings
 Let’s find your team
+Let’s get you set up
 Limit of {limit} addresses exceeded
 Limit of {limit} addresses exceeeded
 Limited access group updated
@@ -931,6 +939,7 @@ Medium Risk
 Medium risk list
 Member access
 Member access updated
+Member analytics
 Member data is available from {firstDate}.
 Member data not available yet
 Member data unavailable
@@ -1418,7 +1427,6 @@ Select members who can use this tool
 Select members who can use {permissionDisplayName}
 Select members who can’t use {permissionDisplayName}
 Select members…
-Select number
 Select people who can use {permissionDisplayName}
 Select people who can’t use {permissionDisplayName}
 Select sent by {name}
@@ -1494,6 +1502,7 @@ Sign in to the Slack Developer Program
 Sign in to the Slack Developer sandbox
 Sign in with Passkey
 Sign in with email instead
+Sign in with {ssoProvider}
 Sign out of Slack
 Sign this person out of Slack?
 Sign user out of
@@ -1580,6 +1589,7 @@ Sorry, usernames must be lowercase!
 Sorry, usernames must begin with a letter or number!
 Sorting is not available while filtering by account type
 Specific channel
+Specific date range…
 Specific workspaces
 Specify domains below to restrict external content to only those domains.
 Specify who can use Slackbot to create records for certain objects
@@ -1587,6 +1597,7 @@ Specify who can use Slackbot to delete records for certain objects
 Specify who can use Slackbot to update records for certain objects
 Start a new workspace
 Start by creating a new workspace for your organization. 
+Starting
 Street Address
 Sure!
 Swift
@@ -1607,7 +1618,6 @@ Terminate user sessions automatically
 Test account details for your service
 Thanks for the feedback!
 That code wasn’t valid. Give it another go!
-That’s a bit long. {maximumDays} days or less should work.
 The CSV contained no valid IP ranges.
 The MCP server is not active. Please enable it in Salesforce before trying again.
 The Slack verification record for {recordName} doesn’t match. Change it to the value from the previous step, then check again.
@@ -1691,6 +1701,7 @@ This can’t be undone. {name} will be notified their request was cancelled, but
 This channel can’t be public because the owning organization set it to private.
 This channel:
 This conversation includes people from another workspace.
+This data set is large, so your CSV will take some time to generate. We’ll send it to you via Slackbot as soon as it’s ready.
 This doesn’t seem like an email address. Sorry!
 This domain has already been added by a different organization. If this doesn’t seem right, contact us.
 This email is pending verification. If you change the email address, any verification emails will be canceled.
@@ -1798,7 +1809,6 @@ Unable to remove {count, plural, =1 {# member} other {# members}}
 Unable to revoke passkeys. Try again later.
 Unable to save changes to role.
 Unable to save setting. Try again later
-Unable to send SSO binding email.
 Unable to sign {memberName} out of Slack.
 Unable to verify MCP server status. Please try again later.
 Unapprove
@@ -1824,6 +1834,7 @@ Updating workspaces…
 Upgrade to unlock more insights
 Upgrade your Plan
 Upgrade your plan to see activity and information for all of your channels.
+Upgrade your plan to see information about all team members, and learn how they’re using Slack.
 Upload CSV
 Upload CSV view
 Upload a maximum of 1,000 IP ranges in CSV format. The following is required and must be the first column of your file:
@@ -1859,8 +1870,10 @@ Video clip plays
 Video clips created
 View Agent in Slack
 View Salesforce organization page
+View Workspaces
 View a summary of Confluence page content
 View all workspaces (opens in a new tab)
+View all workspaces at {orgName}
 View and download all your Google Drive files
 View details regarding spaces and their associated properties
 View our help article
@@ -1895,6 +1908,7 @@ We ran into a problem loading its tools.
 We suggest sharing your email
 We weren’t able to save changes.
 Weekly active people
+Welcome back!
 We’ll add the workspaces you choose to your desktop app.
 We’ll get you back to the app in just a minute.
 We’ll pass your feedback along to the team. Thanks for taking the time to share it with us.
@@ -2008,6 +2022,7 @@ You don’t have permission to revoke passkeys.
 You don’t have permission to start direct messages with Slack Connect.
 You haven’t added any domains yet
 You might want to try adjusting your filters.
+Your Analytics Export is processing…
 Your changes weren’t saved. Try again.
 Your current IP isn’t in the allowed ranges. Add your IP address to avoid being locked out.
 Your current IP {ip_address} isn’t in the allowed ranges. Add your IP address to avoid being locked out.

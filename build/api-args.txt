@@ -324,13 +324,13 @@ conversations.getRetention: channel
 conversations.history: channel, ignore_replies_and_broadcasts, inclusive, limit, oldest, slackbot_filter
 conversations.info: channel, display_counts, no_members, return_app_home, timezone_count
 conversations.inviteShared: channel, external_limited, tracking_id
-conversations.join: channel, hash, request_in_background, terms, type
+conversations.join: channel, request_in_background
 conversations.joinConnectedShared: invite_id, sig
 conversations.joinPendingShared: invite_id, sig
 conversations.joinRequests.list: channel_id, cursor
-conversations.kick: channel, name, user
+conversations.kick: channel, user
 conversations.leave.recommendations: max_ts
-conversations.leave: channel, slackbot_thread_ts, terms, type
+conversations.leave: channel, name
 conversations.list: exclude_archived, limit, types
 conversations.listPrefs: channel
 conversations.mark: channel, reason, ts
@@ -396,13 +396,13 @@ enterprise.channels.admin.setDefault: channel, prefs
 enterprise.channels.admin.setMandatory: channel, prefs
 enterprise.info: include_primary_owner, include_profile_fields
 enterprise.migrations.getHistory: status
+enterprise.migrations.getStatus: include_enterprise_info, include_team_info, migration_id
 enterprise.prefs.setAndLock: prefs
 enterprise.teams.creationrequests.create: enterprise_token, name, reason
 enterprise.teams.join: team
 enterprise.teams.joinrequests.create: team
 enterprise.teams.leave: team
 enterprise.teams.prefs.get: team
-enterprise.tos.admin.create: set_active, terms_of_service
 enterprise.usergroups.teams.get: search_term, sort_dir, usergroup
 enterprise.usergroups.teams.remove: teams, usergroup
 enterprise.usergroups.teams.setProvisioning: auto_provision, team, usergroup
@@ -433,7 +433,7 @@ files.collections.create: emoji, name
 files.collections.delete: collection
 files.collections.list: include_recently_viewed
 files.collections.update: collection, emoji, is_collapsed, name, sort
-files.completeUpload: app, channel, content_channel_id, content_message_ts, review_channel_id, review_message_ts
+files.completeUpload: context, room, room_name
 files.createCanvas: loosen_validation, markdown, title
 files.createExternal: create_slack_file, filename, mime_type, open_edit, service_stub
 files.createSkillCanvas: markdown, title
@@ -459,7 +459,7 @@ files.getContentHtml: file_id
 files.getMetadata: file_id, limit, offset, type
 files.getProviderPreviewUrlForFileStore: file_url, provider_token
 files.getShares: file_id
-files.getUploadURL: alt_txt, client_context_team_id, filename, length, review_channel_id, review_message_ts, snippet_type, subtype
+files.getUploadURL: action_id, alt_txt, block_id, client_context_team_id, container, filename, function_execution_id, length, service_id, service_team_id, snippet_type, subtype, value
 files.getUploadURLForFileStore: files, filestore
 files.getViewerCounts: file_id
 files.hasShares: channel_id, exclude_channel_tab_shares, file_id
@@ -678,7 +678,6 @@ saved.update: date_due, description, item_detail, item_id, item_type, mark, todo
 schemaless.getClientLock: unique_id, unique_id_type
 screenhero.rooms.info: room
 screenhero.rooms.join: regions, room, use_room_scoped_token
-screenhero.rooms.proxyLogs: attachments, blocks, client_last_updated_ts, date_scheduled, date_stashed, destinations, draft_id, file_ids, file_permissions, is_from_composer, unfurl
 screenhero.rooms.rename: room, room_name
 search.autocomplete.files: include_shares, query
 search.autocomplete.tags: element_id, query
@@ -686,13 +685,13 @@ search.autocomplete.topEmojis: count
 search.autocomplete.triggers: current_channel_id, query, strict_exposure_rules, trigger_types
 search.autocomplete: limit, query, query_suggestion_limit, type, use_hash
 search.delete: hash, terms, type
-search.enterprise: count, cursor_mark, include_bots, include_dangling, include_date_created, include_deleted, include_full_deleted, include_usergroups, query, sort_dir
-search.inline: channel, client_req_id, count, cursor, extract_len, find_in_thread, from_me, include_ai_filters, max_ts, min_ts, page, query, recent_channels, search_session_id, strip_mcp_attribution_footer, thread_replies, thread_ts, token, user, with_me
+search.enterprise: count, cursor_mark, include_bots, include_counts, include_dangling, include_deleted, query, sort, sort_dir
+search.inline: channel, count, cursor, extract_len, find_in_thread, query, thread_replies, thread_ts, token
 search.modules.channels: browse, channel_type, count, cursor, exclude_my_channels, module, query, sort, sort_dir
 search.modules.external: app_id, client_req_id, cursor, highlight, query, query_rewrite_disabled, search_app_args
 search.modules.files: canvas_template_type_filter, count, exclude_org_visible, file_title_only, filters, module, only_org_visible, page, query, search_exclude_bots, skip_excluding_canned_templates, sort, sort_dir
 search.modules.workObjects: client_req_id, highlight, query, query_rewrite_disabled, search_only_my_channels, sort, sort_dir
-search.save: slackbot_thread_ts, terms, type
+search.save: channel_section_id, slackbot_thread_ts, terms, type
 search.team: query
 sfdc.activities.list: item_types, next_limit, owned_by_me, page_key, past_limit, record_id, relative_date_range, salesforce_org_id
 sfdc.activities.listForUser: include_completed, limit, salesforce_org_id
@@ -869,7 +868,7 @@ users.admin.removeOwner: user
 users.admin.resendInvitation: invite_id, user
 users.admin.setExpiration: expiration_ts, user
 users.admin.setInactive: user
-users.admin.setOwner: user
+users.admin.setOwner: teams, user, usergroup
 users.admin.updateSharedInvite: code, expiration, notifications_enabled
 users.channelSections.channels.bulkUpdate: insert, remove, skip_simple_array_serialization_in_get_form_data
 users.channelSections.channels.remove: channel_id, channel_section_id

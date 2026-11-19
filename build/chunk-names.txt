@@ -51,6 +51,7 @@ client-about-ai-app-view
 client-activity-conversations
 client-activity-conversations-peek
 client-activity-empty-view
+client-activity-huddles
 client-activity-inbox-view
 client-activity-pull-requests
 client-activity-sidebar-prototype-view
@@ -318,6 +319,7 @@ copy-prompt-modal
 create-task-modal
 customer-relationships-management-image-de-DE
 customer-relationships-management-image-en-GB
+customer-relationships-management-image-en-US
 customer-relationships-management-image-es-ES
 customer-relationships-management-image-es-LA
 customer-relationships-management-image-fr-FR
@@ -374,7 +376,7 @@ js_modern_components_growth-kit_business-plus-admin-entry-point-banner_crmImg_pn
 js_modern_components_growth-kit_hooks_use-get-features_features_ai-assistant-apps_de-DE_png-j-d66891
 js_modern_components_growth-kit_hooks_use-get-features_features_ai-language-translations_de-D-1212c9
 js_modern_components_growth-kit_hooks_use-get-features_features_huddles-notes_de-DE_png-js_mo-2c9501
-js_modern_components_growth-kit_hooks_use-get-features_features_slack-connect_de-DE_png-js_mo-e5a2b8
+js_modern_components_growth-kit_hooks_use-get-features_features_slack-connect_de-DE_png-js_mo-43a53b
 js_modern_components_huddle_share-dialogs_huddle-share-banner_tsx
 js_modern_components_media_media-controls_edit-thumbnail-button_tsx-js_modern_components_medi-1a75e7
 js_modern_components_message-attachment_custom-attachments_mcp-app_mcp-app-tool-result_ts-js_-84d9f3
@@ -384,7 +386,6 @@ js_modern_components_share-dialogs_share-dialog-kit_share-dialog-preview_tsx
 js_modern_components_shortcuts-menu_v2_shortcuts_set-reminder-shortcut_ts-js_modern_redux_act-1e29d4
 js_modern_components_upgrades_trials_guided-trials_plans-at-glance_trials-plans-at-glance-modal_tsx
 js_modern_components_upgrades_trials_guided-trials_use-gg-biz-plus-end-of-trial-upgrade_tsx-j-1d94b5
-js_modern_generated_types_api_methods_ai_alpha_slackbot_skills_get-builtin-info_ts-js_modern_-c7b637
 js_modern_redux_stores_pricing-plans-store_thunks_load-plans-page-boot-data_ts-js_modern_redu-f66d41
 js_modern_redux_stores_slack-connect-prefs-store_selectors_ts
 js_modern_redux_stores_workflows-store_thunks_slackbot-tasks_prompt-blocks_ts-js_modern_utili-b1f488
@@ -607,7 +608,6 @@ lottie-slackbot-crm-pt-BR
 lottie-slackbot-crm-zh-CN
 lottie-slackbot-crm-zh-TW
 lottie-slackbot-in-channels-coachmark-hero
-lottie-slackbot-no-limit-confetti
 lottie-slackbot-nux-v2.json
 lottie-slackbot-nux.json
 lottie-slackbot-paywall-orbit
@@ -641,8 +641,8 @@ lottie-tenured-team-solutions-sc-channel.json
 lottie-tenured-team-solutions-sc-dm.json
 lottie-today-all-paused-animation.json
 lottie-today-day-one-coachmark.json
-lottie-today-day-two-coachmark.json
 lottie-today-welcome-animation.json
+lottie-tractor-channel-setup-confetti
 lottie-tractor-channel.json
 lottie-trial-celebration-confetti.json
 lottie-trial-end-card-orbit-loop.json
@@ -999,7 +999,6 @@ megaphone-payment-failed-launch-modal
 megaphone-plan-info
 megaphone-platform-ai-apps-data-access-consent-alert
 megaphone-platform-ai-apps-data-access-consent-banner
-megaphone-plus-feature-trial-downmarket-crm-sidebar-menu-header-banner
 megaphone-plus-request-to-purchase-admin-menu-banner
 megaphone-plus-trial-expiration-modal
 megaphone-plus-trial-offer-admin-billing-page-banner
@@ -1066,7 +1065,6 @@ megaphone-slackbot-mcp-connector-suggestions
 megaphone-slackbot-mcp-context-bar-cta
 megaphone-slackbot-memory-nux-pill
 megaphone-slackbot-mini-nux-pill
-megaphone-slackbot-no-limit-banner
 megaphone-slackbot-skills-announcement-alternate-skill-banner
 megaphone-slackbot-skills-announcement-day-zero-launch-modal
 megaphone-solutions-onboarding-canvas-banner
@@ -1084,11 +1082,7 @@ megaphone-straight-to-paid-workspace-menu-secondary-upgrade-cta
 megaphone-synthetic-canvas-header-banner
 megaphone-synthetic-canvas-header-banner-trial-expiring-soon
 megaphone-today-card-banner
-megaphone-today-card-overflow-menu-banner
-megaphone-today-later-tab-edu-banner
-megaphone-today-manage-channels-menu-banner
 megaphone-today-reminders-menu-todos-edu-banner
-megaphone-today-settings-menu-banner
 megaphone-tools-tab-sidebar-header-ai-step-banner
 megaphone-trial-end-usage-stats-modal
 megaphone-trial-expiration-modal
@@ -1542,7 +1536,7 @@ shared-js_modern_components_growth-kit_hooks_use-get-features_use-free-to-plus-g
 shared-js_modern_components_growth-kit_sidebar-menu-header_sidebar-menu-header_tsx-js_modern_-f93f7a
 shared-js_modern_components_help-home_product-release-card_product-release-card_tsx-js_modern-f3495b
 shared-js_modern_components_huddle_page_calendar-view_hooks_use-get-meeting-details-event_ts--2dd2f1
-shared-js_modern_components_huddle_page_hooks_use-filter-huddle-with-users_ts-js_modern_compo-c13f33
+shared-js_modern_components_huddle_page_filters_filter-huddle-type_tsx-js_modern_components_h-33581f
 shared-js_modern_components_huddle_page_hooks_use-load-backgrounds_ts-js_modern_components_ex-f19937
 shared-js_modern_components_huddle_page_huddles-page_tsx
 shared-js_modern_components_ia-details-popover_ia-details-popover-members_tsx
@@ -1600,7 +1594,7 @@ shared-js_modern_generated_types_api_methods_usergroups_create_ts-js_projects_cl
 shared-js_modern_redux_actions_help-actions_ts-js_modern_components_flexpane_help-article_hel-5f77c4
 shared-js_modern_redux_actions_open-apps-browser-modal_ts
 shared-js_modern_redux_actions_universal-search_search-prefs-changed_ts
-shared-js_modern_redux_actions_universal-search_search-prefs_ts-js_modern_components_search_f-520c19
+shared-js_modern_redux_actions_universal-search_search-prefs_ts-js_modern_components_search_f-f69ecd
 shared-js_modern_redux_stores_apps-about-info-store_selectors_ts-js_modern_components_app-spa-79aa4d
 shared-js_modern_redux_stores_bookmarks-store_thunks_ensure-bookmarks-are-present_ts-js_moder-15f107
 shared-js_modern_redux_stores_modern-selling-store_thunks_open-edit-workflow_ts-js_projects_s-bdf161
@@ -1609,6 +1603,7 @@ shared-js_modern_utility_navigation_is-navigation-shortcut_ts-js_projects_client
 shared-js_modern_utility_snippet-file-types_ts
 shared-js_modern_utility_video-effects_segmentation-effect-pipeline_ts
 shared-js_projects_client-v2_components_agentic-ia_browse-and-find_panes_automations-browser--f4a826
+shared-js_projects_client-v2_components_agentic-ia_browse-and-find_panes_files-browser-instan-fb1f57
 shared-js_projects_client-v2_components_agentic-ia_browse-and-find_toolbar_browse-filters-menu_tsx
 shared-js_projects_client-v2_components_agentic-ia_browse-and-find_toolbar_browse-toolbar_tsx
 shared-js_projects_client-v2_components_agentic-ia_conversation-lists_get-thread-activity_ts--553cef
@@ -1675,6 +1670,7 @@ today-agenda-detail-view
 today-agenda-view
 today-unreads-view
 tractor-channel-simplification-first-message-banner
+unified-global-triage-huddles-tab-actions
 unified-global-triage-tab-content
 unified-global-triage-tabs
 unified-global-triage-todos-tab-actions
