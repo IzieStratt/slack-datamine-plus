@@ -38,3 +38,11 @@ test('experiments: newer selector module shape (inline exports calling getGroupF
   assert.deepEqual(r.experiments.new_thing, ['on']);
   assert.deepEqual(r.experiments.other_thing, ['a', 'b']);
 });
+
+test('block registry: registered types, component fields and gated prototype candidates', () => {
+  const js = 'let Tag=({blockId:e,text:t,tagStyle:n="x",renderBlocks:r})=>null;let o=(0,a("KPrg").R)()({type:"tag_block",component:()=>Tag,processProps:e=>(0,n.W)(e)});'
+    + 'let L=(0,a("x").R)()({type:"lazy",component:()=>i.A});'
+    + 'PrototypeImpl=({renderBlocks:e,...c})=>{let m=(0,o.d4)(e=>"on"===(0,N._Z)(e,"bk_next"));switch(c.candidateType){case"chart":if(!m)return null;return 1;case"form_card":return 2}}';
+  const out = [...extractExtras(js)['block-registry']].sort();
+  assert.deepEqual(out, ['fields: tag_block: text, tag_style', 'prototype: chart (experiment bk_next)', 'prototype: form_card', 'registered: lazy', 'registered: tag_block']);
+});

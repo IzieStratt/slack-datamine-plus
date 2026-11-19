@@ -103,8 +103,42 @@ const SHORTCUT = /^(?:(?:mod|ctrl|cmd|command|shift|alt|opt|option|meta)\+)+[^"\
 
 const CATEGORIES = [
   'errors', 'scopes', 'slash-commands', 'dev-commands', 'analytics-events', 'workflow', 'notification-types', 'trace-spans', 'icons',
-  'shortcuts', 'feature-flags', 'ui-strings', 'enums', 'ai-enums', 'mcp-enums', 'blockkit-enums', 'design-tokens', 'paths', 'hosts',
+  'shortcuts', 'feature-flags', 'ui-strings', 'enums', 'ai-enums', 'mcp-enums', 'blockkit-enums', 'block-registry', 'design-tokens', 'paths', 'hosts',
 ];
+// ---- Block Kit renderer registry ------------------------------------------------------------------------------------------------
+// Each renderer is registered as R()({type:"x",component:()=>Comp,processProps:e=>(0,W)(e)}), where W camelCases the block's fields.
+// So the props Comp destructures are the block's fields. Lazy components live in their own chunk and are skipped (no props line).
+// The prototype block dispatches on candidate_type to unreleased blocks, each gated by an experiment read at the top of PrototypeImpl.
+const snake = (k) => k.replace(/[A-Z]/g, (c) => `_${c.toLowerCase()}`);
+const NOT_FIELDS = new Set(['renderBlocks', 'onAction', 'blockKitClogger', 'blocksContainerContext', 'containerActionsPayload', 'channelId', 'messageTs',
+  'blockIndex', 'isCopy', 'isInAttachment', 'isDisabled', 'blockKitLogPayload', 'messageChannelId', 'canDispatch', 'isError', 'blockId', 'children']);
+const balanced = (s, i) => { let d = 0; for (let j = i; j < s.length && j < i + 4000; j++) { if (s[j] === '{') d++; else if (s[j] === '}' && --d === 0) return s.slice(i + 1, j); } return null; };
+export function destructuredKeys(body) {
+  const out = []; let d = 0, cur = '';
+  for (const ch of body) { if ('{[('.includes(ch)) d++; if ('}])'.includes(ch)) d--; if (ch === ',' && !d) { out.push(cur); cur = ''; } else cur += ch; }
+  out.push(cur);
+  return out.map((x) => x.trim().match(/^([A-Za-z_$][\w$]+)/)?.[1]).filter((k) => k && !NOT_FIELDS.has(k));
+}
+function componentProps(js, name) {
+  if (!/^[A-Z]\w+$/.test(name)) return null;
+  const m = js.match(new RegExp(`(?:function ${name}|[ ,;]${name}=(?:\\(0,[\\w$.]+\\)\\()?(?:function(?: \\w+)?)?)\\(\\{|[ ,;]${name}=[a-z]=>\\{let\\{`));
+  if (!m) return null;
+  const body = balanced(js, m.index + m[0].length - 1);
+  return body == null ? null : destructuredKeys(body).map(snake);
+}
+export function scanBlockRegistry(js, add) {
+  for (const m of js.matchAll(/\{type:"([a-z_]+)",component:\(\)=>([\w$.]+)/g)) {
+    add(`registered: ${m[1]}`);
+    const props = componentProps(js, m[2]);
+    if (props?.length) add(`fields: ${m[1]}: ${props.join(', ')}`);
+  }
+  const i = js.indexOf('PrototypeImpl=');
+  if (i < 0) return;
+  const impl = js.slice(i, i + 6000), gates = {};
+  for (const g of impl.matchAll(/(?:let |,)([\w$]+)=\(0,[\w$.]+\)\([a-z]=>"on"===\(0,[\w$.]+\)\([a-z],"([a-z0-9_]+)"\)\)/g)) gates[g[1]] = g[2];
+  for (const c of impl.matchAll(/case"([a-z0-9_]+)":(?:if\(!([\w$]+)\))?/g)) add(`prototype: ${c[1]}${gates[c[2]] ? ` (experiment ${gates[c[2]]})` : ''}`);
+}
+
 export const emptyExtras = () => Object.fromEntries(CATEGORIES.map((c) => [c, new Set()]));
 
 export function extractExtras(js, into = emptyExtras()) {
@@ -140,6 +174,7 @@ export function extractExtras(js, into = emptyExtras()) {
     if (/^(BLOCK|ELEMENT|RICH_TEXT)/.test(name) || BLOCK_TYPE.test(val) && /BLOCK|ELEMENT|TYPE/.test(name)) add('blockkit-enums', line);
   }
   for (const m of js.matchAll(/\btype:"([a-z_]+)"/g)) if (BLOCK_TYPE.test(m[1]) && m[1].length > 3) add('blockkit-enums', `type=${m[1]}`);
+  scanBlockRegistry(js, (v) => add('block-registry', v));
   // design-system CSS variables (--dt_color-..., --dt_static_space-...); a trailing '-' is a prefix used to build names, not a token
   for (const m of js.matchAll(/(--dt_[a-z0-9]+(?:[_-][a-z0-9]+)*)(?![\w-])/g)) add('design-tokens', m[1]);
   // quoted internal page/endpoint paths ("/admin/billing", "/customize/slackbot") and the slack-owned hosts the client talks to
