@@ -29,6 +29,8 @@ A count of people in this channel who have a Regular Member account.
 A count of people in this channel who have a guest account.
 A count of total messages posted, including messages from apps and integrations.
 A keyword search summary is counted when (1) a person’s search meets criteria that triggers a suggested question and the person clicks to view it, or (2) a person’s search meets criteria that triggers an AI answer to be displayed and the person clicks to expand the answer. A natural language search summary is counted when a person searches using natural language and views the AI answer.
+A member is active if they’ve posted a message or read at least one channel or direct message.
+A member is active if they’ve posted a message or read at least one channel or direct message. Last activity is measured over the last 90 days.
 A member of the Slack support team will contact you shortly. Please check out our <a href="{link}" target="_blank">Help Center article</a> for more information.
 A new tab will be opened for you to complete the installation process.
 A new temporary password was generated
@@ -39,8 +41,10 @@ AI Features
 AI analytics
 AI answers capability is turned off.
 AI answers capability is turned on.
+AI huddle notes generated
 AI use allowed for #{channelName}
 AI use restricted for #{channelName}
+AI-assisted workflow drafts created
 Accept Slack Connect invites
 Accept an invitation
 Accepting Slack Connect invites
@@ -52,9 +56,11 @@ Access type
 Access {appName}’s AI Assistant with one click
 Account Type
 Account Types
+Account created
 Account type permission table
 Actions for {channelName}
 Actions taken
+Actions taken with apps
 Activate account
 Activate as a Frontline Member
 Activate as a Multi-Channel Guest
@@ -92,6 +98,7 @@ Add each URL domain on a different line.
 Add each domain on a different line.
 Add each email domain on a different line.
 Add members to {workspaceName}
+Add people to {workspaceName}
 Add to Workspaces
 Add to more workspaces
 Add to workspaces
@@ -131,6 +138,8 @@ Agentforce tabs
 Agents required for Slack actions
 Agree to continue
 All AI Usage
+All AI uses
+All Settings
 All admins, via Slackbot
 All available workspaces
 All channel owners
@@ -183,6 +192,7 @@ Already approved
 Already assigned
 Already using Slack?
 Also reset password
+Alternate email
 An email address is required to reactivate this user
 Any change in visibility is forward looking only.
 Any custom setting
@@ -214,6 +224,7 @@ AppleScript
 Approval required
 Approvals are not required for invitations less than 24 hours old.
 Approvals never required for channel invitations
+Approve an app
 Approve an app for anyone to install
 Approve invitation request?
 Approve request
@@ -240,12 +251,13 @@ Are you sure you want to make {newOwnerName} the new owner of {originalOwnerName
 Are you sure you want to restrict this for everyone?
 Assign Organizations Wide Role
 Assign role
+Audio clip plays
+Audio clips created
 Authenticate
 Authenticate another way
 Authenticate {teamName}
+Authorization
 Auto
-Auto-merge is on, but GitHub hasn’t added this to the merge queue yet.
-Auto-merge on
 Automatic acceptance
 Automatic user account mapping
 Automatically accepted invitation
@@ -253,6 +265,7 @@ Automation Rules
 Automation will also show record details.
 Automation will only display the record’s name and object.
 Automations executed
+Automations executed with apps
 Available at your first renewal after June 17, 2026
 Available on Paid Plans
 Available workspace search
@@ -274,6 +287,7 @@ Browser session protection
 Built By
 Built by
 Business+ allows you to manage your team better with enhanced control and work faster with advanced AI and automations.
+Business+ plan
 By continuing, you agree to:
 By enabling, people at your organization with access to Slack AI will have the option of connecting their {appName} account. This lets them see information they already have access to in {appName} in their Slack search results. It will not create a new account or give people access to information to they didn’t already have.
 By enabling, people at your organization with access to Slack AI will have the option of enabling {appName} in their Slack search. This lets them see information they already have access to in {appName} in their Slack search results.
@@ -283,6 +297,7 @@ C#
 C++
 CSS
 CUSTOMIZED
+Calculating data…
 Callback IDs can’t be longer than {num} characters.
 Can access channel names/metadata
 Can access files
@@ -305,11 +320,16 @@ Cancel all {count, number} requests?
 Cancel this app request?
 Cancel this request?
 Cannot remove yourself from the workspace.
+Canvas Retention
+Canvas and List Retention
+Canvas edits
+Canvas shares
+Canvas views
+Canvases created
 Can’t connect to {serverName}
 Can’t have spaces
 Can’t have special characters (e.g. @, $, %, =) or emojis
 Can’t remove member
-Certain people and groups
 Change access?
 Change account type
 Change email?
@@ -343,36 +363,43 @@ Channel purpose
 Channel renamed
 Channel searcher
 Channel summaries
+Channel summaries viewed
 Channel unarchived
 Check back in 24 hours to see additional metrics and details about your organization’s channels
 Check back in 24 hours to see additional metrics and details about your workspace’s channels.
 Check back in 24 hours to see additional metrics and details.
+Check back in 24 hours to see data about your organization’s members
+Check back in 24 hours to see data about your team’s members
 Check punctuation
 Choose Role
 Choose a channel…
 Choose a new owner
 Choose a server
 Choose a workspace
-Choose a workspace below to get back to working with your team.
 Choose access
 Choose account type
 Choose member access
 Choose servers
 Choose specific channels
 Choose the workspaces where you want access to {appName}—and its AI capabilities—available in Slack’s top bar by default for members.
-Choose the workspaces you’d like to add to your desktop app.
 Choose whether users in your organization can use enterprise search.
 Choose whether users in your organization can view thumbnail previews in file unfurls from Google Drive and Microsoft only.
 Choose which audit log anomalies you want to detect in your organization and immediately terminate user sessions when detected.
 Choose which workspaces to connect to this channel:
+City
+Claimed date
 Clear Selection
+Clip plays
 Clips
+Clips created
 Clojure
 Close Window
 Close Without Saving
 Closure Stylesheets (GSS)
 CoffeeScript
 ColdFusion
+Comments added to canvases
+Comments added to lists
 Compares members who posted in the selected month to the previous month.
 Configured
 Connect Salesforce Org
@@ -390,7 +417,6 @@ Connection & authentication
 Connection details
 Connection pending
 Connection status
-Contact (opens in new tab)
 Contact Slack if the issue persists.
 Continue With Apple
 Continue With Email
@@ -410,6 +436,7 @@ Copy server URL
 Copying messages on mobile devices disabled
 Copying messages on mobile devices enabled
 Copying messages on mobile devices updated
+Cost center
 Couldn't load results.
 Couldn’t assign role.
 Couldn’t cancel this request. Try again in a moment.
@@ -433,17 +460,16 @@ Counted when a person uses the natural language input or suggested prompts in Wo
 Create Another Workspace
 Create New Salesforce Org
 Create Workspace
-Create a New Workspace
 Create a Workspace
-Create a brand new workspace for you and your team.
 Create a new Slack workspace
-Create a new workspace to use with Slack CRM
 Create a rule
 Create a workspace
 Create records
 Creation date
+Crunching the numbers. We’ll show your data shortly.
 Crystal
 Currently in {numPrivateChannels, plural, =1 {a private channel} other {# private channels}}
+Customer acknowledgement required
 Cypher
 D
 Daily actions taken
@@ -459,6 +485,13 @@ Date installed
 Date requested
 Date the app was created
 Date the app was installed
+Days active
+Days active (Android)
+Days active (Desktop)
+Days active (iOS)
+Days using Apps
+Days using Slack Connect
+Days using Workflows
 Deactivate Account
 Deactivate account
 Deactivate account and disable <b>{app_count, plural, =1 {# app} other {# apps and integrations}}.</b>
@@ -467,6 +500,7 @@ Deactivate your account and apps you've added?
 Deactivate your account and disable <b>{app_count, plural, =1 {# app} other {# apps and integrations}}.</b>
 Deactivate {memberCount, plural, =1 {Member} other {Members}}
 Deactivate {real_name}'s account?
+Deactivated date
 Deactivation requested
 Default for future workspaces
 Default member access
@@ -503,13 +537,14 @@ Didn’t use the paid features
 Diff
 Directly to everyone who can manage Slack Connect
 Disable 2FA
+Disable canvas update messages
 Disable two-factor authentication
 Disable two-factor authentication?
+Disabling Member Overrides will remove all overrides currently in place on DMs, MPDMs and channels. When disabled they will default to the Org wide policy (or Workspace policy). Verify the customer has been informed and the appropriate actions have been taken. The customer can run a channel audit export to review all current member overrides.
 Disallowed objects
 Discard entered ranges?
 Disclaimer: Generative AI can produce inaccurate or harmful responses. Make sure people review the output for accuracy and safety. They assume responsibility for how the outcomes of this agent are applied.
 Disconnecting
-Distributed
 Django Template
 Docker
 Domain Validation
@@ -552,6 +587,8 @@ Email address to send instructions
 Email domain verification
 Email is set by the organization and can’t be changed.
 Embedded JavaScript
+Emoji reactions are a quick way for members to respond to a message. This is a count of number of times this person used a reaction.
+Employee ID
 Enable IP allowlist for this organization
 Enable Slackbot now?
 Enable domain allowlist for channel email addresses and personal forwarding email addresses
@@ -574,6 +611,7 @@ Enter valid domains
 Enter your Tenant ID and click ‘Save’. Follow the on-screen link to grant consent
 Enter your email address
 Enter your email to sign in
+Enterprise Grid plan
 Enterprise Organization
 Enterprise search and AI answers
 Enterprise search capability is turned off.
@@ -611,6 +649,7 @@ External People
 External access blocked 
 External approval status
 External domains apply when rendering HTML in emails. By default, external content can be loaded from all domains.
+External people can use workflows created by your organization
 External people using workflows created by {orgName}
 External person
 F#
@@ -627,8 +666,11 @@ Failed to save settings. Please try again later.
 Failed to update Slackbot setting. Please try again.
 Failed to update integration. Before changing Salesforce organizations, a Sales Admin needs to disconnect this integration in Sales settings.
 Failed to update setting. Please try again later.
+File Retention
 File download settings updated
+File summaries viewed
 File summary translation
+File translations generated
 File uploads
 Files Uploaded
 Files uploaded
@@ -659,19 +701,22 @@ For some really weird reason, we’re having trouble with your workspace name. P
 For some reason, we’re having trouble with your workspace URL. Please try again.
 Force password reset
 Fortran
+Found in DNS:
 Free for this workspace. You can add up to 5 of them per paid member of your workspace.
+Free plan
 From {orgName} only
+Frontline Members
 Frontline members
 Generate a different password
 Generate a temporary password
-Generating CSV…
 Get a quick view of people from external orgs
 Get notified about new servers
 Get started on Slack
 Get started on {plan}
-Get started with Slack CRM by creating a new workspace.
 Get started with your Slack template
+Get the app to view and send messages.
 Get the simplicity of Slack with the power of Salesforce. Enter the email you use for work to sign up for Slack CRM.
+Get your messages in the app
 Gherkin
 Give people a quick start to chatting with the agent. Keep them short and sweet.
 Give your rule a name
@@ -686,13 +731,13 @@ HTML rendering
 Handlebars
 Haskell
 Haxe
-Help (opens in new tab)
 Here’s what happens when a member’s profile is deleted:
 Hide archived channels
 High Risk
 High risk
 High risk list
 Hmm, something’s gone wrong.
+Honorific prefix
 How do you want to reset their password?
 How workflow users authenticate
 Huddles initiated
@@ -731,8 +776,10 @@ In order to use our services, you must agree to all the Terms of Services and to
 In private channels
 In public channels
 In workspace
+Included in bill
 Includes external people, guests, and your coworkers
 Information {appName} can view
+Install an app
 Installation
 Installed Agents
 Installed on
@@ -747,6 +794,7 @@ Invitation request approved
 Invitation requests approved
 Invitation search
 Invitation type
+Invitations can only be accepted from external people at verified organizations.
 Invite no longer exists:
 Invited Frontline
 Invites awaiting your approval
@@ -774,6 +822,7 @@ JSX
 Java
 JavaScript
 Join Conversation
+Join a workspace to accept the invitation
 Join {teamName} ({memberCount, plural, =1 {# member} other {# members}})
 Joining external workspaces
 Julia
@@ -781,6 +830,7 @@ Keep Request
 Keep Requests
 Keeping apps when deactivating members
 Keyword search
+Keyword search summaries viewed
 Kick things off by creating a workspace for your team.
 Kotlin
 LaTeX/sTeX
@@ -790,6 +840,9 @@ Last 28 days
 Last 30 Days
 Last 7 Days
 Last active
+Last active (Android)
+Last active (Desktop)
+Last active (iOS)
 Last activity
 Last automation on
 Last message sent on
@@ -808,18 +861,23 @@ Learn more about unfurl settings
 Let’s find your team
 Limit of {limit} addresses exceeded
 Limit of {limit} addresses exceeeded
+Limit sharing so only canvas owners can share their canvases with other people and channels.
 Limited access group updated
 Lisp
+List Retention
+List edits
+List shares
+Lists created
 Literate Haskell
 Loading channels…
 Loading permissions
+Locale
 Log in with the app
-Looking for an existing workspace?
+Looking for a different workspace?
 Looking for something?
 Looks like you belong to a few workspaces. To sign into one of these, you’ll need to download the app.
 Looks like you’re new to Slack! Start by creating a new workspace for your organization. 
 Low Risk
-Low risk
 Low risk list
 Lua
 MATLAB
@@ -866,22 +924,25 @@ Manage your customers and enhance your efficiency with Business+'s premium featu
 Manage your customers and enhance your efficiency with Business+'s premium features. Try it with a {trialDurationInDays}-day trial.
 Manage your team better with enhanced control and work faster with advanced AI and automations.
 Manager App ID
+Manager ID
 Mandatory mobile browser disabled
 Markdown (raw)
 Mathematica
+Max channels joined
 Maximum
 Maximum of {count} items allowed
 Medium Risk
-Medium risk
 Medium risk list
 Member access
 Member access updated
 Member data is available from {firstDate}.
+Member data not available yet
 Member data unavailable
 Member profile
 Members can only view lists. They can not create new lists.
 Members couldn’t be added.
 Members filter
+Members from your organization can use workflows created by external organizations
 Members of selected workspaces will no longer have access to this server.
 Members of these workspaces will no longer have access to this {appType}. Org admins and owners will be notified that this {appType} will be removed.
 Members that could not be removed
@@ -896,7 +957,10 @@ Members with automations
 Membership limit updated
 Menu actions for 
 Menu actions for {name}
+Message Retention
+Message explanations viewed
 Message history settings updated
+Message translations generated
 Messages can’t be more than 4000 characters
 Messages consumed by Admin Oversight API
 Messages consumed by Discovery API
@@ -907,7 +971,10 @@ Messages from members
 Messages from my app are free of typos and grammatical errors.
 Messages posted
 Messages posted by members
+Messages posted in channels
+Messages read from apps
 Messages sent
+Messages sent to Slackbot
 Microsoft
 Migrate users later
 Minimum
@@ -919,6 +986,7 @@ Mobile only
 Mobile passcode disabled
 Mobile passcode enabled
 Mobile passcode updated
+Mobile phone
 Monthly active people
 More options for {channelName}
 Move {ruleName} rule one row down
@@ -954,6 +1022,7 @@ My landing page includes a link to an accessible privacy policy that clearly exp
 Names can’t be longer than {num} characters.
 Names can’t start with the @ sign — that’s how your coworkers will mention you in conversation.
 Natural language search
+Natural language search summaries viewed
 Need to fix a duplicate account? There’s no need to delete this profile. 
 Need to keep specific apps or integrations up and running? We're happy to help. No users or apps will be disabled in the meantime.
 Needs Review
@@ -1012,8 +1081,12 @@ Not yet sent to
 Note: Changing this setting will change the corresponding files setting for AI search.
 Note: Changing this setting will change the corresponding files setting for Slackbot.
 Number of accepted invites
+Number of days that a member posted a message or read a message from a conversation that is shared with an external organization.
+Number of days that a member ran at least one workflow or interacted with a workflow or message from a workflow.
+Number of days that a member used an app or an app performed an action on behalf of that member.
 Number of people using AI
 Number of people using feature
+Number of searches a member has made in Slack.
 OAuth Scopes
 OAuth Speedbump Complete
 OAuth Speedbump Installing
@@ -1050,9 +1123,10 @@ Only specific members or groups
 Only specific people
 Only specific people or groups can use this server.
 Only specific people or groups with server access
+Only teams on paid plans can start direct messages with Slack Connect.
 Only the organization that hosts #{channelName} can change Slackbot access for it.
+Only the uppercase and lowercase letters differ. The value is case-sensitive, so copy it exactly.
 Oops! You have unsaved changes. Do you want to discard those changes?
-Oops, something went wrong with that code, but we don’t know what.
 Oops, sorry! Your username can’t be {username}, as it’s reserved for other uses.
 Open Gmail App
 Open a workspace
@@ -1066,6 +1140,8 @@ Opportunity for improvement
 Optional. Uncheck to leave it out
 Or choose another way to sign in.
 Or create new
+Or join a workspace to accept the invitation
+Or join with a different workspace
 Or sign into a new workspace here
 Org Admin
 Org Admins
@@ -1080,7 +1156,6 @@ Org-Wide Channels Table
 Org-wide channel analytics
 Org-wide channel data not available yet
 Org-wide channels
-Organization overview
 Organization search
 Organizations Table
 Other Notes
@@ -1102,10 +1177,11 @@ Pause access
 Pause rule
 Pay Balance Now
 Pending app requests
-Pending invitations
+Pending verification
 People and groups
 People and groups for {objectLabel}
 People who posted
+People with their email address
 Perl
 Permanently delete {possessiveTargetName} profile?
 Permission
@@ -1127,13 +1203,15 @@ Please enter a valid URL.
 Please enter an App ID.
 Please enter at least one letter for your Workspace URL.
 Please enter up to 21 characters for your Workspace URL.
+Please enter your full name
 Please fill in a username.
+Please include information about who is requesting this update, and your name.
 Please select a list.
 Please select a rating
-Policies
-Policies (opens in new tab)
+Posting messages in channels helps make information more discoverable and transparent. This is the number of messages that a member posted to a public or private channel in the last 30 days.
 Posting permissions updated
 PowerShell
+Preferred language
 Preview contains static sample data
 Preview:
 Previous Month ({shortenedMonth})
@@ -1141,8 +1219,10 @@ Previous resolution
 Previously denied{newPermissions, plural, =0 {} =1 { · # new permission} other { · # new permissions}}{fewerPermissions, plural, =0 {} =1 { · # fewer permission} other { · # fewer permissions}}{newDomains, plural, =0 {} =1 { · # new domain} other { · # new domains}}{fewerDomains, plural, =0 {} =1 { · # fewer domain} other { · # fewer domains}}{newMcpDomains, plural, =0 {} =1 { · # new MCP domain} other { · # new MCP domains}}{fewerMcpDomains, plural, =0 {} =1 { · # fewer MCP domain} other { · # fewer MCP domains}}
 Primary Workspace Owner
 Primary organization
+Primary phone
 Private Channels
 Private channels
+Pro plan
 Protect Chrome and Edge sessions from stolen session cookies.
 Protect your Slack account with a Passkey
 Public channels
@@ -1151,6 +1231,7 @@ Python
 Ranges
 Rated High risk in your scope ratings.
 Reactions added
+Reactions added to canvases
 Read Jira project and issue data, search for issues and objects associated with issues like attachments and worklogs.
 Read access to code, commit statuses, discussions, issues, metadata, and pull requests
 Read all files accessible to the signed-in user
@@ -1163,6 +1244,7 @@ Read-only tools
 Read-only tools ({count})
 Ready to activate
 Real-time data is available when selecting a range of last 24 hours and is an approximation that may have a small margin of error.
+Recaps viewed
 Received from
 Received invitations
 Received on
@@ -1220,6 +1302,8 @@ Renew to the new Enterprise+ to get access to enterprise search and AI search no
 Reorder Automation Rules
 Reorder list
 Reorder table menu actions for {rule}
+Reports if a member was considered billable for at least one day in the selected time period. This only applies to invoiced customers.
+Request Submitted
 Request for {appName} resolved and removed from the list
 Request type
 Request was not {invalidApprovalsText}
@@ -1237,6 +1321,7 @@ Resolution
 Restrict AI use of this channel’s content 
 Restrict Access
 Restrict Slackbot edits to assigned layouts
+Restrict an app
 Restrict an app to block installation
 Restricted only
 Resume Access
@@ -1275,7 +1360,6 @@ SSO with any provider and SCIM user management
 Salesforce MCP servers
 Salesforce Organization
 Salesforce Organizations | Slack Admin
-Salesforce channels
 Salesforce org instance URL and ID for {orgName}
 Salesforce orgs table
 Same as default for this tool type
@@ -1303,13 +1387,13 @@ Search by name, description, URL or organization
 Search for an app to approve
 Search for an app to restrict
 Search for an app…
-Search for members or groups
 Search for someone to add…
 Search for workspaces
 Search summaries
 Search tools by name
 Search workspaces by name
 Search {apiTotal, plural, =1 {# available workspace} other {# available workspaces}}
+Searches
 See Paid Plans
 See Pricing Plans
 See all external people in direct message conversations and channels.
@@ -1317,6 +1401,8 @@ See all invalid range values
 See and update the data you gave it access to, even when users are not currently using the app
 See how many people are active — meaning they posted a message or read at least one channel or direct message.
 See how much each AI feature is being used and by how many people. Slack’s native AI tools offer users secure and efficient ways to summarize, search, and create.
+See more options
+See more options ({additionalWorkspacesCount})
 See your personal info, including any personal info you’ve made publicly available
 See your primary Google Account email address
 Select Account Type
@@ -1324,7 +1410,6 @@ Select Channel Guest
 Select a Salesforce org to use
 Select a role
 Select a rule type
-Select a time range to view analytics for
 Select an account to get started
 Select an organization
 Select at least one member or user group, then try again.
@@ -1391,10 +1476,12 @@ Setting applied
 Settings categories
 Settings saved
 Setup {providerName}
+Share Invite Link
 Shell
 Show all record details for these objects
 Show all servers
 Show archived channels
+Show canvas version history and allow restoration
 Show details for {count, plural, =1 {# object} other {# objects}}
 Show fewer workspaces
 Show in the table…
@@ -1419,9 +1506,11 @@ Since you only have permission to manage private channels, public channels are h
 Since you only have permission to manage public channels, private channels are hidden.
 Single-Channel Guests
 Single-channel guests
+Slack Calls 
 Slack Connect Open Requests table
 Slack Connect Requests & Invitations table
 Slack Connect Sent Invitations table
+Slack Huddles
 Slack gives your team a home — a place where they can talk and work together. To create a new workspace, click the button below.
 Slack had a problem loading requests. If it keeps happening, contact Slack support.
 Slack has been disconnected from {orgName}. Contact Salesforce admin to get help or switch to another Salesforce org.
@@ -1464,8 +1553,11 @@ Slackbot can’t update records
 Slackbot excluded from #{channelName}
 Slackbot permissions to create and update records
 Slackbot permissions to create, update, and delete records
+Slackbot skills created
+Slackbot skills used
 Slackbot won’t respond in an excluded channel, even when mentioned. Members can still use Slackbot elsewhere.
 Smalltalk
+Some DNS providers add your domain to the host for you. If yours does, enter only the part of the host before that domain, or @ if nothing comes before it.
 Some people or groups the server allows no longer exist.
 Some people post a lot of little messages. Others try to get it all in one. This data is best used for understanding your whole organization’s use of Slack, not evaluating an individual’s performance.
 Some people will use AI more than others. This data is best used for understanding trends in your whole organization’s use of AI and not for evaluating an individual’s productivity.
@@ -1487,11 +1579,11 @@ Sorry, but this username is not available! Please pick another one.
 Sorry, but we do not allow signups from @{email_domain}. Please pick a different email address!
 Sorry, slackbot is a reserved word. Try something else!
 Sorry, something went wrong. Please try again.
-Sorry, that code has already been used. You can only click a confirmation link once.
 Sorry, that’s a bit too long! Usernames must be fewer than {max_length_plus_one} characters.
 Sorry, usernames can only contain letters, numbers, periods, hyphens, and underscores, with no spaces!
 Sorry, usernames must be lowercase!
 Sorry, usernames must begin with a letter or number!
+Sorting is not available while filtering by account type
 Specific channel
 Specific workspaces
 Specify domains below to restrict external content to only those domains.
@@ -1500,8 +1592,10 @@ Specify who can use Slackbot to delete records for certain objects
 Specify who can use Slackbot to update records for certain objects
 Start a new workspace
 Start by creating a new workspace for your organization. 
+Street Address
 Sure!
 Swift
+Swimming through oceans of data. Sit tight and your analytics will be ready soon.
 Switch Org
 Switch Salesforce Org
 Switch Salesforce Org for {agentName}
@@ -1521,6 +1615,8 @@ That code wasn’t valid. Give it another go!
 That’s a bit long. {maximumDays} days or less should work.
 The CSV contained no valid IP ranges.
 The MCP server is not active. Please enable it in Salesforce before trying again.
+The Slack verification record for {recordName} doesn’t match. Change it to the value from the previous step, then check again.
+The TXT record for {recordName} hasn’t appeared yet. DNS changes can take up to 24 hours, so check again later.
 The average number of automated actions performed on a member’s behalf by a specific app each day
 The average number of files consumed over the selected date range
 The average number of impressions messages sent by a specific app during a day
@@ -1536,10 +1632,10 @@ The average number of unique members who either read a message or replied from a
 The average number of unique members who had at least one automation completed on their behalf by a specific app per day
 The average number of unique users who interacted with a specific app at least once per day
 The creator chooses how users authenticate. The options are to use the creator’s account or individual user accounts.
+The customer has acknowledged that enabling this option will disable their current file retention settings. Files with no active shares will be deleted after a 30-day grace period.
 The email that was associated with this deactivated account will be available. When this account is reactivated, the user will need to verify the updated email address.
 The following actions will be performed:
 The following {count, plural, =1 {member} other {members}} could not be removed from {channelName}:
-The list of teams you can join is no longer available because the session has expired.
 The member will no longer be able to sign in to the workspace. 
 The member’s corresponding user in the {salesforceOrgName} Salesforce org will be deactivated and associated data will no longer be accessible to the member.
 The member’s messages and files will still be accessible in Slack.
@@ -1574,6 +1670,7 @@ There was a problem loading excluded channels. Give it another try in a few minu
 There was a problem loading the automation rules. Give it another try in a few minutes.
 There was a problem loading the scope ratings. Give it another try in a few minutes.
 There was a problem loading these Channel Managers. Give it another try in a few minutes.
+There was a problem looking up the DNS records for {recordName}. Try again in a few minutes.
 There was a problem updating Slackbot access for #{channelName}. Give it another try in a few minutes.
 There was a system error that prevented us from creating your account. Please try again.
 There was an issue connecting. Please try again.
@@ -1619,18 +1716,21 @@ This is just a preview — you haven’t been charged yet. When you move to Ente
 This is locked by the org and cannot be changed.
 This is required — you’ll need to enter an email.
 This is the agent name synced from Agentforce.
+This is the first date that a member signed into your Slack workspace or Org.
 This may take some time, but you’ll get a message from Slackbot when it’s done.
 This member is assigned to this workspace via {ssoProviderName} groups, and they cannot be individually managed here.
 This member is assigned to this workspace via {userGroupName} and cannot be individually managed here.
 This name can’t be used
 This needs to be in the format {pattern}. Sorry!
 This only applies to devices that aren’t managed by an Enterprise Mobility Management (EMM) provider.
+This only applies to invoiced customers
 This org is using an outdated connection
 This person isn’t in any channels yet.
 This person isn’t in any channels you can remove them from.
 This person isn’t in any channels.
 This person was recently invited. No need to invite them again just yet.
 This premium feature enhances your efficiency and secures your data with advanced AI, security features, and global compliance tools.
+This record couldn’t be found, but records can also take up to 24 hours to appear. Check again tomorrow to see it’s gone through. If it hasn’t, you can try again.
 This server hasn’t shared any tools with Slack.
 This server is not available to connect.
 This server’s access doesn’t include any groups.
@@ -1646,11 +1746,12 @@ This will permanently remove the server, and its tools will no longer be availab
 This will permanently remove the unavailable servers.
 This will revoke all registered passkeys for all other members of {teamName}, except Primary Owners. Your passkeys and sessions will not be affected.
 Thread summaries
+Thread summaries viewed
 Three coworkers work together, sharing files, and sending messages back and forth.
+To accept this invitation, you’ll need to sign into your workspace.
 To accept your Slack Connect invitation, you need to be a member of this workspace. Contact a workspace admin to be added.
 To approve A2A agents, this rule also needs an Agent URLs condition.
 To connect with this org again, contact Slack
-To see this list again, please confirm your email address:
 To use Asana, you must have a paid account (Starter or above) to use the Asana search integration.
 Toggle tools for {server}
 Too expensive
@@ -1662,6 +1763,10 @@ Tools for {server}
 Tools give Slackbot permission to take actions on your behalf.
 Tools unavailable
 Total AI usage
+Total Calls
+Total Slack Huddles a member has participated in.
+Total Slack native calls a member has participated in.
+Total calls and huddles a member has participated in, including calls by 3rd party applications.
 Total feature usage
 Total files consumed
 Total membership
@@ -1675,6 +1780,7 @@ Transfer {fileType, select, quip {canvas} other {lists}} ownership
 Transform your work with Business+ advanced AI and security
 Transform your work with Business+ advanced AI and security.
 Transform your work with Slack CRM and advanced AI.
+Translations generated
 Try a Different Email
 Try a different email
 Try a different search or filter.
@@ -1697,7 +1803,6 @@ Unable to remove {count, plural, =1 {# member} other {# members}}
 Unable to revoke passkeys. Try again later.
 Unable to save changes to role.
 Unable to save setting. Try again later
-Unable to save setting. Try again later.
 Unable to send SSO binding email.
 Unable to sign {memberName} out of Slack.
 Unable to verify MCP server status. Please try again later.
@@ -1722,6 +1827,7 @@ Update status
 Updated channel visibility
 Updating workspaces…
 Upgrade to unlock more insights
+Upgrade your Plan
 Upgrade your plan to see activity and information for all of your channels.
 Upload CSV
 Upload CSV view
@@ -1733,6 +1839,7 @@ Usage data for Slack AI isn’t ready to view just yet, but we’re crunching th
 Use a different email instead of
 Use description from Agentforce Builder
 User Avatar
+User Type
 Username
 Username is set by the organization and can’t be changed.
 Usernames cannot be longer than 21 characters.
@@ -1749,8 +1856,11 @@ Velocity
 Verification
 Verification expired. Please check the checkbox again.
 Verify your GitHub identity
+Verify your email address to accept invitations with this account.
 Verify your email address, then try again.
 Verilog
+Video clip plays
+Video clips created
 View Agent in Slack
 View Salesforce organization page
 View a summary of Confluence page content
@@ -1760,7 +1870,6 @@ View details regarding spaces and their associated properties
 View our help article
 View user details
 View user information in Jira that the user has access to, including usernames, email addresses, and avatars.
-View your team invitations
 View {channelCountString} in {name}
 Viewers by department
 Visibility of external organizations
@@ -1783,11 +1892,13 @@ We couldn’t reset the password for {memberName}.
 We couldn’t resume access for {memberName}.
 We couldn’t save the changes. Please try again later.
 We couldn’t send {memberName} an SSO rebind email.
+We found the verification record on {bareDomain}, but for a wildcard domain it needs to be on {recordName}. Move the record there, then check again.
 We had trouble verifying that email domain. Please try again later.
 We provide users with a mechanism to request to delete, access, and transfer an individual’s data
 We ran into a problem loading its tools.
 We weren’t able to save changes.
 Weekly active people
+We’ll add the workspaces you choose to your desktop app.
 We’ll get you back to the app in just a minute.
 We’ll pass your feedback along to the team. Thanks for taking the time to share it with us.
 We’re having trouble installing the agent right now. Wait a few minutes, and then try again.
@@ -1849,7 +1960,7 @@ Who is uploading files
 Will be added
 Will not be added
 Workflow Builder steps
-Workflow Managers can export workflows
+Workflow runs
 Workflow steps & triggers
 Workflow steps, triggers, & integrations
 Workflows with steps that use {title} will stop working immediately. Are you sure you want to delete this integration?
@@ -1871,6 +1982,7 @@ Workspace admins and owners must be converted to full members before they can be
 Workspace members can create, view and edit lists.
 Workspace name must be 50 characters or less. Please try again.
 Workspace search
+Workspaces Table
 Workspaces removed from {serverName}
 Workspaces search table
 Would you like to continue and save changes anyway? Any fields with errors will not save.
@@ -1884,7 +1996,6 @@ You are not a member of the channel currently selected, so the name can’t be s
 You can adjust this setting for only this organization and keep the default for all other organizations you work with.
 You can always access archived recommendations if you need them in the future. We’ll also remind you to check up on this security feature again in 365 days, just to make sure you don’t want to take any action.
 You can create a new workspace or choose from an existing one.
-You can join any of the workspaces below, or create your own.
 You can only add a frontline member to a maximum of {maxChannels} channels
 You can only add {limit} accounts at a time. Please deselect some workspaces and try again.
 You can only add {managerLimitCount} more Channel Managers to this channel. Channels can only have 100 Channel Managers.
@@ -1897,6 +2008,7 @@ You do not have permission to manage this type of channel
 You do not have the permissions to remove this user.
 You don’t have permission to add domains.
 You don’t have permission to revoke passkeys.
+You don’t have permission to start direct messages with Slack Connect.
 You haven’t added any domains yet
 You might want to try adjusting your filters.
 Your changes weren’t saved. Try again.
@@ -1916,6 +2028,7 @@ You’re approving:
 You’re denying {numberOfApprovals} invitation requests. Members of your organization will be notified that their requests have been denied.
 You’re denying:
 You’re leaving this page to install {name}
+You’re on the {planName} version of Slack.
 You’ve been invited to join
 You’ve exceeded the maximum of {maxEmailDomains} email domains.
 You’ve exceeded the maximum of {maxUrlDomains} URL domains.
@@ -1923,6 +2036,7 @@ You’ve selected a large number workspaces. Please make sure you want to make t
 You’ve selected all workspaces that match this search
 You’ve selected all {selectedWorkspaces} workspaces.
 You’ve selected {selectedWorkspaces} workspaces.
+Zip Code
 a different email.
 active agents table
 agent creator
@@ -1942,6 +2056,8 @@ in the last 7 days
 includes any of those in
 includes only those in
 is a connector step
+joined the huddle.
+left the huddle.
 members
 name@{example_com}
 of the following conditions are met:
@@ -1953,6 +2069,8 @@ rows
 scope_ratings
 sent by
 slack marketplace approved
+started screen sharing.
+stopped screen sharing.
 submenu
 submitted for approval
 team
@@ -1985,7 +2103,6 @@ you@{example_com}
 {appName} sees what each connected person can see, and acts in their name.
 {appName} sees what each connected person can see, not only where it’s added.
 {appName} steps will be removed from all workflows and will not be available in Workflow Builder. 
-{appTypeCount} categories
 {appsCount, plural, =1 {# app} other {# apps}}
 {browserName} icon
 {browserName} is now mandatory for unmanaged devices
@@ -2039,6 +2156,7 @@ you@{example_com}
 {count, plural, one {Edit access for # tool} other {Edit access for # tools}}
 {count, plural, one {Select members who can use this server.} other {Select members who can use these servers.}}
 {count} ({privateCount} private)
+{count} members
 {count} {count, plural, =1 {active person} other {active people}}
 {count} {count, plural, =1 {person posted} other {people posted}}
 {date}
@@ -2123,20 +2241,6 @@ you@{example_com}
 {targetDomain}.slack.com doesn’t appear to be in use.
 {targetMemberName} has been changed too many times in the last 5 minutes. Please try again later.
 {teamCount} workspaces
-{teamName} Analytics Prior 28 Days - {formattedDate}.csv
-{teamName} Analytics {formattedStartDate} to {formattedEndDate} - {formattedDate}.csv
-{teamName} Channel Analytics All Time - {formattedDate}.csv
-{teamName} Channel Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Enterprise Analytics All Time - {formattedDate}.csv
-{teamName} Enterprise Analytics Prior 28 Days - {formattedDate}.csv
-{teamName} Enterprise Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Enterprise Analytics {formattedStartDate} to {formattedEndDate} - {formattedDate}.csv
-{teamName} Enterprise Channel Analytics All Time - {formattedDate}.csv
-{teamName} Enterprise Channel Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Enterprise Member Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Enterprise Workspace Analytics All Time - {formattedDate}.csv
-{teamName} Enterprise Workspace Analytics Prior 30 Days - {formattedDate}.csv
-{teamName} Member Analytics Prior 30 Days - {formattedDate}.csv
 {teamName} — passkey authentication failed.
 {teamName} — passkey challenge expired, please try again.
 {totalApprovalCount, plural, =1 {# invitation} other {# invitations}}

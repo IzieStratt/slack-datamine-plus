@@ -1,0 +1,188 @@
+fields: alert: text, level
+fields: attachment_reference: url
+fields: auth_provider: name, description, icon_url, auth_url, disconnect_url, is_connected, connected_identity, connected_context, accessory, is_loading, fallback, value
+fields: call: call_id
+fields: canvas_mermaid: source, fallback
+fields: canvas_table: rows
+fields: carousel: elements, label, is_label_visible
+fields: contact_card: contact_user_id, contact_card_id
+fields: container: title, rich_text_title, subtitle, icon, child_blocks, width, is_collapsible, default_collapsed, has_header_divider
+fields: context: elements
+fields: context_actions: elements, accessibility_label
+fields: data_table: rows, page_size, row_header_column_index, is_salesforce, caption
+fields: data_visualization: force_legacy_layout, chart, size, block_kit
+fields: data_visualization: force_legacy_layout, chart, size, block_kit, type, segments, label, value, axis_config, series, data, name
+fields: header: text, level, style
+fields: image: image_url, alt_text, is_image_full_width, image_width, image_height, image_bytes, title, container_id, slack_file, max_width, max_height, open_file_viewer, remove_top_margin, is_in_app_view, sender_member_id, service_id, disable_image_actions, display_image_without_link, display_image_with_border, can_collapse_image
+fields: mcp_app: service_type, executor_id, app_id, tool_name, tool_use_id, uri, mime_type
+fields: message_embed: team_id, channel, ts
+fields: page: file_id, fallback_text, app_id, has_ai_generated_content
+fields: plan: title, tasks, app_id
+fields: prototype/agent_permissions_card: title, body, disclaimer, actions, icon, show_confirm_dialog, container_id
+fields: prototype/alert: text, level
+fields: prototype/answer_comparison: answers, child_blocks, is_generating, is_read_only
+fields: prototype/ask_user_question: questions, submitted, answers, answered_by
+fields: prototype/canvas_diff: contents, child_blocks
+fields: prototype/chart: chart_type, title, series, segments, axis_config, color_family, show_legend
+fields: prototype/checklist: title, element, group_completed_items, show_progress
+fields: prototype/entity: is_expanded, on_toggle, collapsible, is_expanded_by_default
+fields: prototype/entity_list: entities
+fields: prototype/form_card: title, child_blocks, accessibility_label
+fields: prototype/handoff_button: text, prompt, icon_url, status, complete_text, link_channel_id, link_thread_ts, link_text
+fields: prototype/inline_form: mode, title, subtitle, submit_label, cancel_label, callback_id, submit_action_id, form_blocks, submitted_values, is_editable
+fields: prototype/key_value: pairs, direction
+fields: prototype/list_diff: contents, child_blocks
+fields: prototype/mcp_app: service_type, executor_id, app_id, tool_name, tool_use_id, uri, mime_type
+fields: prototype/slide_template_picker: title, template_options, default_template_id, child_blocks
+fields: prototype/suggested_prompts_button: text, prompt, privately, style, accessibility_label
+fields: prototype/tag: text, tag_style
+fields: prototype/today_item: child_blocks
+fields: prototype/widget: widget_id, title, status, created_by, cards, version, display_mode
+fields: related_automation_decorator: text
+fields: rich_text_header: elements, level
+fields: rich_text_list: elements, style, indent, border, offset, start, checked, checklist, no_border_top_cap, no_border_bottom_cap, _item_data
+fields: rich_text_preformatted: elements, border, language, _raw_elements
+fields: rich_text_quote: elements, border, no_border_top_cap, no_border_bottom_cap, no_border
+fields: rich_text_section: elements
+fields: salesforce_record_card: fields, salesforce_org_id, sobject_api_name, record_name, object_label, record_id, total_field_count
+fields: search_top_results: query, results
+fields: section: text, fields, accessory, is_loading, action_error, should_stack_text_fields, should_truncate_text, remove_top_margin, should_use_small_status_indicators, should_stack_accessory
+fields: section: text, fields, accessory, is_loading, action_error, should_stack_text_fields, should_truncate_text, remove_top_margin, should_use_small_status_indicators, should_stack_accessory, should_place_stacked_accessory_after_text, should_stack_fields_when_narrow
+fields: share_prompt: block
+fields: share_shortcut: block
+fields: share_skill: label, file_id, description, team_id, source_org_name, share_code
+fields: share_workflow: app_id, blocks
+fields: table: rows, column_settings, container_id, caption, is_caption_visible
+fields: task_card: task_id, title, status, details, output, sources, app_id
+fields: timeline: points, summary
+fields: video: container_id, video_url, provider_icon_url, provider_name, author_name, description, title, sender_member_id, title_url, thumbnail_url, alt_text
+prototype: agent_permissions_card
+prototype: alert (experiment block_kit_revamp_blocks)
+prototype: answer_comparison
+prototype: ask_user_question (experiment bk_prototype_next)
+prototype: attachment_reference
+prototype: canvas_diff (experiment block_kit_card_block)
+prototype: card_v2 (experiment block_kit_revamp_blocks)
+prototype: chart (experiment bk_prototype_next)
+prototype: checklist (experiment bk_prototype_next)
+prototype: entity (experiment bk_prototype_next)
+prototype: entity_list (experiment bk_prototype_next)
+prototype: form_card
+prototype: handoff_button (experiment bk_prototype_next)
+prototype: inline_form (experiment bk_prototype_next)
+prototype: key_value (experiment bk_prototype_next)
+prototype: list_diff
+prototype: mcp_app (experiment bk_prototype_next)
+prototype: slide_template_picker
+prototype: suggested_prompts_button (experiment bk_prototype_next)
+prototype: tag (experiment bk_prototype_next)
+prototype: today_item
+prototype: widget (experiment bk_prototype_next)
+registered: _canvas_mention
+registered: _theme_install_button
+registered: actions
+registered: alert
+registered: attachment_mention
+registered: attachment_reference
+registered: auth_provider
+registered: broadcast
+registered: button
+registered: call
+registered: callout
+registered: canvas
+registered: canvas_mermaid
+registered: canvas_message_unfurl
+registered: canvas_table
+registered: canvas_user_mention
+registered: card
+registered: carousel
+registered: channel
+registered: channel_section
+registered: channel_set
+registered: channels_select
+registered: checkboxes
+registered: citation
+registered: color
+registered: contact_card
+registered: container
+registered: context
+registered: context_actions
+registered: conversations_select
+registered: data_table
+registered: data_visualization
+registered: date
+registered: datepicker
+registered: datetimepicker
+registered: divider
+registered: email_text_input
+registered: emoji
+registered: event
+registered: external_select
+registered: feedback_buttons
+registered: file
+registered: file_input
+registered: folder_mention
+registered: header
+registered: icon_button
+registered: image
+registered: input
+registered: layout
+registered: link
+registered: list_record
+registered: loading
+registered: mcp_app
+registered: message
+registered: message_embed
+registered: message_mention
+registered: mrkdwn
+registered: multi_channels_select
+registered: multi_conversations_select
+registered: multi_external_select
+registered: multi_static_select
+registered: multi_users_select
+registered: number_input
+registered: overflow
+registered: page
+registered: password
+registered: plain_text
+registered: plain_text_input
+registered: plan
+registered: prototype
+registered: radio_buttons
+registered: related_automation_decorator
+registered: rich_text
+registered: rich_text_divider
+registered: rich_text_header
+registered: rich_text_input
+registered: rich_text_list
+registered: rich_text_preformatted
+registered: rich_text_quote
+registered: rich_text_section
+registered: salesforce_data_field
+registered: salesforce_record_card
+registered: search_top_results
+registered: section
+registered: share_prompt
+registered: share_shortcut
+registered: share_skill
+registered: share_workflow
+registered: skill
+registered: split_button
+registered: static_select
+registered: table
+registered: tag
+registered: task_card
+registered: text
+registered: timeline
+registered: timepicker
+registered: unknown
+registered: url_text_input
+registered: user
+registered: usergroup
+registered: users_select
+registered: variable
+registered: video
+registered: work_object_mention
+registered: workflow_button
+registered: workflow_mention
+registered: workflowtoken
