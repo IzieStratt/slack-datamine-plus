@@ -17,6 +17,7 @@ import { emptyPresence, finishPresence, scanWatched } from './watch.mjs';
 import { diffSources, pageAssets, sourceIds } from './sources.mjs';
 import { buildInfo, chunkFiles, chunkMapFiles, decode, extractMethods, isGrammarChunk, isPhantom, manifestChunks, manifestUrl, mergeState } from './lib.mjs';
 import { createUpstream, loadTranslations, readLines } from './upstream.mjs';
+import { writePluginApi } from './plugin-api.mjs';
 
 const arg = (n) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : null; };
 const has = (n) => process.argv.includes(`--${n}`);
@@ -308,6 +309,8 @@ async function main() {
   counts.experimentsWithGroups = Object.values(exp.experiments).filter((g) => g.length).length;
   const metaOut = { buildNumber, capturedDate: date, ...stats, gantryBoot, gantryPage, iconGlyphs: iconSet ? Object.keys(iconSet.icons).length : 0, experimentsSelector: exp.selectorModules, apiMethods: names.size, tracked: Object.keys(state).length, absent, methodsWithObservedParams: [...params].filter(([, k]) => k.size).length, chunks: chunkNames.length, mined: counts };
   fs.writeFileSync(`${OUT}/meta.json`, JSON.stringify(metaOut, null, 1) + '\n');
+  // typed, versioned copies of components.json / redux.json for plugin authors (build/plugin-api/, schemas in packages/slack-client-surface/)
+  writePluginApi(OUT);
   // gaps (a source missing, a category collapsing) are written down so the workflow can raise them instead of letting them pass silently
   if (stats.source !== 'from-dir') {
     const problems = checkHealth(prevMeta, metaOut);

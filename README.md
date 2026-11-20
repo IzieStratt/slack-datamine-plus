@@ -33,6 +33,15 @@ The feed reports these as `<target>/<category>` (e.g. `android/feature-flags`); 
 
 Not everything here comes from public files. The webpack manifest (and with it the ~1,800 async chunks) is read from the signed-in Hack Club enterprise-grid client page (`SLACK_CLIENT_URL`, default `https://app.slack.com/client/E09V59WQY1E`) with the `SLACK_D_COOKIE` secret. The entry scripts (`modern.vendor`, `application`, ...) come from a public client page. Debug output is redacted and never includes the page itself. `src/icon-notes.json` holds hand-written notes about single icons shown in the icons gallery.
 
+## History, cross-platform table, plugin API, search
+
+- `build/history.tsv` (`src/history.mjs`): one row per value of each tracked list (`build/*.txt`, `build/platforms/<target>/*.txt`, minus hashed and prose lists such as `chunks`, `ui-strings`, `strings-*`, `api-args`/`api-errors` and the release notes) with `first_seen`, and `last_seen`/`removed` once it is gone. `--rebuild` replays the git history of `build/` (read-only, needs a full clone); without it the lists on disk are folded in, dated today, which is what the `mine` and `platforms` workflows do before committing. An unchanged run writes the same bytes. History starts with this repo (2026-10), so older first-seen dates are not known here (`state/methods.json` has older ones for API methods).
+- `build/cross-platform.json` (`src/cross-platform.mjs`): which API methods and feature flags are on web, desktop and Android. iOS is never mined (FairPlay-encrypted binaries), and desktop only has the Electron shell's own two API calls and no flag list, so those columns say so (`coverage`, `notes`) rather than claiming absence.
+- `build/plugin-api/components.v1.json` and `redux.v1.json` (`src/plugin-api.mjs`, written by `mine`): `components.json`/`redux.json` in a versioned envelope (`schemaVersion`, `build`, `capturedDate`) with JSON Schemas and TypeScript types in `packages/slack-client-surface/` (prepared as an npm package, `private`, not published).
+- `search-site/` (`src/search-page.mjs`): a self-contained search page over the history; not deployed, see `search-site/README.md`.
+
+The changes feed also lists likely renames per category (a removed value and a very similar added one, still counted in new/gone) and API signature changes (`api-methods: signature changed`, from `build/api-args.txt`).
+
 ## Health and new sources
 
 A run can succeed while a whole source is missing. So every run writes `build/health.json`:

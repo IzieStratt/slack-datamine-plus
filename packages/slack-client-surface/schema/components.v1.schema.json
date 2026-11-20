@@ -1,0 +1,33 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/IzieStratt/slack-datamine-plus/packages/slack-client-surface/schema/components.v1.schema.json",
+ "title": "Slack web client React components (slack-datamine-plus, schema v1)",
+ "type": "object",
+ "required": ["schemaVersion", "kind", "build", "capturedDate", "count", "components"],
+ "properties": {
+  "$schema": { "type": "string" },
+  "schemaVersion": { "const": 1 },
+  "kind": { "const": "components" },
+  "build": { "type": ["string", "null"], "description": "Slack build the data was mined from" },
+  "capturedDate": { "type": ["string", "null"], "format": "date" },
+  "count": { "type": "integer", "minimum": 0 },
+  "components": {
+   "type": "object",
+   "description": "React components by displayName",
+   "additionalProperties": {
+    "type": "object",
+    "required": ["modules"],
+    "additionalProperties": false,
+    "properties": { "modules": { "$ref": "#/$defs/modules" } }
+   }
+  }
+ },
+ "$defs": {
+  "modules": {
+   "type": "array",
+   "maxItems": 3,
+   "description": "Defining webpack modules as \"id:hash\"; the hash is the first 8 hex chars of a sha1 of the module's code and changes with any edit to it",
+   "items": { "type": "string", "pattern": "^[^:\\s]+:[0-9a-f]{8}$" }
+  }
+ }
+}

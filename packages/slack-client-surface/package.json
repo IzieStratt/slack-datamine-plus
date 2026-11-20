@@ -1,0 +1,17 @@
+{
+  "name": "slack-client-surface",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Typed, versioned list of Slack web client React components and redux thunks/actions/selectors/fetchers, mined by slack-datamine-plus. Prepared, not published: remove \"private\" to publish.",
+  "license": "AGPL-3.0-only",
+  "types": "index.d.ts",
+  "exports": {
+    "./components.json": "./data/components.v1.json",
+    "./redux.json": "./data/redux.v1.json",
+    "./schema/*": "./schema/*"
+  },
+  "files": ["index.d.ts", "schema", "data"],
+  "scripts": {
+    "prepack": "node ../../src/plugin-api.mjs --build-dir ../../build --out data"
+  }
+}

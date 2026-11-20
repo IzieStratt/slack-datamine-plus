@@ -9,6 +9,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { SEARCH_CSS, pills, searchHtml } from './ui.mjs';
 import { esc, fullItemHtml, itemSlug, renderRss, siteItemHtml, splitItem } from './feed-lib.mjs';
+import { detectRenames, parseArgsLines, renameLine, signatureChanges } from './diff.mjs';
 
 const [site, url] = process.argv.slice(2, 4);
 if (!site || !url) { console.error('usage: feed.mjs <site-dir> <site-url> [--since ref]'); process.exit(1); }
@@ -46,13 +47,16 @@ const everAdded = (ref, f) => {
 };
 // categories whose names are content hashes of the bundle: every build "adds" and "removes" all of them
 const SKIP = new Set(['chunks', 'experiments.txt']); // experiments.json covers experiments.txt
+// no rename detection: "method: a, b, c" lists (a changed list is not a rename; api-args changes are reported as signature changes) and
+// hashed chunk names (every content change looks like a rename)
+const NO_RENAMES = new Set(['api-args', 'api-errors', 'chunk-names', 'ui-strings', 'strings-en-US', 'strings-untranslated', 'android/strings-en', 'desktop/strings-en']);
 
 // `base` is the commit the previous item was computed up to (state.json), not "24 hours ago": a window that drifts overlaps the one before
 // it and re-reports the same changes. A category file that did not exist at `base` is reported as a new category, never dropped.
 function buildItem(base, head) {
   if (!base || base === head) return null;
   // build/*.txt (web client) and build/platforms/<target>/*.txt (desktop, android, ios, release-notes; named "<target>/<category>")
-  const files = git('ls-tree', '-r', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => (!f.slice(6).includes('/') || f.startsWith('build/platforms/')) && /\.(txt|json)$/.test(f) && !/(meta|icons|health|components|redux|taut-presence)\.json$/.test(f));
+  const files = git('ls-tree', '-r', '--name-only', 'HEAD', 'build/').split('\n').filter((f) => (!f.slice(6).includes('/') || f.startsWith('build/platforms/')) && /\.(txt|json)$/.test(f) && !/(meta|icons|health|components|redux|taut-presence|cross-platform)\.json$/.test(f));
   let html = '', total = 0;
   const hits = []; // values matching src/watch-keywords.txt in any category, so a themed rollout is not buried in a long list
   const build = (JSON.parse(show('HEAD', 'build/meta.json') ?? '{}')).buildNumber;
@@ -76,8 +80,15 @@ function buildItem(base, head) {
     }
     total += added.length + removed.length + extra.length;
     for (const [list, sign] of [[added, '+ '], [removed, '− '], [extra, '']]) for (const x of list) if (WATCH.test(x)) hits.push(`${sign}${name}: ${x}`);
-    html += section(`${name}: ${fresh ? 'new category' : 'new'}`, added, '+ ') + section(`${name}: gone`, removed, '− ') + section(`${name}: new groups`, extra, '');
+    // renamed values stay in the new/gone lists (and the counts) too, so readers of the older shape miss nothing
+    const renamed = fresh || NO_RENAMES.has(name) ? [] : detectRenames(added, removed).map(renameLine);
+    html += section(`${name}: ${fresh ? 'new category' : 'new'}`, added, '+ ') + section(`${name}: gone`, removed, '− ') + section(`${name}: new groups`, extra, '') + section(`${name}: likely renamed`, renamed, '');
   }
+  // methods on both sides whose parameters changed, from build/api-args.txt. state/params.json (observed call sites) is not used here:
+  // minified names are reused across chunks, so its key sets swing by dozens of unrelated keys between builds (100+ "changes" a day)
+  const sigs = signatureChanges([[parseArgsLines(show(base, 'build/api-args.txt')), parseArgsLines(show('HEAD', 'build/api-args.txt'))]]);
+  total += sigs.length;
+  html += section('api-methods: signature changed', sigs, '');
   if (!total) return null;
   const date = new Date().toISOString().slice(0, 10);
   return { id: `${url}/#${date}`, date, base, title: `Slack client changes ${date} (build ${build})`, html: `<p>${total} changes since ${base.slice(0, 7)}.</p>${section('watch: keyword matches', hits, '')}${html}` };

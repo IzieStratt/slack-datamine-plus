@@ -47,9 +47,14 @@ jobs:
         env:
           APKEEP: ${{ runner.temp }}/apkeep
         run: node src/platforms.mjs --only "${{ inputs.only || 'desktop,android,ios,notes' }}" --cache "$RUNNER_TEMP/dl" ${{ inputs.force && '--force' || '' }}
+      - name: History and cross-platform table
+        continue-on-error: true # never block committing the mined data
+        run: |
+          node src/history.mjs
+          node src/cross-platform.mjs
       - name: Commit
         run: |
-          git add build/platforms state/platforms.json
+          git add build/platforms build/history.tsv build/cross-platform.json state/platforms.json
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git config user.name "Izie"
           git config user.email "238573415+IzieStratt@users.noreply.github.com"

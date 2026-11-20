@@ -21,10 +21,14 @@ export function parseItem(html) {
     const title = unesc(m[1]);
     const n = Number(m[2]);
     if (title.startsWith('watch: ')) { watch.push(...[...chunk.matchAll(/<li><code>(.*?)<\/code>/g)].map((x) => unesc(x[1]))); continue; }
-    const t = title.match(/^(.+?): (new category|new groups|new|gone)$/);
+    const t = title.match(/^(.+?): (new category|new groups|new|gone|likely renamed|signature changed)$/);
     if (!t) continue;
+    // `renamed` / `signatures` only appear on items that have them, so older items parse exactly as before
     const c = categories.get(t[1]) ?? { name: t[1], new: 0, gone: 0, groups: 0 };
-    if (t[2] === 'gone') c.gone += n; else if (t[2] === 'new groups') c.groups += n; else c.new += n;
+    if (t[2] === 'gone') c.gone += n; else if (t[2] === 'new groups') c.groups += n;
+    else if (t[2] === 'likely renamed') c.renamed = (c.renamed ?? 0) + n;
+    else if (t[2] === 'signature changed') c.signatures = (c.signatures ?? 0) + n;
+    else c.new += n;
     categories.set(t[1], c);
   }
   return { total: head ? Number(head[1]) : null, since: head ? head[2] : null, categories: [...categories.values()], watch };
@@ -35,7 +39,7 @@ export function parseItem(html) {
 export function plainSummary(html, { watchMax = 5 } = {}) {
   const { total, since, categories, watch } = parseItem(html);
   if (total === null) return unesc(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim().slice(0, 280);
-  const counts = categories.map((c) => [c.name, c.new && `+${c.new}`, c.gone && `−${c.gone}`, c.groups && `~${c.groups}`].filter(Boolean).join(' ')).join(' · ');
+  const counts = categories.map((c) => [c.name, c.new && `+${c.new}`, c.gone && `−${c.gone}`, c.groups && `~${c.groups}`, c.renamed && `(${c.renamed} renamed)`, c.signatures && `${c.signatures} signatures changed`].filter(Boolean).join(' ')).join(' · ');
   const lines = [`${total} changes since ${since}${counts ? `: ${counts}` : '.'}`];
   if (watch.length) lines.push(`Watch: ${watch.slice(0, watchMax).join(' · ')}${watch.length > watchMax ? ` · +${watch.length - watchMax} more` : ''}`);
   return lines.join('\n');

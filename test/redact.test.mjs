@@ -22,3 +22,17 @@ for (const s of SECRETS) {
     assert.ok(!/xox[a-z]?[.-]\w/.test(out) && !/abcdefgh|zzzzzzzz|SeCrEt|someone@/.test(out), out);
   });
 }
+
+// Generated outputs added later (history, cross-platform table, plugin API, search page) are derived from build/ lists only. Check
+// that nothing token- or account-shaped made it into the committed ones; the search page is built from the same history file.
+test('generated outputs carry no tokens or account details', () => {
+  const files = ['build/history.tsv', 'build/cross-platform.json', 'build/plugin-api/components.v1.json', 'build/plugin-api/redux.v1.json'];
+  for (const f of files) {
+    const u = new URL(`../${f}`, import.meta.url);
+    if (!fs.existsSync(u)) continue;
+    const t = fs.readFileSync(u, 'utf8');
+    assert.ok(!/xox[a-z]?[.-][A-Za-z0-9-]{6,}/.test(t), `${f}: token-shaped value`);
+    assert.ok(!/xoxd-SeCrEt/.test(t) && !/d%3Dxoxd/.test(t), `${f}: cookie`);
+    assert.ok(!/"email"\s*:\s*"[^"@]+@/.test(t), `${f}: email field`);
+  }
+});

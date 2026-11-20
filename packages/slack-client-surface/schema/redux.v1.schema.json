@@ -1,0 +1,32 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/IzieStratt/slack-datamine-plus/packages/slack-client-surface/schema/redux.v1.schema.json",
+ "title": "Slack web client redux surface: thunks, actions, selectors, fetchers, middleware, reducers (slack-datamine-plus, schema v1)",
+ "type": "object",
+ "required": ["schemaVersion", "kind", "build", "capturedDate", "count", "redux"],
+ "properties": {
+  "$schema": { "type": "string" },
+  "schemaVersion": { "const": 1 },
+  "kind": { "const": "redux" },
+  "build": { "type": ["string", "null"] },
+  "capturedDate": { "type": ["string", "null"], "format": "date" },
+  "count": { "type": "integer", "minimum": 0 },
+  "redux": {
+   "type": "object",
+   "description": "Entries keyed \"<kind>:<name>\", registered in the client as x.meta={name,key,description}",
+   "propertyNames": { "pattern": "^(thunk|selector|action|fetcher|middleware|reducer):.+$" },
+   "additionalProperties": {
+    "type": "object",
+    "required": ["kind", "name", "key", "modules"],
+    "additionalProperties": false,
+    "properties": {
+     "kind": { "enum": ["thunk", "selector", "action", "fetcher", "middleware", "reducer"] },
+     "name": { "type": "string" },
+     "key": { "type": "string", "description": "internal key, e.g. createThunkFoo" },
+     "description": { "type": "string" },
+     "modules": { "type": "array", "maxItems": 3, "items": { "type": "string", "pattern": "^[^:\\s]+:[0-9a-f]{8}$" } }
+    }
+   }
+  }
+ }
+}

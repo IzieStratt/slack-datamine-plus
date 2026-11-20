@@ -56,6 +56,14 @@ jobs:
           ENTRY_PAGE_URL: ${{ inputs.entry_page_url }}
           TAUT_WATCH: taut-watch.json
         run: node src/mine.mjs ${{ inputs.force && '--force' || '' }}
+      # per-item first/last-seen/removed dates (build/history.tsv), folded in from the lists just written; a no-op when they did not change.
+      # The cross-platform table (build/cross-platform.json) is regenerated from the web and native-client lists on disk.
+      - name: History and cross-platform table
+        if: steps.mine.outputs.changed == 'true'
+        continue-on-error: true # never block committing the mined data
+        run: |
+          node src/history.mjs
+          node src/cross-platform.mjs
       - name: Upload debug files on failure
         if: failure()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
