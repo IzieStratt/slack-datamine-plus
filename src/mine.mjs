@@ -10,7 +10,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { extractParams, mergeParams, serializeParams } from './params.mjs';
 import { emptyExtras, extractExtras, finishBlockRegistry, finishExperiments, scanExperiments } from './extras.mjs';
-import { extractIconSet } from './icons.mjs';
+import { emptyIconUsage, extractIconSet, finishIconUsage, scanIconUsage } from './icons.mjs';
 import { checkHealth } from './health.mjs';
 import { emptyFrontend, finishFrontend, scanFrontend } from './frontend.mjs';
 import { emptyPresence, finishPresence, scanWatched } from './watch.mjs';
@@ -150,6 +150,7 @@ async function main() {
   const prevMeta = fs.existsSync(`${OUT}/meta.json`) ? JSON.parse(fs.readFileSync(`${OUT}/meta.json`, 'utf8')) : {};
   let archive = null, buildNumber, names = new Set(), candidates = new Set(), mentioned = new Set(), params = new Map(), stats = {}, chunkNames = [];
   const extras = emptyExtras(), expParts = [];
+  const iconUsage = emptyIconUsage();
   let iconSet = null, entryComplete = true, gantryBoot = null, gantryPage = false;
   const pageHtmls = [];
   const frontend = emptyFrontend();
@@ -158,7 +159,7 @@ async function main() {
   const watch = watchFile && fs.existsSync(watchFile) ? [...new Map(JSON.parse(fs.readFileSync(watchFile, 'utf8')).uses.map((u) => [`${u.kind}:${u.name}`, { kind: u.kind, name: u.name }])).values()] : [];
   const presence = emptyPresence();
   const upstream = createUpstream();
-  const collect = (js) => { extractExtras(js, extras); upstream.collect(js); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); scanFrontend(js, frontend); if (watch.length) scanWatched(js, watch, presence); };
+  const collect = (js) => { extractExtras(js, extras); upstream.collect(js); expParts.push(scanExperiments(js)); iconSet ||= extractIconSet(js); scanIconUsage(js, iconUsage); scanFrontend(js, frontend); if (watch.length) scanWatched(js, watch, presence); };
 
   if (arg('from-dir')) {
     buildNumber = arg('build') || 'local';
@@ -276,7 +277,10 @@ async function main() {
   for (const [file, lines] of up.files) { outFiles.set(file, [...(outFiles.get(file) ?? []), ...lines]); counts[file.replace(/\.txt$/, '')] = new Set(lines).size; }
   for (const [file, lines] of outFiles) { const u = [...new Set(lines)].sort(); if (u.length) fs.writeFileSync(`${OUT}/${file}`, u.join('\n') + '\n'); }
   // the glyph set behind the icon names (build/icons.json drives the icons PDF; it comes from modern.vendor); keep the old one if this build's chunk was missing
-  if (iconSet) fs.writeFileSync(`${OUT}/icons.json`, JSON.stringify(iconSet) + '\n');
+  if (iconSet) {
+    fs.writeFileSync(`${OUT}/icons.json`, JSON.stringify(iconSet) + '\n');
+    fs.writeFileSync(`${OUT}/icons-usage.json`, JSON.stringify(finishIconUsage(iconUsage, iconSet), null, 1) + '\n'); // where each glyph is used, from this same build
+  }
   else console.error('icons: glyph set not found, keeping previous build/icons.json');
   // keep the manifest bytes and the entry-script list so this build can be re-mined later (Slack retires whole CDN buckets)
   if (archive) {

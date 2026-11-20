@@ -64,3 +64,16 @@ test('icon pages: tiles link to them, pages escape and show usage', async () => 
   assert.ok(validName('a-b_1') && !validName('../x') && !validName('bad name"<'));
   assert.ok(renderIconPage(set, 'ai-sparkle-filled').includes('Not described yet'));
 });
+
+test('icon usage: counts name:/icon: references and keeps nearby labels, only for icons in the set', async () => {
+  const { emptyIconUsage, scanIconUsage, finishIconUsage } = await import('../src/icons.mjs');
+  const acc = emptyIconUsage();
+  scanIconUsage('x({name:"send-filled",label:"Send"});y({icon:"request-to-join",title:"Requested to join"});z({name:"not-an-icon"})', acc);
+  scanIconUsage('q({name:"send-filled",tooltip:"Send now"})', acc);
+  const u = finishIconUsage(acc, { icons: { 'send-filled': {}, 'request-to-join': {}, blocks: {} } });
+  assert.deepEqual(Object.keys(u), ['blocks', 'request-to-join', 'send-filled']);
+  assert.equal(u['send-filled'].count, 2);
+  assert.ok(u['send-filled'].labels.includes('Send'));
+  assert.equal(u['request-to-join'].count, 1);
+  assert.deepEqual(u.blocks, { count: 0, labels: [], snippets: [] });
+});

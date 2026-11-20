@@ -12,7 +12,7 @@ import { diffIconSets, hasChanges, renderDiffPdf, renderIconPage, renderIconSvg,
 
 const FORMAT = 'v5'; // bump when the output formats change so every file is rebuilt once
 const site = process.argv[2];
-if (!site) { console.error('usage: icons-pdf.mjs <site-dir> [--icons file] [--host name]'); process.exit(1); }
+if (!site) { console.error('usage: icons-pdf.mjs <site-dir> [--icons file] [--usage file] [--host name]'); process.exit(1); }
 const arg = (n, d) => { const i = process.argv.indexOf(`--${n}`); return i > -1 ? process.argv[i + 1] : d; };
 const iconsFile = arg('icons', 'build/icons.json');
 const host = arg('host', 'sdmp.izie.top');
@@ -23,10 +23,12 @@ const at = (f) => path.join(site, f);
 const readJson = (f) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {});
 const descs = readJson(new URL('./icon-descriptions.json', import.meta.url)); // where each icon is used and what we think it is for
 const labels = readJson(at('icons-desc-overrides.json')); // hand-checked short labels (personal-site)
-const usage = readJson(at('icons-usage.json')); // usage counts, nearby UI strings and code (personal-site scripts/slack-icon-usage.py)
+// usage counts, nearby UI strings and code, mined from the same build as the glyphs (build/icons-usage.json); published next to icons.json
+const usageFile = arg('usage', path.join(path.dirname(iconsFile), 'icons-usage.json'));
+const usage = readJson(fs.existsSync(usageFile) ? usageFile : at('icons-usage.json'));
 // everything shown on the pages is part of the tag, so editing a note or description rebuilds them
 const tag = `${crypto.createHash('sha256').update(raw + JSON.stringify([notes, descs, labels, usage])).digest('hex')} ${FORMAT}`;
-const outputs = ['icons.pdf', 'icons.html', 'icons.svg', 'icons.json', 'icons'];
+const outputs = ['icons.pdf', 'icons.html', 'icons.svg', 'icons.json', 'icons-usage.json', 'icons'];
 if (fs.existsSync(at('icons.sha256')) && fs.readFileSync(at('icons.sha256'), 'utf8').trim() === tag && outputs.every((f) => fs.existsSync(at(f)))) { console.log('icons unchanged'); process.exit(0); }
 
 fs.mkdirSync(site, { recursive: true });
@@ -35,6 +37,7 @@ if (fs.existsSync(at('icons.json'))) {
   const published = fs.readFileSync(at('icons.json'), 'utf8');
   if (JSON.parse(published).icons && JSON.stringify(JSON.parse(published)) !== JSON.stringify(JSON.parse(raw))) fs.writeFileSync(at('icons-prev.json'), published);
 }
+fs.writeFileSync(at('icons-usage.json'), JSON.stringify(usage, null, 1) + '\n');
 const set = JSON.parse(raw);
 const prev = fs.existsSync(at('icons-prev.json')) ? JSON.parse(fs.readFileSync(at('icons-prev.json'), 'utf8')) : null;
 const diff = prev ? diffIconSets(prev, set) : null;

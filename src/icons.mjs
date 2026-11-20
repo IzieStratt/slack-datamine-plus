@@ -462,3 +462,30 @@ export function renderIconPage(set, n, { notes = {}, descs = {}, labels = {}, us
 </html>
 `;
 }
+
+// Where each icon is used, traced from the same chunks the glyph set came from (replaces personal-site scripts/slack-icon-usage.py,
+// which read the desktop app's cache). A usage is `name:"<icon>"` (also icon:/iconName:); the UI strings near it become its labels.
+const ICON_USE_RE = /\b(?:name|icon|iconName):\s*"([a-z0-9][a-z0-9-]{1,60})"/g;
+const ICON_LABEL_RES = [/\.t\("([^"]{3,80})"\)/g, /(?:label|title|tooltip|aria-label|ariaLabel|text):\s*"([^"]{3,80})"/g];
+export const emptyIconUsage = () => new Map();
+export function scanIconUsage(js, acc) {
+  for (const m of js.matchAll(ICON_USE_RE)) {
+    const name = m[1], start = m.index, end = start + m[0].length;
+    const window = js.slice(Math.max(0, start - 220), end + 120);
+    let e = acc.get(name);
+    if (!e) acc.set(name, (e = { count: 0, labels: new Map(), snippets: [] }));
+    e.count++;
+    for (const re of ICON_LABEL_RES) for (const l of window.matchAll(re)) { const s = l[1].replace(/\s+/g, ' ').trim(); e.labels.set(s, (e.labels.get(s) ?? 0) + 1); }
+    if (e.snippets.length < 2) e.snippets.push(window.slice(-200));
+  }
+}
+export function finishIconUsage(acc, iconSet) {
+  const out = {};
+  for (const name of Object.keys(iconSet?.icons ?? {}).sort()) {
+    const e = acc.get(name);
+    out[name] = e
+      ? { count: e.count, labels: [...e.labels].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([l]) => l), snippets: e.snippets }
+      : { count: 0, labels: [], snippets: [] };
+  }
+  return out;
+}
