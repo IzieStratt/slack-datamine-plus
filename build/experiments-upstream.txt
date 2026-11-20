@@ -53,6 +53,7 @@ agent_peek_view: on
 agent_prevent_fake_thread_roots: on
 agent_private_mention: on
 agent_profiles: on
+agent_sessions_child_window: on
 agent_sessions_pr_synth: on
 agent_sessions_synth_view: on
 agent_status_in_activity: on
@@ -160,7 +161,6 @@ ask_agentforce_i18n: on
 ask_agentforce_step: on
 ask_agentforce_step_send_as_agent: on
 ask_agentforce_trigger_validations: on
-ask_user_question_desktop_copy: on
 assistive_summaries_mode
 attachments_and_unfurls_max_width: on
 attrited_grids_data_deletion: on
@@ -185,6 +185,7 @@ bk_refresh_checklist_block: on
 bk_refresh_data_visualization_expanded_view: on
 bk_refresh_data_visualization_size_variants: on
 bk_refresh_disabled_inputs: on
+bk_refresh_input_polish: on
 bk_refresh_message_container: on
 bk_refresh_progress_bar: on
 bk_refresh_split_button: on
@@ -213,6 +214,7 @@ calendar_focus_sync: on
 calendar_huddles_auto_record: on
 calendar_jit_background_notifications: on
 calendar_jit_delay_dismiss: on
+calendar_jit_huddle_channel: on
 calendar_mo_agenda: on
 calendar_mo_jit: on
 calendar_profile_scheduling: on
@@ -330,7 +332,6 @@ code_channels_i18n: on
 code_channels_in_parent_channel: on
 code_channels_internal: on
 code_channels_naming: on
-code_channels_pr_ask_agent_draft: on
 code_channels_pr_comment_mentions: on
 code_channels_pr_files_viewed: on
 code_channels_pr_link_tabs: on
@@ -465,7 +466,6 @@ feat_flag_message_hide_replies: on
 feat_gx_jp_competitor_invites: control, treatment
 feat_invoice_referral: on
 feat_invoice_referral_visitor: control
-feat_partner_builder_toolkit_bundle: on
 feature_connected_accounts: on
 feedback_disabled_orgs: treatment
 feelings_catcher: on
@@ -551,8 +551,10 @@ huddles_awareness_timestamp: on
 huddles_big_video: on
 huddles_browser_cpu_ladder: on
 huddles_camera_native_aspect_capture: on
+huddles_camera_troubleshooter: on
 huddles_canvas_share_banner: on
 huddles_crab_animation: on
+huddles_desktop_cpu_pressure: on
 huddles_disable_vp9: on
 huddles_discovery_calls: treatment
 huddles_dual_udp_support: on
@@ -566,8 +568,10 @@ huddles_leave_icon: on
 huddles_link_v2: on
 huddles_links_autoinvite: on
 huddles_lite_mode: on
+huddles_live_voice_levels: on
 huddles_meeting_assistant: on
-huddles_meeting_assistant_catchup_redirect: on
+huddles_meeting_assistant_catchup_banner: on
+huddles_meeting_reminder: on
 huddles_miles_davis: on
 huddles_miniview: on
 huddles_missed_notification: on
@@ -590,7 +594,7 @@ huddles_screen_picker_app_groups: on
 huddles_screenshare_permission_refresh: on
 huddles_screenshare_popout: on
 huddles_screenshare_share_audio: on
-huddles_screenshare_sharpening: treatment
+huddles_screenshare_sharpening: control, treatment
 huddles_self_view_hidden_announcement: on
 huddles_sending_audio_recovery: on
 huddles_serial_guard_settle_superseded: on
@@ -721,6 +725,7 @@ ml_autocomplete_ignore_file_fuzzy_score: treatment
 ml_autocomplete_nav_query_history: treatment
 ml_autocomplete_search_filter_self_boost: treatment
 ml_autocomplete_top_users_by_name: treatment
+ml_message_eisenhower_labeling: on
 mny_13634_trial_menu_compare_plans: on
 mobile_browser_file_links_bug_fix: on
 move_channel_tabs_settings: on
@@ -883,7 +888,6 @@ search_autocomplete_demote_deactivated_users: treatment
 search_autocomplete_promote_conversation_members
 search_autocomplete_promote_exact_name_matches
 search_entity_id_lookup: on
-search_explore_freshness_signals: on
 search_feedback_buttons_style: treatment
 search_file_channel_messages: on
 search_huddle_summary_ux: on
@@ -989,8 +993,10 @@ slack_crm_meeting_pane: on
 slack_crm_onboarding_friction_reduction: on
 slack_crm_onboarding_template_xp: on
 slack_crm_org_currency: on
+slack_crm_outlook_calendar: on
 slack_crm_pnp: on
 slack_crm_proactive_signal_detection: on
+slack_crm_rename_objects: on
 slack_crm_reorder_columns: on
 slack_crm_sales_home: on
 slack_crm_sales_tracker_stages_management: on
@@ -1049,7 +1055,6 @@ slackbot_ai_skill_sets_authoring: on
 slackbot_ai_skill_suggestion_card: treatment
 slackbot_ai_skills_browser_v2: on
 slackbot_ai_skills_bulk_import: on
-slackbot_ai_skills_i18n_wave7: on
 slackbot_ai_steering: on
 slackbot_ai_surface_edits: on
 slackbot_ai_surface_rename: on
@@ -1057,6 +1062,7 @@ slackbot_ai_switchboard_transcribe: on
 slackbot_ai_thread_summary_nux: on
 slackbot_ai_traceviewer_button: on
 slackbot_ai_voice_hold_sound: hold_music
+slackbot_ai_voice_speed_control: on
 slackbot_ai_web_search_admin_settings: on
 slackbot_ai_web_search_perplexity: on
 slackbot_ai_web_search_perplexity_kill_switch: on
@@ -1120,6 +1126,7 @@ slackbot_sampling_upgrade_nudge_on_all_surfaces: on
 slackbot_save_file_to_external_provider: on
 slackbot_shared_prompt_skills: on
 slackbot_singer: on
+slackbot_singer_background_handoff: on
 slackbot_singer_cloud_browser: on
 slackbot_singer_window_attachment: on
 slackbot_skill_deactivation: on
@@ -1141,6 +1148,7 @@ slackbot_unread_v2: on
 slackbot_zero_state_next: on
 slackcrm_onboarding_translations: on
 slackcrm_pipeline_refresh_banner: on
+slackforce_a11y_translations: on
 slackforce_allow_update_actions: on
 slackforce_auth_frontline_user_support: on
 slackforce_auto_starter_sys_admin_label_update: on
@@ -1267,7 +1275,6 @@ today_outlook_cal_integration: on
 today_pause: on
 today_pause_extended: on
 today_request_calendar_rtm_updates: on
-today_testing_auto_nav: on
 today_todos: on
 today_v2: on
 today_v2_opt_in_banner: on
@@ -1287,6 +1294,7 @@ tsf_snitch: on
 uam_admin_advisor: on
 uam_audit_logs: on
 uam_invitations: on
+uam_manage_members: on
 unarchive_channel_banner_polish: on
 unfurl_skeletons: on
 unfurl_skeletons_grow: on
@@ -1328,6 +1336,7 @@ wfb_agent_tasks_limits_m1: on
 wfb_agent_tasks_modal_simple_event_triggers: on
 wfb_agent_tasks_power_user_quota_limits: on
 wfb_agent_tasks_recent_prompts: on
+wfb_agent_tasks_tab_nux: on
 wfb_agents_can_create_simple_automations_improved_tab: on
 wfb_agents_can_create_simple_automations_tab_ms3: on
 wfb_agents_can_create_simple_event_triggered_automations: on
@@ -1415,7 +1424,6 @@ work_objects_related_conversations_canvas_previews: on
 workflow_builder_ai_generate_prompt_analysis: on
 workflow_execution_window: on
 workflow_interactivity_next: on
-workflow_templates_be_provision_3puf_steps: on
 workflow_templates_collaborators: on
 workflow_templates_editing: on
 workflow_templates_previews: on

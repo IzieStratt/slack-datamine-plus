@@ -66,7 +66,6 @@ measure: search-process-search-messages
 measure: sorter-sort
 measure: sorter-sort-async
 measure: upsert_channels
-measure: user_group_list_show_lazy
 media_recorder:microphone_start
 media_recorder:play_ping
 media_recorder:time_to_record
@@ -172,6 +171,7 @@ span: canvas:crdt-plain-content
 span: canvas:create-canvas
 span: canvas:doc-embed
 span: canvas:embed-render
+span: canvas:fetch-latest-in-flight-timeout
 span: canvas:initialize-client
 span: canvas:load-canvas
 span: canvas:print:embed_load
@@ -312,6 +312,7 @@ span: slack_ai:thread_summary_first_tokens_added
 span: story_upload:perceived
 span: story_upload:upload
 span: survey
+span: thread_older_replies_gap
 span: ufm:cleanup
 span: ufm:finally
 span: ufm:upsert

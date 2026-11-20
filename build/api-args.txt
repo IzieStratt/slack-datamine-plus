@@ -175,7 +175,7 @@ apps.actions.run: action_id, app_id, channel, client_token, message_ts, type
 apps.actions.v2.execute: action_id, app_id, client_token, context, team_id
 apps.actions.v2.list: action_type, resource_id, resource_type
 apps.activities.list: app_id, component_id, trace_id
-apps.approvals.requestedApps.list: app_ids, cursor
+apps.approvals.requestedApps.list: app_ids, cursor, team_id
 apps.approvals.requests.cancel: request_id, team_id
 apps.approvals.requests.create: reason
 apps.auth.external.authMapping.update: app_id, external_token_id, mapping_owner_type, provider_key, workflow_id
@@ -214,9 +214,10 @@ avatars.upload: image
 blocks.actions: actions, client_token, container, function_execution_id, service_id, service_team_id, skip_simple_array_serialization_in_get_form_data, state
 blocks.format: blocks
 blocks.suggestions: action_id, block_id, container, function_execution_id, service_id, service_team_id, value
+bookmarks.edit: bookmark, channel, emoji, link, title
 bookmarks.list: channel, include_folders, include_legacy_workflows
 bookmarks.preview: channel, link
-bookmarks.remove: bookmark, channel, type
+bookmarks.remove: bookmark, channel
 bookmarks.reorder: bookmark_type, center, channel, entity_id, left, parent_id, right
 bots.info: bots
 calendar.event.copy: channel, event_id, message_ts
@@ -373,12 +374,12 @@ dnd.info: user
 dnd.setSnooze: num_minutes
 dnd.teamInfo: users
 drafts.bulkDelete: client_last_updated_ts, is_select_all
-drafts.create: attachments, blocks, client_msg_id, date_scheduled, date_stashed, destinations, file_ids, file_permissions, is_from_composer, unfurl
+drafts.create: attachments, blocks, client_msg_id, date_scheduled, date_stashed, destinations, file_ids, file_permissions, is_from_composer, skip_simple_array_serialization_in_get_form_data, unfurl
 drafts.delete: client_last_updated_ts, draft_id, skip_file_deletion
 drafts.info: draft_id
 drafts.list: is_active, limit
 drafts.listActive: limit, next_ts
-drafts.update: attachments, blocks, client_last_updated_ts, date_scheduled, date_stashed, destinations, draft_id, file_ids, file_permissions, is_from_composer, unfurl
+drafts.update: attachments, blocks, client_last_updated_ts, date_scheduled, date_stashed, destinations, draft_id, file_ids, file_permissions, is_from_composer, skip_simple_array_serialization_in_get_form_data, unfurl
 email.threads.share: blocks, channel, entity_id
 emailConnectorSelfServe.disconnect: provider
 emailConnectorSelfServe.emails.list: cursor, limit, provider, query
@@ -505,6 +506,7 @@ functions.workflows.permissions.copy.list: workflow_id
 functions.workflows.permissions.copy.set: permission_type, workflow_id
 functions.workflows.publish: workflow_id
 functions.workflows.restoreFromVersion: workflow_id, workflow_version_id
+functions.workflows.steps.add: after_step_id, input_parameters, step, workflow_id
 functions.workflows.steps.aiFilePrecheck: file_size, mimetype
 functions.workflows.steps.delete: step_id, workflow_id
 functions.workflows.steps.inputs.dynamicOptions.get: function, hierarchical_parameter_name, inputs, option_type, step_function_id, trigger_type, workflow_id, workflow_step_id
@@ -588,7 +590,7 @@ media.progress.update: duration_ms, file, offset_ms
 media.reactions.add: channel, file, message_timestamp, name, offset_ms
 media.reactions.get: channel, file, message_timestamp
 media.reactions.remove: channel, file, message_timestamp, name, offset_ms
-meetings.processRecording: canvas_file_id, create_thread, file_id, meeting_title, notify_only, post_greeting, slackbot_thread_ts, speaker_attribution
+meetings.processRecording: canvas_file_id, create_thread, file_id, meeting_title, notify_only, speaker_attribution
 meetings.removeChannel: meeting_id
 meetings.resolve: allow_create, event_link_id
 meetings.update: channel_id, event_link_id, files, meeting_id
@@ -596,7 +598,7 @@ meetings.usersetdata: event_link_id, insights_thread_ts, meeting_id, slackbot_th
 megaphone.journeys.dismiss: journey_key, notification
 megaphone.notifications.list: critical_only
 megaphone.setNotificationAsSeen: action
-messages.sent.list: client_req_id, count, cursor, page, search_session_id, view
+messages.sent.list: client_req_id, count, cursor, search_session_id, view
 moderation.flags.create: channel_details_flagged, channel_id, item_id, item_team_id, profile_fields_flagged, profile_image_flagged, profile_status_flagged, reason, skip_simple_array_serialization_in_get_form_data, type
 moderation.locks.create: channel_id, thread_ts
 moderation.locks.remove: channel_id, thread_ts
@@ -613,7 +615,7 @@ platform.requests.create: entity_id, request_type
 presence.set: presence
 profiling.addJSTrace: trace, type
 promo.campaigns.eligibilityInfo: campaign_sub_type, campaign_type, context
-promo.campaigns.optOut: campaign_type, context
+promo.campaigns.optOut: campaign_type
 promo.campaigns.redeem: campaign_sub_type, campaign_type, context
 quip.cloneCanvas: file_id, keep_original_title, target_file_created, target_file_id, title
 quip.getCanvasBulkSectionIdsData: file_id, section_ids
@@ -705,17 +707,10 @@ sfdc.approvals.getApprovalProgress: record_id, salesforce_org_id
 sfdc.autoStarter.integration.admin.addMembers: profile, salesforce_org_id, users
 sfdc.autoStarter.integration.admin.getLicensedMembers: salesforce_org_id
 sfdc.autoStarter.integration.admin.updateMemberProfile: profile, salesforce_org_id, user_id
-sfdc.captchaKeys.create: label, salesforce_org_id, secret_key, site_key
-sfdc.captchaKeys.list: salesforce_org_id
 sfdc.checkUiApiCompatibility: as_integration_user, salesforce_org_id, sobject_api_name
-sfdc.domainVerification.list: salesforce_org_id
 sfdc.eacConfigs.disconnect: salesforce_org_id
-sfdc.eacConfigs.init: salesforce_org_id, workspace_id
-sfdc.emailToCaseConfigs.create: channel_id, email_address, salesforce_org_id
 sfdc.emailToCaseConfigs.delete: salesforce_org_id
 sfdc.emailToCaseConfigs.get: salesforce_org_id
-sfdc.emailToCaseConfigs.notifyCopy: channel_id
-sfdc.emailToCaseConfigs.resendVerification: email_address, salesforce_org_id
 sfdc.emails.capture.info: salesforce_org_id
 sfdc.emails.capture.set: enabled, salesforce_org_id
 sfdc.emails.composer.defaults: record_id, salesforce_org_id
@@ -777,13 +772,12 @@ sfdc.startCSVImport: column_mapping, object_type, salesforce_org_id
 sfdc.tasks.lookup: salesforce_org_id, task_ids
 sfdc.updateRecord: baseline_who_ids, id, last_fetch_date, optional_fields, prepopulate_additional_fields, record, salesforce_org_id, sobject_api_name, source
 sfdc.uploadCSVFile: file, import_type, object_type, salesforce_org_id
-sfdc.webToLeads.updateSettings: channel_id, recaptcha_required, salesforce_org_id
 share.prompts.add: channel_id, message_ts
 share.prompts.checkAttachedSkills: prompt_id
 share.prompts.info: prompt_id
 sharedInvites.accept: channel, invite, sig
 sharedInvites.canAccept: sig
-sharedInvites.getLink: emails, message, tracking_id
+sharedInvites.getLink: emails, message
 sharedInvites.revoke: id
 signin.confirmCode: code, email, intent, token
 signup.confirmEmail: confirmation_type, email, entry_point, intent, locale
@@ -868,7 +862,7 @@ users.admin.removeOwner: user
 users.admin.resendInvitation: invite_id, user
 users.admin.setExpiration: expiration_ts, user
 users.admin.setInactive: user
-users.admin.setOwner: teams, user, usergroup
+users.admin.setOwner: user
 users.admin.updateSharedInvite: code, expiration, notifications_enabled
 users.channelSections.channels.bulkUpdate: insert, remove, skip_simple_array_serialization_in_get_form_data
 users.channelSections.channels.remove: channel_id, channel_section_id
@@ -939,7 +933,7 @@ workflows.templates.localize: template_id, template_type
 workflows.templates.setStatus: status, template_id, template_type
 workflows.templates.update: categories, description, icon, madlibs_config, name, steps_configuration, template_id, trigger_configuration, workflow_id
 workflows.templates.validate: name
-workflows.triggers.create: team_id
+workflows.triggers.create: inputs, name, team_id, type, webhook, workflow, workflow_app_id
 workflows.triggers.delete: trigger_id
 workflows.triggers.info: include_workflow_details, trigger_id
 workflows.triggers.list: app_id
@@ -949,4 +943,4 @@ workflows.triggers.prefs.get: workflow_id
 workflows.triggers.preview: trigger_ids
 workflows.triggers.summarize: goal, trigger_description, workflow_description
 workflows.triggers.trip: client_token, context, run_precheck, url
-workflows.triggers.update: name, rotate_webhook_secret, trigger_id, type, workflow
+workflows.triggers.update: inputs, name, rotate_webhook_secret, trigger_id, type, webhook, workflow

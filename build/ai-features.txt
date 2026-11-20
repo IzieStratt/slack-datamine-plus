@@ -6,6 +6,7 @@ about_page_features_mcp_servers
 accepter_email_verification_prompt
 action_items_empty_state_slackbot_button
 action_library_context_agents
+activity_agent_sessions_tab
 activity_slackbot_task_row
 add_agent
 add_agent_to_channel
@@ -133,6 +134,7 @@ agent_dm_sessions_section_row_icon
 agent_dm_sessions_section_row_location
 agent_dm_sessions_section_row_stop
 agent_dm_sessions_section_row_title
+agent_dm_sessions_section_see_how_others
 agent_dm_sessions_section_show_all
 agent_dm_sessions_team_usage_try_it
 agent_dm_tasks
@@ -229,6 +231,7 @@ agent_session_peek
 agent_session_peek_menu
 agent_session_sidebar
 agent_sessions
+agent_sessions_child_window
 agent_sessions_link
 agent_sessions_pr_rows
 agent_sessions_pr_synth
@@ -251,6 +254,7 @@ agent_sunroof_remove
 agent_task_item
 agent_tasks
 agent_tasks__write
+agent_tasks_tab_coachmark_eligible_dm_opened
 agent_thread
 agent_title
 agent_tray
@@ -572,6 +576,7 @@ ai_recap
 ai_recap_count_90d
 ai_redacted
 ai_redacted_message_tombstone
+ai_restricted
 ai_result
 ai_result__feedback_bad
 ai_result__feedback_good
@@ -863,8 +868,6 @@ child_window_slackbot_jellyfish
 cka_agent_app_cleanup_error
 cka_switch_org_fetch_agent_app_error
 code_channel_response_mode_more_agents
-code_channels_pr_ask_agent_draft
-code_tab_ask_agent
 compose_flow_ask_ai_button_clicked
 composer_control_simplifications_formatting_toolbar_slackbot
 composer_control_simplifications_mention_menu_slackbot
@@ -940,6 +943,7 @@ enable_slackbot_form_toggle
 enable_slackbot_view
 enable_wfb_ai_answer_step
 enable_wfb_ai_verification_step
+end_of_day_recap
 end_of_trial_plan_recommender_slackbot_plans_comparison
 end_user_no_ai
 end_user_with_ai
@@ -960,6 +964,7 @@ export_prompt_banner
 failed_creating_aea_agent_user
 failed_to_add_skill
 failed_to_remove_skill
+fe_activity_agent_sessions_tab
 feat_agent_sessions
 feat_agents_dms
 file_image_ai_generated_badge
@@ -1050,6 +1055,7 @@ gpt_live_voice_open_sound_settings
 gpt_live_voice_reconnecting
 gpt_live_voice_retry
 gpt_live_voice_settings
+gpt_live_voice_speed
 gpt_live_voice_status
 gpt_live_voice_submit_feedback
 had_slackbot_big_mode_access
@@ -1060,6 +1066,7 @@ has_seen_slackbot_ai_new_tag
 has_seen_slackbot_ai_sparkles
 has_seen_slackbot_ai_upgrade_paywall
 has_seen_slackbot_big_mode_nux_modal
+hermes_workflows_agent_tasks_tab_coachmark
 hide_agents_in_dm_list
 hide_agents_in_dm_list_pref
 hide_agents_in_dm_list_pref_checkbox
@@ -1085,7 +1092,7 @@ huddles_ai_notes_banner
 huddles_ai_notes_downgraded_banner
 huddles_alone_timeout_prompt
 huddles_meeting_assistant
-huddles_meeting_assistant_catchup_redirect
+huddles_meeting_assistant_catchup_banner
 ia_details_members_list_item_add_agent
 ia_slackbot_survey
 ia_slackbot_survey_sent
@@ -1202,10 +1209,7 @@ meeting_assistant
 meeting_assistant_auto_play_consent
 meeting_assistant_button_click
 meeting_assistant_catch_up_banner
-meeting_assistant_catch_up_complete
 meeting_assistant_catch_up_failed
-meeting_assistant_catch_up_loading
-meeting_assistant_catch_up_unavailable
 meeting_assistant_enable_transcription_banner
 meeting_assistant_open
 meeting_assistant_record_button
@@ -1891,7 +1895,6 @@ slackbot_ai_skill_suggestion_card
 slackbot_ai_skills
 slackbot_ai_skills_browser_v2
 slackbot_ai_skills_bulk_import
-slackbot_ai_skills_i18n_wave7
 slackbot_ai_slackbot_sampling_opt_out_modal
 slackbot_ai_steering
 slackbot_ai_sunroof_cta
@@ -1915,6 +1918,7 @@ slackbot_ai_voice_auth_resolved
 slackbot_ai_voice_context_added
 slackbot_ai_voice_hold_sound
 slackbot_ai_voice_mode_enabled
+slackbot_ai_voice_speed_control
 slackbot_ai_voice_tool_approval_requested
 slackbot_ai_voice_tool_approval_resolved
 slackbot_ai_web_search_admin_settings
@@ -1927,6 +1931,7 @@ slackbot_answer_comparison
 slackbot_answer_comparison_neutral_notice
 slackbot_answered
 slackbot_apps
+slackbot_apps_modal
 slackbot_apps_view
 slackbot_apps_view_add_custom_mcp
 slackbot_apps_view_browse_apps
@@ -1966,7 +1971,6 @@ slackbot_button
 slackbot_bypass_page_layout
 slackbot_bypass_page_layout_updated
 slackbot_calendar_recurring_meetings
-slackbot_canvas_ai_action_copy
 slackbot_canvas_auto_open
 slackbot_canvas_update_highlight
 slackbot_canvas_view_diffs
@@ -2026,6 +2030,9 @@ slackbot_joiner_onboarding_prompts_used
 slackbot_joiner_onboarding_redirected_to_big_mode
 slackbot_legacy_fallback
 slackbot_legacy_fallback_i18n
+slackbot_manage_apps
+slackbot_manage_skills
+slackbot_manage_tasks
 slackbot_mcp
 slackbot_mcp_add_custom_mcp
 slackbot_mcp_app
@@ -2140,6 +2147,8 @@ slackbot_record_rule_modal_label_id
 slackbot_record_rule_modal_narrower_description
 slackbot_record_rule_modal_narrower_heading
 slackbot_record_rule_modal_object_column
+slackbot_record_rule_modal_object_count
+slackbot_record_rule_modal_object_rule_limit
 slackbot_record_rule_modal_object_rule_pool_error
 slackbot_record_rule_modal_object_scope_error
 slackbot_record_rule_modal_object_types_label
@@ -2185,6 +2194,7 @@ slackbot_sidebar_no_results
 slackbot_sidebar_thread_peek_artifacts
 slackbot_sidebar_thread_peek_header
 slackbot_singer
+slackbot_singer_background_handoff
 slackbot_singer_cloud_browser
 slackbot_singer_window_attachment
 slackbot_skill_deactivation
@@ -2208,6 +2218,7 @@ slackbot_skills_announcement_step_updated
 slackbot_skills_created_count
 slackbot_skills_hide_from_files
 slackbot_skills_list
+slackbot_skills_modal
 slackbot_skills_new_badge
 slackbot_sms_download_app_button
 slackbot_spotlight
@@ -2224,6 +2235,7 @@ slackbot_task
 slackbot_tasks
 slackbot_tasks_colleague_adoption
 slackbot_tasks_colleague_adoption_summary
+slackbot_tasks_modal
 slackbot_tasks_social_proof
 slackbot_teaser
 slackbot_thread
@@ -2366,6 +2378,7 @@ wfb_agent_tasks_limits_m1
 wfb_agent_tasks_modal_simple_event_triggers
 wfb_agent_tasks_power_user_quota_limits
 wfb_agent_tasks_recent_prompts
+wfb_agent_tasks_tab_nux
 wfb_agents_can_create_simple_automations_improved_tab
 wfb_agents_can_create_simple_automations_tab_ms3
 wfb_agents_can_create_simple_event_triggered_automations
