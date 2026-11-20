@@ -28,11 +28,11 @@ admin.apps.restrict: app_id, enterprise_id, team_id
 admin.apps.restricted.list: legacy_integrations, limit
 admin.canvases.publishTemplate: file_id, publish_sales_template
 admin.canvases.unpublishTemplate: file_id, unset_org_sharing_setting
-admin.conversations.archive: channel_id
+admin.conversations.archive: channel_id, target_team
 admin.conversations.convertToPrivate: channel_id
 admin.conversations.convertToPublic: channel_id
-admin.conversations.delete: channel_id
-admin.conversations.disconnectShared: channel_id
+admin.conversations.delete: channel_id, target_team
+admin.conversations.disconnectShared: channel_id, target_team
 admin.conversations.getConversationPrefs: channel_id
 admin.conversations.getCustomRetention: channel_id
 admin.conversations.getTeams: channel_id, cursor, limit
@@ -43,7 +43,7 @@ admin.conversations.search: connected_team_ids, cursor, limit, query, search_cha
 admin.conversations.setConversationPrefs: channel_id, prefs
 admin.conversations.setCustomRetention: channel_id, duration_days
 admin.conversations.setProperties: channel_id, props
-admin.conversations.unarchive: channel_id
+admin.conversations.unarchive: channel_id, target_team
 admin.enterpriseSearch.connectors.deleteConfig: app_id, name, token
 admin.enterpriseSearch.connectors.setConfig: app_id, config_value, name, token
 admin.functions.list: app_ids, include_non_distributed_functions, limit
@@ -144,6 +144,7 @@ ai.alpha.summarize.channelUnreads: channel, channel_summary_type, end_ts, last_u
 ai.alpha.summarize.feedback: additional_feedback, canvas_id, channel_digest_id, file_id, include_message_content, rating, summary_channel, summary_id, summary_type
 ai.alpha.summarize.thread: channel, initiated_by, latest_ts, thread_ts, variant
 ai.alpha.surfaces.deleteVersion: file_id, version_id
+ai.alpha.surfaces.generateActionDraft: action, card_context, file_id
 ai.alpha.surfaces.getContent: file_id, version_id
 ai.alpha.surfaces.getData: file_id, source
 ai.alpha.surfaces.listVersions: file_id
@@ -607,7 +608,7 @@ mpim.list: get_latest
 onboarding.fetch: include_team_data, require_invite_list
 onboarding.updateTeam: field_name, field_value
 onboarding.updateUser: field_name, field_value
-payments.cost.get: product_id, promotion_coupon_code
+payments.cost.get: product_id, promotion_coupon_code, user_count
 pins.add: channel
 pins.list: channel
 pins.remove: channel
@@ -838,6 +839,7 @@ today.ignoreChannels: channel_ids
 today.items.blocks.dismiss: block_id, channel_id, message_ts
 today.items.clear: item_ids
 today.items.delete: item_id
+today.items.list: read_only
 today.items.markRead: item_ids
 today.items.markUnread: item_ids
 today.items.update: item_id, slackbot_thread_ts

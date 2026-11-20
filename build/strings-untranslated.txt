@@ -143,7 +143,6 @@ All Settings
 All admins, via Slackbot
 All available workspaces
 All channel owners
-All clear
 All default
 All domains are allowed.
 All email and link invitations
@@ -199,6 +198,7 @@ Any translation
 Anyone who requested this app will get a Slackbot message with this information.
 Anyone will be able to add replies to messages posted in this channel.
 Anyone with @{emailDomain} can join
+Anyone with view or edit access to a canvas can print it.
 App ID
 App Install
 App Managers via Slackbot message
@@ -221,6 +221,7 @@ AppleScript
 Approval required
 Approvals are not required for invitations less than 24 hours old.
 Approvals never required for channel invitations
+Approve an app
 Approve an app for anyone to install
 Approve invitation request?
 Approve request
@@ -254,6 +255,7 @@ Audio clips created
 Authenticate
 Authenticate another way
 Authenticate {teamName}
+Authorization
 Auto
 Automatic acceptance
 Automatic user account mapping
@@ -317,6 +319,8 @@ Cancel all {count, number} requests?
 Cancel this app request?
 Cancel this request?
 Cannot remove yourself from the workspace.
+Canvas Retention
+Canvas and List Retention
 Canvas edits
 Canvas shares
 Canvas views
@@ -386,6 +390,7 @@ Choose which audit log anomalies you want to detect in your organization and imm
 Choose which workspaces to connect to this channel:
 City
 Claimed date
+Clear Search and Filters
 Clear Selection
 Clip plays
 Clips
@@ -470,6 +475,7 @@ Creation date
 Crunching the numbers. We’ll show your data shortly.
 Crystal
 Currently in {numPrivateChannels, plural, =1 {a private channel} other {# private channels}}
+Customer acknowledgement required
 Cypher
 D
 Daily actions taken
@@ -539,9 +545,9 @@ Didn’t use the paid features
 Diff
 Directly to everyone who can manage Slack Connect
 Disable 2FA
-Disable canvas update messages
 Disable two-factor authentication
 Disable two-factor authentication?
+Disabling Member Overrides will remove all overrides currently in place on DMs, MPDMs and channels. When disabled they will default to the Org wide policy (or Workspace policy). Verify the customer has been informed and the appropriate actions have been taken. The customer can run a channel audit export to review all current member overrides.
 Disallowed objects
 Discard entered ranges?
 Disclaimer: Generative AI can produce inaccurate or harmful responses. Make sure people review the output for accuracy and safety. They assume responsibility for how the outcomes of this agent are applied.
@@ -671,6 +677,7 @@ Failed to save settings. Please try again later.
 Failed to update Slackbot setting. Please try again.
 Failed to update integration. Before changing Salesforce organizations, a Sales Admin needs to disconnect this integration in Sales settings.
 Failed to update setting. Please try again later.
+File Retention
 File download settings updated
 File summaries viewed
 File summary translation
@@ -774,6 +781,7 @@ In workspace
 Included in bill
 Includes external people, guests, and your coworkers
 Information {appName} can view
+Install an app
 Install the App on GitHub
 Installation
 Installed Agents
@@ -853,10 +861,9 @@ Learn more about unfurl settings
 Let’s find your team
 Limit of {limit} addresses exceeded
 Limit of {limit} addresses exceeeded
-Limit sharing so only canvas owners can share their canvases with other people and channels.
-Limit sharing so only list owners can share their lists with other people and channels.
 Limited access group updated
 Lisp
+List Retention
 List edits
 List shares
 Lists created
@@ -947,6 +954,7 @@ Members with automations
 Membership limit updated
 Menu actions for 
 Menu actions for {name}
+Message Retention
 Message explanations viewed
 Message history settings updated
 Message translations generated
@@ -1155,6 +1163,7 @@ People and groups for {objectLabel}
 People in {targetName} won’t be able to add {appName} steps to their workflows.
 People in {targetName} won’t be able to install {appName}.
 People who posted
+People with their email address
 Perl
 Permanently delete {possessiveTargetName} profile?
 Permission
@@ -1175,7 +1184,9 @@ Please enter a valid URL.
 Please enter an App ID.
 Please enter at least one letter for your Workspace URL.
 Please enter up to 21 characters for your Workspace URL.
+Please enter your full name
 Please fill in a username.
+Please include information about who is requesting this update, and your name.
 Please select a list.
 Please select a rating
 Posting messages in channels helps make information more discoverable and transparent. This is the number of messages that a member posted to a public or private channel in the last 30 days.
@@ -1275,12 +1286,13 @@ Reorder Automation Rules
 Reorder list
 Reorder table menu actions for {rule}
 Reports if a member was considered billable for at least one day in the selected time period. This only applies to invoiced customers.
+Request Submitted
 Request for {appName} resolved and removed from the list
 Request type
 Request was not {invalidApprovalsText}
 Requested By
 Requested by
-Requests from members, and permission updates from approved apps, will land here.
+Requests to install or update apps and use connectors will appear here.
 Require admin approval
 Require approvals
 Require mobile passcode:
@@ -1292,6 +1304,7 @@ Resolution
 Restrict AI use of this channel’s content 
 Restrict Access
 Restrict Slackbot edits to assigned layouts
+Restrict an app
 Restrict an app to block installation
 Restricted only
 Resume Access
@@ -1356,6 +1369,7 @@ Search by name or app ID
 Search by name or keyword
 Search by name, URL or organization
 Search by name, description, URL or organization
+Search for a member…
 Search for an app to approve
 Search for an app to restrict
 Search for an app…
@@ -1453,6 +1467,7 @@ Shell
 Show all record details for these objects
 Show all servers
 Show archived channels
+Show canvas version history and allow restoration
 Show details for {count, plural, =1 {# object} other {# objects}}
 Show fewer workspaces
 Show in the table…
@@ -1611,6 +1626,7 @@ The average number of unique members who had at least one automation completed o
 The average number of unique users who interacted with a specific app at least once per day
 The categories of personal information that Slack collects from you to create a Workspace account include:
 The creator chooses how users authenticate. The options are to use the creator’s account or individual user accounts.
+The customer has acknowledged that enabling this option will disable their current file retention settings. Files with no active shares will be deleted after a 30-day grace period.
 The email that was associated with this deactivated account will be available. When this account is reactivated, the user will need to verify the updated email address.
 The following actions will be performed:
 The following {count, plural, =1 {member} other {members}} could not be removed from {channelName}:
@@ -1772,7 +1788,6 @@ Transform your work with Slack CRM and advanced AI.
 Translations generated
 Try a Different Email
 Try a different email
-Try a different search or filter.
 Try refining your search, or access all relevant search results by exporting. Once the export is ready, it will be sent to you in Slack.
 Two-Factor (2FA)
 TypeScript

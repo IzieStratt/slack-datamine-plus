@@ -101,7 +101,6 @@
  instead.
  into a single discussion.
  is a reserved word. Try something else!
- is deprecated and will be removed in a future version.
  is disallowed in char data.
  is not iterable!
  is now read.
@@ -144,6 +143,7 @@
  that is shared with public channels
  that is shared with the entire workspace
  to always sound your best.
+ to ask again.
  to confirm the change.
  to keep all of your message and file history searchable.
  to keep edit access for all your canvases.
@@ -282,7 +282,7 @@ $ {amount} USD
 ) is not a string.
 ) is not supported yet.
 ) that performed expensive computation.
-)&&(eH(!1),a2(void 0),ez(ss?
+)&&(eH(!1),a4(void 0),ez(so?
 ))),H((0,e_.R3)(eb)),H((0,e_.p4)(eb?q:void 0)),ev(eb?
 ))),e((0,c.R3)(h)),e((0,c.p4)(h?a:void 0)),p(h?
 ). If you meant to render a collection of children, use an array instead.
@@ -310,6 +310,16 @@ $ {amount} USD
 **{actor}** sent an email
 **{actor}** updated **{deal}**
 **{actor}** updated the amount on **{deal}** to {amount}
+**{contact}** was added as a contact
+**{contact}** was added as a contact on **{account}**
+**{invitee}** accepted **{meeting}**
+**{invitee}** accepted your meeting
+**{invitee}** declined **{meeting}**
+**{invitee}** declined your meeting
+**{invitee}** responded to your meeting
+**{lead}** came in from your website
+**{lead}** came in from {source}
+**{lead}** was added as a lead
 **{sender}** emailed **you**
 *Limited-time offer subject to change at Slack\u2019s discretion.
 *Ready to give this a try?*
@@ -381,7 +391,7 @@ $ {amount} USD
 , {selectedTokenCount, plural, =1 {# item} other {# items}}{errorCount, plural, =0 {} other {, # invalid}}
 , {unreadCount, plural, =1 {# unread} other {# unreads}}
 ,counter:0,seen:new Map,cycles:e?.cycles??
-,e.includeFieldLabel??!1);break;case 45:this.convertVariable_(e.recordId,e.fieldLabel,e.fieldApiName??
+,e.includeFieldLabel??!1);break;case l.LS.CONVERT_VARIABLE:this.convertVariable_(e.recordId,e.fieldLabel,e.fieldApiName??
 ,isSSBBrowserSignin:z,onBeforeSubmit:e_?td:void 0,passkeyError:e_?e4:void 0,onUseEmailInstead:e_?tc:void 0,experimentPasskeyAfterEmailEnabled:e_,autoComplete:e_?
 ,onChange:u?V:void 0,placeholder:u?
 ,onClick:k?x:void 0,onKeyDown:k?w:void 0,role:k?
@@ -1533,6 +1543,7 @@ Add a note to your invitation
 Add a number\u2026
 Add a numbered list
 Add a page break
+Add a person or channel
 Add a personal note to your invitation
 Add a personal touch
 Add a personalized message (optional)
@@ -2353,7 +2364,6 @@ All channels except {channelCount, plural, =1 {# channel} other {# channels}}
 All channels except\u2026
 All channels, except Slack Connect channels
 All checks
-All clear
 All clear here.
 All clear.
 All clear. You\u2019re good to go.
@@ -3486,7 +3496,7 @@ Attach, current step
 Attach, done
 Attach, needs attention
 Attached to a single channel.
-Attached to {app}. Send the note in the meeting chat.
+Attached to {app}. Copy the note, then paste and send it in the meeting chat.
 Attached window
 Attaching files\u2026
 Attaching video stream to camera preview
@@ -3831,6 +3841,7 @@ Back to matched app
 Back to members
 Back to region selection
 Back to server URL
+Back to the widget
 Back to top
 Back to {title}
 Backdrop stack already unmounted.
@@ -4106,6 +4117,7 @@ Bring the team together in a channel
 Bring the team, conversation and Salesforce data together in one place to get work done. 
 Bring the tools you need into this channel to pull reports, start calls, file tickets and more.
 Bring the tools you need into this conversation to pull reports, start calls, file tickets and more.
+Bring this window to the front on Singer\u2019s display, then try again.
 Bring what your team is already working on into Slack
 Bring your emails into Slack
 Bring your favorite daily tools into Slack
@@ -4590,6 +4602,7 @@ Can\u2019t invite new organizations
 Can\u2019t join the huddle
 Can\u2019t join {channels}.
 Can\u2019t leave
+Can\u2019t list windows. You can still drag Singer onto a window.
 Can\u2019t load MCP connectors.
 Can\u2019t load agents. Close this step and open it again.
 Can\u2019t load apps
@@ -4934,7 +4947,6 @@ Catch me up on this group conversation
 Catch me up on what I missed
 Catch me up on {channelName}
 Catch me up on {channelName} before my meeting {meetingTitle}
-Catch statement predicate: expecting an object but got 
 Catch up
 Catch up available
 Catch up on a missed huddle
@@ -5678,6 +5690,7 @@ Clear Filters ({filterCount})
 Clear Link
 Clear OAuth info for Add Datasource step
 Clear Search
+Clear Search and Filters
 Clear Selection
 Clear Selections
 Clear Sort
@@ -6922,6 +6935,8 @@ Copy the workflow and trigger being edited
 Copy this code
 Copy this code block
 Copy this link to share the skill
+Copy this note
+Copy this note, then paste and send it in the meeting chat.
 Copy thread link
 Copy to My Slackbot
 Copy to Your Calendar
@@ -7298,6 +7313,7 @@ Couldn\u2019t send invitations to {emails}, and {remainingEmailsNum, plural, =1{
 Couldn\u2019t send message
 Couldn\u2019t send request
 Couldn\u2019t send that to the agent. Try again.
+Couldn\u2019t send the message, so it\u2019s saved as a draft.
 Couldn\u2019t send this request. The draft is saved here. Try again.
 Couldn\u2019t send to {channel}
 Couldn\u2019t send your answer. Try again.
@@ -7306,6 +7322,7 @@ Couldn\u2019t send. Try again.
 Couldn\u2019t send. Your draft is saved here.
 Couldn\u2019t send. Your message is still here. Try again when you\u2019re connected.
 Couldn\u2019t split these pages. Try again.
+Couldn\u2019t start a task with Speck. Your request is still here.
 Couldn\u2019t start connecting to GitHub Enterprise. Try again later.
 Couldn\u2019t start recording. Please try again.
 Couldn\u2019t start the camera. Please try again.
@@ -7331,6 +7348,7 @@ Couldn\u2019t update the section.
 Couldn\u2019t update this workflow. Try again later.
 Couldn\u2019t update your reaction on GitHub. Give it another try.
 Couldn\u2019t verify email
+Couldn\u2019t write a draft. You can write your own.
 Countdown\u2019s up to you.
 Counted huddle reconnect attempt
 Counted when a person (1) adds a conversation to recap for the first time and views a recap, or (2) once recap is set up, views a recap.
@@ -9488,7 +9506,6 @@ Email domains
 Email draft updated
 Email editor
 Email forwarding
-Email from {appName}
 Email has been sucessfully sent
 Email import
 Email import isn\u2019t available on this plan
@@ -10192,7 +10209,11 @@ Exception during decorator
 Exception during error handler
 Exception during hook
 Exception during transient decorator
+Exception in a connection state listener
+Exception listening to a workspace connection
+Exception recording a connection change
 Exception recording a paste
+Exception stopping a workspace connection listener
 Exceptions
 Exceptions to the defaults
 Excessive alias count indicates a resource exhaustion attack
@@ -11513,6 +11534,7 @@ Finish this request or draft, then attach again.
 Finish this request or draft, then try Attach again.
 Finish up by adding your details
 Finish waiting for boot data
+Finish your current request or draft before sharing another window.
 Finish your review
 Finish your setup
 Finished
@@ -11902,7 +11924,6 @@ From minutes {from} to {to} of this meeting.
 From minutes {from} to {to} of this meeting. Live, so it may change.
 From now on, emails with your contacts and leads in Slack CRM are logged. Other emails aren\u2019t.
 From our Help Center
-From previous event:
 From someone
 From the beginning
 From the beginning (Today)
@@ -13643,7 +13664,6 @@ Import a skill
 Import an email here so your team can weigh in before you reply.
 Import complete. Records added to the Sales Tracker.
 Import contacts from Google
-Import data to Sales Tracker
 Import external emoji
 Import files into channels and DMs
 Import from CSV
@@ -13911,7 +13931,6 @@ Innovation at the Core: We\u2019re committed to pushing the envelope of innovati
 Input Counts
 Input Level
 Input Shape
-Input array must contain at least 
 Input cleared
 Input level:
 Input options
@@ -15524,6 +15543,7 @@ Loading versions\u2026
 Loading video\u2026
 Loading view
 Loading weight_metrics is not supported yet.
+Loading windows\u2026
 Loading work object results\u2026
 Loading workflows
 Loading your Salesforce fields\u2026
@@ -16079,6 +16099,7 @@ Magic Wand Icon
 Magnifying glass
 Main Services Agreement
 Main selector
+Main view
 Main window blurred
 Main window focused
 Main window unloading
@@ -18642,6 +18663,7 @@ No wasm multistream support detected: ensure dependency inclusion of :gl_graph_r
 No window token available after creation
 No window token available after meeting detected window creation
 No windowId for active call
+No windows found. Open a window, then try again.
 No workflows found.
 No workflows in this channel yet.
 No workflows or tasks are available in this workspace.
@@ -18811,6 +18833,7 @@ Not sent invitations
 Not sent to
 Not sent yet
 Not sent yet. These stay unread.
+Not sent: the plan changed
 Not set yet
 Not setting a timer as all schedules are stale
 Not signed in
@@ -18869,6 +18892,7 @@ Notes or voiceover script for this slide
 Notes that RTM changed a session thread root while an agent sessions fetch was in flight
 Notes won\u2019t include people on the call.
 Nothing
+Nothing changed
 Nothing entered
 Nothing found
 Nothing found. Filtering from recent notifications.
@@ -19628,7 +19652,6 @@ Open in new tab
 Open in new window
 Open in secondary view
 Open in side panel
-Open in sidebar
 Open in split view
 Open in split view for {agentName}
 Open in thread
@@ -19705,6 +19728,7 @@ Open the default camera on a mobile device.
 Open the desktop app
 Open the domain-wide auth setup modal from the admin DWA nudge DM
 Open the flow for an Explore my trial feature card
+Open the full answer
 Open the group message with you, {members} in a new window
 Open the keyboard shortcuts dialog
 Open the manual deny request modal from Slackbot message
@@ -20048,6 +20072,7 @@ Overdue \u2022 {dateString}
 Overdue \xb7 {timeAgo}
 Overdue by {dateString}
 Overdue to-dos
+Overdue, due {date}
 Overdue: {date}
 Overflow: input needs wider integers to process
 Overlay clickable dots on instrumented UI to inspect clog payloads.
@@ -21478,6 +21503,7 @@ Read user\u2019s full profile
 Read whether a huddle channel has a working shareable external huddle link
 Read whether huddle sounds are muted
 Read-only
+Read-only fetch failed
 Read-only tools
 Read-only tools ({count})
 Read-only tools access
@@ -21496,6 +21522,7 @@ Ready for the next task
 Ready for you
 Ready to activate
 Ready to add others?
+Ready to confirm
 Ready to confirm with {orgName}?
 Ready to connect
 Ready to customize your sidebar
@@ -21823,6 +21850,7 @@ Refresh oauth token
 Refresh programmable sidebar recommend scores
 Refresh recap
 Refresh the connection with this Salesforce org by logging in with your account.
+Refresh this with the latest data
 Refresh to see changes
 Refresh to see the latest from {totalUnreadCount} more.
 Refresh unfurl timed out
@@ -21968,7 +21996,6 @@ Reminder overdue since {date}
 Reminder set for {dueDate}
 Reminder set: {when}
 Reminder: Update your opportunities
-Reminder: {date}
 Reminders
 Reminders & To-Do
 Reminders and notification schedule
@@ -22596,8 +22623,8 @@ Requests ({count})
 Requests ({count}+)
 Requests Without User Action Tracer
 Requests for Salesforce access
-Requests from members, and permission updates from approved apps, will land here.
 Requests to connect ({numOfSkippedApps})
+Requests to install or update apps and use connectors will appear here.
 Require 2FA for all members to keep data secure
 Require Approval
 Require Org Primary Owner to disconnect
@@ -22688,6 +22715,9 @@ Resets the current channel tab id when switching channels
 Resets the forceSingleColumnMode flag while navigate within the child window
 Resetting reachedEnd
 Resize (with focus on the resizer)
+Resize to large
+Resize to medium
+Resize to small
 Resolution
 Resolution not supported
 Resolutions
@@ -23640,6 +23670,7 @@ Search everything with AI
 Search experiments
 Search external connections
 Search external results for multiple connectors in parallel
+Search failed
 Search failed. Please try again.
 Search failure, user initiated reload via link in error message
 Search far and wide
@@ -24326,6 +24357,7 @@ Selected {name}
 Selected, {position} of {size}
 Selected. 
 Selecting channels
+Selecting window\u2026
 Selection contains content that is not allowed in a blockquote.
 Selection contains content that is not allowed in a callout.
 Selector updates
@@ -24441,7 +24473,6 @@ Send the message
 Send these instructions to your team:
 Send this note
 Send this note in the meeting chat, then add a screenshot of the chat.
-Send this note in the meeting chat.
 Send this notification
 Send this now?
 Send this private request from Slack. Your draft is saved here.
@@ -24525,6 +24556,7 @@ Sent privately to {agent}
 Sent request to join primary meeting
 Sent right away when a server is requested.
 Sent to
+Sent to GitHub
 Sent to Org Primary Owners and Security Admins
 Sent to Security Admins
 Sent to your DMs
@@ -25030,6 +25062,7 @@ Share a URL to huddle in {channelName}
 Share a canvas
 Share a canvas for a message that was shared
 Share a huddle link with your clients, partners, teammates, and more. Anyone can join, no Slack account required. Your notes and files stay right where you work.
+Share a window
 Share agent response back to its origin channel
 Share and Add Salesforce User
 Share and Enable
@@ -25638,6 +25671,7 @@ Singer needs you in the chat
 Singer needs your OK to continue
 Singer offers you a heart
 Singer options
+Singer reads the window when you send your request.
 Singer sees only the window you choose. macOS may ask for permission first.
 Singer send is no longer available.
 Singer settings
@@ -27178,6 +27212,7 @@ Submit now
 Submit to be featured in Slack
 Submit to have template published to {teamName}
 Submit to have template reviewed and published to {teamName}
+Submits combined search feedback
 Submitted By
 Submitted changes saved. Your newer edits haven\u2019t been saved yet.
 Submitting review
@@ -29053,7 +29088,7 @@ This message will appear within the Slackbot notification that each member will 
 This method confirms you own the domain but doesn\u2019t provide email signing.
 This metric has already been configured. Please choose another metric.
 This metric\u2019s taking a little longer to load. Try coming back later.
-This might be a moment \u2014 feel free to continue using Slack and we\u2019ll bring you back here.
+This might be a moment \u2014 feel free to continue using Slack and we\u2019ll let you know when it completes.
 This might take a few minutes. Refresh the page in a bit to view any updates.
 This might take a minute
 This might take a minute, but an organized list is worth it.
@@ -30076,7 +30111,6 @@ Try a different email
 Try a different filter.
 Try a different microphone
 Try a different search or clear your filters.
-Try a different search or filter.
 Try a different search term
 Try a different search term.
 Try a different search.
@@ -30833,12 +30867,14 @@ Untitled Sidekick
 Untitled Skill
 Untitled Window
 Untitled Workflow
+Untitled contact
 Untitled conversation
 Untitled event
 Untitled file
 Untitled folder
 Untitled item
 Untitled item (Archived)
+Untitled lead
 Untitled list
 Untitled meeting
 Untitled message
@@ -32869,6 +32905,7 @@ Window actions
 Window blurred
 Window changed. Move Singer over it again.
 Window detached.
+Window detached. You can continue this conversation with Slackbot.
 Window edits
 Window focused
 Window focused without previous blur event
@@ -33204,6 +33241,7 @@ Write with AI
 Write your own prompt
 Write/delete tools
 Writing Coach
+Writing a draft\u2026
 Writing assistance in canvas makes it easy to draft briefs, recaps, or updates. AI helps create, structure, and polish your content.
 Writing coach
 Writing device selection history to local storage
@@ -34231,6 +34269,7 @@ Your admins have turned off previews for this link.
 Your admins haven\u2019t shared the permission required to invite external people to this channel. Read their instructions for details.
 Your admins haven\u2019t shared the permissions required to accept Slack Connect invitations. Read the instructions they created for details.
 Your admins haven\u2019t shared the permissions required to accept Slack Connect invitations. You may want to ask an admin for help.
+Your admins haven\u2019t turned on Slackbot\u2019s AI for you, so write this message yourself.
 Your agency contact tagged you in #ext-agency-tyconet waiting on creative feedback for the upcoming campaign launch.
 Your agenda is getting its prep game on\u2026 :muscle:
 Your agent groups related work into projects as it goes. The first one shows up here.
@@ -34285,6 +34324,8 @@ Your code channel was created, but it couldn\u2019t be fully set up. Find it in 
 Your code tasks will appear here.
 Your collection will be available as a variable to use in next steps
 Your comment
+Your comment includes something your org doesn\u2019t allow. Edit it and try again.
+Your comment may include sensitive info. Edit it and try again.
 Your comment was posted, but GitHub couldn\u2019t close this pull request.
 Your computer is plugged into a power source, which will optimize peformance.
 Your computer may degrade audio and video quality while on battery.
@@ -41473,6 +41514,7 @@ zzz
 {agent} \xb7 Mentioned you
 {agent} can now join your DMs when you mention it.
 {agent} is no longer available
+{agent} is working. Singer stays quiet until you ask.
 {agent} users this week
 {ago} \xb7 {count, plural, =1 {# member} other {# members}}
 {alt_text} (AI generated)
