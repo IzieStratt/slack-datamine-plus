@@ -21,7 +21,7 @@ fields: plan: title, tasks, app_id
 fields: prototype/agent_permissions_card: title, body, disclaimer, actions, icon, show_confirm_dialog, container_id
 fields: prototype/alert: text, level
 fields: prototype/answer_comparison: answers, child_blocks, is_generating, is_read_only
-fields: prototype/ask_user_question: questions, submitted, answers, answered_by
+fields: prototype/ask_user_question: questions, submitted, answers, answered_by, action_error
 fields: prototype/canvas_diff: contents, child_blocks
 fields: prototype/chart: chart_type, title, series, segments, axis_config, color_family, show_legend
 fields: prototype/checklist: title, element, group_completed_items, show_progress
@@ -85,7 +85,6 @@ registered: attachment_mention
 registered: attachment_reference
 registered: auth_provider
 registered: broadcast
-registered: button
 registered: call
 registered: callout
 registered: canvas
@@ -98,31 +97,25 @@ registered: carousel
 registered: channel
 registered: channel_section
 registered: channel_set
-registered: channels_select
-registered: checkboxes
 registered: citation
 registered: color
 registered: contact_card
 registered: container
 registered: context
 registered: context_actions
-registered: conversations_select
 registered: data_table
 registered: data_visualization
 registered: date
-registered: datepicker
 registered: datetimepicker
 registered: divider
 registered: email_text_input
 registered: emoji
 registered: event
-registered: external_select
 registered: feedback_buttons
 registered: file
 registered: file_input
 registered: folder_mention
 registered: header
-registered: icon_button
 registered: image
 registered: input
 registered: layout
@@ -134,20 +127,13 @@ registered: message
 registered: message_embed
 registered: message_mention
 registered: mrkdwn
-registered: multi_channels_select
-registered: multi_conversations_select
-registered: multi_external_select
-registered: multi_static_select
-registered: multi_users_select
 registered: number_input
-registered: overflow
 registered: page
 registered: password
 registered: plain_text
 registered: plain_text_input
 registered: plan
 registered: prototype
-registered: radio_buttons
 registered: related_automation_decorator
 registered: rich_text
 registered: rich_text_divider
@@ -167,18 +153,15 @@ registered: share_skill
 registered: share_workflow
 registered: skill
 registered: split_button
-registered: static_select
 registered: table
 registered: tag
 registered: task_card
 registered: text
 registered: timeline
-registered: timepicker
 registered: unknown
 registered: url_text_input
 registered: user
 registered: usergroup
-registered: users_select
 registered: variable
 registered: video
 registered: work_object_mention

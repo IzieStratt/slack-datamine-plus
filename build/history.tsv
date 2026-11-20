@@ -178,6 +178,7 @@ ai-features	about_page_features_mcp_servers	2026-11-10
 ai-features	accepter_email_verification_prompt	2026-11-10		
 ai-features	action_items_empty_state_slackbot_button	2026-11-10		
 ai-features	action_library_context_agents	2026-11-10		
+ai-features	activity_agent_sessions_peek	2026-11-20		
 ai-features	activity_agent_sessions_tab	2026-11-20		
 ai-features	activity_slackbot_task_row	2026-11-10		
 ai-features	add_agent	2026-11-10		
@@ -412,11 +413,14 @@ ai-features	agent_session_peek	2026-11-10
 ai-features	agent_session_peek_menu	2026-11-10		
 ai-features	agent_session_sidebar	2026-11-10		
 ai-features	agent_sessions	2026-11-10		
+ai-features	agent_sessions_agent	2026-11-20		
 ai-features	agent_sessions_child_window	2026-11-20		
+ai-features	agent_sessions_creator	2026-11-20		
 ai-features	agent_sessions_in_home	2026-11-10	2026-11-20	2026-11-20
 ai-features	agent_sessions_link	2026-11-10		
 ai-features	agent_sessions_pr_rows	2026-11-20		
 ai-features	agent_sessions_pr_synth	2026-11-20		
+ai-features	agent_sessions_reset_filters	2026-11-20		
 ai-features	agent_sessions_sidebar	2026-11-10		
 ai-features	agent_sessions_sort	2026-11-10		
 ai-features	agent_sessions_synth_view	2026-11-10		
@@ -1012,7 +1016,7 @@ ai-features	channel_agent_not_installed	2026-11-10
 ai-features	channel_agent_proactive_replies_instructions	2026-11-10		
 ai-features	channel_agent_sessions	2026-11-10		
 ai-features	channel_agent_who_can_enable_proactive_replies	2026-11-10		
-ai-features	channel_ai_excluded	2026-11-10		
+ai-features	channel_ai_excluded	2026-11-10	2026-11-20	2026-11-20
 ai-features	channel_canvas_update_ai_message_copy_change	2026-11-10		
 ai-features	channel_ctx_menu_agent_dm_tasks	2026-11-14		
 ai-features	channel_ctx_menu_agents_in_dm_list	2026-11-10		
@@ -1050,7 +1054,7 @@ ai-features	channel_tab_agent_sessions_type_filter	2026-11-10
 ai-features	channel_tab_slackbot_ai_conversation	2026-11-10		
 ai-features	channel_tab_slackbot_ai_history	2026-11-10		
 ai-features	channel_tab_slackbot_ai_skills	2026-11-10		
-ai-features	channel_tab_slackbot_ai_tasks	2026-11-10		
+ai-features	channel_tab_slackbot_ai_tasks	2026-11-10	2026-11-20	2026-11-20
 ai-features	channel_tabs_workflows_tab_ai_step_edu_banner	2026-11-10		
 ai-features	channel_view_agents	2026-11-10		
 ai-features	channels_excluded_from_slack_ai	2026-11-10		
@@ -1157,6 +1161,7 @@ ai-features	export_prompt_banner	2026-11-10
 ai-features	failed_creating_aea_agent_user	2026-11-10		
 ai-features	failed_to_add_skill	2026-11-10		
 ai-features	failed_to_remove_skill	2026-11-10		
+ai-features	fe_activity_agent_sessions_peek	2026-11-20		
 ai-features	fe_activity_agent_sessions_tab	2026-11-20		
 ai-features	feat_agent_sessions	2026-11-10		
 ai-features	feat_agents_dms	2026-11-10		
@@ -1350,9 +1355,18 @@ ai-features	manage_ai_permissions	2026-11-10
 ai-features	manage_skills	2026-11-10		
 ai-features	manage_skills_modal_label_id	2026-11-10		
 ai-features	mcp	2026-11-10		
-ai-features	mcp_ai_channel_exclusions	2026-11-10		
+ai-features	mcp_ai_channel_exclusions	2026-11-10	2026-11-20	2026-11-20
 ai-features	mcp_app	2026-11-10		
 ai-features	mcp_app_block	2026-11-10		
+ai-features	mcp_app_block_load_	2026-11-20		
+ai-features	mcp_app_block_load_config_error	2026-11-20		
+ai-features	mcp_app_block_load_hidden_timeout	2026-11-20		
+ai-features	mcp_app_block_load_prefetch_timeout	2026-11-20		
+ai-features	mcp_app_block_load_ready	2026-11-20		
+ai-features	mcp_app_block_load_runtime_error	2026-11-20		
+ai-features	mcp_app_block_load_runtime_error_after_ready	2026-11-20		
+ai-features	mcp_app_block_load_sandbox_proxy_timeout	2026-11-20		
+ai-features	mcp_app_block_load_started	2026-11-20		
 ai-features	mcp_app_block_prompt	2026-11-10		
 ai-features	mcp_app_disclaimer	2026-11-10		
 ai-features	mcp_app_fullscreen	2026-11-10		
@@ -2252,6 +2266,7 @@ ai-features	slackbot_mcp	2026-11-10
 ai-features	slackbot_mcp_add_custom_mcp	2026-11-10		
 ai-features	slackbot_mcp_app	2026-11-10		
 ai-features	slackbot_mcp_app_block_load_retry	2026-11-10		
+ai-features	slackbot_mcp_app_config_error	2026-11-20		
 ai-features	slackbot_mcp_app_creation	2026-11-10		
 ai-features	slackbot_mcp_app_cross_window_active	2026-11-10		
 ai-features	slackbot_mcp_app_discovery	2026-11-10		
@@ -2260,12 +2275,15 @@ ai-features	slackbot_mcp_app_fullscreen_exited	2026-11-10
 ai-features	slackbot_mcp_app_fullscreen_speedbump_shown	2026-11-10		
 ai-features	slackbot_mcp_app_iframe_ready	2026-11-10		
 ai-features	slackbot_mcp_app_iframe_timeout	2026-11-10		
+ai-features	slackbot_mcp_app_load_abandoned	2026-11-20		
+ai-features	slackbot_mcp_app_load_skipped	2026-11-20		
 ai-features	slackbot_mcp_app_open_link_blocked	2026-11-10		
 ai-features	slackbot_mcp_app_open_link_cancelled	2026-11-10		
 ai-features	slackbot_mcp_app_open_link_confirmed	2026-11-10		
 ai-features	slackbot_mcp_app_open_link_shown	2026-11-10		
 ai-features	slackbot_mcp_app_prefetch_completed	2026-11-10		
 ai-features	slackbot_mcp_app_prefetch_failed	2026-11-10		
+ai-features	slackbot_mcp_app_prefetch_timeout	2026-11-20		
 ai-features	slackbot_mcp_app_rendered	2026-11-10		
 ai-features	slackbot_mcp_app_resource_call_failed	2026-11-10		
 ai-features	slackbot_mcp_app_runtime_error	2026-11-10		
@@ -2460,6 +2478,7 @@ ai-features	slackbot_tasks_colleague_adoption_summary	2026-11-20
 ai-features	slackbot_tasks_modal	2026-11-20		
 ai-features	slackbot_tasks_social_proof	2026-11-20		
 ai-features	slackbot_teaser	2026-11-10		
+ai-features	slackbot_test_as_member_button	2026-11-20		
 ai-features	slackbot_thread	2026-11-10		
 ai-features	slackbot_thread_conversion	2026-11-10		
 ai-features	slackbot_thread_ts	2026-11-10		
@@ -4700,6 +4719,7 @@ analytics-events	component: hc_feedback_form	2026-11-10
 analytics-events	component: header	2026-11-10		
 analytics-events	component: hermes_workflows_dropdown_mention_support_badge	2026-11-10		
 analytics-events	component: hermes_workflows_option_item_mention_tip	2026-11-10		
+analytics-events	component: history_menu	2026-11-20		
 analytics-events	component: home_tab_nudge_animation	2026-11-10		
 analytics-events	component: home_tab_nudge_coachmark	2026-11-10		
 analytics-events	component: hover_card	2026-11-10		
@@ -4752,7 +4772,7 @@ analytics-events	component: jp_pocket_guide_private_channel_foreword	2026-11-10
 analytics-events	component: jp_pocket_guide_sidebar_link	2026-11-10		
 analytics-events	component: jp_pocket_guide_welcome_channel_foreword	2026-11-10		
 analytics-events	component: later_empty_state	2026-11-10		
-analytics-events	component: later_page_today_banner	2026-11-10		
+analytics-events	component: later_page_today_banner	2026-11-10	2026-11-20	2026-11-20
 analytics-events	component: limited_history_alert	2026-11-10		
 analytics-events	component: limited_history_countdown	2026-11-10		
 analytics-events	component: limited_history_counter	2026-11-10		
@@ -5084,6 +5104,7 @@ analytics-events	component: slackforce_email_file_attachment_download_toast	2026
 analytics-events	component: slackforce_email_file_viewer_actions	2026-11-10		
 analytics-events	component: slackforce_email_modal	2026-11-10		
 analytics-events	component: slackforce_ephemeral_entity_add_to_sidebar_banner	2026-11-10		
+analytics-events	component: slackforce_sales_hub	2026-11-20		
 analytics-events	component: slackforce_sales_tracker_board	2026-11-10		
 analytics-events	component: slackforce_sales_tracker_onboarding	2026-11-10		
 analytics-events	component: slackforce_sales_tracker_sidebar	2026-11-10		
@@ -6707,7 +6728,7 @@ analytics-events	element: later_action_menu_item	2026-11-10
 analytics-events	element: later_button	2026-11-10		
 analytics-events	element: later_empty_state	2026-11-10		
 analytics-events	element: later_item_row	2026-11-10		
-analytics-events	element: later_page_today_banner_close	2026-11-10		
+analytics-events	element: later_page_today_banner_close	2026-11-10	2026-11-20	2026-11-20
 analytics-events	element: later_show_upcoming_reminders_pref	2026-11-10		
 analytics-events	element: later_todo_filter_pref	2026-11-10		
 analytics-events	element: later_todos_bulk_move_to_bookmarks	2026-11-10		
@@ -7547,18 +7568,22 @@ analytics-events	element: slackbot_entry_load_latency	2026-11-10
 analytics-events	element: slackbot_follow_up_button	2026-11-10		
 analytics-events	element: slackbot_mcp_add_custom_mcp	2026-11-10		
 analytics-events	element: slackbot_mcp_app_block_load_retry	2026-11-10		
+analytics-events	element: slackbot_mcp_app_config_error	2026-11-20		
 analytics-events	element: slackbot_mcp_app_cross_window_active	2026-11-10		
 analytics-events	element: slackbot_mcp_app_fullscreen_entered	2026-11-10		
 analytics-events	element: slackbot_mcp_app_fullscreen_exited	2026-11-10		
 analytics-events	element: slackbot_mcp_app_fullscreen_speedbump_shown	2026-11-10		
 analytics-events	element: slackbot_mcp_app_iframe_ready	2026-11-10		
 analytics-events	element: slackbot_mcp_app_iframe_timeout	2026-11-10		
+analytics-events	element: slackbot_mcp_app_load_abandoned	2026-11-20		
+analytics-events	element: slackbot_mcp_app_load_skipped	2026-11-20		
 analytics-events	element: slackbot_mcp_app_open_link_blocked	2026-11-10		
 analytics-events	element: slackbot_mcp_app_open_link_cancelled	2026-11-10		
 analytics-events	element: slackbot_mcp_app_open_link_confirmed	2026-11-10		
 analytics-events	element: slackbot_mcp_app_open_link_shown	2026-11-10		
 analytics-events	element: slackbot_mcp_app_prefetch_completed	2026-11-10		
 analytics-events	element: slackbot_mcp_app_prefetch_failed	2026-11-10		
+analytics-events	element: slackbot_mcp_app_prefetch_timeout	2026-11-20		
 analytics-events	element: slackbot_mcp_app_rendered	2026-11-10		
 analytics-events	element: slackbot_mcp_app_resource_call_failed	2026-11-10		
 analytics-events	element: slackbot_mcp_app_runtime_error	2026-11-10		
@@ -11925,7 +11950,7 @@ api-methods	search.modules.dms	2026-10-19
 api-methods	search.modules.external	2026-10-23		
 api-methods	search.modules.files	2026-10-19		
 api-methods	search.modules.people	2026-10-23		
-api-methods	search.modules.topResults	2026-10-23		
+api-methods	search.modules.topResults	2026-10-23	2026-11-20	2026-11-20
 api-methods	search.modules.workObjects	2026-10-23		
 api-methods	search.precache	2026-10-23	2026-10-27	2026-10-27
 api-methods	search.save	2026-10-23		
@@ -13569,7 +13594,7 @@ api-methods-upstream	search.modules.dms	2026-11-10
 api-methods-upstream	search.modules.external	2026-11-10		
 api-methods-upstream	search.modules.files	2026-11-10		
 api-methods-upstream	search.modules.people	2026-11-10		
-api-methods-upstream	search.modules.topResults	2026-11-10		
+api-methods-upstream	search.modules.topResults	2026-11-10	2026-11-20	2026-11-20
 api-methods-upstream	search.modules.workObjects	2026-11-10		
 api-methods-upstream	search.save	2026-11-10		
 api-methods-upstream	search.team	2026-11-10		
@@ -14989,7 +15014,7 @@ assets	slack_logo_mark.svg	2026-11-10
 assets	slack_logo_no_brand.png	2026-11-10		
 assets	slack_logo_white_text.svg	2026-11-10		
 assets	slackbot-ai-sample-wrapper-coachmark-icon.png	2026-11-20		
-assets	slackbot-ai-sample-wrapper-coachmark-icon.svg	2026-11-10		
+assets	slackbot-ai-sample-wrapper-coachmark-icon.svg	2026-11-10	2026-11-20	2026-11-20
 assets	slackbot-ai-sample-wrapper-coachmark-icon@2x.png	2026-11-20		
 assets	slackbot-ai-sample-wrapper-coachmark-icon@3x.png	2026-11-20		
 assets	slackbot-ai.svg	2026-11-10		
@@ -15370,7 +15395,8 @@ block-registry	fields: plan: title, tasks, app_id	2026-11-20
 block-registry	fields: prototype/agent_permissions_card: title, body, disclaimer, actions, icon, show_confirm_dialog, container_id	2026-11-20		
 block-registry	fields: prototype/alert: text, level	2026-11-20		
 block-registry	fields: prototype/answer_comparison: answers, child_blocks, is_generating, is_read_only	2026-11-20		
-block-registry	fields: prototype/ask_user_question: questions, submitted, answers, answered_by	2026-11-20		
+block-registry	fields: prototype/ask_user_question: questions, submitted, answers, answered_by	2026-11-20	2026-11-20	2026-11-20
+block-registry	fields: prototype/ask_user_question: questions, submitted, answers, answered_by, action_error	2026-11-20		
 block-registry	fields: prototype/canvas_diff: contents, child_blocks	2026-11-20		
 block-registry	fields: prototype/chart: chart_type, title, series, segments, axis_config, color_family, show_legend	2026-11-20		
 block-registry	fields: prototype/checklist: title, element, group_completed_items, show_progress	2026-11-20		
@@ -15434,7 +15460,7 @@ block-registry	registered: attachment_mention	2026-11-20
 block-registry	registered: attachment_reference	2026-11-20		
 block-registry	registered: auth_provider	2026-11-20		
 block-registry	registered: broadcast	2026-11-20		
-block-registry	registered: button	2026-11-20		
+block-registry	registered: button	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: call	2026-11-20		
 block-registry	registered: callout	2026-11-20		
 block-registry	registered: canvas	2026-11-20		
@@ -15447,31 +15473,31 @@ block-registry	registered: carousel	2026-11-20
 block-registry	registered: channel	2026-11-20		
 block-registry	registered: channel_section	2026-11-20		
 block-registry	registered: channel_set	2026-11-20		
-block-registry	registered: channels_select	2026-11-20		
-block-registry	registered: checkboxes	2026-11-20		
+block-registry	registered: channels_select	2026-11-20	2026-11-20	2026-11-20
+block-registry	registered: checkboxes	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: citation	2026-11-20		
 block-registry	registered: color	2026-11-20		
 block-registry	registered: contact_card	2026-11-20		
 block-registry	registered: container	2026-11-20		
 block-registry	registered: context	2026-11-20		
 block-registry	registered: context_actions	2026-11-20		
-block-registry	registered: conversations_select	2026-11-20		
+block-registry	registered: conversations_select	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: data_table	2026-11-20		
 block-registry	registered: data_visualization	2026-11-20		
 block-registry	registered: date	2026-11-20		
-block-registry	registered: datepicker	2026-11-20		
+block-registry	registered: datepicker	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: datetimepicker	2026-11-20		
 block-registry	registered: divider	2026-11-20		
 block-registry	registered: email_text_input	2026-11-20		
 block-registry	registered: emoji	2026-11-20		
 block-registry	registered: event	2026-11-20		
-block-registry	registered: external_select	2026-11-20		
+block-registry	registered: external_select	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: feedback_buttons	2026-11-20		
 block-registry	registered: file	2026-11-20		
 block-registry	registered: file_input	2026-11-20		
 block-registry	registered: folder_mention	2026-11-20		
 block-registry	registered: header	2026-11-20		
-block-registry	registered: icon_button	2026-11-20		
+block-registry	registered: icon_button	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: image	2026-11-20		
 block-registry	registered: input	2026-11-20		
 block-registry	registered: layout	2026-11-20		
@@ -15483,20 +15509,20 @@ block-registry	registered: message	2026-11-20
 block-registry	registered: message_embed	2026-11-20		
 block-registry	registered: message_mention	2026-11-20		
 block-registry	registered: mrkdwn	2026-11-20		
-block-registry	registered: multi_channels_select	2026-11-20		
-block-registry	registered: multi_conversations_select	2026-11-20		
-block-registry	registered: multi_external_select	2026-11-20		
-block-registry	registered: multi_static_select	2026-11-20		
-block-registry	registered: multi_users_select	2026-11-20		
+block-registry	registered: multi_channels_select	2026-11-20	2026-11-20	2026-11-20
+block-registry	registered: multi_conversations_select	2026-11-20	2026-11-20	2026-11-20
+block-registry	registered: multi_external_select	2026-11-20	2026-11-20	2026-11-20
+block-registry	registered: multi_static_select	2026-11-20	2026-11-20	2026-11-20
+block-registry	registered: multi_users_select	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: number_input	2026-11-20		
-block-registry	registered: overflow	2026-11-20		
+block-registry	registered: overflow	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: page	2026-11-20		
 block-registry	registered: password	2026-11-20		
 block-registry	registered: plain_text	2026-11-20		
 block-registry	registered: plain_text_input	2026-11-20		
 block-registry	registered: plan	2026-11-20		
 block-registry	registered: prototype	2026-11-20		
-block-registry	registered: radio_buttons	2026-11-20		
+block-registry	registered: radio_buttons	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: related_automation_decorator	2026-11-20		
 block-registry	registered: rich_text	2026-11-20		
 block-registry	registered: rich_text_divider	2026-11-20		
@@ -15516,18 +15542,18 @@ block-registry	registered: share_skill	2026-11-20
 block-registry	registered: share_workflow	2026-11-20		
 block-registry	registered: skill	2026-11-20		
 block-registry	registered: split_button	2026-11-20		
-block-registry	registered: static_select	2026-11-20		
+block-registry	registered: static_select	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: table	2026-11-20		
 block-registry	registered: tag	2026-11-20		
 block-registry	registered: task_card	2026-11-20		
 block-registry	registered: text	2026-11-20		
 block-registry	registered: timeline	2026-11-20		
-block-registry	registered: timepicker	2026-11-20		
+block-registry	registered: timepicker	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: unknown	2026-11-20		
 block-registry	registered: url_text_input	2026-11-20		
 block-registry	registered: user	2026-11-20		
 block-registry	registered: usergroup	2026-11-20		
-block-registry	registered: users_select	2026-11-20		
+block-registry	registered: users_select	2026-11-20	2026-11-20	2026-11-20
 block-registry	registered: variable	2026-11-20		
 block-registry	registered: video	2026-11-20		
 block-registry	registered: work_object_mention	2026-11-20		
@@ -32181,9 +32207,9 @@ enums	EXTERNAL_TRIGGER_DISALLOWED_STEP_SINGLE_RECORD=external_trigger_disallowed
 enums	EXTERNAL_TRIGGER_REQUIRED=external_trigger_required	2026-10-23		
 enums	EXTERNAL_WORKSPACE_ABOUT_PAGE=external-workspace-about-page	2026-10-23		
 enums	EXTERNAL_WORKSPACE_EVENT_VIEW_SIDEBAR=external-workspace-event-view-sidebar	2026-10-23		
-enums	EXTERNAL_WORKSPACE_INVITE_ERROR=external_workspace_invite_error	2026-10-21		
-enums	EXTERNAL_WORKSPACE_INVITE_SELECT_ACCOUNT=external_workspace_invite_select_account	2026-10-21		
-enums	EXTERNAL_WORKSPACE_TOS=external_workspace_tos	2026-10-21		
+enums	EXTERNAL_WORKSPACE_INVITE_ERROR=external_workspace_invite_error	2026-10-21	2026-11-20	2026-11-20
+enums	EXTERNAL_WORKSPACE_INVITE_SELECT_ACCOUNT=external_workspace_invite_select_account	2026-10-21	2026-11-20	2026-11-20
+enums	EXTERNAL_WORKSPACE_TOS=external_workspace_tos	2026-10-21	2026-11-20	2026-11-20
 enums	FAILED=failed	2026-10-21		
 enums	FAILURE=Failure	2026-10-21		
 enums	FAIR_BILLING=fair_billing	2026-10-21		
@@ -33031,7 +33057,7 @@ enums	LARGE=large	2026-10-21
 enums	LAST_SELECTION_NOT_SHOWN=last_selection_not_shown	2026-11-20		
 enums	LATER=later	2026-10-23		
 enums	LATER=menuitem-later	2026-10-23		
-enums	LATER_PAGE_TODAY_BANNER=later_page_today_banner	2026-10-21		
+enums	LATER_PAGE_TODAY_BANNER=later_page_today_banner	2026-10-21	2026-11-20	2026-11-20
 enums	LAUNCH_IOS_APP=launch_ios_app	2026-10-21		
 enums	LAYOUT=layout	2026-10-23	2026-11-05	2026-11-05
 enums	LAYOUT_2_COLUMNS=layout-2-columns	2026-10-23		
@@ -36810,6 +36836,7 @@ error-codes	restricted_permissions	2026-11-10
 error-codes	restricted_plan_level	2026-11-10		
 error-codes	revoke_permission_error	2026-11-10		
 error-codes	revoke_team_access_failed	2026-11-10		
+error-codes	rich_text_conversion_unavailable	2026-11-20		
 error-codes	room_not_found	2026-11-10		
 error-codes	runtime_unavailable	2026-11-10		
 error-codes	sales_home_user_config_not_found	2026-11-10		
@@ -37226,7 +37253,7 @@ errors	canvas_view_only_button	2026-10-21
 errors	change_handoff_channel_from_modal	2026-10-23		
 errors	change_source_from_modal	2026-10-23		
 errors	channel_action	2026-10-23		
-errors	channel_ai_excluded	2026-10-23		
+errors	channel_ai_excluded	2026-10-23	2026-11-20	2026-11-20
 errors	channel_canvas	2026-10-21		
 errors	channel_canvas_updated	2026-10-23		
 errors	channel_conversion_incomplete	2026-10-21		
@@ -37262,7 +37289,7 @@ errors	channel_tab	2026-10-21
 errors	channel_tab_added	2026-10-23		
 errors	channel_topic	2026-10-21		
 errors	channel_type_not_supported	2026-10-23		
-errors	channel_unavailable	2026-10-23		
+errors	channel_unavailable	2026-10-23	2026-11-20	2026-11-20
 errors	channels_cache_eviction_api	2026-10-23		
 errors	check_duplicate_name	2026-10-23		
 errors	check_file_permissions_for_tab	2026-10-21		
@@ -37666,6 +37693,7 @@ errors	no_one	2026-10-23
 errors	no_permission	2026-10-21		
 errors	no_perms	2026-10-21		
 errors	no_persisted_recommended_build_version	2026-10-23		
+errors	no_sandbox_domain	2026-11-20		
 errors	no_target_language	2026-10-23		
 errors	no_team	2026-10-23		
 errors	no_urls_allowed	2026-10-21		
@@ -38418,6 +38446,7 @@ experiments	canvas_read_only_role	2026-10-23
 experiments	canvas_readtime_hours	2026-10-28	2026-11-04	2026-11-04
 experiments	canvas_salesforce_data_block	2026-10-23		
 experiments	canvas_sc_external_org_sharing_warning	2026-11-11		
+experiments	canvas_section_link_not_found_toast	2026-11-20		
 experiments	canvas_selection_awareness	2026-10-23		
 experiments	canvas_self_lockout_speedbump	2026-10-27		
 experiments	canvas_share_default_workspace_access	2026-11-11		
@@ -38472,7 +38501,7 @@ experiments	channel_tabs_preload_files	2026-10-23
 experiments	channel_tabs_remove_on_bookmark	2026-10-23		
 experiments	channel_tabs_threads	2026-10-23		
 experiments	channel_tabs_v5_i18n	2026-10-23		
-experiments	channel_topic_purpose_setting_restrict_to_channel_managers	2026-10-23		
+experiments	channel_topic_purpose_setting_restrict_to_channel_managers	2026-10-23	2026-11-20	2026-11-20
 experiments	channels_onboarding_tasks_v3_large	2026-10-23	2026-11-20	2026-11-20
 experiments	clear_notifications	2026-10-23		
 experiments	click_anywhere_closes_thread	2026-10-23		
@@ -38522,7 +38551,7 @@ experiments	composer_control_simplifications_mention_menu_suggested_agents	2026-
 experiments	composer_control_simplifications_plus_menu	2026-10-23		
 experiments	composer_control_simplifications_send_button	2026-10-23		
 experiments	composer_dictation	2026-10-23		
-experiments	composer_smart_symbols	2026-10-23		
+experiments	composer_smart_symbols	2026-10-23	2026-11-20	2026-11-20
 experiments	composer_type_time_smart_quotes	2026-10-23		
 experiments	composer_unfurl_blocked_link_warning	2026-11-13		
 experiments	confluence_cloud_multi_domain_enabled	2026-10-23		
@@ -38679,7 +38708,7 @@ experiments	files_and_artifacts_from_meetings	2026-10-23
 experiments	files_browser_split_docs_filters	2026-10-23	2026-11-20	2026-11-20
 experiments	files_info_pane_count_style	2026-11-14		
 experiments	files_suggestions_api	2026-10-23		
-experiments	files_tab_nux_new_teams	2026-10-23		
+experiments	files_tab_nux_new_teams	2026-10-23	2026-11-20	2026-11-20
 experiments	files_tab_nux_v2	2026-10-23		
 experiments	filter_dormant_channels	2026-10-23		
 experiments	find_in_thread	2026-10-23		
@@ -38937,7 +38966,7 @@ experiments	magic_channel_folder_organization	2026-10-23
 experiments	manage_conversations_strings	2026-10-23	2026-11-20	2026-11-20
 experiments	managed_app_profile_metadata	2026-11-20		
 experiments	marketplace_testing_info_save_fixes	2026-11-11		
-experiments	mcp_ai_channel_exclusions	2026-10-23		
+experiments	mcp_ai_channel_exclusions	2026-10-23	2026-11-20	2026-11-20
 experiments	mcp_message_badging	2026-11-09		
 experiments	mcp_reload_button	2026-10-23		
 experiments	mcp_router	2026-10-23		
@@ -39000,7 +39029,7 @@ experiments	ncea_allow_channel_managers_to_lock_configuration	2026-10-23	2026-11
 experiments	ncea_allow_external_channels	2026-10-23		
 experiments	ncea_allow_only_external_channel_usage	2026-10-23		
 experiments	ncea_custom_prompt_instructions	2026-10-23		
-experiments	ncea_multi_channel_support	2026-10-23		
+experiments	ncea_multi_channel_support	2026-10-23	2026-11-20	2026-11-20
 experiments	ncea_progressive_updates_in_response	2026-10-23		
 experiments	nested_dynamic_inputs_timestamp	2026-10-23		
 experiments	nested_secondary_animation	2026-10-23		
@@ -39018,8 +39047,8 @@ experiments	omni_auto_highlight	2026-10-23	2026-10-29	2026-10-29
 experiments	omni_date_quick_filters	2026-10-23		
 experiments	omni_filter_autoslug	2026-10-23		
 experiments	omni_member_status	2026-11-03	2026-11-20	2026-11-20
-experiments	omni_merged_all_follow_ups	2026-11-06		
-experiments	omni_merged_follow_ups	2026-10-23		
+experiments	omni_merged_all_follow_ups	2026-11-06	2026-11-20	2026-11-20
+experiments	omni_merged_follow_ups	2026-10-23	2026-11-20	2026-11-20
 experiments	omni_merged_nux	2026-10-23	2026-11-04	2026-11-04
 experiments	omni_multiline	2026-10-23	2026-10-30	2026-10-30
 experiments	omni_pipeline_attribution	2026-10-23	2026-10-30	2026-10-30
@@ -39306,6 +39335,7 @@ experiments	slack_crm_delete_custom_field	2026-11-10
 experiments	slack_crm_email_activity_capture	2026-10-23		
 experiments	slack_crm_email_composer_manual_to	2026-10-23		
 experiments	slack_crm_filter_by_reference	2026-10-23		
+experiments	slack_crm_for_enterprise	2026-11-20		
 experiments	slack_crm_hide_email_event_type	2026-10-23	2026-11-11	2026-11-11
 experiments	slack_crm_leads_webhook_integration	2026-11-14		
 experiments	slack_crm_list_ui_parity	2026-10-23		
@@ -39334,7 +39364,7 @@ experiments	slack_first_crm_calendar	2026-10-23	2026-11-11	2026-11-12
 experiments	slack_first_crm_e2c_w2l_banners	2026-10-24		
 experiments	slack_first_crm_ga	2026-10-23		
 experiments	slack_idp	2026-10-23		
-experiments	slack_kit_carousel	2026-10-23		
+experiments	slack_kit_carousel	2026-10-23	2026-11-20	2026-11-20
 experiments	slack_kit_v2_button	2026-10-23		
 experiments	slack_pricing_cssi_update	2026-10-23	2026-10-29	2026-10-29
 experiments	slack_seasonal_delight	2026-10-23		
@@ -39560,6 +39590,7 @@ experiments	standalone_saml_setup_ux	2026-11-20
 experiments	status_improvements	2026-10-23		
 experiments	stickers_word_art	2026-10-23	2026-10-27	2026-10-27
 experiments	stickers_word_art_view_only	2026-10-23	2026-10-27	2026-10-27
+experiments	stock_ticker_snapshots	2026-11-20		
 experiments	stp_asymmetric_discount_eligibility	2026-11-20		
 experiments	stp_banner_text_change_toggle	2026-10-30	2026-11-07	2026-11-07
 experiments	stp_bizplus_pro_escape_hatch	2026-10-23		
@@ -39792,7 +39823,7 @@ experiments	wfb_structured_outputs_debug_mode	2026-10-23
 experiments	wfb_task_details_pane_redesign	2026-11-04		
 experiments	wfb_tasks_run_now_invokes_task	2026-11-04		
 experiments	wfb_types_defaults	2026-10-23		
-experiments	wfb_users_discover_simple_automations	2026-10-23		
+experiments	wfb_users_discover_simple_automations	2026-10-23	2026-11-20	2026-11-20
 experiments	wfb_webhook_to_fifty	2026-10-23		
 experiments	wo_browser_pdf_viewer	2026-10-23		
 experiments	wo_comment_sync_client_xp	2026-10-23		
@@ -40110,6 +40141,7 @@ experiments-upstream	canvas_preserve_draft_comment_threads: on	2026-11-13
 experiments-upstream	canvas_read_only_role: on	2026-11-10		
 experiments-upstream	canvas_salesforce_data_block: on	2026-11-10		
 experiments-upstream	canvas_sc_external_org_sharing_warning: on	2026-11-11		
+experiments-upstream	canvas_section_link_not_found_toast: on	2026-11-20		
 experiments-upstream	canvas_selection_awareness: on	2026-11-10		
 experiments-upstream	canvas_self_lockout_speedbump: on	2026-11-10		
 experiments-upstream	canvas_share_default_workspace_access: on	2026-11-11		
@@ -40159,7 +40191,7 @@ experiments-upstream	channel_tabs_preload_files: on	2026-11-10
 experiments-upstream	channel_tabs_remove_on_bookmark: on	2026-11-10		
 experiments-upstream	channel_tabs_threads: on	2026-11-10		
 experiments-upstream	channel_tabs_v5_i18n: on	2026-11-10		
-experiments-upstream	channel_topic_purpose_setting_restrict_to_channel_managers: on	2026-11-10		
+experiments-upstream	channel_topic_purpose_setting_restrict_to_channel_managers: on	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	channels_onboarding_tasks_v3_large: control	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	clear_notifications: on	2026-11-10		
 experiments-upstream	click_anywhere_closes_thread: on	2026-11-10		
@@ -40210,7 +40242,7 @@ experiments-upstream	composer_control_simplifications_mention_menu_suggested_age
 experiments-upstream	composer_control_simplifications_plus_menu: on	2026-11-10		
 experiments-upstream	composer_control_simplifications_send_button: on	2026-11-10		
 experiments-upstream	composer_dictation: on	2026-11-10		
-experiments-upstream	composer_smart_symbols: on	2026-11-10		
+experiments-upstream	composer_smart_symbols: on	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	composer_type_time_smart_quotes: on	2026-11-10		
 experiments-upstream	composer_unfurl_blocked_link_warning: on	2026-11-13		
 experiments-upstream	consolidate_app_profile_fetching: on	2026-11-10		
@@ -40343,7 +40375,7 @@ experiments-upstream	files_and_artifacts_from_meetings: on	2026-11-10
 experiments-upstream	files_browser_split_docs_filters: treatment	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	files_info_pane_count_style: on	2026-11-14		
 experiments-upstream	files_suggestions_api: on	2026-11-10		
-experiments-upstream	files_tab_nux_new_teams: control, treatment_vertical_banner	2026-11-10		
+experiments-upstream	files_tab_nux_new_teams: control, treatment_vertical_banner	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	files_tab_nux_v2: control, treatment_vertical_banner	2026-11-10		
 experiments-upstream	filter_dormant_channels: on	2026-11-10		
 experiments-upstream	find_in_thread: on	2026-11-10		
@@ -40575,7 +40607,7 @@ experiments-upstream	looping_video_option: on	2026-11-10
 experiments-upstream	magic_channel_folder_organization: on	2026-11-10		
 experiments-upstream	manage_conversations_strings: on	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	managed_app_profile_metadata: on	2026-11-20		
-experiments-upstream	mcp_ai_channel_exclusions: on	2026-11-10		
+experiments-upstream	mcp_ai_channel_exclusions: on	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	mcp_message_badging: on	2026-11-10		
 experiments-upstream	mcp_reload_button: on	2026-11-10		
 experiments-upstream	mcp_router: on	2026-11-10		
@@ -40632,7 +40664,7 @@ experiments-upstream	ncea_allow_channel_managers_to_lock_configuration: on	2026-
 experiments-upstream	ncea_allow_external_channels: on	2026-11-10		
 experiments-upstream	ncea_allow_only_external_channel_usage: on	2026-11-10		
 experiments-upstream	ncea_custom_prompt_instructions: on	2026-11-10		
-experiments-upstream	ncea_multi_channel_support: on	2026-11-10		
+experiments-upstream	ncea_multi_channel_support: on	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	ncea_progressive_updates_in_response: on	2026-11-10		
 experiments-upstream	nested_dynamic_inputs_timestamp: on	2026-11-10		
 experiments-upstream	nested_secondary_animation: on	2026-11-10		
@@ -40646,8 +40678,8 @@ experiments-upstream	omni_agent_pin: on	2026-11-10
 experiments-upstream	omni_date_quick_filters: on	2026-11-10		
 experiments-upstream	omni_filter_autoslug: on	2026-11-10		
 experiments-upstream	omni_member_status: on	2026-11-10	2026-11-20	2026-11-20
-experiments-upstream	omni_merged_all_follow_ups: on	2026-11-10		
-experiments-upstream	omni_merged_follow_ups: treatment_no_dynamic_nav, treatment_other_follow_ups	2026-11-10		
+experiments-upstream	omni_merged_all_follow_ups: on	2026-11-10	2026-11-20	2026-11-20
+experiments-upstream	omni_merged_follow_ups: treatment_no_dynamic_nav, treatment_other_follow_ups	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	omni_quick_message_results: on	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	omni_slackbot_mode: on	2026-11-10		
 experiments-upstream	omni_slackbot_mode_nux: on	2026-11-10		
@@ -40749,7 +40781,7 @@ experiments-upstream	rich_html_import: on	2026-11-10
 experiments-upstream	rich_text_headers_and_dividers: on	2026-11-10		
 experiments-upstream	rimeto_profile_show_default_phone_webapp: on	2026-11-10		
 experiments-upstream	rtl_support: on	2026-11-10		
-experiments-upstream	rtp_banner: control, treatment	2026-11-10		
+experiments-upstream	rtp_banner: control, treatment	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	rtp_modal: control, treatment	2026-11-10		
 experiments-upstream	sales_home_recent_updates: on	2026-11-20		
 experiments-upstream	salesforce_channels_swarm_knowledge_ai: on	2026-11-10		
@@ -40895,6 +40927,7 @@ experiments-upstream	slack_crm_eac_disconnect_notification: on	2026-11-10	2026-1
 experiments-upstream	slack_crm_email_activity_capture: on	2026-11-10		
 experiments-upstream	slack_crm_email_composer_manual_to: on	2026-11-10		
 experiments-upstream	slack_crm_filter_by_reference: on	2026-11-10		
+experiments-upstream	slack_crm_for_enterprise: on	2026-11-20		
 experiments-upstream	slack_crm_hide_email_event_type: on	2026-11-10	2026-11-11	2026-11-11
 experiments-upstream	slack_crm_leads_webhook_integration: on	2026-11-14		
 experiments-upstream	slack_crm_list_ui_parity: on	2026-11-10		
@@ -40922,7 +40955,7 @@ experiments-upstream	slack_first_crm_calendar: on	2026-11-10	2026-11-11	2026-11-
 experiments-upstream	slack_first_crm_e2c_w2l_banners: on	2026-11-10		
 experiments-upstream	slack_first_crm_ga: on	2026-11-10		
 experiments-upstream	slack_idp: on	2026-11-10		
-experiments-upstream	slack_kit_carousel: on	2026-11-10		
+experiments-upstream	slack_kit_carousel: on	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	slack_kit_v2_button: on	2026-11-10		
 experiments-upstream	slack_seasonal_delight: on	2026-11-10		
 experiments-upstream	slack_system_user_slackbot_banner: on	2026-11-10		
@@ -40955,6 +40988,7 @@ experiments-upstream	slackbot_ai_gpt_live_view_context: on	2026-11-20
 experiments-upstream	slackbot_ai_grace_period_admin: on	2026-11-10		
 experiments-upstream	slackbot_ai_live_voice_coachmark: on	2026-11-20		
 experiments-upstream	slackbot_ai_model_override_button: on	2026-11-10		
+experiments-upstream	slackbot_ai_org_instructions: on	2026-11-20		
 experiments-upstream	slackbot_ai_paywall_redesign: on	2026-11-20		
 experiments-upstream	slackbot_ai_projects: on	2026-11-10		
 experiments-upstream	slackbot_ai_queued_messages: on	2026-11-10		
@@ -41125,6 +41159,7 @@ experiments-upstream	ssb_dogfood_friends: on	2026-11-10
 experiments-upstream	standalone_huddles_copy_link: on	2026-11-10		
 experiments-upstream	standalone_huddles_zchannel: on	2026-11-10		
 experiments-upstream	status_improvements: on	2026-11-10		
+experiments-upstream	stock_ticker_snapshots: on	2026-11-20		
 experiments-upstream	stp_asymmetric_discount_eligibility: on	2026-11-20		
 experiments-upstream	stp_banner_text_change_toggle: on	2026-11-10		
 experiments-upstream	stp_bizplus_pro_escape_hatch: control, treatment	2026-11-10		
@@ -41347,7 +41382,7 @@ experiments-upstream	wfb_structured_outputs_debug_mode: on	2026-11-10
 experiments-upstream	wfb_task_details_pane_redesign: on	2026-11-10		
 experiments-upstream	wfb_tasks_run_now_invokes_task: on	2026-11-10		
 experiments-upstream	wfb_types_defaults: on	2026-11-10		
-experiments-upstream	wfb_users_discover_simple_automations: on	2026-11-10		
+experiments-upstream	wfb_users_discover_simple_automations: on	2026-11-10	2026-11-20	2026-11-20
 experiments-upstream	wfb_webhook_to_fifty: on	2026-11-10		
 experiments-upstream	wo_browser_pdf_viewer: on	2026-11-10		
 experiments-upstream	wo_comment_sync_client_xp: on	2026-11-10		
@@ -42335,6 +42370,7 @@ icon-names	user-hide	2026-11-10
 icon-names	vertical-ellipsis	2026-11-10		
 icon-names	video	2026-11-10		
 icon-names	video-off	2026-11-10		
+icon-names	vip	2026-11-20		
 icon-names	warning	2026-11-10		
 icon-names	window-contract	2026-11-10		
 icon-names	window-expand	2026-11-10		
@@ -42925,7 +42961,7 @@ keyboard-shortcuts	A specific workspace: Cmd and 1-9	2026-11-10
 keyboard-shortcuts	Add a file: Cmd+O	2026-11-10		
 keyboard-shortcuts	Add an emoji reaction: R	2026-11-10		
 keyboard-shortcuts	Add reminder: M	2026-11-10		
-keyboard-shortcuts	All Unreads [open_all_unreads]: Cmd+Shift+A	2026-11-10		
+keyboard-shortcuts	All Unreads [open_all_unreads]: Cmd+Shift+A	2026-11-10	2026-11-20	2026-11-20
 keyboard-shortcuts	Autocomplete @username: @	2026-11-10		
 keyboard-shortcuts	Autocomplete channel: #	2026-11-10		
 keyboard-shortcuts	Autocomplete emoji: :	2026-11-10		
@@ -43806,7 +43842,7 @@ megaphones	notification: education_activity_inbox_dms_coachmark	2026-11-10
 megaphones	notification: education_channel_join_banner	2026-11-10		
 megaphones	notification: education_channel_tabs_nux_coachmark_mobile	2026-11-10		
 megaphones	notification: education_code_channel_unfurl_banner	2026-11-10		
-megaphones	notification: education_coding_channels_section_coachmark	2026-11-10		
+megaphones	notification: education_coding_channels_section_coachmark	2026-11-10	2026-11-20	2026-11-20
 megaphones	notification: education_discount_promo_banner	2026-11-10	2026-11-11	2026-11-11
 megaphones	notification: education_draft_management_button_coachmark	2026-11-10		
 megaphones	notification: education_focus_mode_button_coachmark	2026-11-10		
@@ -43967,7 +44003,7 @@ megaphones	notification: platform_ai_apps_app_home	2026-11-10
 megaphones	notification: platform_ai_apps_data_access_consent_alert	2026-11-10		
 megaphones	notification: platform_ai_apps_data_access_consent_banner	2026-11-10		
 megaphones	notification: platform_forward_message_shareable_prompts_coachmark	2026-11-10		
-megaphones	notification: plus_request_to_purchase_activity_banner	2026-11-10		
+megaphones	notification: plus_request_to_purchase_activity_banner	2026-11-10	2026-11-20	2026-11-20
 megaphones	notification: plus_request_to_purchase_admin_billing_page_banner	2026-11-10		
 megaphones	notification: plus_request_to_purchase_admin_menu_banner	2026-11-10		
 megaphones	notification: plus_request_to_purchase_channel_banner	2026-11-10		
@@ -44164,7 +44200,7 @@ megaphones	notification: today_paused_state_coachmark	2026-11-10	2026-11-20	2026
 megaphones	notification: today_paused_todos_banner	2026-11-10		
 megaphones	notification: today_reminders_menu_todos_edu_banner	2026-11-10		
 megaphones	notification: today_settings_menu_banner	2026-11-10	2026-11-20	2026-11-20
-megaphones	notification: today_today_in_later	2026-11-10		
+megaphones	notification: today_today_in_later	2026-11-10	2026-11-20	2026-11-20
 megaphones	notification: top_nav_feedback_coachmark	2026-11-10		
 megaphones	notification: tractor_channel_simplification_first_message_banner	2026-11-11		
 megaphones	notification: tractor_channel_simplification_setup_tour	2026-11-10		
@@ -44231,7 +44267,7 @@ megaphones	space: in_product_coachmark	2026-11-10
 megaphones	space: in_product_glow	2026-11-10		
 megaphones	space: installed_apps_header	2026-11-10		
 megaphones	space: invite_modal_learn_more_about_guests_cta	2026-11-10		
-megaphones	space: later_page_today	2026-11-10		
+megaphones	space: later_page_today	2026-11-10	2026-11-20	2026-11-20
 megaphones	space: launch_modal	2026-11-10		
 megaphones	space: lists_list_view	2026-11-10		
 megaphones	space: lists_synthetic_page	2026-11-10		
@@ -44920,6 +44956,7 @@ message-subtypes	dockerfile	2026-11-10
 message-subtypes	docs	2026-11-10		
 message-subtypes	document_comment_root	2026-11-10		
 message-subtypes	document_mention	2026-11-10		
+message-subtypes	document_unfurl	2026-11-20		
 message-subtypes	documents	2026-11-10		
 message-subtypes	docx	2026-11-10		
 message-subtypes	dolphin	2026-11-10		
@@ -58303,7 +58340,7 @@ workflow	wfb_task_details_pane_redesign	2026-11-04
 workflow	wfb_tasks_run_now_invokes_task	2026-11-04		
 workflow	wfb_template_editor	2026-10-21		
 workflow	wfb_types_defaults	2026-10-23		
-workflow	wfb_users_discover_simple_automations	2026-10-23		
+workflow	wfb_users_discover_simple_automations	2026-10-23	2026-11-20	2026-11-20
 workflow	wfb_webhook_to_fifty	2026-10-23		
 workflow	wfb_workflow_details	2026-10-21		
 workflow	who_can_create_workflows	2026-10-23		

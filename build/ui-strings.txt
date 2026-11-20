@@ -284,8 +284,7 @@ $ {amount} USD
 ) is not a string.
 ) is not supported yet.
 ) that performed expensive computation.
-)&&(eH(!1),a4(void 0),ez(so?
-)&&(eH(!1),aQ(void 0),ez(a9?
+)&&(eH(!1),a6(void 0),ez(sc?
 ))),H((0,e_.R3)(eb)),H((0,e_.p4)(eb?q:void 0)),ev(eb?
 ))),e((0,c.R3)(h)),e((0,c.p4)(h?a:void 0)),p(h?
 ). If you meant to render a collection of children, use an array instead.
@@ -394,16 +393,15 @@ $ {amount} USD
 , {selectedTokenCount, plural, =1 {# item} other {# items}}{errorCount, plural, =0 {} other {, # invalid}}
 , {unreadCount, plural, =1 {# unread} other {# unreads}}
 ,counter:0,seen:new Map,cycles:e?.cycles??
-,e.includeFieldLabel??!1);break;case 45:this.convertVariable_(e.recordId,e.fieldLabel,e.fieldApiName??
 ,e.includeFieldLabel??!1);break;case l.LS.CONVERT_VARIABLE:this.convertVariable_(e.recordId,e.fieldLabel,e.fieldApiName??
 ,isSSBBrowserSignin:z,onBeforeSubmit:e_?td:void 0,passkeyError:e_?e4:void 0,onUseEmailInstead:e_?tc:void 0,experimentPasskeyAfterEmailEnabled:e_,autoComplete:e_?
 ,onChange:u?V:void 0,placeholder:u?
 ,onClick:k?x:void 0,onKeyDown:k?w:void 0,role:k?
 ,onClickPrimaryAction:a?void 0:t,primaryActionHref:a?
-,t),isEmpty:!!s,renderEmptyState:s?_:void 0,intervalProps:p(l,o),labelText:m?
+,t),isEmpty:!!s,renderEmptyState:s?h:void 0,intervalProps:p(l,o),labelText:m?
 ,teamId:n??void 0,responseType:s?.responseType??
 ,threadTs:a||void 0,tsLink:s?
-,threadTs:n||void 0,tsLink:s?
+,threadTs:n||void 0,tsLink:i?
 -1
 . Are you sure it was registered?
 . Build with -sASSERTIONS for more info.
@@ -846,7 +844,6 @@ A mockup of a chat interface with a header and two user messages, each with an a
 A multi-person DM
 A new app messaging experience makes having conversations with AI-powered agents and assistants a snap. Install apps with an assistant or agent, and put them to work today.
 A new comment selection cannot contain other comments or reactions.
-A new kind of channel, built for AI coding
 A new look and voice, same answers. Tap a voice to hear it.
 A new look for Singer. Questions still go to Slackbot.
 A new reaction selection cannot contain other reactions or comments.
@@ -969,7 +966,6 @@ ADVANCED SECURITY
 AGENT
 AGENTFORCE
 AI
-AI & Agents
 AI Answer
 AI Apps and Assistants
 AI Channel Summary
@@ -1087,7 +1083,6 @@ AI use & sharing
 AI use allowed for #{channelName}
 AI use is restricted in this channel
 AI use is restricted in this channel, so Slackbot isn\u2019t available.
-AI use is restricted in {channelName}
 AI use restricted for #{channelName}
 AI workflow builder
 AI workflow generation
@@ -2242,6 +2237,8 @@ Agent prompt blocks.actions callback failed
 Agent reasoning
 Agent replies when it can be helpful
 Agent required
+Agent responds automatically
+Agent responds to @mentions
 Agent response
 Agent scopes have been updated to enable various Slack Actions. Please reinstall the agent to accept the updated scopes.
 Agent selection
@@ -2286,6 +2283,8 @@ Agents are here to help
 Agents are now in Tools
 Agents removed from direct messages
 Agents required for Slack actions
+Agents respond automatically
+Agents respond to @mentions
 Agents search results
 Agents with temporary access
 Agents with temporary access to this conversation
@@ -2374,6 +2373,7 @@ All channels
 All channels disabled
 All channels except specific channels
 All channels except {channelCount, plural, =1 {# channel} other {# channels}}
+All channels except {channels}
 All channels except\u2026
 All channels, except Slack Connect channels
 All checks
@@ -2961,6 +2961,8 @@ Anything for me?
 Anything important?
 Anything unanswered?
 Anything {agentName} missed?
+Anytime it thinks a message needs a reply.
+Anytime they think a message needs a reply.
 Anytime your recap channels have new messages, refresh to get the latest.
 Anywhere
 Apache Conf
@@ -3101,6 +3103,7 @@ Approve localization request
 Approve or Deny {appName} access
 Approve plan
 Approve request
+Approve request for {appName}
 Approve request?
 Approve the $1.1M vendor renewal in #fin-forecast-and-controls
 Approve this app for installation?
@@ -3115,6 +3118,7 @@ Approved #{number}
 Approved by
 Approved by automation
 Approved by your admin
+Approved for 
 Approved to send
 Approved {login}.
 Approved, go ahead.
@@ -3511,7 +3515,6 @@ Attach, done
 Attach, needs attention
 Attached to a single channel.
 Attached to {app}. Copy the note, then paste and send it in the meeting chat.
-Attached to {app}. Send the note in the meeting chat.
 Attached window
 Attaching files\u2026
 Attaching video stream to camera preview
@@ -3648,7 +3651,6 @@ Auto-enhancing instructions\u2026
 Auto-generated from Structured Intelligence
 Auto-merge is on, but GitHub hasn\u2019t added this to the merge queue yet.
 Auto-merge on
-Auto-reply
 Auto-reply updated: {message}
 AutoClog Viewer
 AutoClog viewer
@@ -3817,6 +3819,7 @@ Awaiting admin approval to add this app to your workspace.
 Awaiting admin approval to add this app to {workspaceName}.
 Awaiting admin approval to join
 Awaiting approval
+Awaiting approval for 
 Awaiting review
 Awaiting user action
 Away
@@ -3952,6 +3955,7 @@ Belize
 Below
 Benchmark complete, results are in the console and can be re-shown with benchmarkResults()
 Benin
+Berkshire Hathaway
 Bermuda
 Bernard MT Condensed
 Best Value
@@ -4439,12 +4443,17 @@ Call Back
 Call Declined
 Call Ended
 Call Started
+Call declined. You declined this call.
+Call declined. {name} declined this call.
 Call disconnected
+Call ended, {participantCount, plural, =1 {# person} other {# people}} joined.
 Call ended.
 Call lists.open and store its pinned views
 Call moved to {corner} corner
 Call on AI to take a specific action or kick things off
 Call on AI to take a specific action or kick things off.
+Call started, {participantCount, plural, =1 {# person} other {# people}} joined.
+Call started.
 Call subscriptions.thread.clearAll and clear the manuallyMarkedUnread array
 Call the navigate method of a specific ViewContainer
 Call to add bookmarks folder API for a given channel
@@ -4471,7 +4480,9 @@ Calling clearDrafts on MessageInput:updateDraft where there is no delta
 Calling clearDrafts on send from MessagePaneInput
 Calling options:
 Calling send without setting Promise in base request
+Calling you.
 Calling {dmCallName}
+Calling.
 Calling\u2026
 Callout
 Callout Layout Container Section Handler
@@ -4695,6 +4706,7 @@ Cancel this request?
 Cancel upload
 Canceled
 Canceled by user
+Canceled for 
 Canceling upload\u2026
 Canceling {fileName}\u2026
 Cancelled
@@ -4709,9 +4721,6 @@ Candy Corn
 Cannot access file
 Cannot add any more entries
 Cannot add any more members
-Cannot add bookmark
-Cannot add bookmark folder
-Cannot add bookmark into folder
 Cannot add event listener with no WebSocket connection.
 Cannot add tab.
 Cannot add template to channel
@@ -4950,7 +4959,6 @@ Case Subject
 Catalan
 Catalog
 Catch me up
-Catch me up daily on my busiest conversation.
 Catch me up on my unread DMs from {name1} and {name2}
 Catch me up on my {count, plural, one {# unread channel} other {# unread channels}}
 Catch me up on my {count} unread DMs
@@ -5770,7 +5778,6 @@ Clear the active Slackbot thread if older than threshold
 Clear the channel data for the given type
 Clear the channel ids
 Clear the filter in store by setting filter to the initial state
-Clear the highlight from the initial message
 Clear the off-shift blocker after successful client.init
 Clear the pro pocket guide channel overview success coachmark if it is set for the given tab id
 Clear the queued embedded huddle meeting assistant pane open
@@ -5912,6 +5919,7 @@ Clog when leaving the composer page
 Clog when sending a draft from the Drafts page
 Clog whether DWA was enabled when the nudge CTA was clicked
 Clogger context could not be determined, using empty context
+Clogs a follow-up to the meeting artifacts reply in its Slackbot thread
 Clogs a link click in a file, preferring the stored copy of the file
 Clogs a user click on the Slackiversary sidebar item
 Clogs adding quick filters in omniswitcher
@@ -5921,6 +5929,7 @@ Clogs removing quick filters in omniswitcher
 Clogs result clicks for the recommend API
 Clogs search history toggle in omniswitcher
 Clogs search sort changes
+Clogs turning off reply notifications for a meeting artifacts Slackbot thread
 Clojure
 Close
 Close & Discard
@@ -6441,7 +6450,6 @@ Connect to a new org
 Connect to apps
 Connect to desktop store
 Connect to external apps
-Connect to socket
 Connect to test this step
 Connect to the existing server or go back and choose a different server
 Connect to try
@@ -7076,6 +7084,7 @@ Could not load {fieldName}.
 Could not locate DOMPurify to sanitize content. This warning will only show once.
 Could not locate submit user variable in step
 Could not locate trigger event timestamp
+Could not look up the request on the admin list
 Could not measure the persistence write
 Could not open Mini after Singer was unavailable
 Could not open Slack from the menu bar icon
@@ -7181,10 +7190,13 @@ Couldn\u2019t deactivate the skill. Please try again.
 Couldn\u2019t delete profile for {possessiveTargetName} account
 Couldn\u2019t delete the message.
 Couldn\u2019t delete this version.
+Couldn\u2019t delete your to-do. The item couldn\u2019t be found.
+Couldn\u2019t delete your to-do. Try again?
 Couldn\u2019t disable {name}. Try again.
 Couldn\u2019t disconnect {name}. Try again.
 Couldn\u2019t display as a diagram. Check the code for syntax errors.
 Couldn\u2019t download all the content for printing. Would you like to print anyway? Some images may be blurry, or some embedded content may not appear.
+Couldn\u2019t find that part of the canvas
 Couldn\u2019t finish
 Couldn\u2019t finish converting filters to text
 Couldn\u2019t finish converting mentions to text
@@ -7797,7 +7809,6 @@ Customizable sections
 Customizable security settings
 Customizable security settings and user roles
 Customize
-Customize Focused
 Customize Sales Tracker stages
 Customize Slackbot
 Customize Tool Permissions
@@ -8288,6 +8299,7 @@ Delete this section?
 Delete this step?
 Delete this version?
 Delete thread
+Delete to-do
 Delete transcript
 Delete transcript and cancel AI notes?
 Delete transcript?
@@ -8420,12 +8432,10 @@ Deselect link object to paste
 Deserialization of a Bidirectional layer with numConstants present is not supported yet.
 Design review prep
 Design: 95% complete
-Designed for coding with agents, code channels bring your repos, PRs, and code into Slack alongside your team\u2019s conversation.
 Desktop
 Desktop API unavailable; skipping
 Desktop ID request not found in pref
 Desktop app
-Desktop app requested a reload
 Desktop below the legacy Slackbot mini min version; skipping
 Desktop notification shown
 Desktop notifications
@@ -8703,6 +8713,7 @@ Dismissable Error State
 Dismisses a failed calendar-first onboarding attempt for this session
 Dispatch a reaction to the middleware and the current store to notify user has sent a reaction
 Dispatch clogMessageClick when clicking the play button
+Dispatch experiment overrides from persisted dispatched data on warm boot
 Display
 Display Name
 Display Text
@@ -9352,6 +9363,7 @@ Edit role
 Edit rule {ruleTitle}
 Edit schedule
 Edit schedule or event
+Edit search
 Edit section
 Edit server name
 Edit settings
@@ -9530,7 +9542,6 @@ Email domains
 Email draft updated
 Email editor
 Email forwarding
-Email from {appName}
 Email has been sucessfully sent
 Email import
 Email import isn\u2019t available on this plan
@@ -9623,7 +9634,6 @@ Enable and update a user group
 Enable app
 Enable auto-detection
 Enable automatic gain control
-Enable automatic tracing
 Enable camera in browser address bar
 Enable debug mode
 Enable domain allowlist for channel email addresses and personal forwarding email addresses
@@ -10061,7 +10071,6 @@ Every Monday \xb7 {time}
 Every [[recurring_date]], send a message to [[channel]], with a summary of items that are [[task_completion_state]] whose due dates are [[due_date_filter]]
 Every [[recurring_date]], send an activity notification to assignee when an item is not complete and its due date is [[due_date_filter]]
 Every answer is a card
-Every channel and DM, in your sections
 Every channel has its own canvas. Open a blank channel canvas to see more templates.
 Every contact has a collaborative detail page where your team can log activity, track conversations, and update key info.
 Every day
@@ -10261,7 +10270,6 @@ Exclude these channels from search results:
 Excluded keywords
 Excluded users and groups for {anomaly}
 Excluding a channel only stops Slackbot from responding there. To keep its content out of Slackbot answers everywhere, restrict the channel from AI use in Channel management.
-Excluding {filter}
 Execute validation for external resources (3P knowledge sources) in AI Answer step
 Execute validations for parameter with dynamic options
 Executive Assistant
@@ -10337,7 +10345,6 @@ Expected userIds to be an Array of Strings
 Expected value
 Experience AI, CRM, and advanced security
 Experience the premium AI features of Business+ for {costPerMonth} per person/month.
-Experience the premium AI features of Business+ for {costPerMonth} per person/{term}.
 Experiment name
 Experiment not enabled for team, skipping
 Experimental
@@ -10395,7 +10402,6 @@ Explore some productivity boosters.
 Explore templates
 Explore the premium features available to your team.
 Explore the premium features of our most popular plan for free with a 30-day trial. After that, you\u2019ll be charged {costPerMonth} per person/month.
-Explore the premium features of our most popular plan for free with a 30-day trial. After that, you\u2019ll be charged {costPerMonth} per person/{term}.
 Explore the premium features of our most popular plan for free with a {trialDuration}-day trial. After that, you\u2019ll be charged {costPerMonth} per person/month.
 Explore trial
 Explore tutorials
@@ -10467,7 +10473,6 @@ External links revoked
 External members will be removed, but still have access to the chat history.
 External organization
 External organizations
-External organizations and invitations
 External organizations are not allowed to use this workflow because it contains third party steps.
 External organizations are not allowed to use this workflow.
 External orgs
@@ -10816,7 +10821,6 @@ Failed to save email draft
 Failed to save include all files setting
 Failed to save include messages setting
 Failed to save media progress with media.progress.update
-Failed to save multi-channel source settings
 Failed to save proactive instructions
 Failed to save settings. Please try again later.
 Failed to save skill set description
@@ -10928,14 +10932,12 @@ Feature Workflow
 Feature a workflow
 Feature access
 Feature access details
-Feature an automation
 Feature available
 Feature disabled
 Feature idea/request
 Feature request
 Feature this workflow in channel
 Feature unavailable
-Feature up to 15 automations, so people can use them instead of sending a message.
 Feature up to 15 workflows, so people can use them instead of sending a message.
 Feature workflow
 Featured
@@ -11563,7 +11565,6 @@ Finish the year strong with a boost for your team. Offer ends {offerEndDate}.
 Finish this request or draft, then attach again.
 Finish this request or draft, then try Attach again.
 Finish up by adding your details
-Finish waiting for boot data
 Finish your current request or draft before sharing another window.
 Finish your review
 Finish your setup
@@ -12280,10 +12281,8 @@ Get the mail extension
 Get the most out of Slack
 Get the power of AI in context when you use an app\u2019s AI-powered assistant alongside Slack conversations. Just click to open, and the assistant can proofread drafts, answer questions, and more.
 Get the premium features of Business+ for {costPerMonth} per person/month
-Get the premium features of Business+ for {costPerMonth} per person/{term}
 Get the premium features of the Business+ plan and start to work at scale
 Get the premium features of the Business+ plan for {costPerMonth} per person/month.
-Get the premium features of the Business+ plan for {costPerMonth} per person/{term}.
 Get the profile for the current team
 Get the profile for the current team from the API
 Get the search message result summary text
@@ -12317,7 +12316,7 @@ Get your workspace started
 Get {discountOfferPercent}% off a paid plan, for a limited time.
 Get {discountOfferPercent}% off a premium plan for your first {discountDuration, plural, =1 {month} other {# months}}.
 Get {discountOfferPercent}% off your first three months of Slack Pro.
-Get {discountPercentage}% off Slack Pro
+Get {discountPercentage}% off Slack {planName}
 Get {discountPercent}% Off Slack Pro
 Get {discountPercent}% Off Slack {plan}
 Get {discountPercent}% off 3 months
@@ -12354,7 +12353,6 @@ Gets user group matches for a given search term
 Gettext PO
 Getting Started
 Getting Work Done
-Getting a Quip client requires a team id
 Getting our stacktrace
 Getting ready to turn meeting stress into meeting success!
 Getting started actions
@@ -12580,7 +12578,6 @@ Got it! You\u2019ll still get notifications as usual.
 Got it. We won\u2019t ask again.
 Got migration error before store was initialized
 Got questions? Ask an Admin to add a Channel Manager to help things run smoothly.
-Got repetitive tasks? Try automations.
 Got repetitive tasks? Try workflows.
 Goudy Old Style
 GovSlack
@@ -13753,8 +13750,10 @@ In Slack, channels keep your work focused by giving each topic, project or team 
 In a group DM with {names}
 In a huddle
 In a huddle in {where} with {count, plural, =1 {# person} other {# people}}
+In a huddle status
 In a huddle with {count, plural, =1 {# person} other {# people}}
 In a meeting
+In a meeting status
 In a thread
 In a world where digital transformation is on the rise, executives turn to a digital-first culture.
 In addition to including {appName} in traditional search results, choose if these people can also access this source in AI search.
@@ -13768,6 +13767,7 @@ In copy
 In dev, warns when store state is unserializable
 In direct messages
 In focus mode
+In focus mode status
 In less than 1 min
 In less than 1m
 In order to assign groups to a role, your organization must connect groups from an identity provider.
@@ -13841,7 +13841,6 @@ Include archived items
 Include channels in Recap
 Include child objects to access people-related fields in subsequent workflow steps.
 Include connector sources in AI steps?
-Include content from other channels
 Include conversation history from a custom start date?
 Include conversation history from today?
 Include conversation history starting from {date}?
@@ -13889,7 +13888,6 @@ Including AI assistants
 Including anything you liked or didn\u2019t like.
 Including external people
 Including you
-Including {filter}
 Incoming field
 Incoming field for {fieldName}
 Incomplete
@@ -13906,7 +13904,6 @@ Index load error
 IndexedDB not available
 India
 Indiana
-Indicate whether we
 Indicates a reply in a thread has also been sent to the conversation.
 Indicates a required field
 Indicates that the given workspace has completed migrating to an org
@@ -14037,6 +14034,7 @@ Installed Agents
 Installed Apps
 Installed agent results
 Installed agents
+Installed for 
 Installed in #{channelName}
 Installed on
 Installing incremental auth handler
@@ -14092,7 +14090,6 @@ Internal planning email, travel messages and a news report from October 2001.
 Internal process email, settlement and deal-booking threads, and customer confirmation threads.
 Internal storage
 Internal testing \u2014 it may not be your anniversary. We\u2019d love your feedback!
-Internal workspaces
 Internet Explorer
 Interpreting Image\u2026
 Interruptions
@@ -14395,6 +14392,7 @@ It took too long to see results
 It was harder to do my job
 It will be removed from the message, but it won\u2019t be deleted.
 It will be sent to you in Slack when it\u2019s ready.
+It won\u2019t respond unless mentioned.
 It\u2019ll be closed on GitHub without merging. You can reopen it later.
 It\u2019ll take a few moments to finish setting things up. Feel free to navigate away, and we\u2019ll notify you when everything\u2019s ready.
 It\u2019s a beautiful day for skimming
@@ -14795,7 +14793,6 @@ Key pressed on activity item
 Key updates
 Keyboard
 Keyboard Shortcuts
-Keyboard focus
 Keyboard layout
 Keyboard shortcuts
 Keys can not be longer than {max} characters
@@ -15311,7 +15308,6 @@ Link gutter entrypoint
 Link name can\u2019t be longer than 257 characters.
 Link options
 Link preview
-Link preview loaded for {domain}
 Link previews turned off for {domain}
 Link set to expire after\u2026
 Link to a web page
@@ -15435,7 +15431,6 @@ Load app profiles into Redux
 Load apps actions and slash commands for the client
 Load apps.profile.check for the Agentforce members in a search result
 Load connector apps into Redux
-Load emoji translations
 Load failed
 Load megaphone notification data
 Load megaphone notification data after a random delay
@@ -15635,7 +15630,6 @@ Log activity
 Log activity global action
 Log emails with your contacts and leads, for you or your whole team.
 Log emails with your contacts and leads.
-Log exposure for the omni_trailing_debounce experiment
 Log file
 Log in to connect a Salesforce org
 Log in to get the latest
@@ -16615,6 +16609,7 @@ Maybe attending
 Maybe automatically redeem a trial during mobile trial team creation
 Maybe automatically redeem a trial for solutions gallery
 Maybe automatically redeem an experiment trial
+Maybe automatically redeem the golden gate Biz+ reverse trial for creator guided setup
 Maybe clog search engagement clickthrough
 Maybe disable screenshare of self
 Maybe hide the green screenshare border on SSB
@@ -16956,6 +16951,7 @@ Message flagged by data loss prevention rules.
 Message from today.
 Message from yesterday.
 Message from {authorName}
+Message from {author}.
 Message from {day}.
 Message from {name}
 Message from {senderName}
@@ -17168,6 +17164,7 @@ Mismatched screen and hostWindowBounds.
 Miss using AI search?
 Missed
 Missed Call
+Missed call.
 Missed fact added
 Missed huddle invite
 Missed huddles
@@ -17314,7 +17311,6 @@ More actions for {channelName}
 More actions for {label}
 More actions for {listName}
 More actions for {metricName}
-More actions for {name}
 More actions for {skillName}
 More actions for {skillSetName}
 More actions for {title}
@@ -17798,6 +17794,7 @@ Need to keep specific apps or integrations up and running? We're happy to help. 
 Needs Review
 Needs approval
 Needs approval again
+Needs approval again for 
 Needs attention
 Needs attention. The Start conversation with Agent step must be the last step in its branch.
 Needs attention. Turn on Allow Slackbot to continue the workflow, or make this the last step in the workflow.
@@ -18193,7 +18190,6 @@ No active recording or not currently paused
 No active selection for event
 No activity in this date range.
 No activity yet
-No additional channels
 No additional comments on this page.
 No additional content safety filters applied. Other safety measures as part of the Slack AI Guardrails remain unchanged.
 No advanced AI
@@ -18213,6 +18209,7 @@ No alt text
 No app data
 No app notifications\u2026yet
 No approval needed
+No approval needed for 
 No approval needed for new DMs
 No approval needed. Now you can install it.
 No apps are enabled for Slackbot in this channel yet.
@@ -18417,6 +18414,7 @@ No matching Salesforce user was found for this Slack user.
 No matching Salesforce user was found for your account. Contact your Salesforce admin.
 No matching activity in the items loaded so far.
 No matching agent sessions
+No matching agent threads
 No matching agents
 No matching apps
 No matching channels
@@ -18640,7 +18638,6 @@ No surfaces yet
 No target node found for event
 No tasks assigned to you
 No tasks found
-No tasks in this channel yet.
 No tasks yet
 No team ID available for storing sidebar metrics
 No team ID or active huddle
@@ -18711,7 +18708,6 @@ No window token available after meeting detected window creation
 No windowId for active call
 No windows found. Open a window, then try again.
 No workflows found.
-No workflows in this channel yet.
 No workflows or tasks are available in this workspace.
 No workflows yet
 No workspace found
@@ -19080,7 +19076,6 @@ November
 Now
 Now \xb7 {count, plural, one {# person} other {# people}} invited
 Now \xb7 {max}+ people invited
-Now integrated with Today :sun_with_face:
 Now paste it in the meeting chat and press Send.
 Now that you have an integration, you can map your opportunity fields.
 Now that you have set an email address for {channelDisplayName}, would you like me to share it with everyone else in this channel? They\u2019ll see it along with some brief instructions for how to use it.
@@ -19528,7 +19523,6 @@ Open AI menu
 Open Activity in either page or flexpane
 Open All
 Open App
-Open Automations
 Open Browser
 Open Comments
 Open Contact
@@ -19699,7 +19693,6 @@ Open in new tab
 Open in new window
 Open in secondary view
 Open in side panel
-Open in sidebar
 Open in split view
 Open in split view for {agentName}
 Open in thread
@@ -19770,7 +19763,6 @@ Open the about information for a given app from the apps browser
 Open the about information for a given app with memberId
 Open the canvas template gallery modal
 Open the channel tabs list in the secondary view
-Open the conversation to read this message.
 Open the conversation to view this update.
 Open the default camera on a mobile device.
 Open the desktop app
@@ -19880,7 +19872,6 @@ Opens the appropriate XWS permalink dialog for a team
 Opens the canvas within the huddle window
 Opens the customized Request Access modal in client
 Opens the delete file dialog
-Opens the dev tips menu
 Opens the file details flexpane
 Opens the ignore forked modal
 Opens the invite (new users) modal
@@ -20087,6 +20078,7 @@ Out of locked content
 Out of office
 Out of office coverage
 Out of office message input
+Out of office status
 Out of this world.
 Out of {description}
 Out-of-Scope Items: Clarify any components, features, or functionalities that are not included in this testing phase.
@@ -20109,6 +20101,7 @@ Output saved. Add another output.
 Output shape
 OutputSchemaTreatment prompt branch missing required props
 Outside work hours
+Outside work hours status
 Outside your organization
 Ouvrir la carte
 Over $60
@@ -20171,7 +20164,10 @@ PR open
 PR queued
 PRO
 PROTOTYPE
+PRs: {mergedCount, plural, other {# merged}}, {closedCount, plural, other {# closed}}
+PRs: {openCount, plural, other {# open}}, {closedCount, plural, other {# closed}}
 PRs: {openCount, plural, other {# open}}, {mergedCount, plural, other {# merged}}
+PRs: {openCount, plural, other {# open}}, {mergedCount, plural, other {# merged}}, {closedCount, plural, other {# closed}}
 PTS rollover detected
 Pacific Standard Time
 Packet loss
@@ -20349,7 +20345,6 @@ People and groups excluded from Read records can\u2019t be added.
 People and groups excluded in the People setting above can\u2019t be added.
 People and groups for {objectLabel}
 People and teams
-People and user groups
 People can also find your workflow link in Search or using a /Slash command.
 People can always connect to Salesforce from the Salesforce section of Preferences.
 People can not set sales notifications to send to any channel.
@@ -20556,6 +20551,7 @@ Pin an agent
 Pin anything to the top of your sidebar
 Pin conversation
 Pin messages your team likes to have on hand \u2014 helpful or humorous.
+Pin or move channel
 Pin or unpin a view for the current user
 Pin or unpin an item in the Focused sidebar view
 Pin participant
@@ -20593,7 +20589,6 @@ Pinned items
 Pinned messages
 Pinned resources
 Pinned, 
-Pinned, important and recent
 Pinned.
 Pinning a message
 Pins
@@ -21233,7 +21228,6 @@ Prompt link copied to clipboard
 Prompt suggestions
 Prompt the browser for permission and set the user pref on the backend
 Prompt to confirm
-Prompt to leave after 10 minutes
 Prompt to leave after 20 minutes
 Prompt to refine results
 Prompt tools
@@ -21308,7 +21302,6 @@ Published workflows are created in Workflow Builder and made available to use in
 Publishing
 Puerto Rico
 Pull Quote
-Pull Requests
 Pull out action items
 Pull request
 Pull request #{number}
@@ -21549,6 +21542,7 @@ Read records
 Read records isn\u2019t allowed for everyone, so this can\u2019t be either.
 Read state tracking
 Read the caret browsing 
+Read the channel header
 Read the view a live voice call starts from
 Read user\u2019s full profile
 Read whether a huddle channel has a working shareable external huddle link
@@ -21692,7 +21686,6 @@ Recent file
 Recent files
 Recent history in
 Recent huddles
-Recent items from your last 4 days or messages with a reminder will show up in Today with your other action items.
 Recent messages
 Recent messages from {vipName} in your shared channels
 Recent messages with {channelName}
@@ -21924,6 +21917,7 @@ Region captured
 Region drag started
 Region selected, capturing
 Register Service Worker timed out
+Register event handlers
 Register observers for performance monitoring
 Register the service worker
 Registering icon pack:
@@ -22048,7 +22042,6 @@ Reminder overdue since {date}
 Reminder set for {dueDate}
 Reminder set: {when}
 Reminder: Update your opportunities
-Reminder: {date}
 Reminders
 Reminders & To-Do
 Reminders and notification schedule
@@ -22073,7 +22066,6 @@ Remove App
 Remove Automation Rule?
 Remove Channel Knowledge Canvas?
 Remove Connection
-Remove DND override channel
 Remove Email
 Remove Email Connection
 Remove Form
@@ -22234,6 +22226,7 @@ Remove list
 Remove list item
 Remove list?
 Remove meeting transcript
+Remove member
 Remove members
 Remove members from #{channelName}?
 Remove memory
@@ -22854,6 +22847,7 @@ Restrict sharing & file downloads
 Restrict this app from installation?
 Restrict to specific users
 Restricted
+Restricted for 
 Restricted from AI steps
 Restricted only
 Restriction level
@@ -22921,7 +22915,6 @@ Returns the enterprise organization
 Returns the full text that AI generates
 Returns the full text that AI generates, plus visual elements like tables and graphs
 Returns whether a user is already assigned to a role
-Reusable flows people can run instead of sending a message.
 Reveal DMs, Activity and other views
 Reveal Views
 Revert template to a canvas
@@ -22979,6 +22972,7 @@ Review our suggested matches for columns from your file to fields in the lead li
 Review pending connection update
 Review permissions for this template
 Review recommendations from Slack to help ensure {orgName} is following security best practices.
+Review request for {appName}
 Review requested
 Review requested from {count, plural, =1 {# person} other {# people}}
 Review settings for #{name}
@@ -23017,6 +23011,7 @@ Review your {entity} audit logs
 Review {appName}
 Review {name}
 Review {title}
+Reviewed before listing on the Slack Marketplace
 Reviewed, still open
 Reviewers
 Reviewing draft video
@@ -23330,6 +23325,7 @@ Salesforce record
 Salesforce record link
 Salesforce record preview
 Salesforce record-conditions edit dropped: schema identifiers missing while section mounted
+Salesforce record.
 Salesforce records
 Salesforce report
 Salesforce results loaded successfully
@@ -23354,6 +23350,7 @@ Salesforce user record; Salesforce user record, Sr. Administrative Assistant
 Salesforce user record; Salesforce user record, Vice President, Government Affairs
 Salesforce users table
 Salesforce {objectLabel} in Slack
+Salesforce {objectLabel}.
 Salesforce, tell us how we\u2019re doing
 Salt River
 Salt River Project
@@ -23369,6 +23366,7 @@ Sample
 Sample browser
 Sample channel list integrity (badging + bolding + reading) consistency metric
 Sample channel list integrity if still sampleworthy
+Sample data \xb7 Not live
 Sample desktop
 Sample done: Arc Lamp, $54.
 Sample message-transcript reading consistency metric (open channel divider state)
@@ -23555,12 +23553,12 @@ Schedule or event
 Scheduled
 Scheduled Call
 Scheduled ahead
+Scheduled call.
 Scheduled focus time awaits
 Scheduled huddle
 Scheduled message
 Scheduled message actions
 Scheduled messages
-Scheduled prompts Slackbot runs for this channel.
 Scheduled status duration
 Scheduled status removed.
 Scheduled status updated.
@@ -23982,7 +23980,6 @@ See More Direct Reports
 See Paid Plans
 See Plans
 See Pricing Plans
-See Slack\u2019s main features
 See Teams Calls information in search results
 See Upgrade Options
 See a sample of Slackbot\u2019s sales skills
@@ -24014,7 +24011,6 @@ See all variables
 See all your records
 See all your unreads in one place
 See all {count, plural, =1 {# attendee} other {# attendees}}
-See all {count, plural, =1 {# automation} other {# automations}}
 See all {count, plural, =1 {# workflow or task} other {# workflows and tasks}}
 See all {section}
 See all {slackActionsCount} related actions
@@ -24032,6 +24028,7 @@ See files in search results and answers
 See full comparison
 See how
 See how AI can make your workday that much more pleasant and productive.
+See how Slackbot answers members of your org, without your admin tools. Search results and connected apps still use your own access.
 See how Slackbot can research accounts, prep for meetings, and more.
 See how Slackbot is set up for this conversation.
 See how app assistants work
@@ -24248,8 +24245,6 @@ Select channels for workflow to start in
 Select channels to exclude
 Select channels to monitor
 Select channels you\u2019d like to make it easy for teammates to join in one go. When they use the workflow, they\u2019ll be automatically added.
-Select channels...
-Select channels\u2026
 Select date
 Select date format
 Select date range\u2026
@@ -24526,7 +24521,6 @@ Send the message
 Send these instructions to your team:
 Send this note
 Send this note in the meeting chat, then add a screenshot of the chat.
-Send this note in the meeting chat.
 Send this notification
 Send this now?
 Send this private request from Slack. Your draft is saved here.
@@ -24783,7 +24777,6 @@ Set focus and mark workspace booted
 Set focus music playing state
 Set focus music song key
 Set highlight column in the item flexpane
-Set initial state (and rehydrating cached data during a warm boot)
 Set items must all have null values
 Set list history
 Set list history version by list id
@@ -24992,6 +24985,7 @@ Sets the workspace id and navigation props for the workspace user wants to switc
 Sets uiState for a given view
 Sets when the last fetch with message counts was sent
 Sets whether MCP servers are currently being fetched
+Sets whether an admin is testing Slackbot as a member of their org
 Sets whether deep research mode is active for the next message
 Sets whether one view
 Sets whether or not the self tile should be hidden
@@ -25050,7 +25044,6 @@ Setup Team Name
 Setup Welcome
 Setup failed. Something went wrong while setting up customer management.
 Setup tasks
-Setup team-level Redux Store
 Setup {providerName}
 Setup {stepNumber} of {totalStepsCount}
 Sev {level, number}
@@ -25561,7 +25554,6 @@ Showing fewer conversations in this section.
 Showing items added to Later in your last 4 days or with a reminder.
 Showing more canvases and lists.
 Showing more conversations in this section.
-Showing or hiding the highlights back button
 Showing the first 1000 characters. Copy the query to get all of it.
 Showing the first {count} characters. Copy the query to get all of it.
 Showing the first {maxCount} servers. To see the rest, export a CSV.
@@ -25659,9 +25651,9 @@ Sign this person out of Slack?
 Sign user out of
 Sign-in needed
 Sign-in page hidden
+Signal that the store has been hydrated
 Signal to message pane that app space is open
 Signal to the desktop that all delegates are ready
-Signals that redux stores have been hydrated during boot
 Signature Success Plan
 Signature emoji
 Signed in with Slack
@@ -25894,7 +25886,6 @@ Slack Connect isn\u2019t enabled
 Slack Connect isn\u2019t enabled for this workspace yet
 Slack Connect isn\u2019t enabled for this workspace, but your admins created instructions to help you add the right people to the right workspaces.
 Slack Connect makes collaborating with external people and clients as fast and simple as working with in-house teams.
-Slack Connect space
 Slack Desktop App
 Slack Dictation (aka Steno)
 Slack EKM enhances the ability of organizations to share sensitive conversations and files while meeting security requirements. Use your own encryption keys and view detailed activity logs in Amazon\u2019s AWS Key Management Service.
@@ -26425,7 +26416,6 @@ Something went wrong rendering this surface. Try reopening it.
 Something went wrong responding to the invite.
 Something went wrong saving this object type. Try again in a few minutes.
 Something went wrong saving your changes. Please try again.
-Something went wrong saving your channel sources. Please try again.
 Something went wrong saving your instructions. Please try again.
 Something went wrong searching {appName}
 Something went wrong sending your feedback. Please try again.
@@ -26688,7 +26678,6 @@ Specific people and groups can use the app.
 Specific people and workspaces
 Specific people can use the app.
 Specific people, channels, and workspaces
-Specific public channels
 Specific roles
 Specific user groups
 Specific workspaces
@@ -26706,6 +26695,7 @@ Spellcheck
 Spellcheck languages
 Spiced Cider (out of season)
 Spider
+Spin button
 Spinning up spinners\u2026
 Splash state machine fetch timed out
 Split
@@ -27438,7 +27428,6 @@ Summarize what you missed
 Summarize what you missed with Slackbot
 Summarize what\u2019s happening in my busiest channels right now
 Summarize with Slackbot
-Summarize yesterday\u2019s messages in my most active channel, every workday morning.
 Summarize your DMs from {managerName}
 Summarize your busiest channels
 Summarize your busiest conversations
@@ -27556,6 +27545,7 @@ Switch agent
 Switch avatar
 Switch back to classic Slack
 Switch back to production assets
+Switch back to the classic sidebar
 Switch integration?
 Switch integrations
 Switch layouts to review your messages in bulk.
@@ -27920,6 +27910,7 @@ Terms of service
 Test
 Test Speaker
 Test account details for your service
+Test as member
 Test email
 Test run
 Test runs use your own connection to each MCP server in this step.
@@ -27935,6 +27926,7 @@ Text
 Text Block
 Text Body
 Text Color
+Text box
 Text card
 Text copied.
 Text emphasis formatting options
@@ -28014,6 +28006,7 @@ That name or description can\u2019t be used. Try editing it.
 That name\u2019s already being used by Slack.
 That one was handled in your Slackbot DM.
 That one\u2019s going on the fridge.
+That part of the canvas was deleted
 That private channel has been archived.
 That shortcut might not exist\u2026yet.
 That took longer than expected
@@ -28080,13 +28073,8 @@ The access requested for this app can\u2019t be applied. It might include someon
 The admin approval request couldn\u2019t be submitted. Try again.
 The admin who turned this skill off isn\u2019t available. Ask another admin or Skill Manager to turn it back on.
 The agent may have been uninstalled or you do not have permission to view it.
-The agent will automatically respond to all messages it thinks need a reply.
 The agent will forward messages to this channel when people request more help.
-The agent will only respond when @-mentioned.
-The agent will use everything from a channel as sources.
-The agents will automatically respond to all messages they think need a reply.
 The agents will only reply when @-mentioned
-The agents will only respond when @-mentioned.
 The agents will reply automatically
 The all-new Slackbot
 The amount of computational work that your system performs
@@ -28351,7 +28339,6 @@ The template can\u2019t be used because templates are not yet available for this
 The template still works, though, so click the button if you want to use it!
 The template you selected will be used to create a channel. Give it a name your teammates will recognize.
 The text formatting toolbar won\u2019t show in the composer.
-The text of this page is being written. The lines below are already here.
 The thread will still be visible
 The tools couldn\u2019t be loaded from this server. Check that it\u2019s reachable.
 The topic can\u2019t be longer than {CHAR_LIMIT} characters.
@@ -28654,6 +28641,7 @@ They will still have access to your Slack workspace, and can see some Salesforce
 They won\u2019t be a {memberCurrentAccountTypeText}, and won\u2019t be able to administer settings at the workspace level any longer.
 They won\u2019t be notified that you\u2019ve hidden them.
 They won\u2019t be notified you\u2019ve done this.
+They won\u2019t respond unless mentioned.
 They\u2019ll also be able to use apps and workflows, and their organization will get a copy of the channel\u2019s contents.
 They\u2019ll also be able to use apps and workflows, and their organizations will get a copy of the channel\u2019s contents.
 They\u2019ll appear here once you do - a record for the future you.
@@ -29156,7 +29144,6 @@ This message will appear within the Slackbot notification that each member will 
 This method confirms you own the domain but doesn\u2019t provide email signing.
 This metric has already been configured. Please choose another metric.
 This metric\u2019s taking a little longer to load. Try coming back later.
-This might be a moment \u2014 feel free to continue using Slack and we\u2019ll bring you back here.
 This might be a moment \u2014 feel free to continue using Slack and we\u2019ll let you know when it completes.
 This might take a few minutes. Refresh the page in a bit to view any updates.
 This might take a minute
@@ -29567,6 +29554,7 @@ Time zone: {timeZone}
 Time:
 Timed out
 Timed out waiting for code channel AI summary
+Timed out waiting for sandbox proxy iframe to be ready
 Timed out waiting for session.ready
 Timeline
 Timeline this week in #{channel}
@@ -29714,6 +29702,8 @@ To-do added
 To-do added, 
 To-do added.
 To-do cleared
+To-do deleted
+To-do deleted. The message stays in the conversation.
 To-do details
 To-do due {dateString}
 To-do due {dateString}, 
@@ -29796,7 +29786,6 @@ Toggle mention sub-filters
 Toggle microphone from current value to opposite value
 Toggle mute for channel
 Toggle pin state of an agent session
-Toggle rendering for the #feat-mobile-awareness-dm-promo banner
 Toggle saved for later state on a list record
 Toggle screen share
 Toggle task active state
@@ -30335,6 +30324,7 @@ Turn on dictation in Slack
 Turn on drawing
 Turn on email logging
 Turn on focus mode
+Turn on focus mode for calendar focus blocks
 Turn on focus mode when:
 Turn on logging for your connected Gmail to log emails with your contacts and leads.
 Turn on microphone
@@ -31041,7 +31031,6 @@ Update from desktop for keys
 Update fullscreen mode container based on destination container or given view set
 Update in a list item
 Update local collapsed grids
-Update local config with lastColdBootTs as current date on cold boot
 Update local field visibility
 Update local filters
 Update local group by
@@ -31050,6 +31039,7 @@ Update local show completed items
 Update local sorts
 Update local view type
 Update needs approval
+Update needs approval for 
 Update notification prefs for given Salesforce org id
 Update notifications pref datasource object field mappings
 Update one key for a channel by id
@@ -31059,6 +31049,7 @@ Update or insert one or more app action associated with a channelId
 Update organization name for all enterprise teams of the organization
 Update our customer records based on this message: {permalink}
 Update pending
+Update pending for 
 Update record details
 Update records
 Update reply data for a given Quip comment ID
@@ -31576,7 +31567,9 @@ VIP Notifications
 VIP Replies
 VIP Threads
 VIP activity
+VIP list
 VIP messages
+VIP notification sound
 VIP unreads
 VIP unreads on top
 VIPs
@@ -31584,7 +31577,6 @@ VIPs only
 VP
 Valid ranges
 Validate message link
-Validate that the locale we are loading into is valid
 Validating\u2026
 Validation errors
 Validation failed.
@@ -31656,6 +31648,7 @@ Verification code sent
 Verification expired. Please check the checkbox again.
 Verification status updated.
 Verified
+Verified by Slack
 Verified by your admin
 Verified skill
 Verify
@@ -33198,6 +33191,7 @@ Working
 Working for {duration}
 Working for {duration}:
 Working hours
+Working hours schedule
 Working on a response\u2026
 Working on it below
 Working on it\u2026
@@ -33557,7 +33551,6 @@ You can view your metrics here, and add to or edit them as your needs change
 You can write a paragraph
 You can't enter more than {maxLength, plural, =1 {# character} other {# characters}}.
 You can\u2019t add a branch here
-You can\u2019t add more than 10 channels as additional sources
 You can\u2019t add more than one repeat step to a workflow
 You can\u2019t add one of these canvases. Check that you can still view it.
 You can\u2019t add one of these channels. Check that you still have access to it.
@@ -33584,6 +33577,7 @@ You can\u2019t enter more than {maxCharacterLimit, plural, =1 {# character} othe
 You can\u2019t enter more than {maxLength} channels.
 You can\u2019t enter more than {maxLength} characters.
 You can\u2019t enter more than {maxMessageLength} characters.
+You can\u2019t huddle with this person
 You can\u2019t huddle with {name}
 You can\u2019t invite external people to this channel.
 You can\u2019t invite this type of account based on your current SSO settings.
@@ -35537,6 +35531,7 @@ button
 by {author}
 by {initiator}
 by {initiator} \xb7 Code channel \xb7 {ago}
+by {initiator} \xb7 {ago}
 bye
 cab
 cabbage
@@ -41726,6 +41721,7 @@ zzz
 {categoryName}
 {channelCount, plural, =1 {# channel} other {# channels}}
 {channelCount, plural, =1 {# channel} other {# channels}} ({privateChannelCount} private)
+{channelCount, plural, =1 {# channel} other {# channels}} \xb7 Not available in DMs
 {channelCount, plural, =1 {# channel} other {# channels}} selected
 {channelCount, plural, =1 {# conversation} other {# conversations}}
 {channelCount, plural, =1{# channel to archive} other {# channels to archive}}
@@ -41748,7 +41744,6 @@ zzz
 {channelName} huddle
 {channelName} is connected to {numOrgs} organizations
 {channelName} is in {numTeams} workspaces
-{channelName} isn\u2019t available because it was archived or deleted
 {channelName} section
 {channelName} summary
 {channelName} summary from {startDate} to {endDate}
@@ -41771,6 +41766,7 @@ zzz
 {channelName}, {workspaceDescription} ({context})
 {channelName}. {channelPurpose}.
 {channelUnreadSum, plural, =1 {{channelUnreadSum} unread channel message} other {{channelUnreadSum} unread channel messages}}
+{channels} \xb7 Not available in DMs
 {channel} is already muted
 {channel} is already starred
 {channel}, failed to send message
@@ -41822,6 +41818,7 @@ zzz
 {count, plural, =1 {# Pinned item} other {# Pinned items}}
 {count, plural, =1 {# RECENT POST} other {# RECENT POSTS}}
 {count, plural, =1 {# agent session found} other {# agent sessions found}}
+{count, plural, =1 {# agent thread found} other {# agent threads found}}
 {count, plural, =1 {# app found} other {# apps found}}
 {count, plural, =1 {# app} other {# apps}}
 {count, plural, =1 {# artifact found} other {# artifacts found}}
@@ -42019,6 +42016,7 @@ zzz
 {count, plural, =1 {MCP server enabled successfully.} other {# MCP servers enabled successfully.}}
 {count, plural, =1 {PR closed} other {PRs closed}}
 {count, plural, =1 {PR merged} other {PRs merged}}
+{count, plural, =1 {PR: # closed} other {PRs: # closed}}
 {count, plural, =1 {PR: # merged} other {PRs: # merged}}
 {count, plural, =1 {PR: # open} other {PRs: # open}}
 {count, plural, =1 {PR: #} other {PRs: #}}
@@ -42087,6 +42085,7 @@ zzz
 {count, plural, one {# new message since this was made} other {# new messages since this was made}}
 {count, plural, one {# other} other {# others}}
 {count, plural, one {# pending request to join} other {# pending requests to join}}
+{count, plural, one {# person invited} other {# people invited}}
 {count, plural, one {# person or group excluded from Read records is} other {# people and groups excluded from Read records are}} also excluded here.
 {count, plural, one {# person or group excluded in the People setting above is} other {# people and groups excluded in the People setting above are}} also excluded here.
 {count, plural, one {# person or group here can\u2019t} other {# people and groups here can\u2019t}} read records. Remove them to save.
@@ -42207,6 +42206,7 @@ zzz
 {count} deleted {count, plural, one {column} other {columns}} will be restored
 {count} deleted {count, plural, one {row} other {rows}} will be restored
 {count} done
+{count} due
 {count} failed
 {count} file types
 {count} groups
@@ -42252,6 +42252,7 @@ zzz
 {count} suggested
 {count} task{count, plural, one {} other {s}}
 {count} to-dos cleared
+{count} to-dos deleted
 {count} to-dos marked incomplete
 {count} tools selected
 {count} types
@@ -42284,7 +42285,6 @@ zzz
 {count} {count, plural, one {row} other {rows}} will be deleted
 {count} {displayName}
 {count} {filterName}
-{count} {people} invited
 {count}+
 {count}+ channels
 {count}+ files
@@ -42375,6 +42375,7 @@ zzz
 {entity, select, Org {Org Primary Owner} other {Workspace Primary Owner}}
 {entryCount, plural, =1 {# entry} other {# entries}}
 {errors} out of {total} connection errors
+{exchange} \xb7 {symbol} \xb7 USD
 {expiryText}
 {externalOrgCount} organizations
 {extras, select, failure_and_duplicate {{numberRecordsFailed} contacts failed, {numberRecordsDuplicated} duplicates skipped.} failure_only {{numberRecordsFailed} contacts failed.} duplicate_only {{numberRecordsDuplicated} duplicates skipped.} other {}}
@@ -42434,7 +42435,6 @@ zzz
 {firstName} is online. Let\u2019s make things happen!
 {firstName}, {secondName}, and {numRemaining} others
 {firstParticipantName} is in the Huddle. Join when ready.
-{firstParticipantName} is in the huddle.
 {firstRequesterName} and {otherCount, plural, one {# other} other {# others}} requested to join this channel.
 {first} and {second}
 {first} {second}
@@ -42768,13 +42768,17 @@ zzz
 {name} app notification: {message} {date} at {time}.
 {name} at {time}.
 {name} button
+{name} call, {participantCount, plural, =1 {# person} other {# people}} joined.
+{name} call.
 {name} cannot be added to any new channels.
 {name} checkbox group
 {name} combo box
+{name} contact card.
 {name} date and time picker
 {name} date picker
 {name} declined this call
 {name} disconnected.
+{name} file.
 {name} group
 {name} hasn\u2019t connected a calendar, so there are no suggested times
 {name} hasn\u2019t set a status
@@ -42857,7 +42861,9 @@ zzz
 {name} radio group
 {name} reacted with {emoji}
 {name} reacted {emoji}
+{name} spin button
 {name} template features:
+{name} text box
 {name} unpinned
 {name} was invited using Slack Connect.
 {name} will be automatically added to the selected {isMultiChannelGuest, plural, =1 {channels} other {channel}} once they join.
@@ -43038,6 +43044,7 @@ zzz
 {people} {remainingPeople, plural, =0 {} =1 {and # other} other {and # others}}
 {percentComplete} percent
 {percentage}% available
+{percent} from previous close
 {percent}% done
 {periodNum, plural, one {Day} other {Days}}
 {periodNum, plural, one {Fiscal quarter} other {Fiscal quarters}}
@@ -43107,8 +43114,10 @@ zzz
 {recordLabel} details
 {recordLabel} in
 {recordLabel} on
+{recordName} Salesforce record.
 {recordName} card actions
 {recordName} item in {listName}
+{recordName} {objectLabel}.
 {recordName}, in {listName}
 {recordNotesText}, leaves the huddle and opens in new window
 {recordNotesText}, opens in new window
@@ -43355,10 +43364,12 @@ zzz
 {title} \xb7 {date}
 {title} \xb7 {date} at {time}
 {title} \xb7 {detail}
+{title} canvas.
 {title} event, cancelled.
 {title} event, {date} at {startTime} to {endTime}.
 {title} is ready.
 {title} kept in the island
+{title} list.
 {title} pinned.
 {title} plan with {taskCount, plural, one {# task} other {# tasks}}, complete.
 {title} plan with {taskCount, plural, one {# task} other {# tasks}}, error.
