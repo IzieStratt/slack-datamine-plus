@@ -270,7 +270,10 @@ async function main() {
   for (const [cat, set] of Object.entries(extras)) { counts[cat] = set.size; outFiles.set(`${cat}.txt`, [...set]); }
   const up = upstream.finish(readLines(OUT));
   for (const note of up.notes) console.error(`upstream: ${note}`);
-  for (const [file, lines] of up.files) { outFiles.set(file, [...(outFiles.get(file) ?? []), ...lines]); counts[file.replace(/\.txt$/, '')] = lines.length; }
+  // health-count the deduped lines that actually get written, not raw post() output: a string listed in two copies of the
+  // same translation table produced two identical post() lines, and the write below dedups them. When Slack's build collapsed
+  // that duplication the raw count halved (77585 -> 38787) while the committed set stayed flat, tripping the drop check.
+  for (const [file, lines] of up.files) { outFiles.set(file, [...(outFiles.get(file) ?? []), ...lines]); counts[file.replace(/\.txt$/, '')] = new Set(lines).size; }
   for (const [file, lines] of outFiles) { const u = [...new Set(lines)].sort(); if (u.length) fs.writeFileSync(`${OUT}/${file}`, u.join('\n') + '\n'); }
   // the glyph set behind the icon names (build/icons.json drives the icons PDF; it comes from modern.vendor); keep the old one if this build's chunk was missing
   if (iconSet) fs.writeFileSync(`${OUT}/icons.json`, JSON.stringify(iconSet) + '\n');
