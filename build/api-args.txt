@@ -66,7 +66,7 @@ agents.sessions.stop: bot_user_id, channel, thread_ts
 agents.socialProof.info: bot_user_id, limit
 agents.threads.archive: channel, thread_ts
 agents.threads.rename: channel, name, thread_ts
-ai.agents.channelAgent.configure: channel_id, custom_instructions, include_all_files, include_all_messages, proactive_replies
+ai.agents.channelAgent.configure: additional_source_channel_ids, additional_source_scope, channel_id, custom_instructions, include_all_files, include_all_messages, proactive_replies, skip_simple_array_serialization_in_get_form_data
 ai.agents.channelAgent.getConfiguration: channel_id
 ai.alpha.agents.channels.list: cursor, include_closed, limit
 ai.alpha.agents.diveDeeper: channel, message_ts, thread_ts
@@ -147,6 +147,7 @@ ai.alpha.surfaces.deleteVersion: file_id, version_id
 ai.alpha.surfaces.generateActionDraft: action, card_context, file_id
 ai.alpha.surfaces.getContent: file_id, version_id
 ai.alpha.surfaces.getData: file_id, source
+ai.alpha.surfaces.getDraft: thread_ts, version
 ai.alpha.surfaces.listVersions: file_id
 ai.alpha.surfaces.openCardComment: card_id, card_title, file_id
 ai.alpha.surfaces.rename: file_id, title
@@ -689,7 +690,7 @@ search.autocomplete.triggers: current_channel_id, query, strict_exposure_rules, 
 search.autocomplete: limit, query, query_suggestion_limit, type, use_hash
 search.delete: hash, terms, type
 search.enterprise: count, cursor_mark, include_bots, include_counts, include_dangling, include_deleted, query, sort, sort_dir
-search.inline: channel, count, cursor, find_in_channel, find_in_thread, query, thread_ts, token
+search.inline: channel, count, cursor, extract_len, find_in_channel, find_in_thread, query, thread_replies, thread_ts, token
 search.modules.channels: browse, channel_type, count, cursor, exclude_my_channels, module, query, sort, sort_dir
 search.modules.external: app_id, client_req_id, cursor, highlight, query, query_rewrite_disabled, search_app_args
 search.modules.files: canvas_template_type_filter, count, exclude_org_visible, file_title_only, filters, module, only_org_visible, page, query, search_exclude_bots, skip_excluding_canned_templates, sort, sort_dir
@@ -816,6 +817,8 @@ solutions.get: solution_template_id
 solutions.list: permission, status
 solutions.update: skip_simple_array_serialization_in_get_form_data, solution_template_id
 stars.list: count, cursor, exclude, limit, org_wide_aware, page
+stocks.metrics.info: symbol
+stocks.quotes.lookup: symbols
 subscriptions.thread.getTimestamps: cursor, fetch_threads_state, limit, mode, priority_mode
 subteams.info: usergroups
 subteams.validateHandle: handle, target_team
