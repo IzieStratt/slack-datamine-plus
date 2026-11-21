@@ -9247,8 +9247,11 @@ android/api-methods	ai.alpha.digest.markUnread	2026-11-14
 android/api-methods	ai.alpha.digest.removeFromDigest	2026-11-14		
 android/api-methods	ai.alpha.digest.triggerDigest	2026-11-14		
 android/api-methods	ai.alpha.search.getNoResultsPrompts	2026-11-14		
+android/api-methods	ai.alpha.slackbot.channelMcpServers.list	2026-11-21		
 android/api-methods	ai.alpha.slackbot.channelResponses.redact	2026-11-14		
 android/api-methods	ai.alpha.slackbot.channelResponses.restore	2026-11-14		
+android/api-methods	ai.alpha.slackbot.channelSkills.getConfiguration	2026-11-21		
+android/api-methods	ai.alpha.slackbot.channelSkills.removeSkill	2026-11-21		
 android/api-methods	ai.alpha.slackbot.createSlackbotInitiatedThread	2026-11-14		
 android/api-methods	ai.alpha.slackbot.resolveVoiceToolApproval	2026-11-14		
 android/api-methods	ai.alpha.slackbot.searchAnswerThreads.create	2026-11-14		
@@ -9359,10 +9362,16 @@ android/api-methods	chat.update	2026-11-14
 android/api-methods	client.appCommands	2026-11-14		
 android/api-methods	client.badgeCounts	2026-11-14		
 android/api-methods	client.channels	2026-11-14		
+android/api-methods	client.codeChannels.addPullRequestComment	2026-11-21		
+android/api-methods	client.codeChannels.addReviewComment	2026-11-21		
 android/api-methods	client.codeChannels.browse	2026-11-14		
 android/api-methods	client.codeChannels.create	2026-11-14		
 android/api-methods	client.codeChannels.getBlockKitView	2026-11-14		
 android/api-methods	client.codeChannels.getDiff	2026-11-14		
+android/api-methods	client.codeChannels.getPullRequest	2026-11-21		
+android/api-methods	client.codeChannels.getPullRequestSummary	2026-11-21		
+android/api-methods	client.codeChannels.getSummary	2026-11-21		
+android/api-methods	client.codeChannels.listPullRequestComments	2026-11-21		
 android/api-methods	client.codeChannels.listSupportedApps	2026-11-14		
 android/api-methods	client.counts	2026-11-14		
 android/api-methods	client.countsSummary	2026-11-14		
@@ -9856,7 +9865,9 @@ android/feature-flags	android_activity_swipe_actions	2026-11-14
 android/feature-flags	android_add_to_mpdm_preview_transcript	2026-11-14		
 android/feature-flags	android_agent_badge	2026-11-14		
 android/feature-flags	android_agent_channel_thread_naming	2026-11-14		
+android/feature-flags	android_agent_ux_revamp	2026-11-21		
 android/feature-flags	android_agents_home_sessions	2026-11-14		
+android/feature-flags	android_agents_home_swipe_archive	2026-11-21		
 android/feature-flags	android_agents_in_dm	2026-11-14		
 android/feature-flags	android_aggressive_tracing	2026-11-14		
 android/feature-flags	android_ai_apps_list_deprecation	2026-11-14		
@@ -9880,10 +9891,11 @@ android/feature-flags	android_ai_summary_pill_dismiss	2026-11-14
 android/feature-flags	android_ai_summary_streaming	2026-11-14		
 android/feature-flags	android_ai_translation_setting	2026-11-14		
 android/feature-flags	android_amazon_sso_aea_custom_tab	2026-11-14		
-android/feature-flags	android_ami_attachment_focus_fix	2026-11-14		
+android/feature-flags	android_ami_attachment_focus_fix	2026-11-14	2026-11-21	2026-11-21
 android/feature-flags	android_api_level	2026-11-14		
 android/feature-flags	android_app_actions_search_single_scan	2026-11-14		
 android/feature-flags	android_app_backend_blocking	2026-11-14		
+android/feature-flags	android_app_connection_auto_url_open	2026-11-21		
 android/feature-flags	android_app_connection_status	2026-11-14		
 android/feature-flags	android_app_home_check	2026-11-14		
 android/feature-flags	android_app_home_opened_event_for_tabs	2026-11-14		
@@ -9963,6 +9975,7 @@ android/feature-flags	android_client_badge_counts	2026-11-14
 android/feature-flags	android_client_files_metadata_refresh	2026-11-14		
 android/feature-flags	android_code_channel_agent_commands	2026-11-14		
 android/feature-flags	android_code_channel_artifact_sheet	2026-11-14		
+android/feature-flags	android_code_channel_pr_view	2026-11-21		
 android/feature-flags	android_code_channel_share_artifact	2026-11-14		
 android/feature-flags	android_code_channel_unfurl_v2	2026-11-14		
 android/feature-flags	android_coding_channels	2026-11-14		
@@ -9973,6 +9986,7 @@ android/feature-flags	android_coding_channels_diff_preview	2026-11-14
 android/feature-flags	android_coding_channels_live_updates	2026-11-14		
 android/feature-flags	android_coding_channels_native_diff	2026-11-14		
 android/feature-flags	android_coding_channels_rename	2026-11-14		
+android/feature-flags	android_coding_channels_timeline	2026-11-21		
 android/feature-flags	android_coding_channels_voice_dictation	2026-11-14		
 android/feature-flags	android_coil_instrumentation	2026-11-14		
 android/feature-flags	android_colour_background_when_displaying_tsf	2026-11-14		
@@ -9990,13 +10004,13 @@ android/feature-flags	android_conversation_inflate_reuse	2026-11-14
 android/feature-flags	android_conversation_join_free_reads	2026-11-14		
 android/feature-flags	android_conversation_read_snapshot_txn	2026-11-14		
 android/feature-flags	android_conversation_style_threads	2026-11-14		
-android/feature-flags	android_conversation_syncer_persistence	2026-11-14		
+android/feature-flags	android_conversation_syncer_persistence	2026-11-14	2026-11-21	2026-11-21
 android/feature-flags	android_conversations_filter	2026-11-14		
 android/feature-flags	android_copy_channel_email_address	2026-11-14		
 android/feature-flags	android_counts_activity_badge_check_off_main	2026-11-14		
 android/feature-flags	android_counts_cap_channel_ids	2026-11-14		
-android/feature-flags	android_counts_integrity_pending_marks_at_request	2026-11-14		
-android/feature-flags	android_counts_mark_via_dispatcher	2026-11-14		
+android/feature-flags	android_counts_integrity_pending_marks_at_request	2026-11-14	2026-11-21	2026-11-21
+android/feature-flags	android_counts_mark_via_dispatcher	2026-11-14	2026-11-21	2026-11-21
 android/feature-flags	android_counts_queue_mark_response	2026-11-14		
 android/feature-flags	android_counts_skip_no_op_writes	2026-11-14		
 android/feature-flags	android_create_team_email_suggestion_exp	2026-11-14		
@@ -10028,6 +10042,7 @@ android/feature-flags	android_draft_count_correctness_metric	2026-11-14
 android/feature-flags	android_draft_perf_improvements	2026-11-14		
 android/feature-flags	android_draft_query_optimizations	2026-11-14		
 android/feature-flags	android_drafts_bulk_delete	2026-11-14		
+android/feature-flags	android_drop_timeout_cancellation_errors	2026-11-21		
 android/feature-flags	android_dynamic_back_handler	2026-11-14		
 android/feature-flags	android_eco_join_facepile	2026-11-14		
 android/feature-flags	android_eco_join_temporarily	2026-11-14		
@@ -10047,6 +10062,7 @@ android/feature-flags	android_extended_navigation_history_store	2026-11-14
 android/feature-flags	android_external_huddles	2026-11-14		
 android/feature-flags	android_fab_users_list	2026-11-14		
 android/feature-flags	android_failed_messages_in_sent	2026-11-14		
+android/feature-flags	android_featured_workflow_lock	2026-11-21		
 android/feature-flags	android_fetch_flags_before_restart	2026-11-14		
 android/feature-flags	android_file_action_new_clog	2026-11-14		
 android/feature-flags	android_file_block_in_circuit	2026-11-14		
@@ -10084,9 +10100,11 @@ android/feature-flags	android_high_contrast	2026-11-14
 android/feature-flags	android_highlight_text_interop	2026-11-14		
 android/feature-flags	android_home_move_user_edu_dialogs	2026-11-14		
 android/feature-flags	android_home_v2	2026-11-14		
+android/feature-flags	android_home_v2_active_view_fix	2026-11-21		
 android/feature-flags	android_home_v2_app_navigation_fix	2026-11-14		
 android/feature-flags	android_home_v2_compliance_validation	2026-11-14		
-android/feature-flags	android_hosted_fragment_swap_rekey	2026-11-14		
+android/feature-flags	android_home_v2_deferred_workspace_graph	2026-11-21		
+android/feature-flags	android_hosted_fragment_swap_rekey	2026-11-14	2026-11-21	2026-11-21
 android/feature-flags	android_http_priority_dispatchers	2026-11-14		
 android/feature-flags	android_http_priority_metrics_enabled	2026-11-14		
 android/feature-flags	android_huddle_background_blur	2026-11-14		
@@ -10145,6 +10163,7 @@ android/feature-flags	android_message_file_upload_helper	2026-11-14
 android/feature-flags	android_message_mention_block_kit	2026-11-14		
 android/feature-flags	android_message_repository_v2_enabled	2026-11-14		
 android/feature-flags	android_message_translation	2026-11-14		
+android/feature-flags	android_message_update_read_on_caller_thread	2026-11-21		
 android/feature-flags	android_message_v2_pending_actions	2026-11-14		
 android/feature-flags	android_message_version	2026-11-14		
 android/feature-flags	android_metadata	2026-11-14		
@@ -10156,6 +10175,7 @@ android/feature-flags	android_mobile_web_load_full_site	2026-11-14
 android/feature-flags	android_mpdm_naming_in_search	2026-11-14		
 android/feature-flags	android_msg_engagement_clog	2026-11-14		
 android/feature-flags	android_multi_section_canvas_unfurls	2026-11-14		
+android/feature-flags	android_multibinding_dispatch_formatted_link_handling	2026-11-21		
 android/feature-flags	android_mute_agent	2026-11-14		
 android/feature-flags	android_native_pdf_thumbnail_view	2026-11-14		
 android/feature-flags	android_native_pdf_viewer	2026-11-14		
@@ -10181,6 +10201,7 @@ android/feature-flags	android_notification_store_lock_during_processing	2026-11-
 android/feature-flags	android_notification_sync_use_consistent_state	2026-11-14		
 android/feature-flags	android_notification_troubleshooting_dnd	2026-11-14		
 android/feature-flags	android_notification_wait_for_channel_on_open	2026-11-14		
+android/feature-flags	android_object_insertion_restore_after_recreate	2026-11-21		
 android/feature-flags	android_omni_agent_pin	2026-11-14		
 android/feature-flags	android_optimized_channel_sections_syncing	2026-11-14		
 android/feature-flags	android_outline	2026-11-14		
@@ -10193,7 +10214,7 @@ android/feature-flags	android_passkeys_registration_promotion	2026-11-14
 android/feature-flags	android_passkeys_sign_in	2026-11-14		
 android/feature-flags	android_passkeys_sso_sign_in	2026-11-14		
 android/feature-flags	android_persist_pins	2026-11-14		
-android/feature-flags	android_prefetch_extended_warming	2026-11-14		
+android/feature-flags	android_prefetch_extended_warming	2026-11-14	2026-11-21	2026-11-21
 android/feature-flags	android_preserve_file_channels_kill_switch	2026-11-14		
 android/feature-flags	android_preserve_image_thumbnails_on_refetch	2026-11-14		
 android/feature-flags	android_priority_activity_feed	2026-11-14		
@@ -10203,6 +10224,8 @@ android/feature-flags	android_profile_moderation_copy	2026-11-14
 android/feature-flags	android_prototype_block	2026-11-14		
 android/feature-flags	android_prototype_slack6	2026-11-14		
 android/feature-flags	android_quick_reply_multi_option	2026-11-14		
+android/feature-flags	android_quote_reply	2026-11-21		
+android/feature-flags	android_quote_reply_send	2026-11-21		
 android/feature-flags	android_reaction_alias_dedupe	2026-11-14		
 android/feature-flags	android_recap_deep_link	2026-11-14		
 android/feature-flags	android_record_channel_expanded_filter	2026-11-14		
@@ -10258,12 +10281,14 @@ android/feature-flags	android_sharable_threads	2026-11-14
 android/feature-flags	android_share_channel_list	2026-11-14		
 android/feature-flags	android_share_content	2026-11-14		
 android/feature-flags	android_share_file_offline	2026-11-14		
-android/feature-flags	android_share_huddle_link	2026-11-14		
+android/feature-flags	android_share_huddle_link	2026-11-14	2026-11-21	2026-11-21
 android/feature-flags	android_share_intent_mime_restriction	2026-11-14		
 android/feature-flags	android_share_message_offline	2026-11-14		
 android/feature-flags	android_share_sheet	2026-11-14		
 android/feature-flags	android_shared_conversation_list_query	2026-11-14		
+android/feature-flags	android_sign_in_2fa_redesign	2026-11-21		
 android/feature-flags	android_sign_in_experience_qr_auth_v2	2026-11-14		
+android/feature-flags	android_sign_out_logout_manager_v2	2026-11-21		
 android/feature-flags	android_slack_crm_agenda	2026-11-14		
 android/feature-flags	android_slack_crm_event_edit	2026-11-14		
 android/feature-flags	android_slack_crm_m2	2026-11-14		
@@ -10298,6 +10323,7 @@ android/feature-flags	android_slackbot_history_search	2026-11-14
 android/feature-flags	android_slackbot_inline_composer	2026-11-14		
 android/feature-flags	android_slackbot_inline_search_results	2026-11-14		
 android/feature-flags	android_slackbot_inline_threads	2026-11-14		
+android/feature-flags	android_slackbot_legacy_fallback	2026-11-21		
 android/feature-flags	android_slackbot_list_header_entry_point	2026-11-14		
 android/feature-flags	android_slackbot_mcp	2026-11-14		
 android/feature-flags	android_slackbot_mcp_limit	2026-11-14		
@@ -10373,6 +10399,7 @@ android/feature-flags	android_threads_polling	2026-11-14
 android/feature-flags	android_threads_read_state_coroutines	2026-11-14		
 android/feature-flags	android_top_emoji	2026-11-14		
 android/feature-flags	android_transcript_channel_view	2026-11-14		
+android/feature-flags	android_transcript_thread_jump_to_latest	2026-11-21		
 android/feature-flags	android_transcript_thread_view	2026-11-14		
 android/feature-flags	android_trial_starts	2026-11-14		
 android/feature-flags	android_true_dark	2026-11-14		
@@ -10389,7 +10416,7 @@ android/feature-flags	android_user_group_list	2026-11-14
 android/feature-flags	android_user_list	2026-11-14		
 android/feature-flags	android_user_profile_offline_db_fallback	2026-11-14		
 android/feature-flags	android_user_role_accidental_downgrade_fix	2026-11-14		
-android/feature-flags	android_view_dm_loading_state_enabled	2026-11-14		
+android/feature-flags	android_view_dm_loading_state_enabled	2026-11-14	2026-11-21	2026-11-21
 android/feature-flags	android_view_system	2026-11-14		
 android/feature-flags	android_websocket_batch_coalescing	2026-11-14		
 android/feature-flags	android_welcome_party_message	2026-11-14		
@@ -10401,6 +10428,7 @@ android/feature-flags	android_work_object_draft_actions	2026-11-14
 android/feature-flags	android_work_object_drafts	2026-11-14		
 android/feature-flags	android_work_object_edit	2026-11-14		
 android/feature-flags	android_work_object_embed	2026-11-14		
+android/feature-flags	android_work_object_embed_actions	2026-11-21		
 android/feature-flags	android_work_object_file_field	2026-11-14		
 android/feature-flags	android_work_object_file_routing	2026-11-14		
 android/feature-flags	android_work_object_minimal_layout	2026-11-14		
@@ -10409,7 +10437,7 @@ android/feature-flags	android_work_object_unfurl_activity_tab	2026-11-14
 android/feature-flags	android_workflow_mention_block_kit	2026-11-14		
 android/feature-flags	android_workspace_selection_in_mpdm_to_private_channel	2026-11-14		
 android/feature-flags	android_you_menu_dialog	2026-11-14		
-android/feature-flags	android_zero_state_resolve_duplicate	2026-11-14		
+android/feature-flags	android_zero_state_resolve_duplicate	2026-11-14	2026-11-21	2026-11-21
 android/hardware-features	android.hardware.bluetooth	2026-11-14		
 android/hardware-features	android.hardware.camera	2026-11-14		
 android/hardware-features	android.hardware.camera.autofocus	2026-11-14		
@@ -10490,7 +10518,8 @@ android/libraries	androidx.credentials_credentials@1.6.0	2026-11-14
 android/libraries	androidx.cursoradapter_cursoradapter@1.0.0	2026-11-14		
 android/libraries	androidx.customview_customview-poolingcontainer@1.1.0	2026-11-14		
 android/libraries	androidx.customview_customview@1.2.0	2026-11-14		
-android/libraries	androidx.databinding_viewbinding@9.4.1	2026-11-14		
+android/libraries	androidx.databinding_viewbinding@9.4.1	2026-11-14	2026-11-21	2026-11-21
+android/libraries	androidx.databinding_viewbinding@9.5.0	2026-11-21		
 android/libraries	androidx.datastore_datastore-core@1.3.0	2026-11-14		
 android/libraries	androidx.datastore_datastore-preferences-core@1.3.0	2026-11-14		
 android/libraries	androidx.datastore_datastore-preferences@1.3.0	2026-11-14		
@@ -10500,7 +10529,8 @@ android/libraries	androidx.drawerlayout_drawerlayout@task ':drawerlayout:drawerl
 android/libraries	androidx.dynamicanimation_dynamicanimation@1.1.0	2026-11-14		
 android/libraries	androidx.emoji2_emoji2-views-helper@1.7.0	2026-11-14		
 android/libraries	androidx.emoji2_emoji2@1.7.0	2026-11-14		
-android/libraries	androidx.exifinterface_exifinterface@1.4.2	2026-11-14		
+android/libraries	androidx.exifinterface_exifinterface@1.4.2	2026-11-14	2026-11-21	2026-11-21
+android/libraries	androidx.exifinterface_exifinterface@1.5.0-beta01	2026-11-21		
 android/libraries	androidx.fragment_fragment-compose@1.9.1	2026-11-14		
 android/libraries	androidx.fragment_fragment-ktx@1.9.1	2026-11-14		
 android/libraries	androidx.fragment_fragment@1.9.1	2026-11-14		
@@ -10640,7 +10670,7 @@ android/shared-flags	feature_usage	2026-11-14
 android/shared-flags	feature_usage_data	2026-11-14		
 android/shared-flags	feature_usage_updated	2026-11-14		
 android/shared-flags	find_in_thread	2026-11-14		
-android/shared-flags	media_playback_speed_1_75x	2026-11-14		
+android/shared-flags	media_playback_speed_1_75x	2026-11-14	2026-11-21	2026-11-21
 android/shared-flags	programmable_sidebar	2026-11-14		
 android/shared-flags	session_channels	2026-11-14		
 android/shared-flags	slackbot_mcp_apps	2026-11-14		
@@ -10689,6 +10719,7 @@ android/urls	https://slack.com/help/articles/360046708113-View-message-activity	
 android/urls	https://slack.com/help/articles/4402059015315	2026-11-14		
 android/urls	https://slack.com/help/articles/48167543695379-A-reintroduction-to-Slackbot	2026-11-14		
 android/urls	https://slack.com/help/articles/49426254285203-Identify-hallucinations-in-Slackbot-responses	2026-11-14		
+android/urls	https://slack.com/help/articles/57307932204819	2026-11-21		
 android/urls	https://slack.com/pricing	2026-11-14		
 android/urls	https://slackb.com	2026-11-14		
 android/urls	https://slackb.com/error	2026-11-14		
